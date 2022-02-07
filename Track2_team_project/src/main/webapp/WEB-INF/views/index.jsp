@@ -2314,14 +2314,14 @@ Purchase:
                             <div class="jp-gui jp-interface flex-wrap">
                                 <div class="jp-controls flex-item">
                                     <button class="jp-previous" tabindex="0">
-					<i class="ms_play_control"></i>
-				</button>
+										<i class="ms_play_control"></i>
+									</button>
                                     <button class="jp-play" tabindex="0">
-					<i class="ms_play_control"></i>
-				</button>
+										<i class="ms_play_control"></i>
+									</button>
                                     <button class="jp-next" tabindex="0">
-					<i class="ms_play_control"></i>
-				</button>
+									<i class="ms_play_control"></i>
+								</button>
                                 </div>
                                 <div class="jp-progress-container flex-item">
                                     <div class="jp-time-holder">
