@@ -2540,7 +2540,7 @@ li.option.selected.focus:after {
 	border-bottom: 1px solid #eded;
 }
 .jp-interface .ms_play_control {
-	background: url(../images/svg/play_icon.svg) !important;
+	background: url(../../images/svg/play_icon.svg) !important;
 	width: 30px;
 	height: 30px;
 	background-repeat: no-repeat;
