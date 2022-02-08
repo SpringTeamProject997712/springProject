@@ -5,7 +5,7 @@ Version: 1.0.0
 Assigned to: Theme Forest
 -------------------------------------------------------------------*/
 (function($) {
-    "use strict";
+    "use strict"; //보안용
     var music = {
         initialised: false,
         version: 1.0,
@@ -30,13 +30,13 @@ Assigned to: Theme Forest
         },
         /*-------------- Music Functions definition ---------------------------------------------------
         ---------------------------------------------------------------------------------------------------*/
-        RTL: function() {
+        RTL: function() { //???
             var rtl_attr = $("html").attr('dir');
             if (rtl_attr) {
                 $('html').find('body').addClass("rtl");
             }
         },
-        // Toggle Menu
+        // 인덱스 왼쪽 메뉴를 확장했다가 줄였다가 하는 기능
         Menu: function() {
             $(".ms_nav_close").on('click', function() {
                 $(".ms_sidemenu_wrapper").toggleClass('open_menu');
@@ -50,14 +50,14 @@ Assigned to: Theme Forest
                 $(".pro_dropdown_menu").toggleClass("open_dropdown");
             });
         },
-        // Player Close On Click
+        // 뮤직 플레이어를 보이게 했다 안보이게 했다 하는 기능
         Player_close: function() {
             $(".ms_player_close").on('click', function() {
                 $(".ms_player_wrapper").toggleClass("close_player");
                 $("body").toggleClass("main_class")
             })
         },
-        // Pop Up
+        // 모달 버튼
         Popup: function() {
             $('.clr_modal_btn a').on('click', function() {
                 $('#clear_modal').hide();
@@ -76,7 +76,7 @@ Assigned to: Theme Forest
                 }
             });
         },
-        // Slider
+        // 슬라이더
         Slider: function() {
             var swiper = new Swiper('.swiper-container', {
                 slidesPerView: 6,
@@ -115,7 +115,7 @@ Assigned to: Theme Forest
                     }
                 },
             });
-            // Recent Slider
+            // 최근 슬라이더
             var swiper = new Swiper('.ms_rcnt_slider .swiper-container', {
                 slidesPerView: 6,
                 spaceBetween: 30,
@@ -153,7 +153,7 @@ Assigned to: Theme Forest
                     }
                 },
             });
-            // Featured Slider
+            // feature 슬라이더
             var swiper = new Swiper('.ms_feature_slider.swiper-container', {
                 slidesPerView: 6,
                 spaceBetween: 30,
@@ -191,7 +191,7 @@ Assigned to: Theme Forest
                     }
                 },
             });
-            // New released Slider
+            // New released 슬라이더
             var swiper = new Swiper('.ms_release_slider.swiper-container', {
                 slidesPerView: 4,
                 spaceBetween: 30,
@@ -229,7 +229,7 @@ Assigned to: Theme Forest
                     }
                 },
             });
-            // Featured Album Slider
+            // Featured Album 슬라이더
             var swiper = new Swiper('.ms_album_slider.swiper-container', {
                 slidesPerView: 6,
                 spaceBetween: 30,
@@ -267,7 +267,7 @@ Assigned to: Theme Forest
                     }
                 },
             });
-            // Radio Slider
+            // Radio 슬라이더
             var swiper = new Swiper('.ms_radio_slider.swiper-container', {
                 slidesPerView: 6,
                 spaceBetween: 30,
@@ -441,3 +441,26 @@ Assigned to: Theme Forest
         return false
     });
 })(jQuery);
+
+//    videoPlay: ".jp-video-play",
+//    play: ".jp-play",
+//    pause: ".jp-pause",
+//    stop: ".jp-stop",
+//    seekBar: ".jp-seek-bar",
+//    playBar: ".jp-play-bar",
+//    mute: ".jp-mute",
+//    unmute: ".jp-unmute",
+//    volumeBar: ".jp-volume-bar",
+//    volumeBarValue: ".jp-volume-bar-value",
+//    volumeMax: ".jp-volume-max",
+//    playbackRateBar: ".jp-playback-rate-bar",
+//    playbackRateBarValue: ".jp-playback-rate-bar-value",
+//    currentTime: ".jp-current-time",
+//    duration: ".jp-duration",
+//    title: ".jp-title",
+//    fullScreen: ".jp-full-screen",
+//    restoreScreen: ".jp-restore-screen",
+//    repeat: ".jp-repeat",
+//    repeatOff: ".jp-repeat-off",
+//    gui: ".jp-gui",
+//    noSolution: ".jp-no-solution",
