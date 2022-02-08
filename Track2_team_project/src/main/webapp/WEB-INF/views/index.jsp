@@ -2320,8 +2320,8 @@ Purchase:
 										<i class="ms_play_control"></i>
 									</button>
                                     <button class="jp-next" tabindex="0">
-									<i class="ms_play_control"></i>
-								</button>
+										<i class="ms_play_control"></i>
+									</button>
                                 </div>
                                 <div class="jp-progress-container flex-item">
                                     <div class="jp-time-holder">
