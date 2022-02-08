@@ -49,7 +49,7 @@
                                         <img src="images/svg/phone.svg" alt="">
                                     </div>
                                     <div class="foo_con_data">
-                                        <span class="con-title">Call us :</span>
+                                        <span class="con-title">連絡先 :</span>
                                         <span>(+1) 202-555-0176, (+1) 2025-5501</span>
                                     </div>
                                 </li>
@@ -58,7 +58,7 @@
                                         <img src="images/svg/message.svg" alt="">
                                     </div>
                                     <div class="foo_con_data">
-                                        <span class="con-title">email us :</span>
+                                        <span class="con-title">メール :</span>
                                         <span><a href="#">demo@mail.com </a>, <a href="#">dummy@mail.com</a></span>
                                     </div>
                                 </li>
@@ -67,13 +67,13 @@
                                         <img src="images/svg/add.svg" alt="">
                                     </div>
                                     <div class="foo_con_data">
-                                        <span class="con-title">walk in :</span>
+                                        <span class="con-title">住所 :</span>
                                         <span>598 Old House Drive, London</span>
                                     </div>
                                 </li>
                             </ul>
                             <div class="foo_sharing">
-                                <div class="share_title">follow us :</div>
+                                <div class="share_title">フォロー :</div>
                                 <ul>
                                     <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                     <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
@@ -116,28 +116,28 @@
                             </div>
                             <div class="play_song_options">
                                 <ul>
-                                    <li><a href="#"><span class="song_optn_icon"><i class="ms_icon icon_download"></i></span>download now</a></li>
-                                    <li><a href="#"><span class="song_optn_icon"><i class="ms_icon icon_fav"></i></span>Add To Favourites</a></li>
-                                    <li><a href="#"><span class="song_optn_icon"><i class="ms_icon icon_playlist"></i></span>Add To Playlist</a></li>
-                                    <li><a href="#"><span class="song_optn_icon"><i class="ms_icon icon_share"></i></span>Share</a></li>
+                                    <li><a href="#"><span class="song_optn_icon"><i class="ms_icon icon_download"></i></span>ダウンロード</a></li>
+                                    <li><a href="#"><span class="song_optn_icon"><i class="ms_icon icon_fav"></i></span>お気に入りに追加</a></li>
+                                    <li><a href="#"><span class="song_optn_icon"><i class="ms_icon icon_playlist"></i></span>リストに追加</a></li>
+                                    <li><a href="#"><span class="song_optn_icon"><i class="ms_icon icon_share"></i></span>共有</a></li>
                                 </ul>
                             </div>
                             <span class="play-left-arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
                         </div>
                         <!----Right Queue---->
                         <div class="jp_queue_wrapper">
-                            <span class="que_text" id="myPlaylistQueue"><i class="fa fa-angle-up" aria-hidden="true"></i> queue</span>
+                            <span class="que_text" id="myPlaylistQueue"><i class="fa fa-angle-up" aria-hidden="true"></i> 再生リスト</span>
                             <div id="playlist-wrap" class="jp-playlist">
 								<div class="jp_queue_cls"><i class="fa fa-times" aria-hidden="true"></i></div>
-                                <h2>queue</h2>
+                                <h2>再生リスト</h2>
 								<div class="jp_queue_list_inner">
 									<ul>
 										<li>&nbsp;</li>
 									</ul>
 								</div>
                                 <div class="jp_queue_btn">
-                                    <a href="javascript:;" class="ms_clear" data-toggle="modal" data-target="#clear_modal">clear</a>
-                                    <a href="clear_modal" class="ms_save" data-toggle="modal" data-target="#save_modal">save</a>
+                                    <a href="javascript:;" class="ms_clear" data-toggle="modal" data-target="#clear_modal">クリア</a>
+                                    <a href="clear_modal" class="ms_save" data-toggle="modal" data-target="#save_modal">セーブ</a>
                                 </div>
                             </div>
                         </div>
@@ -193,9 +193,9 @@
                                     <select>
 						<option>quality</option>
 						<option value="1">HD</option>
-						<option value="2">High</option>
-						<option value="3">medium</option>
-						<option value="4">low</option>
+						<option value="2">高音質</option>
+						<option value="3">中音質</option>
+						<option value="4">低音質</option>
 					</select>
                                 </div>
                             </div>
@@ -221,33 +221,33 @@
                             <img src="images/register_img.png" alt="" class="img-fluid" />
                         </div>
                         <div class="ms_register_form">
-                            <h2>Register / Sign Up</h2>
+                            <h2>会員登録</h2>
                             <div class="form-group">
-                                <input type="text" placeholder="Enter Your Name" class="form-control">
+                                <input type="text" placeholder="名前入力" class="form-control">
                                 <span class="form_icon">
 							<i class="fa_icon form-user" aria-hidden="true"></i>
 							</span>
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Enter Your Email" class="form-control">
+                                <input type="text" placeholder="メールアドレス入力" class="form-control">
                                 <span class="form_icon">
 							<i class="fa_icon form-envelope" aria-hidden="true"></i>
 						</span>
                             </div>
                             <div class="form-group">
-                                <input type="password" placeholder="Enter Password" class="form-control">
+                                <input type="password" placeholder="パスワード入力" class="form-control">
                                 <span class="form_icon">
 						<i class="fa_icon form-lock" aria-hidden="true"></i>
 						</span>
                             </div>
                             <div class="form-group">
-                                <input type="password" placeholder="Confirm Password" class="form-control">
+                                <input type="password" placeholder="パスワード再入力" class="form-control">
                                 <span class="form_icon">
 						<i class=" fa_icon form-lock" aria-hidden="true"></i>
 						</span>
                             </div>
-                            <a href="#" class="ms_btn">register now</a>
-                            <p>Already Have An Account? <a href="#myModal1" data-toggle="modal" class="ms_modal hideCurrentModel">login here</a></p>
+                            <a href="#" class="ms_btn">会員登録</a>
+                            <p>すでにお持ちのアカウントがありますか？<a href="#myModal1" data-toggle="modal" class="ms_modal hideCurrentModel">ログイン</a></p>
                         </div>
                     </div>
                 </div>
@@ -266,30 +266,30 @@
                             <img src="images/register_img.png" alt="" class="img-fluid" />
                         </div>
                         <div class="ms_register_form">
-                            <h2>login / Sign in</h2>
+                            <h2>ログイン</h2>
                             <div class="form-group">
-                                <input type="text" placeholder="Enter Your Email" class="form-control">
+                                <input type="text" placeholder="メールアドレス入力" class="form-control">
                                 <span class="form_icon">
 							<i class="fa_icon form-envelope" aria-hidden="true"></i>
 						</span>
                             </div>
                             <div class="form-group">
-                                <input type="password" placeholder="Enter Password" class="form-control">
+                                <input type="password" placeholder="パスワード入力" class="form-control">
                                 <span class="form_icon">
 						<i class="fa_icon form-lock" aria-hidden="true"></i>
 						</span>
                             </div>
                             <div class="remember_checkbox">
-                                <label>Keep me signed in
+                                <label>ログイン情報キープ
 							<input type="checkbox">
 							<span class="checkmark"></span>
 						</label>
                             </div>
-                            <a href="profile.html" class="ms_btn" target="_blank">login now</a>
+                            <a href="profile.html" class="ms_btn" target="_blank">ログイン</a>
                             <div class="popup_forgot">
-                                <a href="#">Forgot Password ?</a>
+                                <a href="#">パスワードを忘れましたか？</a>
                             </div>
-                            <p>Don't Have An Account? <a href="#myModal" data-toggle="modal" class="ms_modal1 hideCurrentModel">register here</a></p>
+                            <p>まだアカウントがないですか？<a href="#myModal" data-toggle="modal" class="ms_modal1 hideCurrentModel">会員登録</a></p>
                         </div>
                     </div>
                 </div>
@@ -399,16 +399,17 @@
 						<i class="fa_icon form_close"></i>
 					</button>
                     <div class="modal-body">
-						<h1>Are you sure you want to clear your queue?</h1>
+						<h1>本当に再生リストをクリアしますか？</h1>
 						<div class="clr_modal_btn">
-							<a href="#">clear all</a>
-							<a href="#">cancel</a>
+							<a href="#">クリア</a>
+							<a href="#">キャンセル</a>
 						</div>
                     </div>
                 </div>
             </div>
         </div>
 	</div>
+	
 	<!----Queue Save Modal---->
 	<div class="ms_save_modal">
 		<div id="save_modal" class="modal  centered-modal" role="dialog">

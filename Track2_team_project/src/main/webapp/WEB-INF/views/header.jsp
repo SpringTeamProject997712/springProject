@@ -53,30 +53,30 @@
                 </div>
                 <div class="ms_nav_wrapper">
                     <ul>
-                        <li><a href="index.html" class="active" title="Discover">
+                        <li><a href="index.jsp" class="active" title="Discover">
 						<span class="nav_icon">
 							<span class="icon icon_discover"></span>
 						</span>
 						<span class="nav_text">
-							discover
+							メイン
 						</span>
 						</a>
                         </li>
-                        <li><a href="album.html" title="Albums">
+                        <li><a href="/album/album.jsp" title="Albums">
 						<span class="nav_icon">
 							<span class="icon icon_albums"></span>
 						</span>
 						<span class="nav_text">
-							albums
+							アルバム
 						</span>
 						</a>
                         </li>
-                        <li><a href="artist.html" title="Artists">
+                        <li><a href="/artist/artist.jsp" title="Artists">
 						<span class="nav_icon">
 							<span class="icon icon_artists"></span>
 						</span>
 						<span class="nav_text">
-							artists
+							アーティスト
 						</span>
 						</a>
                         </li>
@@ -85,7 +85,7 @@
 							<span class="icon icon_genres"></span>
 						</span>
 						<span class="nav_text">
-							genres
+							ジャンル
 						</span>
 						</a>
                         </li>
@@ -94,28 +94,12 @@
 							<span class="icon icon_tracks"></span>
 						</span>
 						<span class="nav_text">
-							top tracks
+							トップトラック
 						</span>
 						</a>
                         </li>
-                        <li><a href="free_music.html" title="Free Music">
-						<span class="nav_icon">
-							<span class="icon icon_music"></span>
-						</span>
-						<span class="nav_text">
-							free music
-						</span>
-						</a>
-                        </li>
-                        <li><a href="stations.html" title="Stations">
-						<span class="nav_icon">
-							<span class="icon icon_station"></span>
-						</span>
-						<span class="nav_text">
-							stations
-						</span>
-						</a>
-                        </li>
+                       
+                       
                     </ul>
                     <ul class="nav_downloads">
                         <li><a href="download.html" title="Downloads">
@@ -123,7 +107,7 @@
 							<span class="icon icon_download"></span>
 						</span>
 						<span class="nav_text">
-							downloads
+							ダウンロード
 						</span>
 						</a>
                         </li>
@@ -132,7 +116,7 @@
 							<span class="icon icon_purchased"></span>
 						</span>
 						<span class="nav_text">
-							purchased
+							購買リスト
 						</span>
 						</a>
                         </li>
@@ -141,7 +125,7 @@
 							<span class="icon icon_favourite"></span>
 						</span>
 						<span class="nav_text">
-							favourites
+							お気に入り
 						</span>
 						</a>
                         </li>
@@ -150,7 +134,7 @@
 							<span class="icon icon_history"></span>
 						</span>
 						<span class="nav_text">
-							history
+							ヒストリー
 						</span>
 						</a>
                         </li>
@@ -161,7 +145,7 @@
 							<span class="icon icon_fe_playlist"></span>
 						</span>
 						<span class="nav_text">
-							featured playlist
+							プレイリスト
 						</span>
 						</a>
                         </li>
@@ -170,7 +154,7 @@
 							<span class="icon icon_c_playlist"></span>
 						</span>
 						<span class="nav_text">
-							create playlist
+							リスト作成
 						</span>
 						</a>
                         </li>
@@ -186,22 +170,22 @@
             <div class="ms_header">
                 <div class="ms_top_left">
                     <div class="ms_top_search">
-                        <input type="text" class="form-control" placeholder="Search Music Here..">
+                        <input type="text" class="form-control" placeholder="ミュージック検索">
                         <span class="search_icon">
 							<img src="images/svg/search.svg" alt="">
 						</span>
                     </div>
                     <div class="ms_top_trend">
-                        <span><a href="#"  class="ms_color">Trending Songs :</a></span> <span class="top_marquee"><a href="#">Dream your moments, Until I Met You, Gimme Some Courage, Dark Alley (+8 More)</a></span>
+                        <span><a href="#"  class="ms_color">今日のおすすめ :</a></span> <span class="top_marquee"><a href="#">Dream your moments, Until I Met You, Gimme Some Courage, Dark Alley (+8 More)</a></span>
                     </div>
                 </div>
                 <div class="ms_top_right">
                     <div class="ms_top_lang">
-                        <span data-toggle="modal" data-target="#lang_modal">languages <img src="images/svg/lang.svg" alt=""></span>
+                        <span data-toggle="modal" data-target="#lang_modal">言語 <img src="images/svg/lang.svg" alt=""></span>
                     </div>
                     <div class="ms_top_btn">
-                        <a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>register</span></a>
-                        <a href="javascript:;" class="ms_btn login_btn" data-toggle="modal" data-target="#myModal1"><span>login</span></a>
+                        <a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>新規登録</span></a>
+                        <a href="javascript:;" class="ms_btn login_btn" data-toggle="modal" data-target="#myModal1"><span>ログイン</span></a>
                     </div>
                 </div>
             </div>
