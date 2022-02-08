@@ -23,14 +23,14 @@
 	<link rel="stylesheet" type="text/css" href="/resources/js/plugins/scroll/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
     <!-- Favicon Link -->
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.png">
 </head>
 
 <body>
 	<!----Loader Start---->
 	<div class="ms_loader">
 		<div class="wrap">
-		  <img src="images/loader.gif" alt="">
+		  <img src="../images/loader.gif" alt="">
 		</div>
 	</div>
 	
@@ -45,10 +45,10 @@
             <div class="ms_sidemenu_inner">
                 <div class="ms_logo_inner">
                     <div class="ms_logo">
-                        <a href="index.html"><img src="images/logo.png" alt="" class="img-fluid"/></a>
+                        <a href="index.html"><img src="../images/logo.png" alt="" class="img-fluid"/></a>
                     </div>
                     <div class="ms_logo_open">
-                        <a href="index.html"><img src="images/open_logo.png" alt="" class="img-fluid"/></a>
+                        <a href="index.html"><img src="../images/open_logo.png" alt="" class="img-fluid"/></a>
                     </div>
                 </div>
                 <div class="ms_nav_wrapper">
@@ -62,7 +62,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="/album/album.jsp" title="Albums">
+                        <li><a href="/album/album" title="Albums">
 						<span class="nav_icon">
 							<span class="icon icon_albums"></span>
 						</span>
@@ -172,7 +172,7 @@
                     <div class="ms_top_search">
                         <input type="text" class="form-control" placeholder="ミュージック検索">
                         <span class="search_icon">
-							<img src="images/svg/search.svg" alt="">
+							<img src="../images/svg/search.svg" alt="">
 						</span>
                     </div>
                     <div class="ms_top_trend">
@@ -181,7 +181,7 @@
                 </div>
                 <div class="ms_top_right">
                     <div class="ms_top_lang">
-                        <span data-toggle="modal" data-target="#lang_modal">言語 <img src="images/svg/lang.svg" alt=""></span>
+                        <span data-toggle="modal" data-target="#lang_modal">言語 <img src="../images/svg/lang.svg" alt=""></span>
                     </div>
                     <div class="ms_top_btn">
                         <a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>新規登録</span></a>
