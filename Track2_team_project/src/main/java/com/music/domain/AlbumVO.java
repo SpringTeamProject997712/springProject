@@ -1,4 +1,4 @@
-package com.music.mapper;
+package com.music.domain;
 
 import java.sql.Date;
 
