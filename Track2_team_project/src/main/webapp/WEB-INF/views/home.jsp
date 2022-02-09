@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>
-	Hell worldddddsafaㅁㅇasdaasdasdasdd
+	Hell coding
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
