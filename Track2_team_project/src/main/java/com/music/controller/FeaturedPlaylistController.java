@@ -5,12 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/genre/*")
-public class GenreController {
+@RequestMapping("/featuredPlaylist/*")
+public class FeaturedPlaylistController {
 
-	@GetMapping("/genre")
-	public void genreView() {
+	@GetMapping("/featuredPlaylist")
+	public void featuredPlaylistView() {
 		
 	}
-	
 }
