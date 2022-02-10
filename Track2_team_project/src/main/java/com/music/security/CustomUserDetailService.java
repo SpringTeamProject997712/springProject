@@ -5,19 +5,32 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import com.music.domain.MemberVO;
+import com.music.mapper.MemberMapper;
+import com.music.security.domain.CustomUser;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @Log4j
-public class CustomUserDetailService implements UserDetailsService {@Override
+public class CustomUserDetailService implements UserDetailsService {
+	
+	@Setter(onMethod_ = @Autowired)
+	private MemberMapper mapper;
+	
+	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		MemberVO mvo = mapper.viewMember(username);
+		
+		log.warn("회원 정보 : "+mvo);
+		
+		return mvo == null ? null:new CustomUser(mvo);
+		
 	}
 	
-//	@Setter(onMethod_ = @Autowired)
-//	private Tbl_memberMapper mapper;
+	
+//	
 //	
 //	@Override
 //	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

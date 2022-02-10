@@ -270,7 +270,7 @@
                         </div>
                         <div class="ms_register_form">
                             <h2>ログイン</h2>
-                            <form action="/login" method="post" name="loginForm">
+                            <form method="post" name="loginForm">
                             	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 	                            <div class="form-group">
 	                                <input type="text" name="username" placeholder="メールアドレス入力" class="form-control">
@@ -290,7 +290,7 @@
 										<span class="checkmark"></span>
 									</label>
 	                            </div>
-	                            <a href="javascript:go_login();" class="ms_btn" target="_blank">ログイン</a>
+	                            <a href="javascript:go_login()" class="ms_btn">ログイン</a>
 	                            <div class="popup_forgot">
 	                                <a href="#">パスワードを忘れましたか？</a>
 	                            </div>

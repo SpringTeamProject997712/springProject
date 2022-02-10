@@ -1,6 +1,7 @@
 package com.music.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import lombok.Data;
 
@@ -18,4 +19,5 @@ public class MemberVO {
 	private String address2;
 	private Date regdate;
 	
+	private List<Member_authVO> authList;
 }
