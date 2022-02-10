@@ -207,7 +207,7 @@
         </div>
     </div>
     <!----Register Modal Start---->
-    <!-- Modal -->
+    <!-- 회원가입 Modal -->
     <div class="ms_register_popup">
         <div id="myModal" class="modal  centered-modal" role="dialog">
             <div class="modal-dialog register_dialog">
@@ -222,38 +222,41 @@
                         </div>
                         <div class="ms_register_form">
                             <h2>会員登録</h2>
-                            <div class="form-group">
-                                <input type="text" placeholder="名前入力" class="form-control">
-                                <span class="form_icon">
-							<i class="fa_icon form-user" aria-hidden="true"></i>
-							</span>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" placeholder="メールアドレス入力" class="form-control">
-                                <span class="form_icon">
-							<i class="fa_icon form-envelope" aria-hidden="true"></i>
-						</span>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" placeholder="パスワード入力" class="form-control">
-                                <span class="form_icon">
-						<i class="fa_icon form-lock" aria-hidden="true"></i>
-						</span>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" placeholder="パスワード再入力" class="form-control">
-                                <span class="form_icon">
-						<i class=" fa_icon form-lock" aria-hidden="true"></i>
-						</span>
-                            </div>
-                            <a href="#" class="ms_btn">会員登録</a>
-                            <p>すでにお持ちのアカウントがありますか？<a href="#myModal1" data-toggle="modal" class="ms_modal hideCurrentModel">ログイン</a></p>
+                            <form action="/join.do" method="post" name="joinForm">
+                            	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+	                            <div class="form-group">
+	                                <input type="text" name="name" placeholder="名前入力"class="form-control">
+	                                <span class="form_icon">
+										<i class="fa_icon form-user" aria-hidden="true"></i>
+									</span>
+	                            </div>
+	                            <div class="form-group">
+	                                <input type="text" name="id" placeholder="メールアドレス入力" class="form-control">
+	                                <span class="form_icon">
+										<i class="fa_icon form-envelope" aria-hidden="true"></i>
+									</span>
+	                            </div>
+	                            <div class="form-group">
+	                                <input type="password" name="pw" placeholder="パスワード入力" class="form-control">
+	                                <span class="form_icon">
+										<i class="fa_icon form-lock" aria-hidden="true"></i>
+									</span>
+	                            </div>
+	                            <div class="form-group">
+	                                <input type="password" name="pw2" placeholder="パスワード再入力" class="form-control">
+	                                <span class="form_icon">
+										<i class=" fa_icon form-lock" aria-hidden="true"></i>
+									</span>
+	                            </div>
+	                            <a href="javascript:go_join()" class="ms_btn">会員登録</a>
+	                            <p>すでにお持ちのアカウントがありますか？<a href="#myModal1" data-toggle="modal" class="ms_modal hideCurrentModel">ログイン</a></p>
+                       		</form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!----Login Popup Start---->
+        <!----로그인 Modal---->
         <div id="myModal1" class="modal  centered-modal" role="dialog">
             <div class="modal-dialog login_dialog">
                 <!-- Modal content-->
@@ -267,28 +270,31 @@
                         </div>
                         <div class="ms_register_form">
                             <h2>ログイン</h2>
-                            <div class="form-group">
-                                <input type="text" placeholder="メールアドレス入力" class="form-control">
-                                <span class="form_icon">
-							<i class="fa_icon form-envelope" aria-hidden="true"></i>
-						</span>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" placeholder="パスワード入力" class="form-control">
-                                <span class="form_icon">
-						<i class="fa_icon form-lock" aria-hidden="true"></i>
-						</span>
-                            </div>
-                            <div class="remember_checkbox">
-                                <label>ログイン情報キープ
-							<input type="checkbox">
-							<span class="checkmark"></span>
-						</label>
-                            </div>
-                            <a href="profile.html" class="ms_btn" target="_blank">ログイン</a>
-                            <div class="popup_forgot">
-                                <a href="#">パスワードを忘れましたか？</a>
-                            </div>
+                            <form action="/login" method="post" name="loginForm">
+                            	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+	                            <div class="form-group">
+	                                <input type="text" name="username" placeholder="メールアドレス入力" class="form-control">
+	                                <span class="form_icon">
+										<i class="fa_icon form-envelope" aria-hidden="true"></i>
+									</span>
+	                            </div>
+	                            <div class="form-group">
+	                                <input type="password" name="password" placeholder="パスワード入力" class="form-control">
+	                                <span class="form_icon">
+										<i class="fa_icon form-lock" aria-hidden="true"></i>
+									</span>
+	                            </div>
+	                            <div class="remember_checkbox">
+	                            	<label>ログイン情報キープ
+										<input type="checkbox">
+										<span class="checkmark"></span>
+									</label>
+	                            </div>
+	                            <a href="javascript:go_login();" class="ms_btn" target="_blank">ログイン</a>
+	                            <div class="popup_forgot">
+	                                <a href="#">パスワードを忘れましたか？</a>
+	                            </div>
+                            </form>
                             <p>まだアカウントがないですか？<a href="#myModal" data-toggle="modal" class="ms_modal1 hideCurrentModel">会員登録</a></p>
                         </div>
                     </div>
@@ -455,9 +461,7 @@
     <script type="text/javascript" src="/resources/js/plugins/nice_select/jquery.nice-select.min.js"></script>
 	<script type="text/javascript" src="/resources/js/plugins/scroll/jquery.mCustomScrollbar.js"></script>
     <script type="text/javascript" src="/resources/js/custom.js"></script>
-    <script>
-    	$('.file-upload').file_upload();
-    </script>
+    <script type="text/javascript" src="/resources/js/my.js"></script>
 </body>
 
 </html>
