@@ -455,6 +455,9 @@
     <script type="text/javascript" src="/resources/js/plugins/nice_select/jquery.nice-select.min.js"></script>
 	<script type="text/javascript" src="/resources/js/plugins/scroll/jquery.mCustomScrollbar.js"></script>
     <script type="text/javascript" src="/resources/js/custom.js"></script>
+    <script>
+    	$('.file-upload').file_upload();
+    </script>
 </body>
 
 </html>

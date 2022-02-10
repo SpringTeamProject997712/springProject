@@ -13,4 +13,9 @@ public class AlbumController {
 		
 	}
 	
+	@GetMapping("/album_upload")
+	public void albumUpload() {
+		
+	}
+	
 }
