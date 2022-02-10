@@ -6,6 +6,7 @@ function go_login() {                                  //로그인
 		alert("비밀번호 입력");
 		document.loginForm.password.focus();
 	}else{
+		document.loginForm.action="/login";
 		document.loginForm.submit();
 	}
 }
