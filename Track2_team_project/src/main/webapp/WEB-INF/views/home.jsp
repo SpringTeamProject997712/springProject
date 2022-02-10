@@ -6,7 +6,12 @@
 </head>
 <body>
 <h1>
+<<<<<<< HEAD
 	Hell coding
+=======
+	프로젝트는 지금 안녕하지않다.
+	나 지금 너무 혼란스러워 어뜩게하면 좋아?
+>>>>>>> branch 'tj' of https://github.com/SpringTeamProject997712/springProject.git
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>

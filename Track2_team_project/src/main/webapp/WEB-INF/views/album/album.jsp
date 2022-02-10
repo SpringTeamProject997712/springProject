@@ -3,6 +3,7 @@
 
 <!-- main css files links -->
 <%@ include file="../header.jsp" %>
+
             <!----Featured Albumn Section Start---->
             <div class="ms_fea_album_slider padder_top10 ">
                 <div class="ms_heading">
