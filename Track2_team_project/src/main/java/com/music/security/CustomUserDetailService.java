@@ -25,7 +25,7 @@ public class CustomUserDetailService implements UserDetailsService {
 		
 		log.warn("회원 정보 : "+mvo);
 		
-		return mvo == null ? null:new CustomUser(mvo);
+		return mvo == null?null:new CustomUser(mvo);
 		
 	}
 	
