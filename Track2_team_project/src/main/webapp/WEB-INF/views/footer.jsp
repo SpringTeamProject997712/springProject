@@ -270,7 +270,6 @@
                         </div>
                         <div class="ms_register_form">
                             <h2>ログイン</h2>
-<<<<<<< HEAD
                             <form method="post" name="loginForm">
                             	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 	                            <div class="form-group">
