@@ -22,9 +22,14 @@ public class CustomUserDetailService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
 		log.warn("유저 네임 보기 : " + username);
+		//날릴친구들
 		
+		
+		
+		
+		
+		//진짜 친구
 		MemberVO mvo = mapper.viewMember(username);
-				
 		
 		log.warn("회원 정보 : "+mvo);
 		
