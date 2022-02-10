@@ -36,20 +36,20 @@
                             <div class="form-group">
                                 <label>アルバム選択</label>
                                 <select class="form-control" name="kind">
-								<option>Cloud Nine</option>
-								<option value="1">111 </option>
-								<option value="2">222</option>
-								<option value="3">333</option>
-								<option value="4">444</option>
-							</select>
+									<option>Cloud Nine</option>
+									<option value="1">111 </option>
+									<option value="2">222</option>
+									<option value="3">333</option>
+									<option value="4">444</option>
+								</select>
                             </div>
                             <div class="form-group">
                                 <label>Onlines</label>
                                 <select class="form-control" name="onlines">
-								<option>Public</option>
-								<option value="1">Onlines</option>
-								<option value="2">Offlines</option>
-							</select>
+									<option>Public</option>
+									<option value="1">Onlines</option>
+									<option value="2">Offlines</option>
+								</select>
                             </div>
                             
                             <div class="form-group">
