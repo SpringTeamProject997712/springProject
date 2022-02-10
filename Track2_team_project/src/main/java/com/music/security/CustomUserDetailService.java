@@ -24,6 +24,7 @@ public class CustomUserDetailService implements UserDetailsService {
 		log.warn("유저 네임 보기 : " + username);
 		
 		MemberVO mvo = mapper.viewMember(username);
+				
 		
 		log.warn("회원 정보 : "+mvo);
 		

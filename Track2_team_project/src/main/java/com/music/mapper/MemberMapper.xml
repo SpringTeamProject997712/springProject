@@ -17,7 +17,7 @@
 	</resultMap>
 	
 	<resultMap type="com.music.domain.Member_authVO" id="authMap">
-		<result property="userid" column="userid"/>
+		<result property="id" column="userid"/>
 		<result property="auth" column="auth"/>
 	</resultMap>
 	
