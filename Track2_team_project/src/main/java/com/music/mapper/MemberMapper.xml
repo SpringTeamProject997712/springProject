@@ -12,7 +12,7 @@
 		<result property="email" column="email"/>
 		<result property="address1" column="address1"/>
 		<result property="address2" column="address2"/>
-		<result property="regdate" column="regdate"/>
+		<result property="regdate" column="regdate" jdbcType="DATE"/>
 		<collection property="authList" column="authMap"/>
 	</resultMap>
 	

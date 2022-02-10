@@ -24,10 +24,6 @@ public class CustomUserDetailService implements UserDetailsService {
 		log.warn("유저 네임 보기 : " + username);
 		//날릴친구들
 		
-		
-		
-		
-		
 		//진짜 친구
 		MemberVO mvo = service.viewMember(username);
 		
