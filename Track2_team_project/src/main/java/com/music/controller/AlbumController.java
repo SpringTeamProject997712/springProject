@@ -32,6 +32,7 @@ public class AlbumController {
 	
 	@PostMapping("/album_uploadpro")
 	public String insertAlbum(AlbumVO album) {
+		log.info("짜잔짜잔");
 		service.insertAlbum(album);
 		
 		
