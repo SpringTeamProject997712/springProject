@@ -4,6 +4,7 @@
 <!-- main css files links -->
 <%@ include file="../header.jsp" %>
             <!----Upload and Share Wrapper Start---->
+<<<<<<< HEAD
             <form name="album_upload" method="post" enctype="multipart/form-data">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
             	<div class="ms_upload_wrapper marger_top60">
@@ -19,6 +20,24 @@
 	                    <span> or </span>
 	                    <p>Drag And Drop Music Files</p>
 	                </div>
+=======
+            <div class="ms_upload_wrapper marger_top60">
+            <form name="album_upload" method="post" action="/album/album_uploadpro">
+<!--             <form name="album_upload" method="post" action="/album/album_uploadpro" enctype="multipart/form-data"> -->
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+<!--                 <div class="ms_upload_box"> -->
+<!--                     <h2>Upload & Share Your Music With The World</h2> -->
+<!--                     <img src="../images/svg/upload.svg" alt=""> -->
+<!--                     <div class="ms_upload_btn"> -->
+<!-- 						<div class="ms_btn"> -->
+<!-- 						  <label for="file-upload">upload files</label> -->
+<!-- 						  <input type="file" id="file-upload" name="songrealname"> -->
+<!-- 						</div> -->
+<!--                     </div> -->
+<!--                     <span> or </span> -->
+<!--                     <p>Drag And Drop Music Files</p> -->
+<!--                 </div> -->
+>>>>>>> branch 'JH' of https://github.com/SpringTeamProject997712/springProject.git
                 <div class=" marger_top60">
                     <div class="ms_upload_box">
                         <div class="ms_heading">
@@ -36,20 +55,34 @@
                             <div class="form-group">
                                 <label>アルバム選択</label>
                                 <select class="form-control" name="kind">
+<<<<<<< HEAD
 									<option>Cloud Nine</option>
 									<option value="1">111 </option>
 									<option value="2">222</option>
 									<option value="3">333</option>
 									<option value="4">444</option>
 								</select>
+=======
+								<option value="1">111 </option>
+								<option value="2">222</option>
+								<option value="3">333</option>
+								<option value="4">444</option>
+							</select>
+>>>>>>> branch 'JH' of https://github.com/SpringTeamProject997712/springProject.git
                             </div>
                             <div class="form-group">
                                 <label>Onlines</label>
                                 <select class="form-control" name="onlines">
+<<<<<<< HEAD
 									<option value="0">Public</option>
 									<option value="1">Onlines</option>
 									<option value="2">Offlines</option>
 								</select>
+=======
+								<option value="1">Onlines</option>
+								<option value="2">Offlines</option>
+							</select>
+>>>>>>> branch 'JH' of https://github.com/SpringTeamProject997712/springProject.git
                             </div>
                             
                             <div class="form-group">
@@ -68,24 +101,35 @@
                                 <label>Song name *</label>
                                 <input type="text" name="songname" placeholder="" class="form-control">
                             </div>
+<<<<<<< HEAD
                            <!--  <div class="form-group">
                                 <label>Image *</label>
                                 <input type="file" name="image" id="image" placeholder="" class="form-control">
                             </div> -->
+=======
+<!--                             <div class="form-group"> -->
+<!--                                 <label>Image *</label> -->
+<!--                                 <input type="file" name="image" id="image" placeholder="" class="form-control"> -->
+<!--                             </div> -->
+>>>>>>> branch 'JH' of https://github.com/SpringTeamProject997712/springProject.git
                             
                             <div class="pro-form-btn text-center marger_top15">
                                 <div class="ms_upload_btn">
-                                    <a href="javascript:void(0);" class="ms_btn" onclick="go_upload()">Upload Now</a>
-                                    <a href="javascript:void(0);" class="ms_btn" onclick="go_cancle()">cancle</a>
+                                    <a href="javascript:void(0)" class="ms_btn" onclick="go_upload();">Upload Now</a>
+                                    <a href="javascript:void(0);" class="ms_btn" onclick="go_cancle();">cancle</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+        </form>
             </div>
             </form>
             <!----Main div close---->
         </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'JH' of https://github.com/SpringTeamProject997712/springProject.git
 <!-- main js files links -->
 <%@ include file="../footer.jsp" %>

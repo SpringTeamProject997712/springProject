@@ -17,6 +17,7 @@ public class AlbumVO {
 	private String releasedate;
 	private int labelnum;
 	private String singer;
+	private String songname;
 	private Date regdate;
 	private int donate;
 	private int viewcount;
@@ -24,7 +25,6 @@ public class AlbumVO {
 	private int staravg;
 	private String onlines;
 	private int stock;
-	private String songname;
 	private String songrealname;
 	
 }
