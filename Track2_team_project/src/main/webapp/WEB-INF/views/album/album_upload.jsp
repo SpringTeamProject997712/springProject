@@ -4,7 +4,8 @@
 <!-- main css files links -->
 <%@ include file="../header.jsp" %>
             <!----Upload and Share Wrapper Start---->
-            <form name="frm" method="post" enctype="multipart/form-data">
+            <form name="album_upload" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
             <div class="ms_upload_wrapper marger_top60">
                 <div class="ms_upload_box">
                     <h2>Upload & Share Your Music With The World</h2>
@@ -12,7 +13,7 @@
                     <div class="ms_upload_btn">
 						<div class="ms_btn">
 						  <label for="file-upload">upload files</label>
-						  <input type="file" id="file-upload">
+						  <input type="file" id="file-upload" name="songrealname">
 						</div>
                     </div>
                     <span> or </span>
@@ -68,18 +69,14 @@
                                 <input type="text" name="songname" placeholder="" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label>Song realname *</label>
-                                <input type="text" name="songrealname" placeholder="" class="form-control">
-                            </div>
-                            <div class="form-group">
                                 <label>Image *</label>
                                 <input type="file" name="image" id="image" placeholder="" class="form-control">
                             </div>
                             
                             <div class="pro-form-btn text-center marger_top15">
                                 <div class="ms_upload_btn">
-                                    <a href="#" class="ms_btn" onclick="go_save()">Upload Now</a>
-                                    <a href="#" class="ms_btn" onclick="go_cancle()">cancle</a>
+                                    <a href="javascript:void(0);" class="ms_btn" onclick="go_upload()">Upload Now</a>
+                                    <a href="javascript:void(0);" class="ms_btn" onclick="go_cancle()">cancle</a>
                                 </div>
                             </div>
                         </div>
@@ -90,13 +87,4 @@
         </div>
         </form>
 <!-- main js files links -->
-
-<script>
-function go_save() {
- 	theForm.action = "/album/album_uploadpro";
- 	theForm.submit();
- }
-
-</script>
-
 <%@ include file="../footer.jsp" %>

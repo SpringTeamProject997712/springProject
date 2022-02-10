@@ -21,3 +21,7 @@ function go_join() {                                  //로그인
 		document.joinForm.submit();
 	}
 }
+function go_upload() {
+ 	document.album_upload.action = "/album/album_uploadpro";
+ 	document.album_upload.submit();
+ }
