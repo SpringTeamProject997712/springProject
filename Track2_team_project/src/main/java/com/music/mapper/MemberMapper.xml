@@ -31,9 +31,9 @@
 	</insert>
 	
 	<select id="viewMember" resultMap="memberTableMap">
-		select * from member_m m LEFT OUTER JOIN member_auth_m a
+		select m.id, m.pw, m.name, m.nickname, m.active, m.phone, m.email, m.address1, m.address2, m.regdate, a.auth from member_m m LEFT OUTER JOIN member_auth_m a
 		ON m.id = a.userid
-   		where m.id= #{id}
+		where m.id= #{id}
 	</select>
 
 </mapper>
