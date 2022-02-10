@@ -83,8 +83,9 @@
                     </div>
                 </div>
             </div>
+            </form>
             <!----Main div close---->
         </div>
-        </form>
+
 <!-- main js files links -->
 <%@ include file="../footer.jsp" %>
