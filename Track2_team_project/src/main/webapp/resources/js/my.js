@@ -22,7 +22,7 @@ function go_join() {                                  //로그인
 	}
 }
 function go_upload() {
- 	document.album_upload.action = "/album/album_uploadpro";
+ 	document.album_upload.action = "album_uploadpro";
  	document.album_upload.submit();
  }
 
