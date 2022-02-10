@@ -33,7 +33,7 @@
 	<select id="viewMember" resultMap="memberTableMap">
 		select * from member_m m LEFT OUTER JOIN member_auth_m a
 		ON m.id = a.userid
-   		where m.id= #{id};
+   		where m.id= #{id}
 	</select>
 
 </mapper>
