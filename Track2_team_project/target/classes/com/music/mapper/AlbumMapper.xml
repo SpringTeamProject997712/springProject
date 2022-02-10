@@ -8,7 +8,7 @@
   			select product_m_seq.nextval from dual
   		</selectKey>
   		insert into product_m (pbno, name, kind, image, detail, price1, price2, releasedate, labelnum, singer, onlines, stock, songname, songrealname) 
-		values (#{pbno},#{name},#{kind},#{iamge},#{detail},#{price1},#{price2},#{releasedate},#{labelnum}, 
+		values (#{pbno},#{name},#{kind},#{image},#{detail},#{price1},#{price2},#{releasedate},#{labelnum}, 
 		#{singer},#{onlines},#{stock},#{songname},#{songrealname})
   	</insert>
   	

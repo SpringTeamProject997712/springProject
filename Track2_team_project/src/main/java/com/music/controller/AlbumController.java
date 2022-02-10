@@ -20,17 +20,17 @@ public class AlbumController {
 	@Setter(onMethod_= @Autowired)
 	private AlbumService service;
 	
-	@GetMapping("/album.do")
+	@GetMapping("/album")
 	public void albumView() {
 		
 	}
 	
-	@GetMapping("/album_upload.do")
+	@GetMapping("/album_upload")
 	public void albumUpload() {
 		
 	}
 	
-	@PostMapping("/album_uploadpro.do")
+	@PostMapping("/album_uploadpro")
 	public String insertAlbum(AlbumVO album) {
 		service.insertAlbum(album);
 		
