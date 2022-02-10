@@ -6,12 +6,11 @@ function go_login() {                                  //로그인
 		alert("비밀번호 입력");
 		document.loginForm.password.focus();
 	}else{
-		document.loginForm.action="/login";
 		document.loginForm.submit();
 	}
 }
 
-function go_join() {                                  //회원가입
+function go_join() {                                  //로그인
 	if(document.joinForm.id.value == "") {
 		alert("아이디를 입력하세요");
 		document.joinForm.id.focus();
@@ -22,3 +21,8 @@ function go_join() {                                  //회원가입
 		document.joinForm.submit();
 	}
 }
+function go_upload() {
+ 	document.album_upload.action = "/album/album_uploadpro";
+ 	document.album_upload.submit();
+ }
+
