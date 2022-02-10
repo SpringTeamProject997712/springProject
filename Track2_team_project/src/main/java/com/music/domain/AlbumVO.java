@@ -24,5 +24,7 @@ public class AlbumVO {
 	private int staravg;
 	private String onlines;
 	private int stock;
+	private String songname;
+	private String songrealname;
 	
 }
