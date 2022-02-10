@@ -16,8 +16,8 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Override
 	public int joinMember(MemberVO vo) {
-		int joinResult = mapper.registerMember(vo);
-		int authResult = mapper.registerMemberAuth(vo);
+		int joinResult = mapper.registMember(vo);
+		int authResult = mapper.registMemberAuth(vo);
 		
 		int result = 0;
 		if(joinResult == authResult && joinResult > 0) {

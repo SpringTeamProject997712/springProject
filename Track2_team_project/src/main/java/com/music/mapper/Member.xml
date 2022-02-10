@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.music.mapper.MemberMapper">
-	<insert id="registerMember">
+	<insert id="registMember">
 		insert into member_m (id,pw,nickname,name,phone,email,address1,address2)
 		values (#{id},#{pw},'임시',#{name},'임시','임시','임시','임시')
 	</insert>
+	<insert id="registMemberAuth">
+		insert into member_auth_m (userid, auth)
+		values (#{id},'ROLE_USER')
+	</insert>
+	
 
 </mapper>

@@ -4,6 +4,6 @@ import com.music.domain.MemberVO;
 
 public interface MemberMapper {
 
-	public int registerMember(MemberVO vo);
-	public int registerMemberAuth(MemberVO vo);
+	public int registMember(MemberVO vo);
+	public int registMemberAuth(MemberVO vo);
 }
