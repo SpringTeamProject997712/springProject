@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="admin_header.jsp" %>
 
-	<div class="container" style="color:white;">
+	<div class="container" style="color:white; height:800px;">
 		<h1>관리자님 환영합니-다</h1>
 		<p>principal : <sec:authentication property="principal"/></p>
 		<p>MemberVO : <sec:authentication property="principal.member"/></p>
