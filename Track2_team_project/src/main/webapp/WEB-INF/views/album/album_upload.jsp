@@ -10,12 +10,12 @@
 	                <div class="ms_upload_box">
 	                    <h2>Upload & Share Your Music With The World</h2>
 	                    <img src="../images/svg/upload.svg" alt="">
-	                    <!-- <div class="ms_upload_btn">
+ 	                    <div class="ms_upload_btn">
 							<div class="ms_btn">
 							  <label for="file-upload">upload files</label>
 							  <input type="file" id="file-upload" name="songrealname">
 							</div>
-	                    </div> -->
+	                    </div>
 	                    <span> or </span>
 	                    <p>Drag And Drop Music Files</p>
 	                </div>
@@ -64,7 +64,7 @@
 <!--                             </div> -->
                             <div class="form-group">
                                 <label>Song name *</label>
-                                <input type="text" name="songname" placeholder="" class="form-control">
+                                <input type="file" name="uploadMusic" id="songname" placeholder="" class="form-control">
                             </div>
 <!--                             <div class="form-group"> -->
 <!--                                 <label>Song real name *</label> -->
@@ -72,7 +72,7 @@
 <!--                             </div> -->
                             <div class="form-group">
                                 <label>Image *</label>
-                                <input type="file" name="uploadFile" id="image" placeholder="" accept="image/*" class="form-control">
+                                <input type="file" name="uploadImage" id="image" placeholder="" accept="image/*" class="form-control">
                             </div>
                             
                             <div class="pro-form-btn text-center marger_top15">

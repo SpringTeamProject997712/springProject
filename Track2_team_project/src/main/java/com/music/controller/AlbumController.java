@@ -51,21 +51,24 @@ public class AlbumController {
 	}
 	
 	@PostMapping("/album_uploadpro")
-	public String insertAlbum(AlbumVO album, @RequestParam("uploadFile") MultipartFile uploadFile) {
+	public String insertAlbum(AlbumVO album, @RequestParam("uploadImage") MultipartFile uploadImage, @RequestParam("uploadMusic") MultipartFile uploadMusic) {
 		
 //		MultipartFile multipartFile = portfolio.getUploadFile();
 		String uploadFolder = "C:\\upload";
-		log.info("file name : "+uploadFile.getOriginalFilename());
+		log.info("file name : "+uploadImage.getOriginalFilename());
 				
-		String uploadFileName = uploadFile.getOriginalFilename();
+		String uploadImageName = uploadImage.getOriginalFilename();
+		String uploadMusicName = uploadMusic.getOriginalFilename();
 		
 		//IE
-		uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("//")+1);
-		log.info("only file name :"+uploadFileName);
+		uploadImageName = uploadImageName.substring(uploadImageName.lastIndexOf("//")+1);
+		uploadMusicName = uploadMusicName.substring(uploadMusicName.lastIndexOf("//")+1);
+		log.info("only file name :"+uploadImageName);
 		
 		UUID uuid = UUID.randomUUID();
 		
-		uploadFileName = uuid.toString()+"_"+uploadFileName;
+		uploadImageName = uuid.toString()+"_"+uploadImageName;
+		uploadMusicName = uuid.toString()+"_"+uploadMusicName;
 		
 		File uploadPath = new File(uploadFolder, getFolder());
 		
@@ -74,16 +77,23 @@ public class AlbumController {
 		}
 		
 		
-		File savefile = new File(uploadPath, uploadFileName);
+		File saveimage = new File(uploadPath, uploadImageName);
+		File savemusic = new File(uploadPath, uploadMusicName);
 		
-		String saveUrl = uploadFileName.toString();
-		log.info(saveUrl);
+		String saveImageUrl = uploadImageName.toString();
+		String saveMusicUrl = uploadMusicName.toString();
+		log.info(saveImageUrl);
+		log.info(saveMusicUrl);
 		
 		try {
-			uploadFile.transferTo(savefile);
-			uploadFileName = (savefile.toString().substring(10));
-			album.setImage(uploadFileName);
-			log.info(uploadFileName);
+			uploadImage.transferTo(saveimage);
+			uploadImageName = (saveimage.toString().substring(10));
+			album.setImage(uploadImageName);
+			
+			uploadMusic.transferTo(savemusic);
+			uploadMusicName = (savemusic.toString().substring(10));
+			album.setSongname(uploadMusicName);
+			log.info(uploadMusicName);
 //			FileOutputStream thumbnail
 		}catch(Exception e) {
 			e.printStackTrace();
