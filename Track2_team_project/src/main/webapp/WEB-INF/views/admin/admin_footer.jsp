@@ -12,57 +12,57 @@
     </div>
     <!-- jquery
 		============================================ -->
-    <script src="js/admin/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/resources/js/admin/vendor/jquery-1.12.4.min.js"></script>
     <!-- bootstrap JS
 		============================================ -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/resources/js/bootstrap.min.js"></script>
     <!-- wow JS
 		============================================ -->
-    <script src="js/admin/wow.min.js"></script>
+    <script src="/resources/js/admin/wow.min.js"></script>
     <!-- price-slider JS
 		============================================ -->
-    <script src="js/admin/jquery-price-slider.js"></script>
+    <script src="/resources/js/admin/jquery-price-slider.js"></script>
     <!-- meanmenu JS
 		============================================ -->
-    <script src="js/admin/jquery.meanmenu.js"></script>
+    <script src="/resources/js/admin/jquery.meanmenu.js"></script>
     <!-- owl.carousel JS
 		============================================ -->
-    <script src="js/admin/owl.carousel.min.js"></script>
+    <script src="/resources/js/admin/owl.carousel.min.js"></script>
     <!-- sticky JS
 		============================================ -->
-    <script src="js/admin/jquery.sticky.js"></script>
+    <script src="/resources/js/admin/jquery.sticky.js"></script>
     <!-- scrollUp JS
 		============================================ -->
-    <script src="js/admin/jquery.scrollUp.min.js"></script>
+    <script src="/resources/js/admin/jquery.scrollUp.min.js"></script>
     <!-- mCustomScrollbar JS
 		============================================ -->
-    <script src="js/admin/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/admin/scrollbar/mCustomScrollbar-active.js"></script>
+    <script src="/resources/js/admin/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/resources/js/admin/scrollbar/mCustomScrollbar-active.js"></script>
     <!-- metisMenu JS
 		============================================ -->
-    <script src="js/admin/metisMenu/metisMenu.min.js"></script>
-    <script src="js/admin/metisMenu/metisMenu-active.js"></script>
+    <script src="/resources/js/admin/metisMenu/metisMenu.min.js"></script>
+    <script src="/resources/js/admin/metisMenu/metisMenu-active.js"></script>
     <!-- sparkline JS
 		============================================ -->
-    <script src="js/admin/sparkline/jquery.sparkline.min.js"></script>
-    <script src="js/admin/sparkline/jquery.charts-sparkline.js"></script>
+    <script src="/resources/js/admin/sparkline/jquery.sparkline.min.js"></script>
+    <script src="/resources/js/admin/sparkline/jquery.charts-sparkline.js"></script>
     <!-- calendar JS
 		============================================ -->
-    <script src="js/admin/calendar/moment.min.js"></script>
-    <script src="js/admin/calendar/fullcalendar.min.js"></script>
-    <script src="js/calendar/fullcalendar-active.js"></script>
+    <script src="/resources/js/admin/calendar/moment.min.js"></script>
+    <script src="/resources/js/admin/calendar/fullcalendar.min.js"></script>
+    <script src="/resources/js/calendar/fullcalendar-active.js"></script>
 	<!-- float JS
 		============================================ -->
-    <script src="js/flot/jquery.flot.js"></script>
-    <script src="js/flot/jquery.flot.resize.js"></script>
-    <script src="js/flot/curvedLines.js"></script>
-    <script src="js/flot/flot-active.js"></script>
+    <script src="/resources/js/flot/jquery.flot.js"></script>
+    <script src="/resources/js/flot/jquery.flot.resize.js"></script>
+    <script src="/resources/js/flot/curvedLines.js"></script>
+    <script src="/resources/js/flot/flot-active.js"></script>
     <!-- plugins JS
 		============================================ -->
-    <script src="js/plugins.js"></script>
+    <script src="/resources/js/plugins.js"></script>
     <!-- main JS
 		============================================ -->
-    <script src="js/main.js"></script>
+    <script src="/resources/js/main.js"></script>
 </body>
 
 </html>

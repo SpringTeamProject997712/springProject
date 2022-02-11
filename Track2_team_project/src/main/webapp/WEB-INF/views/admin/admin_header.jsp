@@ -20,53 +20,53 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="/resources/css/bootstrap.css">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="/resources/css/font-awesome.min.css">
 	<!-- nalika Icon CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/admin/nalika-icon.css">
+    <link rel="stylesheet" href="/resources/css/admin/nalika-icon.css">
     <!-- owl.carousel CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/admin/owl.carousel.css">
-    <link rel="stylesheet" href="css/admin/owl.theme.css">
-    <link rel="stylesheet" href="css/admin/owl.transitions.css">
+    <link rel="stylesheet" href="/resources/css/admin/owl.carousel.css">
+    <link rel="stylesheet" href="/resources/css/admin/owl.theme.css">
+    <link rel="stylesheet" href="/resources/css/admin/owl.transitions.css">
     <!-- animate CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/admin/animate.css">
+    <link rel="stylesheet" href="/resources/css/admin/animate.css">
     <!-- normalize CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/admin/normalize.css">
+    <link rel="stylesheet" href="/resources/css/admin/normalize.css">
     <!-- meanmenu icon CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/admin/meanmenu.min.css">
+    <link rel="stylesheet" href="/resources/css/admin/meanmenu.min.css">
     <!-- main CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/admin/main.css">
+    <link rel="stylesheet" href="/resources/css/admin/main.css">
     <!-- morrisjs CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/admin/morrisjs/morris.css">
+    <link rel="stylesheet" href="/resources/css/admin/morrisjs/morris.css">
     <!-- mCustomScrollbar CSS
 		============================================ -->
-    <link rel="stylesheet" href="js/plugin/scroll/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="/resources/js/plugin/scroll/jquery.mCustomScrollbar.css">
     <!-- metisMenu CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/admin/metisMenu/metisMenu.min.css">
-    <link rel="stylesheet" href="css/admin/metisMenu/metisMenu-vertical.css">
+    <link rel="stylesheet" href="/resources/css/admin/metisMenu/metisMenu.min.css">
+    <link rel="stylesheet" href="/resources/css/admin/metisMenu/metisMenu-vertical.css">
     <!-- calendar CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/admin/calendar/fullcalendar.min.css">
-    <link rel="stylesheet" href="css/admin/calendar/fullcalendar.print.min.css">
+    <link rel="stylesheet" href="/resources/css/admin/calendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="/resources/css/admin/calendar/fullcalendar.print.min.css">
     <!-- style CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/admin/style.css">
+    <link rel="stylesheet" href="/resources/css/admin/style.css">
     <!-- responsive CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/admin/responsive.css">
+    <link rel="stylesheet" href="/resources/css/admin/responsive.css">
     <!-- modernizr JS
 		============================================ -->
-    <script src="js/admin/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="/resources/js/admin/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
 <body>
