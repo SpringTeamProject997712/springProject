@@ -22,7 +22,7 @@
                                     <div class="ms_main_overlay">
                                         <div class="ms_box_overlay"></div>
                                         <div class="ms_more_icon">
-                                            <img src="../images/svg/more.svg" alt="">
+                                             <img src="../images/svg/more.svg" alt="">
                                         </div>
                                         <ul class="more_option">
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
