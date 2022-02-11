@@ -50,19 +50,19 @@
 		============================================ -->
     <script src="/resources/js/admin/calendar/moment.min.js"></script>
     <script src="/resources/js/admin/calendar/fullcalendar.min.js"></script>
-    <script src="/resources/js/calendar/fullcalendar-active.js"></script>
+    <script src="/resources/js/admin/calendar/fullcalendar-active.js"></script>
 	<!-- float JS
 		============================================ -->
-    <script src="/resources/js/flot/jquery.flot.js"></script>
-    <script src="/resources/js/flot/jquery.flot.resize.js"></script>
-    <script src="/resources/js/flot/curvedLines.js"></script>
-    <script src="/resources/js/flot/flot-active.js"></script>
+    <script src="/resources/js/admin/flot/jquery.flot.js"></script>
+    <script src="/resources/js/admin/flot/jquery.flot.resize.js"></script>
+    <script src="/resources/js/admin/flot/curvedLines.js"></script>
+    <script src="/resources/js/admin/flot/flot-active.js"></script>
     <!-- plugins JS
 		============================================ -->
-    <script src="/resources/js/plugins.js"></script>
+    <script src="/resources/js/admin/plugins.js"></script>
     <!-- main JS
 		============================================ -->
-    <script src="/resources/js/main.js"></script>
+    <script src="/resources/js/admin/main.js"></script>
 </body>
 
 </html>
