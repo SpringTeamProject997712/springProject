@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="/resources/js/plugins/player/volume.css">
 	<link rel="stylesheet" type="text/css" href="/resources/js/plugins/scroll/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/my.css">
     <!-- Favicon Link -->
     <link rel="shortcut icon" type="image/png" href="../images/favicon.png">
 </head>
