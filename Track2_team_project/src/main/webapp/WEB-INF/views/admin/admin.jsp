@@ -3,7 +3,7 @@
 <%@ include file="admin_header.jsp" %>
 
 	<div class="container" style="color:white;">
-		<h1>관리자님 환영합ㄴ디</h1>
+		<h1>관리자님 환영합니-다</h1>
 		<p>principal : <sec:authentication property="principal"/></p>
 		<p>MemberVO : <sec:authentication property="principal.member"/></p>
 		<p>사용자 이름 : <sec:authentication property="principal.member.id"/></p>
