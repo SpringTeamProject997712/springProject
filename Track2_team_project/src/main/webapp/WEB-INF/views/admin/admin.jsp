@@ -10,3 +10,4 @@
 		<p>사용자 id : <sec:authentication property="principal.member.pw"/></p>
 		<p>사용자 권한 : <sec:authentication property="principal.member.authList"/></p> 
 	</div>
+<%@ include file="admin_footer.jsp"%>
