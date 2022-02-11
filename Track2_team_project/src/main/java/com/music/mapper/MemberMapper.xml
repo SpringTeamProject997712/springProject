@@ -30,7 +30,7 @@
 		values (#{id},'ROLE_USER')
 	</insert>
 	
-	<select id="viewMember" resultType="com.music.domain.MemberVO">
+	<select id="viewMember" resultMap="memberTableMap">
 		select m.id as id, pw, name, nickname, active, phone, email, address1, address2, regdate, auth from member_m m LEFT OUTER JOIN member_auth_m auth
 		ON m.id = auth.id
 		where m.id= #{id}
