@@ -2,6 +2,7 @@ package com.music.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,8 +22,9 @@ public class AlbumController {
 	private AlbumService service;
 	
 	@GetMapping("/album")
-	public void albumView() {
-		
+	public void albumView(Model model) {
+		model.addAttribute("list",service.listAlbum());
+		log.info("리스트 내용 : "+service.listAlbum());
 	}
 	
 	@GetMapping("/album_upload")

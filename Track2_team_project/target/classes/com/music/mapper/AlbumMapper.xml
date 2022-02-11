@@ -14,7 +14,7 @@
   	
   	<select id="listAlbum" resultType="com.music.domain.AlbumVO">
 		<![CDATA[
-			select /*+ index_desc(product_m product_m_pk) */ * from product_m where pbno > 0
+			select /*+ index_desc(product_mm product_m_pk) */ * from product_mm where pbno > 0
 		]]>
 	</select>
 
