@@ -15,7 +15,7 @@
     <script src="/resources/js/admin/vendor/jquery-1.12.4.min.js"></script>
     <!-- bootstrap JS
 		============================================ -->
-    <script src="/resources/js/bootstrap.min.js"></script>
+    <script src="/resources/js/admin/bootstrap.min.js"></script>
     <!-- wow JS
 		============================================ -->
     <script src="/resources/js/admin/wow.min.js"></script>
