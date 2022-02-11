@@ -200,7 +200,7 @@
 								<li><a href="manage_acc.html" target="_blank">Pricing Plan</a></li>
 								<li><a href="blog.html" target="_blank">Blog</a></li>
 								<li><a href="">Setting</a></li>
-								<li><a href="">Logout</a></li>
+								<li><a href="admin/adminLogout">Logout</a></li>
 							</ul>
 	                    </div>
                     </sec:authorize>
