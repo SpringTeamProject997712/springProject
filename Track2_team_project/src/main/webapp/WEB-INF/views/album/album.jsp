@@ -43,7 +43,7 @@
                             </div>
                         </div>
                      </c:forEach>
-                        <!-- featured albums end -->
+                     <!-- featured albums end -->
                         
                         
                     </div>
