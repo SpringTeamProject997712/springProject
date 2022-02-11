@@ -11,10 +11,10 @@
 	                    <h2>Upload & Share Your Music With The World</h2>
 	                    <img src="../images/svg/upload.svg" alt="">
  	                    <div class="ms_upload_btn">
-							<div class="ms_btn">
-							  <label for="file-upload">upload files</label>
-							  <input type="file" id="file-upload" name="songrealname">
-							</div>
+ 	                    <a class="ms_btn">
+							  <label for="songname" className="ms_btn">upload files</label>
+							  <input type="file" name="uploadMusic" id="songname" style="display:none"/>
+						</a>
 	                    </div>
 	                    <span> or </span>
 	                    <p>Drag And Drop Music Files</p>
@@ -62,10 +62,10 @@
 <!--                                 <label>release Date</label> -->
 <!--                                 <input type="text" name="releasedate" placeholder="" class="form-control"> -->
 <!--                             </div> -->
-                            <div class="form-group">
-                                <label>Song name *</label>
-                                <input type="file" name="uploadMusic" id="songname" placeholder="" class="form-control">
-                            </div>
+<!--                             <div class="form-group"> -->
+<!--                                 <label>Song name *</label> -->
+<!--                                 <input type="file" name="uploadMusic" id="songname" placeholder="" class="form-control"> -->
+<!--                             </div> -->
 <!--                             <div class="form-group"> -->
 <!--                                 <label>Song real name *</label> -->
 <!--                                 <input type="text" name="songrealname" placeholder="" class="form-control"> -->
