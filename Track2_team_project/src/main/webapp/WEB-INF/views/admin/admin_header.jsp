@@ -49,7 +49,7 @@
     <link rel="stylesheet" href="/resources/css/admin/morrisjs/morris.css">
     <!-- mCustomScrollbar CSS
 		============================================ -->
-    <link rel="stylesheet" href="/resources/js/plugin/scroll/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="/resources/js/plugins/scroll/jquery.mCustomScrollbar.css">
     <!-- metisMenu CSS
 		============================================ -->
     <link rel="stylesheet" href="/resources/css/admin/metisMenu/metisMenu.min.css">
