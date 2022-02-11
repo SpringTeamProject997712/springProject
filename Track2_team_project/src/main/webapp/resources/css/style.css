@@ -395,7 +395,10 @@ body.loaded .ms_loader {
 	align-items: center;
 	justify-content: center;
 	display: flex;
-	min-height: 164px;
+	min-height: 120px;
+	position: relative;
+	z-index: 1;
+	background-color: #1b2039;
 }
 .ms_nav_wrapper {
 	padding: 0px 0px;

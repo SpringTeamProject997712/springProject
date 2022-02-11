@@ -21,6 +21,11 @@ function go_join() {                                  //회원가입
 		document.joinForm.submit();
 	}
 }
+function go_writemusic() {	
+	theForm.action = "product/productWrite.do";
+	theForm.submit();
+}
+
 function go_upload() {
  	document.album_upload.action = "album_uploadpro";
  	document.album_upload.submit();
