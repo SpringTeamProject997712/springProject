@@ -184,6 +184,7 @@
                         <span data-toggle="modal" data-target="#lang_modal">言語 <img src="../images/svg/lang.svg" alt=""></span>
                     </div>
                     <div class="ms_top_btn">
+                        <a href="javascript:go_writemusic" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>upload</span></a>
                         <a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>新規登録</span></a>
                         <a href="javascript:;" class="ms_btn login_btn" data-toggle="modal" data-target="#myModal1"><span>ログイン</span></a>
                     </div>

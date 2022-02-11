@@ -21,6 +21,12 @@ function go_join() {                                  //로그인
 		document.joinForm.submit();
 	}
 }
+function go_write() {
+	var theForm = document.frm;
+	theForm.action = "product/productWrite.do";
+	theForm.submit();
+}
+
 function go_upload() {
  	album_upload.submit();
  }
