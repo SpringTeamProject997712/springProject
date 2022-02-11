@@ -83,7 +83,7 @@
 			<div class="nalika-profile">
 				<div class="profile-dtl">
 					<a href="#"><img src="/images/notification/4.jpg" alt="" /></a>
-					<h2>Master <span class="min-dtn">Yi</span></h2>
+					<h2><span class="min-dtn"><sec:authentication property="principal.member.name"/></span></h2>
 				</div>
 				<div class="profile-social-dtl">
 					<ul class="dtl-social">
@@ -99,9 +99,9 @@
                     <ul class="metismenu" id="menu1">
                         <li class="active">
                             <a class="has-arrow" href="admin/admin">
-								   <i class="icon nalika-home icon-wrap"></i>
-								   <span class="mini-click-non">Index Main</span>
-								</a>
+							   <i class="icon nalika-home icon-wrap"></i>
+							   <span class="mini-click-non">AdminPage</span>
+							</a>
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a title="Dashboard v.1" href="index.html"><span class="mini-sub-pro">Dashboard v.1</span></a></li>
                                 <li><a title="Dashboard v.2" href="index-1.html"><span class="mini-sub-pro">Dashboard v.2</span></a></li>
@@ -116,11 +116,32 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-mail icon-wrap"></i> <span class="mini-click-non">Mailbox</span></a>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false">
+                            	<i class="icon nalika-mail icon-wrap"></i>
+                            	<span class="mini-click-non">Mailbox</span>
+                            </a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Inbox" href="mailbox.html"><span class="mini-sub-pro">Inbox</span></a></li>
                                 <li><a title="View Mail" href="mailbox-view.html"><span class="mini-sub-pro">View Mail</span></a></li>
                                 <li><a title="Compose Mail" href="mailbox-compose.html"><span class="mini-sub-pro">Compose Mail</span></a></li>
+                            </ul>
+                        </li>
+                        <!-- <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false">
+                            	<i class="icon nalika-mail icon-wrap"></i>
+                            	<span class="mini-click-non">Mailbox</span>
+                            </a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Inbox" href="mailbox.html"><span class="mini-sub-pro">Inbox</span></a></li>
+                                <li><a title="View Mail" href="mailbox-view.html"><span class="mini-sub-pro">View Mail</span></a></li>
+                                <li><a title="Compose Mail" href="mailbox-compose.html"><span class="mini-sub-pro">Compose Mail</span></a></li>
+                            </ul>
+                        </li> -->
+                        <li>
+                            <a class="has-arrow" href="admin/member" aria-expanded="false"><i class="icon nalika-diamond icon-wrap"></i> <span class="mini-click-non">Interface</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Google Map" href="admin/manage_member"><span class="mini-sub-pro">회원목록보기</span></a></li>
+                                <li><a title="Data Maps" href="data-maps.html"><span class="mini-sub-pro">회원보기?</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -911,6 +932,7 @@
                 </div>
             </div>
             <!-- Mobile Menu end -->
+            <!-- 상단 태그 시작 -->
             <div class="breadcome-area">
                 <div class="container-fluid">
                     <div class="row">
@@ -923,7 +945,7 @@
 												<i class="icon nalika-home"></i>
 											</div>
 											<div class="breadcomb-ctn">
-												<h2>Dashboard One</h2>
+												<h2>페이지 이름을 생성합니다</h2>
 												<p>Welcome to Nalika <span class="bread-ntd">Admin Template</span></p>
 											</div>
 										</div>
