@@ -17,7 +17,7 @@
 	</resultMap>
 	
 	<resultMap type="com.music.domain.Member_authVO" id="authMap">
-		<result property="userid" column="userid"/>
+		<result property="id" column="id"/>
 		<result property="auth" column="auth"/>
 	</resultMap>
 	
@@ -26,13 +26,13 @@
 		values (#{id},#{pw},'임시',#{name},'임시','임시','임시','임시')
 	</insert>
 	<insert id="registMemberAuth">
-		insert into member_auth_m (userid, auth)
+		insert into member_auth_m (id, auth)
 		values (#{id},'ROLE_USER')
 	</insert>
 	
 	<select id="viewMember" resultType="com.music.domain.MemberVO">
-		select m.id, m.pw, m.name, m.nickname, m.active, m.phone, m.email, m.address1, m.address2, m.regdate, a.auth from member_m m LEFT OUTER JOIN member_auth_m a
-		ON m.id = a.userid
+		select m.id as id, pw, name, nickname, active, phone, email, address1, address2, regdate, auth from member_m m LEFT OUTER JOIN member_auth_m auth
+		ON m.id = auth.id
 		where m.id= #{id}
 	</select>
 
