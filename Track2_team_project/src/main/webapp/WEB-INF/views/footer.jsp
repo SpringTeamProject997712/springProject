@@ -222,7 +222,7 @@
                         </div>
                         <div class="ms_register_form">
                             <h2>会員登録</h2>
-                            <form action="/join.do" method="post" name="joinForm">
+                            <form action="/member/join" method="post" name="joinForm">
                             	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 	                            <div class="form-group">
 	                                <input type="text" name="name" placeholder="名前入力"class="form-control">
@@ -270,7 +270,7 @@
                         </div>
                         <div class="ms_register_form">
                             <h2>ログイン</h2>
-                            <form method="post" name="loginForm">
+                            <form action="/login" method="post" name="loginForm">
                             	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 	                            <div class="form-group">
 	                                <input type="text" name="username" placeholder="メールアドレス入力" class="form-control">

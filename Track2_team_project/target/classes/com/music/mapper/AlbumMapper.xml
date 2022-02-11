@@ -7,9 +7,8 @@
   		<selectKey keyProperty="pbno" order="BEFORE" resultType="int">
   			select product_m_seq.nextval from dual
   		</selectKey>
-  		insert into product_m (pbno, name, kind, image, detail, price1, price2, releasedate, labelnum, singer, onlines, songname, songrealname) 
-		values (#{pbno},#{name},#{kind},'임시','임시',#{price1},#{price2},#{releasedate},#{labelnum}, 
-		#{singer},#{onlines},'임시','임시')
+  		insert into product_mm (pbno, name, kind,singer,image, songname) 
+		values (#{pbno},#{name},#{kind},#{singer},#{image},#{songname})
   	</insert>
   	
   	<select id="listAlbum" resultType="com.music.domain.AlbumVO">

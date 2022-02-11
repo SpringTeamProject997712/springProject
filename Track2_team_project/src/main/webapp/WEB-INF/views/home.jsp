@@ -7,10 +7,16 @@
 <body>
 <h1>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Hell coding
 =======
+=======
+>>>>>>> branch 'tj' of https://github.com/SpringTeamProject997712/springProject.git
 	프로젝트는 지금 안녕하지않다.
 	나 지금 너무 혼란스러워 어뜩게하면 좋아?
+<<<<<<< HEAD
+>>>>>>> branch 'tj' of https://github.com/SpringTeamProject997712/springProject.git
+=======
 >>>>>>> branch 'tj' of https://github.com/SpringTeamProject997712/springProject.git
 </h1>
 

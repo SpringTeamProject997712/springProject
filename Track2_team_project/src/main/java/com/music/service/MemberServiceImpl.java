@@ -26,5 +26,10 @@ public class MemberServiceImpl implements MemberService {
 		
 		return result;
 	}
+	
+	@Override
+	public MemberVO viewMember(String id) {
+		return mapper.viewMember(id);
+	}
 
 }
