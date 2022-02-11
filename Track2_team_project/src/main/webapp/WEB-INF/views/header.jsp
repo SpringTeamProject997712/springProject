@@ -191,7 +191,6 @@
 	                    </div>
                     </sec:authorize>
                     <sec:authorize access="isAuthenticated()">
-                    	>
 						<div class="ms_top_btn">
 							<a href="javascript:;" class="ms_admin_name">Hello Bella 
 								<span class="ms_pro_name">ns</span>													
