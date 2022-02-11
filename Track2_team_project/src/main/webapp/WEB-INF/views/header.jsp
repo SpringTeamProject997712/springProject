@@ -192,17 +192,17 @@
                     </sec:authorize>
                     <sec:authorize access="isAuthenticated()">
 						<div class="ms_top_btn">
-							<a href="javascript:void(0);" class="ms_admin_name">Hello Bella 
-								<span class="ms_pro_name">ns</span>													
+	                        <a href="upload.html" class="ms_btn">upload</a>
+	                        <a href="javascript:;" class="ms_admin_name">Hello Bella <span class="ms_pro_name">ns</span>													
 							</a>
-							<ul class="pro_dropdown_menu">
+							<ul class="pro_dropdown_menu open_dropdown">
 								<li><a href="profile.html">Profile</a></li>
 								<li><a href="manage_acc.html" target="_blank">Pricing Plan</a></li>
 								<li><a href="blog.html" target="_blank">Blog</a></li>
 								<li><a href="">Setting</a></li>
-								<li><a href="admin/adminLogout">Logout</a></li>
+								<li><a href="/admin/adminLogout">Logout</a></li>
 							</ul>
-	                    </div>
+                    </div>
                     </sec:authorize>
                     
                 </div>
