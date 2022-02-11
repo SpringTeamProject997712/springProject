@@ -42,11 +42,8 @@ public class AlbumController {
 	@GetMapping("/album")
 	public void albumView(Model model) {
 		model.addAttribute("list",service.listAlbum());
-<<<<<<< HEAD
 		log.info("리스트 내용 : "+service.listAlbum());
-=======
-		
->>>>>>> branch 'tj' of https://github.com/SpringTeamProject997712/springProject.git
+
 	}
 	
 	@GetMapping("/album_upload")

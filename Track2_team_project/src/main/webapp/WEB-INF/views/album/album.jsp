@@ -13,14 +13,8 @@
                 <div class="ms_album_slider swiper-container">
                     <div class="swiper-wrapper">
                     
-<<<<<<< HEAD
-                    <!-- featured Albums start -->
-                    
-                        <c:forEach var="list" items="${list}">	
-=======
                     <!-- featured albums start -->
                     <c:forEach var="list" items="${list}">
->>>>>>> branch 'tj' of https://github.com/SpringTeamProject997712/springProject.git
                         <div class="swiper-slide">
                             <div class="ms_rcnt_box">
                                 <div class="ms_rcnt_box_img">
@@ -43,26 +37,18 @@
                                     </div>
                                 </div>
                                 <div class="ms_rcnt_box_text">
-<<<<<<< HEAD
+
                                     <h3><a href="album_single.html">${list.songname}</a></h3>
-=======
-                                    <h3><a href="album_single.html">${list.name}</a></h3>
->>>>>>> branch 'tj' of https://github.com/SpringTeamProject997712/springProject.git
+
                                     <p>${list.singer}</p>
                                 </div>
                             </div>
                         </div>
-<<<<<<< HEAD
+
                         </c:forEach>
                         
                         <!-- featured Albums end -->
 
-=======
-                     </c:forEach>
-                        <!-- featured albums end -->
-                        
-                        
->>>>>>> branch 'tj' of https://github.com/SpringTeamProject997712/springProject.git
                     </div>
                 </div>
                 <!-- Add Arrows -->
