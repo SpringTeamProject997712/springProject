@@ -74,16 +74,16 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-    <div class="left-sidebar-pro">
+    <div class="left-sidebar-pro"> <!-- 왼쪽 바 -->
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="index.html"><img class="main-logo" src="/images/logo/logo.png" alt="" /></a>
+                <a href="/admin/admin"><img class="main-logo" src="/images/logo/logo.png" alt="" /></a>
                 <strong><img src="/images/logo/logosn.png" alt="" /></strong>
             </div>
 			<div class="nalika-profile">
 				<div class="profile-dtl">
 					<a href="#"><img src="/images/notification/4.jpg" alt="" /></a>
-					<h2>Lakian <span class="min-dtn">Das</span></h2>
+					<h2>Master <span class="min-dtn">Yi</span></h2>
 				</div>
 				<div class="profile-social-dtl">
 					<ul class="dtl-social">
@@ -93,13 +93,14 @@
 					</ul>
 				</div>
 			</div>
+			<!-- 왼쪽 바의 메뉴 -->
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
                         <li class="active">
-                            <a class="has-arrow" href="index.html">
+                            <a class="has-arrow" href="admin/admin">
 								   <i class="icon nalika-home icon-wrap"></i>
-								   <span class="mini-click-non">Ecommerce</span>
+								   <span class="mini-click-non">Index Main</span>
 								</a>
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a title="Dashboard v.1" href="index.html"><span class="mini-sub-pro">Dashboard v.1</span></a></li>
@@ -236,7 +237,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                        <div class="header-right-info">
+                                        <!-- <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                                 <li class="nav-item dropdown">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="icon nalika-mail" aria-hidden="true"></i><span class="indicator-ms"></span></a>
@@ -760,7 +761,7 @@
                                                     </div>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
