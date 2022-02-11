@@ -17,7 +17,7 @@
 	</resultMap>
 	
 	<resultMap type="com.music.domain.Member_authVO" id="authMap">
-		<result property="id" column="userid"/>
+		<result property="userid" column="userid"/>
 		<result property="auth" column="auth"/>
 	</resultMap>
 	
@@ -30,7 +30,7 @@
 		values (#{id},'ROLE_USER')
 	</insert>
 	
-	<select id="viewMember" resultMap="memberTableMap">
+	<select id="viewMember" resultType="com.music.domain.MemberVO">
 		select m.id, m.pw, m.name, m.nickname, m.active, m.phone, m.email, m.address1, m.address2, m.regdate, a.auth from member_m m LEFT OUTER JOIN member_auth_m a
 		ON m.id = a.userid
 		where m.id= #{id}
