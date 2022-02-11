@@ -7,13 +7,13 @@
   		<selectKey keyProperty="pbno" order="BEFORE" resultType="int">
   			select product_m_seq.nextval from dual
   		</selectKey>
-  		insert into product_m (pbno, name, kind,singer,image, songname) 
+  		insert into product_mm (pbno, name, kind,singer,image, songname) 
 		values (#{pbno},#{name},#{kind},#{singer},#{image},#{songname})
   	</insert>
   	
   	<select id="listAlbum" resultType="com.music.domain.AlbumVO">
 		<![CDATA[
-			select /*+ index_desc(product_m product_m_pk) */ * from product_m where pbno > 0
+			select /*+ index_desc(product_mm product_m_pk) */ * from product_mm where pbno > 0
 		]]>
 	</select>
 

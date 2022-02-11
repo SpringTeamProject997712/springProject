@@ -40,7 +40,8 @@ public class AlbumController {
 	}
 	
 	@GetMapping("/album")
-	public void albumView() {
+	public void albumView(Model model) {
+		model.addAttribute("list",service.listAlbum());
 		
 	}
 	
