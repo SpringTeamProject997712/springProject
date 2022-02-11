@@ -21,8 +21,7 @@ function go_join() {                                  //로그인
 		document.joinForm.submit();
 	}
 }
-function go_write() {
-	var theForm = document.frm;
+function go_writemusic() {	
 	theForm.action = "product/productWrite.do";
 	theForm.submit();
 }
