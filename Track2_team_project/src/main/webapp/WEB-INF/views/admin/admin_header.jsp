@@ -200,3 +200,5 @@
             </div>
         </nav>
     </div>
+    <!-- Start Welcome area -->
+    <div class="all-content-wrapper">
