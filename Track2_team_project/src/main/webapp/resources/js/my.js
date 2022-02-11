@@ -10,7 +10,7 @@ function go_login() {                                  //로그인
 	}
 }
 
-function go_join() {                                  //로그인
+function go_join() {                                  //회원가입
 	if(document.joinForm.id.value == "") {
 		alert("아이디를 입력하세요");
 		document.joinForm.id.focus();
@@ -27,5 +27,8 @@ function go_writemusic() {
 }
 
 function go_upload() {
- 	album_upload.submit();
+ 	document.album_upload.action = "album_uploadpro";
+ 	document.album_upload.submit();
+
  }
+

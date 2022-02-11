@@ -15,7 +15,7 @@ import lombok.extern.log4j.Log4j;
 
 @Log4j
 public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
-	// 회원가입한 계정으로 로그인 했을때 인텍스 페이지로 이동, 관리자 계정으로 로그인 했을때 /adm/adminmanager 로 이동
+	// 회원가입한 계정으로 로그인 했을때 인텍스 페이지로 이동, 관리자 계정으로 로그인 했을때 /admin/adminmanager 로 이동
 
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,

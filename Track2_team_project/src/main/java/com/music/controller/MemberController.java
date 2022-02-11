@@ -1,22 +1,26 @@
 package com.music.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.music.domain.MemberVO;
 import com.music.service.MemberService;
 
-import lombok.AllArgsConstructor;
+import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @Controller
-@AllArgsConstructor
+@RequestMapping("/member/*")
 @Log4j
 public class MemberController {
 
+	@Setter(onMethod_ = @Autowired)
 	MemberService service; //서비스 자리
 	
+	@Setter(onMethod_ = @Autowired)
 	private PasswordEncoder pencoder; //패스워드 인코더
 	
 	@PostMapping("/join")
@@ -31,7 +35,6 @@ public class MemberController {
 		}else {
 			log.info("실패");
 		}
-		
 		return "redirect:/";
 	}
 }
