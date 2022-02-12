@@ -188,6 +188,7 @@
 	                    <div class="ms_top_btn">
 	                        <a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>新規登録</span></a>
 	                        <a href="javascript:;" class="ms_btn login_btn" data-toggle="modal" data-target="#myModal1"><span>ログイン</span></a>
+	                        <audio src="upload/TSP-05-Your_face.mp3" autoplay controls></audio>
 	                    </div>
                     </sec:authorize>
                     <sec:authorize access="isAuthenticated()">

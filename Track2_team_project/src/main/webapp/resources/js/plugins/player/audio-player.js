@@ -10,9 +10,9 @@ $(function() {
             cssSelectorAncestor: "#jp_container_1"
         }, [{
 			image : '../images/weekly/song1.jpg',	
-            title: "Cro Magnon Man",
+            title: "Cro Man",
             artist: "Mushroom Records",
-            mp3: "../Rewind.mp3",
+            mp3: "../upload/Rewind.mp3",
 			option : myPlayListOtion	
         }, {
 			image : '../images/weekly/song2.jpg',	
