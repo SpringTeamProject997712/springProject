@@ -3,6 +3,8 @@ $(function() {
     if ($('.audio-player').length) {
 		var myPlayListOtion = '<ul class="more_option"><li><a href="#"><span class="opt_icon" title="Add To Favourites"><span class="icon icon_fav"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Queue"><span class="icon icon_queue"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Download Now"><span class="icon icon_dwn"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Playlist"><span class="icon icon_playlst"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Share"><span class="icon icon_share"></span></span></a></li></ul>';
 		
+		var music = '<c:out value="${music}"/>';
+		
         var myPlaylist = new jPlayerPlaylist({
             jPlayer: "#jquery_jplayer_1",
             cssSelectorAncestor: "#jp_container_1"
@@ -10,97 +12,17 @@ $(function() {
 			image : '../images/weekly/song1.jpg',	
             title: "Cro Magnon Man",
             artist: "Mushroom Records",
-            mp3: "http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg",
-			option : myPlayListOtion
+            mp3: "../Rewind.mp3",
+			option : myPlayListOtion	
         }, {
 			image : '../images/weekly/song2.jpg',	
             title: "Your Face",
             artist: "Ministry",
-            mp3: "http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg",
+            mp3: "file:///C:/upload/2022/02/11/Rewind.mp3",
 			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song3.jpg',	
-            title: "Cyber Sonnet",
-            artist: "You Am I",
-            mp3: "http://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song4.jpg',	
-            title: "Tempered Song",
-            artist: "Shelter",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song5.jpg',	
-            title: "Hidden",
-            artist: "Bad Religion",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-02-Hidden.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song6.jpg',	
-            title: "Lentement",
-            artist: "Apollo 440",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-03-Lentement.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song7.jpg',	
-            title: "Lismore",
-            artist: "Bloodhound Gang",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-04-Lismore.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song8.jpg',	
-            title: "The Separation",
-            artist: "Friendly Fires ",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-05-The-separation.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-05-The-separation.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song9.jpg',	
-            title: "Beside Me",
-            artist: "Friendly Fires ",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-06-Beside-me.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-06-Beside-me.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song2.jpg',	
-            title: "Bubble",
-            artist: "Skunkhour",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-07-Bubble.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song2.jpg',	
-            title: "Stirring of a fool",
-            artist: "The Meanies",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-08-Stirring-of-a-fool.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-08-Stirring-of-a-fool.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song2.jpg',	
-            title: "Partir",
-            artist: "The Living End",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-09-Partir.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-09-Partir.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song2.jpg',	
-            title: "Thin Ice",
-            artist: "Screaming Trees",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-10-Thin-ice.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-10-Thin-ice.ogg",
-			option : myPlayListOtion
-			
         }], {
             swfPath: "js/plugins",
-            supplied: "oga, mp3",
+            supplied: "mp3",
             wmode: "window",
             useStateClassSkin: true,
             autoBlur: false,
