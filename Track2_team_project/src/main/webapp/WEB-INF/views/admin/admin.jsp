@@ -39,12 +39,12 @@
     <meta name="theme-color" content="#ffffff">
     <!-- Vendors styles-->
     <link rel="stylesheet" href="/resources/css/admin/simplebar.css">
-    <link rel="stylesheet" href="/resources/css/admin/vendors/simplebar.css">
+    <link rel="stylesheet" href="/resources/css/admin/vendors/simplebar.min.css">
     <!-- Main styles for this application-->
-    <link href="/resources/css/admin/style.css" rel="stylesheet">
+    <link href="/resources/css/admin/style.min.css" rel="stylesheet">
     <!-- We use those styles to show code examples, you should remove them in your application.-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
-    <link href="/resources/css/admin/examples.css" rel="stylesheet">
+    <link href="/resources/css/admin/examples.min.css" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
     <script>

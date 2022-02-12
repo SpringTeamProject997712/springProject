@@ -1,7 +1,7 @@
 /* stylelint-disable declaration-no-important, font-weight-notation, selector-no-qualifying-type, property-disallowed-list, scss/selector-no-redundant-nesting-selector */
-@import "examples/functions";
-@import "examples/variables";
-@import "examples/mixins";
+@import "style/functions";
+@import "style/variables";
+@import "style/mixins";
 
 .example {
   &:not(:first-child) {
