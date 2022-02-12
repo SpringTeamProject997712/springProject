@@ -231,8 +231,7 @@
 									</span>
 	                            </div>
 	                            <div class="form-group">
-	                                <input type="text" name="id" placeholder="メールアドレス入力" class="form-control"
-	                                	onblur="check_id()" >
+	                                <input type="text" name="id" id="joinForm_id" placeholder="メールアドレス入力" class="form-control">
 	                                <span class="form_icon">
 										<i class="fa_icon form-envelope" aria-hidden="true"></i>
 									</span>
