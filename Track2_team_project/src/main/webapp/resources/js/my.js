@@ -12,10 +12,10 @@ function go_login() {                                  //로그인
 
 function check_id(){
 	let id = document.joinForm.id.value;
+	console.log(id);
 	$.ajax({
-		type:"post",
-		url:"/member/checkId",
-		data:id,
+		type:"get",
+		url:"member/checkId?id="+id,
 		success:function(data){
 			console.log(data);
 			if(data == 1){
