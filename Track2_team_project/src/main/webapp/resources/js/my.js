@@ -10,6 +10,27 @@ function go_login() {                                  //로그인
 	}
 }
 
+function check_id(){
+	let id = document.joinForm.id.value;
+	$.ajax({
+		type:"post",
+		url:"/member/checkId",
+		data:id,
+		success:function(data){
+			console.log(data);
+			if(data == 1){
+				$("#msg_checked_id").text("중복 아이디입니다");
+				document.getElementById('msg_checked_id').style.color = "red";
+			}else{
+				$("#msg_checked_id").text("사용 가능한 아이디입니다");
+				document.getElementById('msg_checked_id').style.color = "blue";
+			}
+		},error:function(xhr, status, error){
+			alert("문제발생 : " + xhr + status + error)
+		}
+	});
+}
+
 function go_join() {                                  //회원가입
 	if(document.joinForm.id.value == "") {
 		alert("아이디를 입력하세요");

@@ -231,9 +231,15 @@
 									</span>
 	                            </div>
 	                            <div class="form-group">
-	                                <input type="text" name="id" placeholder="メールアドレス入力" class="form-control">
+	                                <input type="text" name="id" placeholder="メールアドレス入力" class="form-control"
+	                                	onblur="check_id()" >
 	                                <span class="form_icon">
 										<i class="fa_icon form-envelope" aria-hidden="true"></i>
+									</span>
+	                            </div>
+	                            <div class="form-group">
+	                                <span class="form_icon" id="msg_checked_id">
+										
 									</span>
 	                            </div>
 	                            <div class="form-group">

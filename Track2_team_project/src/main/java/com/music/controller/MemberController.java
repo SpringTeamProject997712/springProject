@@ -23,9 +23,9 @@ public class MemberController {
 	@Setter(onMethod_ = @Autowired)
 	private PasswordEncoder pencoder; //패스워드 인코더
 	
+	//회원가입
 	@PostMapping("/join")
 	public String joinMember(MemberVO vo) {
-		
 		String inputPw = pencoder.encode(vo.getPw());
 		vo.setPw(inputPw);
 		log.info(vo);
@@ -37,4 +37,14 @@ public class MemberController {
 		}
 		return "redirect:/";
 	}
+	
+	@RequestMapping(value = "/checkId")
+	public int checkId(String id) {
+		int result = 0;
+		result= service.checkMemberWithId(id);
+		return result;
+	}
+	
+	
+	
 }
