@@ -43,11 +43,12 @@ public class MemberController {
 	
 	@ResponseBody
 	@GetMapping(value = "/checkId")
-	public int checkId(String id) {
+	public String checkId(String id) {
 		int result = 0;
 		result= service.checkMemberWithId(id);
 		log.info(result);
-		return result;
+		
+		return Integer.toString(result);
 	}
 	
 	
