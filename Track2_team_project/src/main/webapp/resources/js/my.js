@@ -19,11 +19,11 @@ $("#joinForm_id").on("blur",function(){ //아이디 입력창에서 blur할때�
 		success:function(data){
 			console.log(data);
 			if(data == 1){
-				$("#msg_checked_id").text();
+				$("#msg_checked_id");
 				$("#msg_checked_id").text("중복 아이디입니다");
 				document.getElementById('msg_checked_id').style.color = "red";
 			}else{
-				$("#msg_checked_id").text();
+				$("#msg_checked_id");
 				$("#msg_checked_id").text("사용 가능한 아이디입니다");
 				document.getElementById('msg_checked_id').style.color = "blue";
 			}
