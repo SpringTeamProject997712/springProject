@@ -763,7 +763,7 @@
                       <tbody>
                         <tr class="align-middle">
                           <td class="text-center">
-                            <div class="avatar avatar-md"><img class="avatar-img" src="/images/1.jpg" alt="user@email.com"><span class="avatar-status bg-success"></span></div>
+                            <div class="avatar avatar-md"><img class="avatar-img" src="/images/admin/1.jpg" alt="user@email.com"><span class="avatar-status bg-success"></span></div>
                           </td>
                           <td>
                             <div>Yiorgos Avraamu</div>
@@ -807,7 +807,7 @@
                         </tr>
                         <tr class="align-middle">
                           <td class="text-center">
-                            <div class="avatar avatar-md"><img class="avatar-img" src="/images/2.jpg" alt="user@email.com"><span class="avatar-status bg-danger"></span></div>
+                            <div class="avatar avatar-md"><img class="avatar-img" src="/images/admin/2.jpg" alt="user@email.com"><span class="avatar-status bg-danger"></span></div>
                           </td>
                           <td>
                             <div>Avram Tarasios</div>
@@ -851,7 +851,7 @@
                         </tr>
                         <tr class="align-middle">
                           <td class="text-center">
-                            <div class="avatar avatar-md"><img class="avatar-img" src="/images/3.jpg" alt="user@email.com"><span class="avatar-status bg-warning"></span></div>
+                            <div class="avatar avatar-md"><img class="avatar-img" src="/images/admin/3.jpg" alt="user@email.com"><span class="avatar-status bg-warning"></span></div>
                           </td>
                           <td>
                             <div>Quintin Ed</div>
@@ -895,7 +895,7 @@
                         </tr>
                         <tr class="align-middle">
                           <td class="text-center">
-                            <div class="avatar avatar-md"><img class="avatar-img" src="/images/4.jpg" alt="user@email.com"><span class="avatar-status bg-secondary"></span></div>
+                            <div class="avatar avatar-md"><img class="avatar-img" src="/images/admin/4.jpg" alt="user@email.com"><span class="avatar-status bg-secondary"></span></div>
                           </td>
                           <td>
                             <div>Enéas Kwadwo</div>
@@ -939,7 +939,7 @@
                         </tr>
                         <tr class="align-middle">
                           <td class="text-center">
-                            <div class="avatar avatar-md"><img class="avatar-img" src="/images/5.jpg" alt="user@email.com"><span class="avatar-status bg-success"></span></div>
+                            <div class="avatar avatar-md"><img class="avatar-img" src="/images/admin/5.jpg" alt="user@email.com"><span class="avatar-status bg-success"></span></div>
                           </td>
                           <td>
                             <div>Agapetus Tadeáš</div>
@@ -983,7 +983,7 @@
                         </tr>
                         <tr class="align-middle">
                           <td class="text-center">
-                            <div class="avatar avatar-md"><img class="avatar-img" src="/images/6.jpg" alt="user@email.com"><span class="avatar-status bg-danger"></span></div>
+                            <div class="avatar avatar-md"><img class="avatar-img" src="/images/admin/6.jpg" alt="user@email.com"><span class="avatar-status bg-danger"></span></div>
                           </td>
                           <td>
                             <div>Friderik Dávid</div>
