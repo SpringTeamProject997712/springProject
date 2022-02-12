@@ -26,7 +26,7 @@ function check_id(){
 				document.getElementById('msg_checked_id').style.color = "blue";
 			}
 		},error:function(xhr, status, error){
-			alert("문제발생 : " + xhr + status + error)
+			alert("코드 : " + xhr.status + "\n메세지 : " + xhr.responseText + "\n에러 : " + error)
 		}
 	});
 }
