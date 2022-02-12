@@ -1,7 +1,7 @@
 /* stylelint-disable declaration-no-important, font-weight-notation, selector-no-qualifying-type, property-disallowed-list, scss/selector-no-redundant-nesting-selector */
-@import "@coreui/coreui/scss/functions";
-@import "@coreui/coreui/scss/variables";
-@import "@coreui/coreui/scss/mixins";
+@import "examples/functions";
+@import "examples/variables";
+@import "examples/mixins";
 
 .example {
   &:not(:first-child) {
