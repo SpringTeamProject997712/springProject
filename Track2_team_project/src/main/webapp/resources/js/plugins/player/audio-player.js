@@ -10,15 +10,15 @@ $(function() {
             cssSelectorAncestor: "#jp_container_1"
         }, [{
 			image : '../images/weekly/song1.jpg',	
-            title: "Cro Man",
-            artist: "Mushroom Records",
-            mp3: "../upload/Rewind.mp3",
+            title: "RE:Wind",
+            artist: "이세계 아이돌",
+            mp3: "../music/Rewind.mp3",
 			option : myPlayListOtion	
         }, {
 			image : '../images/weekly/song2.jpg',	
             title: "Your Face",
             artist: "Ministry",
-            mp3: "file:///C:/upload/2022/02/11/Rewind.mp3",
+            mp3: "../upload/2022/02/11/Rewind.mp3",
 			option : myPlayListOtion
         }], {
             swfPath: "js/plugins",
