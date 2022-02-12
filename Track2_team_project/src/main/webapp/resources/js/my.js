@@ -18,6 +18,7 @@ $("#joinForm_id").on("blur",function(){ //아이디 입력창에서 blur할때�
 		url:"member/checkId?id="+id,
 		success:function(data){
 			console.log(data);
+			console.log(typeof data);
 			if(data == 1){
 				$("#msg_checked_id");
 				$("#msg_checked_id").text("중복 아이디입니다");
