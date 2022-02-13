@@ -290,8 +290,8 @@
 	                            </div>
 	                            <div class="remember_checkbox">
 	                            	<label>ログイン情報キープ
-																	<input type="checkbox">
-																	<span class="checkmark" id="saveBtn"></span>
+																	<input type="checkbox" id="saveBtn">
+																	<span class="checkmark"></span>
 																</label>
 	                            </div>
 	                            <a href="javascript:go_login()" class="ms_btn">ログイン</a>

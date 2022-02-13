@@ -9,6 +9,7 @@ function go_login() {                            //로그인
 		document.loginForm.password.focus();
 		return false;
 	}else if(idChk){ //체크박스에 체크 되어있으면 아이디 저장 쿠키(7일) 넣기
+		console.log("쿠키 넣기 가동");
 		setCookie("Cookie_mail", document.loginForm.username.value, 7); 
 	}else{ //안돼있으면 아이디 저장 쿠키 삭제하기
 		deleteCookie("Cookie_mail"); 
