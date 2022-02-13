@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-	<%@include file="../admin_header.jsp" %>
+<%@include file="../admin_header.jsp" %>
 	<div class="body flex-grow-1 px-3">
         <div class="container-lg">
           <div class="callout callout-info bg-white">CoreUI List group has been created as an extension of Bootstrap List group. List group is delivered with some new features, variants, and unique design that matches CoreUI Design System requirements.<br><br>For more information please visit our official

@@ -38,9 +38,12 @@ public class AdminController {
 	
 	
 	//템플릿 파악용 컨트롤러
-	@GetMapping("admin/base/list_group")
+	@GetMapping("admin/base/list-group")
 	public void viewList_group() {
 		
 	}
-	
+	@GetMapping("admin/base/tables")
+	public void viewTables() {
+		
+	}
 }
