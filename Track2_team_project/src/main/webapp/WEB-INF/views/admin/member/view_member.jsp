@@ -20,7 +20,8 @@
                   </li>
                 </ul> -->
                 <div class="tab-content rounded-bottom">
-                	<form name="privacyForm" method="post" action="/member/updateMember" class="row g-3">
+                	<form name="privacyForm" method="post" class="row g-3">
+                		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 									  <div class="col-md-6">
 									    <label class="form-label" for="member_id">ID</label>
 									    <input class="form-control" name="id" id="member_id" type="text" value="${member.id}" readonly="readonly">
@@ -68,7 +69,7 @@
 									    </div> -->
 									  </div>
 									  <div class="col-12">
-									    <button class="btn btn-primary" type="submit">수정하기</button>
+									    <button class="btn btn-primary" type="button" onclick="go_update()">수정하기</button>
 									  </div>
 									</form>
                 </div>

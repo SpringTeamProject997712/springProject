@@ -41,6 +41,7 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
+	//이 아이디가 이미 등록된 아이디인가
 	@ResponseBody
 	@GetMapping(value = "/checkId")
 	public String checkId(String id) {
@@ -51,7 +52,8 @@ public class MemberController {
 		return Integer.toString(result);
 	}
 	
-	@PostMapping("/member/updateMember")
+	//멤버수정
+	@PostMapping("/updateMember")
 	public String updateMember(MemberVO mvo) {
 		service.updateMember(mvo);
 		return "/admin/view_member?id="+mvo.getId();

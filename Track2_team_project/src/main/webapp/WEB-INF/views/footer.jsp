@@ -243,8 +243,8 @@
 	                            <div class="form-group">
 	                                <input type="password" name="pw" placeholder="パスワード入力" class="form-control">
 	                                <span class="form_icon">
-										<i class="fa_icon form-lock" aria-hidden="true"></i>
-									</span>
+																		<i class="fa_icon form-lock" aria-hidden="true"></i>
+																	</span>
 	                            </div>
 	                            <div class="form-group">
 	                                <input type="password" name="pw2" placeholder="パスワード再入力" class="form-control">

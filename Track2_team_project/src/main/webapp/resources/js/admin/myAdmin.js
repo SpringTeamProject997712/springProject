@@ -1,5 +1,4 @@
 
-
 function findAddr(){ //우편번호 찾기
 	new daum.Postcode({
         oncomplete: function(data) {
@@ -23,3 +22,11 @@ function findAddr(){ //우편번호 찾기
     }).open();
 }
 
+function go_update(){
+	let form = document.privacyForm;
+	form.action= "/member/updateMember";
+	form.submit();
+
+
+
+}
