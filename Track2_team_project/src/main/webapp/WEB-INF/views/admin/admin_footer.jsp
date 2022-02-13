@@ -1,68 +1,22 @@
-    	<div class="footer-copyright-area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="footer-copy-right">
-                            <p>Copyright © 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<footer class="footer">
+        <div><a href="https://coreui.io">CoreUI </a><a href="https://coreui.io">Bootstrap Admin Template</a> &copy; 2021 creativeLabs.</div>
+        <div class="ms-auto">Powered by&nbsp;<a href="https://coreui.io/bootstrap/ui-components/">CoreUI UI Components</a></div>
+      </footer>
     </div>
-    <!-- jquery
-		============================================ -->
-    <script src="/resources/js/admin/vendor/jquery-1.12.4.min.js"></script>
-    <!-- bootstrap JS
-		============================================ -->
-    <script src="/resources/js/admin/bootstrap.min.js"></script>
-    <!-- wow JS
-		============================================ -->
-    <script src="/resources/js/admin/wow.min.js"></script>
-    <!-- price-slider JS
-		============================================ -->
-    <script src="/resources/js/admin/jquery-price-slider.js"></script>
-    <!-- meanmenu JS
-		============================================ -->
-    <script src="/resources/js/admin/jquery.meanmenu.js"></script>
-    <!-- owl.carousel JS
-		============================================ -->
-    <script src="/resources/js/admin/owl.carousel.min.js"></script>
-    <!-- sticky JS
-		============================================ -->
-    <script src="/resources/js/admin/jquery.sticky.js"></script>
-    <!-- scrollUp JS
-		============================================ -->
-    <script src="/resources/js/admin/jquery.scrollUp.min.js"></script>
-    <!-- mCustomScrollbar JS
-		============================================ -->
-    <script src="/resources/js/admin/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="/resources/js/admin/scrollbar/mCustomScrollbar-active.js"></script>
-    <!-- metisMenu JS
-		============================================ -->
-    <script src="/resources/js/admin/metisMenu/metisMenu.min.js"></script>
-    <script src="/resources/js/admin/metisMenu/metisMenu-active.js"></script>
-    <!-- sparkline JS
-		============================================ -->
-    <script src="/resources/js/admin/sparkline/jquery.sparkline.min.js"></script>
-    <script src="/resources/js/admin/sparkline/jquery.charts-sparkline.js"></script>
-    <!-- calendar JS
-		============================================ -->
-    <script src="/resources/js/admin/calendar/moment.min.js"></script>
-    <script src="/resources/js/admin/calendar/fullcalendar.min.js"></script>
-    <script src="/resources/js/admin/calendar/fullcalendar-active.js"></script>
-	<!-- float JS
-		============================================ -->
-    <script src="/resources/js/admin/flot/jquery.flot.js"></script>
-    <script src="/resources/js/admin/flot/jquery.flot.resize.js"></script>
-    <script src="/resources/js/admin/flot/curvedLines.js"></script>
-    <script src="/resources/js/admin/flot/flot-active.js"></script>
-    <!-- plugins JS
-		============================================ -->
-    <script src="/resources/js/admin/plugins.js"></script>
-    <!-- main JS
-		============================================ -->
+    <!-- CoreUI and necessary plugins-->
+    <script src="/resources/js/admin/coreui.bundle.min.js"></script>
+    <script src="/resources/js/admin/simplebar.min.js"></script>
+    <!-- We use those scripts to show code examples, you should remove them in your application.-->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/unescaped-markup/prism-unescaped-markup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
+    <!-- Plugins and scripts required by this view-->
+    <script src="/resources/js/admin/chart.min.js"></script>
+    <script src="/resources/js/admin/coreui-chartjs.js"></script>
+    <script src="/resources/js/admin/coreui-utils.js"></script>
     <script src="/resources/js/admin/main.js"></script>
-</body>
-
+    <script> 
+    </script>
+  </body>
 </html>
