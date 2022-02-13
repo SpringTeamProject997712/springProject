@@ -420,4 +420,4 @@
       </div>
       
 
-<%@include file="../admin_header.jsp"%>
+<%@include file="../admin_footer.jsp"%>

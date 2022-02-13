@@ -111,13 +111,13 @@
             <li class="nav-item"><a class="nav-link" href="base/carousel.html"><span class="nav-icon"></span> Carousel</a></li>
             <li class="nav-item"><a class="nav-link" href="base/collapse.html"><span class="nav-icon"></span> Collapse</a></li>
             <li class="nav-item"><a class="nav-link" href="/admin/base/list-group"><span class="nav-icon"></span> List모음</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/navs.html"><span class="nav-icon"></span> Navs</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/pagination.html"><span class="nav-icon"></span> Pagination</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/base/navs"><span class="nav-icon"></span> Navs</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/base/pagination"><span class="nav-icon"></span> 페이징</a></li>
             <li class="nav-item"><a class="nav-link" href="base/placeholders.html"><span class="nav-icon"></span> Placeholders</a></li>
             <li class="nav-item"><a class="nav-link" href="base/popovers.html"><span class="nav-icon"></span> Popovers</a></li>
             <li class="nav-item"><a class="nav-link" href="base/progress.html"><span class="nav-icon"></span> Progress</a></li>
             <li class="nav-item"><a class="nav-link" href="base/scrollspy.html"><span class="nav-icon"></span> Scrollspy</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/spinners.html"><span class="nav-icon"></span> Spinners</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/base/spinners"><span class="nav-icon"></span> Spinner모음</a></li>
             <li class="nav-item"><a class="nav-link" href="/admin/base/tables"><span class="nav-icon"></span> Table모음</a></li>
             <li class="nav-item"><a class="nav-link" href="base/tabs.html"><span class="nav-icon"></span> Tabs</a></li>
             <li class="nav-item"><a class="nav-link" href="base/tooltips.html"><span class="nav-icon"></span> Tooltips</a></li>
