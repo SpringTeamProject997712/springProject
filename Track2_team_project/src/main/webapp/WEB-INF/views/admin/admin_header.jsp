@@ -107,8 +107,8 @@
           <ul class="nav-group-items">
             <li class="nav-item"><a class="nav-link" href="base/accordion.html"><span class="nav-icon"></span> Accordion</a></li>
             <li class="nav-item"><a class="nav-link" href="base/breadcrumb.html"><span class="nav-icon"></span> Breadcrumb</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/cards.html"><span class="nav-icon"></span> Cards</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/carousel.html"><span class="nav-icon"></span> Carousel</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/base/cards"><span class="nav-icon"></span> Card모음</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/base/carousel"><span class="nav-icon"></span> 캐러셀 모음</a></li>
             <li class="nav-item"><a class="nav-link" href="base/collapse.html"><span class="nav-icon"></span> Collapse</a></li>
             <li class="nav-item"><a class="nav-link" href="/admin/base/list-group"><span class="nav-icon"></span> List모음</a></li>
             <li class="nav-item"><a class="nav-link" href="/admin/base/navs"><span class="nav-icon"></span> Navs</a></li>
@@ -119,7 +119,7 @@
             <li class="nav-item"><a class="nav-link" href="base/scrollspy.html"><span class="nav-icon"></span> Scrollspy</a></li>
             <li class="nav-item"><a class="nav-link" href="/admin/base/spinners"><span class="nav-icon"></span> Spinner모음</a></li>
             <li class="nav-item"><a class="nav-link" href="/admin/base/tables"><span class="nav-icon"></span> Table모음</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/tabs.html"><span class="nav-icon"></span> Tabs</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/base/tabs"><span class="nav-icon"></span> 탭 모음</a></li>
             <li class="nav-item"><a class="nav-link" href="base/tooltips.html"><span class="nav-icon"></span> Tooltips</a></li>
           </ul>
         </li>
