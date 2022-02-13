@@ -214,8 +214,8 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal">
-						<i class="fa_icon form_close"></i>
-					</button>
+											<i class="fa_icon form_close"></i>
+										</button>
                     <div class="modal-body">
                         <div class="ms_register_img">
                             <img src="../images/register_img.png" alt="" class="img-fluid" />
@@ -227,19 +227,18 @@
 	                            <div class="form-group">
 	                                <input type="text" name="name" placeholder="名前入力"class="form-control">
 	                                <span class="form_icon">
-										<i class="fa_icon form-user" aria-hidden="true"></i>
-									</span>
+																		<i class="fa_icon form-user" aria-hidden="true"></i>
+																	</span>
 	                            </div>
 	                            <div class="form-group">
 	                                <input type="text" name="id" id="joinForm_id" placeholder="メールアドレス入力" class="form-control">
 	                                <span class="form_icon">
-										<i class="fa_icon form-envelope" aria-hidden="true"></i>
-									</span>
+																		<i class="fa_icon form-envelope" aria-hidden="true"></i>
+																	</span>
 	                            </div>
 	                            <div class="form-group">
-	                                <span class="form_icon" id="msg_checked_id">
-										
-									</span>
+	                              <span class="form_icon" id="msg_checked_id">
+																</span>
 	                            </div>
 	                            <div class="form-group">
 	                                <input type="password" name="pw" placeholder="パスワード入力" class="form-control">
@@ -250,8 +249,8 @@
 	                            <div class="form-group">
 	                                <input type="password" name="pw2" placeholder="パスワード再入力" class="form-control">
 	                                <span class="form_icon">
-										<i class=" fa_icon form-lock" aria-hidden="true"></i>
-									</span>
+																		<i class=" fa_icon form-lock" aria-hidden="true"></i>
+																	</span>
 	                            </div>
 	                            <a href="javascript:go_join()" class="ms_btn">会員登録</a>
 	                            <p>すでにお持ちのアカウントがありますか？<a href="#myModal1" data-toggle="modal" class="ms_modal hideCurrentModel">ログイン</a></p>
@@ -267,8 +266,8 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal">
-						<i class="fa_icon form_close"></i>
-					</button>
+											<i class="fa_icon form_close"></i>
+										</button>
                     <div class="modal-body">
                         <div class="ms_register_img">
                             <img src="../images/register_img.png" alt="" class="img-fluid" />
@@ -278,22 +277,22 @@
                             <form action="/login" method="post" name="loginForm">
                             	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 	                            <div class="form-group">
-	                                <input type="text" name="username" placeholder="メールアドレス入力" class="form-control">
-	                                <span class="form_icon">
-										<i class="fa_icon form-envelope" aria-hidden="true"></i>
-									</span>
+	                              <input type="text" name="username" placeholder="メールアドレス入力" class="form-control">
+	                              <span class="form_icon">
+																	<i class="fa_icon form-envelope" aria-hidden="true"></i>
+																</span>
 	                            </div>
 	                            <div class="form-group">
-	                                <input type="password" name="password" placeholder="パスワード入力" class="form-control">
-	                                <span class="form_icon">
-										<i class="fa_icon form-lock" aria-hidden="true"></i>
-									</span>
+	                              <input type="password" name="password" placeholder="パスワード入力" class="form-control">
+	                              <span class="form_icon">
+																	<i class="fa_icon form-lock" aria-hidden="true"></i>
+																</span>
 	                            </div>
 	                            <div class="remember_checkbox">
 	                            	<label>ログイン情報キープ
-										<input type="checkbox">
-										<span class="checkmark"></span>
-									</label>
+																	<input type="checkbox">
+																	<span class="checkmark" id="saveBtn"></span>
+																</label>
 	                            </div>
 	                            <a href="javascript:go_login()" class="ms_btn">ログイン</a>
 	                            <div class="popup_forgot">
