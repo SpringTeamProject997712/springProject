@@ -52,7 +52,7 @@ public class AdminController {
 	}
 	
 	@GetMapping("/member/view_member")//맴버관리 - 멤버 리스트 보기
-	public void viewMemberDetail(Model model, @RequestBody String id ) {
+	public void viewMemberDetail(Model model, String id ) {
 		MemberVO member = mService.viewMember(id);
 		model.addAttribute("member",member);
 	}
