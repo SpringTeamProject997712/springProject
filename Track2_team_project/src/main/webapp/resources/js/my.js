@@ -41,7 +41,7 @@ function getCookie(cookieName) {
 function setCookie(cookieName, value, exdays){ //쿠키 이름, 쿠키 값, 쿠키 날짜(일수)로 쿠키 넣기
 	var exdate = new Date(); 
 	exdate.setDate(exdate.getDate() + exdays); 
-	var cookieValue = escape(value) + ((exdays==null) ? "" : "\; expires=" + exdate.toGMTString()); 
+	var cookieValue = escape(value) + ((exdays==null) ? "" : "expires=" + exdate.toGMTString()); 
 	document.cookie = cookieName + "=" + cookieValue; 
 } //쿠키에 아이디 저장하기
 
