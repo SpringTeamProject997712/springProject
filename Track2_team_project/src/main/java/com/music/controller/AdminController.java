@@ -12,6 +12,7 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.music.domain.MemberVO;
@@ -43,11 +44,17 @@ public class AdminController {
 		return "redirect:/";
 	}
 	
-	@GetMapping("/member/manageMember")//맴버관리 - 멤버 리스트 보기
+	@GetMapping("/member/manage_member")//맴버관리 - 멤버 리스트 보기
 	public void viewManageMember(Model model) {
 		List<MemberVO> mlist = mService.viewMemberList();
 		log.info(mlist);
 		model.addAttribute("memberList", mlist);
+	}
+	
+	@GetMapping("/member/view_member")//맴버관리 - 멤버 리스트 보기
+	public void viewMemberDetail(Model model, @RequestBody String id ) {
+		MemberVO member = mService.viewMember(id);
+		model.addAttribute("member",member);
 	}
 	
 	
@@ -82,7 +89,7 @@ public class AdminController {
 	@GetMapping("/forms/select")
 	public void viewSelect() {
 	}
-	@GetMapping("/buttons/drodowns")
+	@GetMapping("/buttons/dropdowns")
 	public void viewDrodowns() {
 	}
 	@GetMapping("/buttons/buttons")

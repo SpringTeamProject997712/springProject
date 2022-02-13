@@ -23,7 +23,7 @@
                 </ul> -->
                 <div class="tab-content rounded-bottom">
                   <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-687">
-                    <table class="table">
+                    <table class="table dropdown">
                       <thead>
                         <tr>
                           <th scope="col">아이디(이메일)</th>
@@ -32,6 +32,7 @@
                           <th scope="col">권한</th>
                           <th scope="col">가입일</th>
                           <th scope="col">상태</th>
+                          <th scope="col">기능</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -47,6 +48,20 @@
 	                          </td>
 	                          <td><fmt:formatDate value="${mlist.regdate}" pattern="yyyy-MM-dd"/></td>
 	                          <td>${mlist.active}</td>
+	                          <td>
+	                          	<div class="dropdown">
+															  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">보기</button>
+															  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+															    <li><a class="dropdown-item" href="#">세부정보 조회 /수정</a></li>
+															    <li><a class="dropdown-item" href="#">Another action</a></li>
+															    <li><a class="dropdown-item" href="#">Something else here</a></li>
+															    <li>
+															      <hr class="dropdown-divider">
+															    </li>
+															    <li><a class="dropdown-item" href="#">Separated link</a></li>
+															  </ul>
+															</div>
+	                          </td>
                         	</tr>
                         </c:forEach>
                       </tbody>
