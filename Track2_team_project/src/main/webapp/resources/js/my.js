@@ -38,8 +38,6 @@ function getCookie(cookieName) {
 		return unescape(cookieValue); 
 	}
 
-출처: https://hankong.tistory.com/20 [DailyKong]
-
 function setCookie(cookieName, value, exdays){ //쿠키 이름, 쿠키 값, 쿠키 날짜(일수)로 쿠키 넣기
 	var exdate = new Date(); 
 	exdate.setDate(exdate.getDate() + exdays); 
