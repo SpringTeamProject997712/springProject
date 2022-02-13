@@ -52,7 +52,7 @@
 	                          	<div class="dropdown">
 															  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">보기</button>
 															  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-															    <li><a class="dropdown-item" href="/admin/member/view_member">세부정보 조회 /수정</a></li>
+															    <li><a class="dropdown-item" href="/admin/member/view_member?id=${mlist.id}">세부정보 조회 /수정</a></li>
 															    <li><a class="dropdown-item" href="#">Another action</a></li>
 															    <li><a class="dropdown-item" href="#">Something else here</a></li>
 															    <li>
