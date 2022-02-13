@@ -51,6 +51,10 @@ public class MemberController {
 		return Integer.toString(result);
 	}
 	
-	
+	@PostMapping("/member/updateMember")
+	public String updateMember(MemberVO mvo) {
+		service.updateMember(mvo);
+		return "/admin/view_member?id="+mvo.getId();
+	}
 	
 }

@@ -28,7 +28,6 @@ public class MemberServiceImpl implements MemberService {
 		if(joinResult == authResult && joinResult > 0) {
 			result=1;
 		}
-		
 		return result;
 	}
 	
@@ -49,5 +48,11 @@ public class MemberServiceImpl implements MemberService {
 		List<MemberVO> mlist = mapper.viewMemberList();
 		log.info("멤버 리스트 : "+mlist);
 		return mlist;
+	}
+	
+	@Override
+	public int updateMember(MemberVO mvo) {
+		int result=mapper.updateMember(mvo);
+		return result;
 	}
 }

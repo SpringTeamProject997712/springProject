@@ -45,4 +45,8 @@
 	<select id="checkMemberWithId" resultType="int">
 		select count(*) from member_m where id = #{id}
 	</select>
+	
+	<update id="updateMember">
+		update member_m set name=#{name}, address1=#{address1}, address2=#{address2}, active=#{active} where id=#{id}
+	</update>
 </mapper>

@@ -754,3 +754,10 @@
         </div>
       </div>
       <%@include file="admin_footer.jsp"%>
+       <!-- Plugins and scripts required by this view-->
+    <script src="/resources/js/admin/chart.min.js"></script>
+    <script src="/resources/js/admin/coreui-chartjs.js"></script>
+    <script src="/resources/js/admin/coreui-utils.js"></script>
+    <script src="/resources/js/admin/main.js"></script>
+    <script> 
+    </script>

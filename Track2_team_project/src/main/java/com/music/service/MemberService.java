@@ -17,4 +17,7 @@ public interface MemberService {
 	
 	//멤버 리스트 조회
 	public List<MemberVO> viewMemberList();
+	
+	//멤버 정보 업데이트
+	public int updateMember(MemberVO mvo);
 }
