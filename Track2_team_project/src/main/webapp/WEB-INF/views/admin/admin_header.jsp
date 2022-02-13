@@ -93,7 +93,7 @@
               <use xlink:href="/images/svg/free.svg#cil-puzzle"></use>
             </svg> Base</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="base/accordion.html"><span class="nav-icon"></span> 유저관리</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/member/manageMember"><span class="nav-icon"></span> 유저관리</a></li>
             
           </ul>
         </li>

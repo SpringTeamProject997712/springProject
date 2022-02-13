@@ -3,9 +3,6 @@
 <%@include file="../admin_header.jsp"%>
 	<div class="body flex-grow-1 px-3">
         <div class="container-lg">
-          <div class="callout callout-info bg-white">CoreUI Table has been created as an extension of Bootstrap Table. Table is delivered with some new features, variants, and unique design that matches CoreUI Design System requirements.<br><br>For more information please visit our official
-            <a href="https://coreui.io/docs/4.1/content/tables/" target="_blank">documentation</a>.
-          </div>
           <div class="car"></div>
           <div class="card mb-4">
             <div class="card-header"><strong>Tables</strong><span class="small ms-1">Basic example</span></div>
@@ -15,11 +12,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-687" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-687" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -99,11 +96,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-754" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-754" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -237,11 +234,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-337" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-337" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -316,11 +313,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-437" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-437" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -394,11 +391,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-712" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-712" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -478,11 +475,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-85" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-85" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -556,11 +553,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-553" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-553" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -635,11 +632,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-1119" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-1119" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -719,11 +716,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-248" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-248" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -797,11 +794,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-138" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-138" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -881,11 +878,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-828" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-828" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -960,11 +957,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-505" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-505" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -1044,11 +1041,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-887" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-887" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -1122,11 +1119,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-295" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-295" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -1206,11 +1203,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-1081" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-1081" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -1284,11 +1281,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-1246" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-1246" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -1368,11 +1365,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-707" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-707" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -1458,11 +1455,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-804" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-804" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -1592,11 +1589,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-643" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-643" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -1672,11 +1669,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-635" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-635" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -1757,11 +1754,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-479" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-479" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -1859,11 +1856,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-1101" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-1101" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">
@@ -1940,11 +1937,11 @@
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-436" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-media-play"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-media-play"></use>
                       </svg>Preview</a></li>
                   <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#code-436" role="tab">
                       <svg class="icon me-2">
-                        <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-code"></use>
+                        <use xlink:href="/images/svg/free.svg#cil-code"></use>
                       </svg>Code</a></li>
                 </ul>
                 <div class="tab-content rounded-bottom">

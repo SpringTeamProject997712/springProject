@@ -4,7 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
@@ -35,19 +34,22 @@ public class AdminController {
 		return "redirect:/";
 	}
 	
-	@GetMapping("/manageMember")//맴버관리
+	@GetMapping("/member/manageMember")//맴버관리
 	public void viewManageMember() {
 	}
 	
 	
-	//
 //=====================================템플릿 파악용 컨트롤러====================================
 	@GetMapping("/base/list-group")
 	public void viewList_group() {
-		
 	}
 	@GetMapping("/base/tables")
 	public void viewTables() {
-		
+	}
+	@GetMapping("/base/pagination")
+	public void viewPaging() {
+	}
+	@GetMapping("/base/spinners")
+	public void viewSpinners() {
 	}
 }
