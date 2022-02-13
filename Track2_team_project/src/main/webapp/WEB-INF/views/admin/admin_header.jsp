@@ -128,9 +128,9 @@
               <use xlink:href="/images/svg/free.svg#cil-cursor"></use>
             </svg> Buttons</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="buttons/buttons.html"><span class="nav-icon"></span> Buttons</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/buttons/buttons"><span class="nav-icon"></span> Buttons</a></li>
             <li class="nav-item"><a class="nav-link" href="buttons/button-group.html"><span class="nav-icon"></span> Buttons Group</a></li>
-            <li class="nav-item"><a class="nav-link" href="buttons/dropdowns.html"><span class="nav-icon"></span> Dropdowns</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/buttons/dropdowns"><span class="nav-icon"></span> Dropdowns</a></li>
           </ul>
         </li>
         <li class="nav-item"><a class="nav-link" href="charts.html">

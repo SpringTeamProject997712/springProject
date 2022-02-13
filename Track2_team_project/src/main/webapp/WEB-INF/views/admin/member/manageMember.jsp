@@ -7,7 +7,12 @@
           <div class="card mb-4">
             <div class="card-header"><strong>유저 관리</strong><span class="small ms-1">유저 목록</span></div>
             <div class="card-body">
-              <p class="text-medium-emphasis small">멤버관리 여기에 검색창 넣기</p>
+              <div class="text-medium-emphasis small">
+	              <div class="input-group" style="width:200px;">
+								  <input class="form-control" type="text" placeholder="search ID" aria-label="아이디 검색">
+								  <button class="btn btn-outline-secondary" type="button" style="color:white; background:grey">검색</button>
+								</div>
+							</div>
               <div class="example">
                <!--  <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-687" role="tab">

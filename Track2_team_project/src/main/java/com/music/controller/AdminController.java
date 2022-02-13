@@ -43,7 +43,7 @@ public class AdminController {
 		return "redirect:/";
 	}
 	
-	@GetMapping("/member/manageMember")//맴버관리
+	@GetMapping("/member/manageMember")//맴버관리 - 멤버 리스트 보기
 	public void viewManageMember(Model model) {
 		List<MemberVO> mlist = mService.viewMemberList();
 		log.info(mlist);
@@ -72,5 +72,20 @@ public class AdminController {
 	}
 	@GetMapping("/base/cards")
 	public void viewCards() {
+	}
+	@GetMapping("/forms/input-group")
+	public void viewInput_group() {
+	}
+	@GetMapping("/forms/layout")
+	public void viewLayout() {
+	}
+	@GetMapping("/forms/select")
+	public void viewSelect() {
+	}
+	@GetMapping("/buttons/drodowns")
+	public void viewDrodowns() {
+	}
+	@GetMapping("/buttons/buttons")
+	public void viewButtons() {
 	}
 }
