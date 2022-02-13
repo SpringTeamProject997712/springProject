@@ -86,7 +86,20 @@
             <svg class="nav-icon">
               <use xlink:href="/images/svg/free.svg#cil-pencil"></use>
             </svg> Typography</a></li>
-        <li class="nav-title">Components</li>
+        <!-- 어드민 만들기 좌측 메뉴 -->
+        <li class="nav-title">내가 만드는 페이지</li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+            <svg class="nav-icon">
+              <use xlink:href="/images/svg/free.svg#cil-puzzle"></use>
+            </svg> Base</a>
+          <ul class="nav-group-items">
+            <li class="nav-item"><a class="nav-link" href="base/accordion.html"><span class="nav-icon"></span> 유저관리</a></li>
+            
+          </ul>
+        </li>
+        
+        <!-- 이 템플릿에서 여기 어떤 컴포넌트가 있는지 설명하려고 만든 페이지 -->
+        <li class="nav-title">다른 사람이 만들어놓은 페이지</li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
               <use xlink:href="/images/svg/free.svg#cil-puzzle"></use>
