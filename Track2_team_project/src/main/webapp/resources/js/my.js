@@ -21,7 +21,7 @@ $(function(){ // document가 다 로딩된 후 쿠키 있는지 확인해서 아
 	var mail = getCookie("Cookie_mail");
 	console.log("쿠-키  : " + mail);
 	if(mail){ 
-		document.loginForm.username.value == mail; 
+		document.loginForm.username.value = mail; 
 		$("#saveBtn").attr("checked", true); 
 	} 
 });
