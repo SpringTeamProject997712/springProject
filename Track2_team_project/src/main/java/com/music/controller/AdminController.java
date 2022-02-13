@@ -34,4 +34,13 @@ public class AdminController {
 		}		
 		return "redirect:/";
 	}
+	
+	
+	
+	//템플릿 파악용 컨트롤러
+	@GetMapping("admin/base/list_group")
+	public void viewList_group() {
+		
+	}
+	
 }
