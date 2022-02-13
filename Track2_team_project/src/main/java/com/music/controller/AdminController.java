@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import lombok.extern.log4j.Log4j;
 
 @Controller
-@RequestMapping("/admin/**")
+@RequestMapping("/admin/*")
 @Log4j
 public class AdminController {
 
 	
-	@GetMapping("admin/admin") //어드민 페이지로 가기 (admin 로그인 첫화면)
+	@GetMapping("/admin") //어드민 페이지로 가기 (admin 로그인 첫화면)
 	public void adminIndex() {
 		
 	}
 	
-	@GetMapping("admin/adminLogout")//
+	@GetMapping("/adminLogout")// 로그아웃
 	public String logOut(HttpServletRequest request, HttpServletResponse response) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		log.info(auth);
@@ -35,14 +35,18 @@ public class AdminController {
 		return "redirect:/";
 	}
 	
+	@GetMapping("/manageMember")//맴버관리
+	public void viewManageMember() {
+	}
 	
 	
-	//템플릿 파악용 컨트롤러
-	@GetMapping("admin/base/list-group")
+	//
+//=====================================템플릿 파악용 컨트롤러====================================
+	@GetMapping("/base/list-group")
 	public void viewList_group() {
 		
 	}
-	@GetMapping("admin/base/tables")
+	@GetMapping("/base/tables")
 	public void viewTables() {
 		
 	}
