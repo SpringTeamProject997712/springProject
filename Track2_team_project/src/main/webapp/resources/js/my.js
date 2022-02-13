@@ -17,7 +17,8 @@ function go_login() {                            //로그인
 }
 
 $(function(){ // document가 다 로딩된 후 쿠키 있는지 확인해서 아이디 넣기
-	var mail = getCookie("Cookie_mail");  
+	var mail = getCookie("Cookie_mail");
+	console.log("쿠-키  : " + mail);
 	if(mail){ 
 		document.loginForm.username.value == mail; 
 		$("#saveBtn").attr("checked", true); 
@@ -48,8 +49,7 @@ function setCookie(cookieName, value, exdays){ //쿠키 이름, 쿠키 값, 쿠�
 function deleteCookie(cookieName){ //이름이 맞는 쿠키 삭제하기
 	var expireDate = new Date(); 
 	expireDate.setDate(expireDate.getDate() - 1); 
-	document.cookie = cookieName + "= " + "; 
-	expires=" + expireDate.toGMTString();
+	document.cookie = cookieName + "= " + "\; expires=" + expireDate.toGMTString();
 }
 
 $("#joinForm_id").on("blur",function(){ //아이디 입력창에서 blur할때마다 아이디 체크함
