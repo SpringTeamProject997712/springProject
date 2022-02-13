@@ -47,7 +47,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public List<MemberVO> viewMemberList() {
 		List<MemberVO> mlist = mapper.viewMemberList();
-		log.info(mlist);
+		log.info("멤버 리스트 : "+mlist);
 		return mlist;
 	}
 }
