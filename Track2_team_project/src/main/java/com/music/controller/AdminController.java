@@ -1,5 +1,7 @@
 package com.music.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.music.domain.MemberVO;
 import com.music.service.MemberService;
 
 import lombok.Setter;
@@ -26,8 +29,7 @@ public class AdminController {
 	MemberService mService;
 	
 	@GetMapping("/admin") //어드민 페이지로 가기 (admin 로그인 첫화면)
-	public void adminIndex(Model model) {
-		model.addAttribute("memberList", mService.viewMemberList());
+	public void adminIndex() {
 	}
 	
 	@GetMapping("/adminLogout")// 로그아웃
@@ -42,8 +44,10 @@ public class AdminController {
 	}
 	
 	@GetMapping("/member/manageMember")//맴버관리
-	public void viewManageMember() {
-		
+	public void viewManageMember(Model model) {
+		List<MemberVO> mlist = mService.viewMemberList();
+		log.info(mlist);
+		model.addAttribute("memberList", mlist);
 	}
 	
 	

@@ -143,12 +143,12 @@
             </svg> Forms</a>
           <ul class="nav-group-items">
             <li class="nav-item"><a class="nav-link" href="forms/form-control.html"> Form Control</a></li>
-            <li class="nav-item"><a class="nav-link" href="forms/select.html"> Select</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/forms/select"> Select</a></li>
             <li class="nav-item"><a class="nav-link" href="forms/checks-radios.html"> Checks and radios</a></li>
             <li class="nav-item"><a class="nav-link" href="forms/range.html"> Range</a></li>
-            <li class="nav-item"><a class="nav-link" href="forms/input-group.html"> Input group</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/forms/input-group"> Input group</a></li>
             <li class="nav-item"><a class="nav-link" href="forms/floating-labels.html"> Floating labels</a></li>
-            <li class="nav-item"><a class="nav-link" href="forms/layout.html"> Layout</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/forms/layout"> Layout</a></li>
             <li class="nav-item"><a class="nav-link" href="forms/validation.html"> Validation</a></li>
           </ul>
         </li>
