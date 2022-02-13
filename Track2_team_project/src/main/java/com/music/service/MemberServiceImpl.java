@@ -1,5 +1,7 @@
 package com.music.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,7 +9,9 @@ import com.music.domain.MemberVO;
 import com.music.mapper.MemberMapper;
 
 import lombok.Setter;
+import lombok.extern.log4j.Log4j;
 
+@Log4j
 @Service
 public class MemberServiceImpl implements MemberService {
 
@@ -38,5 +42,12 @@ public class MemberServiceImpl implements MemberService {
 		int result = 0;
 		result=mapper.checkMemberWithId(id);
 		return result;
+	}
+	
+	@Override
+	public List<MemberVO> viewMemberList() {
+		List<MemberVO> mlist = mapper.viewMemberList();
+		log.info(mlist);
+		return mlist;
 	}
 }
