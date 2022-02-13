@@ -10,14 +10,14 @@
                   <div>
                     <div class="fs-4 fw-semibold">26K <span class="fs-6 fw-normal">(-12.4%
                         <svg class="icon">
-                          <use xlink:href="/images/svg/free.svg#cil-arrow-bottom"></use>
+                          <use href="/images/svg/free.svg#cil-arrow-bottom"></use>
                         </svg>)</span></div>
                     <div>Users</div>
                   </div>
                   <div class="dropdown">
                     <button class="btn btn-transparent text-white p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <svg class="icon">
-                        <use xlink:href="/images/svg/free.svg#cil-options"></use>
+                        <use href="/images/svg/free.svg#cil-options"></use>
                       </svg>
                     </button>
                     <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
@@ -35,14 +35,14 @@
                   <div>
                     <div class="fs-4 fw-semibold">$6.200 <span class="fs-6 fw-normal">(40.9%
                         <svg class="icon">
-                          <use xlink:href="/images/svg/free.svg#cil-arrow-top"></use>
+                          <use href="/images/svg/free.svg#cil-arrow-top"></use>
                         </svg>)</span></div>
                     <div>Income</div>
                   </div>
                   <div class="dropdown">
                     <button class="btn btn-transparent text-white p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <svg class="icon">
-                        <use xlink:href="/images/svg/free.svg#cil-options"></use>
+                        <use href="/images/svg/free.svg#cil-options"></use>
                       </svg>
                     </button>
                     <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
@@ -60,14 +60,14 @@
                   <div>
                     <div class="fs-4 fw-semibold">2.49% <span class="fs-6 fw-normal">(84.7%
                         <svg class="icon">
-                          <use xlink:href="/images/svg/free.svg#cil-arrow-top"></use>
+                          <use href="/images/svg/free.svg#cil-arrow-top"></use>
                         </svg>)</span></div>
                     <div>Conversion Rate</div>
                   </div>
                   <div class="dropdown">
                     <button class="btn btn-transparent text-white p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <svg class="icon">
-                        <use xlink:href="/images/svg/free.svg#cil-options"></use>
+                        <use href="/images/svg/free.svg#cil-options"></use>
                       </svg>
                     </button>
                     <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
@@ -85,14 +85,14 @@
                   <div>
                     <div class="fs-4 fw-semibold">44K <span class="fs-6 fw-normal">(-23.6%
                         <svg class="icon">
-                          <use xlink:href="/images/svg/free.svg#cil-arrow-bottom"></use>
+                          <use href="/images/svg/free.svg#cil-arrow-bottom"></use>
                         </svg>)</span></div>
                     <div>Sessions</div>
                   </div>
                   <div class="dropdown">
                     <button class="btn btn-transparent text-white p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <svg class="icon">
-                        <use xlink:href="/images/svg/free.svg#cil-options"></use>
+                        <use href="/images/svg/free.svg#cil-options"></use>
                       </svg>
                     </button>
                     <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
@@ -124,7 +124,7 @@
                   </div>
                   <button class="btn btn-primary" type="button">
                     <svg class="icon">
-                      <use xlink:href="/images/svg/free.svg#cil-cloud-download"></use>
+                      <use href="/images/svg/free.svg#cil-cloud-download"></use>
                     </svg>
                   </button>
                 </div>
@@ -179,7 +179,7 @@
               <div class="card mb-4" style="--cui-card-cap-bg: #3b5998">
                 <div class="card-header position-relative d-flex justify-content-center align-items-center">
                   <svg class="icon icon-3xl text-white my-4">
-                    <use xlink:href="/images/svg/brand.svg#cib-facebook-f"></use>
+                    <use href="/images/svg/brand.svg#cib-facebook-f"></use>
                   </svg>
                   <div class="chart-wrapper position-absolute top-0 start-0 w-100 h-100">
                     <canvas id="social-box-chart-1" height="90"></canvas>
@@ -203,7 +203,7 @@
               <div class="card mb-4" style="--cui-card-cap-bg: #00aced">
                 <div class="card-header position-relative d-flex justify-content-center align-items-center">
                   <svg class="icon icon-3xl text-white my-4">
-                    <use xlink:href="/images/svg/brand.svg#cib-twitter"></use>
+                    <use href="/images/svg/brand.svg#cib-twitter"></use>
                   </svg>
                   <div class="chart-wrapper position-absolute top-0 start-0 w-100 h-100">
                     <canvas id="social-box-chart-2" height="90"></canvas>
@@ -227,7 +227,7 @@
               <div class="card mb-4" style="--cui-card-cap-bg: #4875b4">
                 <div class="card-header position-relative d-flex justify-content-center align-items-center">
                   <svg class="icon icon-3xl text-white my-4">
-                    <use xlink:href="/images/svg/brand.svg#cib-linkedin"></use>
+                    <use href="/images/svg/brand.svg#cib-linkedin"></use>
                   </svg>
                   <div class="chart-wrapper position-absolute top-0 start-0 w-100 h-100">
                     <canvas id="social-box-chart-3" height="90"></canvas>
@@ -371,7 +371,7 @@
                       <div class="progress-group">
                         <div class="progress-group-header">
                           <svg class="icon icon-lg me-2">
-                            <use xlink:href="/images/svg/free.svg#cil-user"></use>
+                            <use href="/images/svg/free.svg#cil-user"></use>
                           </svg>
                           <div>Male</div>
                           <div class="ms-auto fw-semibold">43%</div>
@@ -385,7 +385,7 @@
                       <div class="progress-group mb-5">
                         <div class="progress-group-header">
                           <svg class="icon icon-lg me-2">
-                            <use xlink:href="/images/svg/free.svg#cil-user-female"></use>
+                            <use href="/images/svg/free.svg#cil-user-female"></use>
                           </svg>
                           <div>Female</div>
                           <div class="ms-auto fw-semibold">37%</div>
@@ -399,7 +399,7 @@
                       <div class="progress-group">
                         <div class="progress-group-header">
                           <svg class="icon icon-lg me-2">
-                            <use xlink:href="/images/svg/brand.svg#cib-google"></use>
+                            <use href="/images/svg/brand.svg#cib-google"></use>
                           </svg>
                           <div>Organic Search</div>
                           <div class="ms-auto fw-semibold me-2">191.235</div>
@@ -414,7 +414,7 @@
                       <div class="progress-group">
                         <div class="progress-group-header">
                           <svg class="icon icon-lg me-2">
-                            <use xlink:href="/images/svg/brand.svg#cib-facebook-f"></use>
+                            <use href="/images/svg/brand.svg#cib-facebook-f"></use>
                           </svg>
                           <div>Facebook</div>
                           <div class="ms-auto fw-semibold me-2">51.223</div>
@@ -429,7 +429,7 @@
                       <div class="progress-group">
                         <div class="progress-group-header">
                           <svg class="icon icon-lg me-2">
-                            <use xlink:href="/images/svg/brand.svg#cib-twitter"></use>
+                            <use href="/images/svg/brand.svg#cib-twitter"></use>
                           </svg>
                           <div>Twitter</div>
                           <div class="ms-auto fw-semibold me-2">37.564</div>
@@ -444,7 +444,7 @@
                       <div class="progress-group">
                         <div class="progress-group-header">
                           <svg class="icon icon-lg me-2">
-                            <use xlink:href="/images/svg/brand.svg#cib-linkedin"></use>
+                            <use href="/images/svg/brand.svg#cib-linkedin"></use>
                           </svg>
                           <div>LinkedIn</div>
                           <div class="ms-auto fw-semibold me-2">27.319</div>
@@ -466,7 +466,7 @@
                         <tr class="align-middle">
                           <th class="text-center">
                             <svg class="icon">
-                              <use xlink:href="/images/svg/free.svg#cil-people"></use>
+                              <use href="/images/svg/free.svg#cil-people"></use>
                             </svg>
                           </th>
                           <th>User</th>
@@ -488,7 +488,7 @@
                           </td>
                           <td class="text-center">
                             <svg class="icon icon-xl">
-                              <use xlink:href="/images/svg/flag.svg#cif-us"></use>
+                              <use href="/images/svg/flag.svg#cif-us"></use>
                             </svg>
                           </td>
                           <td>
@@ -504,7 +504,7 @@
                           </td>
                           <td class="text-center">
                             <svg class="icon icon-xl">
-                              <use xlink:href="/images/svg/brand.svg#cib-cc-mastercard"></use>
+                              <use href="/images/svg/brand.svg#cib-cc-mastercard"></use>
                             </svg>
                           </td>
                           <td>
@@ -515,7 +515,7 @@
                             <div class="dropdown">
                               <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <svg class="icon">
-                                  <use xlink:href="/images/svg/free.svg#cil-options"></use>
+                                  <use href="/images/svg/free.svg#cil-options"></use>
                                 </svg>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Info</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item text-danger" href="#">Delete</a></div>
@@ -532,7 +532,7 @@
                           </td>
                           <td class="text-center">
                             <svg class="icon icon-xl">
-                              <use xlink:href="/images/svg/flag.svg#cif-br"></use>
+                              <use href="/images/svg/flag.svg#cif-br"></use>
                             </svg>
                           </td>
                           <td>
@@ -548,7 +548,7 @@
                           </td>
                           <td class="text-center">
                             <svg class="icon icon-xl">
-                              <use xlink:href="/images/svg/brand.svg#cib-cc-visa"></use>
+                              <use href="/images/svg/brand.svg#cib-cc-visa"></use>
                             </svg>
                           </td>
                           <td>
@@ -559,7 +559,7 @@
                             <div class="dropdown">
                               <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <svg class="icon">
-                                  <use xlink:href="/images/svg/free.svg#cil-options"></use>
+                                  <use href="/images/svg/free.svg#cil-options"></use>
                                 </svg>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Info</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item text-danger" href="#">Delete</a></div>
@@ -576,7 +576,7 @@
                           </td>
                           <td class="text-center">
                             <svg class="icon icon-xl">
-                              <use xlink:href="/images/svg/flag.svg#cif-in"></use>
+                              <use href="/images/svg/flag.svg#cif-in"></use>
                             </svg>
                           </td>
                           <td>
@@ -592,7 +592,7 @@
                           </td>
                           <td class="text-center">
                             <svg class="icon icon-xl">
-                              <use xlink:href="/images/svg/brand.svg#cib-cc-stripe"></use>
+                              <use href="/images/svg/brand.svg#cib-cc-stripe"></use>
                             </svg>
                           </td>
                           <td>
@@ -603,7 +603,7 @@
                             <div class="dropdown">
                               <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <svg class="icon">
-                                  <use xlink:href="/images/svg/free.svg#cil-options"></use>
+                                  <use href="/images/svg/free.svg#cil-options"></use>
                                 </svg>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Info</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item text-danger" href="#">Delete</a></div>
@@ -620,7 +620,7 @@
                           </td>
                           <td class="text-center">
                             <svg class="icon icon-xl">
-                              <use xlink:href="/images/svg/flag.svg#cif-fr"></use>
+                              <use href="/images/svg/flag.svg#cif-fr"></use>
                             </svg>
                           </td>
                           <td>
@@ -636,7 +636,7 @@
                           </td>
                           <td class="text-center">
                             <svg class="icon icon-xl">
-                              <use xlink:href="/images/svg/brand.svg#cib-cc-paypal"></use>
+                              <use href="/images/svg/brand.svg#cib-cc-paypal"></use>
                             </svg>
                           </td>
                           <td>
@@ -647,7 +647,7 @@
                             <div class="dropdown">
                               <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <svg class="icon">
-                                  <use xlink:href="/images/svg/free.svg#cil-options"></use>
+                                  <use href="/images/svg/free.svg#cil-options"></use>
                                 </svg>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Info</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item text-danger" href="#">Delete</a></div>
@@ -664,7 +664,7 @@
                           </td>
                           <td class="text-center">
                             <svg class="icon icon-xl">
-                              <use xlink:href="/images/svg/flag.svg#cif-es"></use>
+                              <use href="/images/svg/flag.svg#cif-es"></use>
                             </svg>
                           </td>
                           <td>
@@ -680,7 +680,7 @@
                           </td>
                           <td class="text-center">
                             <svg class="icon icon-xl">
-                              <use xlink:href="/images/svg/brand.svg#cib-cc-apple-pay"></use>
+                              <use href="/images/svg/brand.svg#cib-cc-apple-pay"></use>
                             </svg>
                           </td>
                           <td>
@@ -691,7 +691,7 @@
                             <div class="dropdown dropup">
                               <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <svg class="icon">
-                                  <use xlink:href="/images/svg/free.svg#cil-options"></use>
+                                  <use href="/images/svg/free.svg#cil-options"></use>
                                 </svg>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Info</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item text-danger" href="#">Delete</a></div>
@@ -708,7 +708,7 @@
                           </td>
                           <td class="text-center">
                             <svg class="icon icon-xl">
-                              <use xlink:href="/images/svg/flag.svg#cif-pl"></use>
+                              <use href="/images/svg/flag.svg#cif-pl"></use>
                             </svg>
                           </td>
                           <td>
@@ -724,7 +724,7 @@
                           </td>
                           <td class="text-center">
                             <svg class="icon icon-xl">
-                              <use xlink:href="/images/svg/brand.svg#cib-cc-amex"></use>
+                              <use href="/images/svg/brand.svg#cib-cc-amex"></use>
                             </svg>
                           </td>
                           <td>
@@ -735,7 +735,7 @@
                             <div class="dropdown dropup">
                               <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <svg class="icon">
-                                  <use xlink:href="/images/svg/free.svg#cil-options"></use>
+                                  <use href="/images/svg/free.svg#cil-options"></use>
                                 </svg>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Info</a><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item text-danger" href="#">Delete</a></div>
