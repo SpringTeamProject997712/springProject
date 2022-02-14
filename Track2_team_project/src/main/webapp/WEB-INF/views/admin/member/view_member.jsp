@@ -44,8 +44,8 @@
 									    <input class="form-control" name="address1" id="member_address1" type="text" value="${member.address1}">
 									  </div>
 									  <div class="col-12">
-									    <label class="form-label" for="inputAddress2">Address 2</label>
-									    <input class="form-control" name="address2" id="inputAddress2" type="text" value="${member.address2}">
+									    <label class="form-label" for="member_address2">Address 2</label>
+									    <input class="form-control" name="address3" id="member_address2" type="text" value="${member.address2}">
 									  </div>
 									  <div class="col-md-6">
 									    <label class="form-label" for="AuthList">AuthList</label>
