@@ -21,6 +21,14 @@
 		<result property="auth" column="auth"/>
 	</resultMap>
 	
+	<sql id="search_box">
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+			<if test="keyword != null">
+				keyword like '%'||#{keyword}||'%'
+			</if>
+		</trim>
+	</sql>
+	
 	<insert id="registMember">
 		insert into member_m (id,pw,nickname,name,phone,email,address1,address2)
 		values (#{id},#{pw},'임시',#{name},'임시','임시','임시','임시')
@@ -50,24 +58,15 @@
 						 address2, regdate, auth, rownum rn  
 				from member_m m LEFT OUTER JOIN member_auth_m auth
 				ON m.id = auth.id where 
-				
+		]]>
+		<include refid="search_box"></include>
+		<![CDATA[			
 					rownum <= #{amount} * #{pageNum}  order by regdate desc
 				) 
 			where rn > #{amount} * (#{pageNum}-1)
 		]]>
 	</select>
 	
-<!-- 	<select id="nextPage" resultType="com.hanulso.domain.NoticeVO">
-		<![CDATA[
-		select * from member_m where bno < #{bno} and rownum=1 order by bno desc
-		]]>
-	</select>
-	<select id="prevPage" resultType="com.hanulso.domain.NoticeVO">
-		<![CDATA[
-		select * from member_m where bno > #{bno} and rownum=1 order by bno asc
-		]]>
-	</select> -->
-
 	<select id="checkMemberWithId" resultType="int">
 		select count(*) from member_m where id = #{id}
 	</select>
