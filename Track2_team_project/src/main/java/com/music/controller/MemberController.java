@@ -3,8 +3,11 @@ package com.music.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 
 import com.music.domain.MemberVO;
 import com.music.service.MemberService;
@@ -23,9 +26,9 @@ public class MemberController {
 	@Setter(onMethod_ = @Autowired)
 	private PasswordEncoder pencoder; //패스워드 인코더
 	
+	//회원가입
 	@PostMapping("/join")
 	public String joinMember(MemberVO vo) {
-		
 		String inputPw = pencoder.encode(vo.getPw());
 		vo.setPw(inputPw);
 		log.info(vo);
@@ -37,4 +40,24 @@ public class MemberController {
 		}
 		return "redirect:/";
 	}
+	
+	//이 아이디가 이미 등록된 아이디인가
+	@ResponseBody
+	@GetMapping(value = "/checkId")
+	public String checkId(String id) {
+		int result = 0;
+		result= service.checkMemberWithId(id);
+		log.info(result);
+		
+		return Integer.toString(result);
+	}
+	
+	//멤버수정
+	@PostMapping("/updateMember")
+	public String updateMember(MemberVO mvo) {
+		service.updateMember(mvo);
+		
+		return "redirect:/admin/member/view_member?id="+mvo.getId();
+	}
+	
 }

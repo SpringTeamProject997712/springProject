@@ -35,5 +35,18 @@
 		ON m.id = auth.id
 		where m.id= #{id}
 	</select>
+	
+	<select id="viewMemberList" resultMap="memberTableMap">
+		select m.id as id, pw, name, nickname, active, phone, active, email, address1, address2, regdate, auth 
+		from member_m m LEFT OUTER JOIN member_auth_m auth
+		ON m.id = auth.id
+	</select>
 
+	<select id="checkMemberWithId" resultType="int">
+		select count(*) from member_m where id = #{id}
+	</select>
+	
+	<update id="updateMember">
+		update member_m set name=#{name}, address1=#{address1}, address2=#{address2}, active=#{active} where id=#{id}
+	</update>
 </mapper>

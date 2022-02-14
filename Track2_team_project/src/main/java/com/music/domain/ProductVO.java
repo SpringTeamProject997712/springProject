@@ -9,6 +9,5 @@ public class ProductVO {
 
 	private int pbno;
 	private String category;
-	
-	
+
 }

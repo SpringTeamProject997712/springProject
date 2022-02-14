@@ -15,6 +15,5 @@ public class AlbumVO {
 	private String image;
 	private Date regdate;
 	private int serial_no;
-	
-	
+
 }

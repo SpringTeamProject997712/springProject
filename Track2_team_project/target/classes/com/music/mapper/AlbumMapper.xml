@@ -7,18 +7,18 @@
   		<selectKey keyProperty="pbno" order="BEFORE" resultType="int">
   			select product_m_seq.nextval from dual
   		</selectKey>
-  		insert into product_m (pbno, name, kind,singer,image, songname) 
+  		insert into product_m_test (pbno, name, kind,singer,image, songname) 
 		values (#{pbno},#{name},#{kind},#{singer},#{image},#{songname})
   	</insert>
   	
   	<select id="listAlbum" resultType="com.music.domain.AlbumVO">
 		<![CDATA[
-			select /*+ index_desc(product_m product_m_pk) */ * from product_m where pbno > 0
+			select /*+ index_desc(album_m product_m_pk) */ * from album_m where abno > 0
 		]]>
 	</select>
 
 	<select id="readAlbum" resultType="com.music.domain.AlbumVO">
-		select * from product_m where pbno = #{pbno}
+		select * from album_m where abno = #{abno}
 	</select>
   	
 </mapper>
