@@ -105,7 +105,7 @@
               <use href="/images/svg/free.svg#cil-puzzle"></use>
             </svg> 상품</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="/admin/member/manage_member"><span class="nav-icon"></span> 상품관리</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/product/manage_product"><span class="nav-icon"></span> 상품관리</a></li>
           </ul>
         </li>
         

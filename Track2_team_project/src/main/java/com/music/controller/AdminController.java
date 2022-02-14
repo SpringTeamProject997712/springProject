@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.music.domain.MemberVO;
 import com.music.service.MemberService;
+import com.music.utility.Criteria;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -46,7 +47,8 @@ public class AdminController {
 //========================================멤버관리 =========================================	
 	
 	@GetMapping("/member/manage_member")//맴버관리 - 멤버 리스트 보기
-	public void viewMemberList(Model model) {
+	public void viewMemberList(Model model, Criteria cri) {
+		
 		List<MemberVO> mlist = mService.viewMemberList();
 		log.info(mlist);
 		model.addAttribute("memberList", mlist);
