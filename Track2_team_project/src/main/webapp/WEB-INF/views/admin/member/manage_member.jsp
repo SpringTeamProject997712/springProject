@@ -69,11 +69,11 @@
                   </div>
                   <nav aria-label="Page navigation example">
 									  <ul class="pagination justify-content-center">
-									    <li class="page-item"><a class="page-link ${pageMaker.prev?'':'disabled'}" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+									    <li class="page-item ${pageMaker.prev?'':'disabled'}"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
 									    <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
 									    	<li class="page-item active"><a class="page-link ${pageMaker.cri.pageNum == num?'active':''}" href="#">${num}</a></li>
 									    </c:forEach>
-									    <li class="page-item"><a class="page-link ${pageMaker.next?'':'disabled'}" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+									    <li class="page-item ${pageMaker.next?'':'disabled'}"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
 									  </ul>
 									  <form id="pagingForm" action="" method="get">
 											<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">

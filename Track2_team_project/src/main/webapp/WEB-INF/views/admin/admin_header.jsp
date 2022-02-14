@@ -23,7 +23,7 @@
     <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
     <meta name="author" content="Łukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-    <title>CoreUI Free Bootstrap Admin Template</title>
+    <title>관리자 페이지에 오신걸 환영합니다</title>
     <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
@@ -86,6 +86,10 @@
             <svg class="nav-icon">
               <use href="/images/svg/free.svg#cil-pencil"></use>
             </svg> Typography</a></li>
+        <li class="nav-item"><a class="nav-link" href="/">
+            <svg class="nav-icon">
+              <use href="/images/svg/free.svg#cil-pencil"></use>
+            </svg> GO Index</a></li>
         <!-- 어드민 만들기 좌측 메뉴 -->
         <li class="nav-title">내가 만드는 페이지</li>
         
