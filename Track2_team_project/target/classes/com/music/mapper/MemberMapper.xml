@@ -61,6 +61,12 @@
 		select count(*) from member_m where id = #{id}
 	</select>
 	
+	<select id="countMember" resultType="int">
+		<![CDATA[
+			select count(*) from member_m
+		]]>
+	</select>
+	
 	<update id="updateMember">
 		update member_m set name=#{name}, address1=#{address1}, address2=#{address2}, zipnum=#{zipnum}, active=#{active} where id=#{id}
 	</update>

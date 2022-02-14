@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.music.domain.MemberVO;
 import com.music.mapper.MemberMapper;
 import com.music.utility.Criteria;
+import com.music.utility.PageMaker;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -54,6 +55,13 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public List<MemberVO> viewMemberListWithPaging(Criteria cri) {
 		return mapper.viewMemberListWithPaging(cri);
+	}
+	
+	@Override
+	public PageMaker pagingList(Criteria cri) {
+		int amount=mapper.countMember();
+		PageMaker pageMaker = new PageMaker(cri,amount);
+		return pageMaker;
 	}
 	
 	@Override

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.music.domain.MemberVO;
 import com.music.utility.Criteria;
+import com.music.utility.PageMaker;
 
 public interface MemberService {
 
@@ -25,5 +26,7 @@ public interface MemberService {
 	//멤버 정보 업데이트
 	public int updateMember(MemberVO mvo);
 	
+	//페이징
+	public PageMaker pagingList(Criteria cri);
 
 }

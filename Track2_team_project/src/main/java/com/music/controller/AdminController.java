@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.music.domain.MemberVO;
 import com.music.service.MemberService;
 import com.music.utility.Criteria;
+import com.music.utility.PageMaker;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -53,6 +54,7 @@ public class AdminController {
 		List<MemberVO> mlist = mService.viewMemberListWithPaging(cri);
 		log.info(mlist);
 		model.addAttribute("memberList", mlist);
+		model.addAttribute("pageMaker", mService.pagingList(cri));
 	}
 	
 	@GetMapping("/member/view_member")//맴버관리 - 멤버 리스트 보기
