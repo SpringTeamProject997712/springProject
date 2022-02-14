@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.gson.Gson;
 import com.music.domain.PlaylistVO;
 import com.music.service.CreatePlaylistService;
 
@@ -26,12 +28,15 @@ public class CreatePlaylistController {
 		
 	}
 	
+	@ResponseBody
 	@GetMapping("/addRandomPlayList")
-	public List<PlaylistVO> addRandomPlayList() {
+	public String addRandomPlayList() {
 		List<PlaylistVO> plist = service.addRandomPlaylist();
 		log.info(plist);
-		
-		return plist;
+		Gson gson = new Gson();
+		String json = gson.toJson(plist);
+		log.info(json);
+		return json;
 	}
 	
 	
