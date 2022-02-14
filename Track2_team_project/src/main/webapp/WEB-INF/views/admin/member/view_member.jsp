@@ -70,7 +70,7 @@
 									  </div>
 									  <div class="col-12">
 									    <button class="btn btn-primary" type="button" onclick="go_update()">수정하기</button>
-									    <button class="btn btn-primary" type="button" onclick="href.lin='/admin/member/manage_member'">목록보기</button>
+									    <button class="btn btn-primary" type="button" onclick="location.href='/admin/member/manage_member'">목록보기</button>
 									  </div>
 									</form>
                 </div>
