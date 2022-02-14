@@ -48,7 +48,7 @@ public class AlbumController {
 	
 	@GetMapping("/album_upload")
 	public void albumUpload(Model model) {
-		String[] kind = {"장르1","장르2","장르3","장르4"};
+		String[] kind = {"장르1","장르2","장르3","장르4","장르5"};
 		model.addAttribute("kindList", kind);
 	}
 	
