@@ -25,6 +25,14 @@
                             <h1>トラック情報</h1>
                         </div>
                         <div class="ms_pro_form">
+                      		<div class="form-group">
+                                <label>카테고리 선택</label>
+                                <select class="form-control" id="kind" name="kind">
+						      	<c:forEach items="${kindList}" var="kind" varStatus="status">
+						      		<option value="${status.count}">${kind}</option>
+						      	</c:forEach>
+						      </select>
+                            </div>
                             <div class="form-group">
                                 <label>トラック名 *</label>
                                 <input type="text" name="name" placeholder="Dream Your Moments" class="form-control">
