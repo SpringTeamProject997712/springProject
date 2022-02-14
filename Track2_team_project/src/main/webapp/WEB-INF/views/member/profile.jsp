@@ -83,5 +83,6 @@ Purchase:
             </div>
             <!----Main div close---->
         </div>
+       </div>
         <!----Footer Start---->
 		<%@ include file="../footer.jsp" %>
