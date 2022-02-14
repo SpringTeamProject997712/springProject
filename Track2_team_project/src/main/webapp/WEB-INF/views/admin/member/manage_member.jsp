@@ -9,15 +9,15 @@
             <div class="card-body">
               <div class="text-medium-emphasis small">
               	<!-- 검색 창 -->
+              	<form id="pagingForm" action="/admin/member/manage_member" method="get">
 	              <div class="input-group" style="width:200px;">
-	              	<form id="pagingForm" action="/member/manage_member" method="get">
 								 		<input class="form-control" name="keyword" type="text" placeholder="search ID" value="${pageMaker.cri.keyword}" aria-label="아이디 검색">
-								  	<button class="btn btn-outline-secondary" type="button" onclick="go_search()" style="color:white; background:grey">검색</button>
+								  	<button class="btn btn-outline-secondary" type="submit" style="color:white; background:grey">검색</button>
 										<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 										<input type="hidden" name="amount" value="10">
 										<input type="hidden" name="type" value="${pageMaker.cri.type}">
-									</form>
 								</div>
+								</form>
 							</div>
               <div class="example">
                <!--  <ul class="nav nav-tabs" role="tablist">
