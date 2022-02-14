@@ -24,7 +24,7 @@
 	<sql id="search_box">
 		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
 			<if test="keyword != null">
-				id like '%'||#{keyword}||'%'
+				m.id like '%'||#{keyword}||'%'
 			</if>
 		</trim>
 	</sql>
