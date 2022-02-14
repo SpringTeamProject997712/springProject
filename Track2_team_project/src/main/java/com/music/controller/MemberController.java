@@ -56,7 +56,8 @@ public class MemberController {
 	@PostMapping("/updateMember")
 	public String updateMember(MemberVO mvo) {
 		service.updateMember(mvo);
-		return "/admin/view_member?id="+mvo.getId();
+		
+		return "redirect:/admin/member/view_member?id="+mvo.getId();
 	}
 	
 }

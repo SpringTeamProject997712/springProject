@@ -41,11 +41,11 @@
 										</div>
 									  <div class="col-12">
 									    <label class="form-label" for="member_address1">Address</label>
-									    <input class="form-control" name="address1" id="member_address1" type="text" placeholder="1234 Main St">
+									    <input class="form-control" name="address1" id="member_address1" type="text" value="${member.address1}">
 									  </div>
 									  <div class="col-12">
 									    <label class="form-label" for="inputAddress2">Address 2</label>
-									    <input class="form-control" name="address2" id="inputAddress2" type="text" placeholder="Apartment, studio, or floor">
+									    <input class="form-control" name="address2" id="inputAddress2" type="text" value="${member.address2}">
 									  </div>
 									  <div class="col-md-6">
 									    <label class="form-label" for="AuthList">AuthList</label>
