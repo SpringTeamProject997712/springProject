@@ -22,9 +22,9 @@ import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @Controller
-@RequestMapping("/album/*")
+@RequestMapping("/upload/*")
 @Log4j
-public class AlbumController {
+public class UploadController {
 	
 	
 	
@@ -43,18 +43,13 @@ public class AlbumController {
 		return str.replace("-",  File.separator);
 	}
 	
-	@GetMapping("/album")
-	public void albumView() {
-		
-	}
-	
-	@GetMapping("/album_upload")
+	@GetMapping("/")
 	public void albumUpload(Model model) {
 		String[] kind = {"장르1","장르2","장르3","장르4"};
 		model.addAttribute("kindList", kind);
 	}
 	
-	@PostMapping("/album_uploadpro")
+	@PostMapping("/uploadpro")
 	public String insertAlbum(AlbumVO album, @RequestParam("uploadImage") MultipartFile uploadImage, @RequestParam("uploadMusic") MultipartFile uploadMusic) {
 		
 //		MultipartFile multipartFile = portfolio.getUploadFile();
@@ -106,7 +101,6 @@ public class AlbumController {
 //		portfolio.setImgurl(uploadFileName);
 		service.insertAlbum(album);
 		
-		return "redirect:/album/album";
-	}
+		return "redirect:/";
 	
 }

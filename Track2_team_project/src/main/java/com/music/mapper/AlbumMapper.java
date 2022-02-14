@@ -13,6 +13,6 @@ public interface AlbumMapper {
 	public List<AlbumVO> listAlbum();
 	
 	//엘범 상세보기
-	public AlbumVO readAlbum(int pbno);
+	public AlbumVO readAlbum(int abno);
 	
 }
