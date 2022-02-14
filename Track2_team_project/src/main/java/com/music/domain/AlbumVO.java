@@ -7,14 +7,15 @@ import lombok.Data;
 @Data
 public class AlbumVO {
 	
-	private int pbno;
+	private int abno;
 	private String name;
-	private String kind;
-	private String image;
 	private String singer;
+	private String detail;
+	private int price;
+	private String image;
 	private String songname;
 	private String regdate;
-	private String onlines;
+	private String pbno;
 	
 //	private int pbno;
 //	private String name;

@@ -35,20 +35,13 @@
                             </div>	
                             <div class="form-group">
                                 <label>アルバム選択</label>
-                                <select class="form-control" id="kind" name="kind">
+                                <select class="form-control" id="kind" name="detail">
 						      	<c:forEach items="${kindList}" var="kind" varStatus="status">
 						      		<option value="${status.count}">${kind}</option>
 						      	</c:forEach>
 						      </select>
                             </div>
-                            <div class="form-group">
-                                <label>Onlines</label>
-                                <select class="form-control" name="onlines">
-									<option value="0">Public</option>
-									<option value="1">Onlines</option>
-									<option value="2">Offlines</option>
-								</select>
-                            </div>
+                            
                             
 <!--                             <div class="form-group"> -->
 <!--                                 <label>price1 *</label> -->
