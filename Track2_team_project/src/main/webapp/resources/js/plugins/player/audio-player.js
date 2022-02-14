@@ -1,14 +1,7 @@
 $(function() {
     "use strict";
-    if ($('.audio-player').length) {
-		var myPlayListOtion = '<ul class="more_option"><li><a href="#"><span class="opt_icon" title="Add To Favourites"><span class="icon icon_fav"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Queue"><span class="icon icon_queue"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Download Now"><span class="icon icon_dwn"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Playlist"><span class="icon icon_playlst"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Share"><span class="icon icon_share"></span></span></a></li></ul>';
-		
-		var music = '<c:out value="${music}"/>';
-		
-        var myPlaylist = new jPlayerPlaylist({
-            jPlayer: "#jquery_jplayer_1",
-            cssSelectorAncestor: "#jp_container_1"
-        }, [{
+    
+    var basicPlayList = [{
 						image : '../images/weekly/song1.jpg',	
             title: "RE:Wind",
             artist: "이세계 아이돌",
@@ -32,7 +25,17 @@ $(function() {
             artist: "오아시스",
             mp3: "/music/Live_forever.mp3",
 						option : myPlayListOtion
-        }], {
+        }];
+    
+    if ($('.audio-player').length) {
+		var myPlayListOtion = '<ul class="more_option"><li><a href="#"><span class="opt_icon" title="Add To Favourites"><span class="icon icon_fav"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Queue"><span class="icon icon_queue"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Download Now"><span class="icon icon_dwn"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Playlist"><span class="icon icon_playlst"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Share"><span class="icon icon_share"></span></span></a></li></ul>';
+		
+		var music = '<c:out value="${music}"/>';
+		
+        var myPlaylist = new jPlayerPlaylist({
+            jPlayer: "#jquery_jplayer_1",
+            cssSelectorAncestor: "#jp_container_1"
+        }, basicPlayList, {
             swfPath: "js/plugins",
             supplied: "mp3",
             wmode: "window",
