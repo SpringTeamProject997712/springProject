@@ -1,7 +1,7 @@
 $(function() {
     "use strict";
     
-    var basicPlayList = [{
+    let basicPlayList = [{
 						image : '../images/weekly/song1.jpg',	
             title: "RE:Wind",
             artist: "이세계 아이돌",
@@ -27,7 +27,7 @@ $(function() {
 						option : myPlayListOtion
         }];
         
-    var notBasicPlayList = [{
+    let notBasicPlayList = [{
 						image : '../images/weekly/song1.jpg',	
             title: "에어맨이 쓰러지지 않아",
             artist: "록맨",
@@ -53,10 +53,13 @@ $(function() {
     	success:function(data){
     		console.log(data);
     		notBasicPlayList=data;
+    		console.log(notBasicPlayList);
     	},error:function(xhr,status,error){
     		console.log("xhr : "+xhr.status+"\n status : "+error);
     	}
     });
+    
+    console.log(notBasicPlayList);
         
     var login_checker = "<sec:authorize access='isAuthenticated()'/>";
     
