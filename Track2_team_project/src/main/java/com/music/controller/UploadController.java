@@ -15,8 +15,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.music.domain.AlbumVO;
-import com.music.mapper.AlbumMapper;
-import com.music.service.AlbumService;
+import com.music.domain.GoodsVO;
+import com.music.domain.ProductVO;
+import com.music.domain.TrackVO;
+import com.music.mapper.ProductMapper;
+import com.music.service.ProductService;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -26,14 +29,11 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class UploadController {
 	
-	
+	@Setter(onMethod_= @Autowired)
+	private ProductService pservice;
 	
 	@Setter(onMethod_= @Autowired)
-	private AlbumService service;
-	
-	@Setter(onMethod_= @Autowired)
-	private AlbumMapper mapper;
-	
+	private ProductMapper pmapper;
 	
 	
 	private String getFolder() {
@@ -44,13 +44,16 @@ public class UploadController {
 	}
 	
 	@GetMapping("/upload")
-	public void albumUpload(Model model) {
+	public void productUpload(Model model) {
 		String[] category = {"アルバム","トラック","グッズ"};
 		model.addAttribute("category", category);
+		model.addAttribute("pbno", pservice.searchPbno()+1);
 	}
 	
 	@PostMapping("/uploadpro")
-	public String insertAlbum(AlbumVO album, @RequestParam("uploadImage") MultipartFile uploadImage, @RequestParam("uploadMusic") MultipartFile uploadMusic) {
+	public String insertProduct(AlbumVO album, ProductVO product, TrackVO track, GoodsVO goods, 
+			@RequestParam("uploadImage") MultipartFile uploadImage, @RequestParam("uploadMusic") MultipartFile uploadMusic, 
+			@RequestParam("pbno") int pbno, Model model) {
 		
 //		MultipartFile multipartFile = portfolio.getUploadFile();
 		String uploadFolder = "C:\\upload";
@@ -89,17 +92,20 @@ public class UploadController {
 			uploadImageName = (saveimage.toString().substring(10));
 			album.setImage(uploadImageName);
 			
-			uploadMusic.transferTo(savemusic);
-			uploadMusicName = (savemusic.toString().substring(10));
-			album.setName(uploadMusicName);
-			log.info(uploadMusicName);
+//			uploadMusic.transferTo(savemusic);
+//			uploadMusicName = (savemusic.toString().substring(10));
+//			album.setName(uploadMusicName);
+//			log.info(uploadMusicName);
+			
 //			FileOutputStream thumbnail
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		
-//		portfolio.setImgurl(uploadFileName);
-		service.insertAlbum(album);
+		pservice.insertProduct(product);
+		
+		pservice.insertAlbum(album);
+		album.setPbno(pbno);
 		
 		return "redirect:/";
 	}

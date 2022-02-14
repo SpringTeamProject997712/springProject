@@ -1,9 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="com.music.mapper.AlbumMapper">
+<mapper namespace="com.music.mapper.ProductMapper">
+
+  	<select id="listProduct" resultType="com.music.domain.ProductVO">
+		<![CDATA[
+			select /*+ index_desc(product_m product_m_pk) */ * from product_m where pbno > 0
+		]]>
+	</select>
+
+  	<select id="searchPbno" resultType="int">
+		<![CDATA[
+			select MAX(pbno) as pbno from product_m
+		]]>
+	</select>
+
+  	<insert id="insertProduct">
+  		<selectKey keyProperty="pbno" order="BEFORE" resultType="int">
+  			select product_m_seq.nextval from dual
+  		</selectKey>
+  		insert into product_m(pbno, category) 
+		values (#{pbno},#{category})
+  	</insert>
 
   	<insert id="insertAlbum">
+  		<selectKey keyProperty="abno" order="BEFORE" resultType="int">
+  			select album_m_seq.nextval from dual
+  		</selectKey>
+  		insert into album_m(abno, name, singer, detail, price, image, regdate, pbno) 
+		values (#{abno},#{name},#{singer},#{detail},#{price},#{image},#{regdate},#{pbno})
+  	</insert>
+
+  	<insert id="insertTrack">
+  		<selectKey keyProperty="pbno" order="BEFORE" resultType="int">
+  			select product_m_seq.nextval from dual
+  		</selectKey>
+  		insert into product_m_test (pbno, name, kind,singer,image, songname) 
+		values (#{pbno},#{name},#{kind},#{singer},#{image},#{songname})
+  	</insert>
+
+  	<insert id="insertGoods">
   		<selectKey keyProperty="pbno" order="BEFORE" resultType="int">
   			select product_m_seq.nextval from dual
   		</selectKey>

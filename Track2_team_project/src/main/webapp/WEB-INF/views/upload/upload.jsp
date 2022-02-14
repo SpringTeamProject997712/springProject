@@ -4,14 +4,14 @@
 <!-- main css files links -->
 <%@ include file="../header.jsp" %>
             <!----Upload and Share Wrapper Start---->
-           <form name="album_upload" method="post" action = "/album/album_uploadpro" enctype="multipart/form-data">
+           <form name="upload" method="post" enctype="multipart/form-data">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
             	<div class="ms_upload_wrapper marger_top60">
 	                <div class="ms_upload_box">
 	                    <h2>Upload & Share Your Music With The World</h2>
-	                    <img src="../images/svg/upload.svg" alt="">
+	                    <img src="../images/svg/upload.svg" alt="songname">
  	                    <div class="ms_upload_btn">
- 	                    <a class="ms_btn">
+ 	                    <a href="javascript:void(0);" class="ms_btn">
 							  <label for="songname" className="ms_btn">upload files</label>
 							  <input type="file" name="uploadMusic" id="songname" style="display:none"/>
 						</a>
@@ -27,7 +27,7 @@
                         <div class="ms_pro_form">
                       		<div class="form-group">
                                 <label>카테고리 선택</label>
-                                <select class="form-control" id="kind" name="kind">
+                                <select class="form-control" id="category" name="category">
 						      	<c:forEach items="${category}" var="category" varStatus="status">
 						      		<option value="${status.count}">${category}</option>
 						      	</c:forEach>
@@ -42,46 +42,24 @@
                                 <input type="text" name="singer" placeholder="Ava Cornish, Brian Hill" class="form-control">
                             </div>	
                             <div class="form-group">
-                                <label>アルバム選択</label>
-                                <select class="form-control" id="kind" name="kind">
-						      	<c:forEach items="${kindList}" var="kind" varStatus="status">
-						      		<option value="${status.count}">${kind}</option>
-						      	</c:forEach>
-						      </select>
+                                <label>detail</label>
+                                <input type="text" name="detail" placeholder="" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label>Onlines</label>
-                                <select class="form-control" name="onlines">
-									<option value="0">Public</option>
-									<option value="1">Onlines</option>
-									<option value="2">Offlines</option>
-								</select>
+                                <label>price</label>
+                                <input type="text" name="price" placeholder="" class="form-control">
                             </div>
-                            
-<!--                             <div class="form-group"> -->
-<!--                                 <label>price1 *</label> -->
-<!--                                 <input type="text" name="price1" placeholder="" class="form-control"> -->
-<!--                             </div> -->
-<!--                             <div class="form-group"> -->
-<!--                                 <label>price2</label> -->
-<!--                                 <input type="text" name="price2" placeholder="" class="form-control"> -->
-<!--                             </div> -->
-<!--                             <div class="form-group"> -->
-<!--                                 <label>release Date</label> -->
-<!--                                 <input type="text" name="releasedate" placeholder="" class="form-control"> -->
-<!--                             </div> -->
-<!--                             <div class="form-group"> -->
-<!--                                 <label>Song name *</label> -->
-<!--                                 <input type="file" name="uploadMusic" id="songname" placeholder="" class="form-control"> -->
-<!--                             </div> -->
-<!--                             <div class="form-group"> -->
-<!--                                 <label>Song real name *</label> -->
-<!--                                 <input type="text" name="songrealname" placeholder="" class="form-control"> -->
-<!--                             </div> -->
+                            <div class="form-group">
+                                <label>regdate *</label>
+                                <input type="date" name="regdate" id="regdate" placeholder="" accept="image/*" class="form-control">
+                            </div>
                             <div class="form-group">
                                 <label>Image *</label>
                                 <input type="file" name="uploadImage" id="image" placeholder="" accept="image/*" class="form-control">
                             </div>
+                            
+                         	<input type="hidden" name="pbno" value="${pbno}" class="form-control">
+                            
                             
                             <div class="pro-form-btn text-center marger_top15">
                                 <div class="ms_upload_btn">

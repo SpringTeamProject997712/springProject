@@ -1,7 +1,5 @@
 package com.music.domain;
 
-import java.util.Date;
-
 import lombok.Data;
 
 @Data
