@@ -43,7 +43,7 @@
 		ON m.id = auth.id
 	</select>
 	
-	<select id="viewMemberListWithPaging">
+	<select id="viewMemberListWithPaging" resultMap="memberTableMap">
 		<![CDATA[
 			select * from (
 				select m.id as id, pw, name, zipnum, nickname, phone, active, email, address1,
