@@ -50,6 +50,7 @@ $(function() {
     $.ajax({
     	type:"get",
     	url:"/createPlaylist/addRandomPlayList",
+    	async:false,
     	success:function(data){
     		console.log(data);
     		notBasicPlayList=data;
@@ -85,7 +86,7 @@ $(function() {
             smoothPlayBar: true,
             keyEnabled: true,
             playlistOptions: {
-                autoPlay: false
+            autoPlay: false
             }
         });
         $("#jquery_jplayer_1").on($.jPlayer.event.ready + ' ' + $.jPlayer.event.play, function(event) {
