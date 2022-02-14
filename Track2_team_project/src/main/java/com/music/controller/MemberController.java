@@ -60,4 +60,10 @@ public class MemberController {
 		return "redirect:/admin/member/view_member?id="+mvo.getId();
 	}
 	
+//=============================마이페이지 컨트롤러 ===================================
+	
+	@GetMapping("/member/profile")
+	public void viewProfile(String id) {
+		
+	}
 }

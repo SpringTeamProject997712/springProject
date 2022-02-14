@@ -198,7 +198,7 @@
 	                      	<span class="ms_pro_name">ns</span>
 												</a>
 												<ul class="pro_dropdown_menu">
-													<li><a href="profile.html">Profile</a></li>
+													<li><a href="/member/profile?id=${principal.member.userid}">Profile</a></li>
 													<li><a href="manage_acc.html" target="_blank">Pricing Plan</a></li>
 													<li><a href="blog.html" target="_blank">Blog</a></li>
 													<sec:authorize access="hasRole('ROLE_ADMIN')">
