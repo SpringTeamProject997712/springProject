@@ -71,7 +71,7 @@
 									  <ul class="pagination justify-content-center">
 									    <li class="page-item"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
 									    <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-									    	<li class="page-item active"><a class="page-link ${pageMaker.cri.pageNum == num?'active':''}" href="${num}">${num}</a></li>
+									    	<li class="page-item active"><a class="page-link ${pageMaker.cri.pageNum == num?'active':''}" href="#">${num}</a></li>
 									    </c:forEach>
 									    <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
 									  </ul>

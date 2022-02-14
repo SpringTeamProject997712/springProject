@@ -56,6 +56,17 @@
 			where rn > #{amount} * (#{pageNum}-1)
 		]]>
 	</select>
+	
+<!-- 	<select id="nextPage" resultType="com.hanulso.domain.NoticeVO">
+		<![CDATA[
+		select * from member_m where bno < #{bno} and rownum=1 order by bno desc
+		]]>
+	</select>
+	<select id="prevPage" resultType="com.hanulso.domain.NoticeVO">
+		<![CDATA[
+		select * from member_m where bno > #{bno} and rownum=1 order by bno asc
+		]]>
+	</select> -->
 
 	<select id="checkMemberWithId" resultType="int">
 		select count(*) from member_m where id = #{id}
