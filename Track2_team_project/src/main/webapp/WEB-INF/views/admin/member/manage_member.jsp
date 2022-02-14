@@ -40,7 +40,7 @@
                         	<tr>
 	                          <td scope="row">${mlist.id}</td>
 	                          <td>${mlist.name}</td>
-	                          <td>${mlist.address1} || ${mlist.address2}</td>
+	                          <td>${mlist.zipnum} || ${mlist.address1}</td>
 	                          <td>
 	                          <c:forEach items="${mlist.authList}" var="authList">
 	                          	${authList.auth}
