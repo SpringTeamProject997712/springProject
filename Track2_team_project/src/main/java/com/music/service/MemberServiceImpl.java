@@ -59,7 +59,7 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Override
 	public PageMaker pagingList(Criteria cri) {
-		int amount=mapper.countMember();
+		int amount=mapper.countMember(cri);
 		PageMaker pageMaker = new PageMaker(cri,amount);
 		return pageMaker;
 	}

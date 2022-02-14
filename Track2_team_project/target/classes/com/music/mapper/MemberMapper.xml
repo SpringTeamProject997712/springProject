@@ -72,9 +72,9 @@
 	</select>
 	
 	<select id="countMember" resultType="int">
-		<![CDATA[
-			select count(*) from member_m
-		]]>
+			select count(*) from member_m where
+			<include refid="search_box"></include>
+			(active = '0' or active = '1')
 	</select>
 	
 	<update id="updateMember">
