@@ -41,7 +41,7 @@
 										</div>
 									  <div class="col-12">
 									    <label class="form-label" for="member_address1">Address</label>
-									    <input class="form-control" name="address2" id="member_addr" type="text" value="${member.address1}">
+									    <input class="form-control" name="address1" id="member_addr" type="text" value="${member.address1}">
 									  </div>
 									  <div class="col-12">
 									    <label class="form-label" for="inputAddress2">Address 2</label>
