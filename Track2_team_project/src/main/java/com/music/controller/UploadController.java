@@ -102,5 +102,6 @@ public class UploadController {
 		service.insertAlbum(album);
 		
 		return "redirect:/";
+	}
 	
 }
