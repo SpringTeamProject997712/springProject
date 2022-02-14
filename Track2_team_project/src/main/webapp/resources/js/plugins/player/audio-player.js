@@ -47,6 +47,17 @@ $(function() {
 						option : myPlayListOtion
         }];
         
+    $.ajax({
+    	type:"get",
+    	url:"/createPlaylist/addRandomPlayList",
+    	success:function(data){
+    		console.log(data);
+    		notBasicPlayList=data;
+    	},error:function(xhr,status,error){
+    		console.log("xhr : "+xhr.status+"\n status : "+error);
+    	}
+    });
+        
     var login_checker = "<sec:authorize access='isAuthenticated()'>";
     
     console.log("현재 로그인 체커 : "+login_checker);

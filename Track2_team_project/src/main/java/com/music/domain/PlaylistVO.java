@@ -3,7 +3,7 @@ package com.music.domain;
 import lombok.Data;
 
 @Data
-public class PlayListVO {
+public class PlaylistVO {
 
 	private String title;
 	private String artist;
