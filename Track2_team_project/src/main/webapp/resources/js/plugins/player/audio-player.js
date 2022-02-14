@@ -9,17 +9,17 @@ $(function() {
             jPlayer: "#jquery_jplayer_1",
             cssSelectorAncestor: "#jp_container_1"
         }, [{
-			image : '../images/weekly/song1.jpg',	
-            title: "RE:Wind",
-            artist: "이세계 아이돌",
+						image : '../images/weekly/song1.jpg',	
+            name: "RE:Wind",
+            singer: "이세계 아이돌",
             mp3: "../music/Rewind.mp3",
-			option : myPlayListOtion	
+						option : myPlayListOtion	
         }, {
-			image : '../images/weekly/song2.jpg',	
-            title: "Your Face",
-            artist: "Ministry",
-            mp3: "../upload/2022/02/11/Rewind.mp3",
-			option : myPlayListOtion
+						image : '../images/weekly/song2.jpg',	
+            name: "다시:바람",
+            singer: "킹세계 갓이돌",
+            mp3: "../music/Rewind.mp3",
+						option : myPlayListOtion
         }], {
             swfPath: "js/plugins",
             supplied: "mp3",
@@ -37,7 +37,7 @@ $(function() {
             var playlist = myPlaylist.playlist;
             $.each(playlist, function(index, obj) {
                 if (index == current) {
-                    $(".jp-now-playing").html("<div class='jp-track-name'><span class='que_img'><img src='"+obj.image+"'></span><div class='que_data'>" + obj.title + " <div class='jp-artist-name'>" + obj.artist + "</div></div></div>");
+                    $(".jp-now-playing").html("<div class='jp-track-name'><span class='que_img'><img src='"+obj.image+"'></span><div class='que_data'>" + obj.name + " <div class='jp-artist-name'>" + obj.singer + "</div></div></div>");
                 }
             });
 			$('.knob-wrapper').mousedown(function() {
