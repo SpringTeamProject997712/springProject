@@ -21,7 +21,7 @@ $(function() {
             mp3: "/music/Live_forever.mp3",
 						option : myPlayListOtion
         }, {
-						image : '../images/weekly/song2.jpg',	
+						image : '../images/weekly/song3.jpg',	
             title: "니얼굴",
             artist: "TSP",
             mp3: "/music/Your_face.mp3",
