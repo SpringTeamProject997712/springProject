@@ -10,15 +10,21 @@ $(function() {
             cssSelectorAncestor: "#jp_container_1"
         }, [{
 						image : '../images/weekly/song1.jpg',	
-            name: "RE:Wind",
-            singer: "이세계 아이돌",
-            mp3: "../music/Rewind.mp3",
+            title: "RE:Wind",
+            artist: "이세계 아이돌",
+            mp3: "/music/Rewind.mp3",
 						option : myPlayListOtion	
         }, {
 						image : '../images/weekly/song2.jpg',	
-            name: "다시:바람",
-            singer: "킹세계 갓이돌",
-            mp3: "../music/Rewind.mp3",
+            title: "LIVE FORVER",
+            artist: "오아시스",
+            mp3: "/music/Live_forever.mp3",
+						option : myPlayListOtion
+        }, {
+						image : '../images/weekly/song2.jpg',	
+            title: "니얼굴",
+            artist: "TSP",
+            mp3: "/music/Your_face.mp3",
 						option : myPlayListOtion
         }], {
             swfPath: "js/plugins",
@@ -37,7 +43,7 @@ $(function() {
             var playlist = myPlaylist.playlist;
             $.each(playlist, function(index, obj) {
                 if (index == current) {
-                    $(".jp-now-playing").html("<div class='jp-track-name'><span class='que_img'><img src='"+obj.image+"'></span><div class='que_data'>" + obj.name + " <div class='jp-artist-name'>" + obj.singer + "</div></div></div>");
+                    $(".jp-now-playing").html("<div class='jp-track-name'><span class='que_img'><img src='"+obj.image+"'></span><div class='que_data'>" + obj.title + " <div class='jp-artist-name'>" + obj.artist + "</div></div></div>");
                 }
             });
 			$('.knob-wrapper').mousedown(function() {
