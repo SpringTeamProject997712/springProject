@@ -35,8 +35,7 @@ public class CreatePlaylistController {
 		log.info(plist);
 		Gson gson = new Gson();
 		String json = gson.toJson(plist);
-		log.info(json);
-		json.replace("\"myPlayListOtion\"", "myPlayListOtion");
+		log.info("변환 안하기 : "+json);
 		return json;
 	}
 	
