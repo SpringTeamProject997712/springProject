@@ -47,6 +47,6 @@
 	</select>
 	
 	<update id="updateMember">
-		update member_m set name=#{name}, address1=#{address1}, address2=#{address2}, active=#{active} where id=#{id}
+		update member_m set name=#{name}, address1=#{address1}, address2=#{address2}, zipnum=#{zipnum}, active=#{active} where id=#{id}
 	</update>
 </mapper>
