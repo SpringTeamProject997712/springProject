@@ -43,9 +43,10 @@ public class AdminController {
 		}		
 		return "redirect:/";
 	}
+//========================================멤버관리 =========================================	
 	
 	@GetMapping("/member/manage_member")//맴버관리 - 멤버 리스트 보기
-	public void viewManageMember(Model model) {
+	public void viewMemberList(Model model) {
 		List<MemberVO> mlist = mService.viewMemberList();
 		log.info(mlist);
 		model.addAttribute("memberList", mlist);
@@ -57,6 +58,11 @@ public class AdminController {
 		model.addAttribute("member",member);
 	}
 	
+//=========================================상품관리용========================================
+
+	@GetMapping("product/manage_product") //상품관리 - 상품 리스트 보기
+	public void viewProductList() {
+	}
 	
 //=====================================템플릿 파악용 컨트롤러====================================
 	@GetMapping("/base/list-group")
