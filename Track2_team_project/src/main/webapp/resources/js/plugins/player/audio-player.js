@@ -58,7 +58,7 @@ $(function() {
     	}
     });
         
-    var login_checker = "<sec:authorize access='isAuthenticated()'>";
+    var login_checker = "<sec:authorize access='isAuthenticated()'/>";
     
     console.log("현재 로그인 체커 : "+login_checker);
     
