@@ -42,6 +42,20 @@
 		from member_m m LEFT OUTER JOIN member_auth_m auth
 		ON m.id = auth.id
 	</select>
+	
+	<select id="viewMemberListWithPaging">
+		<![CDATA[
+			select * from (
+				select m.id as id, pw, name, zipnum, nickname, phone, active, email, address1,
+						 address2, regdate, auth, rownum rn  
+				from member_m m LEFT OUTER JOIN member_auth_m auth
+				ON m.id = auth.id where 
+				
+					rownum <= #{amount} * #{pageNum}  order by regdate desc
+				) 
+			where rn > #{amount} * (#{pageNum}-1)
+		]]>
+	</select>
 
 	<select id="checkMemberWithId" resultType="int">
 		select count(*) from member_m where id = #{id}

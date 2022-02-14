@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.music.domain.MemberVO;
 import com.music.mapper.MemberMapper;
+import com.music.utility.Criteria;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -48,6 +49,11 @@ public class MemberServiceImpl implements MemberService {
 		List<MemberVO> mlist = mapper.viewMemberList();
 		log.info("멤버 리스트 : "+mlist);
 		return mlist;
+	}
+	
+	@Override
+	public List<MemberVO> viewMemberListWithPaging(Criteria cri) {
+		return mapper.viewMemberListWithPaging(cri);
 	}
 	
 	@Override

@@ -49,7 +49,8 @@ public class AdminController {
 	@GetMapping("/member/manage_member")//맴버관리 - 멤버 리스트 보기
 	public void viewMemberList(Model model, Criteria cri) {
 		
-		List<MemberVO> mlist = mService.viewMemberList();
+//		List<MemberVO> mlist = mService.viewMemberList();
+		List<MemberVO> mlist = mService.viewMemberListWithPaging(cri);
 		log.info(mlist);
 		model.addAttribute("memberList", mlist);
 	}
