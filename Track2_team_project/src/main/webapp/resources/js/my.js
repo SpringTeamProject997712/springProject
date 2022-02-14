@@ -92,8 +92,8 @@ function go_writemusic() {
 }
 
 function go_upload() {
- 	document.album_upload.action = "album_uploadpro";
- 	document.album_upload.submit();
+ 	document.upload.action = "uploadpro";
+ 	document.upload.submit();
 
  }
 

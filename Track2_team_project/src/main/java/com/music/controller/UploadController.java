@@ -43,10 +43,10 @@ public class UploadController {
 		return str.replace("-",  File.separator);
 	}
 	
-	@GetMapping("/")
+	@GetMapping("/upload")
 	public void albumUpload(Model model) {
-		String[] kind = {"장르1","장르2","장르3","장르4"};
-		model.addAttribute("kindList", kind);
+		String[] category = {"アルバム","トラック","グッズ"};
+		model.addAttribute("category", category);
 	}
 	
 	@PostMapping("/uploadpro")
