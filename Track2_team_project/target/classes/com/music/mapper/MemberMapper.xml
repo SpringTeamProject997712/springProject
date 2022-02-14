@@ -72,7 +72,7 @@
 	</select>
 	
 	<select id="countMember" resultType="int">
-			select count(*) from member_m where
+			select count(*) from member_m m where
 			<include refid="search_box"></include>
 			(active = '0' or active = '1')
 	</select>
