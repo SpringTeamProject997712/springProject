@@ -13,5 +13,12 @@ public class CreatePlaylistController {
 		
 	}
 	
+	@GetMapping("/addPlayList")
+	public void addPlayList() {
+		
+		
+		
+	}
+	
 	
 }
