@@ -13,6 +13,7 @@
 		<result property="zipnum" column="zipnum"/>
 		<result property="address1" column="address1"/>
 		<result property="address2" column="address2"/>
+		<result property="zipnum" column="zipnum"/>
 		<result property="regdate" column="regdate" javaType="java.util.Date"/>
 		<collection property="authList" resultMap="authMap"/>
 	</resultMap>
@@ -30,8 +31,8 @@
 	</sql>
 	
 	<insert id="registMember">
-		insert into member_m (id,pw,nickname,name,phone,email,address1,address2)
-		values (#{id},#{pw},'임시',#{name},'임시','임시','임시','임시')
+		insert into member_m (id,pw,nickname,name,phone,email,address1,address2, zipnum)
+		values (#{id},#{pw},'임시',#{name},'임시','임시','임시','임시', '임시')
 	</insert>
 	<insert id="registMemberAuth">
 		insert into member_auth_m (id, auth)
