@@ -92,7 +92,7 @@ public class AlbumController {
 			
 			uploadMusic.transferTo(savemusic);
 			uploadMusicName = (savemusic.toString().substring(10));
-			album.setSongname(uploadMusicName);
+			album.setName(uploadMusicName);
 			log.info(uploadMusicName);
 //			FileOutputStream thumbnail
 		}catch(Exception e) {
