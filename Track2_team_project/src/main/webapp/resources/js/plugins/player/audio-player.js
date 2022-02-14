@@ -19,11 +19,31 @@ $(function() {
             artist: "TSP",
             mp3: "/music/Your_face.mp3",
 						option : myPlayListOtion
-        },  {
+        },{
+						image : '../images/weekly/song2.jpg',	
+            title: "천체관측",
+            artist: "BUMP OF CHICKEN",
+            mp3: "/music/天体観測.mp3",
+						option : myPlayListOtion
+        }];
+        
+    var notBasicPlayList = [{
 						image : '../images/weekly/song1.jpg',	
-            title: "LIVE FORVER",
-            artist: "오아시스",
-            mp3: "/music/Live_forever.mp3",
+            title: "에어맨이 쓰러지지 않아",
+            artist: "록맨",
+            mp3: "/music/Airman.mp3",
+						option : myPlayListOtion	
+        }, {
+						image : '../images/weekly/song2.jpg',	
+            title: "천체관측",
+            artist: "BUMP OF CHICKEN",
+            mp3: "/music/天体観測.mp3",
+						option : myPlayListOtion
+        }, {
+						image : '../images/weekly/song3.jpg',	
+            title: "모르는노래",
+            artist: "음은 익숙",
+            mp3: "/music/打上花火.mp3",
 						option : myPlayListOtion
         }];
     
