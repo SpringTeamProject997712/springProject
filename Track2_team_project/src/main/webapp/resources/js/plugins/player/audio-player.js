@@ -26,6 +26,12 @@ $(function() {
             artist: "TSP",
             mp3: "/music/Your_face.mp3",
 						option : myPlayListOtion
+        },  {
+						image : '../images/weekly/song1.jpg',	
+            title: "LIVE FORVER",
+            artist: "오아시스",
+            mp3: "/music/Live_forever.mp3",
+						option : myPlayListOtion
         }], {
             swfPath: "js/plugins",
             supplied: "mp3",
