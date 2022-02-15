@@ -92,7 +92,7 @@ $(function() {
             jPlayer: "#jquery_jplayer_1",
             cssSelectorAncestor: "#jp_container_1"
         }, 
-        login_checker?notBasicPlayList:basicPlayList, //리스트 넣는 칸
+        login_checker?playlistMakedByMe:basicPlayList, //<-------------리스트 넣는 칸
         {
             swfPath: "js/plugins",
             supplied: "mp3",
