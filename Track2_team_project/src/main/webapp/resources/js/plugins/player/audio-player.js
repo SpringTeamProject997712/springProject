@@ -53,6 +53,9 @@ $(function() {
     	async:false,
     	success:function(data){
     		console.log(data);
+    		for(var i=0; i<data.length; i++){
+    			
+    		}
     		notBasicPlayList=data;
     		console.log(notBasicPlayList);
     	},error:function(xhr,status,error){
@@ -61,6 +64,8 @@ $(function() {
     });
     
     console.log(notBasicPlayList);
+    console.log(notBasicPlayList[0]);
+    console.log(notBasicPlayList.length);
         
     var login_checker = "<sec:authorize access='isAuthenticated()'/>";
     
