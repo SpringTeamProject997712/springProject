@@ -49,8 +49,24 @@ $(function() {
 //    console.log(basicPlayList);
 //   console.log(typeof basicPlayList);
 
+		var login_flag = "";
+
+		$.ajax({
+    	type:"get",
+    	url:"/member/loginChecker",
+    	async:false,
+    	success:function(data){
+    		console.log(data);
+    		login_flag=data;
+    		console.log(login_flag);		
+    	},error:function(xhr,status,error){
+    		console.log("xhr : "+xhr.status+"\n status : "+error);
+    	}
+    });
+
+		console.log(login_flag);	
     var objectMine;
-    var login_flag = '<sec:authentication property="principal">';
+    
     var login_checker = login_flag;
     
     console.log("현재 로그인 체커 : "+login_checker);
