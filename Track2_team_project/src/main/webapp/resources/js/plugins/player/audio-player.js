@@ -46,8 +46,9 @@ $(function() {
             mp3: "/music/打上花火.mp3",
 						option : myPlayListOtion
         }];
-    
-    var obj;
+    console.log(basicPlayList);
+    console.log(typeof basicPlayList);
+    var objectMine;
         
     var login_checker = "<sec:authorize access='isAuthenticated()'/>";
     
@@ -64,27 +65,18 @@ $(function() {
     	async:false,
     	success:function(data){
     		console.log(data);
-    		obj = JSON.parse(data);
-    		for(var i=0; i<obj.length; i++){
-    			obj[i].option = myPlayListOtion;
+    		objectMine = JSON.parse(data);
+    		for(var i=0; i<objectMine.length; i++){
+    			objectMine[i].option = myPlayListOtion;
     		}
-     		console.log(obj);
+     		console.log(objectMine);
     	},error:function(xhr,status,error){
     		console.log("xhr : "+xhr.status+"\n status : "+error);
     	}
     });
     
-    console.log(obj);
-    var playlistMakedByMe=JSON.stringify(obj);
-    playlistMakedByMe = playlistMakedByMe.replace(/\\\"/g,"\'");
-    playlistMakedByMe = playlistMakedByMe.replace(/\"title\"/g,"title");
-    playlistMakedByMe = playlistMakedByMe.replace(/\"artist\"/g,"artist");
-    playlistMakedByMe = playlistMakedByMe.replace(/\"mp3\"/g,"mp3");
-    playlistMakedByMe = playlistMakedByMe.replace(/\"option\"/g,"option");
-    playlistMakedByMe = playlistMakedByMe.replace(/\"image\"/g,"image");
-    console.log(typeof playlistMakedByMe);
-    console.log("========================최종 값================================");
-    console.log(playlistMakedByMe);
+    console.log("===========================내가 만든 플레이 리스트 값==============================")
+    console.log(objectMine);
 		
 		var music = '<c:out value="${music}"/>';
 		
@@ -92,7 +84,7 @@ $(function() {
             jPlayer: "#jquery_jplayer_1",
             cssSelectorAncestor: "#jp_container_1"
         }, 
-        login_checker?playlistMakedByMe:basicPlayList, //<-------------리스트 넣는 칸
+        login_checker?objectMine:basicPlayList, //<-------------리스트 넣는 칸
         {
             swfPath: "js/plugins",
             supplied: "mp3",
