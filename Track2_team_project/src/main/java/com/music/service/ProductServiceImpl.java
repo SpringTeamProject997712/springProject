@@ -1,5 +1,7 @@
 package com.music.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,19 +37,22 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public void insertTrack(TrackVO track) {
-		// TODO Auto-generated method stub
-		
+		pMapper.insertTrack(track);
 	}
 
 	@Override
 	public void insertGoods(GoodsVO goods) {
-		// TODO Auto-generated method stub
-		
+		pMapper.insertGoods(goods);
 	}
 
 	@Override
 	public int searchPbno() {
 		return pMapper.searchPbno();
+	}
+
+	@Override
+	public List<AlbumVO> searchAbno() {
+		return pMapper.searchAbno();
 	}
 	
 	

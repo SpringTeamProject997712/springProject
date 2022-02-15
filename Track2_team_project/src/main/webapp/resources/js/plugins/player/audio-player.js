@@ -50,8 +50,8 @@ $(function() {
 //   console.log(typeof basicPlayList);
 
     var objectMine;
-    var login_flag = false;
-    var login_checker = "<sec:authorize access='isAuthenticated()'>"+(login_flag=true)+"</sec:authorize>";
+    var login_flag = '<sec:authentication property="principal">';
+    var login_checker = login_flag;
     
     console.log("현재 로그인 체커 : "+login_checker);
     

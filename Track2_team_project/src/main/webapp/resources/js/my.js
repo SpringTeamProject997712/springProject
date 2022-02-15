@@ -91,10 +91,17 @@ function go_writemusic() {
 	theForm.submit();
 }
 
-function go_upload() {
- 	document.upload.action="uploadpro";
- 	document.upload.submit();
-
+function go_upload_album() {
+ 	document.upload_album.action="uploadpro_album";
+ 	document.upload_album.submit();
+ }
+function go_upload_track() {
+ 	document.upload_track.action="uploadpro_track";
+ 	document.upload_track.submit();
+ }
+function go_upload_goods() {
+ 	document.upload_goods.action="uploadpro_goods";
+ 	document.upload_goods.submit();
  }
 
 function findAddr(){ //우편번호 찾기

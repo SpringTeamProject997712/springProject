@@ -12,3 +12,4 @@ public class PlaylistVO {
 	private String image;
 	
 }
+
