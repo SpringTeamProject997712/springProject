@@ -29,7 +29,7 @@ public class CreatePlaylistController {
 	}
 	
 	@ResponseBody
-	@GetMapping("/addRandomPlayList")
+	@RequestMapping(value="/addRandomPlayList", produces = "application/text; charset=utf8")
 	public String addRandomPlayList() {
 		List<PlaylistVO> plist = service.addRandomPlaylist();
 		log.info(plist);

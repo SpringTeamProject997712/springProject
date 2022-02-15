@@ -74,6 +74,9 @@ $(function() {
     });
     
     console.log(obj);
+    notBasicPlayList=JSON.stringify(obj);
+    console.log("========================최종 값================================");
+    console.log(notBasicPlayList);
 		
 		var music = '<c:out value="${music}"/>';
 		
