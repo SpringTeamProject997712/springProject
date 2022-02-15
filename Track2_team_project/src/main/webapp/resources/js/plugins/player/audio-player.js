@@ -77,6 +77,11 @@ $(function() {
     console.log(obj);
     var playlistMakedByMe=JSON.stringify(obj);
     playlistMakedByMe = playlistMakedByMe.replace(/\\\"/g,"\'");
+    playlistMakedByMe = playlistMakedByMe.replace(/\"title\"/g,"title");
+    playlistMakedByMe = playlistMakedByMe.replace(/\"artist\"/g,"title");
+    playlistMakedByMe = playlistMakedByMe.replace(/\"mp3\"/g,"title");
+    playlistMakedByMe = playlistMakedByMe.replace(/\"option\"/g,"title");
+    playlistMakedByMe = playlistMakedByMe.replace(/\"image\"/g,"title");
     console.log(typeof playlistMakedByMe);
     console.log("========================최종 값================================");
     console.log(playlistMakedByMe);
