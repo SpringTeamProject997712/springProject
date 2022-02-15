@@ -56,6 +56,7 @@ $(function() {
     //함수 가동
     if ($('.audio-player').length) {
 		var myPlayListOtion = '<ul class="more_option"><li><a href="#"><span class="opt_icon" title="Add To Favourites"><span class="icon icon_fav"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Queue"><span class="icon icon_queue"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Download Now"><span class="icon icon_dwn"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Playlist"><span class="icon icon_playlst"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Share"><span class="icon icon_share"></span></span></a></li></ul>';
+		console.log("뭐가 다른지 봅시다 : " + myPlayListOtion);
 		
 		$.ajax({
     	type:"get",
@@ -74,9 +75,11 @@ $(function() {
     });
     
     console.log(obj);
-    notBasicPlayList=JSON.stringify(obj);
+    var playlistMakedByMe=JSON.stringify(obj);
+    playlistMakedByMe = playlistMakedByMe.replace(/\\\"/g,"\'");
+    console.log(typeof playlistMakedByMe);
     console.log("========================최종 값================================");
-    console.log(notBasicPlayList);
+    console.log(playlistMakedByMe);
 		
 		var music = '<c:out value="${music}"/>';
 		
