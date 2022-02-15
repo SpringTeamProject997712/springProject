@@ -34,24 +34,23 @@ public class CreatePlaylistController {
 		
 		List<PlaylistVO> plist = new ArrayList<PlaylistVO>(); //여기에 담아서 리턴함
 		
-		switch(menu){ //받은 숫자로 스위치문 가동
-			
-			case 1: // 랜덤 플레이 리스트
-				plist = addRandomPlaylist();
-			break;
-		}
+		//숫자에 따라 처리함
+		plist = service.selectMethod(menu);
 		
+//====================================================
+//		받은 plist를 json형식의 string으로 변환해 ajax로 반환한다.
 		Gson gson = new Gson();
 		String json = gson.toJson(plist);
 		log.info("확ㅡ인 : "+json);
+//====================================================
 		return json;
 	}
 	
-	private List<PlaylistVO> addRandomPlaylist(){
-		List<PlaylistVO> plist = service.addRandomPlaylist();
-		log.info("===================5개 리스트=========================");
-		log.info(plist);
-		return plist;
-	}
+	/*
+	 * private List<PlaylistVO> addRandomPlaylist(){ List<PlaylistVO> plist =
+	 * service.addRandomPlaylist();
+	 * log.info("===================5개 리스트=========================");
+	 * log.info(plist); return plist; }
+	 */
 	
 }
