@@ -34,7 +34,7 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 		playlist.setTitle(track.getName());
 		return playlist;
 		
-		//myPlayListOtion 어케하냐
+		//현재 setImage 경로가 하드 코딩이라 나중에 바꿔줘야함
 	};
 	
 	@Override

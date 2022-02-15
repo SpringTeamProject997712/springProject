@@ -76,6 +76,7 @@ $(function() {
     	}
     });
     
+    console.log(document.cookie);
     console.log("===========================내가 만든 플레이 리스트 값==============================")
     console.log(objectMine);
 		
