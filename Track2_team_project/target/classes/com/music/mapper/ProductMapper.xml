@@ -14,6 +14,12 @@
 			select MAX(pbno) as pbno from product_m
 		]]>
 	</select>
+	
+	<select id="searchAbno" resultType="com.music.domain.AlbumVO">
+		<![CDATA[
+			select /*+ index_desc(album_m album_m_pk) */ name, abno from album_m
+		]]>
+	</select>
 
   	<insert id="insertProduct">
   		<selectKey keyProperty="pbno" order="BEFORE" resultType="int">
@@ -32,19 +38,19 @@
   	</insert>
 
   	<insert id="insertTrack">
-  		<selectKey keyProperty="pbno" order="BEFORE" resultType="int">
-  			select product_m_seq.nextval from dual
+  		<selectKey keyProperty="tbno" order="BEFORE" resultType="int">
+  			select track_m_seq.nextval from dual
   		</selectKey>
-  		insert into product_m_test (pbno, name, kind,singer,image, songname) 
-		values (#{pbno},#{name},#{kind},#{singer},#{image},#{songname})
+  		insert into track_m (tbno, abno, name, genre, detail, price, songname, songrealname, pbno) 
+		values (#{tbno},#{abno},#{name},#{genre},#{detail},#{price},#{songname}, #{songrealname}, #{pbno})
   	</insert>
 
   	<insert id="insertGoods">
-  		<selectKey keyProperty="pbno" order="BEFORE" resultType="int">
-  			select product_m_seq.nextval from dual
+  		<selectKey keyProperty="gbno" order="BEFORE" resultType="int">
+  			select goods_m_seq.nextval from dual
   		</selectKey>
-  		insert into product_m_test (pbno, name, kind,singer,image, songname) 
-		values (#{pbno},#{name},#{kind},#{singer},#{image},#{songname})
+  		insert into goods_m(gbno, abno, price, amount,pbno) 
+		values (#{gbno},#{abno},#{price},#{amount},#{pbno})
   	</insert>
   	
 </mapper>

@@ -45,32 +45,29 @@ public class UploadController {
 	
 	@GetMapping("/upload")
 	public void productUpload(Model model) {
-		String[] category = {"アルバム","トラック","グッズ"};
-		model.addAttribute("category", category);
+		String[] genre = {"장르1","장르2","장르3","장르4"};
+		model.addAttribute("genre", genre);
 		model.addAttribute("pbno", pservice.searchPbno()+1);
+		model.addAttribute("abno",pservice.searchAbno());
 	}
 	
-	@PostMapping("/uploadpro")
-	public String insertProduct(AlbumVO album, ProductVO product, TrackVO track, GoodsVO goods, 
-			@RequestParam("uploadImage") MultipartFile uploadImage, @RequestParam("uploadMusic") MultipartFile uploadMusic, 
-			@RequestParam("pbno") int pbno, Model model) {
+	@PostMapping("/uploadpro_album")
+	public String insertAlbum(AlbumVO album, ProductVO product, 
+			@RequestParam("uploadImage") MultipartFile uploadImage, @RequestParam("pbno") int pbno, Model model) {
 		
 //		MultipartFile multipartFile = portfolio.getUploadFile();
 		String uploadFolder = "C:\\upload";
 		log.info("file name : "+uploadImage.getOriginalFilename());
 				
 		String uploadImageName = uploadImage.getOriginalFilename();
-		String uploadMusicName = uploadMusic.getOriginalFilename();
 		
 		//IE
 		uploadImageName = uploadImageName.substring(uploadImageName.lastIndexOf("//")+1);
-		uploadMusicName = uploadMusicName.substring(uploadMusicName.lastIndexOf("//")+1);
 		log.info("only file name :"+uploadImageName);
 		
 		UUID uuid = UUID.randomUUID();
 		
 		uploadImageName = uuid.toString()+"_"+uploadImageName;
-		uploadMusicName = uuid.toString()+"_"+uploadMusicName;
 		
 		File uploadPath = new File(uploadFolder, getFolder());
 		
@@ -80,22 +77,112 @@ public class UploadController {
 		
 		
 		File saveimage = new File(uploadPath, uploadImageName);
-		File savemusic = new File(uploadPath, uploadMusicName);
 		
 		String saveImageUrl = uploadImageName.toString();
-		String saveMusicUrl = uploadMusicName.toString();
 		log.info(saveImageUrl);
-		log.info(saveMusicUrl);
 		
 		try {
 			uploadImage.transferTo(saveimage);
 			uploadImageName = (saveimage.toString().substring(10));
 			album.setImage(uploadImageName);
 			
-//			uploadMusic.transferTo(savemusic);
-//			uploadMusicName = (savemusic.toString().substring(10));
-//			album.setName(uploadMusicName);
-//			log.info(uploadMusicName);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		pservice.insertProduct(product);
+		
+		pservice.insertAlbum(album);
+		album.setPbno(pbno);
+		
+		return "redirect:/";
+	}
+	
+	@PostMapping("/uploadpro_track")
+	public String insertTrack(AlbumVO album, ProductVO product, TrackVO track, GoodsVO goods, 
+			@RequestParam("uploadMusic") MultipartFile uploadMusic, 
+			@RequestParam("pbno") int pbno, Model model) {
+		
+String uploadFolder = "C:\\upload";
+		
+		String uploadMusicName = uploadMusic.getOriginalFilename();
+		String uploadMusicRealName = uploadMusic.getOriginalFilename();
+		
+		//IE
+		uploadMusicName = uploadMusicName.substring(uploadMusicName.lastIndexOf("//")+1);
+		
+		UUID uuid = UUID.randomUUID();
+		
+		uploadMusicName = uuid.toString()+"_"+uploadMusicName;
+		
+		File uploadPath = new File(uploadFolder, getFolder());
+		
+		if(uploadPath.exists() == false) {
+			uploadPath.mkdirs();
+		}
+		
+		
+		File savemusic = new File(uploadPath, uploadMusicName);
+		
+		String saveMusicUrl = uploadMusicName.toString();
+		log.info(saveMusicUrl);
+		
+		try {
+			
+			uploadMusic.transferTo(savemusic);
+			uploadMusicName = (savemusic.toString().substring(10));
+			track.setSongrealname(uploadMusicName);
+			track.setSongname(uploadMusicRealName);
+			log.info(uploadMusicName);
+			
+//			FileOutputStream thumbnail
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		pservice.insertProduct(product);
+		
+		pservice.insertTrack(track);
+		track.setPbno(pbno);
+		
+		return "redirect:/";
+	}
+	
+	@PostMapping("/uploadpro_goods")
+	public String insertGoods(AlbumVO album, ProductVO product, TrackVO track, GoodsVO goods, 
+			@RequestParam("uploadMusic") MultipartFile uploadMusic, 
+			@RequestParam("pbno") int pbno, Model model) {
+		
+//		MultipartFile multipartFile = portfolio.getUploadFile();
+		String uploadFolder = "C:\\upload";
+		
+		String uploadMusicName = uploadMusic.getOriginalFilename();
+		
+		//IE
+		uploadMusicName = uploadMusicName.substring(uploadMusicName.lastIndexOf("//")+1);
+		
+		UUID uuid = UUID.randomUUID();
+		
+		uploadMusicName = uuid.toString()+"_"+uploadMusicName;
+		
+		File uploadPath = new File(uploadFolder, getFolder());
+		
+		if(uploadPath.exists() == false) {
+			uploadPath.mkdirs();
+		}
+		
+		
+		File savemusic = new File(uploadPath, uploadMusicName);
+		
+		String saveMusicUrl = uploadMusicName.toString();
+		log.info(saveMusicUrl);
+		
+		try {
+			
+			uploadMusic.transferTo(savemusic);
+			uploadMusicName = (savemusic.toString().substring(10));
+			album.setName(uploadMusicName);
+			log.info(uploadMusicName);
 			
 //			FileOutputStream thumbnail
 		}catch(Exception e) {

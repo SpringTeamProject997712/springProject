@@ -1,5 +1,7 @@
 package com.music.service;
 
+import java.util.List;
+
 import com.music.domain.AlbumVO;
 import com.music.domain.GoodsVO;
 import com.music.domain.ProductVO;
@@ -11,6 +13,8 @@ public interface ProductService {
 	
 	//제품 업데이트
 	public int searchPbno();
+	public List<AlbumVO> searchAbno();
+	
 	
 	//제품 업데이트
 	public void insertProduct(ProductVO product);

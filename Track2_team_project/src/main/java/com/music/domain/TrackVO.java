@@ -8,7 +8,7 @@ public class TrackVO {
 	private int tbno;
 	private int abno;
 	private String name;
-	private String category;
+	private String genre;
 	private String detail;
 	private int price;
 	private String songname;
