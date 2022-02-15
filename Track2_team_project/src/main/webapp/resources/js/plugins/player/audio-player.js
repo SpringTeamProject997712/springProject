@@ -44,13 +44,13 @@ $(function() {
     });
 	
     var objectMine;
-    
     var login_checker = login_flag;
     
     console.log("현재 로그인 체커"+login_checker);
     
     //함수 가동
-    if ($('.audio-player').length) {
+    if ($('.audio-player').length) { //audio-player 클래스가 있으면 작동
+    
 		var myPlayListOtion = '<ul class="more_option"><li><a href="#"><span class="opt_icon" title="Add To Favourites"><span class="icon icon_fav"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Queue"><span class="icon icon_queue"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Download Now"><span class="icon icon_dwn"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Playlist"><span class="icon icon_playlst"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Share"><span class="icon icon_share"></span></span></a></li></ul>';
 		
 		$.ajax({

@@ -35,14 +35,15 @@ public class CreatePlaylistController {
 		List<PlaylistVO> plist = new ArrayList<PlaylistVO>(); //여기에 담아서 리턴함
 		
 		//숫자에 따라 처리함
+		//1: track에서 다섯개 뽑아서 반환
+		
 		plist = service.selectMethod(menu);
 		
-//====================================================
-//		받은 plist를 json형식의 string으로 변환해 ajax로 반환한다.
 		Gson gson = new Gson();
 		String json = gson.toJson(plist);
 		log.info("확ㅡ인 : "+json);
-//====================================================
+//		받은 plist를 json형식의 string으로 변환해 ajax로 반환한다.
+		
 		return json;
 	}
 	
