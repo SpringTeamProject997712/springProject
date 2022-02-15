@@ -46,26 +46,8 @@ $(function() {
             mp3: "/music/打上花火.mp3",
 						option : myPlayListOtion
         }];
-        
-    $.ajax({
-    	type:"get",
-    	url:"/createPlaylist/addRandomPlayList",
-    	async:false,
-    	success:function(data){
-    		console.log(data);
-    		for(var i=0; i<data.length; i++){
-    			
-    		}
-    		notBasicPlayList=data;
-    		console.log(notBasicPlayList);
-    	},error:function(xhr,status,error){
-    		console.log("xhr : "+xhr.status+"\n status : "+error);
-    	}
-    });
     
-    console.log(notBasicPlayList);
-    console.log(notBasicPlayList[0]);
-    console.log(notBasicPlayList.length);
+    var obj;
         
     var login_checker = "<sec:authorize access='isAuthenticated()'/>";
     
@@ -74,6 +56,24 @@ $(function() {
     //함수 가동
     if ($('.audio-player').length) {
 		var myPlayListOtion = '<ul class="more_option"><li><a href="#"><span class="opt_icon" title="Add To Favourites"><span class="icon icon_fav"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Queue"><span class="icon icon_queue"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Download Now"><span class="icon icon_dwn"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Playlist"><span class="icon icon_playlst"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Share"><span class="icon icon_share"></span></span></a></li></ul>';
+		
+		$.ajax({
+    	type:"get",
+    	url:"/createPlaylist/addRandomPlayList",
+    	async:false,
+    	success:function(data){
+    		console.log(data);
+    		obj = JSON.parse(data);
+    		for(var i=0; i<obj.length; i++){
+    			obj[i].option = myPlayListOtion;
+    		}
+     		console.log(obj);
+    	},error:function(xhr,status,error){
+    		console.log("xhr : "+xhr.status+"\n status : "+error);
+    	}
+    });
+    
+    console.log(obj);
 		
 		var music = '<c:out value="${music}"/>';
 		
