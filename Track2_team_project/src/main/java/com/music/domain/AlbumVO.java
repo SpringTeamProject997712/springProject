@@ -14,8 +14,8 @@ public class AlbumVO {
 	private int price;
 	private String image;
 	private String songname;
-	private String regdate;
-	private String pbno;
+	private Date regdate;
+	private int pbno;
 	
 //	private int pbno;
 //	private String name;
@@ -36,5 +36,5 @@ public class AlbumVO {
 //	private int staravg;
 //	private String onlines;
 //	private int stock;
-	
+
 }

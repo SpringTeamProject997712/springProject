@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+ul.pro_dropdown_menu {
+	right: 10px;
+	top: 100%;
+}
+
+.ms_banner_text {
+    padding-left: 30px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #2cc8e5;
+    font-size:22px;
+    border-radius: 20px;
+}
+.nav-pills .nav-link.active, .nav-pills {
+    border-radius: 20px;
+}
+
+.nav-link {
+    display: block;
+    padding: 10.5rem 1rem;
+    border-radius: 20px;
+}
+
+.upload-tab-bar	 {
+    width: 56%;
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    border-radius: 15px;
+}

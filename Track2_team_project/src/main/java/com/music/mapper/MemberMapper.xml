@@ -12,6 +12,7 @@
 		<result property="email" column="email"/>
 		<result property="address1" column="address1"/>
 		<result property="address2" column="address2"/>
+		<result property="zipnum" column="zipnum"/>
 		<result property="regdate" column="regdate" javaType="java.util.Date"/>
 		<collection property="authList" resultMap="authMap"/>
 	</resultMap>
@@ -21,8 +22,8 @@
 	</resultMap>
 	
 	<insert id="registMember">
-		insert into member_m (id,pw,nickname,name,phone,email,address1,address2)
-		values (#{id},#{pw},'임시',#{name},'임시','임시','임시','임시')
+		insert into member_m (id,pw,nickname,name,phone,email,address1,address2, zipnum)
+		values (#{id},#{pw},'임시',#{name},'임시','임시','임시','임시', '임시')
 	</insert>
 	<insert id="registMemberAuth">
 		insert into member_auth_m (id, auth)
@@ -35,5 +36,18 @@
 		ON m.id = auth.id
 		where m.id= #{id}
 	</select>
+	
+	<select id="viewMemberList" resultMap="memberTableMap">
+		select m.id as id, pw, name, nickname, active, phone, active, email, address1, address2, regdate, auth 
+		from member_m m LEFT OUTER JOIN member_auth_m auth
+		ON m.id = auth.id
+	</select>
 
+	<select id="checkMemberWithId" resultType="int">
+		select count(*) from member_m where id = #{id}
+	</select>
+	
+	<update id="updateMember">
+		update member_m set name=#{name}, address1=#{address1}, address2=#{address2}, active=#{active} where id=#{id}
+	</update>
 </mapper>

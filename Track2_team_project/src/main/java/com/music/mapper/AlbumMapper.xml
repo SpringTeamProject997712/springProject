@@ -9,6 +9,7 @@
   		</selectKey>
   		insert into album_m (abno, name, detail, price, singer, image, songname) 
 		values (#{abno},#{name},1,10000,#{singer},#{image},#{songname})
+
   	</insert>
   	
   	<select id="listAlbum" resultType="com.music.domain.AlbumVO">

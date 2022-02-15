@@ -26,11 +26,15 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class AlbumController {
 	
+	
+	
 	@Setter(onMethod_= @Autowired)
 	private AlbumService service;
 	
 	@Setter(onMethod_= @Autowired)
 	private AlbumMapper mapper;
+	
+	
 	
 	private String getFolder() {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -93,7 +97,7 @@ public class AlbumController {
 			
 			uploadMusic.transferTo(savemusic);
 			uploadMusicName = (savemusic.toString().substring(10));
-			album.setSongname(uploadMusicName);
+			album.setName(uploadMusicName);
 			log.info(uploadMusicName);
 //			FileOutputStream thumbnail
 		}catch(Exception e) {
