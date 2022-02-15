@@ -6,7 +6,7 @@
 <!----Upload and Share Wrapper Start---->
 <div class="ms_upload_wrapper marger_top60">
 
-	<div class="ms_upload_box">
+	<div class="upload-tab-bar">
 		<ul class="nav nav-pills nav-fill">
 			<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#album">アルバム</a></li>
 			<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#track">トラック</a></li>
