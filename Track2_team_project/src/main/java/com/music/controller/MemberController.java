@@ -75,7 +75,7 @@ public class MemberController {
 		/* User user = (User)auth.getPrincipal(); */
 		String myName = "";
 		log.info(auth.getPrincipal());
-		if(auth.getPrincipal().equals("anonymousUser")) {
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
 			CustomUser user = (CustomUser)auth.getPrincipal();
 			myName =user.getUsername();
 		}
