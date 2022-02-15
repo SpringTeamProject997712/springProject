@@ -73,10 +73,12 @@ public class MemberController {
 	public String loginChecker() {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		/* User user = (User)auth.getPrincipal(); */
-
+		String myName = "";
 		log.info(auth.getPrincipal());
-		CustomUser user = (CustomUser)auth.getPrincipal();
-		String myName =user.getUsername();
+		if(auth.getPrincipal().equals("anonymousUser")) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+		}
 		return myName;
 	}
 	

@@ -26,39 +26,19 @@ $(function() {
             mp3: "/music/天体観測.mp3",
 						option : myPlayListOtion
         }];
-        
-//   let notBasicPlayList = [{
-//						image : '../images/weekly/song1.jpg',	
-//            title: "에어맨이 쓰러지지 않아",
-//            artist: "록맨",
-//            mp3: "/music/Airman.mp3",
-//						option : myPlayListOtion	
-//       }, {
-//						image : '../images/weekly/song2.jpg',	
-//            title: "천체관측",
-//            artist: "BUMP OF CHICKEN",
-//            mp3: "/music/天体観測.mp3",
-//						option : myPlayListOtion
-//        }, {
-//						image : '../images/weekly/song3.jpg',	
-//            title: "모르는노래",
-//            artist: "음은 익숙",
-//           mp3: "/music/打上花火.mp3",
-//						option : myPlayListOtion
-//        }];
-//    console.log(basicPlayList);
-//   console.log(typeof basicPlayList);
 
-		var login_flag = "";
+		let login_flag = "";
 
 		$.ajax({
     	type:"get",
     	url:"/member/loginChecker",
     	async:false,
     	success:function(data){
-    		login_flag=data;		
+    		if(data =! '1'){
+    		login_flag=data;
+    		}		
     	},error:function(xhr,status,error){
-    		console.log("xhr : "+xhr.status+"\n status : "+error);
+    		console.log("xhr : "+xhr.status+"\n text : "+xhr.responseText+"\n error : "+error);
     	}
     });
 	
@@ -73,7 +53,7 @@ $(function() {
 		
 		$.ajax({
     	type:"get",
-    	url:"/createPlaylist/addRandomPlayList",
+    	url:"/createPlaylist/addPlayList",
     	async:false,
     	success:function(data){
     		console.log(data);
@@ -83,7 +63,7 @@ $(function() {
     		}
      		console.log(objectMine);
     	},error:function(xhr,status,error){
-    		console.log("xhr : "+xhr.status+"\n status : "+error);
+    		console.log("xhr : "+xhr.status+"\n text : "+xhr.responseText+"\n error : "+error);
     	}
     });
     
