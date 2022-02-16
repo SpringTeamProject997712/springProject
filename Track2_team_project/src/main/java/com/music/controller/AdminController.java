@@ -12,11 +12,11 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.music.domain.MemberVO;
 import com.music.service.MemberService;
+import com.music.utility.Criteria;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -44,19 +44,29 @@ public class AdminController {
 		return "redirect:/";
 	}
 	
-	@GetMapping("/member/manage_member")//맴버관리 - 멤버 리스트 보기
-	public void viewManageMember(Model model) {
-		List<MemberVO> mlist = mService.viewMemberList();
+//========================================유저관리 =========================================	
+	
+	@GetMapping("/member/manage_member")//유저관리 - 유저 리스트 보기
+	public void viewMemberList(Model model, Criteria cri) {
+		
+//		List<MemberVO> mlist = mService.viewMemberList();
+		List<MemberVO> mlist = mService.viewMemberListWithPaging(cri);
 		log.info(mlist);
 		model.addAttribute("memberList", mlist);
+		model.addAttribute("pageMaker", mService.pagingList(cri));
 	}
 	
-	@GetMapping("/member/view_member")//맴버관리 - 멤버 리스트 보기
+	@GetMapping("/member/view_member")//유저관리 - 유저 세부사항 보기
 	public void viewMemberDetail(Model model, String id ) {
 		MemberVO member = mService.viewMember(id);
 		model.addAttribute("member",member);
 	}
 	
+//=========================================상품관리용========================================
+
+	@GetMapping("product/manage_product") //상품관리 - 상품 리스트 보기
+	public void viewProductList() {
+	}
 	
 //=====================================템플릿 파악용 컨트롤러====================================
 	@GetMapping("/base/list-group")

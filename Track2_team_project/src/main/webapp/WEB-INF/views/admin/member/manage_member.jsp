@@ -8,10 +8,16 @@
             <div class="card-header"><strong>유저 관리</strong><span class="small ms-1">유저 목록</span></div>
             <div class="card-body">
               <div class="text-medium-emphasis small">
+              	<!-- 검색 창 -->
+              	<form id="pagingForm" action="/admin/member/manage_member" method="get">
 	              <div class="input-group" style="width:200px;">
-								  <input class="form-control" type="text" placeholder="search ID" aria-label="아이디 검색">
-								  <button class="btn btn-outline-secondary" type="button" style="color:white; background:grey">검색</button>
+								 		<input class="form-control" name="keyword" type="text" placeholder="search ID" value="${pageMaker.cri.keyword}" aria-label="아이디 검색">
+								  	<button class="btn btn-outline-secondary" type="submit" style="color:white; background:grey">검색</button>
+										<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+										<input type="hidden" name="amount" value="10">
+										<input type="hidden" name="type" value="${pageMaker.cri.type}">
 								</div>
+								</form>
 							</div>
               <div class="example">
                <!--  <ul class="nav nav-tabs" role="tablist">
@@ -40,7 +46,7 @@
                         	<tr>
 	                          <td scope="row">${mlist.id}</td>
 	                          <td>${mlist.name}</td>
-	                          <td>${mlist.address1} || ${mlist.address2}</td>
+	                          <td>${mlist.zipnum} || ${mlist.address1}</td>
 	                          <td>
 	                          <c:forEach items="${mlist.authList}" var="authList">
 	                          	${authList.auth}
@@ -67,6 +73,16 @@
                       </tbody>
                     </table>
                   </div>
+                  <nav aria-label="Page navigation example">
+									  <ul class="pagination justify-content-center">
+									    <li class="page-item ${pageMaker.prev?'':'disabled'}"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+									    <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+									    	<li class="page-item active"><a class="page-link ${pageMaker.cri.pageNum == num?'active':''}" href="#">${num}</a></li>
+									    </c:forEach>
+									    <li class="page-item ${pageMaker.next?'':'disabled'}"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+									  </ul>
+									  
+									</nav>
                 </div>
               </div>
             </div>

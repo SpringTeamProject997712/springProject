@@ -10,6 +10,7 @@
 		<result property="active" column="active"/>
 		<result property="phone" column="phone"/>
 		<result property="email" column="email"/>
+		<result property="zipnum" column="zipnum"/>
 		<result property="address1" column="address1"/>
 		<result property="address2" column="address2"/>
 		<result property="zipnum" column="zipnum"/>
@@ -21,6 +22,14 @@
 		<result property="auth" column="auth"/>
 	</resultMap>
 	
+	<sql id="search_box">
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+			<if test="keyword != null">
+				m.id like '%'||#{keyword}||'%'
+			</if>
+		</trim>
+	</sql>
+	
 	<insert id="registMember">
 		insert into member_m (id,pw,nickname,name,phone,email,address1,address2, zipnum)
 		values (#{id},#{pw},'임시',#{name},'임시','임시','임시','임시', '임시')
@@ -31,23 +40,45 @@
 	</insert>
 	
 	<select id="viewMember" resultMap="memberTableMap">
-		select m.id as id, pw, name, nickname, active, phone, email, address1, address2, regdate, auth 
+		select m.id as id, pw, name, zipnum, nickname, active, phone, email, address1, address2, regdate, auth 
 		from member_m m LEFT OUTER JOIN member_auth_m auth
 		ON m.id = auth.id
 		where m.id= #{id}
 	</select>
 	
 	<select id="viewMemberList" resultMap="memberTableMap">
-		select m.id as id, pw, name, nickname, active, phone, active, email, address1, address2, regdate, auth 
+		select m.id as id, pw, name, zipnum, nickname, active, phone, active, email, address1, address2, regdate, auth 
 		from member_m m LEFT OUTER JOIN member_auth_m auth
 		ON m.id = auth.id
 	</select>
-
+	
+	<select id="viewMemberListWithPaging" resultMap="memberTableMap">
+		<![CDATA[
+			select * from (
+				select m.id as id, pw, name, zipnum, nickname, phone, active, email, address1,
+						 address2, regdate, auth, rownum rn  
+				from member_m m LEFT OUTER JOIN member_auth_m auth
+				ON m.id = auth.id where 
+		]]>
+		<include refid="search_box"></include>
+		<![CDATA[			
+					rownum <= #{amount} * #{pageNum}  order by regdate desc
+				) 
+			where rn > #{amount} * (#{pageNum}-1)
+		]]>
+	</select>
+	
 	<select id="checkMemberWithId" resultType="int">
 		select count(*) from member_m where id = #{id}
 	</select>
 	
+	<select id="countMember" resultType="int">
+			select count(*) from member_m m where
+			<include refid="search_box"></include>
+			(active = '0' or active = '1')
+	</select>
+	
 	<update id="updateMember">
-		update member_m set name=#{name}, address1=#{address1}, address2=#{address2}, active=#{active} where id=#{id}
+		update member_m set name=#{name}, address1=#{address1}, address2=#{address2}, zipnum=#{zipnum}, active=#{active} where id=#{id}
 	</update>
 </mapper>
