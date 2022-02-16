@@ -89,8 +89,8 @@ $(function() {
             smoothPlayBar: true,
             keyEnabled: true,
             playlistOptions: {
-            autoPlay: false           //로딩후 음악을 자동으로 시작할건가요?
-            													//크롬은 모든 음소거 되지않은 자동재생을 차단합니다. 유저가 웹과 상호작용하지 않았다면요.
+            autoPlay: false,        //로딩후 음악을 자동으로 시작할건가요?
+            						//크롬은 모든 음소거 되지않은 자동재생을 차단합니다. 유저가 웹과 상호작용하지 않았다면요.					
             }
         });
         $("#jquery_jplayer_1").on($.jPlayer.event.ready + ' ' + $.jPlayer.event.play, function(event) {
