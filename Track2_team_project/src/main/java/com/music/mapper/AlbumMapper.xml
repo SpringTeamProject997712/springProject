@@ -21,5 +21,10 @@
 	<select id="readAlbum" resultType="com.music.domain.AlbumVO">
 		select * from album_m where abno = #{abno}
 	</select>
-  	
+  	<select id="readAlbum_single" resultType="com.music.domain.AlbumVO">
+  		select * from album_single where abno= #{abno}
+  	</select>
+  	<select id="listNewly" resultType="com.music.domain.AlbumVO">
+  		select * from newly order by tbno desc
+  	</select>
 </mapper>

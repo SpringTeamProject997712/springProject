@@ -8,14 +8,14 @@
         <div class="ms_album_single_wrapper">
             <div class="album_single_data">
                 <div class="album_single_img">
-                    <img src="${pageContext.request.contextPath}/upload/${view.image}" alt="" class="img-fluid">
+                    <img src="${pageContext.request.contextPath}/upload/${view[0].image}" alt="" class="img-fluid">
                 </div>
                 <div class="album_single_text">
-                    <h2>${view.name}</h2>
-                    <p class="singer_name">By - ${view.singer}</p>
+                    <h2>${view[0].name}</h2>
+                    <p class="singer_name">By - ${view[0].singer}</p>
                     <div class="album_feature">
                         <a href="#" class="album_date">5 song | 25:10</a>
-                        <a href="#" class="album_date">Released ${view.regdate} | Abc Music Company</a>
+                        <a href="#" class="album_date">Released ${view[0].regdate} | Abc Music Company</a>
                     </div>
                     <div class="album_btn">
                         <a href="#" class="ms_btn play_btn"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">Play All</span><span class="pause_all"><img src="/images/svg/pause_all.svg" alt="">Pause</span></a>
@@ -44,10 +44,13 @@
 						<li class="text-center">Add To Favourites</li>
 						<li class="text-center">More</li>
 					</ul>
+					
+					<!-- track list start -->
+					<c:forEach var="view" items="${view}">
 					<ul>
-						<li><a href="#"><span class="play_no">01</span><span class="play_hover"></span></a></li>
-						<li><a href="#">Bloodlust</a></li>
-						<li><a href="#">Ava Cornish & Brian Hill</a></li>
+						<li><a href="#"><span class="play_no">${view.tbno}</span><span class="play_hover"></span></a></li>
+						<li><a href="#">${view.tname}</a></li>
+						<li><a href="#">${view.name}</a></li>
 						<li class="text-center"><a href="#">5:26</a></li>
 						<li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
 						<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
@@ -60,70 +63,9 @@
 							</ul>
 						</li>
 					</ul>
-					<ul>
-						<li><a href="#"><span class="play_no">02</span><span class="play_hover"></span></a></li>
-						<li><a href="#">Desired Games</a></li>
-						<li><a href="#">Ava Cornish & Brian Hill</a></li>
-						<li class="text-center"><a href="#">5:26</a></li>
-						<li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
-						<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
-							<ul class="more_option">
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Download Now</a></li>
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-							</ul>
-						</li>
-					</ul>
-					<ul>
-						<li><a href="#"><span class="play_no">03</span><span class="play_hover"></span></a></li>
-						<li><a href="#">Until I Met You</a></li>
-						<li><a href="#">Ava Cornish & Brian Hill</a></li>
-						<li class="text-center"><a href="#">5:26</a></li>
-						<li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
-						<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
-							<ul class="more_option">
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Download Now</a></li>
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-							</ul>
-						</li>
-					</ul>
-					<ul class="play_active_song">
-						<li><a href="#"><span class="play_no">04</span><span class="play_hover"></span></a></li>
-						<li><a href="#">Dark Alley Acoustic</a></li>
-						<li><a href="#">Ava Cornish & Brian Hill</a></li>
-						<li class="text-center"><a href="#">5:26</a></li>
-						<li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
-						<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
-							<ul class="more_option">
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Download Now</a></li>
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-							</ul>
-						</li>
-					</ul>
-					<ul>
-						<li><a href="#"><span class="play_no">05</span><span class="play_hover"></span></a></li>
-						<li><a href="#">Cloud nine</a></li>
-						<li><a href="#">Ava Cornish & Brian Hill</a></li>
-						<li class="text-center"><a href="#">5:26</a></li>
-						<li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
-						<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
-							<ul class="more_option">
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Download Now</a></li>
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-								<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-							</ul>
-						</li>
-					</ul>
+					</c:forEach>
+					<!-- track list end -->
+				
 				</div>
 			</div>
         </div>
@@ -579,6 +521,9 @@
                 <div class="ms_release_slider swiper-container">
                     <div class="ms_divider"></div>
                     <div class="swiper-wrapper">
+                    
+                       <!-- newly start -->
+                       <c:forEach var="newly" items="${newly}">
                         <div class="swiper-slide">
                             <div class="ms_release_box">
                                 <div class="w_top_song">
@@ -588,12 +533,14 @@
                                         <div class="ms_song_overlay">
                                         </div>
                                         <div class="ms_play_icon">
+                                        
                                             <img src="/images/svg/play.svg" alt="">
+                                        
                                         </div>
                                     </div>
                                     <div class="w_tp_song_name">
-                                        <h3><a href="#">Dark Alley Acoustic</a></h3>
-                                        <p>Ava Cornish</p>
+                                        <h3><a href="/album/album_single?abno=${newly.abno}">${newly.tname}</a></h3>
+                                        <p>${newly.name}</p>
                                     </div>
                                 </div>
                                 <div class="weekly_right">
@@ -601,94 +548,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="ms_release_box">
-                                <div class="w_top_song">
-                                    <span class="slider_dot"></span>
-                                    <div class="w_tp_song_img">
-                                        <img src="/images/weekly/song2.jpg" alt="">
-                                        <div class="ms_song_overlay">
-                                        </div>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="w_tp_song_name">
-                                        <h3><a href="#">Dark Alley Acoustic</a></h3>
-                                        <p>Ava Cornish</p>
-                                    </div>
-                                </div>
-                                <div class="weekly_right">
-                                    <span class="w_song_time">5:10</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_release_box">
-                                <div class="w_top_song">
-                                    <span class="slider_dot"></span>
-                                    <div class="w_tp_song_img">
-                                        <img src="/images/weekly/song3.jpg" alt="">
-                                        <div class="ms_song_overlay">
-                                        </div>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="w_tp_song_name">
-                                        <h3><a href="#">Dark Alley Acoustic</a></h3>
-                                        <p>Ava Cornish</p>
-                                    </div>
-                                </div>
-                                <div class="weekly_right">
-                                    <span class="w_song_time">5:10</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_release_box">
-                                <div class="w_top_song">
-                                    <span class="slider_dot"></span>
-                                    <div class="w_tp_song_img">
-                                        <img src="/images/weekly/song4.jpg" alt="">
-                                        <div class="ms_song_overlay">
-                                        </div>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="w_tp_song_name">
-                                        <h3><a href="#">Dark Alley Acoustic</a></h3>
-                                        <p>Ava Cornish</p>
-                                    </div>
-                                </div>
-                                <div class="weekly_right">
-                                    <span class="w_song_time">5:10</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_release_box">
-                                <div class="w_top_song">
-                                    <span class="slider_dot"></span>
-                                    <div class="w_tp_song_img">
-                                        <img src="/images/weekly/song5.jpg" alt="">
-                                        <div class="ms_song_overlay">
-                                        </div>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="w_tp_song_name">
-                                        <h3><a href="#">Dark Alley Acoustic</a></h3>
-                                        <p>Ava Cornish</p>
-                                    </div>
-                                </div>
-                                <div class="weekly_right">
-                                    <span class="w_song_time">5:10</span>
-                                </div>
-                            </div>
-                        </div>
+                        </c:forEach>
+                        <!-- newly end -->
+                       
                     </div>
                 </div>
                 <!-- Add Arrows -->

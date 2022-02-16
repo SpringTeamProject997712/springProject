@@ -12,7 +12,13 @@ public interface AlbumMapper {
 	//엘범 리스트
 	public List<AlbumVO> listAlbum();
 	
-	//엘범 상세보기
+	//앨범상세보기
 	public AlbumVO readAlbum(int abno);
+	//엘범 상세보기
+	public List<AlbumVO> readAlbum_single(int abno);
+	
+	//새로운 앨범 
+	public List<AlbumVO> listNewly();
+	
 	
 }

@@ -32,7 +32,14 @@ public class AlbumServiceImpl implements AlbumService {
 	public AlbumVO readAlbum(int abno) {
 		return mapper.readAlbum(abno);
 	}
-	
+	@Override
+	public List<AlbumVO> readAlbum_single(int abno) {
+		return mapper.readAlbum_single(abno);
+	}
+	@Override
+	public List<AlbumVO> newly() {
+		return mapper.listNewly();
+	}
 	
 	
 }

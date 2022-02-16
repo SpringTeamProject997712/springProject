@@ -113,7 +113,8 @@ public class AlbumController {
 	
 	@GetMapping("/album_single")
 	public void album_single(Model model, @RequestParam("abno")int abno) {
-		model.addAttribute("view",service.readAlbum(abno));
+		model.addAttribute("view",service.readAlbum_single(abno));
+		model.addAttribute("newly",service.newly());
 	}
 	
 }

@@ -13,9 +13,16 @@ public class AlbumVO {
 	private String detail;
 	private int price;
 	private String image;
-	private String songname;
 	private Date regdate;
 	private int pbno;
+//	album_singleVO 추가함 
+	private int tbno;
+	private String tdetail;
+	private String genre;
+	private String tname;
+	private int tprice;
+	private String songname;
+	private String songrealname;
 	
 //	private int pbno;
 //	private String name;
