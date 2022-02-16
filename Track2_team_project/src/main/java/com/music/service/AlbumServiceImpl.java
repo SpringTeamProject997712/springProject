@@ -29,8 +29,8 @@ public class AlbumServiceImpl implements AlbumService {
 	}
 
 	@Override
-	public AlbumVO readAlbum(int pbno) {
-		return mapper.readAlbum(pbno);
+	public AlbumVO readAlbum(int abno) {
+		return mapper.readAlbum(abno);
 	}
 	
 	

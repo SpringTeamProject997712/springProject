@@ -7,8 +7,8 @@
   		<selectKey keyProperty="abno" order="BEFORE" resultType="int">
   			select album_m_seq.nextval from dual
   		</selectKey>
-  		insert into album_m (abno, name, detail, price, singer, image, songname) 
-		values (#{abno},#{name},1,10000,#{singer},#{image},#{songname})
+  		insert into album_m (abno, name, detail, price, singer, image, pbno) 
+		values (#{abno},#{name},#{detail},#{price},#{singer},#{image},#{pbno})
 
   	</insert>
   	

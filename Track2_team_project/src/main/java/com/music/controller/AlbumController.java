@@ -49,6 +49,7 @@ public class AlbumController {
 		
 	}
 	
+	
 	@GetMapping("/album_upload")
 	public void albumUpload(Model model) {
 		String[] kind = {"장르1","장르2","장르3","장르4"};
@@ -108,6 +109,11 @@ public class AlbumController {
 		service.insertAlbum(album);
 		
 		return "redirect:/album/album";
+	}
+	
+	@GetMapping("/album_single")
+	public void album_single(Model model, @RequestParam("abno")int abno) {
+		model.addAttribute("view",service.readAlbum(abno));
 	}
 	
 }

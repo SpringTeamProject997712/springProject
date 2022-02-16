@@ -55,7 +55,7 @@
                 </div>
                 <div class="ms_nav_wrapper">
                     <ul>
-                        <li><a href="index.jsp" class="active" title="Discover">
+                        <li><a href="/" class="active" title="Discover">
 						<span class="nav_icon">
 							<span class="icon icon_discover"></span>
 						</span>

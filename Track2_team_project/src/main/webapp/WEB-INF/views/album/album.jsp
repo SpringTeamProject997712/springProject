@@ -32,7 +32,9 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                         </ul>
                                         <div class="ms_play_icon">
+                                        <a href="/album/album_single?abno=${list.abno}">
                                             <img src="../images/svg/play.svg" alt="">
+                                        </a>
                                         </div>
                                     </div>
                                 </div>
@@ -70,7 +72,9 @@
                                     <div class="ms_main_overlay">
                                         <div class="ms_box_overlay"></div>
                                         <div class="ms_more_icon">
+                                       
                                             <img src="../images/svg/more.svg" alt="">
+                                        
                                         </div>
                                         <ul class="more_option">
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
@@ -79,9 +83,13 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                         </ul>
+                                        
                                         <div class="ms_play_icon">
+                                         <a href="/album_single?abno=${list.abno}">
                                             <img src="../images/svg/play.svg" alt="">
+                                            </a>
                                         </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="ms_rcnt_box_text">
@@ -702,6 +710,8 @@
                 <div class="ms_release_slider swiper-container">
                     <div class="ms_divider"></div>
                     <div class="swiper-wrapper">
+                    
+                    <!--  newly release album start -->
                         <div class="swiper-slide">
                             <div class="ms_release_box">
                                 <div class="w_top_song">
@@ -724,6 +734,8 @@
                                 </div>
                             </div>
                         </div>
+                        <!--  newly release album end -->
+                        
                         <div class="swiper-slide">
                             <div class="ms_release_box">
                                 <div class="w_top_song">
