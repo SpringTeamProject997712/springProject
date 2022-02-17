@@ -14,8 +14,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.music.domain.AlbumVO;
 import com.music.domain.MemberVO;
+import com.music.service.AlbumService;
 import com.music.service.MemberService;
+import com.music.service.ProductService;
+import com.music.service.TrackService;
 import com.music.utility.Criteria;
 
 import lombok.Setter;
@@ -28,6 +32,17 @@ public class AdminController {
 	
 	@Setter(onMethod_ = @Autowired)
 	MemberService mService;
+	
+	@Setter(onMethod_= @Autowired)
+	ProductService pService;
+	
+	@Setter(onMethod_= @Autowired)
+	AlbumService aService;
+	
+	@Setter(onMethod_= @Autowired)
+	TrackService tService;
+	
+	
 	
 	@GetMapping("/admin") //어드민 페이지로 가기 (admin 로그인 첫화면)
 	public void adminIndex() {
@@ -64,8 +79,17 @@ public class AdminController {
 	
 //=========================================상품관리용========================================
 
-	@GetMapping("product/manage_product") //상품관리 - 상품 리스트 보기
-	public void viewProductList() {
+	@GetMapping("album/manage_album") //상품관리 - 상품 리스트 보기
+	public void viewProductList(Model model, Criteria cri) {
+		List<AlbumVO> alist = aService.viewAlbumListWithPaging(cri);
+		log.info(alist);
+		model.addAttribute("albumList", alist);
+		model.addAttribute("pageMaker", aService.pagingList(cri));
+	}
+	
+	@GetMapping("album/view_album") //상품관리 - 상품 세부사항 보기
+	public void viewProductDetail(Model model) {
+		
 	}
 	
 //=====================================템플릿 파악용 컨트롤러====================================

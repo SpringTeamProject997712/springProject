@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.music.domain.AlbumVO;
 import com.music.mapper.AlbumMapper;
+import com.music.utility.Criteria;
+import com.music.utility.PageMaker;
 
 import lombok.AllArgsConstructor;
 import lombok.Setter;
@@ -43,6 +45,18 @@ public class AlbumServiceImpl implements AlbumService {
 	@Override
 	public List<AlbumVO> getCountLikes() {
 		return mapper.getCountLikes();
+	}
+
+	@Override
+	public List<AlbumVO> viewAlbumListWithPaging(Criteria cri) {
+		return mapper.viewAlbumListWithPaging(cri);
+	}
+
+	@Override
+	public PageMaker pagingList(Criteria cri) {
+		int amount = mapper.countAlbum(cri);
+		PageMaker pageMaker = new PageMaker(cri, amount);
+		return pageMaker;
 	}
 	
 }

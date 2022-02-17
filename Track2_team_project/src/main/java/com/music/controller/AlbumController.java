@@ -36,4 +36,5 @@ public class AlbumController {
 		model.addAttribute("newly",service.newly());
 	}
 	
+	
 }

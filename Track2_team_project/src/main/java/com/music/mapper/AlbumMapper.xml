@@ -2,7 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="com.music.mapper.AlbumMapper">
+		<sql id="search_box">
+			<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+				<if test="keyword != null">
+					a.name like '%'||#{keyword}||'%'
+				</if>
+			</trim>
+		</sql>
 
+	
   	<insert id="insertAlbum">
   		<selectKey keyProperty="abno" order="BEFORE" resultType="int">
   			select album_m_seq.nextval from dual
@@ -17,6 +25,8 @@
 			select /*+ index_desc(album_m album_m_pk) */ * from album_m where abno > 0
 		]]>
 	</select>
+	
+	
 
 	<select id="readAlbum" resultType="com.music.domain.AlbumVO">
 		select * from album_m where abno = #{abno}
@@ -37,4 +47,26 @@
 	order by likes desc
   	</select>
   	
+  	
+<!--   	어드민 -->
+  	<select id="viewAlbumListWithPaging" resultType="com.music.domain.AlbumVO">
+		<![CDATA[
+			select * from 
+		( 
+			select /*+ index_desc(album_m album_m_pk) */ rownum rn, abno, name, singer, detail, price, image, regdate, pbno from album_m 
+			where 
+		]]>
+		<include refid="search_box"></include>
+		<![CDATA[			
+					rownum <= #{amount} * #{pageNum}  order by regdate desc
+				) 
+			where rn > #{amount} * (#{pageNum}-1)
+		]]>
+	</select>
+	
+	<select id="countAlbum" resultType="int">
+			select count(*) from album_m a
+			<include refid="search_box"></include>
+			
+	</select>
 </mapper>
