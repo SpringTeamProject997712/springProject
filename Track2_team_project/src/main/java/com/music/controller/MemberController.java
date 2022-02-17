@@ -3,7 +3,6 @@ package com.music.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.music.domain.MemberVO;
 import com.music.security.domain.CustomUser;
+import com.music.service.CreatePlaylistService;
 import com.music.service.MemberService;
 
 import lombok.Setter;
@@ -29,6 +29,9 @@ public class MemberController {
 	MemberService service; //서비스 자리
 	
 	@Setter(onMethod_ = @Autowired)
+	CreatePlaylistService pservice; //서비스 자리
+	
+	@Setter(onMethod_ = @Autowired)
 	private PasswordEncoder pencoder; //패스워드 인코더
 	
 	//회원가입
@@ -38,7 +41,8 @@ public class MemberController {
 		vo.setPw(inputPw);
 		log.info(vo);
 		int result = service.joinMember(vo);
-		if(result > 0 ) {
+		int result2= pservice.insertBasicPlaylist(vo.getId());
+		if(result > 0 && result2 > 0 ) {
 			log.info("가입 성공");
 		}else {
 			log.info("실패");
