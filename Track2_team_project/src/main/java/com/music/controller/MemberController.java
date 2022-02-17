@@ -112,4 +112,11 @@ public class MemberController {
 		
 		model.addAttribute("memberList",mvo);
 	}
+	
+	@GetMapping("/member/my_playlist")
+	public void viewMyplaylist() {
+		
+	}
+	
+	
 }

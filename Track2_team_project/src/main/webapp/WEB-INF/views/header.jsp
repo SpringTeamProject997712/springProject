@@ -144,23 +144,23 @@
                         </li>
                     </ul>
                     <ul class="nav_playlist">
-                        <li><a href="feature_playlist.html" title="Featured Playlist">
-						<span class="nav_icon">
-							<span class="icon icon_fe_playlist"></span>
-						</span>
-						<span class="nav_text">
-							プレイリスト
-						</span>
-						</a>
+                        <li><a href="/feature_playlist/feature_playlist" title="Featured Playlist">
+													<span class="nav_icon">
+														<span class="icon icon_fe_playlist"></span>
+													</span>
+													<span class="nav_text">
+														プレイリスト
+													</span>
+													</a>
                         </li>
-                        <li><a href="add_playlist.html" title="Create Playlist">
-						<span class="nav_icon">
-							<span class="icon icon_c_playlist"></span>
-						</span>
-						<span class="nav_text">
-							リスト作成
-						</span>
-						</a>
+                        <li><a href="/member/my_playlist" title="Create Playlist">
+													<span class="nav_icon">
+														<span class="icon icon_c_playlist"></span>
+													</span>
+													<span class="nav_text">
+														リスト作成
+													</span>
+													</a>
                         </li>
                     </ul>
                 </div>
