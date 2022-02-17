@@ -17,7 +17,7 @@ public interface CreatePlaylistMapper {
 	public int insertBasicPlaylist(String id);
 	
 	//id로 basic_playlist의 plbno를 찾음
-	public int selectBasicPlaylistPrimaryKey(String id);
+	public Integer selectBasicPlaylistPrimaryKey(String id);
 	
 	//플레이리스트 번호로 플레이리스트와 플레이리스트 디테일 소환
 	public List<PlaylistVO> selectPlaylist(int plbno);

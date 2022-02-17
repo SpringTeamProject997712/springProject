@@ -21,5 +21,9 @@
 	<select id="readTrack" resultType="com.music.domain.TrackVO">
 		select * from track_m where abno = #{abno}
 	</select>
+	
+	<select id="selectTrack" resultType="com.music.domain.TrackVO">
+		select * from track_m where tbno = #{tbno}
+	</select>
 </mapper>
 

@@ -18,8 +18,10 @@ import com.music.mapper.TrackMapper;
 import com.music.security.domain.CustomUser;
 
 import lombok.Setter;
+import lombok.extern.log4j.Log4j;
 
 @Service
+@Log4j
 public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 
 	@Setter(onMethod_ = @Autowired)
@@ -106,15 +108,22 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 	
 	private List<jPlayerVO> addBasicPlaylist(){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		List<jPlayerVO> jlist = new ArrayList<jPlayerVO>();
 		String id = "";
 		if(!(auth.getPrincipal().equals("anonymousUser"))) {
 			CustomUser user = (CustomUser)auth.getPrincipal();
 			id =user.getUsername();
 		}
-		List<jPlayerVO> jlist = convertTrackToJPlyer(
+		log.info("지금 auth가 뭡니까? : "+auth);
+		if(mapper.selectBasicPlaylistPrimaryKey(id)!=null) {
+		log.info("지금 String id가 뭡니까? : "+id);
+		 jlist = convertTrackToJPlyer(
 									convertPlaylistToTrack(
 										mapper.selectPlaylist(
 											mapper.selectBasicPlaylistPrimaryKey(id))));
+		}
+		log.info("그 이거여 이거");
+		log.info(jlist);
 		return jlist;
 	}
 }

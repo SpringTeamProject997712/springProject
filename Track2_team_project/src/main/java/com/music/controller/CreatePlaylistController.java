@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
@@ -29,7 +30,7 @@ public class CreatePlaylistController {
 	}
 	
 	@ResponseBody //ajax로 플레이리스트를 받는 친구
-	@RequestMapping(value="/addPlayList", produces = "application/text; charset=utf8")
+	@RequestMapping(value="/addPlayList", produces = "application/text; charset=utf8", method = RequestMethod.GET)
 	public String addRandomPlayList(int menu) {
 		
 		List<jPlayerVO> plist = new ArrayList<jPlayerVO>(); //여기에 담아서 리턴함

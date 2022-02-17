@@ -11,14 +11,14 @@
 		]]>
 	</select>
 	
-	<select id="selectPlaylist">
+	<select id="selectPlaylist" resultType="com.music.domain.PlaylistVO">
 		select * from view_playlist where plbno = #{plbno}
 	</select>
 	
 	<select id="selectBasicPlaylistPrimaryKey" resultType="int">
 		select plbno from playlist_m where name = 'basic_playlist' and id = #{id}
 	</select>
-
+	
 	<insert id="insertBasicPlaylist">
 		<selectKey keyProperty="plbno" order="BEFORE" resultType="int">
 			select playlist_m_seq.nextval from dual

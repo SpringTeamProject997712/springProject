@@ -55,7 +55,8 @@ $(function() {
 		
 	$.ajax({
     	type:"get",
-    	url:"/createPlaylist/addPlayList?menu=0",
+    	url:"/createPlaylist/addPlayList",
+    	data:{menu:2},
     	async:false,
     	success:function(data){
     		console.log(data);
