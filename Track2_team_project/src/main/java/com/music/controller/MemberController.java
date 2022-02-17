@@ -43,7 +43,7 @@ public class MemberController {
 		int result = service.joinMember(vo);
 		int result2= pservice.insertBasicPlaylist(vo.getId());
 		if(result > 0 && result2 > 0 ) {
-			log.info("가입 성공");
+			log.info("가입 성공 그리고 베이직 플레이리스트 생성");
 		}else {
 			log.info("실패");
 		}
