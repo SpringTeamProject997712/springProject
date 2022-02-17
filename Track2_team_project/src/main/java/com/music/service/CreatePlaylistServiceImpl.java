@@ -40,7 +40,7 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 		//switch
 		switch(menu){ //받은 숫자로 스위치문 가동
 		
-		case 0: // basicPlaylist
+		case 2: // basicPlaylist
 			
 			plist = addBasicPlaylist();
 			break;
