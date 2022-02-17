@@ -414,7 +414,7 @@
                     <div class="modal-body">
 						<h1>本当に再生リストをクリアしますか？</h1>
 						<div class="clr_modal_btn">
-							<a href="#">クリア</a>
+							<a class="entire-playlist-clear" href="#">クリア</a>
 							<a href="#">キャンセル</a>
 						</div>
                     </div>
