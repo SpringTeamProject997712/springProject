@@ -38,6 +38,7 @@ public class CreatePlaylistController {
 		//숫자에 따라 처리함
 		//1: track에서 다섯개 뽑아서 반환
 		//2: basic_playlist 반환
+		//3: 
 		
 		plist = service.selectMethod(menu);
 		

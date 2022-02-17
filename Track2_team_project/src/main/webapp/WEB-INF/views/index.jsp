@@ -331,7 +331,7 @@
                                             <img src="/images/weekly/song1.jpg" alt="" class="img-fluid">
                                             <div class="ms_song_overlay">
                                             </div>
-                                            <div class="ms_play_icon">
+                                            <div class="ms_play_icon" id=1>
                                                 <img src="/images/svg/play.svg" alt="">
                                             </div>
                                         </div>

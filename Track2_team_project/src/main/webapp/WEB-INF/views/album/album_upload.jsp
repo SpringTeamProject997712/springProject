@@ -28,10 +28,10 @@
                       		<div class="form-group">
                                 <label>카테고리 선택</label>
                                 <select class="form-control" id="kind" name="kind">
-						      	<c:forEach items="${category}" var="category" varStatus="status">
-						      		<option value="${status.count}">${category}</option>
-						      	</c:forEach>
-						      </select>
+												      	<c:forEach items="${category}" var="category" varStatus="status">
+												      		<option value="${status.count}">${category}</option>
+												      	</c:forEach>
+												      </select>
                             </div>
                             <div class="form-group">
                                 <label>トラック名 *</label>
