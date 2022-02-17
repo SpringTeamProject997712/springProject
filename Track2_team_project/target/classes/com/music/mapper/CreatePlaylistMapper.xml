@@ -11,6 +11,12 @@
 		]]>
 	</select>
 
-
+	<insert id="insertBasicPlaylist">
+		<selectKey keyProperty="plbno" order="BEFORE" resultType="int">
+			select playlist_m_seq.nextval from dual
+		</selectKey>
+		
+		insert into playlist_m (plbno, id, name) values (#{plbno}, #{id}, 'basic_playlist')
+	</insert>
 
 </mapper>

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
-import com.music.domain.PlaylistVO;
+import com.music.domain.jPlayerVO;
 import com.music.service.CreatePlaylistService;
 
 import lombok.Setter;
@@ -32,7 +32,7 @@ public class CreatePlaylistController {
 	@RequestMapping(value="/addPlayList", produces = "application/text; charset=utf8")
 	public String addRandomPlayList(int menu) {
 		
-		List<PlaylistVO> plist = new ArrayList<PlaylistVO>(); //여기에 담아서 리턴함
+		List<jPlayerVO> plist = new ArrayList<jPlayerVO>(); //여기에 담아서 리턴함
 		
 		//숫자에 따라 처리함
 		//1: track에서 다섯개 뽑아서 반환
