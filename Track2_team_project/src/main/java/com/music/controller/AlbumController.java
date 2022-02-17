@@ -3,7 +3,6 @@ package com.music.controller;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +11,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.google.gson.Gson;
 import com.music.domain.AlbumVO;
 import com.music.mapper.AlbumMapper;
 import com.music.service.AlbumService;
@@ -120,8 +121,12 @@ public class AlbumController {
 	}
 	
 	@ResponseBody
-	@GetMapping("/albumSearcher")
-	public List<AlbumVO> searchAlbumList(String name){
-		return service.searchAlbumWithTrackName(name);
+	@RequestMapping(value="/albumSearcher", produces = "application/text; charset=utf8", method=RequestMethod.GET)
+	public String searchAlbumList(String name){
+		
+		Gson gson = new Gson();
+		String json = gson.toJson(service.searchAlbumWithTrackName(name));
+		log.info(json);
+		return json;
 	}
 }
