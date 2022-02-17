@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.music.domain.MemberVO;
+import com.music.domain.ProductVO;
 import com.music.service.MemberService;
+import com.music.service.ProductService;
 import com.music.utility.Criteria;
 
 import lombok.Setter;
@@ -28,6 +30,9 @@ public class AdminController {
 	
 	@Setter(onMethod_ = @Autowired)
 	MemberService mService;
+	
+	@Setter(onMethod_= @Autowired)
+	ProductService pService;
 	
 	@GetMapping("/admin") //어드민 페이지로 가기 (admin 로그인 첫화면)
 	public void adminIndex() {
@@ -64,9 +69,17 @@ public class AdminController {
 	
 //=========================================상품관리용========================================
 
-	@GetMapping("product/manage_product") //상품관리 - 상품 리스트 보기
-	public void viewProductList() {
-	}
+//	@GetMapping("product/manage_product") //상품관리 - 상품 리스트 보기
+//	public void viewProductList(Model model, Criteria cri) {
+//		
+//		
+//	}
+//	
+//	@GetMapping("product/manage_product") //상품관리 - 상품 세부사항 보기
+//	public void viewProductDetail(Model model, int pbno) {
+//		
+//		
+//	}
 	
 //=====================================템플릿 파악용 컨트롤러====================================
 	@GetMapping("/base/list-group")

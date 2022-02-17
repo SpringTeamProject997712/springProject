@@ -12,15 +12,7 @@ public interface AlbumMapper {
 	//엘범 리스트
 	public List<AlbumVO> listAlbum();
 	
-	//앨범상세보기
-	public AlbumVO readAlbum(int abno);
 	//엘범 상세보기
-	public List<AlbumVO> readAlbum_single(int abno);
-	
-	//새로운 앨범 
-	public List<AlbumVO> listNewly();
-	
-	//좋아요 순 정렬
-	public List<AlbumVO> getCountLikes();
+	public AlbumVO readAlbum(int abno);
 	
 }

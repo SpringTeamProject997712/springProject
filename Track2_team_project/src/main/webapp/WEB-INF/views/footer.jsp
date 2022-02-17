@@ -2,9 +2,13 @@
     pageEncoding="UTF-8"%>
     
       <!----Footer Start---->
+      <form id="frm" method="get" action="">
+    	<input type="hidden" id="pageName" name="pageName">
+      </form>
+      
         <div class="ms_footer_wrapper">
             <div class="ms_footer_logo">
-                <a href="/"><img src="../images/open_logo.png" alt=""></a>
+                <a href="index.html"><img src="../images/open_logo.png" alt=""></a>
             </div>
             <div class="ms_footer_inner">
                 <div class="row">
@@ -101,9 +105,7 @@
 			</div>
             <div class="player_mid">
                 <div class="audio-player">
-                		<!--여기 안에 audio객체를 동적으로 생성함===========================================-->
                     <div id="jquery_jplayer_1" class="jp-jplayer"></div>
-                    <!-- ====================================================================-->
                     <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
                         <div class="player_left">
                             <div class="ms_play_song">
@@ -130,82 +132,81 @@
                         <div class="jp_queue_wrapper">
                             <span class="que_text" id="myPlaylistQueue"><i class="fa fa-angle-up" aria-hidden="true"></i> 再生リスト</span>
                             <div id="playlist-wrap" class="jp-playlist">
-															<div class="jp_queue_cls"><i class="fa fa-times" aria-hidden="true"></i></div>
-							                <h2>再生リスト</h2>
-															<div class="jp_queue_list_inner">
-																<ul>
-																	<li>&nbsp;</li>
-																</ul>
-															</div>
+								<div class="jp_queue_cls"><i class="fa fa-times" aria-hidden="true"></i></div>
+                                <h2>再生リスト</h2>
+								<div class="jp_queue_list_inner">
+									<ul>
+										<li>&nbsp;</li>
+									</ul>
+								</div>
                                 <div class="jp_queue_btn">
                                     <a href="javascript:;" class="ms_clear" data-toggle="modal" data-target="#clear_modal">クリア</a>
                                     <a href="clear_modal" class="ms_save" data-toggle="modal" data-target="#save_modal">セーブ</a>
                                 </div>
-                            	</div>
-                       			</div>
-                        		<div class="jp-type-playlist">
-                            	<div class="jp-gui jp-interface flex-wrap">
+                            </div>
+                        </div>
+                        <div class="jp-type-playlist">
+                            <div class="jp-gui jp-interface flex-wrap">
                                 <div class="jp-controls flex-item">
-                                  <button class="jp-previous" tabindex="0">
-																		<i class="ms_play_control"></i>
-																	</button>
-                                  <button class="jp-play" tabindex="0">
-																		<i class="ms_play_control"></i>
-																	</button>
-                                  <button class="jp-next" tabindex="0">
-																		<i class="ms_play_control"></i>
-																	</button>
+                                    <button class="jp-previous" tabindex="0">
+										<i class="ms_play_control"></i>
+									</button>
+                                    <button class="jp-play" tabindex="0">
+										<i class="ms_play_control"></i>
+									</button>
+                                    <button class="jp-next" tabindex="0">
+										<i class="ms_play_control"></i>
+									</button>
                                 </div>
                                 <div class="jp-progress-container flex-item">
-                                  <div class="jp-time-holder">
-                                    <span class="jp-current-time" role="timer" aria-label="time">&nbsp;</span>
-                                    <span class="jp-duration" role="timer" aria-label="duration">&nbsp;</span>
-                                  </div>
-                                  <div class="jp-progress">
-                                    <div class="jp-seek-bar">
-                                      <div class="jp-play-bar">
-                                        <div class="bullet">
-                                        </div>
-                                      </div>
+                                    <div class="jp-time-holder">
+                                        <span class="jp-current-time" role="timer" aria-label="time">&nbsp;</span>
+                                        <span class="jp-duration" role="timer" aria-label="duration">&nbsp;</span>
                                     </div>
-                                  </div>
+                                    <div class="jp-progress">
+                                        <div class="jp-seek-bar">
+                                            <div class="jp-play-bar">
+                                                <div class="bullet">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="jp-volume-controls flex-item">
-                                  <div class="widget knob-container">
-                                    <div class="knob-wrapper-outer">
-                                      <div class="knob-wrapper">
-                                         <div class="knob-mask">
-                                           <div class="knob d3"><span></span></div>
-                                           <div class="handle"></div>
-                                           <div class="round">
-                                             <img src="../images/svg/volume.svg" alt="">
-                                           </div>
-                                         </div>
-                                       </div>
-                                    <!-- <input></input> -->
+                                    <div class="widget knob-container">
+                                        <div class="knob-wrapper-outer">
+                                            <div class="knob-wrapper">
+                                                <div class="knob-mask">
+                                                    <div class="knob d3"><span></span></div>
+                                                    <div class="handle"></div>
+                                                    <div class="round">
+                                                        <img src="../images/svg/volume.svg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <input></input> -->
+                                        </div>
                                     </div>
-                                  </div>
                                 </div>
                                 <div class="jp-toggles flex-item">
-                                  <button class="jp-shuffle" tabindex="0" title="Shuffle">
-																		<i class="ms_play_control"></i>
-																	</button>
-																	<button class="jp-repeat" tabindex="0" title="Repeat"><i class="ms_play_control"></i></button>
+                                    <button class="jp-shuffle" tabindex="0" title="Shuffle">
+									<i class="ms_play_control"></i></button>
+									<button class="jp-repeat" tabindex="0" title="Repeat"><i class="ms_play_control"></i></button>
                                 </div>
                                 <div class="jp_quality_optn custom_select">
-	                                <select>
-																		<option>quality</option>
-																		<option value="1">HD</option>
-																		<option value="2">高音質</option>
-																		<option value="3">中音質</option>
-																		<option value="4">低音質</option>
-																	</select>
+                                    <select>
+						<option>quality</option>
+						<option value="1">HD</option>
+						<option value="2">高音質</option>
+						<option value="3">中音質</option>
+						<option value="4">低音質</option>
+					</select>
                                 </div>
-                            	</div>
-                        		</div>
-                   				</div>
-           				    	</div>
-            					</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!--main div-->
         </div>
     </div>
@@ -458,7 +459,9 @@
         </div>
 	</div>	
     
-<script type="text/javascript" src="/resources/js/jquery.js"></script>
+    
+    
+
     <script type="text/javascript" src="/resources/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/resources/js/plugins/swiper/js/swiper.min.js"></script>
     <script type="text/javascript" src="/resources/js/plugins/player/jplayer.playlist.min.js"></script>
@@ -469,6 +472,9 @@
 	<script type="text/javascript" src="/resources/js/plugins/scroll/jquery.mCustomScrollbar.js"></script>
     <script type="text/javascript" src="/resources/js/custom.js"></script>
     <script type="text/javascript" src="/resources/js/my.js"></script>
+    <script type="text/javascript" src="/resources/js/summernote-lite.min.js"></script>
+    <script type="text/javascript" src="/resources/js/lang/summernote-ja-JP.min.js"></script>
+    <script type="text/javascript" src="/resources/js/mysummer.js"></script>
 </body>
 
 </html>

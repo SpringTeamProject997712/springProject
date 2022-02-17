@@ -23,9 +23,51 @@
     <link rel="stylesheet" type="text/css" href="/resources/js/plugins/player/volume.css">
 	<link rel="stylesheet" type="text/css" href="/resources/js/plugins/scroll/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/summernote-lite.min.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/my.css">
     <!-- Favicon Link -->
     <link rel="shortcut icon" type="image/png" href="../images/favicon.png">
+    
+    
+<!--     <script type="text/javascript" src="/resources/js/jquery.js"></script> -->
+    <script type="text/javascript" src="/resources/js/jquery2.min.js"></script>
+
+    
+    <script>
+  //페이지 넘어가기 액티브
+  var left = {
+	pageSubmitFn : function(menu) {
+		if(menu === "menu_main") {
+			$("#frm").attr("action", "/");
+			$("#pageName").val(menu);
+		}else if(menu === "menu_album") {
+			$("#frm").attr("action", "album/album");
+			$("#pageName").val(menu);
+		}else if(menu === "menu_artists"){
+			$("#frm").attr("action", "artists/artists");
+			$("#pageName").val(menu);
+		}
+		$("#frm").submit();
+	}
+}
+	
+	$(function(){
+		var pageName = "main";
+		pageName = "<c:out value = '${param.pageName}' />";
+		$(".menu").removeClass("active");
+		$("#"+pageName).addClass("active");
+		
+		$(".menu").click(function(){
+			var menu = $(this).attr("id");
+			left.pageSubmitFn(menu);
+		})
+	})
+	
+	console.log("콘솔 명:"+"${param.pageName}");
+	console.log("C:out :"+"<c:out value = '${param.pageName}' />");
+	
+    </script>
+    
 </head>
 
 <body>
@@ -35,7 +77,6 @@
 		  <img src="../images/loader.gif" alt="">
 		</div>
 	</div>
-	
 	
     <!----Main Wrapper Start---->
     <div class="ms_main_wrapper">
@@ -47,26 +88,22 @@
             <div class="ms_sidemenu_inner">
                 <div class="ms_logo_inner">
                     <div class="ms_logo">
-                        <a href="/"><img src="../images/logo.png" alt="" class="img-fluid"/></a>
+                        <a href="/"><img src="../images/logo.png" alt="" class="img-fluid menu" id="menu_main"/></a>
                     </div>
                     <div class="ms_logo_open">
-                        <a href="/"><img src="../images/open_logo.png" alt="" class="img-fluid"/></a>
+                        <a href="/"><img src="../images/open_logo.png" alt="" class="img-fluid menu" id="menu_main"/></a>
                     </div>
                 </div>
                 <div class="ms_nav_wrapper">
                     <ul>
-                        <li><a href="/" class="active" title="Discover">
-
-						<span class="nav_icon">
-							<span class="icon icon_discover"></span>
-						</span>
-						<span class="nav_text">
+                        <li><a href="javascript:void(0)" class="menu" id="menu_main" title="Discover">
+                        <span class="nav_icon">
+                        <span class="icon icon_discover"></span>
+						</span> <span class="nav_text">
 							メイン
-
 						</span>
-						</a>
-                        </li>
-                        <li><a href="/album/album" title="Albums">
+						</a></li>
+                        <li><a href="javascript:void(0)" class="menu" id="menu_album" title="Albums">
 						<span class="nav_icon">
 							<span class="icon icon_albums"></span>
 						</span>
@@ -75,7 +112,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="/artist/artist.jsp" title="Artists">
+                        <li><a href="/artist/artist.jsp" title="Artists" onclick="pageSubmitFn('artist')">
 						<span class="nav_icon">
 							<span class="icon icon_artists"></span>
 						</span>
@@ -84,7 +121,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="genres.html" title="Genres">
+                        <li><a href="genres.html" title="Genres" onclick="pageSubmitFn('genre')">
 						<span class="nav_icon">
 							<span class="icon icon_genres"></span>
 						</span>
@@ -93,7 +130,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="top_track.html" title="Top Tracks">
+                        <li><a href="top_track.html" title="Top Tracks" onclick="pageSubmitFn('top_track')">
 						<span class="nav_icon">
 							<span class="icon icon_tracks"></span>
 						</span>
@@ -106,7 +143,7 @@
                        
                     </ul>
                     <ul class="nav_downloads">
-                        <li><a href="download.html" title="Downloads">
+                        <li><a href="download.html" title="Downloads" onclick="pageSubmitFn('download')">
 						<span class="nav_icon">
 							<span class="icon icon_download"></span>
 						</span>
@@ -115,7 +152,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="purchase.html" title="Purchased">
+                        <li><a href="purchase.html" title="Purchased" onclick="pageSubmitFn('purchased')">
 						<span class="nav_icon">
 							<span class="icon icon_purchased"></span>
 						</span>
@@ -124,7 +161,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="favourite.html" title="Favourites">
+                        <li><a href="favourite.html" title="Favourites" onclick="pageSubmitFn('favourite')">
 						<span class="nav_icon">
 							<span class="icon icon_favourite"></span>
 						</span>
@@ -133,7 +170,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="history.html" title="History">
+                        <li><a href="history.html" title="History" onclick="pageSubmitFn('history')">
 						<span class="nav_icon">
 							<span class="icon icon_history"></span>
 						</span>
@@ -144,7 +181,7 @@
                         </li>
                     </ul>
                     <ul class="nav_playlist">
-                        <li><a href="feature_playlist.html" title="Featured Playlist">
+                        <li><a href="feature_playlist.html" title="Featured Playlist" onclick="pageSubmitFn('featured_playlist')">
 						<span class="nav_icon">
 							<span class="icon icon_fe_playlist"></span>
 						</span>
@@ -153,7 +190,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="add_playlist.html" title="Create Playlist">
+                        <li><a href="add_playlist.html" title="Create Playlist" onclick="pageSubmitFn('create_playlist')">
 						<span class="nav_icon">
 							<span class="icon icon_c_playlist"></span>
 						</span>
