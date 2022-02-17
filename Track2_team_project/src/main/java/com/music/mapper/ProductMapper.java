@@ -12,7 +12,6 @@ public interface ProductMapper {
 
 	//카테고리 보기
 	public ProductVO listProduct(int pbno);
-	
 	public int searchPbno();
 	public List<AlbumVO> searchAbno();
 	

@@ -29,10 +29,20 @@ public class AlbumServiceImpl implements AlbumService {
 	}
 
 	@Override
-	public AlbumVO readAlbum(int pbno) {
-		return mapper.readAlbum(pbno);
+	public AlbumVO readAlbum(int abno) {
+		return mapper.readAlbum(abno);
 	}
-	
-	
+	@Override
+	public List<AlbumVO> readAlbum_single(int abno) {
+		return mapper.readAlbum_single(abno);
+	}
+	@Override
+	public List<AlbumVO> newly() {
+		return mapper.listNewly();
+	}
+	@Override
+	public List<AlbumVO> getCountLikes() {
+		return mapper.getCountLikes();
+	}
 	
 }

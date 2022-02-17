@@ -27,47 +27,6 @@
     <link rel="stylesheet" type="text/css" href="/resources/css/my.css">
     <!-- Favicon Link -->
     <link rel="shortcut icon" type="image/png" href="../images/favicon.png">
-    
-    
-<!--     <script type="text/javascript" src="/resources/js/jquery.js"></script> -->
-    <script type="text/javascript" src="/resources/js/jquery2.min.js"></script>
-
-    
-    <script>
-  //페이지 넘어가기 액티브
-  var left = {
-	pageSubmitFn : function(menu) {
-		if(menu === "menu_main") {
-			$("#frm").attr("action", "/");
-			$("#pageName").val(menu);
-		}else if(menu === "menu_album") {
-			$("#frm").attr("action", "album/album");
-			$("#pageName").val(menu);
-		}else if(menu === "menu_artists"){
-			$("#frm").attr("action", "artists/artists");
-			$("#pageName").val(menu);
-		}
-		$("#frm").submit();
-	}
-}
-	
-	$(function(){
-		var pageName = "main";
-		pageName = "<c:out value = '${param.pageName}' />";
-		$(".menu").removeClass("active");
-		$("#"+pageName).addClass("active");
-		
-		$(".menu").click(function(){
-			var menu = $(this).attr("id");
-			left.pageSubmitFn(menu);
-		})
-	})
-	
-	console.log("콘솔 명:"+"${param.pageName}");
-	console.log("C:out :"+"<c:out value = '${param.pageName}' />");
-	
-    </script>
-    
 </head>
 
 <body>

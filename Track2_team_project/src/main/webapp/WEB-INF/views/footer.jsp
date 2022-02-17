@@ -2,9 +2,9 @@
     pageEncoding="UTF-8"%>
     
       <!----Footer Start---->
-      <form id="frm" method="get" action="">
-    	<input type="hidden" id="pageName" name="pageName">
-      </form>
+<!--       <form id="frm" method="get" action=""> -->
+<!--     	<input type="hidden" id="pageName" name="pageName"> -->
+<!--       </form> -->
       
         <div class="ms_footer_wrapper">
             <div class="ms_footer_logo">
@@ -461,7 +461,7 @@
     
     
     
-
+    <script type="text/javascript" src="/resources/js/jquery.js"></script>
     <script type="text/javascript" src="/resources/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/resources/js/plugins/swiper/js/swiper.min.js"></script>
     <script type="text/javascript" src="/resources/js/plugins/player/jplayer.playlist.min.js"></script>
