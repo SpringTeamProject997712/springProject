@@ -91,18 +91,93 @@ function go_writemusic() {
 	theForm.submit();
 }
 
+//업로드 스크립트
 function go_upload_album() {
- 	document.upload_album.action="uploadpro_album";
+	if(upload_album.uploadImage.value=="") {
+		alert("アルバムカバーを入れてください");
+		upload_album.uploadImage.focus();
+		return false;
+	}
+	if(upload_album.name.value=="") {
+		alert("アルバム名を入力してください");
+		upload_album.name.focus();
+		return false;
+	}
+	if(upload_album.singer.value=="") {
+		alert("アーティスト名を入力してください");
+		upload_album.singer.focus();
+		return false;
+	}
+	if(upload_album.price.value=="") {
+		alert("値段を入力してください");
+		upload_album.price.focus();
+		return false;
+	}
+	if(upload_album.regdate.value=="") {
+		alert("登録日を入力してください");
+		upload_album.regdate.focus();
+		return false;
+	}
+	if(upload_album.detail.value=="") {
+		alert("詳細を入力してください");
+		upload_album.detail.focus();
+		return false;
+	}
  	document.upload_album.submit();
  }
+
 function go_upload_track() {
- 	document.upload_track.action="uploadpro_track";
- 	document.upload_track.submit();
+	
+	if(upload_track.uploadMusic.value=="") {
+		alert("アルバムカバーを入れてください");
+		upload_track.uploadMusic.focus();
+		return false;
+	}
+	if(upload_track.name.value=="") {
+		alert("トラック名を入力してください");
+		upload_track.name.focus();
+		return false;
+	}
+	if(upload_track.detail.value=="") {
+		alert("詳細を入力してください");
+		upload_track.detail.focus();
+		return false;
+	}
+	if(upload_track.price.value=="") {
+		alert("値段を入力してください");
+		upload_track.price.focus();
+		return false;
+	}
+
+	document.upload_track.submit();
+
  }
+
 function go_upload_goods() {
- 	document.upload_goods.action="uploadpro_goods";
- 	document.upload_goods.submit();
+
+	if(upload_goods.detail.value=="") {
+		alert("詳細を入力してください");
+		upload_goods.detail.focus();
+		return false;
+	}
+	if(upload_goods.price.value=="") {
+		alert("値段を入力してください");
+		upload_goods.price.focus();
+		return false;
+	}
+
+	document.upload_goods.submit();
+	
  }
+
+function go_reset() {
+	$('form').each(function() {
+
+	      this.reset();
+
+	  });
+}
+
 
 function findAddr(){ //우편번호 찾기
 	new daum.Postcode({
@@ -126,7 +201,6 @@ function findAddr(){ //우편번호 찾기
         }
   }).open();
 }
-
 
 
 

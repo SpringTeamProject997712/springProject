@@ -89,7 +89,7 @@
                                         </ul>
                                         
                                         <div class="ms_play_icon">
-                                         <a href="/album_single?pbno=${likes.pbno}">
+                                         <a href="/album/album_single?abno=${likes.abno}">
                                             <img src="../images/svg/play.svg" alt="">
                                             </a>
                                         </div>
