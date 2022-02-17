@@ -24,6 +24,7 @@
 	    	error:function(xhr,p,rd){
 	    		alert(xhr.p+"\n"+xhr.responseText+"\n"+rd+"라서 실패");
 	    	},success:function(data){
+	    		data = JSON.parse(data);
 	    		console.log(data);
 	    		let printData = "<div class='ms_weekly_wrapper'><div class='ms_weekly_inner'><div class='row'><div class='col-lg-4 col-md-12 padding_right40'>";
 	    		for(let i=0; i < data.length; i++ ){
