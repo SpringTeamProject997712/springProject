@@ -25,6 +25,14 @@
                             <h1>トラック情報</h1>
                         </div>
                         <div class="ms_pro_form">
+                      		<div class="form-group">
+                                <label>카테고리 선택</label>
+                                <select class="form-control" id="kind" name="kind">
+						      	<c:forEach items="${category}" var="category" varStatus="status">
+						      		<option value="${status.count}">${category}</option>
+						      	</c:forEach>
+						      </select>
+                            </div>
                             <div class="form-group">
                                 <label>トラック名 *</label>
                                 <input type="text" name="name" placeholder="Dream Your Moments" class="form-control">
@@ -35,20 +43,13 @@
                             </div>	
                             <div class="form-group">
                                 <label>アルバム選択</label>
-                                <select class="form-control" id="kind" name="kind">
+                                <select class="form-control" id="kind" name="detail">
 						      	<c:forEach items="${kindList}" var="kind" varStatus="status">
 						      		<option value="${status.count}">${kind}</option>
 						      	</c:forEach>
 						      </select>
                             </div>
-                            <div class="form-group">
-                                <label>Onlines</label>
-                                <select class="form-control" name="onlines">
-									<option value="0">Public</option>
-									<option value="1">Onlines</option>
-									<option value="2">Offlines</option>
-								</select>
-                            </div>
+                            
                             
 <!--                             <div class="form-group"> -->
 <!--                                 <label>price1 *</label> -->

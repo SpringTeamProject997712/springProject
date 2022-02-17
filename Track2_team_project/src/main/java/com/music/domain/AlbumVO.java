@@ -7,14 +7,24 @@ import lombok.Data;
 @Data
 public class AlbumVO {
 	
-	private int pbno;
+	private int abno;
 	private String name;
-	private String kind;
-	private String image;
 	private String singer;
+	private String detail;
+	private int price;
+	private String image;
+	private Date regdate;
+	private int pbno;
+//	album_singleVO 추가함 
+	private int tbno;
+	private String tdetail;
+	private String genre;
+	private String tname;
+	private int tprice;
 	private String songname;
-	private String regdate;
-	private String onlines;
+	private String songrealname;
+// getcountlikes
+	private int likes;
 	
 //	private int pbno;
 //	private String name;
@@ -35,5 +45,5 @@ public class AlbumVO {
 //	private int staravg;
 //	private String onlines;
 //	private int stock;
-	
+
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.music.mapper.CreatePlaylistMapper">
+	<select id="viewTrackList" resultType="com.music.domain.TrackVO">
+		select * from track_m
+	</select>
+	
+	<select id="viewTrackList5" resultType="com.music.domain.TrackVO">
+		<![CDATA[
+			select * from track_m where rownum <= 5
+		]]>
+	</select>
+
+
+
+</mapper>

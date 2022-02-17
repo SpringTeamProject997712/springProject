@@ -4,7 +4,7 @@
       <!----Footer Start---->
         <div class="ms_footer_wrapper">
             <div class="ms_footer_logo">
-                <a href="index.html"><img src="../images/open_logo.png" alt=""></a>
+                <a href="/"><img src="../images/open_logo.png" alt=""></a>
             </div>
             <div class="ms_footer_inner">
                 <div class="row">
@@ -101,7 +101,9 @@
 			</div>
             <div class="player_mid">
                 <div class="audio-player">
+                		<!--여기 안에 audio객체를 동적으로 생성함===========================================-->
                     <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+                    <!-- ====================================================================-->
                     <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
                         <div class="player_left">
                             <div class="ms_play_song">
@@ -128,81 +130,82 @@
                         <div class="jp_queue_wrapper">
                             <span class="que_text" id="myPlaylistQueue"><i class="fa fa-angle-up" aria-hidden="true"></i> 再生リスト</span>
                             <div id="playlist-wrap" class="jp-playlist">
-								<div class="jp_queue_cls"><i class="fa fa-times" aria-hidden="true"></i></div>
-                                <h2>再生リスト</h2>
-								<div class="jp_queue_list_inner">
-									<ul>
-										<li>&nbsp;</li>
-									</ul>
-								</div>
+															<div class="jp_queue_cls"><i class="fa fa-times" aria-hidden="true"></i></div>
+							                <h2>再生リスト</h2>
+															<div class="jp_queue_list_inner">
+																<ul>
+																	<li>&nbsp;</li>
+																</ul>
+															</div>
                                 <div class="jp_queue_btn">
                                     <a href="javascript:;" class="ms_clear" data-toggle="modal" data-target="#clear_modal">クリア</a>
                                     <a href="clear_modal" class="ms_save" data-toggle="modal" data-target="#save_modal">セーブ</a>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="jp-type-playlist">
-                            <div class="jp-gui jp-interface flex-wrap">
+                            	</div>
+                       			</div>
+                        		<div class="jp-type-playlist">
+                            	<div class="jp-gui jp-interface flex-wrap">
                                 <div class="jp-controls flex-item">
-                                    <button class="jp-previous" tabindex="0">
-										<i class="ms_play_control"></i>
-									</button>
-                                    <button class="jp-play" tabindex="0">
-										<i class="ms_play_control"></i>
-									</button>
-                                    <button class="jp-next" tabindex="0">
-										<i class="ms_play_control"></i>
-									</button>
+                                  <button class="jp-previous" tabindex="0">
+																		<i class="ms_play_control"></i>
+																	</button>
+                                  <button class="jp-play" tabindex="0">
+																		<i class="ms_play_control"></i>
+																	</button>
+                                  <button class="jp-next" tabindex="0">
+																		<i class="ms_play_control"></i>
+																	</button>
                                 </div>
                                 <div class="jp-progress-container flex-item">
-                                    <div class="jp-time-holder">
-                                        <span class="jp-current-time" role="timer" aria-label="time">&nbsp;</span>
-                                        <span class="jp-duration" role="timer" aria-label="duration">&nbsp;</span>
-                                    </div>
-                                    <div class="jp-progress">
-                                        <div class="jp-seek-bar">
-                                            <div class="jp-play-bar">
-                                                <div class="bullet">
-                                                </div>
-                                            </div>
+                                  <div class="jp-time-holder">
+                                    <span class="jp-current-time" role="timer" aria-label="time">&nbsp;</span>
+                                    <span class="jp-duration" role="timer" aria-label="duration">&nbsp;</span>
+                                  </div>
+                                  <div class="jp-progress">
+                                    <div class="jp-seek-bar">
+                                      <div class="jp-play-bar">
+                                        <div class="bullet">
                                         </div>
+                                      </div>
                                     </div>
+                                  </div>
                                 </div>
                                 <div class="jp-volume-controls flex-item">
-                                    <div class="widget knob-container">
-                                        <div class="knob-wrapper-outer">
-                                            <div class="knob-wrapper">
-                                                <div class="knob-mask">
-                                                    <div class="knob d3"><span></span></div>
-                                                    <div class="handle"></div>
-                                                    <div class="round">
-                                                        <img src="../images/svg/volume.svg" alt="">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- <input></input> -->
-                                        </div>
+                                  <div class="widget knob-container">
+                                    <div class="knob-wrapper-outer">
+                                      <div class="knob-wrapper">
+                                         <div class="knob-mask">
+                                           <div class="knob d3"><span></span></div>
+                                           <div class="handle"></div>
+                                           <div class="round">
+                                             <img src="../images/svg/volume.svg" alt="">
+                                           </div>
+                                         </div>
+                                       </div>
+                                    <!-- <input></input> -->
                                     </div>
+                                  </div>
                                 </div>
                                 <div class="jp-toggles flex-item">
-                                    <button class="jp-shuffle" tabindex="0" title="Shuffle">
-									<i class="ms_play_control"></i></button>
-									<button class="jp-repeat" tabindex="0" title="Repeat"><i class="ms_play_control"></i></button>
+                                  <button class="jp-shuffle" tabindex="0" title="Shuffle">
+																		<i class="ms_play_control"></i>
+																	</button>
+																	<button class="jp-repeat" tabindex="0" title="Repeat"><i class="ms_play_control"></i></button>
                                 </div>
                                 <div class="jp_quality_optn custom_select">
-                                    <select>
-						<option>quality</option>
-						<option value="1">HD</option>
-						<option value="2">高音質</option>
-						<option value="3">中音質</option>
-						<option value="4">低音質</option>
-					</select>
+	                                <select>
+																		<option>quality</option>
+																		<option value="1">HD</option>
+																		<option value="2">高音質</option>
+																		<option value="3">中音質</option>
+																		<option value="4">低音質</option>
+																	</select>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                            	</div>
+                        		</div>
+                   				</div>
+           				    	</div>
+            					</div>
             <!--main div-->
         </div>
     </div>
@@ -214,8 +217,8 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal">
-						<i class="fa_icon form_close"></i>
-					</button>
+											<i class="fa_icon form_close"></i>
+										</button>
                     <div class="modal-body">
                         <div class="ms_register_img">
                             <img src="../images/register_img.png" alt="" class="img-fluid" />
@@ -227,26 +230,30 @@
 	                            <div class="form-group">
 	                                <input type="text" name="name" placeholder="名前入力"class="form-control">
 	                                <span class="form_icon">
-										<i class="fa_icon form-user" aria-hidden="true"></i>
-									</span>
+																		<i class="fa_icon form-user" aria-hidden="true"></i>
+																	</span>
 	                            </div>
 	                            <div class="form-group">
-	                                <input type="text" name="id" placeholder="メールアドレス入力" class="form-control">
+	                                <input type="text" name="id" id="joinForm_id" placeholder="メールアドレス入力" class="form-control">
 	                                <span class="form_icon">
-										<i class="fa_icon form-envelope" aria-hidden="true"></i>
-									</span>
+																		<i class="fa_icon form-envelope" aria-hidden="true"></i>
+																	</span>
+	                            </div>
+	                            <div class="form-group">
+	                              <span class="form_icon" id="msg_checked_id">
+																</span>
 	                            </div>
 	                            <div class="form-group">
 	                                <input type="password" name="pw" placeholder="パスワード入力" class="form-control">
 	                                <span class="form_icon">
-										<i class="fa_icon form-lock" aria-hidden="true"></i>
-									</span>
+																		<i class="fa_icon form-lock" aria-hidden="true"></i>
+																	</span>
 	                            </div>
 	                            <div class="form-group">
 	                                <input type="password" name="pw2" placeholder="パスワード再入力" class="form-control">
 	                                <span class="form_icon">
-										<i class=" fa_icon form-lock" aria-hidden="true"></i>
-									</span>
+																		<i class=" fa_icon form-lock" aria-hidden="true"></i>
+																	</span>
 	                            </div>
 	                            <a href="javascript:go_join()" class="ms_btn">会員登録</a>
 	                            <p>すでにお持ちのアカウントがありますか？<a href="#myModal1" data-toggle="modal" class="ms_modal hideCurrentModel">ログイン</a></p>
@@ -262,8 +269,8 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal">
-						<i class="fa_icon form_close"></i>
-					</button>
+											<i class="fa_icon form_close"></i>
+										</button>
                     <div class="modal-body">
                         <div class="ms_register_img">
                             <img src="../images/register_img.png" alt="" class="img-fluid" />
@@ -273,22 +280,22 @@
                             <form action="/login" method="post" name="loginForm">
                             	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 	                            <div class="form-group">
-	                                <input type="text" name="username" placeholder="メールアドレス入力" class="form-control">
-	                                <span class="form_icon">
-										<i class="fa_icon form-envelope" aria-hidden="true"></i>
-									</span>
+	                              <input type="text" name="username" placeholder="メールアドレス入力" class="form-control">
+	                              <span class="form_icon">
+																	<i class="fa_icon form-envelope" aria-hidden="true"></i>
+																</span>
 	                            </div>
 	                            <div class="form-group">
-	                                <input type="password" name="password" placeholder="パスワード入力" class="form-control">
-	                                <span class="form_icon">
-										<i class="fa_icon form-lock" aria-hidden="true"></i>
-									</span>
+	                              <input type="password" name="password" placeholder="パスワード入力" class="form-control">
+	                              <span class="form_icon">
+																	<i class="fa_icon form-lock" aria-hidden="true"></i>
+																</span>
 	                            </div>
 	                            <div class="remember_checkbox">
 	                            	<label>ログイン情報キープ
-										<input type="checkbox">
-										<span class="checkmark"></span>
-									</label>
+																	<input type="checkbox" id="saveBtn">
+																	<span class="checkmark"></span>
+																</label>
 	                            </div>
 	                            <a href="javascript:go_login()" class="ms_btn">ログイン</a>
 	                            <div class="popup_forgot">

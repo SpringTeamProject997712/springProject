@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="/resources/js/plugins/player/volume.css">
 	<link rel="stylesheet" type="text/css" href="/resources/js/plugins/scroll/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/my.css">
     <!-- Favicon Link -->
     <link rel="shortcut icon" type="image/png" href="../images/favicon.png">
 </head>
@@ -54,12 +55,14 @@
                 </div>
                 <div class="ms_nav_wrapper">
                     <ul>
-                        <li><a href="index.jsp" class="active" title="Discover">
+                        <li><a href="/" class="active" title="Discover">
+
 						<span class="nav_icon">
 							<span class="icon icon_discover"></span>
 						</span>
 						<span class="nav_text">
 							メイン
+
 						</span>
 						</a>
                         </li>
@@ -191,18 +194,23 @@
 	                    </div>
                     </sec:authorize>
                     <sec:authorize access="isAuthenticated()">
-						<div class="ms_top_btn">
-							<a href="javascript:void(0);" class="ms_admin_name">Hello Bella 
-								<span class="ms_pro_name">ns</span>													
-							</a>
-							<ul class="pro_dropdown_menu">
-								<li><a href="profile.html">Profile</a></li>
-								<li><a href="manage_acc.html" target="_blank">Pricing Plan</a></li>
-								<li><a href="blog.html" target="_blank">Blog</a></li>
-								<li><a href="">Setting</a></li>
-								<li><a href="admin/adminLogout">Logout</a></li>
-							</ul>
-	                    </div>
+                    	<sec:authentication property="principal" var="principal"/>
+											<div class="ms_top_btn">
+	                      <a href="upload.html" class="ms_btn">upload</a>
+	                      <a href="javascript:;" class="ms_admin_name">Hello Bella 
+	                      	<span class="ms_pro_name">ns</span>
+												</a>
+												<ul class="pro_dropdown_menu">
+													<li><a href="/member/profile?id=${principal.username}">Profile</a></li>
+													<li><a href="manage_acc.html" target="_blank">Pricing Plan</a></li>
+													<li><a href="blog.html" target="_blank">Blog</a></li>
+													<sec:authorize access="hasRole('ROLE_ADMIN')">
+														<li><a href="/admin/admin">GO Admin</a></li>
+													</sec:authorize>
+													<li><a href="">Setting</a></li>
+													<li><a href="/admin/adminLogout">Logout</a></li>
+												</ul>
+                    </div>
                     </sec:authorize>
                 </div>
             </div>

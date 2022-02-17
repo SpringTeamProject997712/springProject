@@ -1,113 +1,96 @@
 $(function() {
     "use strict";
-    if ($('.audio-player').length) {
+    
+    let basicPlayList = [{
+						image : '../images/weekly/song1.jpg',	
+            title: "RE:Wind",
+            artist: "이세계 아이돌",
+            mp3: "/music/Rewind.mp3",
+						option : myPlayListOtion	
+        }, {
+						image : '../images/weekly/song2.jpg',	
+            title: "LIVE FORVER",
+            artist: "오아시스",
+            mp3: "/music/Live_forever.mp3",
+						option : myPlayListOtion
+        }, {
+						image : '../images/weekly/song3.jpg',	
+            title: "니얼굴",
+            artist: "TSP",
+            mp3: "/music/Your_face.mp3",
+						option : myPlayListOtion
+        },{
+						image : '../images/weekly/song2.jpg',	
+            title: "천체관측",
+            artist: "BUMP OF CHICKEN",
+            mp3: "/music/天体観測.mp3",
+						option : myPlayListOtion
+        }];
+
+		let login_flag = "";
+
+		$.ajax({
+    	type:"get",
+    	url:"/member/loginChecker",
+    	async:false,
+    	success:function(data){
+    		console.log("나온 값 : "+data);
+    		if(data != '1'){
+    		login_flag=data;
+    		}		
+    	},error:function(xhr,status,error){
+    		console.log("xhr : "+xhr.status+"\n text : "+xhr.responseText+"\n error : "+error);
+    	}
+    });
+	
+    var objectMine;
+    var login_checker = login_flag;
+    
+    console.log("현재 로그인 체커"+login_checker);
+    
+    //함수 가동
+    if ($('.audio-player').length) { //audio-player 클래스가 있으면 작동
+    
 		var myPlayListOtion = '<ul class="more_option"><li><a href="#"><span class="opt_icon" title="Add To Favourites"><span class="icon icon_fav"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Queue"><span class="icon icon_queue"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Download Now"><span class="icon icon_dwn"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Playlist"><span class="icon icon_playlst"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Share"><span class="icon icon_share"></span></span></a></li></ul>';
+		
+		$.ajax({
+    	type:"get",
+    	url:"/createPlaylist/addPlayList?menu=1",
+    	async:false,
+    	success:function(data){
+    		console.log(data);
+    		objectMine = JSON.parse(data);
+    		for(var i=0; i<objectMine.length; i++){
+    			objectMine[i].option = myPlayListOtion;
+    		}
+     		console.log(objectMine);
+    	},error:function(xhr,status,error){
+    		console.log("xhr : "+xhr.status+"\n text : "+xhr.responseText+"\n error : "+error);
+    	}
+    });
+    
+    console.log(document.cookie);
+    console.log("===========================내가 만든 플레이 리스트 값==============================")
+    console.log(objectMine);
+		
+		var music = '<c:out value="${music}"/>';
 		
         var myPlaylist = new jPlayerPlaylist({
             jPlayer: "#jquery_jplayer_1",
             cssSelectorAncestor: "#jp_container_1"
-        }, [{
-			image : '../images/weekly/song1.jpg',	
-            title: "Cro Magnon Man",
-            artist: "Mushroom Records",
-            mp3: "http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song2.jpg',	
-            title: "Your Face",
-            artist: "Ministry",
-            mp3: "http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song3.jpg',	
-            title: "Cyber Sonnet",
-            artist: "You Am I",
-            mp3: "http://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song4.jpg',	
-            title: "Tempered Song",
-            artist: "Shelter",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song5.jpg',	
-            title: "Hidden",
-            artist: "Bad Religion",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-02-Hidden.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song6.jpg',	
-            title: "Lentement",
-            artist: "Apollo 440",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-03-Lentement.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song7.jpg',	
-            title: "Lismore",
-            artist: "Bloodhound Gang",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-04-Lismore.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song8.jpg',	
-            title: "The Separation",
-            artist: "Friendly Fires ",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-05-The-separation.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-05-The-separation.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song9.jpg',	
-            title: "Beside Me",
-            artist: "Friendly Fires ",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-06-Beside-me.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-06-Beside-me.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song2.jpg',	
-            title: "Bubble",
-            artist: "Skunkhour",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-07-Bubble.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song2.jpg',	
-            title: "Stirring of a fool",
-            artist: "The Meanies",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-08-Stirring-of-a-fool.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-08-Stirring-of-a-fool.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song2.jpg',	
-            title: "Partir",
-            artist: "The Living End",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-09-Partir.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-09-Partir.ogg",
-			option : myPlayListOtion
-        }, {
-			image : '../images/weekly/song2.jpg',	
-            title: "Thin Ice",
-            artist: "Screaming Trees",
-            mp3: "http://www.jplayer.org/audio/mp3/Miaow-10-Thin-ice.mp3",
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-10-Thin-ice.ogg",
-			option : myPlayListOtion
-			
-        }], {
+        }, 
+        login_checker?objectMine:basicPlayList, //<-------------리스트 넣는 칸
+        {//이친구가 d임
             swfPath: "js/plugins",
-            supplied: "oga, mp3",
+            supplied: "mp3",
             wmode: "window",
             useStateClassSkin: true,
             autoBlur: false,
             smoothPlayBar: true,
             keyEnabled: true,
             playlistOptions: {
-                autoPlay: false
+            autoPlay: false           //로딩후 음악을 자동으로 시작할건가요?
+            													//크롬은 모든 음소거 되지않은 자동재생을 차단합니다. 유저가 웹과 상호작용하지 않았다면요.
             }
         });
         $("#jquery_jplayer_1").on($.jPlayer.event.ready + ' ' + $.jPlayer.event.play, function(event) {

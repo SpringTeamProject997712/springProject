@@ -26,11 +26,15 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class AlbumController {
 	
+	
+	
 	@Setter(onMethod_= @Autowired)
 	private AlbumService service;
 	
 	@Setter(onMethod_= @Autowired)
 	private AlbumMapper mapper;
+	
+	
 	
 	private String getFolder() {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -42,9 +46,10 @@ public class AlbumController {
 	@GetMapping("/album")
 	public void albumView(Model model) {
 		model.addAttribute("list",service.listAlbum());
-		log.info("리스트 내용 : "+service.listAlbum());
-
+		model.addAttribute("likes",service.getCountLikes());
+		
 	}
+	
 	
 	@GetMapping("/album_upload")
 	public void albumUpload(Model model) {
@@ -94,7 +99,7 @@ public class AlbumController {
 			
 			uploadMusic.transferTo(savemusic);
 			uploadMusicName = (savemusic.toString().substring(10));
-			album.setSongname(uploadMusicName);
+			album.setName(uploadMusicName);
 			log.info(uploadMusicName);
 //			FileOutputStream thumbnail
 		}catch(Exception e) {
@@ -105,6 +110,12 @@ public class AlbumController {
 		service.insertAlbum(album);
 		
 		return "redirect:/album/album";
+	}
+	
+	@GetMapping("/album_single")
+	public void album_single(Model model, @RequestParam("abno")int abno) {
+		model.addAttribute("view",service.readAlbum_single(abno));
+		model.addAttribute("newly",service.newly());
 	}
 	
 }
