@@ -16,5 +16,6 @@ public interface MemberMapper {
 	public int updateMember(MemberVO mvo); //멤버 정보 수정하기
 	public int countMember(Criteria cri);
 	public int deleteMember(String id);
+	public int updateMemberActive(String id);
 //	public int nextPage();
 }

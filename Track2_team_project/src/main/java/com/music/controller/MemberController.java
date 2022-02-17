@@ -84,11 +84,24 @@ public class MemberController {
 		return myName;
 	}
 	
+	@GetMapping("/convertMemberActive")
+	public String convertMemberActive(String id) {
+		int result = service.updateMemberActive(id);
+		String msg = "0";
+		if(result>0) {
+			msg="1";
+		}
+		return msg;
+	}
+	
 	@GetMapping("/deleteMember")
 	public String deleteMember(String id) {
-//		service.de
-		
-		return "";
+		int result = service.deleteMember(id);
+		String msg = "0";
+		if(result>0) {
+			msg="1";
+		}
+		return msg;
 	}
 	
 //=============================마이페이지 컨트롤러 ===================================

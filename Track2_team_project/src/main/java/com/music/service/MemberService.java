@@ -26,6 +26,9 @@ public interface MemberService {
 	//멤버 정보 업데이트
 	public int updateMember(MemberVO mvo);
 	
+	//멤버 정보 비활성화
+	public int updateMemberActive(String id);
+	
 	//페이징
 	public PageMaker pagingList(Criteria cri);
 

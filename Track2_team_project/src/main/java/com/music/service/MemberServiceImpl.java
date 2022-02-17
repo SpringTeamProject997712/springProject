@@ -74,4 +74,9 @@ public class MemberServiceImpl implements MemberService {
 	public int deleteMember(String id) {
 		return mapper.deleteMember(id);
 	}
+	
+	@Override
+	public int updateMemberActive(String id) {
+		return mapper.updateMemberActive(id);
+	}
 }
