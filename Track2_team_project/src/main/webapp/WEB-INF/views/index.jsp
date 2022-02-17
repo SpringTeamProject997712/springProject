@@ -331,7 +331,7 @@
                                             <img src="/images/weekly/song1.jpg" alt="" class="img-fluid">
                                             <div class="ms_song_overlay">
                                             </div>
-                                            <div class="ms_play_icon" id=1>
+                                            <div class="ms_play_icon" id=1><!-- ms_play_icon에 id로 tbno 붙이기 -->
                                                 <img src="/images/svg/play.svg" alt="">
                                             </div>
                                         </div>
@@ -366,7 +366,7 @@
                                             <img src="/images/weekly/song2.jpg" alt="" class="img-fluid">
                                             <div class="ms_song_overlay">
                                             </div>
-                                            <div class="ms_play_icon">
+                                            <div class="ms_play_icon" id=2>
                                                 <img src="/images/svg/play.svg" alt="">
                                             </div>
                                         </div>
@@ -401,7 +401,7 @@
                                             <img src="/images/weekly/song3.jpg" alt="" class="img-fluid">
                                             <div class="ms_song_overlay">
                                             </div>
-                                            <div class="ms_play_icon">
+                                            <div class="ms_play_icon" id=3>
                                                 <img src="/images/svg/play.svg" alt="">
                                             </div>
                                         </div>
@@ -436,7 +436,7 @@
                                             <img src="/images/weekly/song4.jpg" alt="" class="img-fluid">
                                             <div class="ms_song_overlay">
                                             </div>
-                                            <div class="ms_play_icon">
+                                            <div class="ms_play_icon" id=4>
                                                 <img src="/images/svg/play.svg" alt="">
                                             </div>
                                         </div>
@@ -471,7 +471,7 @@
                                             <img src="/images/weekly/song5.jpg" alt="" class="img-fluid">
                                             <div class="ms_song_overlay">
                                             </div>
-                                            <div class="ms_play_icon">
+                                            <div class="ms_play_icon" id=5>
                                                 <img src="/images/svg/play.svg" alt="">
                                             </div>
                                         </div>
@@ -507,7 +507,7 @@
                                             <img src="/images/weekly/song6.jpg" alt="" class="img-fluid">
                                             <div class="ms_song_overlay">
                                             </div>
-                                            <div class="ms_play_icon">
+                                            <div class="ms_play_icon" id=6>
                                                 <img src="/images/svg/play.svg" alt="">
                                             </div>
                                         </div>
