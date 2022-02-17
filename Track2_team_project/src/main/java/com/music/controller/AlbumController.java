@@ -120,7 +120,7 @@ public class AlbumController {
 	}
 	
 	@ResponseBody
-	@PostMapping("/albumSearcher")
+	@GetMapping("/albumSearcher")
 	public List<AlbumVO> searchAlbumList(String name){
 		return service.searchAlbumWithTrackName(name);
 	}

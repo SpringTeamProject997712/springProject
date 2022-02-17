@@ -1,5 +1,3 @@
-	var header = "${_csrf.parameterName}";
-	var token = "${_csrf.token}";
 
 	let a="";
 	let b="";
@@ -19,13 +17,10 @@
 	$("#track_tracker").on("input", function() {
 	    var currentVal = $(this).val();
 	    $.ajax({
-	    	type:"post",
+	    	type:"get",
 	    	data:{name:currentVal},
 	    	url:"/album/albumSearcher",
 	    	dataType:"json",
-	    	beforeSend: function(xhr){
-            	xhr.setRequestHeader(header, token)
-        	},
 	    	error:function(xhr,p,rd){
 	    		alert(xhr.p+"\n"+xhr.responseText+"\n"+rd+"라서 실패");
 	    	},success:function(data){
