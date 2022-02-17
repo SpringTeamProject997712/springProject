@@ -22,6 +22,23 @@ function findAddr(){ //우편번호 찾기
     }).open();
 }
 
+function go_member_delete(clicked_ID){
+	
+	console.log(clicked_ID);
+	if(confirm("회원 "+clicked_ID+" : 정말로 삭제하시겠습니까?")){
+		$.ajax({
+			type:"get",
+			data:{id:clicked_ID},
+			url:"/member/deleteMember",
+			success:function(data){
+				
+			},error:function(xhr, status, error){
+				alert("코드 : " + xhr.status + "\n메세지 : " + xhr.responseText + "\n에러 : " + error)
+			}
+		})
+	}
+}
+
 function go_update(){
 	let form = document.privacyForm;
 	form.action= "/member/updateMember";

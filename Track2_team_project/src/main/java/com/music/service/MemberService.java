@@ -29,4 +29,6 @@ public interface MemberService {
 	//페이징
 	public PageMaker pagingList(Criteria cri);
 
+	//멤버 삭제
+	public int deleteMember(String id);
 }

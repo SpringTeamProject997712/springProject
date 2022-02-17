@@ -84,6 +84,13 @@ public class MemberController {
 		return myName;
 	}
 	
+	@GetMapping("/deleteMember")
+	public String deleteMember(String id) {
+//		service.de
+		
+		return "";
+	}
+	
 //=============================마이페이지 컨트롤러 ===================================
 	
 	@GetMapping("/member/profile")
