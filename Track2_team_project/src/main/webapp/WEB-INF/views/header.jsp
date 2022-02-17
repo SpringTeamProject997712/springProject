@@ -174,10 +174,14 @@
             <div class="ms_header">
                 <div class="ms_top_left">
                     <div class="ms_top_search">
-                        <input type="text" class="form-control" placeholder="ミュージック検索">
-                        <span class="search_icon">
-							<img src="../images/svg/search.svg" alt="">
-						</span>
+                    	<form>
+	                      <input type="text" id="track_tracker" class="form-control" placeholder="ミュージック検索">
+	                      <span id="entire_music_searcher" class="search_icon">
+													<img src="../images/svg/search.svg" alt="">
+												</span>
+											</form>
+											<div id="instant_table_wrapper">
+											</div>
                     </div>
                     <div class="ms_top_trend">
                         <span><a href="#"  class="ms_color">今日のおすすめ :</a></span> <span class="top_marquee"><a href="#">Dream your moments, Until I Met You, Gimme Some Courage, Dark Alley (+8 More)</a></span>

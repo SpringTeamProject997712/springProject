@@ -44,5 +44,9 @@ public class AlbumServiceImpl implements AlbumService {
 	public List<AlbumVO> getCountLikes() {
 		return mapper.getCountLikes();
 	}
+	@Override
+	public List<AlbumVO> searchAlbumWithTrackName(String tname) {
+		return mapper.searchAlbumWithTrackName(tname);
+	}
 	
 }

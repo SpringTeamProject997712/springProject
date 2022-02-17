@@ -3,6 +3,7 @@ package com.music.controller;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.music.domain.AlbumVO;
@@ -49,7 +51,6 @@ public class AlbumController {
 		model.addAttribute("likes",service.getCountLikes());
 		
 	}
-	
 	
 	@GetMapping("/album_upload")
 	public void albumUpload(Model model) {
@@ -118,4 +119,9 @@ public class AlbumController {
 		model.addAttribute("newly",service.newly());
 	}
 	
+	@ResponseBody
+	@PostMapping("/albumSearcher")
+	public List<AlbumVO> searchAlbumList(String name){
+		return service.searchAlbumWithTrackName(name);
+	}
 }
