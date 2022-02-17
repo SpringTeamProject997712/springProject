@@ -64,11 +64,11 @@
                     <div class="swiper-wrapper">
                     
                     <!-- trending albums start -->
-                    <c:forEach var="list" items="${list}">
+                    <c:forEach var="likes" items="${likes}">
                         <div class="swiper-slide">
                             <div class="ms_rcnt_box">
                                 <div class="ms_rcnt_box_img">
-                                    <img src="${pageContext.request.contextPath}/upload/${list.image}" alt="">
+                                    <img src="${pageContext.request.contextPath}/upload/${likes.image}" alt="">
                                     <div class="ms_main_overlay">
                                         <div class="ms_box_overlay"></div>
                                         <div class="ms_more_icon">
@@ -85,7 +85,7 @@
                                         </ul>
                                         
                                         <div class="ms_play_icon">
-                                         <a href="/album_single?abno=${list.abno}">
+                                         <a href="/album_single?pbno=${likes.pbno}">
                                             <img src="../images/svg/play.svg" alt="">
                                             </a>
                                         </div>
@@ -93,8 +93,8 @@
                                     </div>
                                 </div>
                                 <div class="ms_rcnt_box_text">
-                                    <h3><a href="album_single.html">${list.name}</a></h3>
-                                    <p>${list.singer}</p>
+                                    <h3><a href="album_single.html">${likes.name}</a></h3>
+                                    <p>${likes.singer}</p>
                                 </div>
                             </div>
                         </div>
@@ -118,6 +118,8 @@
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-12 padding_right40">
+                           
+                             <!-- TOP 15 start -->
                             <div class="ms_weekly_box">
                                 <div class="weekly_left">
                                     <span class="w_top_no">
@@ -152,7 +154,11 @@
                                     <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                 </ul>
                             </div>
+                          
+                            
                             <div class="ms_divider"></div>
+                            
+                            <!-- TOP 15 start -->
                             <div class="ms_weekly_box">
                                 <div class="weekly_left">
                                     <span class="w_top_no">

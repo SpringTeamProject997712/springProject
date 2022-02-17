@@ -46,6 +46,7 @@ public class AlbumController {
 	@GetMapping("/album")
 	public void albumView(Model model) {
 		model.addAttribute("list",service.listAlbum());
+		model.addAttribute("likes",service.getCountLikes());
 		
 	}
 	

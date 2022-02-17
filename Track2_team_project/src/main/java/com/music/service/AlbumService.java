@@ -19,4 +19,7 @@ public interface AlbumService {
 	
 	//새로운 앨범 
 	public List<AlbumVO> newly();
+	
+	//좋아요순 
+	public List<AlbumVO> getCountLikes();
 }

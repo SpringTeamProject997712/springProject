@@ -40,6 +40,9 @@ public class AlbumServiceImpl implements AlbumService {
 	public List<AlbumVO> newly() {
 		return mapper.listNewly();
 	}
-	
+	@Override
+	public List<AlbumVO> getCountLikes() {
+		return mapper.getCountLikes();
+	}
 	
 }

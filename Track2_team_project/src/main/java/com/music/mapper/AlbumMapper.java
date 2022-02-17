@@ -20,5 +20,7 @@ public interface AlbumMapper {
 	//새로운 앨범 
 	public List<AlbumVO> listNewly();
 	
+	//좋아요 순 정렬
+	public List<AlbumVO> getCountLikes();
 	
 }
