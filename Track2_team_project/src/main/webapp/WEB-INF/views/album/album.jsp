@@ -46,14 +46,7 @@
                                 </div>
                             </div>
                         </div>
-<<<<<<< HEAD
-
-                        </c:forEach>
-=======
-                     </c:forEach>
-                     <!-- featured albums end -->
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
-                        
+                        </c:forEach>            
                         <!-- featured Albums end -->
 
                     </div>
