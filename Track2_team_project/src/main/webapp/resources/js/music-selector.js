@@ -1,4 +1,4 @@
-	var header = "${_csrf.headerName}";
+	var header = "${_csrf.parameterName}";
 	var token = "${_csrf.token}";
 
 	let a="";
