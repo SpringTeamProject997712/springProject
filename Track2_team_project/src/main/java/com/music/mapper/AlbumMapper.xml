@@ -67,6 +67,6 @@
 	<select id="countAlbum" resultType="int">
 			select count(*) from album_m a where 
 			<include refid="search_box"></include>
-			a > 0
+			abno > 0
 	</select>
 </mapper>
