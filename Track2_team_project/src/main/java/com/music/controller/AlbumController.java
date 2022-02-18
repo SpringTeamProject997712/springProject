@@ -5,8 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+
+import com.google.gson.Gson;
 import com.music.service.AlbumService;
 
 import lombok.Setter;
@@ -36,5 +40,14 @@ public class AlbumController {
 		model.addAttribute("newly",service.newly());
 	}
 	
-	
+	@ResponseBody
+	@RequestMapping(value="/albumSearcher", produces = "application/text; charset=utf8", method=RequestMethod.GET)
+	public String searchAlbumList(String name){
+		
+		Gson gson = new Gson();
+		String json = gson.toJson(service.searchAlbumWithTrackName(name));
+		log.info(json);
+		return json;
+	}
+
 }

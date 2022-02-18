@@ -24,6 +24,8 @@ public interface AlbumService {
 	//좋아요순 
 	public List<AlbumVO> getCountLikes();
 	
+	//트랙 이름으로 앨범-싱글 리스트
+	public List<AlbumVO> searchAlbumWithTrackName(String tname);
 	
 	//어드민
 	

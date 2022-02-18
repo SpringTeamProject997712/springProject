@@ -69,4 +69,14 @@ public class MemberServiceImpl implements MemberService {
 		int result=mapper.updateMember(mvo);
 		return result;
 	}
+	
+	@Override
+	public int deleteMember(String id) {
+		return mapper.deleteMember(id);
+	}
+	
+	@Override
+	public int updateMemberActive(String id) {
+		return mapper.updateMemberActive(id);
+	}
 }

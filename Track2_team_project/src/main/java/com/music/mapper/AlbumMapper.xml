@@ -38,6 +38,10 @@
   		select * from newly order by tbno desc
   	</select>
   	
+  	<select id="searchAlbumWithTrackName" resultType="com.music.domain.AlbumVO">
+  		select * from album_single where tname like '%'||#{tname}||'%'
+  	</select>
+  	
   	<select id="getCountLikes" resultType="com.music.domain.AlbumVO">
 
 	select a.pbno, a.name, a.singer,a.image, count(likes) likes

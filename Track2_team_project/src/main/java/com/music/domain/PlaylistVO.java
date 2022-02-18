@@ -3,13 +3,16 @@ package com.music.domain;
 import lombok.Data;
 
 @Data
-public class PlaylistVO { //jplayer 음악 재생 리스트
+public class PlaylistVO {
 
-	private String title;
-	private String artist;
-	private String mp3;
-	private String option;
-	private String image;
+	private int plbno;
+	private String id;
+	private String name;
+	
+//===============Detail====================
+	
+	private int pdbno;
+	private int abno;
+	private int tbno;
 	
 }
-

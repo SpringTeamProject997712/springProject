@@ -48,6 +48,10 @@ public class AlbumServiceImpl implements AlbumService {
 	}
 
 	@Override
+	public List<AlbumVO> searchAlbumWithTrackName(String tname) {
+		return mapper.searchAlbumWithTrackName(tname);
+	}
+	@Override
 	public List<AlbumVO> viewAlbumListWithPaging(Criteria cri) {
 		return mapper.viewAlbumListWithPaging(cri);
 	}

@@ -82,6 +82,9 @@ function go_join() {                                  //회원가입
 	}else if(document.joinForm.pw.value == "") {
 		alert("비밀번호 입력");
 		document.joinForm.pw.focus();
+	}else if(document.joinForm.pw.value != document.joinForm.pw2.value) {
+		alert("비밀번호가 서로 일치하지 않습니다");
+		document.joinForm.pw2.focus();
 	}else{
 		document.joinForm.submit();
 	}

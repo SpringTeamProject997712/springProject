@@ -4,6 +4,7 @@
       </footer>
     </div>
     <!-- CoreUI and necessary plugins-->
+    <script type="text/javascript" src="/resources/js/jquery.js"></script>
     <script src="/resources/js/admin/coreui.bundle.min.js"></script>
     <script src="/resources/js/admin/simplebar.min.js"></script>
     <!-- We use those scripts to show code examples, you should remove them in your application.-->

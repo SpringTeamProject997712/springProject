@@ -26,6 +26,8 @@ public interface AlbumMapper {
 	public List<AlbumVO> getCountLikes();
 
 	
+	//트랙 이름으로 앨범-싱글 리스트 찾기
+	public List<AlbumVO> searchAlbumWithTrackName(String tname);
 	
 	//관리자
 	

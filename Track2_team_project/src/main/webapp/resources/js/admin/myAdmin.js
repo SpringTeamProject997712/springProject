@@ -22,7 +22,32 @@ function findAddr(){ //우편번호 찾기
     }).open();
 }
 
+<<<<<<< HEAD
 //멤버 수정
+=======
+function go_member_delete(clicked_ID){
+	
+	console.log(clicked_ID);
+	if(confirm("회원 "+clicked_ID+" : 정말로 비활설화 하시겠습니까?")){
+		$.ajax({
+			type:"get",
+			data:{id:clicked_ID},
+			url:"/convertMemberActive",
+			success:function(data){
+				if(data=='1'){
+					alert('비활성화되었습니다');
+					document.location.reload();
+				}else(
+					alert("실패")
+				)
+			},error:function(xhr, status, error){
+				alert("코드 : " + xhr.status + "\n메세지 : " + xhr.responseText + "\n에러 : " + error)
+			}
+		})
+	}
+}
+
+>>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 function go_update(){
 	let form = document.privacyForm;
 	form.action= "/member/updateMember";

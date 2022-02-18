@@ -226,7 +226,7 @@
                         <div class="ms_register_form">
                             <h2>会員登録</h2>
                             <form action="/member/join" method="post" name="joinForm">
-                            	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+                            	<input id="csrfToken" type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 	                            <div class="form-group">
 	                                <input type="text" name="name" placeholder="名前入力"class="form-control">
 	                                <span class="form_icon">
@@ -414,7 +414,7 @@
                     <div class="modal-body">
 						<h1>本当に再生リストをクリアしますか？</h1>
 						<div class="clr_modal_btn">
-							<a href="#">クリア</a>
+							<a class="entire-playlist-clear" href="#">クリア</a>
 							<a href="#">キャンセル</a>
 						</div>
                     </div>
@@ -468,6 +468,7 @@
     <script type="text/javascript" src="/resources/js/plugins/nice_select/jquery.nice-select.min.js"></script>
 	<script type="text/javascript" src="/resources/js/plugins/scroll/jquery.mCustomScrollbar.js"></script>
     <script type="text/javascript" src="/resources/js/custom.js"></script>
+    <script type="text/javascript" src="/resources/js/music-selector.js"></script>
     <script type="text/javascript" src="/resources/js/my.js"></script>
 </body>
 
