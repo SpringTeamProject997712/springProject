@@ -178,9 +178,7 @@ $().ready(function(){
 	console.log(heart_arr);
 	console.log(fav_heart);
 	if(fav_heart){
-		console.log("if문 작동함");
 		for(var i=0; i<heart_arr.length; i++){
-			console.log("for문 작동함");
 			$.ajax({
 				type:"get",
 				data:{pbno : heart_arr[i]},

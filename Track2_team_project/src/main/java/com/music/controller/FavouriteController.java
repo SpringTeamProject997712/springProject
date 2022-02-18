@@ -35,13 +35,11 @@ public class FavouriteController {
 	public String favoritChecker(int pbno) {
 		String result="0";
 		String id ="";
-		log.info(pbno);
 		//테이블이 있는지 likes가 0인지
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		if(!auth.getPrincipal().equals("anonymousUser")) {
 			CustomUser user = (CustomUser)auth.getPrincipal();
 			id = user.getUsername();
-			log.info("이게 나의 아이디임"+id);
 			LikeVO vo = new LikeVO();
 			vo.setId(id);
 			vo.setPbno(pbno);
