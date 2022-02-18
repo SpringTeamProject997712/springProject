@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.music.domain.MemberVO;
 import com.music.domain.PlaylistVO;
+import com.music.domain.ViewPlaylistDetailVO;
 import com.music.utility.Criteria;
 import com.music.utility.PageMaker;
 
@@ -34,7 +35,7 @@ public interface MemberService {
 	public List<PlaylistVO> viewMyPlaylist(String id);
 	
 	//특정 플레이리스트 불러오기
-	public List<PlaylistVO> viewOnePlaylist(int plbno);
+	public List<ViewPlaylistDetailVO> viewOnePlaylist(int plbno);
 	
 	//플레이리스트의 리스트 불러오기 (my플레이리스트 페이지)
 	public List<PlaylistVO> viewMyPlaylistList(String id);

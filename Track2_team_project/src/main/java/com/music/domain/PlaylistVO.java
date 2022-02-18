@@ -14,5 +14,6 @@ public class PlaylistVO {
 	private int pdbno;
 	private int abno;
 	private int tbno;
+
 	
 }

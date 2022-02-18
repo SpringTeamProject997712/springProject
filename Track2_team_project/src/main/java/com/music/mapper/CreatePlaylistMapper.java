@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.music.domain.PlaylistVO;
 import com.music.domain.TrackVO;
+import com.music.domain.ViewPlaylistDetailVO;
 
 public interface CreatePlaylistMapper {
 
@@ -30,4 +31,7 @@ public interface CreatePlaylistMapper {
 	
 	//플레이리스트 번호로 플레이리스트와 플레이리스트 디테일 소환
 	public List<PlaylistVO> selectPlaylist(int plbno);
+	
+	//플레이리스트 번호로 플레이리스트의 모든것 소환
+	public List<ViewPlaylistDetailVO> selectOnePlaylist(int plbno);
 }

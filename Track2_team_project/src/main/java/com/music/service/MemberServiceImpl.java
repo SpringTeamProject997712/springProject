@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.music.domain.MemberVO;
 import com.music.domain.PlaylistVO;
+import com.music.domain.ViewPlaylistDetailVO;
 import com.music.mapper.CreatePlaylistMapper;
 import com.music.mapper.MemberMapper;
 import com.music.utility.Criteria;
@@ -95,8 +96,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
-	public List<PlaylistVO> viewOnePlaylist(int plbno) {
-		return cmapper.selectPlaylist(plbno);
+	public List<ViewPlaylistDetailVO> viewOnePlaylist(int plbno) {
+		return cmapper.selectOnePlaylist(plbno);
 	}
 	@Override
 	public int countTrack(int plbno) {

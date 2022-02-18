@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="/member/my_playlist/one_playlist?plbno=${myList.plbno}">${myList.name}</a></h3>
-                                    <p>${myList.pdbno}</p>
+                                    <p>${myList.pdbno} songs</p>
                                 </div>
                             </div>
                         </div>
