@@ -67,9 +67,9 @@ public class UploadController {
 	public String insertAlbum(AlbumVO album, ProductVO product, 
 			@RequestParam("uploadImage") MultipartFile uploadImage, 
 			@RequestParam("name") String name,
-			@RequestParam("pbno") int pbno,
 			Model model) throws IOException {
-		
+		log.info("여기 보셈 새로운 우리의 pbno입니다 : "+product.getPbno());
+		int pbno = product.getPbno();
 //		MultipartFile multipartFile = portfolio.getUploadFile();
 		String uploadFolder = "C:\\upload";
 		log.info("file name : "+uploadImage.getOriginalFilename());
