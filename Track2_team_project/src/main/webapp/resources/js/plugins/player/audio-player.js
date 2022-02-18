@@ -26,39 +26,32 @@ $(function() {
             mp3: "/music/天体観測.mp3",
 						option : myPlayListOtion
         }];
-        
-//   let notBasicPlayList = [{
-//						image : '../images/weekly/song1.jpg',	
-//            title: "에어맨이 쓰러지지 않아",
-//            artist: "록맨",
-//            mp3: "/music/Airman.mp3",
-//						option : myPlayListOtion	
-//       }, {
-//						image : '../images/weekly/song2.jpg',	
-//            title: "천체관측",
-//            artist: "BUMP OF CHICKEN",
-//            mp3: "/music/天体観測.mp3",
-//						option : myPlayListOtion
-//        }, {
-//						image : '../images/weekly/song3.jpg',	
-//            title: "모르는노래",
-//            artist: "음은 익숙",
-//           mp3: "/music/打上花火.mp3",
-//						option : myPlayListOtion
-//        }];
-//    console.log(basicPlayList);
-//   console.log(typeof basicPlayList);
 
+		let login_flag = "";
+
+		$.ajax({
+    	type:"get",
+    	url:"/member/loginChecker",
+    	async:false,
+    	success:function(data){
+    		console.log("나온 값 : "+data);
+    		if(data != '1'){
+    		login_flag=data;
+    		}		
+    	},error:function(xhr,status,error){
+    		console.log("xhr : "+xhr.status+"\n text : "+xhr.responseText+"\n error : "+error);
+    	}
+    });
+	
     var objectMine;
-    var login_flag = '<sec:authentication property="principal">';
     var login_checker = login_flag;
     
-    console.log("현재 로그인 체커 : "+login_checker);
+    console.log("현재 로그인 체커"+login_checker);
     
     //함수 가동
-    if ($('.audio-player').length) {
+    if ($('.audio-player').length) { //audio-player 클래스가 있으면 작동
+    
 		var myPlayListOtion = '<ul class="more_option"><li><a href="#"><span class="opt_icon" title="Add To Favourites"><span class="icon icon_fav"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Queue"><span class="icon icon_queue"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Download Now"><span class="icon icon_dwn"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Playlist"><span class="icon icon_playlst"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Share"><span class="icon icon_share"></span></span></a></li></ul>';
-		console.log("뭐가 다른지 봅시다 : " + myPlayListOtion);
 		
 	$.ajax({
     	type:"get",
@@ -73,10 +66,11 @@ $(function() {
     		}
      		console.log(objectMine);
     	},error:function(xhr,status,error){
-    		console.log("xhr : "+xhr.status+"\n status : "+error);
+    		console.log("xhr : "+xhr.status+"\n text : "+xhr.responseText+"\n error : "+error);
     	}
     });
     
+    console.log(document.cookie);
     console.log("===========================내가 만든 플레이 리스트 값==============================")
     console.log(objectMine);
 		
@@ -87,7 +81,7 @@ $(function() {
             cssSelectorAncestor: "#jp_container_1"
         }, 
         login_checker?objectMine:basicPlayList, //<-------------리스트 넣는 칸
-        {
+        {//이친구가 d임
             swfPath: "js/plugins",
             supplied: "mp3",
             wmode: "window",
@@ -97,7 +91,7 @@ $(function() {
             keyEnabled: true,
             playlistOptions: {
             autoPlay: false,        //로딩후 음악을 자동으로 시작할건가요?
-            						//크롬은 모든 음소거 되지않은 자동재생을 차단합니다. 유저가 웹과 상호작용하지 않았다면요.	
+            						//크롬은 모든 음소거 되지않은 자동재생을 차단합니다. 유저가 웹과 상호작용하지 않았다면요.					
             }
         });
         $("#jquery_jplayer_1").on($.jPlayer.event.ready + ' ' + $.jPlayer.event.play, function(event) {

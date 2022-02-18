@@ -75,7 +75,7 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 			AlbumVO avo=amapper.readAlbum(track.get(i).getAbno());
 			playlist.setArtist(avo.getSinger());
 			playlist.setImage("/images/"+avo.getImage());
-			playlist.setMp3(track.get(i).getSongrealname());
+			playlist.setMp3("/upload/"+track.get(i).getSongrealname());
 			playlist.setOption("myPlayListOtion");
 			playlist.setTitle(track.get(i).getName());
 			jlist.add(playlist);

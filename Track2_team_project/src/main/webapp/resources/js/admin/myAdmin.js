@@ -22,9 +22,7 @@ function findAddr(){ //우편번호 찾기
     }).open();
 }
 
-<<<<<<< HEAD
 //멤버 수정
-=======
 function go_member_delete(clicked_ID){
 	
 	console.log(clicked_ID);
@@ -47,7 +45,6 @@ function go_member_delete(clicked_ID){
 	}
 }
 
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 function go_update(){
 	let form = document.privacyForm;
 	form.action= "/member/updateMember";

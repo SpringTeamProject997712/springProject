@@ -35,8 +35,9 @@ public class UploadController {
 	@Setter(onMethod_= @Autowired)
 	private ProductMapper pmapper;
 	
-	
+	//구 폴더 생성기
 	private String getFolder() {
+		//폴더 생성(폴더는 현제 날짜별로)
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = new Date();
 		String str = sdf.format(date);
@@ -53,7 +54,10 @@ public class UploadController {
 	
 	@PostMapping("/uploadpro_album")
 	public String insertAlbum(AlbumVO album, ProductVO product, 
-			@RequestParam("uploadImage") MultipartFile uploadImage, @RequestParam("pbno") int pbno, Model model) {
+			@RequestParam("uploadImage") MultipartFile uploadImage, 
+			@RequestParam("name") String name,
+			@RequestParam("pbno") int pbno,
+			Model model) {
 		
 //		MultipartFile multipartFile = portfolio.getUploadFile();
 		String uploadFolder = "C:\\upload";
@@ -65,11 +69,13 @@ public class UploadController {
 		uploadImageName = uploadImageName.substring(uploadImageName.lastIndexOf("//")+1);
 		log.info("only file name :"+uploadImageName);
 		
-		UUID uuid = UUID.randomUUID();
 		
-		uploadImageName = uuid.toString()+"_"+uploadImageName;
+		//파일에 변수명 주기
+//		UUID uuid = UUID.randomUUID();
 		
-		File uploadPath = new File(uploadFolder, getFolder());
+//		uploadImageName = uuid.toString()+"_"+uploadImageName;
+		
+		File uploadPath = new File(uploadFolder, name);
 		
 		if(uploadPath.exists() == false) {
 			uploadPath.mkdirs();
