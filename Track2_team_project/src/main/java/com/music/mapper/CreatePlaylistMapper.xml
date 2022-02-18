@@ -19,7 +19,7 @@
 		select * from view_playlist where id = #{id}
 	</select>
 	
-	<select id="readPlaylistsWithId">
+	<select id="readPlaylistsWithId" resultType="com.music.domain.PlaylistVO">
 		select pl.name as name, pl.id as id, pl.plbno as plbno, count(pd.pdbno) as pdbno  
     from playlist_detail_m pd, playlist_m pl
     where pl.plbno = pd.plbno

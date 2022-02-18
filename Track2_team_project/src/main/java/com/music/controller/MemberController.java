@@ -121,7 +121,8 @@ public class MemberController {
 		if(!(auth.getPrincipal().equals("anonymousUser"))) {
 			CustomUser user = (CustomUser)auth.getPrincipal();
 			String id =user.getUsername();
-			model.addAttribute("myPlaylist",service.viewMyPlaylist(id));
+			log.info(service.viewMyPlaylistList(id));
+			model.addAttribute("myPlaylist",service.viewMyPlaylistList(id));
 		}
 	}
 }
