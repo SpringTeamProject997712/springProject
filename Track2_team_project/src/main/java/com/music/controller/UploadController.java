@@ -111,10 +111,7 @@ public class UploadController {
 			e.printStackTrace();
 		}
 		
-		pservice.insertProduct(product);
 		
-		pservice.insertAlbum(album);
-		album.setPbno(pbno);
 		
 		
 		
@@ -157,6 +154,11 @@ public class UploadController {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+        
+        pservice.insertProduct(product);
+		
+		pservice.insertAlbum(album);
+		album.setPbno(pbno);
         
 		return "redirect:/";
 	}	
