@@ -314,21 +314,25 @@
                     <div class="swiper-wrapper">
                     
                     <!--  newly release album start -->
+                      <!-- newly start -->
+                       <c:forEach var="newly" items="${newly}">
                         <div class="swiper-slide">
                             <div class="ms_release_box">
                                 <div class="w_top_song">
                                     <span class="slider_dot"></span>
                                     <div class="w_tp_song_img">
-                                        <img src="../images/weekly/song1.jpg" alt="">
+                                        <img src="/images/weekly/song1.jpg" alt="">
                                         <div class="ms_song_overlay">
                                         </div>
                                         <div class="ms_play_icon">
-                                            <img src="../images/svg/play.svg" alt="">
+                                        
+                                            <img src="/images/svg/play.svg" alt="">
+                                        
                                         </div>
                                     </div>
                                     <div class="w_tp_song_name">
-                                        <h3><a href="#">Dark Alley Acoustic</a></h3>
-                                        <p>Ava Cornish</p>
+                                        <h3><a href="/album/album_single?abno=${newly.abno}">${newly.tname}</a></h3>
+                                        <p>${newly.name}</p>
                                     </div>
                                 </div>
                                 <div class="weekly_right">
@@ -336,6 +340,8 @@
                                 </div>
                             </div>
                         </div>
+                        </c:forEach>
+                        <!-- newly end -->
                         <!--  newly release album end -->
                         
                         <div class="swiper-slide">

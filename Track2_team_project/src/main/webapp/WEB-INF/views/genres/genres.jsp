@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="ovrly_text_div">
                                     <span class="ovrly_text1"><a href="#">romantic</a></span>
-                                    <span class="ovrly_text2"><a href="genres_single.html">view song</a></span>
+                                    <span class="ovrly_text2"><a href="/genres/genres_single">view song</a></span>
                                 </div>
                             </div>
                             <div class="ms_box_overlay_on">

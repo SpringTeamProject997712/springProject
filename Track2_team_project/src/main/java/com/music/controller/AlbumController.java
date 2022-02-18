@@ -34,7 +34,7 @@ public class AlbumController {
 		model.addAttribute("list",service.listAlbum());
 		model.addAttribute("likes",service.getCountLikes());
 		model.addAttribute("topalbum",service.topAlbums());
-		
+		model.addAttribute("newly",service.newly());
 	}
 	
 	@GetMapping("/album_single")

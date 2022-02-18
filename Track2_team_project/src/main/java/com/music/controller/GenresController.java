@@ -13,4 +13,9 @@ public class GenresController {
 		
 	}
 	
+	@GetMapping("/genres_single")
+	public void genres_single() {
+		
+	}
+	
 }
