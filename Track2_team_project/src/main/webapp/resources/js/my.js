@@ -189,7 +189,7 @@ $().ready(function(){
 					if(data=='1'){
 						console.log(heart_arr[i]);
 						$("#"+heart_arr[i]).empty();
-						$("#"+heart_arr[i]).append("<span><img src='/images/svg/filled_heart.svg'></span>");
+						$("#"+heart_arr[i]).append("<span><img src='/images/svg/pink-heart.svg'></span>");
 					}else{
 						console.log("빈하트");
 					}
