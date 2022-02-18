@@ -144,23 +144,23 @@
                         </li>
                     </ul>
                     <ul class="nav_playlist">
-                        <li><a href="feature_playlist.html" title="Featured Playlist">
-						<span class="nav_icon">
-							<span class="icon icon_fe_playlist"></span>
-						</span>
-						<span class="nav_text">
-							プレイリスト
-						</span>
-						</a>
+                        <li><a href="/feature_playlist/feature_playlist" title="Featured Playlist">
+													<span class="nav_icon">
+														<span class="icon icon_fe_playlist"></span>
+													</span>
+													<span class="nav_text">
+														プレイリスト
+													</span>
+													</a>
                         </li>
-                        <li><a href="add_playlist.html" title="Create Playlist">
-						<span class="nav_icon">
-							<span class="icon icon_c_playlist"></span>
-						</span>
-						<span class="nav_text">
-							リスト作成
-						</span>
-						</a>
+                        <li><a href="/member/my_playlist" title="Create Playlist">
+													<span class="nav_icon">
+														<span class="icon icon_c_playlist"></span>
+													</span>
+													<span class="nav_text">
+														リスト作成
+													</span>
+													</a>
                         </li>
                     </ul>
                 </div>
@@ -174,10 +174,14 @@
             <div class="ms_header">
                 <div class="ms_top_left">
                     <div class="ms_top_search">
-                        <input type="text" class="form-control" placeholder="ミュージック検索">
-                        <span class="search_icon">
-							<img src="../images/svg/search.svg" alt="">
-						</span>
+                    	<form>
+	                      <input type="text" id="track_tracker" class="form-control" placeholder="ミュージック検索">
+	                      <span id="entire_music_searcher" class="search_icon">
+													<img src="../images/svg/search.svg" alt="">
+												</span>
+											</form>
+											<div id="instant_table_wrapper">
+											</div>
                     </div>
                     <div class="ms_top_trend">
                         <span><a href="#"  class="ms_color">今日のおすすめ :</a></span> <span class="top_marquee"><a href="#">Dream your moments, Until I Met You, Gimme Some Courage, Dark Alley (+8 More)</a></span>

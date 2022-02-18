@@ -16,7 +16,7 @@
 
 	<div class="tab-content marger_top60">
 		<div class="tab-pane fade show active" id="album">
-			<form name="upload_album" method="post" enctype="multipart/form-data">
+			<form name="upload_album" method="post" enctype="multipart/form-data" action="uploadpro_album">
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 				<div class="tab-content">
 					<div class="ms_upload_box tab-pane fade show active" id="album">
@@ -44,16 +44,16 @@
 									<label>アルバム名 *</label> <input type="text" name="name" placeholder="" class="form-control">
 								</div>
 								<div class="form-group">
-									<label>アーティスト名 *</label> <input type="text" name="singer" placeholder="Ava Cornish, Brian Hill" class="form-control">
-								</div>
-								<div class="form-group">
-									<label>詳細</label> <input type="text" name="detail" placeholder="" class="form-control">
+									<label>アーティスト名 *</label> <input type="text" name="singer" placeholder="" class="form-control">
 								</div>
 								<div class="form-group">
 									<label>値段</label> <input type="text" name="price" placeholder="" class="form-control">
 								</div>
 								<div class="form-group">
 									<label>登録日</label> <input type="date" name="regdate" id="regdate" placeholder="" class="form-control">
+								</div>
+								<div class="form-group" style="width:88%">
+									<label>詳細</label><input type="text" name="detail" placeholder="" class="form-control" style="height:150px;">
 								</div>
 								
 
@@ -74,7 +74,7 @@
 		</div>
 
 		<div class="tab-pane fade" id="track">
-			<form name="upload_track" method="post" enctype="multipart/form-data">
+			<form name="upload_track" method="post" enctype="multipart/form-data" action="uploadpro_track">
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 				<div class="tab-content">
 					<div class="ms_upload_box tab-pane fade show active" id="track">
@@ -98,7 +98,7 @@
 							<div class="ms_pro_form">
 								<input type="hidden" value="2" id="category" name="category">
 								<div class="form-group">
-									<label>トラック名 *</label> <input type="text" name="name" placeholder="Dream Your Moments" class="form-control">
+									<label>トラック名 *</label> <input type="text" name="name" placeholder="" class="form-control">
 								</div>
 								<div class="form-group">
 									<label>アルバム</label>
@@ -117,10 +117,10 @@
 									</select>
 								</div>
 								<div class="form-group">
-									<label>詳細</label> <input type="text" name="detail" placeholder="" class="form-control">
-								</div>
-								<div class="form-group">
 									<label>値段</label> <input type="text" name="price" placeholder="" class="form-control">
+								</div>
+								<div class="form-group" style="width:88%">
+									<label>詳細</label><input type="text" name="detail" placeholder="" class="form-control" style="height:150px;">
 								</div>
 
 								<input type="hidden" name="pbno" value="${pbno}" class="form-control">
@@ -128,8 +128,8 @@
 
 								<div class="pro-form-btn text-center marger_top15">
 									<div class="ms_upload_btn">
-										<a href="javascript:void(0);" class="ms_btn" onclick="go_upload_track()">Upload Now</a>
-										<a href="javascript:void(0);" class="ms_btn" onclick="go_cancle()">cancle</a>
+										<a href="javascript:void(0);" class="ms_btn" onclick="go_upload_track()">アップロード</a>
+										<a href="javascript:void(0);" class="ms_btn" onclick="go_reset()">リセット</a>
 									</div>
 								</div>
 							</div>
@@ -140,7 +140,7 @@
 		</div>
 		
 		<div class="tab-pane fade" id="goods">
-			<form name="upload_goods" method="post" enctype="multipart/form-data">
+			<form name="upload_goods" method="post" enctype="multipart/form-data" action="uploadpro_goods">
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 				<div class="tab-content">
 					<div class="marger_top60">
@@ -151,18 +151,21 @@
 							<div class="ms_pro_form">
 								<input type="hidden" value="3" id="category" name="category">
 								<div class="form-group">
-									<label>詳細</label> <input type="text" name="detail" placeholder="" class="form-control">
+									<label>在庫</label> <input type="text" name="amount" placeholder="" class="form-control">
 								</div>
 								<div class="form-group">
 									<label>値段</label> <input type="text" name="price" placeholder="" class="form-control">
+								</div>
+								<div class="form-group" style="width:88%">
+									<label>詳細</label><input type="text" name="detail" placeholder="" class="form-control" style="height:150px;">
 								</div>
 								<input type="hidden" name="pbno" value="${pbno}" class="form-control">
 
 
 								<div class="pro-form-btn text-center marger_top15">
 									<div class="ms_upload_btn">
-										<a href="javascript:void(0);" class="ms_btn" onclick="go_upload_goods()">Upload Now</a>
-										<a href="javascript:void(0);" class="ms_btn" onclick="go_reset()">cancle</a>
+										<a href="javascript:void(0);" class="ms_btn" onclick="go_upload_goods()">アップロード</a>
+										<a href="javascript:void(0);" class="ms_btn" onclick="go_reset()">リセット</a>
 									</div>
 								</div>
 							</div>

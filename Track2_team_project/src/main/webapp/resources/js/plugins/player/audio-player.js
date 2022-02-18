@@ -53,9 +53,10 @@ $(function() {
     
 		var myPlayListOtion = '<ul class="more_option"><li><a href="#"><span class="opt_icon" title="Add To Favourites"><span class="icon icon_fav"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Queue"><span class="icon icon_queue"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Download Now"><span class="icon icon_dwn"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Playlist"><span class="icon icon_playlst"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Share"><span class="icon icon_share"></span></span></a></li></ul>';
 		
-		$.ajax({
+	$.ajax({
     	type:"get",
-    	url:"/createPlaylist/addPlayList?menu=1",
+    	url:"/createPlaylist/addPlayList",
+    	data:{menu:2},
     	async:false,
     	success:function(data){
     		console.log(data);
@@ -89,8 +90,8 @@ $(function() {
             smoothPlayBar: true,
             keyEnabled: true,
             playlistOptions: {
-            autoPlay: false           //로딩후 음악을 자동으로 시작할건가요?
-            													//크롬은 모든 음소거 되지않은 자동재생을 차단합니다. 유저가 웹과 상호작용하지 않았다면요.
+            autoPlay: false,        //로딩후 음악을 자동으로 시작할건가요?
+            						//크롬은 모든 음소거 되지않은 자동재생을 차단합니다. 유저가 웹과 상호작용하지 않았다면요.					
             }
         });
         $("#jquery_jplayer_1").on($.jPlayer.event.ready + ' ' + $.jPlayer.event.play, function(event) {

@@ -81,4 +81,12 @@
 	<update id="updateMember">
 		update member_m set name=#{name}, address1=#{address1}, address2=#{address2}, zipnum=#{zipnum}, active=#{active} where id=#{id}
 	</update>
+	
+	<update id="updateMemberActive">
+		update member_m set active='0' where id=#{id}
+	</update>
+	
+	<delete id="deleteMember">
+		delete from member_m where id = #{id}
+	</delete>
 </mapper>

@@ -39,25 +39,21 @@
                                     </div>
                                 </div>
                                 <div class="ms_rcnt_box_text">
-
                                     <h3><a href="album_single.html">${list.name}</a></h3>
-
                                     <p>${list.singer}</p>
                                 </div>
                             </div>
                         </div>
-                        </c:forEach>            
-                        <!-- featured Albums end -->
-
+                     </c:forEach>
+                     <!-- featured albums end -->
+                        
+                        
                     </div>
                 </div>
                 <!-- Add Arrows -->
                 <div class="swiper-button-next3 slider_nav_next"></div>
                 <div class="swiper-button-prev3 slider_nav_prev"></div>
             </div>
-            
-            
-            
             <!---Recently Played Music--->
             <div class="ms_rcnt_slider padder_top50">
                 <div class="ms_heading">

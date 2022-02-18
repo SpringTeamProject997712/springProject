@@ -1,11 +1,8 @@
 package com.music.controller;
 
-import java.security.Principal;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.music.domain.MemberVO;
 import com.music.security.domain.CustomUser;
+import com.music.service.CreatePlaylistService;
 import com.music.service.MemberService;
 
 import lombok.Setter;
@@ -31,6 +29,9 @@ public class MemberController {
 	MemberService service; //서비스 자리
 	
 	@Setter(onMethod_ = @Autowired)
+	CreatePlaylistService pservice; //서비스 자리
+	
+	@Setter(onMethod_ = @Autowired)
 	private PasswordEncoder pencoder; //패스워드 인코더
 	
 	//회원가입
@@ -40,8 +41,9 @@ public class MemberController {
 		vo.setPw(inputPw);
 		log.info(vo);
 		int result = service.joinMember(vo);
-		if(result > 0 ) {
-			log.info("가입 성공");
+		int result2= pservice.insertBasicPlaylist(vo.getId());
+		if(result > 0 && result2 > 0 ) {
+			log.info("가입 성공 그리고 베이직 플레이리스트 생성");
 		}else {
 			log.info("실패");
 		}
@@ -82,6 +84,26 @@ public class MemberController {
 		return myName;
 	}
 	
+	@GetMapping("/convertMemberActive")
+	public String convertMemberActive(String id) {
+		int result = service.updateMemberActive(id);
+		String msg = "0";
+		if(result>0) {
+			msg="1";
+		}
+		return msg;
+	}
+	
+	@GetMapping("/deleteMember")
+	public String deleteMember(String id) {
+		int result = service.deleteMember(id);
+		String msg = "0";
+		if(result>0) {
+			msg="1";
+		}
+		return msg;
+	}
+	
 //=============================마이페이지 컨트롤러 ===================================
 	
 	@GetMapping("/member/profile")
@@ -90,4 +112,11 @@ public class MemberController {
 		
 		model.addAttribute("memberList",mvo);
 	}
+	
+	@GetMapping("/member/my_playlist")
+	public void viewMyplaylist() {
+		
+	}
+	
+	
 }

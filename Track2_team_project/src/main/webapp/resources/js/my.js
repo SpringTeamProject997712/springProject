@@ -82,6 +82,9 @@ function go_join() {                                  //회원가입
 	}else if(document.joinForm.pw.value == "") {
 		alert("비밀번호 입력");
 		document.joinForm.pw.focus();
+	}else if(document.joinForm.pw.value != document.joinForm.pw2.value) {
+		alert("비밀번호가 서로 일치하지 않습니다");
+		document.joinForm.pw2.focus();
 	}else{
 		document.joinForm.submit();
 	}
@@ -108,6 +111,12 @@ function go_upload_album() {
 		upload_album.singer.focus();
 		return false;
 	}
+
+	if(upload_album.detail.value=="") {
+		alert("詳細を入力してください");
+		upload_album.detail.focus();
+		return false;
+	}
 	if(upload_album.price.value=="") {
 		alert("値段を入力してください");
 		upload_album.price.focus();
@@ -116,11 +125,7 @@ function go_upload_album() {
 	if(upload_album.regdate.value=="") {
 		alert("登録日を入力してください");
 		upload_album.regdate.focus();
-		return false;
-	}
-	if(upload_album.detail.value=="") {
-		alert("詳細を入力してください");
-		upload_album.detail.focus();
+		
 		return false;
 	}
  	document.upload_album.submit();
@@ -169,6 +174,14 @@ function go_upload_goods() {
 	document.upload_goods.submit();
 	
  }
+function go_reset() {
+	$('form').each(function() {
+
+	      this.reset();
+
+	  });
+}
+
 
 function go_reset() {
 	$('form').each(function() {

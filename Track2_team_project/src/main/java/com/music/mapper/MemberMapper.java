@@ -15,5 +15,7 @@ public interface MemberMapper {
 	public int checkMemberWithId(String id); //같은 아이디를 가진 멤버가 있는지 체크하기 있으면 1 없으면 0이 나옴
 	public int updateMember(MemberVO mvo); //멤버 정보 수정하기
 	public int countMember(Criteria cri);
+	public int deleteMember(String id);
+	public int updateMemberActive(String id);
 //	public int nextPage();
 }
