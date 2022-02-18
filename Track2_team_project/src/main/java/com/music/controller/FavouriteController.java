@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.music.security.domain.CustomUser;
@@ -30,8 +31,8 @@ public class FavouriteController {
 	
 	@ResponseBody
 	@RequestMapping(value="/favourite_checker", method =RequestMethod.GET)
-	public String[] favoritChecker(int[] pbno) {
-		String[] result_arr =new String[pbno.length];
+	public String favoritChecker(int pbno) {
+		String result="0";
 		String id ="";
 		log.info(pbno);
 		//테이블이 있는지 likes가 0인지
@@ -39,18 +40,13 @@ public class FavouriteController {
 		if(!auth.getPrincipal().equals("anonymousUser")) {
 			CustomUser user = (CustomUser)auth.getPrincipal();
 			id = user.getUsername();
-			for(int i=0; i<pbno.length; i++) {
-				String result = service.checkFavouriteThis(pbno[i], id);
-				
+				result = service.checkFavouriteThis(pbno, id);
 				if(result!=null && result !="0") {
 					result="1";
 				}else {
 					result="0";
 				}
-				result_arr[i] = result;
-			}
-			log.info("좋아하는 지 결과적으로 : "+result_arr);
 		}
-		return result_arr;
+		return result;
 	}
 }

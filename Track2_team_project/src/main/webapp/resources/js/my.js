@@ -171,23 +171,35 @@ function findAddr(){ //우편번호 찾기
 //하트모양 채우기
 $().ready(function(){
 	var heart_arr = [];
+	var fav_heart = $(".ms_fav_icon");
 	$(".fav_box").each(function(index,item){
 		heart_arr.push($(this).attr('id'))
 	});
 	console.log(heart_arr);
+	console.log(fav_heart);
 	if(fav_heart){
-		$.ajax({
-			type:"get",
-			data:{pbno_arr : heart_arr},
-			url:"favourite/favourite_checker",
-			success:function(data){
-				console.log(data);
-			},error:function(xhr,request,err){
-				console.log(xhr.request + "\n"+xhr.reponseText +  "\n"+ err );
-			}
-		
-		})
-	
+		console.log("if문 작동함");
+		for(var i=0; i<heart_arr.length; i++){
+			console.log("for문 작동함");
+			$.ajax({
+				type:"get",
+				data:{pbno : heart_arr[i]},
+				traditional:true,
+				url:"/favourite/favourite_checker",
+				success:function(data){
+					console.log("좋아요 했나요? : "+data);
+					if(data=='1'){
+						$("#"+heart_arr[i]).empty();
+						$("#"+heart_arr[i]).append("<span><img src='/images/svg/filled_heart.svg'></span>");
+					}else{
+						console.log("빈하트");
+					}
+				},error:function(xhr,request,err){
+					console.log(xhr.request + "\n"+xhr.reponseText +  "\n"+ err );
+				}
+			
+			});
+		}
 	}
 })
 

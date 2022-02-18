@@ -46,7 +46,7 @@
 
 	select a.pbno, a.name, a.singer,a.image, count(likes) likes
 	from album_m a, like_m l
-	where l.abno = a.pbno
+	where l.pbno = a.pbno
 	group by a.pbno, a.name, a.singer,a.image
 	order by likes desc
   	</select>
