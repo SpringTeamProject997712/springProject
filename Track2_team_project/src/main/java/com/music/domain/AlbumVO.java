@@ -13,6 +13,8 @@ public class AlbumVO {
 	private String detail;
 	private int price;
 	private String image;
+	private String image_240;
+	private String image_50;
 	private Date regdate;
 	private int pbno;
 //	album_singleVO 추가함 
