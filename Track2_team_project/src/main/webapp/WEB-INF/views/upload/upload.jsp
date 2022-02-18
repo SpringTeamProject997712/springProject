@@ -22,15 +22,28 @@
 					<div class="ms_upload_box tab-pane fade show active" id="album">
 						<h2>Upload Album Label</h2>
 						<label for="image">
-						<img src="../images/svg/upload.svg" alt="image">
+<%-- 							<c:if test="${empty image}"> --%>
+								<img src="../images/svg/upload.svg" alt="image">
+<%-- 							</c:if> --%>
+<%-- 							<c:otherwise> --%>
+<!-- 								<input class="upload-name" value="파일선택" disabled="disabled"> -->
+<%-- 							</c:otherwise> --%>
 						</label>
 						<div class="ms_upload_btn">
 							<a href="javascript:void(0);" class="ms_btn"> <label for="image" className="ms_btn">upload Cover</label>
 							<input type="file" name="uploadImage" id="image" accept="image/*" class="form-control" style="display: none">
 							</a>
 						</div>
-						<span> or </span>
+						<span> or </span>	
 						<p>Drag And Drop Album Image File</p>
+
+						<div class="filebox preview-image">
+							<input class="upload-name" value="파일선택" disabled="disabled">
+							
+							<label for="input-file">업로드</label>
+							<input type="file" id="input-file" class="upload-hidden">
+						</div>
+
 					</div>
 				
 					<div class=" marger_top60">
