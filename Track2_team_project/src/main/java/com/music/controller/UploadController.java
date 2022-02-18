@@ -63,7 +63,7 @@ public class UploadController {
 		String uploadFolder = "C:\\upload";
 		log.info("file name : "+uploadImage.getOriginalFilename());
 				
-		String uploadImageName = uploadImage.getOriginalFilename();
+		String uploadImageName = "cover_"+uploadImage.getOriginalFilename();
 		
 		//IE
 		uploadImageName = uploadImageName.substring(uploadImageName.lastIndexOf("//")+1);
@@ -107,19 +107,20 @@ public class UploadController {
 	@PostMapping("/uploadpro_track")
 	public String insertTrack(AlbumVO album, ProductVO product, TrackVO track, GoodsVO goods, 
 			@RequestParam("uploadMusic") MultipartFile uploadMusic, 
+			@RequestParam("abno") AlbumVO albumName,
 			@RequestParam("pbno") int pbno, Model model) {
 		
 String uploadFolder = "C:\\upload";
 		
 		String uploadMusicName = uploadMusic.getOriginalFilename();
-		String uploadMusicRealName = uploadMusic.getOriginalFilename();
+		String uploadMusicRealName = "track_"+uploadMusic.getOriginalFilename();
 		
 		//IE
 		uploadMusicName = uploadMusicName.substring(uploadMusicName.lastIndexOf("//")+1);
 		
-		UUID uuid = UUID.randomUUID();
-		
-		uploadMusicName = uuid.toString()+"_"+uploadMusicName;
+//		UUID uuid = UUID.randomUUID();
+//		
+//		uploadMusicName = uuid.toString()+"_"+uploadMusicName;
 		
 		File uploadPath = new File(uploadFolder, getFolder());
 		
@@ -128,7 +129,7 @@ String uploadFolder = "C:\\upload";
 		}
 		
 		
-		File savemusic = new File(uploadPath, uploadMusicName);
+		File savemusic = new File(uploadPath, albumName.getName());
 		
 		String saveMusicUrl = uploadMusicName.toString();
 		log.info(saveMusicUrl);
@@ -160,40 +161,40 @@ String uploadFolder = "C:\\upload";
 			@RequestParam("pbno") int pbno, Model model) {
 		
 //		MultipartFile multipartFile = portfolio.getUploadFile();
-		String uploadFolder = "C:\\upload";
-		
-		String uploadMusicName = uploadMusic.getOriginalFilename();
-		
-		//IE
-		uploadMusicName = uploadMusicName.substring(uploadMusicName.lastIndexOf("//")+1);
-		
-		UUID uuid = UUID.randomUUID();
-		
-		uploadMusicName = uuid.toString()+"_"+uploadMusicName;
-		
-		File uploadPath = new File(uploadFolder, getFolder());
-		
-		if(uploadPath.exists() == false) {
-			uploadPath.mkdirs();
-		}
-		
-		
-		File savemusic = new File(uploadPath, uploadMusicName);
-		
-		String saveMusicUrl = uploadMusicName.toString();
-		log.info(saveMusicUrl);
-		
-		try {
-			
-			uploadMusic.transferTo(savemusic);
-			uploadMusicName = (savemusic.toString().substring(10));
-			album.setName(uploadMusicName);
-			log.info(uploadMusicName);
-			
-//			FileOutputStream thumbnail
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
+//		String uploadFolder = "C:\\upload";
+//		
+//		String uploadMusicName = uploadMusic.getOriginalFilename();
+//		
+//		//IE
+//		uploadMusicName = uploadMusicName.substring(uploadMusicName.lastIndexOf("//")+1);
+//		
+//		UUID uuid = UUID.randomUUID();
+//		
+//		uploadMusicName = uuid.toString()+"_"+uploadMusicName;
+//		
+//		File uploadPath = new File(uploadFolder, getFolder());
+//		
+//		if(uploadPath.exists() == false) {
+//			uploadPath.mkdirs();
+//		}
+//		
+//		
+//		File savemusic = new File(uploadPath, uploadMusicName);
+//		
+//		String saveMusicUrl = uploadMusicName.toString();
+//		log.info(saveMusicUrl);
+//		
+//		try {
+//			
+//			uploadMusic.transferTo(savemusic);
+//			uploadMusicName = (savemusic.toString().substring(10));
+//			album.setName(uploadMusicName);
+//			log.info(uploadMusicName);
+//			
+////			FileOutputStream thumbnail
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}
 		
 		pservice.insertProduct(product);
 		
