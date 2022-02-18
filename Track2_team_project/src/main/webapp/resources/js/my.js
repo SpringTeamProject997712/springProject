@@ -168,6 +168,25 @@ function findAddr(){ //우편번호 찾기
   }).open();
 }
 
+//하트모양 채우기
+$().on("ready", function(){
+	var fav_heart = $(".fav_box");
+	if(fav_heart){
+		$.ajax({
+			type:"get",
+			data:{tbno : fav_heart.attr('id')},
+			url:"favourite/favourite_checker",
+			success:function(){
+				
+			},error:function(xhr,request,err){
+				console.log(xhr.request + "\n"+xhr.reponseText +  "\n"+ err );
+			}
+		
+		})
+	
+	}
+})
+
 
 
 

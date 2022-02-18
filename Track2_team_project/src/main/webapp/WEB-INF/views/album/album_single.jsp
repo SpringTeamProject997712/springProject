@@ -52,7 +52,10 @@
 						<li><a href="#">${view.tname}</a></li>
 						<li><a href="#">${view.name}</a></li>
 						<li class="text-center"><a href="#">5:26</a></li>
-						<li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
+						<li class="text-center"><a href="#" class="fav_box" id="${view.pbno}">
+							<span class="ms_icon1 ms_fav_icon">
+							</span>
+						</a></li>
 						<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
 							<ul class="more_option">
 								<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
