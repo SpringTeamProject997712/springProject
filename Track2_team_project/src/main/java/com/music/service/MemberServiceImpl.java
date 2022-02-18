@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.music.domain.MemberVO;
+import com.music.domain.PlaylistVO;
+import com.music.mapper.CreatePlaylistMapper;
 import com.music.mapper.MemberMapper;
 import com.music.utility.Criteria;
 import com.music.utility.PageMaker;
@@ -19,6 +21,8 @@ public class MemberServiceImpl implements MemberService {
 
 	@Setter(onMethod_ = @Autowired)
 	MemberMapper mapper; 
+	@Setter(onMethod_ = @Autowired)
+	CreatePlaylistMapper cmapper; 
 	
 	//회원가입
 	@Override
@@ -62,6 +66,16 @@ public class MemberServiceImpl implements MemberService {
 		int amount=mapper.countMember(cri);
 		PageMaker pageMaker = new PageMaker(cri,amount);
 		return pageMaker;
+	}
+	
+	@Override
+	public List<PlaylistVO> viewMyPlaylist(String id) {
+		return cmapper.selectPlaylistwithId(id);
+	}
+	
+	@Override
+	public List<PlaylistVO> viewMyPlaylistList(String id) {
+		return cmapper.readPlaylistsWithId(id);
 	}
 	
 	@Override

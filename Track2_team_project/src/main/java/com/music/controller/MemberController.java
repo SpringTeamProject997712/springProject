@@ -114,9 +114,14 @@ public class MemberController {
 	}
 	
 	@GetMapping("/member/my_playlist")
-	public void viewMyplaylist() {
+	public void viewMyplaylist(Model model) {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		
+		log.info(auth.getPrincipal());
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			String id =user.getUsername();
+			model.addAttribute("myPlaylist",service.viewMyPlaylist(id));
+		}
 	}
-	
-	
 }

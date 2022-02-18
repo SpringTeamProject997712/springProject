@@ -3,6 +3,7 @@ package com.music.service;
 import java.util.List;
 
 import com.music.domain.MemberVO;
+import com.music.domain.PlaylistVO;
 import com.music.utility.Criteria;
 import com.music.utility.PageMaker;
 
@@ -28,6 +29,12 @@ public interface MemberService {
 	
 	//멤버 정보 비활성화
 	public int updateMemberActive(String id);
+	
+	//플레이리스트 불러오기
+	public List<PlaylistVO> viewMyPlaylist(String id);
+	
+	//플레이리스트의 리스트 불러오기 (my플레이리스트 페이지)
+	public List<PlaylistVO> viewMyPlaylistList(String id);
 	
 	//페이징
 	public PageMaker pagingList(Criteria cri);
