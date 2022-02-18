@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
@@ -67,13 +68,14 @@ public class UploadController {
 			@RequestParam("uploadImage") MultipartFile uploadImage, 
 			@RequestParam("name") String name,
 			@RequestParam("pbno") int pbno,
-			Model model) {
+			Model model) throws IOException {
 		
 //		MultipartFile multipartFile = portfolio.getUploadFile();
 		String uploadFolder = "C:\\upload";
 		log.info("file name : "+uploadImage.getOriginalFilename());
 				
 		String uploadImageName = "cover_"+uploadImage.getOriginalFilename();
+		
 		
 		
 		//IE
@@ -94,9 +96,11 @@ public class UploadController {
 		
 		
 		File saveimage = new File(uploadPath, uploadImageName);
-		
+
 		String saveImageUrl = uploadImageName.toString();
 		log.info(saveImageUrl);
+		
+		
 		
 		try {
 			uploadImage.transferTo(saveimage);
@@ -107,17 +111,57 @@ public class UploadController {
 			e.printStackTrace();
 		}
 		
-		pservice.insertProduct(product);
+		
+		
+		
+		
+		// 리사이징
+		File saveimage_240 = new File(uploadFolder, uploadImageName);
+		File saveimage_50 = new File(uploadFolder, uploadImageName);
+//		String uploadImageName_240 = "cover_"+uploadImage.getOriginalFilename();
+//		String uploadImageName_50 = "cover_"+uploadImage.getOriginalFilename();
+		log.info("saveimage:: "+saveimage_240);
+		
+		InputStream inputStream_240 = new FileInputStream(saveimage_240);
+		InputStream inputStream_50 = new FileInputStream(saveimage_50);
+		log.info("inputstream::"+inputStream_240);
+		
+//		Image img_240 = new ImageIcon(saveimage_240.toString()).getImage(); // 파일 정보 추출
+//		Image img_50 = new ImageIcon(saveimage_50.toString()).getImage(); // 파일 정보 추출
+		
+        int width_240 = 240; // 리사이즈할 가로 길이
+        int height_240 = 240; // 리사이즈할 세로 길이
+        
+        int width_50 = 50; // 리사이즈할 가로 길이
+        int height_50 = 50; // 리사이즈할 세로 길이
+		
+        BufferedImage resizedImage_240 = resize(inputStream_240 ,width_240, height_240);
+        
+//        ImageIO.write(resizedImage_240, "jpg", new File(uploadFolder, uploadImageName+"_240.jpg"));
+        ImageIO.write(resizedImage_240, "jpg", new File(uploadFolder, uploadImageName.substring(0,uploadImageName.lastIndexOf('.'))+"_240.jpg"));
+        log.info("folder::"+uploadFolder);
+        log.info("imagename::"+uploadImageName);
+        log.info("imagename::"+uploadImageName.substring(0,uploadImageName.lastIndexOf('.')));
+        
+        BufferedImage resizedImage_50 = resize(inputStream_50 ,width_50, height_50);
+        
+        ImageIO.write(resizedImage_50, "jpg", new File(uploadFolder, uploadImageName.substring(0,uploadImageName.lastIndexOf('.'))+"_50.jpg"));
+
+        try {
+			album.setImage_240(uploadImageName.substring(0,uploadImageName.lastIndexOf('.'))+"_240.jpg");
+			album.setImage_50(uploadImageName.substring(0,uploadImageName.lastIndexOf('.'))+"_50.jpg");
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+        
+        pservice.insertProduct(product);
 		
 		pservice.insertAlbum(album);
 		album.setPbno(pbno);
-		
-		String uploadImageName_240 = "cover_"+uploadImage.getOriginalFilename();
-		String uploadImageName_50 = "cover_"+uploadImage.getOriginalFilename();
-		
-		
+        
 		return "redirect:/";
-	}
+	}	
 	
 	@PostMapping("/uploadpro_track")
 	public String insertTrack(AlbumVO album, ProductVO product, TrackVO track, GoodsVO goods, 
@@ -219,27 +263,7 @@ public class UploadController {
 		return "redirect:/";
 	}
 	
-	
-	//resize 메소드
-    public static void imageResize() throws IOException {
-        File file = new File("C:\\test\\test.jpg");  //리사이즈할 파일 경로
-        InputStream inputStream = new FileInputStream(file);
-        Image img = new ImageIcon(file.toString()).getImage(); // 파일 정보 추출
-         
-        System.out.println("사진의 가로길이 : " + img.getWidth(null)); // 파일의 가로
-        System.out.println("사진의 세로길이 : " + img.getHeight(null)); // 파일의 세로
-        /* 파일의 길이 혹은 세로길이에 따라 if(분기)를 통해서 응용할 수 있습니다.
-         * '예를 들어 파일의 가로 해상도가 1000이 넘을 경우 1000으로 리사이즈 한다. 같은 분기' */
-        int width = 240; // 리사이즈할 가로 길이
-        int height = 240; // 리사이즈할 세로 길이
-        
-        BufferedImage resizedImage = resize(inputStream ,width , height );
-        // 리사이즈 실행 메소드에 값을 넘겨준다.
-        ImageIO.write(resizedImage, "jpg", new File("C:\\test\\1234.jpg"));
-        // 리사이즈된 파일, 포맷, 저장할 파일경로
-    }
-    
-    //resize 실행 메소드
+	/* 리사이즈 실행 메소드 */
     public static BufferedImage resize(InputStream inputStream, int width, int height) 
     		throws IOException {
     	
