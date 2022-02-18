@@ -1,6 +1,8 @@
 package com.music.mapper;
 
+import com.music.domain.LikeVO;
+
 public interface FavouriteMapper {
 
-	public String checkFavourite(int pbno, String id);
+	public String checkFavourite(LikeVO vo);
 }

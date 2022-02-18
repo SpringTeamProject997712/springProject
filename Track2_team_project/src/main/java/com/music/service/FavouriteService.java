@@ -1,6 +1,8 @@
 package com.music.service;
 
+import com.music.domain.LikeVO;
+
 public interface FavouriteService {
 
-	public String checkFavouriteThis(int pbno, String id);
+	public String checkFavouriteThis(LikeVO vo);
 }

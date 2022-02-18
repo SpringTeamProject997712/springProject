@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.music.domain.LikeVO;
 import com.music.security.domain.CustomUser;
 import com.music.service.FavouriteService;
 
@@ -40,12 +41,16 @@ public class FavouriteController {
 		if(!auth.getPrincipal().equals("anonymousUser")) {
 			CustomUser user = (CustomUser)auth.getPrincipal();
 			id = user.getUsername();
-				result = service.checkFavouriteThis(pbno, id);
-				if(result!=null && result !="0") {
-					result="1";
-				}else {
-					result="0";
-				}
+			log.info("이게 나의 아이디임"+id);
+			LikeVO vo = new LikeVO();
+			vo.setId(id);
+			vo.setPbno(pbno);
+			result = service.checkFavouriteThis(vo);
+			if(result!=null && result !="0") {
+				result="1";
+			}else {
+				result="0";
+			}
 		}
 		return result;
 	}

@@ -3,6 +3,7 @@ package com.music.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.music.domain.LikeVO;
 import com.music.mapper.FavouriteMapper;
 
 import lombok.Setter;
@@ -14,7 +15,7 @@ public class FavouriteServiceImpl implements FavouriteService {
 	FavouriteMapper mapper;
 	
 	@Override
-	public String checkFavouriteThis(int pbno, String id) {
-		return mapper.checkFavourite(pbno, id);
+	public String checkFavouriteThis(LikeVO vo) {
+		return mapper.checkFavourite(vo);
 	}
 }
