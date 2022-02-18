@@ -32,7 +32,7 @@
 	<!----Loader Start---->
 	<div class="ms_loader">
 		<div class="wrap">
-		  <img src="/imagess/loader.gif" alt="">
+		  <img src="/images/loader.gif" alt="">
 		</div>
 	</div>
 	

@@ -8,14 +8,14 @@
         <div class="ms_album_single_wrapper">
             <div class="album_single_data">
                 <div class="album_single_img">
-                    <img src="${pageContext.request.contextPath}/upload/${view[0].image}" alt="" class="img-fluid">
+                    <img src="${pageContext.request.contextPath}/upload/user01.jpg" alt="" class="img-fluid">
                 </div>
                 <div class="album_single_text">
                     <h2>${view[0].name}</h2>
                     <p class="singer_name">By - ${view[0].id}</p>
                     <div class="album_feature">
-                        <a href="#" class="album_date">5 song | 25:10</a>
-                        <a href="#" class="album_date">Released ${view[0].regdate} | Abc Music Company</a>
+                        <a href="#" class="album_date">%{countTrack} song | 25:10</a>
+                        <a href="#" class="album_date"></a>
                     </div>
                     <div class="album_btn">
                         <a href="#" class="ms_btn play_btn"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">Play All</span><span class="pause_all"><img src="/images/svg/pause_all.svg" alt="">Pause</span></a>
