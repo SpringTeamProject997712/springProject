@@ -182,11 +182,12 @@ $().ready(function(){
 			$.ajax({
 				type:"get",
 				data:{pbno : heart_arr[i]},
-				traditional:true,
+				async:false,
 				url:"/favourite/favourite_checker",
 				success:function(data){
 					console.log("좋아요 했나요? : "+data);
 					if(data=='1'){
+						console.log(heart_arr[i]);
 						$("#"+heart_arr[i]).empty();
 						$("#"+heart_arr[i]).append("<span><img src='/images/svg/filled_heart.svg'></span>");
 					}else{
