@@ -36,4 +36,7 @@ public interface AlbumMapper {
 	
 	//페이징
 	public int countAlbum(Criteria cri);
+	
+	//앨범 수정
+	public int updateAlbum(AlbumVO avo);
 }

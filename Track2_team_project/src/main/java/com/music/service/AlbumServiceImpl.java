@@ -63,4 +63,10 @@ public class AlbumServiceImpl implements AlbumService {
 		return pageMaker;
 	}
 	
+	@Override
+	public int updateAlbum(AlbumVO avo) {
+		int result = mapper.updateAlbum(avo);
+		return result;
+	}
+	
 }
