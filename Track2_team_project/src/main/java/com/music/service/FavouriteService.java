@@ -1,5 +1,6 @@
 package com.music.service;
 
-public class FavouriteService {
+public interface FavouriteService {
 
+	public String checkFavouriteThis(int pbno, String id);
 }

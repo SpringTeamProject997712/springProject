@@ -156,9 +156,9 @@ public class UploadController {
 		}
         
         pservice.insertProduct(product);
-		
+    	album.setPbno(pbno);
 		pservice.insertAlbum(album);
-		album.setPbno(pbno);
+	
         
 		return "redirect:/";
 	}	

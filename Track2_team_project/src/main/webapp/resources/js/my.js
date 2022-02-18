@@ -169,15 +169,19 @@ function findAddr(){ //우편번호 찾기
 }
 
 //하트모양 채우기
-$().on("ready", function(){
-	var fav_heart = $(".fav_box");
+$().ready(function(){
+	var heart_arr = [];
+	$(".fav_box").each(function(index,item){
+		heart_arr.push($(this).attr('id'))
+	});
+	console.log(heart_arr);
 	if(fav_heart){
 		$.ajax({
 			type:"get",
-			data:{tbno : fav_heart.attr('id')},
+			data:{pbno_arr : heart_arr},
 			url:"favourite/favourite_checker",
-			success:function(){
-				
+			success:function(data){
+				console.log(data);
 			},error:function(xhr,request,err){
 				console.log(xhr.request + "\n"+xhr.reponseText +  "\n"+ err );
 			}
