@@ -3,6 +3,8 @@ package com.music.service;
 import java.util.List;
 
 import com.music.domain.AlbumVO;
+import com.music.utility.Criteria;
+import com.music.utility.PageMaker;
 
 public interface AlbumService {
 
@@ -11,7 +13,6 @@ public interface AlbumService {
 
 	// 엘범 리스트
 	public List<AlbumVO> listAlbum();
-
 	
 	public AlbumVO readAlbum(int abno);
 	// 엘범 상세보기
@@ -25,4 +26,13 @@ public interface AlbumService {
 	
 	//트랙 이름으로 앨범-싱글 리스트
 	public List<AlbumVO> searchAlbumWithTrackName(String tname);
+	
+	//어드민
+	
+	//앨범 관리자 리스트
+	public List<AlbumVO> viewAlbumListWithPaging(Criteria cri);
+	
+	//페이징
+	public PageMaker pagingList(Criteria cri);
+	
 }

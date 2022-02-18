@@ -191,7 +191,7 @@ String uploadFolder = "C:\\upload";
 		
 		pservice.insertProduct(product);
 		
-		pservice.insertAlbum(album);
+		pservice.insertGoods(goods);
 		album.setPbno(pbno);
 		
 		return "redirect:/";

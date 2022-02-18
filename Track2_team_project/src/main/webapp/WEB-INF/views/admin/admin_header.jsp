@@ -107,9 +107,9 @@
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
               <use href="/images/svg/free.svg#cil-puzzle"></use>
-            </svg> 상품</a>
+            </svg>앨범</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="/admin/product/manage_product"><span class="nav-icon"></span> 상품관리</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/album/manage_album"><span class="nav-icon"></span>앨범 관리</a></li>
           </ul>
         </li>
         
