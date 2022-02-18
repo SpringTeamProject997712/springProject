@@ -22,6 +22,7 @@ function findAddr(){ //우편번호 찾기
     }).open();
 }
 
+//멤버 수정
 function go_update(){
 	let form = document.privacyForm;
 	form.action= "/member/updateMember";
@@ -30,3 +31,10 @@ function go_update(){
 
 
 }
+
+function go_update_album() {
+	let form = document.albumForm;
+	form.action = "/album/updateAlbum";
+	form.submit;
+}
+

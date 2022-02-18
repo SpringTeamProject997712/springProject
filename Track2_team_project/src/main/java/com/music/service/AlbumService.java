@@ -33,4 +33,10 @@ public interface AlbumService {
 	//페이징
 	public PageMaker pagingList(Criteria cri);
 	
+	//앨범 세부사항
+//	public List<AlbumVO> viewAlbumList();
+	
+	//앨범 수정
+	public int updateAlbum(AlbumVO avo);
+	
 }
