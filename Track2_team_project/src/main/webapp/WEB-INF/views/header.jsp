@@ -75,7 +75,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="/artist/artist.jsp" title="Artists">
+                        <li><a href="/artist/artist" title="Artists">
 						<span class="nav_icon">
 							<span class="icon icon_artists"></span>
 						</span>
@@ -84,7 +84,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="genres.html" title="Genres">
+                        <li><a href="/genres/genres" title="Genres">
 						<span class="nav_icon">
 							<span class="icon icon_genres"></span>
 						</span>
@@ -93,7 +93,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="top_track.html" title="Top Tracks">
+                        <li><a href="/toptrack/toptrack" title="Top Tracks">
 						<span class="nav_icon">
 							<span class="icon icon_tracks"></span>
 						</span>
@@ -124,7 +124,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="favourite.html" title="Favourites">
+                        <li><a href="/favourite/favourite" title="Favourites">
 						<span class="nav_icon">
 							<span class="icon icon_favourite"></span>
 						</span>

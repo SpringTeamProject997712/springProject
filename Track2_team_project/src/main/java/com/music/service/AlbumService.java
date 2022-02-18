@@ -35,4 +35,6 @@ public interface AlbumService {
 	//페이징
 	public PageMaker pagingList(Criteria cri);
 	
+	//top15
+	public List<AlbumVO> topAlbums();
 }

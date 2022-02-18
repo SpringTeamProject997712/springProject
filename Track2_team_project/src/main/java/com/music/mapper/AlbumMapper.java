@@ -36,4 +36,7 @@ public interface AlbumMapper {
 	
 	//페이징
 	public int countAlbum(Criteria cri);
+	
+	//top15
+	public List<AlbumVO> topAlbums();
 }

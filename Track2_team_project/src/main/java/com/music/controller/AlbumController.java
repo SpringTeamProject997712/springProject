@@ -1,5 +1,7 @@
 package com.music.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
 import com.google.gson.Gson;
+import com.music.domain.AlbumVO;
 import com.music.service.AlbumService;
 
 import lombok.Setter;
@@ -31,6 +33,7 @@ public class AlbumController {
 	public void albumView(Model model) {
 		model.addAttribute("list",service.listAlbum());
 		model.addAttribute("likes",service.getCountLikes());
+		model.addAttribute("topalbum",service.topAlbums());
 		
 	}
 	
@@ -49,5 +52,7 @@ public class AlbumController {
 		log.info(json);
 		return json;
 	}
+	
 
+	
 }

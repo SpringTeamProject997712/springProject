@@ -23,6 +23,7 @@ public class AlbumVO {
 	private int tprice;
 	private String songname;
 	private String songrealname;
+	private int rownum;
 // getcountlikes
 	private int likes;
 	

@@ -48,7 +48,7 @@
 					<!-- track list start -->
 					<c:forEach var="view" items="${view}">
 					<ul>
-						<li><a href="#"><span class="play_no">${view.tbno}</span><span class="play_hover"></span></a></li>
+						<li><a href="#"><span class="play_no">${view.rownum}</span><span class="play_hover"></span></a></li>
 						<li><a href="#">${view.tname}</a></li>
 						<li><a href="#">${view.name}</a></li>
 						<li class="text-center"><a href="#">5:26</a></li>
