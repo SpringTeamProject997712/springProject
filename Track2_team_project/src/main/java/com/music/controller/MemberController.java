@@ -127,7 +127,7 @@ public class MemberController {
 	}
 	
 	@GetMapping("/my_playlist/one_playlist")
-	public void viewOnePlaylist(int plbno,Model model) {
+	public void viewOnePlaylist(int plbno, Model model) {
 		model.addAttribute("view",service.viewOnePlaylist(plbno));
 		model.addAttribute("countTrack", service.countTrack(plbno));
 	}

@@ -8,13 +8,13 @@
         <div class="ms_album_single_wrapper">
             <div class="album_single_data">
                 <div class="album_single_img">
-                    <img src="${pageContext.request.contextPath}/upload/user01.jpg" alt="" class="img-fluid">
+                    <img src="${pageContext.request.contextPath}/upload/fea00c86-8e09-42a8-bf86-f69f860b6723_m_003.jpg" alt="" class="img-fluid">
                 </div>
                 <div class="album_single_text">
                     <h2>${view[0].name}</h2>
                     <p class="singer_name">By - ${view[0].id}</p>
                     <div class="album_feature">
-                        <a href="#" class="album_date">%{countTrack} song | 25:10</a>
+                        <a href="#" class="album_date">${countTrack} song | 25:10</a>
                         <a href="#" class="album_date"></a>
                     </div>
                     <div class="album_btn">
@@ -46,7 +46,7 @@
 					</ul>
 					
 					<!-- track list start -->
-					<c:set value="${1}" var="num"/>
+					<%-- <c:set value="${1}" var="num"/>
 					<c:forEach var="viewOne" items="${view}">
 					<ul>
 						<li><a href="#"><span class="play_no">${num}</span><span class="play_hover"></span></a></li>
@@ -66,7 +66,7 @@
 						<c:set value="${num+1}" var="num"/>
 					</ul>
 					
-					</c:forEach>
+					</c:forEach> --%>
 					<!-- track list end -->
 				
 				</div>
