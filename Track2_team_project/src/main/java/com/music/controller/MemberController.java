@@ -113,7 +113,7 @@ public class MemberController {
 		model.addAttribute("memberList",mvo);
 	}
 	
-	@GetMapping("/member/my_playlist")
+	@GetMapping("/member/my_playlist/my_playlist")
 	public void viewMyplaylist(Model model) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		

@@ -153,7 +153,7 @@
 													</span>
 													</a>
                         </li>
-                        <li><a href="/member/my_playlist" title="Create Playlist">
+                        <li><a href="/member/my_playlist/my_playlist" title="Create Playlist">
 													<span class="nav_icon">
 														<span class="icon icon_c_playlist"></span>
 													</span>
