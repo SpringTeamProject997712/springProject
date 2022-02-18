@@ -7,12 +7,12 @@
         <!----Album Single Section Start---->
         <div class="ms_album_single_wrapper">
             <div class="album_single_data">
-                <%-- <div class="album_single_img">
+                <div class="album_single_img">
                     <img src="${pageContext.request.contextPath}/upload/${view[0].image}" alt="" class="img-fluid">
                 </div>
                 <div class="album_single_text">
                     <h2>${view[0].name}</h2>
-                    <p class="singer_name">By - ${view[0].singer}</p>
+                    <p class="singer_name">By - ${view[0].id}</p>
                     <div class="album_feature">
                         <a href="#" class="album_date">5 song | 25:10</a>
                         <a href="#" class="album_date">Released ${view[0].regdate} | Abc Music Company</a>
@@ -21,7 +21,7 @@
                         <a href="#" class="ms_btn play_btn"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">Play All</span><span class="pause_all"><img src="/images/svg/pause_all.svg" alt="">Pause</span></a>
                         <a href="#" class="ms_btn"><span class="play_all"><img src="/images/svg/add_q.svg" alt="">Add To Queue</span></a>
                     </div>
-                </div> --%>
+                </div>
                 <div class="album_more_optn ms_more_icon">
                     <span><img src="/images/svg/more.svg" alt=""></span>
                 </div>
@@ -46,11 +46,12 @@
 					</ul>
 					
 					<!-- track list start -->
-					<c:forEach var="view" items="${view}">
+					<c:set value="${1}" var="num"/>
+					<c:forEach var="viewOne" items="${view}">
 					<ul>
-						<li><a href="#"><span class="play_no">${view.tbno}</span><span class="play_hover"></span></a></li>
-						<li><a href="#">${view.tname}</a></li>
-						<li><a href="#">${view.name}</a></li>
+						<li><a href="#"><span class="play_no">${num}</span><span class="play_hover"></span></a></li>
+						<li><a href="#">${viewOne.tname}</a></li>
+						<li><a href="#">${viewOne.name}</a></li>
 						<li class="text-center"><a href="#">5:26</a></li>
 						<li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
 						<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
@@ -62,7 +63,9 @@
 								<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
 							</ul>
 						</li>
+						<c:set value="${num+1}" var="num"/>
 					</ul>
+					
 					</c:forEach>
 					<!-- track list end -->
 				

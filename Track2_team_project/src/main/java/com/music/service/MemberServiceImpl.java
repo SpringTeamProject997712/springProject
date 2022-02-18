@@ -93,4 +93,14 @@ public class MemberServiceImpl implements MemberService {
 	public int updateMemberActive(String id) {
 		return mapper.updateMemberActive(id);
 	}
+	
+	@Override
+	public List<PlaylistVO> viewOnePlaylist(int plbno) {
+		return cmapper.selectPlaylist(plbno);
+	}
+	@Override
+	public int countTrack(int plbno) {
+		
+		return 1;
+	}
 }

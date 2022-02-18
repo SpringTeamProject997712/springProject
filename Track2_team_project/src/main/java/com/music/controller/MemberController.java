@@ -122,12 +122,13 @@ public class MemberController {
 			CustomUser user = (CustomUser)auth.getPrincipal();
 			String id =user.getUsername();
 			log.info(service.viewMyPlaylistList(id));
-			model.addAttribute("myPlaylist",service.viewMyPlaylistList(id));
+			model.addAttribute("countTrack",service.countTrack(plbno));
 		}
 	}
 	
 	@GetMapping("/my_playlist/one_playlist")
 	public void viewOnePlaylist(int plbno,Model model) {
-		
+		model.addAttribute("view",service.viewOnePlaylist(plbno));
+		model.addAttribute("others");
 	}
 }

@@ -31,7 +31,13 @@
 		select plbno from playlist_m where name = 'basic_playlist' and id = #{id}
 	</select>
 	
-	
+	<select id=" countTrack" resultType="int">
+		select count(pd.pdbno) as pdbno  
+    from playlist_detail_m pd, playlist_m pl
+    where pl.plbno = pd.plbno
+		group pl.plbno
+		having plbno = #{plbno}
+	</select>
 	
 	<insert id="insertBasicPlaylist">
 		<selectKey keyProperty="plbno" order="BEFORE" resultType="int">

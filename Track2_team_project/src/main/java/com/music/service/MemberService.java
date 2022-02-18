@@ -33,8 +33,14 @@ public interface MemberService {
 	//플레이리스트 불러오기
 	public List<PlaylistVO> viewMyPlaylist(String id);
 	
+	//특정 플레이리스트 불러오기
+	public List<PlaylistVO> viewOnePlaylist(int plbno);
+	
 	//플레이리스트의 리스트 불러오기 (my플레이리스트 페이지)
 	public List<PlaylistVO> viewMyPlaylistList(String id);
+	
+	//플레이리스트 트랙 수 구하기(트랙 수 )
+	public int countTrack(int plbno);
 	
 	//페이징
 	public PageMaker pagingList(Criteria cri);
