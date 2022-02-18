@@ -20,11 +20,11 @@
                   </li>
                 </ul> -->
                 <div class="tab-content rounded-bottom">
-                	<form name="privacyForm" method="post" class="row g-3">
+                	<form name="albumForm" method="post" class="row g-3">
                 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 									  <div class="col-md-6">
-									    <label class="form-label" for="member_id">ID</label>
-									    <input class="form-control" name="id" id="member_id" type="text" value="${member.id}" readonly="readonly">
+									    <label class="form-label" for="album_name">Album</label>
+									    <input class="form-control" name="name" id="album_name" type="text" value="${member.id}" readonly="readonly">
 									  </div>
 									  <div class="col-md-6">
 									    <label class="form-label" for="member_name">Name</label>
@@ -70,7 +70,7 @@
 									  </div>
 									  <div class="col-12">
 									    <button class="btn btn-primary" type="button" onclick="go_update()">수정하기</button>
-									    <button class="btn btn-primary" type="button" onclick="location.href='/admin/member/manage_member'">목록보기</button>
+									    <button class="btn btn-primary" type="button" onclick="location.href='/admin/album/manage_album'">목록보기</button>
 									  </div>
 									</form>
                 </div>

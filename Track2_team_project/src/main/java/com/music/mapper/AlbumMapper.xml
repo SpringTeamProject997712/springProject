@@ -87,4 +87,9 @@
 	where rownum < 16
 	 ]]>
 	 </select>
+
+	<update id="updateAlbum">
+		update album_m set name=#{name}, singer=#{singer}, detail=#{detail}, price=#{price}, image=#{image}, regdate=#{regdate} where abno = #{abno}
+	</update>
+	
 </mapper>

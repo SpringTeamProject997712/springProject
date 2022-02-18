@@ -66,4 +66,12 @@ public class AlbumServiceImpl implements AlbumService {
 	public List<AlbumVO> topAlbums() {
 		return mapper.topAlbums();
 	}
+	
+	@Override
+	public int updateAlbum(AlbumVO avo) {
+		int result = mapper.updateAlbum(avo);
+		return result;
+	}
+	
+
 }
