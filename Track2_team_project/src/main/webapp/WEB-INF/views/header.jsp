@@ -115,7 +115,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="purchase.html" title="Purchased">
+                        <li><a href="/member/my_cart" title="Purchased">
 						<span class="nav_icon">
 							<span class="icon icon_purchased"></span>
 						</span>

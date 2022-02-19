@@ -136,4 +136,8 @@ public class MemberController {
 		model.addAttribute("countTrack", service.countTrack(plbno));
 		model.addAttribute("newly",aservice.newly());
 	}
+	
+	@GetMapping("/my_cart")
+	public void viewCart() {
+	}
 }
