@@ -24,11 +24,6 @@ public class FavouriteController {
 	@Setter(onMethod_ = @Autowired)
 	FavouriteService service;
 	
-	@GetMapping("/favourite")
-	public void favouritesView() {
-		
-	}
-	
 	@ResponseBody
 	@RequestMapping(value="/favourite_checker", method =RequestMethod.GET)
 	public String favoritChecker(int pbno) {
