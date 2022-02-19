@@ -6,5 +6,20 @@
 		select likes from like_m where id=#{id} and pbno=#{pbno}
 	</select>
 
+	<update id="updateYesToNo">
+		update like_m set likes='0' where id=#{id} and pbno=#{pbno}
+	</update>
+	
+	<update id="updateNoToYes">
+		update like_m set likes='0' where id=#{id} and pbno=#{pbno}
+	</update>
+	
+	<insert id="createLike">
+		<selectKey keyProperty="lbno" resultType="int" order="BEFORE">
+			select like_m_seq.nextval from dual
+		</selectKey>
+		insert into like_m (lbno, id, pbno, likes) values (#{lbno}, #{id}, #{pbno}, '1')
+	</insert>
+	
 
 </mapper>

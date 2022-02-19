@@ -193,8 +193,8 @@ $().ready(function(){
 					}else{
 						console.log("빈하트");
 					}
-				},error:function(xhr,request,err){
-					console.log(xhr.request + "\n"+xhr.reponseText +  "\n"+ err );
+				},error:function(xhr,status,err){
+					console.log(xhr.status + "\n"+xhr.reponseText +  "\n"+ err );
 				}
 			
 			});
@@ -203,12 +203,29 @@ $().ready(function(){
 })
 
 $(".fav_box").on("click", function(){
-	var heart_arr = [];
-	var fav_heart = $(".ms_fav_icon");
-	$(".fav_box").each(function(index,item){
-		heart_arr.push($(this).attr('id'))
-	});
+	let nope = $(this).find(".ms_fav_icon");
+	let like_status = 0;
+	let like_pbno = $(this).attr('id');
+	console.log(nope);
+	console.log(like_pbno);
+	if(nope.length){
+		console.log("좋아요 안함");
+	}else{
+		console.log("좋아요 함");
+		like_status = 1;
+	}
+	$.ajax({
+		type:"get",
+		url:"/favourite/updateLike",
+		data:{likes:like_status, pbno:like_pbno},
+		error:function(xhr,status,err){
+			console.log(xhr.status + "\n"+xhr.reponseText +  "\n"+ err );
+		},success:function(data){
+			
+		}
 	
+	
+	})
 })
 
 

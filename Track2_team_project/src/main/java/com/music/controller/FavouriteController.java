@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.music.domain.LikeVO;
@@ -52,4 +51,31 @@ public class FavouriteController {
 		}
 		return result;
 	}
+	
+	@GetMapping("/updateLike")
+	public String likesUpdate(int likes, int pbno) {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String id = "";
+		if(!auth.getPrincipal().equals("anonymousUser")) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			id = user.getUsername();
+			LikeVO vo = new LikeVO();
+			vo.setId(id);
+			vo.setPbno(pbno);
+			if(likes==1) {
+				service.updateYesToNo(vo);
+			}else {
+				String flag = service.checkFavouriteThis(vo);
+				if(flag == null) {
+					
+				}else if(flag.equals("0")) {
+					service.updateNoToYes(vo);
+				}
+			}
+		}
+		
+		return "0";
+	}
+	
+	
 }
