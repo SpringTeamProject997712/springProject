@@ -520,7 +520,7 @@ Purchase:
                                             <ul class="more_option">
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Download Now</a></li>
+                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                             </ul>
@@ -546,7 +546,7 @@ Purchase:
                                             <ul class="more_option">
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Download Now</a></li>
+                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                             </ul>
@@ -572,7 +572,7 @@ Purchase:
                                             <ul class="more_option">
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Download Now</a></li>
+                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                             </ul>
@@ -598,7 +598,7 @@ Purchase:
                                             <ul class="more_option">
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Download Now</a></li>
+                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                             </ul>
@@ -624,7 +624,7 @@ Purchase:
                                             <ul class="more_option">
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Download Now</a></li>
+                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                             </ul>
@@ -650,7 +650,7 @@ Purchase:
                                             <ul class="more_option">
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Download Now</a></li>
+                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                             </ul>
@@ -676,7 +676,7 @@ Purchase:
                                             <ul class="more_option">
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Download Now</a></li>
+                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                             </ul>
@@ -702,7 +702,7 @@ Purchase:
                                             <ul class="more_option">
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Download Now</a></li>
+                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                             </ul>
@@ -728,7 +728,7 @@ Purchase:
                                             <ul class="more_option">
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Download Now</a></li>
+                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                             </ul>
@@ -754,7 +754,7 @@ Purchase:
                                             <ul class="more_option">
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Download Now</a></li>
+                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                                 <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                             </ul>
@@ -793,7 +793,7 @@ Purchase:
                     <div class="col-lg-3 col-md-6">
                         <div class="footer_box footer_app">
                             <h1 class="footer_title">Download our App</h1>
-                            <p>Go Mobile with our app.<br> Listen to your favourite songs at just one click. Download Now !</p>
+                            <p>Go Mobile with our app.<br> Listen to your favourite songs at just one click. Add Cart !</p>
                             <a href="#" class="foo_app_btn"><img src="images/google_play.jpg" alt="" class="img-fluid"></a>
                             <a href="#" class="foo_app_btn"><img src="images/app_store.jpg" alt="" class="img-fluid"></a>
                             <a href="#" class="foo_app_btn"><img src="images/windows.jpg" alt="" class="img-fluid"></a>
