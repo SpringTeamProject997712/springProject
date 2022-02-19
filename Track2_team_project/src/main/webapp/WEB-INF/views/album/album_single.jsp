@@ -6,7 +6,7 @@
 
         <!----Album Single Section Start---->
         <div class="ms_album_single_wrapper">
-            <div class="album_single_data">
+            <div class="album_single_data abno_${view[0].abno}">
                 <div class="album_single_img">
                     <img src="${pageContext.request.contextPath}/upload/${view[0].image}" alt="" class="img-fluid">
                 </div>
@@ -52,7 +52,7 @@
 						<li><a href="#">${view.tname}</a></li>
 						<li><a href="#">${view.name}</a></li>
 						<li class="text-center"><a href="#">5:26</a></li>
-						<li class="text-center"><a href="#" class="fav_box" id="${view.pbno}">
+						<li class="text-center"><a href="javascript:void(0)" class="fav_box" id="pbno_${view.pbno}">
 							<span class="ms_icon1 ms_fav_icon">
 							</span>
 						</a></li>

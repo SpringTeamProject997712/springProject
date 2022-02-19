@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.music.domain.MemberVO;
 import com.music.security.domain.CustomUser;
+import com.music.service.AlbumService;
 import com.music.service.CreatePlaylistService;
 import com.music.service.MemberService;
 
@@ -30,6 +31,9 @@ public class MemberController {
 	
 	@Setter(onMethod_ = @Autowired)
 	CreatePlaylistService pservice; //서비스 자리
+	
+	@Setter(onMethod_ = @Autowired)
+	AlbumService aservice; //서비스 자리
 	
 	@Setter(onMethod_ = @Autowired)
 	private PasswordEncoder pencoder; //패스워드 인코더
@@ -130,5 +134,6 @@ public class MemberController {
 	public void viewOnePlaylist(int plbno, Model model) {
 		model.addAttribute("view",service.viewOnePlaylist(plbno));
 		model.addAttribute("countTrack", service.countTrack(plbno));
+		model.addAttribute("newly",aservice.newly());
 	}
 }

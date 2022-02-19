@@ -173,7 +173,7 @@ $().ready(function(){
 	var heart_arr = [];
 	var fav_heart = $(".ms_fav_icon");
 	$(".fav_box").each(function(index,item){
-		heart_arr.push($(this).attr('id'))
+		heart_arr.push($(this).attr('id').substring(5))
 	});
 	console.log(heart_arr);
 	console.log(fav_heart);
@@ -188,8 +188,8 @@ $().ready(function(){
 					console.log("좋아요 했나요? : "+data);
 					if(data=='1'){
 						console.log(heart_arr[i]);
-						$("#"+heart_arr[i]).empty();
-						$("#"+heart_arr[i]).append("<span><img src='/images/svg/pink-heart.svg' style='width:24px; height:24px'></span>");
+						$("#pbno_"+heart_arr[i]).empty();
+						$("#pbno_"+heart_arr[i]).append("<span><img src='/images/svg/pink-heart.svg' style='width:24px; height:24px'></span>");
 					}else{
 						console.log("빈하트");
 					}
@@ -205,7 +205,7 @@ $().ready(function(){
 $(".fav_box").on("click", function(){
 	let nope = $(this).find(".ms_fav_icon");
 	let like_status = 0;
-	let like_pbno = $(this).attr('id');
+	let like_pbno = $(this).attr('id').substring(5);
 	console.log(nope);
 	console.log(like_pbno);
 	if(nope.length){
@@ -224,11 +224,11 @@ $(".fav_box").on("click", function(){
 		},success:function(data){
 			console.log(data);
 			if(data=='1'){
-				$("#"+like_pbno).empty();
-				$("#"+like_pbno).append("<span><img src='/images/svg/pink-heart.svg' style='width:24px; height:24px'></span>");
+				$("#pbno_"+like_pbno).empty();
+				$("#pbno_"+like_pbno).append("<span><img src='/images/svg/pink-heart.svg' style='width:24px; height:24px'></span>");
 			}else{
-				$("#"+like_pbno).empty();
-				$("#"+like_pbno).append("<span class='ms_icon1 ms_fav_icon'></span>");
+				$("#pbno_"+like_pbno).empty();
+				$("#pbno_"+like_pbno).append("<span class='ms_icon1 ms_fav_icon'></span>");
 			}
 		}
 	})

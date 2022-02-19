@@ -6,7 +6,7 @@
 
         <!----Album Single Section Start---->
         <div class="ms_album_single_wrapper">
-            <div class="album_single_data">
+            <div class="album_single_data abno_${view[0].abno}">
                 <div class="album_single_img">
                     <img src="${pageContext.request.contextPath}/upload/${view[0].image}" alt="" class="img-fluid">
                 </div>
@@ -54,7 +54,7 @@
 						<li><a href="#">${viewOne.tname}</a></li>
 						<li><a href="#">${viewOne.singer}</a></li>
 						<li class="text-center"><a href="#">5:26</a></li>
-						<li class="text-center"><a href="javascript:void(0);" class="fav_box" id="${viewOne.pbno}"><span class="ms_icon1 ms_fav_icon"></span></a></li>
+						<li class="text-center"><a href="javascript:void(0);" class="fav_box" id="pbno_${viewOne.pbno}"><span class="ms_icon1 ms_fav_icon"></span></a></li>
 						<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
 							<ul class="more_option">
 								<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
@@ -69,6 +69,12 @@
 					
 					</c:forEach>
 				</c:if>
+					<ul>
+						<li></li>
+						<li><a>新しい歌を追加</a></li>
+						<li></li>
+						<li><a　class="ms_btn" type="button"><span class="play_all">+ 追加する</span></a></li>
+					</ul>
 					<!-- track list end -->
 				
 				</div>
