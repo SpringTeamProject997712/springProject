@@ -39,7 +39,7 @@ public class TrackServiceimpl implements TrackService {
 		jPlayerVO playlist = new jPlayerVO();
 		AlbumVO avo=amapper.readAlbum(tvo.getAbno());
 		playlist.setArtist(avo.getSinger());
-		playlist.setImage("/images/"+avo.getImage());
+		playlist.setImage("images/"+avo.getImage());
 		playlist.setMp3("upload"+tvo.getSongrealname());
 		playlist.setOption("myPlayListOtion");
 		playlist.setTitle(tvo.getName());
