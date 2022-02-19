@@ -1,18 +1,15 @@
 package com.music.controller;
 
 import java.awt.Graphics2D;
-import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -67,9 +64,9 @@ public class UploadController {
 	public String insertAlbum(AlbumVO album, ProductVO product, 
 			@RequestParam("uploadImage") MultipartFile uploadImage, 
 			@RequestParam("name") String name,
+			@RequestParam("pbno") int pbno,
 			Model model) throws IOException {
-		log.info("여기 보셈 새로운 우리의 pbno입니다 : "+product.getPbno());
-		int pbno = product.getPbno();
+
 //		MultipartFile multipartFile = portfolio.getUploadFile();
 		String uploadFolder = "C:\\upload";
 		log.info("file name : "+uploadImage.getOriginalFilename());
@@ -111,10 +108,6 @@ public class UploadController {
 			e.printStackTrace();
 		}
 		
-		
-		
-		
-		
 		// 리사이징
 		File saveimage_240 = new File(uploadFolder, uploadImageName);
 		File saveimage_50 = new File(uploadFolder, uploadImageName);
@@ -125,6 +118,8 @@ public class UploadController {
 		InputStream inputStream_240 = new FileInputStream(saveimage_240);
 		InputStream inputStream_50 = new FileInputStream(saveimage_50);
 		log.info("inputstream::"+inputStream_240);
+		
+		String strImageName = uploadImageName.substring(0,uploadImageName.lastIndexOf('.'));
 		
 //		Image img_240 = new ImageIcon(saveimage_240.toString()).getImage(); // 파일 정보 추출
 //		Image img_50 = new ImageIcon(saveimage_50.toString()).getImage(); // 파일 정보 추출
@@ -138,10 +133,10 @@ public class UploadController {
         BufferedImage resizedImage_240 = resize(inputStream_240 ,width_240, height_240);
         
 //        ImageIO.write(resizedImage_240, "jpg", new File(uploadFolder, uploadImageName+"_240.jpg"));
-        ImageIO.write(resizedImage_240, "jpg", new File(uploadFolder, uploadImageName.substring(0,uploadImageName.lastIndexOf('.'))+"_240.jpg"));
+        ImageIO.write(resizedImage_240, "jpg", new File(uploadFolder, strImageName+"_240.jpg"));
         log.info("folder::"+uploadFolder);
         log.info("imagename::"+uploadImageName);
-        log.info("imagename::"+uploadImageName.substring(0,uploadImageName.lastIndexOf('.')));
+        log.info("imagename::"+strImageName);
         
         BufferedImage resizedImage_50 = resize(inputStream_50 ,width_50, height_50);
         
@@ -156,9 +151,9 @@ public class UploadController {
 		}
         
         pservice.insertProduct(product);
-    	album.setPbno(pbno);
+    	
 		pservice.insertAlbum(album);
-	
+		album.setPbno(pbno);
         
 		return "redirect:/";
 	}	

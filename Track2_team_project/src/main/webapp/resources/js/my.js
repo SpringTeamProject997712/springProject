@@ -202,6 +202,15 @@ $().ready(function(){
 	}
 })
 
+$(".fav_box").on("click", function(){
+	var heart_arr = [];
+	var fav_heart = $(".ms_fav_icon");
+	$(".fav_box").each(function(index,item){
+		heart_arr.push($(this).attr('id'))
+	});
+	
+})
+
 
 
 
