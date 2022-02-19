@@ -43,11 +43,13 @@ public class FavouriteController {
 			vo.setId(id);
 			vo.setPbno(pbno);
 			result = service.checkFavouriteThis(vo);
-			if(result!=null && result !="0") {
+			log.info("체커로 넘어온  result : "+result);
+			if(result!=null && !(result.equals("0"))) {
 				result="1";
 			}else {
 				result="0";
 			}
+			log.info("다시 돌아가는  result : "+result);
 		}
 		return result;
 	}
