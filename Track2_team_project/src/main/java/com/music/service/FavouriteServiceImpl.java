@@ -30,6 +30,6 @@ public class FavouriteServiceImpl implements FavouriteService {
 	
 	@Override
 	public int createLike(LikeVO vo) {
-		return 0;
+		return mapper.createLike(vo);
 	}
 }

@@ -218,13 +218,19 @@ $(".fav_box").on("click", function(){
 		type:"get",
 		url:"/favourite/updateLike",
 		data:{likes:like_status, pbno:like_pbno},
+		async:false,
 		error:function(xhr,status,err){
 			console.log(xhr.status + "\n"+xhr.reponseText +  "\n"+ err );
 		},success:function(data){
-			
+			console.log(data);
+			if(data=='1'){
+				$("#"+like_pbno).empty();
+				$("#"+like_pbno).append("<span><img src='/images/svg/pink-heart.svg' style='width:24px; height:24px'></span>");
+			}else{
+				$("#"+like_pbno).empty();
+				$("#"+like_pbno).append("<span class='ms_icon1 ms_fav_icon'></span>");
+			}
 		}
-	
-	
 	})
 })
 

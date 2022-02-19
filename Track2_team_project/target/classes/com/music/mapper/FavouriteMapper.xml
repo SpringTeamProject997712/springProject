@@ -11,7 +11,7 @@
 	</update>
 	
 	<update id="updateNoToYes">
-		update like_m set likes='0' where id=#{id} and pbno=#{pbno}
+		update like_m set likes='1' where id=#{id} and pbno=#{pbno}
 	</update>
 	
 	<insert id="createLike">

@@ -52,10 +52,13 @@ public class FavouriteController {
 		return result;
 	}
 	
+	@ResponseBody
 	@GetMapping("/updateLike")
 	public String likesUpdate(int likes, int pbno) {
+		log.info("넘어온 likes :"+likes+"\n넘어온 pbno :"+pbno );
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String id = "";
+		String result = "0";
 		if(!auth.getPrincipal().equals("anonymousUser")) {
 			CustomUser user = (CustomUser)auth.getPrincipal();
 			id = user.getUsername();
@@ -63,18 +66,20 @@ public class FavouriteController {
 			vo.setId(id);
 			vo.setPbno(pbno);
 			if(likes==1) {
+				result="0";
 				service.updateYesToNo(vo);
 			}else {
+				result="1";
 				String flag = service.checkFavouriteThis(vo);
 				if(flag == null) {
-					
+					service.createLike(vo);
 				}else if(flag.equals("0")) {
 					service.updateNoToYes(vo);
 				}
 			}
 		}
-		
-		return "0";
+		//하트가 사라진 경우 "0", 하트가 생긴경우 "1";
+		return result;
 	}
 	
 	
