@@ -35,7 +35,8 @@ public class CreatePlaylistController {
 	
 	@ResponseBody
 	@GetMapping("/insertPlaylist")
-	public String insertPlaylist(PlaylistVO pvo) {
+	public String insertPlaylist() {
+		PlaylistVO pvo = new PlaylistVO();
 		String myName="";
 		String result = "1";
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();

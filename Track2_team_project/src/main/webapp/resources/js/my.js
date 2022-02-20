@@ -237,7 +237,7 @@ $(".fav_box").on("click", function(){
 $(".create_playlist").on("click", function(){
 	$.ajax({
 		type:"get",
-		url:"/createPlaylist/",
+		url:"/createPlaylist/insertPlaylist",
 		success:function(data){
 			console.log("돌아온 값"+data)
 			if(data=='1'){

@@ -43,11 +43,11 @@
 		having pl.plbno = #{plbno}
 	</select>
 	
-	<select id="countPlaylist">
+	<select id="countPlaylist" resultType="int">
 		select count(*) from playlist_m where id = #{id}
 	</select>
 	
-	<select id="maxPlbno">
+	<select id="maxPlbno" resultType="int">
 		select max(plbno) from playlist_m where id = #{id}
 	</select>
 	
