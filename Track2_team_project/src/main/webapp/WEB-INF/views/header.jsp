@@ -180,7 +180,7 @@
 													<img src="/images/svg/search.svg" alt="">
 												</span>
 											</form>
-											<div id="instant_table_wrapper">
+											<div class="instant_table_wrapper" id="instant_table_wrapper">
 											</div>
                     </div>
                     <div class="ms_top_trend">

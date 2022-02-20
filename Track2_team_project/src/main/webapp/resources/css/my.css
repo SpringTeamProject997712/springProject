@@ -52,6 +52,16 @@ ul.pro_dropdown_menu {
   border-radius: 20px;
 }
 
+.instant_table_wrapper{
+	display:none;
+	overflow: auto;
+  height: 255px;
+  overflow-x: hidden;
+  background-color: #14182a;
+  margin-top: 15px;
+  border-radius: 20px;
+}
+
 .add_playlist_btn{
 	margin:30px;
 	margin-left:900px;

@@ -26,7 +26,7 @@
 	    	},success:function(data){
 	    		data = JSON.parse(data);
 	    		console.log(data);
-	    		let printData = "<div class='ms_weekly_wrapper'><div class='ms_weekly_inner'><div class='row'><div class='col-lg-8 col-md-12 padding_right40'>";
+	    		let printData = "<div class='ms_weekly_wrapper padding_top_10'><div class='ms_weekly_inner'><div class='row'><div class='col-lg-8 col-md-12 padding_right40'>";
 	    		for(let i=0; i < data.length; i++ ){
 	    			printData += "<div class='ms_weekly_box'>";
                     printData += "<div class='weekly_left'>";
@@ -38,7 +38,8 @@
 					printData += "</div></div><div class='ms_divider'></div>";
 	    			//테이블값 넣기
 	    		}
-	    		printData += "</div></div></div></div>"
+	    		printData += "</div></div></div></div>";
+	    		$("#instant_table_wrapper").slideDown();
 	    		$("#instant_table_wrapper").html(printData); //테이블 생성
 	    	}
 	    });
@@ -46,7 +47,8 @@
 
 	$("#track_tracker").blur(function closeTable(){
 		setTimeout(function(){
-		$("#instant_table_wrapper").html("");
+			$("#instant_table_wrapper").html("");
+			$("#instant_table_wrapper").slideUp();
 		}, 1000);
 	});
 	
