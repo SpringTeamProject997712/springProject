@@ -250,5 +250,18 @@ $(".create_playlist").on("click", function(){
 		}
 	});
 })
+let flag = 1;
+$(".musicSearch_on").off().on("click", function(){
+	console.log("클릭 함");
+	
+	if(flag==1){
+		$("#musicSearchMan").slideDown();
+		flag=0;
+	}else{
+		$("#musicSearchMan").slideUp();
+		flag=1;
+	}
+})
+
 
 

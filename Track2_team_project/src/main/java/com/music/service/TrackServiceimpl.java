@@ -45,4 +45,9 @@ public class TrackServiceimpl implements TrackService {
 		playlist.setTitle(tvo.getName());
 		return playlist;
 	}
+	
+	@Override
+	public List<TrackVO> searchTrackList(String name) {
+		return mapper.searchTrackList(name);
+	}
 }

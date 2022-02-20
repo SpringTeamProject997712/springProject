@@ -32,3 +32,42 @@ ul.pro_dropdown_menu {
     display: inline-block;
     border-radius: 15px;
 }
+
+.myMusicForPlaylist {
+    display: none;
+    overflow: hidden;
+}
+
+.myMusicForPlaylist-dialog {
+    max-width: 930px;
+    width: 100%;
+}
+
+.instantTableMaker{
+	overflow: auto;
+  height: 255px;
+  overflow-x: hidden;
+  background-color: #14182a;
+  margin-top: 15px;
+  border-radius: 20px;
+}
+
+.add_playlist_btn{
+	margin:30px;
+	margin-left:900px;
+}
+
+.musicSearch_on{
+	font-size: 14px;
+}
+
+.padding_top_10{
+	padding-top: 10px;
+}
+
+.click_for_playlist{
+}
+
+.click_for_playlist:hover {
+	background: #313a68;
+}

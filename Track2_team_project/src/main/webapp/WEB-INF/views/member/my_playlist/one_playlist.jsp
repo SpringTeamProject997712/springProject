@@ -10,6 +10,7 @@
                 <div class="album_single_img">
                     <img src="${pageContext.request.contextPath}/upload/${view[0].image}" alt="" class="img-fluid">
                 </div>
+                <input type="hidden" id="this_plbno" value="${this_plbno}">
                 <div class="album_single_text">
                     <h2>${view[0].name}</h2>
                     <p class="singer_name">By - ${view[0].id}</p>
@@ -69,14 +70,46 @@
 					
 					</c:forEach>
 				</c:if>
-					<ul>
-						<li></li>
-						<li><a>新しい歌を追加</a></li>
-						<li></li>
-						<li><a　class="ms_btn" type="button"><span class="play_all">+ 追加する</span></a></li>
-					</ul>
+				<c:if test="${empty view}">
+						<h2 style="font-size: 20px; text-align: center; padding:20px">新しい歌を追加して 自分だけのプレイリストを作りましょう</h2>
+						
+				</c:if>
 					<!-- track list end -->
-				
+					<span class="btn text-center add_playlist_btn"><a href="javascript:void(0)" class="ms_btn musicSearch_on"><span class="play_all">+追加する</span></a></span>
+					
+					<!-- 모달 -->
+					<div id="musicSearchMan" class="myMusicForPlaylist">
+            <div class="myMusicForPlaylist-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <button type="button" class="close">
+											<i class="fa_icon form_close"></i>
+										</button>
+                    <div class="modal-body">
+                        <div class="ms_register_img">
+                            <img src="/images/register_img.png" alt="" class="img-fluid" />
+                        </div>
+                        <div class="musicSearch_form ms_register_form">
+                          <h2>ミュージック検索"</h2>
+                          <form action="/member/join" method="post" name="joinForm">
+                          	<input id="csrfToken" type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+	                          <div class="form-group">
+	                            <input type="text" name="musicName" id="musicSearcherForPlaylist" placeholder="" class="form-control">
+	                            <span class="form_icon">
+																<i class="fa_icon form-user" aria-hidden="true"></i>
+															</span>
+	                          </div>
+	                          <a href="javascript:go_searchForPlaylist()" class="ms_btn">search</a>
+                       		</form>
+                       		<div class="instantTableMaker" id="instantTable">
+	                        </div>
+                        </div>
+                    </div>
+                    <!-- modalbody -->
+                </div>
+            </div>
+        </div>
+        <!-- 모달끝 -->
 				</div>
 			</div>
         </div>

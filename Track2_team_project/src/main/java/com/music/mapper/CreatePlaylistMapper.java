@@ -43,4 +43,7 @@ public interface CreatePlaylistMapper {
 	
 	//가장 최근에 만들어진 plbno 구함
 	public Integer maxPlbno(String id);
+	
+	//플레이리스트에 트랙 추가함
+	public int insertPlaylistDetail(PlaylistVO vo);
 }

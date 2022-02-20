@@ -13,4 +13,7 @@ public interface TrackService {
 	public TrackVO selectTrack(int tbno);
 	
 	public jPlayerVO convertTrackToJPlayer(TrackVO tvo);
+	
+	public List<TrackVO> searchTrackList(String name);
+	
 }

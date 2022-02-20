@@ -26,7 +26,7 @@
 	<select id="readPlaylistsWithId" resultType="com.music.domain.PlaylistVO">
 		select pl.name as name, pl.id as id, pl.plbno as plbno, count(pd.pdbno) as pdbno  
     from playlist_detail_m pd, playlist_m pl
-    where pl.plbno = pd.plbno
+    where pl.plbno = pd.plbno(+)
 		group by pl.name, pl.id, pl.plbno
 		having id = #{id}
 	</select>
@@ -65,6 +65,14 @@
 		</selectKey>
 		
 		insert into playlist_m (plbno, id, name) values (#{plbno}, #{id}, #{name})
+	</insert>
+	
+	<insert id="insertPlaylistDetail">
+		<selectKey keyProperty="pdbno" order="BEFORE" resultType="int">
+			select playlist_detail_m_seq.nextval from dual
+		</selectKey>
+		
+		insert into playlist_detail_m (pdbno, abno, tbno, plbno) values (#{pdbno}, #{abno} ,#{tbno}, #{plbno})
 	</insert>
 	
 	

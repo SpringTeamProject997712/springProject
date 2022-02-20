@@ -135,6 +135,7 @@ public class MemberController {
 		model.addAttribute("view",service.viewOnePlaylist(plbno));
 		model.addAttribute("countTrack", service.countTrack(plbno));
 		model.addAttribute("newly",aservice.newly());
+		model.addAttribute("this_plbno",plbno);
 	}
 	
 	@GetMapping("/my_cart")

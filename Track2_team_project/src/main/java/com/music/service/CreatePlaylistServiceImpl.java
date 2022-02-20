@@ -75,6 +75,10 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 	public int countPlaylist(String id) {
 		return mapper.countPlaylist(id);
 	}
+	@Override
+	public int insertPlaylistDetail(PlaylistVO vo) {
+		return mapper.insertPlaylistDetail(vo);
+	}
 
 //======================================= private =======================================	
 	

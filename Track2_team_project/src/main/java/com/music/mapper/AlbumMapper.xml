@@ -39,7 +39,9 @@
   	</select>
   	
   	<select id="searchAlbumWithTrackName" resultType="com.music.domain.AlbumVO">
+  		<![CDATA[
   		select * from album_single where tname like '%'||#{tname}||'%'
+  		]]>
   	</select>
   	
   	<select id="getCountLikes" resultType="com.music.domain.AlbumVO">

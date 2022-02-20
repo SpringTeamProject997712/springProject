@@ -17,6 +17,7 @@ import com.music.domain.PlaylistVO;
 import com.music.domain.jPlayerVO;
 import com.music.security.domain.CustomUser;
 import com.music.service.CreatePlaylistService;
+import com.music.service.TrackService;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -28,6 +29,9 @@ public class CreatePlaylistController {
 
 	@Setter(onMethod_ = @Autowired)
 	CreatePlaylistService service;
+	
+	@Setter(onMethod_ = @Autowired)
+	TrackService tservice;
 	
 	@GetMapping("/createPlaylist")
 	public void createPlaylistView() {
@@ -49,6 +53,17 @@ public class CreatePlaylistController {
 			result = "/member/my_playlist/one_playlist?plbno="+service.maxPlbno(myName);
 		}
 		return result;
+	}
+	
+	@ResponseBody
+	@GetMapping("/addOneTrack")
+	public String addOneTrack(PlaylistVO vo) {
+		
+		int abno = tservice.selectTrack(vo.getTbno()).getAbno();
+		vo.setAbno(abno);
+		int result=service.insertPlaylistDetail(vo);
+		
+		return result>0?"1":"0";
 	}
 	
 	@ResponseBody //ajax로 플레이리스트를 받는 친구
