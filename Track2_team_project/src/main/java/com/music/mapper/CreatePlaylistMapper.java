@@ -17,6 +17,9 @@ public interface CreatePlaylistMapper {
 	//회원가입하면 베이직 플레이리스트 만들어줌(첫화면 컨트롤용)
 	public int insertBasicPlaylist(String id);
 	
+	//플레이리스트 만들기
+	public int insertPlaylist(PlaylistVO pvo);
+	
 	//id로 basic_playlist의 plbno를 찾음
 	public Integer selectBasicPlaylistPrimaryKey(String id);
 	
@@ -34,4 +37,7 @@ public interface CreatePlaylistMapper {
 	
 	//플레이리스트 번호로 플레이리스트의 모든것 소환
 	public List<ViewPlaylistDetailVO> selectOnePlaylist(int plbno);
+	
+	//트랙 개수를 구함
+	public Integer countPlaylist(String id);
 }

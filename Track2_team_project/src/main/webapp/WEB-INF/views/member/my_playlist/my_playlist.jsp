@@ -36,7 +36,7 @@
                                     <i class="ms_icon icon_playlist"></i>
                                 </div>
                                 <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">Create New Playlist</a></h3>
+                                    <h3><a href="javascript:void(0)">Create New Playlist</a></h3>
                                 </div>
                             </div>
                         </div>

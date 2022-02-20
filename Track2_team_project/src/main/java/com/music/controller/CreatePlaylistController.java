@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
+import com.music.domain.PlaylistVO;
 import com.music.domain.jPlayerVO;
+import com.music.security.domain.CustomUser;
 import com.music.service.CreatePlaylistService;
 
 import lombok.Setter;
@@ -27,6 +31,19 @@ public class CreatePlaylistController {
 	
 	@GetMapping("/createPlaylist")
 	public void createPlaylistView() {
+	}
+	
+	@GetMapping("/insertPlaylist")
+	public void insertPlaylist(PlaylistVO pvo) {
+		String myName="";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			pvo.setId(myName);
+			pvo.setName("New Playlist"+(service.countPlaylist(myName)+1));
+			service.insertPlaylist(pvo);
+		}
 	}
 	
 	@ResponseBody //ajax로 플레이리스트를 받는 친구

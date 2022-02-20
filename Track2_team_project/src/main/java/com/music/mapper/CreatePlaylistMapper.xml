@@ -43,12 +43,24 @@
 		having pl.plbno = #{plbno}
 	</select>
 	
+	<select id="countPlaylist">
+		select count(*) from playlist_m where id = #{id}
+	</select>
+	
 	<insert id="insertBasicPlaylist">
 		<selectKey keyProperty="plbno" order="BEFORE" resultType="int">
 			select playlist_m_seq.nextval from dual
 		</selectKey>
 		
 		insert into playlist_m (plbno, id, name) values (#{plbno}, #{id}, 'basic_playlist')
+	</insert>
+	
+	<insert id="insertPlaylist">
+		<selectKey keyProperty="plbno" order="BEFORE" resultType="int">
+			select playlist_m_seq.nextval from dual
+		</selectKey>
+		
+		insert into playlist_m (plbno, id, name) values (#{plbno}, #{id}, #{name})
 	</insert>
 	
 	

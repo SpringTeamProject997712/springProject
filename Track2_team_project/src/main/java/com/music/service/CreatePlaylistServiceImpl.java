@@ -33,6 +33,11 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 	@Setter(onMethod_ = @Autowired)
 	TrackMapper tmapper;
 	
+	@Override
+	public int insertPlaylist(PlaylistVO pvo) {
+		return mapper.insertPlaylist(pvo);
+	}
+	
 	//int를 받아서 switch문을 실행합니다. 그리고 결과로 List<PlaylistVO>를 반환합니다
 	@Override
 	public List<jPlayerVO> selectMethod(int menu) {
@@ -59,9 +64,12 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 	
 	@Override
 	public int insertBasicPlaylist(String id) {
-		int result = mapper.insertBasicPlaylist(id);
-		
+		int result = mapper.insertBasicPlaylist(id);	
 		return result;
+	}
+	@Override
+	public int countPlaylist(String id) {
+		return mapper.countPlaylist(id);
 	}
 
 //======================================= private =======================================	

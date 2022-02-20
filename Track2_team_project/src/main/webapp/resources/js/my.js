@@ -234,6 +234,14 @@ $(".fav_box").on("click", function(){
 	})
 })
 
-
+$(".create_playlist").on("click", function(){
+	$.ajax({
+		type:"get",
+		url:"/createPlaylist/",
+		success:function(){
+		},error:function(){
+		}
+	});
+})
 
 

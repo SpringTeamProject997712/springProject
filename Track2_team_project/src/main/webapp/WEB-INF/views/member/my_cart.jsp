@@ -10,13 +10,13 @@
             <!----Free Download Css Start---->
             <div class="ms_free_download ms_purchase_wrapper">
                 <div class="ms_heading">
-                    <h1>Your Favourites</h1>
+                    <h1>Your Cart List</h1>
                 </div>
 				<div class="album_inner_list">
 					<div class="album_list_wrapper">
 						<ul class="album_list_name">
 							<li>#</li>
-							<li>Song Title</li>
+							<li>Name</li>
 							<li>Album</li>
 							<li class="text-center">price</li>
 							<li class="text-center">Duration</li>
