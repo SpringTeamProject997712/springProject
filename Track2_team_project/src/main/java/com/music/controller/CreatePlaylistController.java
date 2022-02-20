@@ -46,7 +46,7 @@ public class CreatePlaylistController {
 			pvo.setId(myName);
 			pvo.setName("New Playlist"+(service.countPlaylist(myName)+1));
 			service.insertPlaylist(pvo);
-			result = "/member/my_playlist/one_plylist?plbno="+service.maxPlbno(myName);
+			result = "/member/my_playlist/one_playlist?plbno="+service.maxPlbno(myName);
 		}
 		return result;
 	}

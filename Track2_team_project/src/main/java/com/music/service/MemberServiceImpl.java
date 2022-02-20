@@ -101,6 +101,6 @@ public class MemberServiceImpl implements MemberService {
 	}
 	@Override
 	public int countTrack(int plbno) {
-		return cmapper.countTrack(plbno);
+		return cmapper.countTrack(plbno)!=null?cmapper.countTrack(plbno):0;
 	}
 }
