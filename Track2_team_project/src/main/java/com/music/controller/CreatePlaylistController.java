@@ -33,9 +33,11 @@ public class CreatePlaylistController {
 	public void createPlaylistView() {
 	}
 	
+	@ResponseBody
 	@GetMapping("/insertPlaylist")
-	public void insertPlaylist(PlaylistVO pvo) {
+	public String insertPlaylist(PlaylistVO pvo) {
 		String myName="";
+		String result = "1";
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		if(!(auth.getPrincipal().equals("anonymousUser"))) {
 			CustomUser user = (CustomUser)auth.getPrincipal();
@@ -43,7 +45,9 @@ public class CreatePlaylistController {
 			pvo.setId(myName);
 			pvo.setName("New Playlist"+(service.countPlaylist(myName)+1));
 			service.insertPlaylist(pvo);
+			result = "/member/my_playlist/one_plylist?plbno="+service.maxPlbno(myName);
 		}
+		return result;
 	}
 	
 	@ResponseBody //ajax로 플레이리스트를 받는 친구

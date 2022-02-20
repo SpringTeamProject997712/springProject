@@ -238,8 +238,15 @@ $(".create_playlist").on("click", function(){
 	$.ajax({
 		type:"get",
 		url:"/createPlaylist/",
-		success:function(){
-		},error:function(){
+		success:function(data){
+			console.log("돌아온 값"+data)
+			if(data=='1'){
+				console.log("실-패");
+			}else{
+				location.href=data;
+			}
+		},error:function(xhr,status,err){
+			console.log(xhr.status +"\n" +xhr.reponseText +"\n" +err);
 		}
 	});
 })

@@ -40,4 +40,7 @@ public interface CreatePlaylistMapper {
 	
 	//트랙 개수를 구함
 	public Integer countPlaylist(String id);
+	
+	//가장 최근에 만들어진 plbno 구함
+	public Integer maxPlbno(String id);
 }

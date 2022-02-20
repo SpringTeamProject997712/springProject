@@ -37,6 +37,10 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 	public int insertPlaylist(PlaylistVO pvo) {
 		return mapper.insertPlaylist(pvo);
 	}
+	@Override
+	public int maxPlbno(String id) {
+		return mapper.maxPlbno(id);
+	}
 	
 	//int를 받아서 switch문을 실행합니다. 그리고 결과로 List<PlaylistVO>를 반환합니다
 	@Override
