@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.music.domain.MemberVO;
 import com.music.security.domain.CustomUser;
+import com.music.service.AlbumService;
 import com.music.service.CreatePlaylistService;
 import com.music.service.MemberService;
 
@@ -30,6 +31,9 @@ public class MemberController {
 	
 	@Setter(onMethod_ = @Autowired)
 	CreatePlaylistService pservice; //서비스 자리
+	
+	@Setter(onMethod_ = @Autowired)
+	AlbumService aservice; //서비스 자리
 	
 	@Setter(onMethod_ = @Autowired)
 	private PasswordEncoder pencoder; //패스워드 인코더
@@ -106,17 +110,40 @@ public class MemberController {
 	
 //=============================마이페이지 컨트롤러 ===================================
 	
-	@GetMapping("/member/profile")
+	@GetMapping("/profile")
 	public void viewProfile(String id,Model model) {
 		MemberVO mvo = service.viewMember(id);
 		
 		model.addAttribute("memberList",mvo);
 	}
 	
-	@GetMapping("/member/my_playlist")
-	public void viewMyplaylist() {
+	@GetMapping("/my_playlist/my_playlist")
+	public void viewMyplaylist(Model model) {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		
+		log.info(auth.getPrincipal());
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			String id =user.getUsername();
+			log.info(service.viewMyPlaylistList(id));
+			model.addAttribute("myPlaylist",service.viewMyPlaylistList(id));
+		}
+	}
+	
+	@GetMapping("/my_playlist/one_playlist")
+	public void viewOnePlaylist(int plbno, Model model) {
+		model.addAttribute("view",service.viewOnePlaylist(plbno));
+		model.addAttribute("countTrack", service.countTrack(plbno));
+		model.addAttribute("newly",aservice.newly());
+		model.addAttribute("this_plbno",plbno);
+	}
+	
+	@GetMapping("/my_cart")
+	public void viewCart() {
 	}
 	
 	
+	@GetMapping("/favourite")
+	public void favouritesView() {
+	}
 }

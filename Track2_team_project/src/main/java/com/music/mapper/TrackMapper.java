@@ -11,4 +11,7 @@ public interface TrackMapper {
 	
 	//tbno를 받아서 트랙VO를 가져온다
 	public TrackVO selectTrack(int tbno);
+	
+	//이름을 받아서 이름이 겹치는 트랙 VO를 가져온다
+	public List<TrackVO> searchTrackList(String name);
 }

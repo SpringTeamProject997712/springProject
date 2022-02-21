@@ -215,5 +215,99 @@ function findAddr(){ //우편번호 찾기
   }).open();
 }
 
+//하트모양 채우기
+$().ready(function(){
+	var heart_arr = [];
+	var fav_heart = $(".ms_fav_icon");
+	$(".fav_box").each(function(index,item){
+		heart_arr.push($(this).attr('id').substring(5))
+	});
+	console.log(heart_arr);
+	console.log(fav_heart);
+	if(fav_heart){
+		for(var i=0; i<heart_arr.length; i++){
+			$.ajax({
+				type:"get",
+				data:{pbno : heart_arr[i]},
+				async:false,
+				url:"/favourite/favourite_checker",
+				success:function(data){
+					console.log("좋아요 했나요? : "+data);
+					if(data=='1'){
+						console.log(heart_arr[i]);
+						$("#pbno_"+heart_arr[i]).empty();
+						$("#pbno_"+heart_arr[i]).append("<span><img src='/images/svg/pink-heart.svg' style='width:24px; height:24px'></span>");
+					}else{
+						console.log("빈하트");
+					}
+				},error:function(xhr,status,err){
+					console.log(xhr.status + "\n"+xhr.reponseText +  "\n"+ err );
+				}
+			
+			});
+		}
+	}
+})
+
+$(".fav_box").on("click", function(){
+	let nope = $(this).find(".ms_fav_icon");
+	let like_status = 0;
+	let like_pbno = $(this).attr('id').substring(5);
+	console.log(nope);
+	console.log(like_pbno);
+	if(nope.length){
+		console.log("좋아요 안함");
+	}else{
+		console.log("좋아요 함");
+		like_status = 1;
+	}
+	$.ajax({
+		type:"get",
+		url:"/favourite/updateLike",
+		data:{likes:like_status, pbno:like_pbno},
+		async:false,
+		error:function(xhr,status,err){
+			console.log(xhr.status + "\n"+xhr.reponseText +  "\n"+ err );
+		},success:function(data){
+			console.log(data);
+			if(data=='1'){
+				$("#pbno_"+like_pbno).empty();
+				$("#pbno_"+like_pbno).append("<span><img src='/images/svg/pink-heart.svg' style='width:24px; height:24px'></span>");
+			}else{
+				$("#pbno_"+like_pbno).empty();
+				$("#pbno_"+like_pbno).append("<span class='ms_icon1 ms_fav_icon'></span>");
+			}
+		}
+	})
+})
+
+$(".create_playlist").on("click", function(){
+	$.ajax({
+		type:"get",
+		url:"/createPlaylist/insertPlaylist",
+		success:function(data){
+			console.log("돌아온 값"+data)
+			if(data=='1'){
+				console.log("실-패");
+			}else{
+				location.href=data;
+			}
+		},error:function(xhr,status,err){
+			console.log(xhr.status +"\n" +xhr.reponseText +"\n" +err);
+		}
+	});
+})
+let flag = 1;
+$(".musicSearch_on").off().on("click", function(){
+	console.log("클릭 함");
+	
+	if(flag==1){
+		$("#musicSearchMan").slideDown();
+		flag=0;
+	}else{
+		$("#musicSearchMan").slideUp();
+		flag=1;
+	}
+})
 
 

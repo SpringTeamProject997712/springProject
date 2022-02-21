@@ -25,14 +25,14 @@
     <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/my.css">
     <!-- Favicon Link -->
-    <link rel="shortcut icon" type="image/png" href="../images/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="/imagess/favicon.png">
 </head>
 
 <body>
 	<!----Loader Start---->
 	<div class="ms_loader">
 		<div class="wrap">
-		  <img src="../images/loader.gif" alt="">
+		  <img src="/images/loader.gif" alt="">
 		</div>
 	</div>
 	
@@ -47,10 +47,10 @@
             <div class="ms_sidemenu_inner">
                 <div class="ms_logo_inner">
                     <div class="ms_logo">
-                        <a href="/"><img src="../images/logo.png" alt="" class="img-fluid"/></a>
+                        <a href="/"><img src="/images/logo.png" alt="" class="img-fluid"/></a>
                     </div>
                     <div class="ms_logo_open">
-                        <a href="/"><img src="../images/open_logo.png" alt="" class="img-fluid"/></a>
+                        <a href="/"><img src="/images/open_logo.png" alt="" class="img-fluid"/></a>
                     </div>
                 </div>
                 <div class="ms_nav_wrapper">
@@ -115,7 +115,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="purchase.html" title="Purchased">
+                        <li><a href="/member/my_cart" title="Purchased">
 						<span class="nav_icon">
 							<span class="icon icon_purchased"></span>
 						</span>
@@ -153,7 +153,7 @@
 													</span>
 													</a>
                         </li>
-                        <li><a href="/member/my_playlist" title="Create Playlist">
+                        <li><a href="/member/my_playlist/my_playlist" title="Create Playlist">
 													<span class="nav_icon">
 														<span class="icon icon_c_playlist"></span>
 													</span>
@@ -177,10 +177,10 @@
                     	<form>
 	                      <input type="text" id="track_tracker" class="form-control" placeholder="ミュージック検索">
 	                      <span id="entire_music_searcher" class="search_icon">
-													<img src="../images/svg/search.svg" alt="">
+													<img src="/images/svg/search.svg" alt="">
 												</span>
 											</form>
-											<div id="instant_table_wrapper">
+											<div class="instant_table_wrapper" id="instant_table_wrapper">
 											</div>
                     </div>
                     <div class="ms_top_trend">
@@ -189,7 +189,7 @@
                 </div>
                 <div class="ms_top_right">
                     <div class="ms_top_lang">
-                        <span data-toggle="modal" data-target="#lang_modal">言語 <img src="../images/svg/lang.svg" alt=""></span>
+                        <span data-toggle="modal" data-target="#lang_modal">言語 <img src="/images/svg/lang.svg" alt=""></span>
                     </div>
                     <sec:authorize access="isAnonymous()">
 	                    <div class="ms_top_btn">

@@ -1,5 +1,7 @@
 package com.music.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,7 +11,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
+import com.music.domain.AlbumVO;
+import com.music.domain.TrackVO;
 import com.music.domain.jPlayerVO;
+import com.music.service.AlbumService;
 import com.music.service.TrackService;
 
 import lombok.Setter;
@@ -21,6 +26,9 @@ import lombok.extern.log4j.Log4j;
 public class TrackController {
 	@Setter(onMethod_= @Autowired)
 	private TrackService service;
+	
+	@Setter(onMethod_= @Autowired)
+	private AlbumService aservice;
 	
 	@GetMapping("/newly_release_album")
 	public void listNewly(Model model) {
@@ -35,6 +43,16 @@ public class TrackController {
 		
 		Gson gson = new Gson();
 		String json = gson.toJson(jvo);
+		return json;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/trackSearcher", produces = "application/text; charset=utf8", method = RequestMethod.GET)
+	public String findTrackList(String name) {
+		List<AlbumVO> tlist = aservice.searchAlbumWithTrackName(name);
+		
+		Gson gson = new Gson();
+		String json = gson.toJson(tlist);
 		return json;
 	}
 }

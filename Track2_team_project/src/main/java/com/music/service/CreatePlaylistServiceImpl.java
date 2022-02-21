@@ -33,6 +33,15 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 	@Setter(onMethod_ = @Autowired)
 	TrackMapper tmapper;
 	
+	@Override
+	public int insertPlaylist(PlaylistVO pvo) {
+		return mapper.insertPlaylist(pvo);
+	}
+	@Override
+	public int maxPlbno(String id) {
+		return mapper.maxPlbno(id);
+	}
+	
 	//int를 받아서 switch문을 실행합니다. 그리고 결과로 List<PlaylistVO>를 반환합니다
 	@Override
 	public List<jPlayerVO> selectMethod(int menu) {
@@ -59,9 +68,16 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 	
 	@Override
 	public int insertBasicPlaylist(String id) {
-		int result = mapper.insertBasicPlaylist(id);
-		
+		int result = mapper.insertBasicPlaylist(id);	
 		return result;
+	}
+	@Override
+	public int countPlaylist(String id) {
+		return mapper.countPlaylist(id);
+	}
+	@Override
+	public int insertPlaylistDetail(PlaylistVO vo) {
+		return mapper.insertPlaylistDetail(vo);
 	}
 
 //======================================= private =======================================	
@@ -74,7 +90,7 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 			jPlayerVO playlist = new jPlayerVO();
 			AlbumVO avo=amapper.readAlbum(track.get(i).getAbno());
 			playlist.setArtist(avo.getSinger());
-			playlist.setImage("/images/"+avo.getImage());
+			playlist.setImage(avo.getImage());
 			playlist.setMp3("/upload/"+track.get(i).getSongrealname());
 			playlist.setOption("myPlayListOtion");
 			playlist.setTitle(track.get(i).getName());

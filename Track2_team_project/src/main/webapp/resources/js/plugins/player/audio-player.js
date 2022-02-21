@@ -2,25 +2,25 @@ $(function() {
     "use strict";
     
     let basicPlayList = [{
-						image : '../images/weekly/song1.jpg',	
+						image : 'weekly/song1.jpg',	
             title: "RE:Wind",
             artist: "이세계 아이돌",
             mp3: "/music/Rewind.mp3",
 						option : myPlayListOtion	
         }, {
-						image : '../images/weekly/song2.jpg',	
+						image : 'weekly/song2.jpg',	
             title: "LIVE FORVER",
             artist: "오아시스",
             mp3: "/music/Live_forever.mp3",
 						option : myPlayListOtion
         }, {
-						image : '../images/weekly/song3.jpg',	
+						image : 'weekly/song3.jpg',	
             title: "니얼굴",
             artist: "TSP",
             mp3: "/music/Your_face.mp3",
 						option : myPlayListOtion
         },{
-						image : '../images/weekly/song2.jpg',	
+						image : 'weekly/song2.jpg',	
             title: "천체관측",
             artist: "BUMP OF CHICKEN",
             mp3: "/music/天体観測.mp3",
@@ -99,7 +99,7 @@ $(function() {
             var playlist = myPlaylist.playlist;
             $.each(playlist, function(index, obj) {
                 if (index == current) {
-                    $(".jp-now-playing").html("<div class='jp-track-name'><span class='que_img'><img src='"+obj.image+"'></span><div class='que_data'>" + obj.title + " <div class='jp-artist-name'>" + obj.artist + "</div></div></div>");
+                    $(".jp-now-playing").html("<div class='jp-track-name'><span class='que_img'><img src='/images/"+obj.image+"'></span><div class='que_data'>" + obj.title + " <div class='jp-artist-name'>" + obj.artist + "</div></div></div>");
                 }
             });
 			$('.knob-wrapper').mousedown(function() {
