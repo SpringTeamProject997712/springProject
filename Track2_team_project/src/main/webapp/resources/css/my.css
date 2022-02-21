@@ -73,7 +73,7 @@ ul.pro_dropdown_menu {
 	border-bottom-color: #e2e2e2;
 	border-radius: .25em;
 } /* named upload */
-.filebox .upload-name {
+.upload-name {
 	display: inline-block;
 	padding: .5em .75em; /* label의 패딩값과 일치 */
 	font-size: inherit;
@@ -87,6 +87,7 @@ ul.pro_dropdown_menu {
 	-webkit-appearance: none; /* 네이티브 외형 감추기 */
 	-moz-appearance: none;
 	appearance: none;
+	width:210px;
 }
 
 /* imaged preview */

@@ -20,29 +20,22 @@
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 				<div class="tab-content">
 					<div class="ms_upload_box tab-pane fade show active" id="album">
-						<h2>Upload Album Label</h2>
+						<h2>Upload Album Info</h2>
 						<label for="image">
-<%-- 							<c:if test="${empty image}"> --%>
 								<img src="../images/svg/upload.svg" alt="image">
-<%-- 							</c:if> --%>
-<%-- 							<c:otherwise> --%>
-<!-- 								<input class="upload-name" value="파일선택" disabled="disabled"> -->
-<%-- 							</c:otherwise> --%>
-						</label>
+						</label>	
 						<div class="ms_upload_btn">
-							<a href="javascript:void(0);" class="ms_btn"> <label for="image" className="ms_btn">upload Cover</label>
-							<input type="file" name="uploadImage" id="image" accept="image/*" class="form-control" style="display: none">
+							<input class="upload-name" value="please upload image" disabled="disabled">
+							<br><br>
+							<a href="javascript:void(0);" class="ms_btn">
+							<label for="image" className="ms_btn">upload Cover</label>							
 							</a>
+							<input type="file" name="uploadImage" id="image" accept="image/*" class="form-control" style="display: none">
 						</div>
-						<span> or </span>	
-						<p>Drag And Drop Album Image File</p>
+	<!-- 						<span> or </span>	 -->
+	<!-- 						<p>Drag And Drop Album Image File</p> -->
+	
 
-						<div class="filebox preview-image">
-							<input class="upload-name" value="파일선택" disabled="disabled">
-							
-							<label for="input-file">업로드</label>
-							<input type="file" id="input-file" class="upload-hidden">
-						</div>
 
 					</div>
 				
@@ -91,18 +84,20 @@
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 				<div class="tab-content">
 					<div class="ms_upload_box tab-pane fade show active" id="track">
-						<h2>Upload & Share Your Music With The World</h2>
+						<h2>Upload Track Info</h2>
 						<label for="songname">
-						<img src="../images/svg/upload.svg" alt="songname">
+							<img src="../images/svg/upload.svg" alt="songname">
 						</label>
 						<div class="ms_upload_btn">
+							<input class="upload-name" value="please upload track" disabled="disabled">
+							<br><br>
 							<a href="javascript:void(0);" class="ms_btn"> <label for="songname" className="ms_btn">upload files</label>
-							<input type="file" name="uploadMusic" id="songname" accept="audio/*" style="display: none" />
 							</a>
+							<input type="file" name="uploadMusic" id="songname" accept="audio/*" class="form-control" style="display: none" />
 						</div>
-						<span> or </span>
-						<p>Drag And Drop Music Files</p>
+
 					</div>
+					
 					<div class=" marger_top60">
 						<div class="ms_upload_box">
 							<div class="ms_heading">

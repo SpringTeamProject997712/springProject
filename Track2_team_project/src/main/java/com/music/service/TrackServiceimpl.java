@@ -10,6 +10,8 @@ import com.music.domain.TrackVO;
 import com.music.domain.jPlayerVO;
 import com.music.mapper.AlbumMapper;
 import com.music.mapper.TrackMapper;
+import com.music.utility.Criteria;
+import com.music.utility.PageMaker;
 
 import lombok.AllArgsConstructor;
 import lombok.Setter;
@@ -44,5 +46,17 @@ public class TrackServiceimpl implements TrackService {
 		playlist.setOption("myPlayListOtion");
 		playlist.setTitle(tvo.getName());
 		return playlist;
+	}
+
+	@Override
+	public List<TrackVO> viewTrackListWithPaging(Criteria cri) {
+		return mapper.viewTrackListWithPaging(cri);
+	}
+
+	@Override
+	public PageMaker pagingList(Criteria cri) {
+		int amount = mapper.countTrack(cri);
+		PageMaker pageMaker = new PageMaker(cri, amount);
+		return pageMaker;
 	}
 }

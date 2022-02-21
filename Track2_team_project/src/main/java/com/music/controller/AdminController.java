@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.music.domain.AlbumVO;
 import com.music.domain.MemberVO;
+import com.music.domain.TrackVO;
 import com.music.service.AlbumService;
 import com.music.service.MemberService;
 import com.music.service.ProductService;
@@ -78,7 +79,9 @@ public class AdminController {
 	}
 	
 //=========================================상품관리용========================================
-
+	
+	//앨범
+	
 	@GetMapping("album/manage_album") //상품관리 - 상품 리스트 보기
 	public void viewProductList(Model model, Criteria cri) {
 		List<AlbumVO> alist = aService.viewAlbumListWithPaging(cri);
@@ -89,6 +92,21 @@ public class AdminController {
 	
 	@GetMapping("album/view_album") //상품관리 - 상품 세부사항 보기
 	public void viewProductDetail(Model model) {
+		
+	}
+
+	//트랙
+	
+	@GetMapping("album/manage_track") //상품관리 - 상품 리스트 보기
+	public void viewTrackList(Model model, Criteria cri) {
+		List<TrackVO> tlist = tService.viewTrackListWithPaging(cri);
+		log.info(tlist);
+		model.addAttribute("trackList", tlist);
+		model.addAttribute("pageMaker", tService.pagingList(cri));
+	}
+	
+	@GetMapping("album/view_track") //상품관리 - 상품 세부사항 보기
+	public void viewTrackDetail(Model model) {
 		
 	}
 	
