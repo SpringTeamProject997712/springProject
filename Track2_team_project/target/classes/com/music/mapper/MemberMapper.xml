@@ -90,4 +90,14 @@
 	<delete id="deleteMember">
 		delete from member_m where id = #{id}
 	</delete>
+	
+	<delete id="deleteAuth">
+		delete from member_auth_m where id = #{id}
+	</delete>
+	
+	<insert id="insertAuth">
+		insert into member_auth_m(id, auth) values(#{id},#{auth})
+	</insert>
+	
+	
 </mapper>

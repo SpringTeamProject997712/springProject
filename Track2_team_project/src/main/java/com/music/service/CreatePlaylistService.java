@@ -13,4 +13,5 @@ public interface CreatePlaylistService {
 	public int countPlaylist(String id);
 	public int maxPlbno(String id);
 	public int insertPlaylistDetail(PlaylistVO vo);
+	public int minPlbno(String id);
 }

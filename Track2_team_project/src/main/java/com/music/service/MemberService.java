@@ -3,6 +3,7 @@ package com.music.service;
 import java.util.List;
 
 import com.music.domain.MemberVO;
+import com.music.domain.Member_authVO;
 import com.music.domain.PlaylistVO;
 import com.music.domain.ViewPlaylistDetailVO;
 import com.music.utility.Criteria;
@@ -48,4 +49,10 @@ public interface MemberService {
 
 	//멤버 삭제
 	public int deleteMember(String id);
+	
+	//멤버 권한 전부 삭제
+	public int deleteAuth(String id);
+	
+	//멤버에 권한 넣기
+	public int insertAuth(Member_authVO vo);
 }

@@ -167,7 +167,13 @@ ul.pro_dropdown_menu {
 .filebox .upload-display img {  /* 추가될 이미지 */
   display: block;
   max-width: 100%;
-  width: 100% \9;
+  width: 100%;
   height: auto;
+}
+
+.auth-table {
+	text-align: center; 
+	margin:30px; 
+	width: 60%;
 }
 

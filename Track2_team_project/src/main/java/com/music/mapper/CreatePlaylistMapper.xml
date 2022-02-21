@@ -51,6 +51,10 @@
 		select max(plbno) from playlist_m where id = #{id}
 	</select>
 	
+	<select id="minPlbno" resultType="int">
+		select min(plbno) from playlist_m where id = #{id}
+	</select>
+	
 	<insert id="insertBasicPlaylist">
 		<selectKey keyProperty="plbno" order="BEFORE" resultType="int">
 			select playlist_m_seq.nextval from dual
