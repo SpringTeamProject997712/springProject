@@ -19,7 +19,7 @@ public interface TrackMapper {
 	//관리자
 	
 	//페이징
-	public List<TrackVO> viewTrackListWithPaging(Criteria cri);
+	public List<TrackVO> viewTrackListWithPaging(int abno);
 	
 	//페이징
 	public int countTrack(Criteria cri);

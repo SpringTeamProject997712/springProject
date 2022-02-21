@@ -5,7 +5,7 @@
 		<sql id="search_box">
 			<trim prefix="(" suffix=") AND " prefixOverrides="OR">
 				<if test="keyword != null">
-					a.name like '%'||#{keyword}||'%'
+					name like '%'||#{keyword}||'%'
 				</if>
 			</trim>
 		</sql>

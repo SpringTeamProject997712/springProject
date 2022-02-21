@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.music.domain.AlbumVO;
 import com.music.domain.MemberVO;
@@ -92,7 +93,6 @@ public class AdminController {
 	@GetMapping("album/manage_album") //상품관리 - 상품 리스트 보기
 	public void viewProductList(Model model, Criteria cri) {
 		List<AlbumVO> alist = aService.viewAlbumListWithPaging(cri);
-		log.info(alist);
 		model.addAttribute("albumList", alist);
 		model.addAttribute("pageMaker", aService.pagingList(cri));
 	}
@@ -104,15 +104,13 @@ public class AdminController {
 
 	//트랙
 	
-	@GetMapping("album/manage_track") //상품관리 - 상품 리스트 보기
-	public void viewTrackList(Model model, Criteria cri) {
-		List<TrackVO> tlist = tService.viewTrackListWithPaging(cri);
-		log.info(tlist);
+	@GetMapping("track/manage_track") //상품관리 - 상품 리스트 보기
+	public void viewTrackList(int abno, Model model) {
+		List<TrackVO> tlist = tService.viewTrackListWithPaging(abno);
 		model.addAttribute("trackList", tlist);
-		model.addAttribute("pageMaker", tService.pagingList(cri));
 	}
 	
-	@GetMapping("album/view_track") //상품관리 - 상품 세부사항 보기
+	@GetMapping("track/view_track") //상품관리 - 상품 세부사항 보기
 	public void viewTrackDetail(Model model) {
 		
 	}

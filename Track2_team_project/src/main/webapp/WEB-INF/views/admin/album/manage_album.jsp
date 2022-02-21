@@ -64,19 +64,26 @@
                        </table>
                   </div>
                   <nav aria-label="Page navigation example">
-									  <ul class="pagination justify-content-center">
-									    <li class="page-item ${pageMaker.prev?'':'disabled'}"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-									    <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-									    	<li class="page-item active"><a class="page-link ${pageMaker.cri.pageNum == num?'active':''}" href="#">${num}</a></li>
-									    </c:forEach>
-									    <li class="page-item ${pageMaker.next?'':'disabled'}"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-									  </ul>
-									  
-									</nav>
+					  <ul class="pagination justify-content-center">
+					    <li class="page-item ${pageMaker.prev?'':'disabled'}"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+					    <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">	
+					    	<li class="page-item ${pageMaker.cri.pageNum == num?'active':''}"><a class="page-link" href="${num }">${num}</a></li>
+					    </c:forEach>
+					    <li class="page-item ${pageMaker.next?'':'disabled'}"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+					  </ul>
+					  
+					</nav>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      
+    <form id="actionForm" action="manage_album" method="get">
+		<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+		<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
+		<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">
+	</form>
+      
 <%@ include file="../admin_footer.jsp" %>
