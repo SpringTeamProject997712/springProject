@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 import com.music.domain.PlaylistVO;
+import com.music.domain.TrackVO;
 import com.music.domain.jPlayerVO;
 import com.music.security.domain.CustomUser;
 import com.music.service.CreatePlaylistService;
@@ -85,6 +86,25 @@ public class CreatePlaylistController {
 //		받은 plist를 json형식의 string으로 변환해 ajax로 반환한다.
 		
 		return json;
+	}
+	
+	@ResponseBody
+	@GetMapping("/deleteQue")
+	public String deleteQue(int tbno) {
+		String myName="";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			PlaylistVO pvo = new PlaylistVO();
+			
+			pvo.setTbno(tbno);
+			pvo.setPlbno(service.minPlbno(myName));
+			
+			service.deletePdbnoWithIdTbno(pvo);
+		}
+		
+		return "해냈다";
 	}
 	
 	/*

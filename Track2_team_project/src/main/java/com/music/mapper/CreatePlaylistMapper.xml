@@ -79,6 +79,12 @@
 		insert into playlist_detail_m (pdbno, abno, tbno, plbno) values (#{pdbno}, #{abno} ,#{tbno}, #{plbno})
 	</insert>
 	
+	<select id="selectMaxPdbno" resultType="int">
+		select max(pdbno) from playlist_detail_m where plbno=#{plbno} and tbno=#{tbno}
+	</select>
 	
+	<delete id="deletePlaylistDetail">
+		delete from playlist_detail_m where pdbno=#{pdbno}
+	</delete>
 
 </mapper>

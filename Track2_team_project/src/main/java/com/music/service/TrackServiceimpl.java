@@ -45,6 +45,7 @@ public class TrackServiceimpl implements TrackService {
 		jPlayerVO playlist = new jPlayerVO();
 		AlbumVO avo=amapper.readAlbum(tvo.getAbno());
 		
+		playlist.setTbno(tvo.getTbno());
 		playlist.setArtist(avo.getSinger());
 		playlist.setImage(avo.getImage());
 		playlist.setMp3("/upload/"+tvo.getSongrealname());

@@ -49,4 +49,10 @@ public interface CreatePlaylistMapper {
 	
 	//플레이리스트에 트랙 추가함
 	public int insertPlaylistDetail(PlaylistVO vo);
+	
+	//id랑 tbno를 plbno 이용해서 가장 큰 pdbno 찾음
+	public Integer selectMaxPdbno(PlaylistVO vo);
+	
+	//pdbno로 PlaylistDetail 삭제
+	public int deletePlaylistDetail(int pdbno);
 }

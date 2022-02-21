@@ -83,6 +83,11 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 	public int insertPlaylistDetail(PlaylistVO vo) {
 		return mapper.insertPlaylistDetail(vo);
 	}
+	//id와 tbno로
+	@Override
+	public int deletePdbnoWithIdTbno(PlaylistVO vo) {
+		return mapper.deletePlaylistDetail(mapper.selectMaxPdbno(vo));
+	}
 
 //======================================= private =======================================	
 	
@@ -93,6 +98,7 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 		for(int i=0; i<track.size(); i++) {
 			jPlayerVO playlist = new jPlayerVO();
 			AlbumVO avo=amapper.readAlbum(track.get(i).getAbno());
+			playlist.setTbno(track.get(i).getTbno());
 			playlist.setArtist(avo.getSinger());
 			playlist.setImage(avo.getImage());
 			playlist.setMp3("/upload/"+track.get(i).getSongrealname());
@@ -124,6 +130,8 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 		plist = convertTrackToJPlyer(mapper.viewTrackList5());
 		return plist;
 	}
+	
+
 	
 	
 	private List<jPlayerVO> addBasicPlaylist(){
