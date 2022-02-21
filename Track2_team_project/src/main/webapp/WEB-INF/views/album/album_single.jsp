@@ -50,7 +50,7 @@
 					<ul>
 						<li><a href="#"><span class="play_no">${view.rownum}</span><span class="play_hover"></span></a></li>
 						<li><a href="#">${view.tname}</a></li>
-						<li><a href="#">${view.name}</a></li>
+						<li><a href="#">${view.singer}</a></li>
 						<li class="text-center"><a href="#">5:26</a></li>
 						<li class="text-center"><a href="javascript:void(0)" class="fav_box" id="pbno_${view.pbno}">
 							<span class="ms_icon1 ms_fav_icon">

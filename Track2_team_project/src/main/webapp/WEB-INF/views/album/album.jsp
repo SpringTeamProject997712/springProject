@@ -126,7 +126,7 @@
                             <div class="ms_weekly_box">
                                 <div class="weekly_left">
                                     <span class="w_top_no">
-										${top.rownum }
+										${top.rownum}
 									</span>
                                     <div class="w_top_song">
                                         <div class="w_tp_song_img">
