@@ -2,6 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="com.music.mapper.TrackMapper">
+		<sql id="search_box">
+			<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+				<if test="keyword != null">
+					a.name like '%'||#{keyword}||'%'
+				</if>
+			</trim>
+		</sql>
 	
 	<insert id="insertTrack">
   		<selectKey keyProperty="tbno" order="BEFORE" resultType="int">
@@ -29,5 +36,33 @@
 	<select id="searchTrackList" resultType="com.music.domain.TrackVO">
 		select * from track_m where name like '%'||#{name}||'%'
 	</select>
+	
+	<!--   	어드민 -->
+  	<select id="viewTrackListWithPaging" resultType="com.music.domain.TrackVO">
+		<![CDATA[
+			select * from 
+		( 
+			select /*+ index_desc(track_m track_m_pk) */ rownum rn, tbno, abno, name, genre, detail, price, songname, songrealname, pbno from track_m 
+			where 
+		]]>
+		<include refid="search_box"></include>
+		<![CDATA[			
+					rownum <= #{amount} * #{pageNum}  order by abno desc
+				) 
+			where rn > #{amount} * (#{pageNum}-1)
+		]]>
+	</select>
+	
+	<select id="countTrack" resultType="int">
+			select count(*) from track_m a where 
+			<include refid="search_box"></include>
+			tbno > 0
+	</select>
+	
+	<update id="updateTrack">
+		update track_m set name=#{name}, genre=#{genre}, detail=#{detail}, price=#{price}, songname=#{songname}, songrealname=#{songrealname} 
+		where abno = #{abno}
+	</update>
+	
 </mapper>
 
