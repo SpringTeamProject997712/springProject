@@ -23,4 +23,8 @@ public interface TrackService {
 	
 	//페이징
 	public PageMaker pagingList(Criteria cri);
+	
+	//앨범 수정
+	public int updateTrack(TrackVO tvo);
+	
 }

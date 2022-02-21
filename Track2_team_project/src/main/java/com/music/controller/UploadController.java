@@ -156,7 +156,8 @@ public class UploadController {
 	public String insertTrack(AlbumVO album, ProductVO product, TrackVO track, GoodsVO goods, 
 			@RequestParam("uploadMusic") MultipartFile uploadMusic, 
 			@RequestParam("abno") AlbumVO albumName,
-			@RequestParam("pbno") int pbno, Model model) {
+			@RequestParam("pbno") int pbno, 
+			Model model) {
 		
 		String uploadFolder = "C:\\upload";
 		
@@ -170,7 +171,8 @@ public class UploadController {
 //		
 //		uploadMusicName = uuid.toString()+"_"+uploadMusicName;
 		
-		File uploadPath = new File(uploadFolder, getFolder());
+		File uploadPath = new File(uploadFolder, albumName.getName());
+		log.info(uploadPath);
 		
 		if(uploadPath.exists() == false) {
 			uploadPath.mkdirs();
