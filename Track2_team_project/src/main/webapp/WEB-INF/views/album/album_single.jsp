@@ -18,8 +18,8 @@
                         <a href="#" class="album_date">Released ${view[0].regdate} | Abc Music Company</a>
                     </div>
                     <div class="album_btn">
-                        <a href="#" class="ms_btn play_btn album_play_button" id="run_abno_${this_abno}"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">Play All</span><span class="pause_all"><img src="/images/svg/pause_all.svg" alt="">Pause</span></a>
-                        <a href="#" class="ms_btn album_add_queue" id="run_abno_${this_abno}"><span class="play_all"><img src="/images/svg/add_q.svg" alt="">Add To Queue</span></a>
+                        <a href="javascript:void(0)" class="ms_btn play_btn album_play_button" id="run_abno_${view[0].abno}"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">Play All</span><span class="pause_all"><img src="/images/svg/pause_all.svg" alt="">Pause</span></a>
+                        <a href="javascript:void(0)" class="ms_btn album_add_queue" id="run_abno_${view[0].abno}"><span class="play_all"><img src="/images/svg/add_q.svg" alt="">Add To Queue</span></a>
                     </div>
                 </div>
                 <div class="album_more_optn ms_more_icon">
