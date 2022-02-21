@@ -20,11 +20,11 @@
                   </li>
                 </ul> -->
                 <div class="tab-content rounded-bottom">
-                	<form name="privacyForm" method="post" class="row g-3">
+                	<form name="albumForm" method="post" class="row g-3">
                 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 									  <div class="col-md-6">
-									    <label class="form-label" for="member_id">ID</label>
-									    <input class="form-control" name="id" id="member_id" type="text" value="${member.id}" readonly="readonly">
+									    <label class="form-label" for="album_name">Album</label>
+									    <input class="form-control" name="name" id="album_name" type="text" value="${member.id}" readonly="readonly">
 									  </div>
 									  <div class="col-md-6">
 									    <label class="form-label" for="member_name">Name</label>
@@ -47,9 +47,13 @@
 									    <label class="form-label" for="inputAddress2">Address 2</label>
 									    <input class="form-control" name="address2" id="inputAddress2" type="text" value="${member.address2}">
 									  </div>
-									  <div class="col-12">
-									    <label class="form-label" for="inputPhone">Phone</label>
-									    <input class="form-control" name="phone" id="inputPhone" type="text" value="${member.phone}">
+									  <div class="col-md-6">
+									    <label class="form-label" for="AuthList">AuthList</label>
+								    	<input class="form-control" id="AuthList" type="text" value="이거 어케할까">
+									  </div>
+									  <div class="col-md-4">
+									    <label class="form-label" for="inputZip">Zip</label>
+									    <input class="form-control" id="inputZip" type="text">
 									  </div>
 									  <div class="col-md-2">
 									    <label class="form-label" for="inputState">계정 활성화</label>
@@ -66,7 +70,7 @@
 									  </div>
 									  <div class="col-12">
 									    <button class="btn btn-primary" type="button" onclick="go_update()">수정하기</button>
-									    <button class="btn btn-primary" type="button" onclick="location.href='/admin/member/manage_member'">목록보기</button>
+									    <button class="btn btn-primary" type="button" onclick="location.href='/admin/album/manage_album'">목록보기</button>
 									  </div>
 									</form>
                 </div>

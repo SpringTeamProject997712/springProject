@@ -41,7 +41,7 @@
                       <tbody>
                       	<c:forEach items="${albumList}" var="alist">
                         	<tr>
-	                          <td scope="row" ><a href="manage_track?abno=${alist.abno}">${alist.name}</a></td>
+	                          <td scope="row" ><a href="/admin/track/manage_track?abno=${alist.abno}">${alist.name}</a></td>
 	                          <td>${alist.singer}</td>
 	                          <td>${alist.price}</td>
 	                          <td><fmt:formatDate value="${alist.regdate}" pattern="yyyy-MM-dd"/></td>
