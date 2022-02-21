@@ -66,7 +66,12 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 		
 		case 3: //plbno의 플레이리스트 반환
 			plist = addMyPlaylist(vo.getPlbno());
+			break;
 		
+		case 4: //abno의 플레이리스트 반환
+			plist = addAlbumlist(vo.getAbno());
+			break;	
+			
 		}//switch end
 		
 		return plist;
@@ -134,6 +139,17 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 	private List<jPlayerVO> addRandomPlaylist() {
 		List<jPlayerVO> plist = new ArrayList<jPlayerVO>();
 		plist = convertTrackToJPlyer(mapper.viewTrackList5());
+		return plist;
+	}
+	
+	private List<jPlayerVO> addAlbumlist(int abno){
+		List<jPlayerVO> plist = new ArrayList<jPlayerVO>();
+		List<TrackVO> trackList =new ArrayList<TrackVO>();
+		List<AlbumVO> alist = amapper.readAlbum_single(abno);
+		for(int i=0; i<alist.size();i++) {
+			trackList.add(tmapper.selectTrack(alist.get(i).getTbno()));
+		}
+		plist=convertTrackToJPlyer(trackList);
 		return plist;
 	}
 	
