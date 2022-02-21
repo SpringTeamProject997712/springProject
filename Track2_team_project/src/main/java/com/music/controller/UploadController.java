@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.UUID;
 
 import javax.imageio.ImageIO;
 
@@ -85,7 +86,7 @@ public class UploadController {
 		
 //		uploadImageName = uuid.toString()+"_"+uploadImageName;
 		
-		File uploadPath = new File(uploadFolder, name);
+		File uploadPath = new File(uploadFolder, getFolder());
 		
 		if(uploadPath.exists() == false) {
 			uploadPath.mkdirs();
@@ -154,8 +155,8 @@ public class UploadController {
 	@PostMapping("/uploadpro_track")
 	public String insertTrack(AlbumVO album, ProductVO product, TrackVO track, GoodsVO goods, 
 			@RequestParam("uploadMusic") MultipartFile uploadMusic, 
-			@RequestParam("abno") AlbumVO albumName,
-			@RequestParam("pbno") int pbno, Model model) {
+			@RequestParam("pbno") int pbno, 
+			Model model) {
 		
 		String uploadFolder = "C:\\upload";
 		
@@ -170,13 +171,14 @@ public class UploadController {
 //		uploadMusicName = uuid.toString()+"_"+uploadMusicName;
 		
 		File uploadPath = new File(uploadFolder, getFolder());
+		log.info("업로드 패스 주소"+uploadPath);
 		
 		if(uploadPath.exists() == false) {
 			uploadPath.mkdirs();
 		}
 		
 		
-		File savemusic = new File(uploadPath, albumName.getName());
+		File savemusic = new File(uploadPath, uploadMusicName);
 		
 		String saveMusicUrl = uploadMusicName.toString();
 		log.info(saveMusicUrl);

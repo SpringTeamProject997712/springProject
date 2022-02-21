@@ -69,4 +69,10 @@ public class TrackServiceimpl implements TrackService {
 		PageMaker pageMaker = new PageMaker(cri, amount);
 		return pageMaker;
 	}
+
+	@Override
+	public int updateTrack(TrackVO tvo) {
+		int result = mapper.updateTrack(tvo);
+		return result;
+	}
 }
