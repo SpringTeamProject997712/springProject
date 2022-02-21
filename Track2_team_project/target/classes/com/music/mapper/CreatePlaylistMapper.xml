@@ -86,5 +86,9 @@
 	<delete id="deletePlaylistDetail">
 		delete from playlist_detail_m where pdbno=#{pdbno}
 	</delete>
+	
+	<delete id="clearQue">
+		delete from playlist_detail_m where plbno=#{plbno}
+	</delete>
 
 </mapper>

@@ -57,6 +57,20 @@ public class CreatePlaylistController {
 	}
 	
 	@ResponseBody
+	@GetMapping("/clearQueue")
+	public String clearQueue() {
+		String myName="";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			int plbno = service.minPlbno(myName);
+			service.clearQue(plbno);
+		}
+		return "얏따";
+	}
+	
+	@ResponseBody
 	@GetMapping("/addOneTrack")
 	public String addOneTrack(PlaylistVO vo) {
 		
@@ -69,16 +83,17 @@ public class CreatePlaylistController {
 	
 	@ResponseBody //ajax로 플레이리스트를 받는 친구
 	@RequestMapping(value="/addPlayList", produces = "application/text; charset=utf8", method = RequestMethod.GET)
-	public String addRandomPlayList(int menu) {
+	public String addRandomPlayList(PlaylistVO vo) {
 		
 		List<jPlayerVO> plist = new ArrayList<jPlayerVO>(); //여기에 담아서 리턴함
 		
-		//숫자에 따라 처리함
+		//menu 숫자에 따라 처리함
 		//1: track에서 다섯개 뽑아서 반환
 		//2: basic_playlist 반환
-		//3: 
+		//3: plbno의 플레이리스트 반환
+		//4: abno의 플레이리스트 반환
 		
-		plist = service.selectMethod(menu);
+		plist = service.selectMethod(vo);
 		
 		Gson gson = new Gson();
 		String json = gson.toJson(plist);

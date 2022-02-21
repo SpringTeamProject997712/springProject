@@ -55,4 +55,10 @@ public interface CreatePlaylistMapper {
 	
 	//pdbno로 PlaylistDetail 삭제
 	public int deletePlaylistDetail(int pdbno);
+	
+	//플레이 리스트 안에있는 플레이리스트 디테일
+	public List<PlaylistVO> selectPlaylistDetails(int plbno);
+	
+	//플레이리스트 초기화
+	public int clearQue(int plbno);
 }

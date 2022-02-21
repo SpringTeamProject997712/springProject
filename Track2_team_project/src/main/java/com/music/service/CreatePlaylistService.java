@@ -7,7 +7,7 @@ import com.music.domain.jPlayerVO;
 
 public interface CreatePlaylistService {
 
-	public List<jPlayerVO> selectMethod(int menu);
+	public List<jPlayerVO> selectMethod(PlaylistVO vo);
 	public int insertBasicPlaylist(String id);
 	public int insertPlaylist(PlaylistVO pvo);
 	public int countPlaylist(String id);
@@ -15,4 +15,5 @@ public interface CreatePlaylistService {
 	public int insertPlaylistDetail(PlaylistVO vo);
 	public int minPlbno(String id);
 	public int deletePdbnoWithIdTbno(PlaylistVO vo);
+	public int clearQue(int plbno);
 }

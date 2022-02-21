@@ -19,8 +19,8 @@
                         <a href="#" class="album_date"></a>
                     </div>
                     <div class="album_btn">
-                        <a href="#" class="ms_btn play_btn"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">Play All</span><span class="pause_all"><img src="/images/svg/pause_all.svg" alt="">Pause</span></a>
-                        <a href="#" class="ms_btn"><span class="play_all"><img src="/images/svg/add_q.svg" alt="">Add To Queue</span></a>
+                        <a href="javascript:void(0)" class="ms_btn play_btn playlist_play_button" id="go_plbno_${this_plbno}"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">Play All</span><span class="pause_all"><img src="/images/svg/pause_all.svg" alt="">Pause</span></a>
+                        <a href="#" class="ms_btn playlist_add_queue" id="go_plbno_${this_plbno}"><span class="play_all"><img src="/images/svg/add_q.svg" alt="">Add To Queue</span></a>
                     </div>
                 </div>
                 <div class="album_more_optn ms_more_icon">

@@ -47,7 +47,7 @@ public class TrackServiceimpl implements TrackService {
 		
 		playlist.setTbno(tvo.getTbno());
 		playlist.setArtist(avo.getSinger());
-		playlist.setImage(avo.getImage());
+		playlist.setImage(avo.getImage_50());
 		playlist.setMp3("/upload/"+tvo.getSongrealname());
 		playlist.setOption("myPlayListOtion");
 		playlist.setTitle(tvo.getName());
