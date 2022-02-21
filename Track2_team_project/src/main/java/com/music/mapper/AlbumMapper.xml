@@ -26,8 +26,6 @@
 		]]>
 	</select>
 	
-	
-
 	<select id="readAlbum" resultType="com.music.domain.AlbumVO">
 		select * from album_m where abno = #{abno}
 	</select>

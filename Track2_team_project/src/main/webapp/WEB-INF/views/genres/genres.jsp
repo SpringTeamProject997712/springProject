@@ -30,7 +30,7 @@
                     <div class="col-lg-12">
                         <div class="ms_heading">
                             <h1>Top Genres</h1>
-                            <span class="veiw_all"><a href="#">view more</a></span>
+                            <span class="veiw_all"><a href="genres_single?genre=1">view more</a></span>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="ovrly_text_div">
                                     <span class="ovrly_text1"><a href="#">romantic</a></span>
-                                    <span class="ovrly_text2"><a href="/genres/genres_single">view song</a></span>
+                                    <span class="ovrly_text2"><a href="/genres/genres_single?genre=1">view song</a></span>
                                 </div>
                             </div>
                             <div class="ms_box_overlay_on">
@@ -65,7 +65,7 @@
                                         </div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="#">Classical</a></span>
-											<span class="ovrly_text2"><a href="genres_single.html">view song</a></span>
+											<span class="ovrly_text2"><a href="/genres/genres_single?genre=2">view song</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
@@ -85,7 +85,7 @@
                                         </div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="#">hip hop</a></span>
-											<span class="ovrly_text2"><a href="genres_single.html">view song</a></span>
+											<span class="ovrly_text2"><a href="/genres_single?genre=3">view song</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
@@ -105,7 +105,7 @@
                                         </div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="#">dancing</a></span>
-											<span class="ovrly_text2"><a href="genres_single.html">view song</a></span>
+											<span class="ovrly_text2"><a href="/genres_single?genre=4">view song</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
@@ -125,7 +125,7 @@
                                         </div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="#">EDM</a></span>
-											<span class="ovrly_text2"><a href="genres_single.html">view song</a></span>
+											<span class="ovrly_text2"><a href="/genres/genres_single?genre=5">view song</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
@@ -147,7 +147,7 @@
                                 </div>
                                 <div class="ovrly_text_div">
                                     <span class="ovrly_text1"><a href="#">rock</a></span>
-									<span class="ovrly_text2"><a href="genres_single.html">view song</a></span>
+									<span class="ovrly_text2"><a href="/genres/genres_single?genre=6">view song</a></span>
                                 </div>
                             </div>
                             <div class="ms_box_overlay_on">
@@ -169,7 +169,7 @@
                                         </div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="#">Jazz</a></span>
-											<span class="ovrly_text2"><a href="genres_single.html">view song</a></span>
+											<span class="ovrly_text2"><a href="/genres/genres_single?genre=7">view song</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
@@ -189,7 +189,7 @@
                                         </div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="#">metal</a></span>
-											<span class="ovrly_text2"><a href="genres_single.html">view song</a></span>
+											<span class="ovrly_text2"><a href="/genres/genres_single?genre=8">view song</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
@@ -209,7 +209,7 @@
                                         </div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="#">pop</a></span>
-											<span class="ovrly_text2"><a href="genres_single.html">view song</a></span>
+											<span class="ovrly_text2"><a href="/genres/genres_single?genre=9">view song</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
@@ -229,7 +229,7 @@
                                         </div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="#">folk</a></span>
-											<span class="ovrly_text2"><a href="genres_single.html">view song</a></span>
+											<span class="ovrly_text2"><a href="/genres/genres_single?genre=10">view song</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
@@ -249,7 +249,7 @@
                                         </div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="#">indie</a></span>
-											<span class="ovrly_text2"><a href="genres_single.html">view song</a></span>
+											<span class="ovrly_text2"><a href="/genres/genres_single?genre=11">view song</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
@@ -271,7 +271,7 @@
                                 </div>
                                 <div class="ovrly_text_div">
                                     <span class="ovrly_text1"><a href="#">soul</a></span>
-									<span class="ovrly_text2"><a href="genres_single.html">view song</a></span>
+									<span class="ovrly_text2"><a href="/genres/genres_single?genre=12">view song</a></span>
                                 </div>
                             </div>
                             <div class="ms_box_overlay_on">
@@ -291,7 +291,7 @@
                                 </div>
                                 <div class="ovrly_text_div">
                                     <span class="ovrly_text1"><a href="#">blues</a></span>
-                                    <span class="ovrly_text2"><a href="#">view song</a></span>
+                                    <span class="ovrly_text2"><a href="/genres_single?genre=13">view song</a></span>
                                 </div>
                             </div>
                             <div class="ms_box_overlay_on">
