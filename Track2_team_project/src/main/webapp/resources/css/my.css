@@ -98,10 +98,61 @@ ul.pro_dropdown_menu {
 @media(min-width: 768px) { 
   .filebox .upload-display {
     display: inline-block;
-    margin-right: 5px;
+    border-radius: 15px;
+        margin-right: 5px;
     margin-bottom: 0;
   }
 }
+
+.myMusicForPlaylist {
+    display: none;
+    overflow: hidden;
+}
+
+.myMusicForPlaylist-dialog {
+    max-width: 930px;
+    width: 100%;
+}
+
+.instantTableMaker{
+	overflow: auto;
+  height: 255px;
+  overflow-x: hidden;
+  background-color: #14182a;
+  margin-top: 15px;
+  border-radius: 20px;
+}
+
+.instant_table_wrapper{
+	display:none;
+	overflow: auto;
+  height: 255px;
+  overflow-x: hidden;
+  background-color: #14182a;
+  margin-top: 15px;
+  border-radius: 20px;
+}
+
+.add_playlist_btn{
+	margin:30px;
+	margin-left:900px;
+}
+
+.musicSearch_on{
+	font-size: 14px;
+}
+
+.padding_top_10{
+	padding-top: 10px;
+}
+
+.click_for_playlist{
+}
+
+.click_for_playlist:hover {
+	background: #313a68;
+}
+
 
 .filebox .upload-thumb-wrap {  /* 추가될 이미지를 감싸는 요소 */
   display: inline-block;

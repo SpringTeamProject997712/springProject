@@ -66,7 +66,7 @@ public class UploadController {
 			@RequestParam("name") String name,
 			@RequestParam("pbno") int pbno,
 			Model model) throws IOException {
-		
+
 //		MultipartFile multipartFile = portfolio.getUploadFile();
 		String uploadFolder = "C:\\upload";
 		log.info("file name : "+uploadImage.getOriginalFilename());
@@ -108,10 +108,6 @@ public class UploadController {
 			e.printStackTrace();
 		}
 		
-		
-		
-		
-		
 		// 리사이징
 		File saveimage_240 = new File(uploadFolder, uploadImageName);
 		File saveimage_50 = new File(uploadFolder, uploadImageName);
@@ -131,6 +127,9 @@ public class UploadController {
         
 //        ImageIO.write(resizedImage_240, "jpg", new File(uploadFolder, uploadImageName+"_240.jpg"));
         ImageIO.write(resizedImage_240, "jpg", new File(uploadFolder, strImageName+"_240.jpg"));
+        log.info("folder::"+uploadFolder);
+        log.info("imagename::"+uploadImageName);
+        log.info("imagename::"+strImageName);
         
         BufferedImage resizedImage_50 = resize(inputStream_50 ,width_50, height_50);
         
@@ -145,7 +144,7 @@ public class UploadController {
 		}
         
         pservice.insertProduct(product);
-		
+    	
 		pservice.insertAlbum(album);
 		album.setPbno(pbno);
         

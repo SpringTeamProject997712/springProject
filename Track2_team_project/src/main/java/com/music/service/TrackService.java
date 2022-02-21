@@ -16,6 +16,8 @@ public interface TrackService {
 	
 	public jPlayerVO convertTrackToJPlayer(TrackVO tvo);
 	
+	public List<TrackVO> searchTrackList(String name);
+	
 	//관리자
 	
 	//트랙관리자 리스트

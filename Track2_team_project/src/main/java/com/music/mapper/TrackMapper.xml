@@ -24,6 +24,9 @@
 		select * from track_m where tbno = #{tbno}
 	</select>
 	
+	<select id="searchTrackList" resultType="com.music.domain.TrackVO">
+		select * from track_m where name like '%'||#{name}||'%'
+	</select>
 	
 	<!--   	어드민 -->
   	<select id="viewTrackListWithPaging" resultType="com.music.domain.TrackVO">

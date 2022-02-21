@@ -1,4 +1,7 @@
-<%@ include file="../header.jsp" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@include file="../header.jsp"%>
+
 
         <!---Side Menu Start--->
       	<!----Album Single Section Start---->
@@ -7,190 +10,19 @@
             <!----Free Download Css Start---->
             <div class="ms_free_download ms_purchase_wrapper">
                 <div class="ms_heading">
-                    <h1>Your Favourites</h1>
+                    <h1>Your Cart List</h1>
                 </div>
 				<div class="album_inner_list">
 					<div class="album_list_wrapper">
 						<ul class="album_list_name">
 							<li>#</li>
-							<li>Song Title</li>
+							<li>Name</li>
 							<li>Album</li>
 							<li class="text-center">price</li>
 							<li class="text-center">Duration</li>
 							<li class="text-center">Add To Favourites</li>
 							<li class="text-center">More</li>
 							<li class="text-center">remove</li>
-						</ul>
-						<ul>
-							<li><a href="#"><span class="play_no">01</span><span class="play_hover"></span></a></li>
-							<li><a href="#">Bloodlust</a></li>
-							<li><a href="#">Dream Your Moments</a></li>
-							<li class="text-center"><a href="#">$5</a></li>
-							<li class="text-center"><a href="#">5:26</a></li>
-							<li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
-							<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
-								<ul class="more_option">
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-								</ul>
-							</li>
-							<li class="text-center"><a href="#"><span class="ms_close">
-									<img src="/images/svg/close.svg" alt=""></span></a></li>
-						</ul>
-						<ul>
-							<li><a href="#"><span class="play_no">02</span><span class="play_hover"></span></a></li>
-							<li><a href="#">Desired Games</a></li>
-							<li><a href="#">Dream Your Moments</a></li>
-							<li class="text-center"><a href="#">$5</a></li>
-							<li class="text-center"><a href="#">5:26</a></li>
-							<li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
-							<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
-								<ul class="more_option">
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-								</ul>
-							</li>
-							<li class="text-center"><a href="#"><span class="ms_close">
-									<img src="/images/svg/close.svg" alt=""></span></a></li>
-						</ul>
-						<ul>
-							<li><a href="#"><span class="play_no">03</span><span class="play_hover"></span></a></li>
-							<li><a href="#">Until I Met You</a></li>
-							<li><a href="#">Dream Your Moments</a></li>
-							<li class="text-center"><a href="#">$5</a></li>
-							<li class="text-center"><a href="#">5:26</a></li>
-							<li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
-							<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
-								<ul class="more_option">
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-								</ul>
-							</li>
-							<li class="text-center"><a href="#"><span class="ms_close">
-									<img src="/images/svg/close.svg" alt=""></span></a></li>
-						</ul>
-						<ul class="play_active_song">
-							<li><a href="#"><span class="play_no">04</span><span class="play_hover"></span></a></li>
-							<li><a href="#">Dark Alley Acoustic</a></li>
-							<li><a href="#">Dream Your Moments</a></li>
-							<li class="text-center"><a href="#">free</a></li>
-							<li class="text-center"><a href="#">5:26</a></li>
-							<li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
-							<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
-								<ul class="more_option">
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-								</ul>
-							</li>
-							<li class="text-center"><a href="#"><span class="ms_close">
-									<img src="/images/svg/close.svg" alt=""></span></a></li>
-						</ul>
-						<ul>
-							<li><a href="#"><span class="play_no">05</span><span class="play_hover"></span></a></li>
-							<li><a href="#">Cloud nine</a></li>
-							<li><a href="#">Dream Your Moments</a></li>
-							<li class="text-center"><a href="#">$5</a></li>
-							<li class="text-center"><a href="#">5:26</a></li>
-							<li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
-							<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
-								<ul class="more_option">
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-								</ul>
-							</li>
-							<li class="text-center"><a href="#"><span class="ms_close">
-									<img src="/images/svg/close.svg" alt=""></span></a></li>
-						</ul>
-						<ul>
-							<li><a href="#"><span class="play_no">06</span><span class="play_hover"></span></a></li>
-							<li><a href="#">Walking Promises</a></li>
-							<li><a href="#">Dream Your Moments</a></li>
-							<li class="text-center"><a href="#">free</a></li>
-							<li class="text-center"><a href="#">5:26</a></li>
-							<li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
-							<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
-								<ul class="more_option">
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-								</ul>
-							</li>
-							<li class="text-center"><a href="#"><span class="ms_close">
-									<img src="/images/svg/close.svg" alt=""></span></a></li>
-						</ul>
-						<ul>
-							<li><a href="#"><span class="play_no">07</span><span class="play_hover"></span></a></li>
-							<li><a href="#">Endless Things</a></li>
-							<li><a href="#">Dream Your Moments</a></li>
-							<li class="text-center"><a href="#">$5</a></li>
-							<li class="text-center"><a href="#">5:26</a></li>
-							<li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
-							<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
-								<ul class="more_option">
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-								</ul>
-							</li>
-							<li class="text-center"><a href="#"><span class="ms_close">
-									<img src="/images/svg/close.svg" alt=""></span></a></li>
-						</ul>
-						<ul>
-							<li><a href="#"><span class="play_no">08</span><span class="play_hover"></span></a></li>
-							<li><a href="#">Gimme Some Courage</a></li>
-							<li><a href="#">Dream Your Moments</a></li>
-							<li class="text-center"><a href="#">$5</a></li>
-							<li class="text-center"><a href="#">5:26</a></li>
-							<li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
-							<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
-								<ul class="more_option">
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-								</ul>
-							</li>
-							<li class="text-center"><a href="#"><span class="ms_close">
-									<img src="/images/svg/close.svg" alt=""></span></a></li>
-						</ul>
-						<ul>
-							<li><a href="#"><span class="play_no">09</span><span class="play_hover"></span></a></li>
-							<li><a href="#">One More Stranger</a></li>
-							<li><a href="#">Dream Your Moments</a></li>
-							<li class="text-center"><a href="#">$5</a></li>
-							<li class="text-center"><a href="#">5:26</a></li>
-							<li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
-							<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
-								<ul class="more_option">
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-								</ul>
-							</li>
-							<li class="text-center"><a href="#"><span class="ms_close">
-									<img src="/images/svg/close.svg" alt=""></span></a></li>
 						</ul>
 						<ul>
 							<li><a href="#"><span class="play_no">10</span><span class="play_hover"></span></a></li>
@@ -505,5 +337,5 @@
         </div>
       </div>
         <!----Footer Start---->
-        
-        <%@ include file="../footer.jsp" %>
+       
+<%@include file="../footer.jsp"%>

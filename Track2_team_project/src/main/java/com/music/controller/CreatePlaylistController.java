@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,8 +13,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
+import com.music.domain.PlaylistVO;
 import com.music.domain.jPlayerVO;
+import com.music.security.domain.CustomUser;
 import com.music.service.CreatePlaylistService;
+import com.music.service.TrackService;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -25,8 +30,40 @@ public class CreatePlaylistController {
 	@Setter(onMethod_ = @Autowired)
 	CreatePlaylistService service;
 	
+	@Setter(onMethod_ = @Autowired)
+	TrackService tservice;
+	
 	@GetMapping("/createPlaylist")
 	public void createPlaylistView() {
+	}
+	
+	@ResponseBody
+	@GetMapping("/insertPlaylist")
+	public String insertPlaylist() {
+		PlaylistVO pvo = new PlaylistVO();
+		String myName="";
+		String result = "1";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			pvo.setId(myName);
+			pvo.setName("New Playlist"+(service.countPlaylist(myName)+1));
+			service.insertPlaylist(pvo);
+			result = "/member/my_playlist/one_playlist?plbno="+service.maxPlbno(myName);
+		}
+		return result;
+	}
+	
+	@ResponseBody
+	@GetMapping("/addOneTrack")
+	public String addOneTrack(PlaylistVO vo) {
+		
+		int abno = tservice.selectTrack(vo.getTbno()).getAbno();
+		vo.setAbno(abno);
+		int result=service.insertPlaylistDetail(vo);
+		
+		return result>0?"1":"0";
 	}
 	
 	@ResponseBody //ajax로 플레이리스트를 받는 친구

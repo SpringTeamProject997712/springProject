@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <!-- main css files links -->
-<%@ include file="../header.jsp" %>
+<%@ include file="../../header.jsp" %>
 
         <!----Album Single Section Start---->
         <div class="ms_album_single_wrapper">
@@ -10,12 +10,13 @@
                 <div class="album_single_img">
                     <img src="${pageContext.request.contextPath}/upload/${view[0].image}" alt="" class="img-fluid">
                 </div>
+                <input type="hidden" id="this_plbno" value="${this_plbno}">
                 <div class="album_single_text">
                     <h2>${view[0].name}</h2>
-                    <p class="singer_name">By - ${view[0].singer}</p>
+                    <p class="singer_name">By - ${view[0].id}</p>
                     <div class="album_feature">
-                        <a href="#" class="album_date">5 song | 25:10</a>
-                        <a href="#" class="album_date">Released ${view[0].regdate} | Abc Music Company</a>
+                        <a href="#" class="album_date">${countTrack} songs | 25:10</a>
+                        <a href="#" class="album_date"></a>
                     </div>
                     <div class="album_btn">
                         <a href="#" class="ms_btn play_btn"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">Play All</span><span class="pause_all"><img src="/images/svg/pause_all.svg" alt="">Pause</span></a>
@@ -46,16 +47,15 @@
 					</ul>
 					
 					<!-- track list start -->
-					<c:forEach var="view" items="${view}">
+				<c:if test="${not empty view}">
+					<c:set value="${1}" var="num"/>
+					<c:forEach var="viewOne" items="${view}">
 					<ul>
-						<li><a href="#"><span class="play_no">${view.tbno}</span><span class="play_hover"></span></a></li>
-						<li><a href="#">${view.tname}</a></li>
-						<li><a href="#">${view.name}</a></li>
+						<li><a href="#"><span class="play_no">${num}</span><span class="play_hover"></span></a></li>
+						<li><a href="#">${viewOne.tname}</a></li>
+						<li><a href="#">${viewOne.singer}</a></li>
 						<li class="text-center"><a href="#">5:26</a></li>
-						<li class="text-center"><a href="javascript:void(0)" class="fav_box" id="pbno_${view.pbno}">
-							<span class="ms_icon1 ms_fav_icon">
-							</span>
-						</a></li>
+						<li class="text-center"><a href="javascript:void(0);" class="fav_box" id="pbno_${viewOne.pbno}"><span class="ms_icon1 ms_fav_icon"></span></a></li>
 						<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
 							<ul class="more_option">
 								<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
@@ -65,10 +65,51 @@
 								<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
 							</ul>
 						</li>
+						<c:set value="${num+1}" var="num"/>
 					</ul>
+					
 					</c:forEach>
+				</c:if>
+				<c:if test="${empty view}">
+						<h2 style="font-size: 20px; text-align: center; padding:20px">新しい歌を追加して 自分だけのプレイリストを作りましょう</h2>
+						
+				</c:if>
 					<!-- track list end -->
-				
+					<span class="btn text-center add_playlist_btn"><a href="javascript:void(0)" class="ms_btn musicSearch_on"><span class="play_all">+追加する</span></a></span>
+					
+					<!-- 모달 -->
+					<div id="musicSearchMan" class="myMusicForPlaylist">
+            <div class="myMusicForPlaylist-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <button type="button" class="close">
+											<i class="fa_icon form_close"></i>
+										</button>
+                    <div class="modal-body">
+                        <div class="ms_register_img">
+                            <img src="/images/register_img.png" alt="" class="img-fluid" />
+                        </div>
+                        <div class="musicSearch_form ms_register_form">
+                          <h2>ミュージック検索"</h2>
+                          <form action="/member/join" method="post" name="joinForm">
+                          	<input id="csrfToken" type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+	                          <div class="form-group">
+	                            <input type="text" name="musicName" id="musicSearcherForPlaylist" placeholder="" class="form-control">
+	                            <span class="form_icon">
+																<i class="fa_icon form-user" aria-hidden="true"></i>
+															</span>
+	                          </div>
+	                          <a href="javascript:go_searchForPlaylist()" class="ms_btn">search</a>
+                       		</form>
+                       		<div class="instantTableMaker" id="instantTable">
+	                        </div>
+                        </div>
+                    </div>
+                    <!-- modalbody -->
+                </div>
+            </div>
+        </div>
+        <!-- 모달끝 -->
 				</div>
 			</div>
         </div>
@@ -837,5 +878,5 @@
             <!----Main div close---->
         </div>
         </div>
-        <%@include file="../footer.jsp" %>
+        <%@include file="../../footer.jsp" %>
         

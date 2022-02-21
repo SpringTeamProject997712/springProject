@@ -60,7 +60,7 @@
 															  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
 															    <li><a class="dropdown-item" href="/admin/member/view_member?id=${mlist.id}">세부정보 조회 /수정</a></li>
 															    <li><a class="dropdown-item" id="${mlist.id}" onclick="go_member_delete(this.id)" href="javascript:void(0)">아이디 비활성화</a></li>
-															    <li><a class="dropdown-item" href="#">Something else here</a></li>
+															    <li><a class="dropdown-item" href="/admin/member/role_update?id=${mlist.id}">권한 추가/제거</a></li>
 															    <li>
 															      <hr class="dropdown-divider">
 															    </li>

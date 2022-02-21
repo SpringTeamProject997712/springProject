@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.music.domain.AlbumVO;
 import com.music.domain.MemberVO;
+import com.music.domain.Member_authVO;
 import com.music.domain.TrackVO;
 import com.music.service.AlbumService;
 import com.music.service.MemberService;
@@ -74,6 +75,12 @@ public class AdminController {
 	
 	@GetMapping("/member/view_member")//유저관리 - 유저 세부사항 보기
 	public void viewMemberDetail(Model model, String id ) {
+		MemberVO member = mService.viewMember(id);
+		model.addAttribute("member",member);
+	}
+	
+	@GetMapping("/member/role_update")
+	public void updateRole(String id, Model model) {
 		MemberVO member = mService.viewMember(id);
 		model.addAttribute("member",member);
 	}

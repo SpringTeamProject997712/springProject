@@ -41,13 +41,17 @@ public class TrackServiceimpl implements TrackService {
 		jPlayerVO playlist = new jPlayerVO();
 		AlbumVO avo=amapper.readAlbum(tvo.getAbno());
 		playlist.setArtist(avo.getSinger());
-		playlist.setImage("/images/"+avo.getImage());
-		playlist.setMp3(tvo.getSongrealname());
+		playlist.setImage(avo.getImage());
+		playlist.setMp3("/upload/"+tvo.getSongrealname());
 		playlist.setOption("myPlayListOtion");
 		playlist.setTitle(tvo.getName());
 		return playlist;
 	}
-
+	
+	@Override
+	public List<TrackVO> searchTrackList(String name) {
+		return mapper.searchTrackList(name);
+	}
 	@Override
 	public List<TrackVO> viewTrackListWithPaging(Criteria cri) {
 		return mapper.viewTrackListWithPaging(cri);

@@ -47,13 +47,9 @@
 									    <label class="form-label" for="inputAddress2">Address 2</label>
 									    <input class="form-control" name="address2" id="inputAddress2" type="text" value="${member.address2}">
 									  </div>
-									  <div class="col-md-6">
-									    <label class="form-label" for="AuthList">AuthList</label>
-								    	<input class="form-control" id="AuthList" type="text" value="이거 어케할까">
-									  </div>
-									  <div class="col-md-4">
-									    <label class="form-label" for="inputZip">Zip</label>
-									    <input class="form-control" id="inputZip" type="text">
+									  <div class="col-12">
+									    <label class="form-label" for="inputPhone">Phone</label>
+									    <input class="form-control" name="phone" id="inputPhone" type="text" value="${member.phone}">
 									  </div>
 									  <div class="col-md-2">
 									    <label class="form-label" for="inputState">계정 활성화</label>
