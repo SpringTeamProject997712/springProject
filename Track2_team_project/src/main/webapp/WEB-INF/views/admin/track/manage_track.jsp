@@ -49,7 +49,7 @@
 
 								<c:forEach items="${trackList}" var="tlist">
                         	<tr>
-	                          <td scope="row" ><a href="manage_track?abno=${tlist.tbno}">${tlist.name}</a></td>
+	                          <td scope="row" ><a class="namelink" href="manage_track?abno=${tlist.tbno}">${tlist.name}</a></td>
 	                          <td><audio controls src="/upload/${tlist.songrealname }"></audio></td>
 	                          <td>${tlist.genre}</td>
 	                          <td>${tlist.price}</td>
