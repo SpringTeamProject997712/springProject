@@ -69,7 +69,7 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 			break;
 		
 		case 4: //abno의 플레이리스트 반환
-			plist = addAlbumlist(vo.getAbno());
+			plist = addAlbumlist(vo);
 			break;	
 			
 		}//switch end
@@ -142,12 +142,17 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 		return plist;
 	}
 	
-	private List<jPlayerVO> addAlbumlist(int abno){
+	private List<jPlayerVO> addAlbumlist(PlaylistVO vo){
 		List<jPlayerVO> plist = new ArrayList<jPlayerVO>();
 		List<TrackVO> trackList =new ArrayList<TrackVO>();
-		List<AlbumVO> alist = amapper.readAlbum_single(abno);
+		List<AlbumVO> alist = amapper.readAlbum_single(vo.getAbno());
 		for(int i=0; i<alist.size();i++) {
 			trackList.add(tmapper.selectTrack(alist.get(i).getTbno()));
+			PlaylistVO pvo = new PlaylistVO();
+			pvo.setAbno(vo.getAbno());
+			pvo.setTbno(trackList.get(i).getTbno());
+			pvo.setId(vo.getId());
+			insertPlaylistDetail(pvo);
 		}
 		plist=convertTrackToJPlyer(trackList);
 		return plist;
@@ -159,6 +164,7 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 		List<PlaylistVO> playlist_view = mapper.selectPlaylist(plbno);
 		for(int i=0; i<playlist_view.size(); i++) {
 			trackList.add(tmapper.selectTrack(playlist_view.get(i).getTbno()));
+			insertPlaylistDetail(playlist_view.get(i));
 		}
 		plist=convertTrackToJPlyer(trackList);
 		return plist;

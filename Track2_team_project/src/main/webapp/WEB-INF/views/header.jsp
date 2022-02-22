@@ -124,7 +124,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="favourite.html" title="Favourites">
+                        <li><a href="/member/favourite" title="Favourites">
 						<span class="nav_icon">
 							<span class="icon icon_favourite"></span>
 						</span>
