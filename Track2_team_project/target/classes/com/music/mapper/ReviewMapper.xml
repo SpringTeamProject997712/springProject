@@ -7,12 +7,11 @@
 			select review_m_seq.nextval from dual
 		</selectKey>
 		
-		insert into review_m(rbno, id, title,  image, content, stargage) 
-<!--values (#{rbno}, #{id}, #{title}, #{image}, #{content}, #{stargage})-->
-		values (#{rbno}, #{id}, #{title}, '임시', #{content}, #{stargage})
+		insert into review_m(rbno, pbno, id, title,  image, content, stargage) 
+		values (#{rbno}, #{pbno} , #{id}, #{title}, '임시', #{content}, #{stargage})
 	</insert>
 
-	<select id="selectReview" resultType="con.music.domain.ReviewVO">
+	<select id="selectReview" resultType="com.music.domain.ReviewVO">
 		select * from review_m where pbno = #{pbno}
 	
 	</select>

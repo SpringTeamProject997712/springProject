@@ -180,3 +180,13 @@ ul.pro_dropdown_menu {
 .ms_input_group1 {
 	width: 76%;
 }
+
+.album_review_selector{
+ height:40px; padding:5px; width:160px; padding-left: 20px; font-size: 16px;
+}
+
+.album_favou_box{
+right: 45px;
+top: 23px; position:absolute;
+cursor: pointer;
+}

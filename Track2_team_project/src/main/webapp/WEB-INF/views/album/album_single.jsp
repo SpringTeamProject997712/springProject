@@ -12,9 +12,14 @@
                 </div>
                 <div class="album_single_text">
                     <h2>${view[0].name}</h2>
+                    <a href="javascript:void(0)" class="fav_box album_favou_box" id="pbno_${this_album.pbno}">
+											<span class="ms_icon1 ms_fav_icon">
+											</span>
+										</a>
                     <p class="singer_name">By - ${view[0].singer}</p>
                     <div class="album_feature">
                         <a href="#" class="album_date">5 song | 25:10</a>
+                        
                         <a href="#" class="album_date">Released ${view[0].regdate} | Abc Music Company</a>
                     </div>
                     <div class="album_btn">
@@ -46,9 +51,10 @@
 					</ul>
 					
 					<!-- track list start -->
+					<c:set value="${1}" var="num"/>
 					<c:forEach var="view" items="${view}">
 					<ul>
-						<li><a href="#"><span class="play_no">${view.tbno}</span><span class="play_hover"></span></a></li>
+						<li><a class="play_track_in_album" id="${view.tbno}" href="javascript:void(0)" ><span class="play_no">${num}</span><span class="play_hover"></span></a></li>
 						<li><a href="#">${view.tname}</a></li>
 						<li><a href="#">${view.singer}</a></li>
 						<li class="text-center"><a href="#">5:26</a></li>
@@ -66,6 +72,7 @@
 							</ul>
 						</li>
 					</ul>
+					<c:set value="${num+1}" var="num"/>
 					</c:forEach>
 					<!-- track list end -->
 				
@@ -80,9 +87,10 @@
                     <h1>コメント (숫자)</h1>
                 </div>
                 <div class="ms_test_slider swiper-container">
-                    <div class="swiper-wrapper">
+                	<div class="swiper-wrapper">
                        
-                       <!-- comments end -->
+	                <!-- comments start -->
+                  <c:forEach items="${album_comments}" var="comments">
                         <div class="swiper-slide">
                             <div class="ms_test_box">
                                 <div class="ms_test_top">
@@ -90,15 +98,16 @@
                                         <img src="/images/user1.jpg" alt="">
                                     </div>
                                     <div class="ms_test_name">
-                                        <h3>Frank Adler</h3>
-                                        <span class="cmnt_time">10 Minutes Ago</span>
+                                        <h3>${comments.id}</h3>
+                                        <span class="cmnt_time">${comments.title}</span>
                                     </div>
                                 </div>
                                 <div class="ms_test_para">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
+                                	<p>${comments.content}</p>
                                 </div>
                             </div>
                         </div>
+                    </c:forEach>
                			<!-- comments end -->
                     </div>
                 </div>
@@ -112,26 +121,23 @@
                     <h1>コメントを投稿</h1>
                 </div>
                 <div class="ms_cmnt_form">
-                  <form name="album_comment_form" method="post">
+                  <form name="album_comment_form" method="post" action="/review/writeReview">
                   	<input id="csrfToken" type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+                  	<input type="hidden" name="abno" value="${view[0].abno}">
                   	<div class="ms_input_group1">
-                      <div class="ms_input">
-                      	<select name="stargage">
-                      		<c:set value="${1}" var="star_number" />
-                      			<c:forEach begin="0" end="4">
-                      				<option value="${star_number}">${ a* star_number} </option>
-                      				<c:set value="${star_number+1}" var="star_number"/>
-                      			</c:forEach>
-                      	</select>
+                      <select class="ms_input album_review_selector" name="stargage">
+                      	<c:forEach begin="0" end="4" varStatus="status">
+                      		<option value="${status.index}"><c:forEach begin="0" end="${status.index}"> ★ </c:forEach></option>
+                      	</c:forEach>
+                      </select>
+                    </div>
+                    <div class="ms_input_group">
+                      <div class="ms_input marger_top20">
+                        <input type="text" name="title" class="form-control" placeholder="Enter Title Here..">
                       </div>
                     </div>
                     <div class="ms_input_group1">
-                      <div class="ms_input">
-                        <input name="title" type="text" class="form-control" placeholder="Enter Your Comment Here..">
-                      </div>
-                    </div>
-                    <div class="ms_input_group1">
-                      <div class="ms_input">
+                      <div class="ms_input marger_top20">
                         <textarea name="content" class="form-control" placeholder="Enter Your Comment Here.."></textarea>
                       </div>
                     </div>
@@ -444,7 +450,7 @@
                                 <div class="w_top_song">
                                     <span class="slider_dot"></span>
                                     <div class="w_tp_song_img">
-                                        <img src="/images/weekly/song1.jpg" alt="">
+                                        <img src="/upload/${newly.image_50}" alt="">
                                         <div class="ms_song_overlay">
                                         </div>
                                         <div class="ms_play_icon">

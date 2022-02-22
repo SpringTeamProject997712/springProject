@@ -29,7 +29,7 @@ $(function() {
 
 		let login_flag = "";
 
-		$.ajax({
+	$.ajax({
     	type:"get",
     	url:"/member/loginChecker",
     	async:false,

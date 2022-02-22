@@ -93,6 +93,12 @@ public class CreatePlaylistController {
 		//3: plbno의 플레이리스트 반환
 		//4: abno의 플레이리스트 반환
 		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			vo.setId(user.getUsername());
+		}
+		
 		plist = service.selectMethod(vo);
 		
 		Gson gson = new Gson();

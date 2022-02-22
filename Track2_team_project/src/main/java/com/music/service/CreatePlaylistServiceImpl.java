@@ -151,7 +151,7 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 			PlaylistVO pvo = new PlaylistVO();
 			pvo.setAbno(vo.getAbno());
 			pvo.setTbno(trackList.get(i).getTbno());
-			pvo.setId(vo.getId());
+			pvo.setPlbno(minPlbno(vo.getId()));
 			insertPlaylistDetail(pvo);
 		}
 		plist=convertTrackToJPlyer(trackList);
@@ -164,6 +164,7 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 		List<PlaylistVO> playlist_view = mapper.selectPlaylist(plbno);
 		for(int i=0; i<playlist_view.size(); i++) {
 			trackList.add(tmapper.selectTrack(playlist_view.get(i).getTbno()));
+			playlist_view.get(i).setPlbno(minPlbno(playlist_view.get(i).getId()));
 			insertPlaylistDetail(playlist_view.get(i));
 		}
 		plist=convertTrackToJPlyer(trackList);
