@@ -26,6 +26,26 @@ $(function(){ // document가 다 로딩된 후 쿠키 있는지 확인해서 아
 	} 
 });
 
+//뒤로가기, 새로고침, 페이지 이동시 음악 플레이 정보 저장하기
+//==================================================제작중===================================================
+window.onbeforeunload = function (event) { 
+	event.preventDefault();
+	deleteCookie("musicData");
+		
+	let timeNow=$(".jp-current-time").text();
+	let timeEnd=$(".jp-duration").text();
+	let listNow= sessionStorage.getItem("NowList");
+	
+	console.log(timeNow);
+	console.log(timeEnd);
+	console.log(listNow);
+	
+	sessionStorage.setItem("currentTime",timeNow);
+	sessionStorage.setItem("duration",timeEnd);
+	sessionStorage.setItem("currentList",listNow);
+}
+//==================================================제작중===================================================
+
 function getCookie(cookieName) { 
 	cookieName = cookieName + '='; 
 	var cookieData = document.cookie; 
@@ -318,6 +338,8 @@ $(".musicSearch_on").off().on("click", function(){
 		flag=1;
 	}
 })
+
+
 
 //앨범 업로드 이미지 시 미리보기
 $(document).ready(function(){ 
