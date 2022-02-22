@@ -77,7 +77,7 @@
             <!----Testimonial section Start---->
             <div class="ms_test_wrapper">
                 <div class="ms_heading">
-                    <h1>comments (5)</h1>
+                    <h1>コメント (숫자)</h1>
                 </div>
                 <div class="ms_test_slider swiper-container">
                     <div class="swiper-wrapper">
@@ -100,103 +100,6 @@
                             </div>
                         </div>
                			<!-- comments end -->
-               			
-                        <div class="swiper-slide">
-                            <div class="ms_test_box">
-                                <div class="ms_test_top">
-                                    <div class="ms_test_img">
-                                        <img src="/images/user2.jpg" alt="">
-                                    </div>
-                                    <div class="ms_test_name">
-                                        <h3>Frank Adler</h3>
-                                        <span class="cmnt_time">10 Days Ago</span>
-                                    </div>
-                                </div>
-                                <div class="ms_test_para">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_test_box">
-                                <div class="ms_test_top">
-                                    <div class="ms_test_img">
-                                        <img src="/images/user3.jpg" alt="">
-                                    </div>
-                                    <div class="ms_test_name">
-                                        <h3>Frank Adler</h3>
-                                        <span class="cmnt_time">10 Hours Ago</span>
-                                    </div>
-                                </div>
-                                <div class="ms_test_para">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_test_box">
-                                <div class="ms_test_top">
-                                    <div class="ms_test_img">
-                                        <img src="/images/user4.jpg" alt="">
-                                    </div>
-                                    <div class="ms_test_name">
-                                        <h3>Frank Adler</h3>
-                                        <span class="cmnt_time">10 Minutes Ago</span>
-                                    </div>
-                                </div>
-                                <div class="ms_test_para">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_test_box">
-                                <div class="ms_test_top">
-                                    <div class="ms_test_img">
-                                        <img src="/images/user1.jpg" alt="">
-                                    </div>
-                                    <div class="ms_test_name">
-                                        <h3>Frank Adler</h3>
-                                        <span class="cmnt_time">10 Minutes Ago</span>
-                                    </div>
-                                </div>
-                                <div class="ms_test_para">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_test_box">
-                                <div class="ms_test_top">
-                                    <div class="ms_test_img">
-                                        <img src="/images/user2.jpg" alt="">
-                                    </div>
-                                    <div class="ms_test_name">
-                                        <h3>Frank Adler</h3>
-                                        <span class="cmnt_time">10 Minutes Ago</span>
-                                    </div>
-                                </div>
-                                <div class="ms_test_para">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_test_box">
-                                <div class="ms_test_top">
-                                    <div class="ms_test_img">
-                                        <img src="/images/user3.jpg" alt="">
-                                    </div>
-                                    <div class="ms_test_name">
-                                        <h3>Frank Adler</h3>
-                                        <span class="cmnt_time">10 Minutes Ago</span>
-                                    </div>
-                                </div>
-                                <div class="ms_test_para">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <!-- Add Arrows -->
@@ -206,29 +109,32 @@
             <!----Comment Form section Start---->
             <div class="ms_cmnt_wrapper">
                 <div class="ms_heading">
-                    <h1>Leave A Comment</h1>
+                    <h1>コメントを投稿</h1>
                 </div>
                 <div class="ms_cmnt_form">
-                    <form>
-                        <div class="ms_input_group">
-                            <div class="ms_input">
-                                <input type="text" class="form-control" placeholder="Enter Your Name Here..">
-                            </div>
-                            <div class="ms_input marger_top20">
-                                <input type="text" class="form-control" placeholder="Enter Your Email Here..">
-                            </div>
-                        </div>
-                        <div class="ms_input_group1">
-                            <div class="ms_input">
-                                <textarea name="message" class="form-control" placeholder="Enter Your Comment Here.."></textarea>
-                            </div>
-                        </div>
-                        <div class="ms_input_group2">
-                            <div class="ms_input">
-                                <button class="ms_btn">post your comment</button>
-                            </div>
-                        </div>
-                    </form>
+                  <form name="album_comment_form" method="post">
+                  	<input id="csrfToken" type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+                  	<div class="ms_input_group1">
+                      <div class="ms_input">
+                      	<select name="stargage">
+                      		<c:set value="${num}" var="star_number" />
+                      			<c:forEach begin="0" end="4">
+                      				<option value="${star_number}"></option>
+                      			</c:forEach>
+                      	</select>
+                      </div>
+                    </div>
+                    <div class="ms_input_group1">
+                      <div class="ms_input">
+                        <textarea name="message" class="form-control" placeholder="Enter Your Comment Here.."></textarea>
+                      </div>
+                    </div>
+                    <div class="ms_input_group2">
+                      <div class="ms_input">
+                        <button type="submit" class="ms_btn">post your comment</button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
             </div>
             <!----Featured Albumn Section Start---->

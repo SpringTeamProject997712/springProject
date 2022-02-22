@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.music.mapper.ReviewMapper">
+	<insert id="insertReview">
+		<selectKey order="BEFORE" resultType="int" keyProperty="rbno">
+			select review_m_seq.nextval from dual
+		</selectKey>
+		
+		insert into review_m(rbno, id, title,  image, content, stargage) 
+<!--values (#{rbno}, #{id}, #{title}, #{image}, #{content}, #{stargage})-->
+		values (#{rbno}, #{id}, #{title}, '임시', #{content}, #{stargage})
+	</insert>
+
+	<select id="selectReview" resultType="con.music.domain.ReviewVO">
+		select * from review_m where pbno = #{pbno}
+	
+	</select>
+
+</mapper>
