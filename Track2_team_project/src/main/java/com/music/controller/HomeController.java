@@ -28,7 +28,7 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 		
 		model.addAttribute("music", service.listAlbum());
-		
+		model.addAttribute("newly",service.newly());
 		return "index";
 	}
 }

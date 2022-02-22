@@ -1,33 +1,26 @@
 $(function() {
     "use strict";
     
-    let basicPlayList = [{
-						image : 'weekly/song1.jpg',	
-            title: "RE:Wind",
-            artist: "이세계 아이돌",
-            mp3: "/music/Rewind.mp3",
-						option : myPlayListOtion	
-        }, {
-						image : 'weekly/song2.jpg',	
-            title: "LIVE FORVER",
-            artist: "오아시스",
-            mp3: "/music/Live_forever.mp3",
-						option : myPlayListOtion
-        }, {
-						image : 'weekly/song3.jpg',	
-            title: "니얼굴",
-            artist: "TSP",
-            mp3: "/music/Your_face.mp3",
-						option : myPlayListOtion
-        },{
-						image : 'weekly/song2.jpg',	
-            title: "천체관측",
-            artist: "BUMP OF CHICKEN",
-            mp3: "/music/天体観測.mp3",
-						option : myPlayListOtion
-        }];
-
-		let login_flag = "";
+    let basicPlayList = "";
+    var myPlayListOtion = '<ul class="more_option"><li><a href="#"><span class="opt_icon" title="Add To Favourites"><span class="icon icon_fav"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Queue"><span class="icon icon_queue"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Download Now"><span class="icon icon_dwn"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Playlist"><span class="icon icon_playlst"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Share"><span class="icon icon_share"></span></span></a></li></ul>';
+ 
+    $.ajax({
+    	type:"get",
+    	url:"/createPlaylist/addPlayList",
+    	data:{menu:1},
+    	async:false,
+    	success:function(data){
+    		console.log(data);
+    		basicPlayList = JSON.parse(data);
+    		for(var i=0; i<basicPlayList.length; i++){
+    			basicPlayList[i].option = myPlayListOtion;
+    		}
+    	},error:function(xhr,status,error){
+    		console.log("xhr : "+xhr.status+"\n text : "+xhr.responseText+"\n error : "+error);
+    	}
+    });
+    
+	let login_flag = "";
 
 	$.ajax({
     	type:"get",
@@ -50,8 +43,6 @@ $(function() {
     
     //함수 가동
     if ($('.audio-player').length) { //audio-player 클래스가 있으면 작동
-    
-		var myPlayListOtion = '<ul class="more_option"><li><a href="#"><span class="opt_icon" title="Add To Favourites"><span class="icon icon_fav"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Queue"><span class="icon icon_queue"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Download Now"><span class="icon icon_dwn"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Playlist"><span class="icon icon_playlst"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Share"><span class="icon icon_share"></span></span></a></li></ul>';
 		
 	$.ajax({
     	type:"get",
