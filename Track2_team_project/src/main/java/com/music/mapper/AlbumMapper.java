@@ -34,6 +34,9 @@ public interface AlbumMapper {
 	//관리자 엘범 리스트
 	public List<AlbumVO> viewAlbumListWithPaging(Criteria cri);
 	
+	//수정 보기
+	public AlbumVO viewAlbum(int abno);
+	
 	//페이징
 	public int countAlbum(Criteria cri);
 	

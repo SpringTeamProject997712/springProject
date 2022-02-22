@@ -25,7 +25,7 @@
     <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/my.css">
     <!-- Favicon Link -->
-    <link rel="shortcut icon" type="image/png" href="/imagess/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 </head>
 
 <body>

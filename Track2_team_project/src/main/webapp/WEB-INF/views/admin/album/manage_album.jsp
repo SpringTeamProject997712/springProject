@@ -30,12 +30,20 @@
                 <div class="tab-content rounded-bottom">
                   <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-687">
                     <table class="table dropdown">
+                    <colgroup>
+						<col width="50%">
+						<col width="20%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+					</colgroup>
                       <thead>
                         <tr>
                           <th scope="col">타이틀</th>
                           <th scope="col">가수</th>
                           <th scope="col">가격</th>
                           <th scope="col">등록일</th>
+                          <th scope="col">기능</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -43,7 +51,9 @@
                         	<tr>
 	                          <td scope="row" ><a class="namelink" href="/admin/track/manage_track?abno=${alist.abno}">${alist.name}</a></td>
 	                          <td>${alist.singer}</td>
-	                          <td>${alist.price}</td>
+	                          <td>
+	                        	  <fmt:setLocale value="ja_jp"/><fmt:formatNumber type="currency" value="${alist.price}" currencySymbol="￥" maxFractionDigits="0" />
+	                          </td>
 	                          <td><fmt:formatDate value="${alist.regdate}" pattern="yyyy-MM-dd"/></td>
 	                          <td>
 	                          	<div class="dropdown">

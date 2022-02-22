@@ -1,14 +1,20 @@
 package com.music.controller;
 
+import java.io.File;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.google.gson.Gson;
 import com.music.domain.AlbumVO;
@@ -55,4 +61,14 @@ public class TrackController {
 		String json = gson.toJson(tlist);
 		return json;
 	}
+	
+	@PostMapping("/updateTrack")
+	public String updateAlbum(TrackVO tvo) {
+//		public String updateAlbum(@RequestParam("uploadMusic") MultipartFile uploadMusic,HttpServletRequest req,TrackVO tvo) {
+		
+		service.updateTrack(tvo);
+		
+		return "redirect:/admin/track/view_track?tbno="+tvo.getTbno();
+	}
+	
 }

@@ -21,6 +21,8 @@ public interface TrackMapper {
 	//페이징
 	public List<TrackVO> viewTrackListWithPaging(int abno);
 	
+	public TrackVO viewTrackList(int tbno);
+	
 	//페이징
 	public int countTrack(Criteria cri);
 	

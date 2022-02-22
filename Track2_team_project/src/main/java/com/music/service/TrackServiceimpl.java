@@ -62,4 +62,11 @@ public class TrackServiceimpl implements TrackService {
 		int result = mapper.updateTrack(tvo);
 		return result;
 	}
+
+	@Override
+	public TrackVO viewTrackList(int tbno) {
+		return mapper.viewTrackList(tbno);
+	}
+
+
 }

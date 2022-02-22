@@ -1,16 +1,24 @@
 package com.music.controller;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
+import org.springframework.web.multipart.MultipartFile;
 
 import com.google.gson.Gson;
+import com.music.domain.AlbumVO;
 import com.music.service.AlbumService;
 
 import lombok.Setter;
@@ -50,6 +58,50 @@ public class AlbumController {
 		return json;
 	}
 	
+	@PostMapping("/updateAlbum")
+	public String updateAlbum(@RequestParam("uploadImage") MultipartFile uploadImage,HttpServletRequest req,AlbumVO avo) {
+		String uploadFolder = "C:\\upload";
+		String uploadImageName = "cover_"+uploadImage.getOriginalFilename();
+		File uploadPath = new File(uploadFolder, getFolder());
+		
+		// 새로운 파일이 등록되었는지 확인
+		 if(uploadImage.getOriginalFilename() != null && uploadImage.getOriginalFilename() != "") {
+		  // 기존 파일을 삭제
+		  new File(uploadPath + req.getParameter("image")).delete();
+		  new File(uploadPath + req.getParameter("image_240")).delete();
+		  new File(uploadPath + req.getParameter("image_50")).delete();
+		  
+		  // 새로 첨부한 파일을 등록
+			File saveimage = new File(uploadPath, uploadImageName);
+				
+			String saveImageUrl = uploadImageName.toString();
+//			uploadImage.transferTo(saveimage);
+			uploadImageName = (saveimage.toString().substring(10));
+		  
+		  avo.setImage(uploadImageName);
+		  
+		 } else {  // 새로운 파일이 등록되지 않았다면
+		  // 기존 이미지를 그대로 사용
+		  avo.setImage(req.getParameter("gdsImg"));
+		  avo.setImage_240(req.getParameter("gdsImg"));
+		  avo.setImage_50(req.getParameter("gdsImg"));
+		  
+		 }
+		 
+		service.updateAlbum(avo);
+		
+		return "redirect:/admin/album/view_album?abno="+avo.getAbno();
+	}
 	
+	
+	
+	//구 폴더 생성기
+	private String getFolder() {
+		//폴더 생성(폴더는 현제 날짜별로)
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = new Date();
+		String str = sdf.format(date);
+		return str.replace("-",  File.separator);
+	}
 
 }

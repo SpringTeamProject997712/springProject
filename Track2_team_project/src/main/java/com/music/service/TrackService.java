@@ -20,8 +20,11 @@ public interface TrackService {
 	
 	//트랙관리자 리스트
 	public List<TrackVO> viewTrackListWithPaging(int abno);
+
+	//트랙 세부사항
+	public TrackVO viewTrackList(int tbno);
 	
-	//앨범 수정
+	//트랙 수정
 	public int updateTrack(TrackVO tvo);
 	
 }

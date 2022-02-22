@@ -90,28 +90,38 @@ public class AdminController {
 	
 	//앨범
 	
-	@GetMapping("album/manage_album") //상품관리 - 상품 리스트 보기
+	@GetMapping("/album/manage_album") //상품관리 - 상품 리스트 보기
 	public void viewProductList(Model model, Criteria cri) {
 		List<AlbumVO> alist = aService.viewAlbumListWithPaging(cri);
 		model.addAttribute("albumList", alist);
 		model.addAttribute("pageMaker", aService.pagingList(cri));
 	}
 	
-	@GetMapping("album/view_album") //상품관리 - 상품 세부사항 보기
-	public void viewProductDetail(Model model) {
-		
+	@GetMapping("/album/view_album") //상품관리 - 상품 세부사항 보기
+	public void viewProductDetail(Model model, int abno) {
+		AlbumVO album = aService.viewAlbumList(abno);
+		model.addAttribute("album", album);
 	}
 
+	
+	
 	//트랙
 	
-	@GetMapping("track/manage_track") //상품관리 - 상품 리스트 보기
+	@GetMapping("/track/manage_track") //상품관리 - 상품 리스트 보기
 	public void viewTrackList(int abno, Model model) {
 		List<TrackVO> tlist = tService.viewTrackListWithPaging(abno);
 		model.addAttribute("trackList", tlist);
 	}
 	
-	@GetMapping("track/view_track") //상품관리 - 상품 세부사항 보기
-	public void viewTrackDetail(Model model) {
+	@GetMapping("/track/view_track") //상품관리 - 상품 세부사항 보기
+	public void viewTrackDetail(int tbno, Model model) {
+		String[] genre = {"장르1","장르2","장르3","장르4"};
+		TrackVO track = tService.viewTrackList(tbno);
+		AlbumVO album = aService.viewAlbumList(track.getAbno());
+		
+		model.addAttribute("album", album);
+		model.addAttribute("track", track);
+		model.addAttribute("genre", genre);
 		
 	}
 	

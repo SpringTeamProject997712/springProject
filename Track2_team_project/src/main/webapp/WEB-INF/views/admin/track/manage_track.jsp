@@ -7,29 +7,18 @@
           <div class="card mb-4">
             <div class="card-header"><strong>트랙 관리</strong><span class="small ms-1">트랙 목록</span></div>
             <div class="card-body">
-              <div class="text-medium-emphasis small">
-              	<!-- 검색 창 -->
-<!--               	<form id="pagingForm" action="/admin/album/manage_album" method="get"> -->
-<!-- 	              <div class="input-group" style="width:200px;"> -->
-<%-- 								 		<input class="form-control" name="keyword" type="text" placeholder="search Album" value="${pageMaker.cri.keyword}" aria-label="앨범 검색"> --%>
-<!-- 								  	<button class="btn btn-outline-secondary" type="submit" style="color:white; background:grey">검색</button> -->
-<%-- 										<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}"> --%>
-<!-- 										<input type="hidden" name="amount" value="10"> -->
-<%-- 										<input type="hidden" name="type" value="${pageMaker.cri.type}"> --%>
-<!-- 								</div> -->
-<!-- 								</form> -->
-							</div>
               <div class="example">
-               <!--  <ul class="nav nav-tabs" role="tablist">
-                  <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-687" role="tab">
-                    <svg class="icon me-2">
-                      <use href="/images/svg/free.svg#cil-media-play"></use>
-                    </svg>Preview</a>
-                  </li>
-                </ul> -->
                 <div class="tab-content rounded-bottom">
                   <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-687">
                     <table class="table dropdown">
+                    <colgroup>
+						<col width="30%">
+						<col width="30%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+					</colgroup>
 							<c:choose>
 								<c:when test="${trackList.size() == 0}">
 									<td>앨범 내 정보가 없습니다.</td>
@@ -43,6 +32,7 @@
                           <th scope="col">장르</th>
                           <th scope="col">가격</th>
                           <th scope="col">파일명</th>
+                          <th scope="col">기능</th>
                         </tr>
                       </thead>
                       <tbody>
