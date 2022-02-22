@@ -453,7 +453,7 @@
                                         <img src="/upload/${newly.image_50}" alt="">
                                         <div class="ms_song_overlay">
                                         </div>
-                                        <div class="ms_play_icon">
+                                        <div class="ms_play_icon" id="${newly.tbno}">
                                         
                                             <img src="/images/svg/play.svg" alt="">
                                         
