@@ -231,7 +231,6 @@ $().ready(function(){
 		heart_arr.push($(this).attr('id').substring(5))
 	});
 	console.log(heart_arr);
-	console.log(fav_heart);
 	if(fav_heart){
 		for(var i=0; i<heart_arr.length; i++){
 			$.ajax({
@@ -240,9 +239,7 @@ $().ready(function(){
 				async:false,
 				url:"/favourite/favourite_checker",
 				success:function(data){
-					console.log("좋아요 했나요? : "+data);
 					if(data=='1'){
-						console.log(heart_arr[i]);
 						$("#pbno_"+heart_arr[i]).empty();
 						$("#pbno_"+heart_arr[i]).append("<span><img src='/images/svg/pink-heart.svg' style='width:24px; height:24px'></span>");
 					}else{
@@ -266,7 +263,6 @@ $(".fav_box").on("click", function(){
 	if(nope.length){
 		console.log("좋아요 안함");
 	}else{
-		console.log("좋아요 함");
 		like_status = 1;
 	}
 	//로그인 체크
