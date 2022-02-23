@@ -8,7 +8,7 @@ import com.music.domain.jPlayerVO;
 public interface CreatePlaylistService {
 
 	public List<jPlayerVO> selectMethod(PlaylistVO vo);
-	public int insertBasicPlaylist(String id);
+	public int insertBasicPlaylist(PlaylistVO pvo);
 	public int insertPlaylist(PlaylistVO pvo);
 	public int countPlaylist(String id);
 	public int maxPlbno(String id);

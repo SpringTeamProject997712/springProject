@@ -128,6 +128,25 @@ public class CreatePlaylistController {
 		return "해냈다";
 	}
 	
+	@ResponseBody
+	@GetMapping("/deletePlaylistDetailTbno")
+	public String deletePlaylistDetail(int tbno,int plbno) {
+		String myName="";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			PlaylistVO pvo = new PlaylistVO();
+			
+			pvo.setTbno(tbno);
+			pvo.setPlbno(plbno);
+			pvo.setName(myName);
+			service.deletePdbnoWithIdTbno(pvo);
+			myName = "삭제됨";
+		}
+		return myName;
+	}
+	
 	/*
 	 * private List<PlaylistVO> addRandomPlaylist(){ List<PlaylistVO> plist =
 	 * service.addRandomPlaylist();

@@ -82,8 +82,8 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 	}
 	
 	@Override
-	public int insertBasicPlaylist(String id) {
-		int result = mapper.insertBasicPlaylist(id);	
+	public int insertBasicPlaylist(PlaylistVO pvo) {
+		int result = mapper.insertBasicPlaylist(pvo);	
 		return result;
 	}
 	@Override

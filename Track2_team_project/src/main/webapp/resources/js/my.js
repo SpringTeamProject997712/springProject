@@ -27,7 +27,6 @@ $(function(){ // document가 다 로딩된 후 쿠키 있는지 확인해서 아
 });
 
 //뒤로가기, 새로고침, 페이지 이동시 음악 플레이 정보 저장하기
-//==================================================제작중===================================================
 window.onbeforeunload = function (event) { 
 	event.preventDefault();
 	deleteCookie("musicData");
@@ -44,7 +43,7 @@ window.onbeforeunload = function (event) {
 	sessionStorage.setItem("duration",timeEnd);
 	sessionStorage.setItem("currentList",listNow);
 }
-//==================================================제작중===================================================
+
 
 function getCookie(cookieName) { 
 	cookieName = cookieName + '='; 
@@ -351,6 +350,26 @@ $(document).ready(function(){
 	$(this).siblings('.upload-name').val(filename); 
 	}); 	
 });
+
+$(".remove_single_track_in_playlist").on("click", function(){
+	let this_track = $(this).parent().parent();
+	this_track.slideUp();
+	let tbno = this_track.attr('id').substring(16);
+	let plbno = document.getElementById('this_plbno').value;
+
+	$.ajax({
+		type:"get",
+		data:{tbno:tbno , plbno:plbno},
+		url:"/createPlaylist/deletePlaylistDetailTbno",
+		error:function(xhr,status,err){
+			console.log(xhr.status + xhr.responseText + err);
+		},success:function(data){
+			if(data=="삭제됨"){
+				reload.document;
+			}
+		}
+	});
+})
 
 ////preview image 
 //var imgTarget = $('.preview-image .upload-hidden');
