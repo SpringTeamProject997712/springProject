@@ -412,6 +412,24 @@ $(".insert_cart_btn").click(function() {
 
 });
 
+function modify_playlist_name(){
+	let plbno = document.getElementById('this_plbno').value;
+	let name = document.getElementById('playlist-name').value;
+	
+	$.ajax({
+		type:"get",
+		url:"/createPlaylist/modifyPlaylistName",
+		data:{name:name, plbno:plbno},
+		error:function(xhr,status,err){
+			console.log(xhr.status + xhr.responseText + err);
+		},success:function(data){
+			if(data=='1'){
+				console.log("수정완료")
+			}
+		}
+	});
+}
+
 ////preview image 
 //var imgTarget = $('.preview-image .upload-hidden');
 //

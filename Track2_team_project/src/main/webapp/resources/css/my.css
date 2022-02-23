@@ -194,3 +194,13 @@ cursor: pointer;
 .single_track_tr > li {
 
 }
+
+.playlist-name{
+    background: #14182a;
+    border: none;
+    color: white;
+}
+
+.rename_button{
+	font-size: 16px;
+}

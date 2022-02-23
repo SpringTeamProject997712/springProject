@@ -201,7 +201,7 @@
                     <sec:authorize access="isAuthenticated()">
                     	<sec:authentication property="principal" var="principal"/>
 											<div class="ms_top_btn">
-	                      <a href="upload.html" class="ms_btn">upload</a>
+	                      <a href="/upload/upload" class="ms_btn">upload</a>
 	                      <a href="javascript:;" class="ms_admin_name">Hello Bella 
 	                      	<span class="ms_pro_name">ns</span>
 												</a>

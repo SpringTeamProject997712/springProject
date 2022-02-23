@@ -47,6 +47,10 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 	public int minPlbno(String id) {
 		return mapper.minPlbno(id);
 	}
+	@Override
+	public int modifyPlaylist(PlaylistVO pvo) {
+		return mapper.modifyPlaylist(pvo);
+	}
 	
 	//int를 받아서 switch문을 실행합니다. 그리고 결과로 List<PlaylistVO>를 반환합니다
 	@Override
