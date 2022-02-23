@@ -44,6 +44,21 @@ public interface CreatePlaylistMapper {
 	//가장 최근에 만들어진 plbno 구함
 	public Integer maxPlbno(String id);
 	
+	//최초에 만들어진 plbno 구함
+	public Integer minPlbno(String id);
+	
 	//플레이리스트에 트랙 추가함
 	public int insertPlaylistDetail(PlaylistVO vo);
+	
+	//id랑 tbno를 plbno 이용해서 가장 큰 pdbno 찾음
+	public Integer selectMaxPdbno(PlaylistVO vo);
+	
+	//pdbno로 PlaylistDetail 삭제
+	public int deletePlaylistDetail(int pdbno);
+	
+	//플레이 리스트 안에있는 플레이리스트 디테일
+	public List<PlaylistVO> selectPlaylistDetails(int plbno);
+	
+	//플레이리스트 초기화
+	public int clearQue(int plbno);
 }

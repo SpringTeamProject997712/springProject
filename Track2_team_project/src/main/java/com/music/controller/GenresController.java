@@ -1,7 +1,5 @@
 package com.music.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,8 +28,11 @@ public class GenresController {
 	
 	@GetMapping("/genres_single")
 	public void genres_single(Model model, @RequestParam("genre") String genre) {
+		
 		model.addAttribute("genres",service.genresView(genre));
-		log.info(service.genresView(genre));
+		model.addAttribute("genrelist",service.genrelist(genre));
+		log.info(service.genrelist(genre));
+		model.addAttribute("newly",service.listNewly());
 	}
 	
 }

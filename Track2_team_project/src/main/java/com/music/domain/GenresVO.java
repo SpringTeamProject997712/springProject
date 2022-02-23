@@ -11,4 +11,5 @@ public class GenresVO {
 	private String tname; 
 	private String genre;
 	private String image;
+	private String genrenames;
 }

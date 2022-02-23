@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 import com.music.domain.PlaylistVO;
+import com.music.domain.TrackVO;
 import com.music.domain.jPlayerVO;
 import com.music.security.domain.CustomUser;
 import com.music.service.CreatePlaylistService;
@@ -56,6 +57,20 @@ public class CreatePlaylistController {
 	}
 	
 	@ResponseBody
+	@GetMapping("/clearQueue")
+	public String clearQueue() {
+		String myName="";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			int plbno = service.minPlbno(myName);
+			service.clearQue(plbno);
+		}
+		return "얏따";
+	}
+	
+	@ResponseBody
 	@GetMapping("/addOneTrack")
 	public String addOneTrack(PlaylistVO vo) {
 		
@@ -68,16 +83,23 @@ public class CreatePlaylistController {
 	
 	@ResponseBody //ajax로 플레이리스트를 받는 친구
 	@RequestMapping(value="/addPlayList", produces = "application/text; charset=utf8", method = RequestMethod.GET)
-	public String addRandomPlayList(int menu) {
+	public String addRandomPlayList(PlaylistVO vo) {
 		
 		List<jPlayerVO> plist = new ArrayList<jPlayerVO>(); //여기에 담아서 리턴함
 		
-		//숫자에 따라 처리함
+		//menu 숫자에 따라 처리함
 		//1: track에서 다섯개 뽑아서 반환
 		//2: basic_playlist 반환
-		//3: 
+		//3: plbno의 플레이리스트 반환
+		//4: abno의 플레이리스트 반환
 		
-		plist = service.selectMethod(menu);
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			vo.setId(user.getUsername());
+		}
+		
+		plist = service.selectMethod(vo);
 		
 		Gson gson = new Gson();
 		String json = gson.toJson(plist);
@@ -85,6 +107,25 @@ public class CreatePlaylistController {
 //		받은 plist를 json형식의 string으로 변환해 ajax로 반환한다.
 		
 		return json;
+	}
+	
+	@ResponseBody
+	@GetMapping("/deleteQue")
+	public String deleteQue(int tbno) {
+		String myName="";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			PlaylistVO pvo = new PlaylistVO();
+			
+			pvo.setTbno(tbno);
+			pvo.setPlbno(service.minPlbno(myName));
+			
+			service.deletePdbnoWithIdTbno(pvo);
+		}
+		
+		return "해냈다";
 	}
 	
 	/*

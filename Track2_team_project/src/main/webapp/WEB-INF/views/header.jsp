@@ -25,7 +25,7 @@
     <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/my.css">
     <!-- Favicon Link -->
-    <link rel="shortcut icon" type="image/png" href="/imagess/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 </head>
 
 <body>
@@ -124,7 +124,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="/favourite/favourite" title="Favourites">
+                        <li><a href="/member/favourite" title="Favourites">
 						<span class="nav_icon">
 							<span class="icon icon_favourite"></span>
 						</span>

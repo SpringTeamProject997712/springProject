@@ -85,7 +85,7 @@
                                         </div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="#">hip hop</a></span>
-											<span class="ovrly_text2"><a href="/genres_single?genre=3">view song</a></span>
+											<span class="ovrly_text2"><a href="/genres/genres_single?genre=3">view song</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
@@ -105,7 +105,7 @@
                                         </div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="#">dancing</a></span>
-											<span class="ovrly_text2"><a href="/genres_single?genre=4">view song</a></span>
+											<span class="ovrly_text2"><a href="/genres/genres_single?genre=4">view song</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
@@ -291,7 +291,7 @@
                                 </div>
                                 <div class="ovrly_text_div">
                                     <span class="ovrly_text1"><a href="#">blues</a></span>
-                                    <span class="ovrly_text2"><a href="/genres_single?genre=13">view song</a></span>
+                                    <span class="ovrly_text2"><a href="/genres/genres_single?genre=13">view song</a></span>
                                 </div>
                             </div>
                             <div class="ms_box_overlay_on">
@@ -581,5 +581,5 @@
             </div>
             <!----Main div close---->
         </div>
-		</div>
+		</div> 
 <%@ include file="../footer.jsp" %>

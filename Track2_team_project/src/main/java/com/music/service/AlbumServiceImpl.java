@@ -74,5 +74,9 @@ public class AlbumServiceImpl implements AlbumService {
 		return result;
 	}
 
+	@Override
+	public AlbumVO viewAlbumList(int abno) {
+		return mapper.viewAlbum(abno);
+	}
 
 }

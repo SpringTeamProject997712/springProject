@@ -41,7 +41,7 @@ public interface AlbumService {
 	public List<AlbumVO> topAlbums();
 
 	//앨범 세부사항
-//	public List<AlbumVO> viewAlbumList();
+	public AlbumVO viewAlbumList(int abno);
 	
 	//앨범 수정
 	public int updateAlbum(AlbumVO avo);

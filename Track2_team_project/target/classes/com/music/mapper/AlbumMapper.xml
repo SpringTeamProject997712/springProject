@@ -5,7 +5,7 @@
 		<sql id="search_box">
 			<trim prefix="(" suffix=") AND " prefixOverrides="OR">
 				<if test="keyword != null">
-					a.name like '%'||#{keyword}||'%'
+					name like '%'||#{keyword}||'%'
 				</if>
 			</trim>
 		</sql>
@@ -49,16 +49,23 @@
   	
   	<select id="getCountLikes" resultType="com.music.domain.AlbumVO">
 
-	select a.pbno, a.name, a.singer,a.image, count(likes) likes
+	select a.pbno, a.name, a.singer,a.image_240, count(likes) likes
 	from album_m a, like_m l
 	where l.pbno = a.pbno
-	group by a.pbno, a.name, a.singer,a.image
+	group by a.pbno, a.name, a.singer,a.image_240
 	order by likes desc
 
   	</select>
   	
   	
 <!--   	어드민 -->
+  	<select id="viewAlbum" resultType="com.music.domain.AlbumVO">
+			select * from 
+		( 
+			select /*+ index_desc(album_m album_m_pk) */ rownum rn, abno, name, singer, detail, price, image, regdate, pbno from album_m 
+			)
+			where abno = #{abno}
+	</select>
   	<select id="viewAlbumListWithPaging" resultType="com.music.domain.AlbumVO">
 		<![CDATA[
 			select * from 
@@ -90,7 +97,9 @@
 	 </select>
 
 	<update id="updateAlbum">
-		update album_m set name=#{name}, singer=#{singer}, detail=#{detail}, price=#{price}, image=#{image}, regdate=#{regdate} where abno = #{abno}
+		update album_m set 
+		name=#{name}, singer=#{singer}, detail=#{detail}, price=#{price}, image=#{image}, regdate=#{regdate} 
+		where abno = #{abno}
 	</update>
 	
 </mapper>

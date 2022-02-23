@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.music.domain.AlbumVO;
 import com.music.domain.GenresVO;
 import com.music.mapper.GenresMapper;
 
@@ -24,6 +25,12 @@ public class GenresServiceimpl implements GenresService {
 	public List<GenresVO> genresView(String genre) {
 		return mapper.genresView(genre);
 	}
-	
-	
+	@Override
+	public GenresVO genrelist(String genre) {
+		return mapper.genrelist(genre);
+	}
+	@Override
+	public List<AlbumVO> listNewly() {
+		return mapper.listNewly();
+	}
 }

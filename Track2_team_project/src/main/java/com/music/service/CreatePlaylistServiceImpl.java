@@ -41,15 +41,19 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 	public int maxPlbno(String id) {
 		return mapper.maxPlbno(id);
 	}
+	@Override
+	public int minPlbno(String id) {
+		return mapper.minPlbno(id);
+	}
 	
 	//int를 받아서 switch문을 실행합니다. 그리고 결과로 List<PlaylistVO>를 반환합니다
 	@Override
-	public List<jPlayerVO> selectMethod(int menu) {
+	public List<jPlayerVO> selectMethod(PlaylistVO vo) {
 		
 		List<jPlayerVO> plist = new ArrayList<jPlayerVO>(); //여기에 담아서 리턴함
 		
 		//switch
-		switch(menu){ //받은 숫자로 스위치문 가동
+		switch(vo.getMenu()){ //받은 숫자로 스위치문 가동
 		
 		case 2: // basic_playlist
 			
@@ -60,10 +64,21 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 			plist = addRandomPlaylist();
 			break;
 		
+		case 3: //plbno의 플레이리스트 반환
+			plist = addMyPlaylist(vo.getPlbno());
+			break;
 		
+		case 4: //abno의 플레이리스트 반환
+			plist = addAlbumlist(vo);
+			break;	
+			
 		}//switch end
 		
 		return plist;
+	}
+	@Override
+	public int clearQue(int plbno) {
+		return mapper.clearQue(plbno);
 	}
 	
 	@Override
@@ -79,6 +94,11 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 	public int insertPlaylistDetail(PlaylistVO vo) {
 		return mapper.insertPlaylistDetail(vo);
 	}
+	//id와 tbno로
+	@Override
+	public int deletePdbnoWithIdTbno(PlaylistVO vo) {
+		return mapper.deletePlaylistDetail(mapper.selectMaxPdbno(vo));
+	}
 
 //======================================= private =======================================	
 	
@@ -89,8 +109,9 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 		for(int i=0; i<track.size(); i++) {
 			jPlayerVO playlist = new jPlayerVO();
 			AlbumVO avo=amapper.readAlbum(track.get(i).getAbno());
+			playlist.setTbno(track.get(i).getTbno());
 			playlist.setArtist(avo.getSinger());
-			playlist.setImage(avo.getImage());
+			playlist.setImage(avo.getImage_50());
 			playlist.setMp3("/upload/"+track.get(i).getSongrealname());
 			playlist.setOption("myPlayListOtion");
 			playlist.setTitle(track.get(i).getName());
@@ -121,6 +142,34 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 		return plist;
 	}
 	
+	private List<jPlayerVO> addAlbumlist(PlaylistVO vo){
+		List<jPlayerVO> plist = new ArrayList<jPlayerVO>();
+		List<TrackVO> trackList =new ArrayList<TrackVO>();
+		List<AlbumVO> alist = amapper.readAlbum_single(vo.getAbno());
+		for(int i=0; i<alist.size();i++) {
+			trackList.add(tmapper.selectTrack(alist.get(i).getTbno()));
+			PlaylistVO pvo = new PlaylistVO();
+			pvo.setAbno(vo.getAbno());
+			pvo.setTbno(trackList.get(i).getTbno());
+			pvo.setPlbno(minPlbno(vo.getId()));
+			insertPlaylistDetail(pvo);
+		}
+		plist=convertTrackToJPlyer(trackList);
+		return plist;
+	}
+	
+	private List<jPlayerVO> addMyPlaylist(int plbno){
+		List<jPlayerVO> plist = new ArrayList<jPlayerVO>();
+		List<TrackVO> trackList =new ArrayList<TrackVO>();
+		List<PlaylistVO> playlist_view = mapper.selectPlaylist(plbno);
+		for(int i=0; i<playlist_view.size(); i++) {
+			trackList.add(tmapper.selectTrack(playlist_view.get(i).getTbno()));
+			playlist_view.get(i).setPlbno(minPlbno(playlist_view.get(i).getId()));
+			insertPlaylistDetail(playlist_view.get(i));
+		}
+		plist=convertTrackToJPlyer(trackList);
+		return plist;
+	}
 	
 	private List<jPlayerVO> addBasicPlaylist(){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();

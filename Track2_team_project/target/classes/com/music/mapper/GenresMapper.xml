@@ -8,5 +8,10 @@
     where t.abno = a.abno and genre=#{genre}
 	</select>
 	
-	
+	<select id="genrelist" resultType="com.music.domain.GenresVO">
+		select * from genrelist where genre = #{genre}
+	</select>
+	<select id="listNewly" resultType="com.music.domain.AlbumVO">
+  		select * from newly order by tbno desc
+  	</select>
 </mapper>

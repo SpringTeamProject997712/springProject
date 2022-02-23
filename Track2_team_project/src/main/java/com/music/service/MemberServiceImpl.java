@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.music.domain.MemberVO;
+import com.music.domain.Member_authVO;
 import com.music.domain.PlaylistVO;
 import com.music.domain.ViewPlaylistDetailVO;
 import com.music.mapper.CreatePlaylistMapper;
@@ -102,5 +103,14 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int countTrack(int plbno) {
 		return cmapper.countTrack(plbno)!=null?cmapper.countTrack(plbno):0;
+	}
+	
+	@Override
+	public int deleteAuth(String id) {
+		return mapper.deleteAuth(id);
+	}
+	@Override
+	public int insertAuth(Member_authVO vo) {
+		return mapper.insertAuth(vo);
 	}
 }

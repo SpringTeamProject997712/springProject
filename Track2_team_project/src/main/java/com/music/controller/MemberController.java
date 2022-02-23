@@ -1,5 +1,7 @@
 package com.music.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 import com.music.domain.MemberVO;
+import com.music.domain.Member_authVO;
 import com.music.security.domain.CustomUser;
 import com.music.service.AlbumService;
 import com.music.service.CreatePlaylistService;
@@ -69,8 +72,23 @@ public class MemberController {
 	@PostMapping("/updateMember")
 	public String updateMember(MemberVO mvo) {
 		service.updateMember(mvo);
-		
 		return "redirect:/admin/member/view_member?id="+mvo.getId();
+	}
+	
+	//권한수정
+	@PostMapping("/auth_update")
+	public String updateAuth(String id, HttpServletRequest request) {
+		log.info(id);
+		String[] arrRoles = request.getParameterValues("roles");
+		service.deleteAuth(id);
+		for(int i =0; i<arrRoles.length; i++) {
+			log.info("현재의 권한 : "+arrRoles[i]);
+			Member_authVO vo = new Member_authVO();
+			vo.setAuth(arrRoles[i]);
+			vo.setId(id);
+			service.insertAuth(vo);
+		}
+		return "redirect:/admin/member/role_update?id="+id;
 	}
 	
 	//로그인 true/false

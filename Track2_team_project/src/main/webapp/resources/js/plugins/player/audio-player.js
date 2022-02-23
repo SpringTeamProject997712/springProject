@@ -1,40 +1,31 @@
 $(function() {
     "use strict";
     
-    let basicPlayList = [{
-						image : 'weekly/song1.jpg',	
-            title: "RE:Wind",
-            artist: "이세계 아이돌",
-            mp3: "/music/Rewind.mp3",
-						option : myPlayListOtion	
-        }, {
-						image : 'weekly/song2.jpg',	
-            title: "LIVE FORVER",
-            artist: "오아시스",
-            mp3: "/music/Live_forever.mp3",
-						option : myPlayListOtion
-        }, {
-						image : 'weekly/song3.jpg',	
-            title: "니얼굴",
-            artist: "TSP",
-            mp3: "/music/Your_face.mp3",
-						option : myPlayListOtion
-        },{
-						image : 'weekly/song2.jpg',	
-            title: "천체관측",
-            artist: "BUMP OF CHICKEN",
-            mp3: "/music/天体観測.mp3",
-						option : myPlayListOtion
-        }];
+    let basicPlayList = "";
+    var myPlayListOtion = '<ul class="more_option"><li><a href="#"><span class="opt_icon" title="Add To Favourites"><span class="icon icon_fav"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Queue"><span class="icon icon_queue"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Download Now"><span class="icon icon_dwn"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Playlist"><span class="icon icon_playlst"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Share"><span class="icon icon_share"></span></span></a></li></ul>';
+ 
+    $.ajax({
+    	type:"get",
+    	url:"/createPlaylist/addPlayList",
+    	data:{menu:1},
+    	async:false,
+    	success:function(data){
+    		basicPlayList = JSON.parse(data);
+    		for(var i=0; i<basicPlayList.length; i++){
+    			basicPlayList[i].option = myPlayListOtion;
+    		}
+    	},error:function(xhr,status,error){
+    		console.log("xhr : "+xhr.status+"\n text : "+xhr.responseText+"\n error : "+error);
+    	}
+    });
+    
+	let login_flag = "";
 
-		let login_flag = "";
-
-		$.ajax({
+	$.ajax({
     	type:"get",
     	url:"/member/loginChecker",
     	async:false,
     	success:function(data){
-    		console.log("나온 값 : "+data);
     		if(data != '1'){
     		login_flag=data;
     		}		
@@ -48,32 +39,24 @@ $(function() {
     
     console.log("현재 로그인 체커"+login_checker);
     
-    //함수 가동
-    if ($('.audio-player').length) { //audio-player 클래스가 있으면 작동
-    
-		var myPlayListOtion = '<ul class="more_option"><li><a href="#"><span class="opt_icon" title="Add To Favourites"><span class="icon icon_fav"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Queue"><span class="icon icon_queue"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Download Now"><span class="icon icon_dwn"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Add To Playlist"><span class="icon icon_playlst"></span></span></a></li><li><a href="#"><span class="opt_icon" title="Share"><span class="icon icon_share"></span></span></a></li></ul>';
-		
-	$.ajax({
+    	$.ajax({
     	type:"get",
     	url:"/createPlaylist/addPlayList",
     	data:{menu:2},
     	async:false,
     	success:function(data){
-    		console.log(data);
     		objectMine = JSON.parse(data);
     		for(var i=0; i<objectMine.length; i++){
     			objectMine[i].option = myPlayListOtion;
     		}
-     		console.log(objectMine);
     	},error:function(xhr,status,error){
     		console.log("xhr : "+xhr.status+"\n text : "+xhr.responseText+"\n error : "+error);
     	}
     });
     
-    console.log(document.cookie);
-    console.log("===========================내가 만든 플레이 리스트 값==============================")
-    console.log(objectMine);
-		
+    //함수 가동
+    if ($('.audio-player').length) { //audio-player 클래스가 있으면 작동
+
 		var music = '<c:out value="${music}"/>';
 		
         var myPlaylist = new jPlayerPlaylist({
@@ -90,8 +73,8 @@ $(function() {
             smoothPlayBar: true,
             keyEnabled: true,
             playlistOptions: {
-            autoPlay: false,        //로딩후 음악을 자동으로 시작할건가요?
-            						//크롬은 모든 음소거 되지않은 자동재생을 차단합니다. 유저가 웹과 상호작용하지 않았다면요.					
+            	autoPlay: login_checker?true:false, //로딩후 음악을 자동으로 시작할건가요?
+            										//크롬은 모든 음소거 되지않은 자동재생을 차단합니다. 유저가 웹과 상호작용하지 않았다면요.					
             }
         });
         $("#jquery_jplayer_1").on($.jPlayer.event.ready + ' ' + $.jPlayer.event.play, function(event) {
@@ -99,7 +82,7 @@ $(function() {
             var playlist = myPlaylist.playlist;
             $.each(playlist, function(index, obj) {
                 if (index == current) {
-                    $(".jp-now-playing").html("<div class='jp-track-name'><span class='que_img'><img src='/images/"+obj.image+"'></span><div class='que_data'>" + obj.title + " <div class='jp-artist-name'>" + obj.artist + "</div></div></div>");
+                    $(".jp-now-playing").html("<div class='jp-track-name'><span class='que_img'><img src='/upload/"+obj.image+"'></span><div class='que_data'>" + obj.title + " <div class='jp-artist-name'>" + obj.artist + "</div></div></div>");
                 }
             });
 			$('.knob-wrapper').mousedown(function() {
