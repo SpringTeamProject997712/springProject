@@ -26,11 +26,11 @@
 						</label>	
 						<div class="ms_upload_btn">
 							<input class="upload-name" value="please upload image" disabled="disabled">
-							<br><br>
+								<br><br>
 							<a href="javascript:void(0);" class="ms_btn">
-							<label for="image" className="ms_btn">upload Cover</label>							
+								<label for="image" className="ms_btn">upload Cover</label>							
 							</a>
-							<input type="file" name="uploadImage" id="image" accept="image/*" class="form-control" style="display: none">
+								<input type="file" name="uploadImage" id="image" accept="image/*" class="form-control" style="display: none">
 						</div>
 	<!-- 						<span> or </span>	 -->
 	<!-- 						<p>Drag And Drop Album Image File</p> -->

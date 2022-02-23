@@ -55,8 +55,31 @@ function go_update(){
 }
 
 function go_update_album() {
-	let form = document.albumForm;
+	let form = document.formAlbum;
 	form.action = "/album/updateAlbum";
 	form.submit;
 }
+
+//파일 수정 관련
+var actionForm = $("#actionForm");
+$(".page-item > a").on("click", function(e) {
+	e.preventDefault();
+	actionForm.find("input[name='pageNum']").val($(this).attr("href"));
+	actionForm.submit();
+	
+})
+
+$(document).ready(function(){
+	  var fileTarget = $('.input-group .upload-hidden');
+
+	    fileTarget.on('change', function(){
+	        if(window.FileReader){
+	            var filename = $(this)[0].files[0].name;
+	        } else {
+	            var filename = $(this).val().split('/').pop().split('\\').pop();
+	        }
+
+	        $(this).siblings('.form-control').val(filename);
+	    });
+	}); 
 

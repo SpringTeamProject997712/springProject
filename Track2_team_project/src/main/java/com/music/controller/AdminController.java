@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.music.domain.AlbumVO;
 import com.music.domain.MemberVO;
@@ -93,31 +94,38 @@ public class AdminController {
 	
 	//앨범
 	
-	@GetMapping("album/manage_album") //상품관리 - 상품 리스트 보기
+	@GetMapping("/album/manage_album") //상품관리 - 상품 리스트 보기
 	public void viewProductList(Model model, Criteria cri) {
 		List<AlbumVO> alist = aService.viewAlbumListWithPaging(cri);
-		log.info(alist);
 		model.addAttribute("albumList", alist);
 		model.addAttribute("pageMaker", aService.pagingList(cri));
 	}
 	
-	@GetMapping("album/view_album") //상품관리 - 상품 세부사항 보기
-	public void viewProductDetail(Model model) {
-		
+	@GetMapping("/album/view_album") //상품관리 - 상품 세부사항 보기
+	public void viewProductDetail(Model model, int abno) {
+		AlbumVO album = aService.viewAlbumList(abno);
+		model.addAttribute("album", album);
 	}
 
+	
+	
 	//트랙
 	
-	@GetMapping("album/manage_track") //상품관리 - 상품 리스트 보기
-	public void viewTrackList(Model model, Criteria cri) {
-		List<TrackVO> tlist = tService.viewTrackListWithPaging(cri);
-		log.info(tlist);
+	@GetMapping("/track/manage_track") //상품관리 - 상품 리스트 보기
+	public void viewTrackList(int abno, Model model) {
+		List<TrackVO> tlist = tService.viewTrackListWithPaging(abno);
 		model.addAttribute("trackList", tlist);
-		model.addAttribute("pageMaker", tService.pagingList(cri));
 	}
 	
-	@GetMapping("album/view_track") //상품관리 - 상품 세부사항 보기
-	public void viewTrackDetail(Model model) {
+	@GetMapping("/track/view_track") //상품관리 - 상품 세부사항 보기
+	public void viewTrackDetail(int tbno, Model model) {
+		String[] genre = {"장르1","장르2","장르3","장르4"};
+		TrackVO track = tService.viewTrackList(tbno);
+		AlbumVO album = aService.viewAlbumList(track.getAbno());
+		
+		model.addAttribute("album", album);
+		model.addAttribute("track", track);
+		model.addAttribute("genre", genre);
 		
 	}
 	

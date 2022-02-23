@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!-- main css files links -->
-<%@ include file="../header.jsp" %>
+<%@ include file="../header.jsp"%>
 
         <!----Album Single Section Start---->
         <div class="ms_album_single_wrapper">
@@ -75,7 +74,6 @@
 					<c:set value="${num+1}" var="num"/>
 					</c:forEach>
 					<!-- track list end -->
-				
 				</div>
 			</div>
         </div>
@@ -482,4 +480,3 @@
         </div>
         </div>
         <%@include file="../footer.jsp" %>
-        

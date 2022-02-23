@@ -55,38 +55,43 @@
 	                          <td><fmt:formatDate value="${mlist.regdate}" pattern="yyyy-MM-dd"/></td>
 	                          <td>${mlist.active}</td>
 	                          <td>
-	                          	<div class="dropdown">
-															  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">보기</button>
-															  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-															    <li><a class="dropdown-item" href="/admin/member/view_member?id=${mlist.id}">세부정보 조회 /수정</a></li>
-															    <li><a class="dropdown-item" id="${mlist.id}" onclick="go_member_delete(this.id)" href="javascript:void(0)">아이디 비활성화</a></li>
-															    <li><a class="dropdown-item" href="/admin/member/role_update?id=${mlist.id}">권한 추가/제거</a></li>
-															    <li>
-															      <hr class="dropdown-divider">
-															    </li>
-															    <li><a class="dropdown-item" href="#">Separated link</a></li>
-															  </ul>
-															</div>
-	                          </td>
+												<div class="dropdown">
+													<button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">보기</button>
+													<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+														<li><a class="dropdown-item" href="/admin/member/view_member?id=${mlist.id}">세부정보 조회 /수정</a></li>
+														<li><a class="dropdown-item" id="${mlist.id}" onclick="go_member_delete(this.id)" href="javascript:void(0)">아이디 비활성화</a></li>
+														<li><a class="dropdown-item" href="/admin/member/role_update?id=${mlist.id}">권한 추가/제거</a></li>
+														<li>
+															<hr class="dropdown-divider">
+														</li>
+														<li><a class="dropdown-item" href="#">Separated link</a></li>
+													</ul>
+												</div>
+											</td>
                         	</tr>
                         </c:forEach>
                       </tbody>
                     </table>
                   </div>
                   <nav aria-label="Page navigation example">
-									  <ul class="pagination justify-content-center">
-									    <li class="page-item ${pageMaker.prev?'':'disabled'}"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-									    <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-									    	<li class="page-item active"><a class="page-link ${pageMaker.cri.pageNum == num?'active':''}" href="#">${num}</a></li>
-									    </c:forEach>
-									    <li class="page-item ${pageMaker.next?'':'disabled'}"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-									  </ul>
-									  
-									</nav>
+					  <ul class="pagination justify-content-center">
+					    <li class="page-item ${pageMaker.prev?'':'disabled'}"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+					    <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">	
+					    	<li class="page-item ${pageMaker.cri.pageNum == num?'active':''}"><a class="page-link" href="${num }">${num}</a></li>
+					    </c:forEach>
+					    <li class="page-item ${pageMaker.next?'':'disabled'}"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+					  </ul>
+					</nav>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      
+    <form id="actionForm" action="manage_member" method="get">
+		<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+		<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
+		<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">
+	</form>
 <%@ include file="../admin_footer.jsp" %>

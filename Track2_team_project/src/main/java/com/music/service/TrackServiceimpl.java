@@ -59,15 +59,8 @@ public class TrackServiceimpl implements TrackService {
 		return mapper.searchTrackList(name);
 	}
 	@Override
-	public List<TrackVO> viewTrackListWithPaging(Criteria cri) {
-		return mapper.viewTrackListWithPaging(cri);
-	}
-
-	@Override
-	public PageMaker pagingList(Criteria cri) {
-		int amount = mapper.countTrack(cri);
-		PageMaker pageMaker = new PageMaker(cri, amount);
-		return pageMaker;
+	public List<TrackVO> viewTrackListWithPaging(int abno) {
+		return mapper.viewTrackListWithPaging(abno);
 	}
 
 	@Override
@@ -75,4 +68,11 @@ public class TrackServiceimpl implements TrackService {
 		int result = mapper.updateTrack(tvo);
 		return result;
 	}
+
+	@Override
+	public TrackVO viewTrackList(int tbno) {
+		return mapper.viewTrackList(tbno);
+	}
+
+
 }
