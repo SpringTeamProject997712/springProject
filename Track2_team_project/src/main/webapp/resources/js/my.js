@@ -29,7 +29,10 @@ $(function(){ // document가 다 로딩된 후 쿠키 있는지 확인해서 아
 //뒤로가기, 새로고침, 페이지 이동시 음악 플레이 정보 저장하기
 window.onbeforeunload = function (event) { 
 	event.preventDefault();
-	deleteCookie("musicData");
+	
+	sessionStorage.removeItem("currentTime");
+	sessionStorage.removeItem("duration");
+	sessionStorage.removeItem("currentList");
 		
 	let timeNow=$(".jp-current-time").text();
 	let timeEnd=$(".jp-duration").text();
@@ -43,7 +46,6 @@ window.onbeforeunload = function (event) {
 	sessionStorage.setItem("duration",timeEnd);
 	sessionStorage.setItem("currentList",listNow);
 }
-
 
 function getCookie(cookieName) { 
 	cookieName = cookieName + '='; 

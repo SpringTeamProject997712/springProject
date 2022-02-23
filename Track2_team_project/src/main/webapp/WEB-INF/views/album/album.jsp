@@ -273,7 +273,7 @@
                         <div class="swiper-slide">
                             <div class="ms_rcnt_box">
                                 <div class="ms_rcnt_box_img">
-                                    <img src="${pageContext.request.contextPath}/upload/${list.image}" alt="">
+                                    <img src="${pageContext.request.contextPath}/upload/${list.image_240}" alt="">
                                     <div class="ms_main_overlay">
                                         <div class="ms_box_overlay"></div>
                                         <div class="ms_more_icon">

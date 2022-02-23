@@ -83,7 +83,7 @@
             <!----Testimonial section Start---->
             <div class="ms_test_wrapper">
                 <div class="ms_heading">
-                    <h1>コメント (숫자)</h1>
+                    <h1>コメント (${reviewCount})</h1>
                 </div>
                 <div class="ms_test_slider swiper-container">
                 	<div class="swiper-wrapper">

@@ -54,11 +54,13 @@ public class AlbumController {
 	
 	@GetMapping("/album_single")
 	public void album_single(Model model, @RequestParam("abno")int abno) {
-		model.addAttribute("pbno", service.readAlbum(abno));
+		AlbumVO avo = service.readAlbum(abno);
+		model.addAttribute("pbno", avo);
 		model.addAttribute("view",service.readAlbum_single(abno));
 		model.addAttribute("newly",service.newly());
-		model.addAttribute("album_comments",rservice.selectReview(service.readAlbum(abno).getPbno()));
+		model.addAttribute("album_comments",rservice.selectReview(avo.getPbno()));
 		model.addAttribute("this_album", service.readAlbum(abno));
+		model.addAttribute("reviewCount",rservice.countReview(avo.getPbno()));
 	}
 	
 	@ResponseBody
