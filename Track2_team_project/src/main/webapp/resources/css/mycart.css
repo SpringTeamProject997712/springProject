@@ -56,7 +56,12 @@ select.form-control {
 .order-table>table>thead>tr>td,
 .order-table>table>tbody>tr>th,
 .order-table>table>tbody>tr>td {
-    vertical-align: middle !important
+    vertical-align: middle !important;
+    color:#fff;
+}
+
+shopping-cart .th {
+	color:#fff;
 }
 
 .shopping-cart>table thead th,
@@ -102,7 +107,7 @@ select.form-control {
 .order-table .product-item .product-thumb,
 .order-table .product-item .product-info {
     display: table-cell;
-    vertical-align: top
+    vertical-align: middle;
 }
 
 .shopping-cart .product-item .product-thumb,
@@ -154,7 +159,6 @@ select.form-control {
 .wishlist-table .product-item .product-title>a,
 .order-table .product-item .product-title>a {
     transition: color .3s;
-    color: #374250;
     line-height: 1.5;
     text-decoration: none
 }
