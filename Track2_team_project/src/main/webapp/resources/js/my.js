@@ -342,3 +342,21 @@ $(document).ready(function(){
 //        img[0].style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\""+imgSrc+"\")";        
 //    }
 //});
+
+//액티브
+var pageSubmitFn = function(menu) {
+	if(menu === "menu_main") {
+		location.href="/?pageName=menu_main"
+	}else if(menu === "menu_album") {
+		location.href="/album/album?pageName=menu_album"
+	}else if(menu === "menu_artists"){
+		location.href="/artists/artists?pageName=menu_album"
+	}
+}
+
+$(function(){
+	$(".menu").removeClass("active");
+	var pageName = "<c:out value='${param.pageName}'";
+	$("#".pageName).addClass("active");
+})
+

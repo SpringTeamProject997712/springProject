@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="../header.jsp"%>
+
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="/resources/css/mycart.css" rel="stylesheet">
 <div class="ms_account_wrapper">
@@ -23,15 +24,15 @@
 						<div class="table-responsive shopping-cart">
 							<table class="table">
 								<thead>
-									<tr>
-										<th>Product Name</th>
-										<th class="text-center">Quantity</th>
-										<th class="text-center">Subtotal</th>
-										<th class="text-center">Discount</th>
-										<th class="text-center"><a class="btn btn-sm btn-outline-danger" href="#">Clear Cart</a></th>
-									</tr>
-								</thead>
-								<tbody>
+                <tr>
+                    <th>Product Name</th>
+                    <th class="text-center">Quantity</th>
+                    <th class="text-center">Subtotal</th>
+                    <th class="text-center">Discount</th>
+                    <th class="text-center"><a class="btn btn-sm btn-outline-danger" href="#">Clear Cart</a></th>
+                </tr>
+            </thead>
+            </tbody>
 									<tr>
 										<td>
 											<div class="product-item">
@@ -40,7 +41,6 @@
 													<h4 class="product-title">
 														<a href="#">Unionbay Park</a>
 													</h4>
-													<span><em>Size:</em> 10.5</span><span><em>Color:</em> Dark Blue</span>
 												</div>
 											</div>
 										</td>
@@ -69,7 +69,6 @@
 													<h4 class="product-title">
 														<a href="#">Daily Fabric Cap</a>
 													</h4>
-													<span><em>Size:</em> XL</span><span><em>Color:</em> Black</span>
 												</div>
 											</div>
 										</td>
@@ -98,7 +97,6 @@
 													<h4 class="product-title">
 														<a href="#">Cole Haan Crossbody</a>
 													</h4>
-													<span><em>Size:</em> -</span><span><em>Color:</em> Turquoise</span>
 												</div>
 											</div>
 										</td>

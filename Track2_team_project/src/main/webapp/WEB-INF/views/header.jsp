@@ -54,19 +54,15 @@
                     </div>
                 </div>
                 <div class="ms_nav_wrapper">
-                    <ul>
-                        <li><a href="/" class="active" title="Discover">
-
-						<span class="nav_icon">
-							<span class="icon icon_discover"></span>
-						</span>
-						<span class="nav_text">
+                   <ul>
+                        <li><a href="javascript:void(0)" class="menu active" id="main" title="Discover" onclick="pageSubmitFn('menu_main')">
+                        <span class="nav_icon">
+                        <span class="icon icon_discover"></span>
+						</span> <span class="nav_text">
 							メイン
-
 						</span>
-						</a>
-                        </li>
-                        <li><a href="/album/album" title="Albums">
+						</a></li>
+                        <li><a href="javascript:void(0)" class="menu" id="album" title="Albums" onclick="pageSubmitFn('menu_album')">
 						<span class="nav_icon">
 							<span class="icon icon_albums"></span>
 						</span>
@@ -75,7 +71,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="/artist/artist.jsp" title="Artists">
+                        <li><a href="/artist/artist.jsp" title="Artists" onclick="pageSubmitFn('artist')">
 						<span class="nav_icon">
 							<span class="icon icon_artists"></span>
 						</span>
@@ -84,7 +80,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="genres.html" title="Genres">
+                        <li><a href="genres.html" title="Genres" onclick="pageSubmitFn('genre')">
 						<span class="nav_icon">
 							<span class="icon icon_genres"></span>
 						</span>
@@ -93,7 +89,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="top_track.html" title="Top Tracks">
+                        <li><a href="top_track.html" title="Top Tracks" onclick="pageSubmitFn('top_track')">
 						<span class="nav_icon">
 							<span class="icon icon_tracks"></span>
 						</span>

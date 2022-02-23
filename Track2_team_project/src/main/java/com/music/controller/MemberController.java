@@ -140,6 +140,8 @@ public class MemberController {
 	
 	@GetMapping("/my_cart")
 	public void viewCart() {
+		
+		
 	}
 	
 	
