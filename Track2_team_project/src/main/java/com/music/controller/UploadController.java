@@ -127,18 +127,18 @@ public class UploadController {
         BufferedImage resizedImage_240 = resize(inputStream_240 ,width_240, height_240);
         
 //        ImageIO.write(resizedImage_240, "jpg", new File(uploadFolder, uploadImageName+"_240.jpg"));
-        ImageIO.write(resizedImage_240, "jpg", new File(uploadFolder, strImageName+"_240.jpg"));
+        ImageIO.write(resizedImage_240, "png", new File(uploadFolder, strImageName+"_240.png"));
         log.info("folder::"+uploadFolder);
         log.info("imagename::"+uploadImageName);
         log.info("imagename::"+strImageName);
         
         BufferedImage resizedImage_50 = resize(inputStream_50 ,width_50, height_50);
         
-        ImageIO.write(resizedImage_50, "jpg", new File(uploadFolder, strImageName+"_50.jpg"));
+        ImageIO.write(resizedImage_50, "png", new File(uploadFolder, strImageName+"_50.png"));
 
         try {
-			album.setImage_240(strImageName+"_240.jpg");
-			album.setImage_50(strImageName+"_50.jpg");
+			album.setImage_240(strImageName+"_240.png");
+			album.setImage_50(strImageName+"_50.png");
 			
 		}catch(Exception e) {
 			e.printStackTrace();
