@@ -15,5 +15,7 @@ public class PlaylistVO {
 	private int abno;
 	private int tbno;
 
+//제어자
 	
+	private int menu;
 }

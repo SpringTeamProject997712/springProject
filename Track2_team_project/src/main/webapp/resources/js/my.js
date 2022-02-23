@@ -26,6 +26,26 @@ $(function(){ // document가 다 로딩된 후 쿠키 있는지 확인해서 아
 	} 
 });
 
+//뒤로가기, 새로고침, 페이지 이동시 음악 플레이 정보 저장하기
+//==================================================제작중===================================================
+window.onbeforeunload = function (event) { 
+	event.preventDefault();
+	deleteCookie("musicData");
+		
+	let timeNow=$(".jp-current-time").text();
+	let timeEnd=$(".jp-duration").text();
+	let listNow= sessionStorage.getItem("NowList");
+	
+	console.log(timeNow);
+	console.log(timeEnd);
+	console.log(listNow);
+	
+	sessionStorage.setItem("currentTime",timeNow);
+	sessionStorage.setItem("duration",timeEnd);
+	sessionStorage.setItem("currentList",listNow);
+}
+//==================================================제작중===================================================
+
 function getCookie(cookieName) { 
 	cookieName = cookieName + '='; 
 	var cookieData = document.cookie; 
@@ -211,7 +231,6 @@ $().ready(function(){
 		heart_arr.push($(this).attr('id').substring(5))
 	});
 	console.log(heart_arr);
-	console.log(fav_heart);
 	if(fav_heart){
 		for(var i=0; i<heart_arr.length; i++){
 			$.ajax({
@@ -220,9 +239,7 @@ $().ready(function(){
 				async:false,
 				url:"/favourite/favourite_checker",
 				success:function(data){
-					console.log("좋아요 했나요? : "+data);
 					if(data=='1'){
-						console.log(heart_arr[i]);
 						$("#pbno_"+heart_arr[i]).empty();
 						$("#pbno_"+heart_arr[i]).append("<span><img src='/images/svg/pink-heart.svg' style='width:24px; height:24px'></span>");
 					}else{
@@ -246,27 +263,47 @@ $(".fav_box").on("click", function(){
 	if(nope.length){
 		console.log("좋아요 안함");
 	}else{
-		console.log("좋아요 함");
 		like_status = 1;
 	}
+	//로그인 체크
+	let login_flag=0;
+	
 	$.ajax({
-		type:"get",
-		url:"/favourite/updateLike",
-		data:{likes:like_status, pbno:like_pbno},
-		async:false,
-		error:function(xhr,status,err){
-			console.log(xhr.status + "\n"+xhr.reponseText +  "\n"+ err );
-		},success:function(data){
-			console.log(data);
-			if(data=='1'){
-				$("#pbno_"+like_pbno).empty();
-				$("#pbno_"+like_pbno).append("<span><img src='/images/svg/pink-heart.svg' style='width:24px; height:24px'></span>");
-			}else{
-				$("#pbno_"+like_pbno).empty();
-				$("#pbno_"+like_pbno).append("<span class='ms_icon1 ms_fav_icon'></span>");
+    	type:"get",
+    	url:"/member/loginChecker",
+    	async:false,
+    	success:function(data){
+    		console.log("나온 값 : "+data);
+    		if(data != '1'){
+    		login_flag=data;
+    		}		
+    	},error:function(xhr,status,error){
+    		console.log("xhr : "+xhr.status+"\n text : "+xhr.responseText+"\n error : "+error);
+    	}
+	});
+	
+	if(login_flag){
+		$.ajax({
+			type:"get",
+			url:"/favourite/updateLike",
+			data:{likes:like_status, pbno:like_pbno},
+			async:false,
+			error:function(xhr,status,err){
+				console.log(xhr.status + "\n"+xhr.reponseText +  "\n"+ err );
+			},success:function(data){
+				console.log(data);
+				if(data=='1'){
+					$("#pbno_"+like_pbno).empty();
+					$("#pbno_"+like_pbno).append("<span><img src='/images/svg/pink-heart.svg' style='width:24px; height:24px'></span>");
+				}else{
+					$("#pbno_"+like_pbno).empty();
+					$("#pbno_"+like_pbno).append("<span class='ms_icon1 ms_fav_icon'></span>");
+				}
 			}
-		}
 	})
+	}else{
+		alert("좋아요를 표시하기 위해 로그인이 필요합니다.");
+	}
 })
 
 $(".create_playlist").on("click", function(){
@@ -297,6 +334,8 @@ $(".musicSearch_on").off().on("click", function(){
 		flag=1;
 	}
 })
+
+
 
 //앨범 업로드 이미지 시 미리보기
 $(document).ready(function(){ 

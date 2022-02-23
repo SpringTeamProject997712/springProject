@@ -82,8 +82,12 @@ public class AdminController {
 	
 	@GetMapping("/member/role_update")
 	public void updateRole(String id, Model model) {
+		
+		String[] roles = {"ROLE_ADMIN","ROLE_USER","ROLE_MOLU"};
+		
 		MemberVO member = mService.viewMember(id);
 		model.addAttribute("member",member);
+		model.addAttribute("roles",roles);
 	}
 	
 //=========================================상품관리용========================================

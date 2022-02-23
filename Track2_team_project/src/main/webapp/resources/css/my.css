@@ -167,7 +167,26 @@ ul.pro_dropdown_menu {
 .filebox .upload-display img {  /* 추가될 이미지 */
   display: block;
   max-width: 100%;
-  width: 100% \9;
+  width: 100%;
   height: auto;
 }
 
+.auth-table {
+	text-align: center; 
+	margin:30px; 
+	width: 60%;
+}
+
+.ms_input_group1 {
+	width: 76%;
+}
+
+.album_review_selector{
+ height:40px; padding:5px; width:160px; padding-left: 20px; font-size: 16px;
+}
+
+.album_favou_box{
+right: 45px;
+top: 23px; position:absolute;
+cursor: pointer;
+}

@@ -24,6 +24,7 @@ import com.music.domain.CartVO;
 import com.music.domain.MemberVO;
 import com.music.service.AlbumService;
 import com.music.service.CartService;
+import com.music.service.ReviewService;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -32,6 +33,9 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/album/*")
 @Log4j
 public class AlbumController {
+	
+	@Setter(onMethod_= @Autowired)
+	private ReviewService rservice;
 	
 	@Setter(onMethod_= @Autowired)
 	private AlbumService service;
@@ -43,6 +47,7 @@ public class AlbumController {
 	public void albumView(Model model) {
 		model.addAttribute("list",service.listAlbum());
 		model.addAttribute("likes",service.getCountLikes());
+		model.addAttribute("newly",service.newly());
 		
 	}
 	
@@ -51,6 +56,8 @@ public class AlbumController {
 		model.addAttribute("pbno", service.readAlbum(abno));
 		model.addAttribute("view",service.readAlbum_single(abno));
 		model.addAttribute("newly",service.newly());
+		model.addAttribute("album_comments",rservice.selectReview(service.readAlbum(abno).getPbno()));
+		model.addAttribute("this_album", service.readAlbum(abno));
 	}
 	
 	@ResponseBody

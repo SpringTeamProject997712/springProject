@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.music.domain.AlbumVO;
+import com.music.domain.PlaylistVO;
 import com.music.domain.TrackVO;
 import com.music.domain.jPlayerVO;
 import com.music.mapper.AlbumMapper;
+import com.music.mapper.CreatePlaylistMapper;
 import com.music.mapper.TrackMapper;
 import com.music.utility.Criteria;
 import com.music.utility.PageMaker;
@@ -25,6 +27,8 @@ public class TrackServiceimpl implements TrackService {
 	private TrackMapper mapper;
 	@Setter(onMethod_ = @Autowired)
 	private AlbumMapper amapper;
+	@Setter(onMethod_ = @Autowired)
+	private CreatePlaylistMapper cmapper;
 	@Override
 	public List<AlbumVO> listNewly() {
 		
@@ -40,8 +44,10 @@ public class TrackServiceimpl implements TrackService {
 	public jPlayerVO convertTrackToJPlayer(TrackVO tvo) {
 		jPlayerVO playlist = new jPlayerVO();
 		AlbumVO avo=amapper.readAlbum(tvo.getAbno());
+		
+		playlist.setTbno(tvo.getTbno());
 		playlist.setArtist(avo.getSinger());
-		playlist.setImage(avo.getImage());
+		playlist.setImage(avo.getImage_50());
 		playlist.setMp3("/upload/"+tvo.getSongrealname());
 		playlist.setOption("myPlayListOtion");
 		playlist.setTitle(tvo.getName());

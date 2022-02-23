@@ -46,10 +46,10 @@
   	
   	<select id="getCountLikes" resultType="com.music.domain.AlbumVO">
 
-	select a.pbno, a.name, a.singer,a.image, count(likes) likes
+	select a.pbno, a.name, a.singer,a.image_240, count(likes) likes
 	from album_m a, like_m l
 	where l.pbno = a.pbno
-	group by a.pbno, a.name, a.singer,a.image
+	group by a.pbno, a.name, a.singer,a.image_240
 	order by likes desc
   	</select>
   	
