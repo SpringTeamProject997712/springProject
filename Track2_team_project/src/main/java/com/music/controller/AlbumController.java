@@ -1,14 +1,10 @@
 package com.music.controller;
 
-<<<<<<< HEAD
-import java.util.List;
-=======
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,10 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-<<<<<<< HEAD
-=======
 import org.springframework.web.multipart.MultipartFile;
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 
 import com.google.gson.Gson;
 import com.music.domain.AlbumVO;
@@ -48,13 +41,9 @@ public class AlbumController {
 	public void albumView(Model model) {
 		model.addAttribute("list",service.listAlbum());
 		model.addAttribute("likes",service.getCountLikes());
-<<<<<<< HEAD
 		model.addAttribute("topalbum",service.topAlbums());
 		model.addAttribute("newly",service.newly());
-=======
-		model.addAttribute("newly",service.newly());
-		
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
+
 	}
 	
 	@GetMapping("/album_single")
@@ -75,8 +64,7 @@ public class AlbumController {
 		return json;
 	}
 	
-<<<<<<< HEAD
-=======
+
 	@PostMapping("/updateAlbum")
 	public String updateAlbum(@RequestParam("uploadImage") MultipartFile uploadImage,HttpServletRequest req,AlbumVO avo) {
 		String uploadFolder = "C:\\upload";
@@ -122,7 +110,7 @@ public class AlbumController {
 		String str = sdf.format(date);
 		return str.replace("-",  File.separator);
 	}
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
+
 
 	
 }
