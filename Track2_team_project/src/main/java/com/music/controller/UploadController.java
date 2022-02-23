@@ -121,8 +121,8 @@ public class UploadController {
 //		Image img_240 = new ImageIcon(saveimage_240.toString()).getImage(); // 파일 정보 추출
 //		Image img_50 = new ImageIcon(saveimage_50.toString()).getImage(); // 파일 정보 추출
 
-        int width_240 = 240; // 리사이즈할 가로 길이
-        int height_240 = 240; // 리사이즈할 세로 길이
+        int width_240 = 300; // 리사이즈할 가로 길이
+        int height_240 = 300; // 리사이즈할 세로 길이
         
         int width_50 = 50; // 리사이즈할 가로 길이
         int height_50 = 50; // 리사이즈할 세로 길이
@@ -130,7 +130,8 @@ public class UploadController {
         BufferedImage resizedImage_240 = resize(inputStream_240 ,width_240, height_240);
         
 //        ImageIO.write(resizedImage_240, "jpg", new File(uploadFolder, uploadImageName+"_240.jpg"));
-        ImageIO.write(resizedImage_240, "jpg", new File(uploadFolder, strImageName+"_240.jpg"));
+
+        ImageIO.write(resizedImage_240, "png", new File(uploadFolder, strImageName+"_240.png"));
 
         log.info("folder::"+uploadFolder);
         log.info("imagename::"+uploadImageName);
@@ -138,11 +139,11 @@ public class UploadController {
         
         BufferedImage resizedImage_50 = resize(inputStream_50 ,width_50, height_50);
         
-        ImageIO.write(resizedImage_50, "jpg", new File(uploadFolder, strImageName+"_50.jpg"));
+        ImageIO.write(resizedImage_50, "png", new File(uploadFolder, strImageName+"_50.png"));
 
         try {
-			album.setImage_240(strImageName+"_240.jpg");
-			album.setImage_50(strImageName+"_50.jpg");
+			album.setImage_240(strImageName+"_240.png");
+			album.setImage_50(strImageName+"_50.png");
 			
 		}catch(Exception e) {
 			e.printStackTrace();

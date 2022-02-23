@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +24,7 @@ import com.google.gson.Gson;
 import com.music.domain.AlbumVO;
 import com.music.domain.CartVO;
 import com.music.domain.MemberVO;
+import com.music.security.domain.CustomUser;
 import com.music.service.AlbumService;
 import com.music.service.CartService;
 import com.music.service.ReviewService;
@@ -123,9 +126,18 @@ public class AlbumController {
 	@ResponseBody
 	@PostMapping("/insertCart")
 	public void insertCart(CartVO cart, HttpSession session) {
-		MemberVO member = (MemberVO)session.getAttribute("member");
-		cart.setId(member.getId());
-		System.out.println("아이디 주입 체크"+cart.getId());
+		String myName="";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			cart.setId(myName);
+		}
+//		
+//		MemberVO member = (MemberVO)session.getAttribute("member");
+//		cart.setId(member.getId());
+//		cart.setId("ryu00209@gmail.com");
+//		System.out.println("아이디 주입 체크"+cart.getId());
 		
 		cservice.insertCart(cart);
 	}
