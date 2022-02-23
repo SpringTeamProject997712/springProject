@@ -17,10 +17,12 @@ import com.music.mapper.CreatePlaylistMapper;
 import com.music.mapper.TrackMapper;
 import com.music.security.domain.CustomUser;
 
+import lombok.AllArgsConstructor;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @Service
+@AllArgsConstructor
 @Log4j
 public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 

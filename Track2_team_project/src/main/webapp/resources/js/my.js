@@ -130,6 +130,7 @@ function go_upload_album() {
 		upload_album.singer.focus();
 		return false;
 	}
+
 	if(upload_album.detail.value=="") {
 		alert("詳細を入力してください");
 		upload_album.detail.focus();
@@ -143,10 +144,12 @@ function go_upload_album() {
 	if(upload_album.regdate.value=="") {
 		alert("登録日を入力してください");
 		upload_album.regdate.focus();
+		
 		return false;
 	}
  	document.upload_album.submit();
  }
+
 function go_upload_track() {
 	
 	if(upload_track.uploadMusic.value=="") {
@@ -190,6 +193,15 @@ function go_upload_goods() {
 	document.upload_goods.submit();
 	
  }
+function go_reset() {
+	$('form').each(function() {
+
+	      this.reset();
+
+	  });
+}
+
+
 function go_reset() {
 	$('form').each(function() {
 
@@ -400,3 +412,27 @@ $(".remove_single_track_in_playlist").on("click", function(){
 //        img[0].style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\""+imgSrc+"\")";        
 //    }
 //});
+
+
+//액티브 (해더 내부에 넣어야 작동함 ㅅㅂ;)
+//var pageSubmitFn = function(menu) {
+//		if(menu === "menu_main") {
+//			$("#activefrm").attr("action", "/");
+//			$("#pageName").val(menu);
+//		}else if(menu === "menu_album") {
+//			$("#activefrm").attr("action", "album/album");
+//			$("#pageName").val(menu);
+//		}else if(menu === "menu_artists"){
+//			$("#activefrm").attr("action", "artists/artists");
+//			$("#pageName").val(menu);
+//		}
+//		$("#activefrm").submit();
+//}
+//
+//$(function(){
+//	$(".menu").removeClass("active");
+////	var pageName = "<c:out value='${param.pageName}'/>";
+//	var pageName = '${param.pageName}';
+//	console.log(pageName);
+//	$("#"+pageName).addClass("active");
+//})

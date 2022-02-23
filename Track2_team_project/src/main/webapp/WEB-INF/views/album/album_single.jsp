@@ -54,6 +54,7 @@
 					<c:forEach var="view" items="${view}">
 					<ul>
 						<li><a class="play_track_in_album" id="${view.tbno}" href="javascript:void(0)" ><span class="play_no">${num}</span><span class="play_hover"></span></a></li>
+
 						<li><a href="#">${view.tname}</a></li>
 						<li><a href="#">${view.singer}</a></li>
 						<li class="text-center"><a href="#">5:26</a></li>

@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +20,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.google.gson.Gson;
 import com.music.domain.AlbumVO;
+import com.music.domain.CartVO;
+import com.music.domain.MemberVO;
 import com.music.service.AlbumService;
+import com.music.service.CartService;
 import com.music.service.ReviewService;
 
 import lombok.Setter;
@@ -36,17 +40,21 @@ public class AlbumController {
 	@Setter(onMethod_= @Autowired)
 	private AlbumService service;
 	
+	@Setter(onMethod_= @Autowired)
+	private CartService cservice;
 	
 	@GetMapping("/album")
 	public void albumView(Model model) {
 		model.addAttribute("list",service.listAlbum());
 		model.addAttribute("likes",service.getCountLikes());
+		model.addAttribute("topalbum",service.topAlbums());
 		model.addAttribute("newly",service.newly());
-		
+
 	}
 	
 	@GetMapping("/album_single")
 	public void album_single(Model model, @RequestParam("abno")int abno) {
+		model.addAttribute("pbno", service.readAlbum(abno));
 		model.addAttribute("view",service.readAlbum_single(abno));
 		model.addAttribute("newly",service.newly());
 		model.addAttribute("album_comments",rservice.selectReview(service.readAlbum(abno).getPbno()));
@@ -63,6 +71,7 @@ public class AlbumController {
 		return json;
 	}
 	
+
 	@PostMapping("/updateAlbum")
 	public String updateAlbum(@RequestParam("uploadImage") MultipartFile uploadImage,HttpServletRequest req,AlbumVO avo) {
 		String uploadFolder = "C:\\upload";
@@ -109,4 +118,15 @@ public class AlbumController {
 		return str.replace("-",  File.separator);
 	}
 
+	@ResponseBody
+	@PostMapping("/insertCart")
+	public void insertCart(CartVO cart, HttpSession session) {
+		MemberVO member = (MemberVO)session.getAttribute("member");
+		cart.setId(member.getId());
+		System.out.println("아이디 주입 체크"+cart.getId());
+		
+		cservice.insertCart(cart);
+	}
+
+	
 }

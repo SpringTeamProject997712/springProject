@@ -309,7 +309,7 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb my-0 ms-2">
               <li class="breadcrumb-item">
-                <!-- if breadcrumb is single--><span>Home</span>
+                <!-- if breadcrumb is single--><span><a href="/admin/admin" style="color : black;text-decoration: none;">Home</a></span>
               </li>
               <li class="breadcrumb-item active"><span>Dashboard</span></li>
             </ol>

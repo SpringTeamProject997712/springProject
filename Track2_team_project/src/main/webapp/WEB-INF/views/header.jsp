@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="/resources/css/my.css">
     <!-- Favicon Link -->
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+    <script src="/resources/js/jquery.js"></script>
 </head>
 
 <body>
@@ -75,7 +76,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="/artist/artist.jsp" title="Artists">
+                        <li><a href="/artist/artist" title="Artists">
 						<span class="nav_icon">
 							<span class="icon icon_artists"></span>
 						</span>
@@ -84,7 +85,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="genres.html" title="Genres">
+                        <li><a href="/genres/genres" title="Genres">
 						<span class="nav_icon">
 							<span class="icon icon_genres"></span>
 						</span>
@@ -93,7 +94,7 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="top_track.html" title="Top Tracks">
+                        <li><a href="/toptrack/toptrack" title="Top Tracks">
 						<span class="nav_icon">
 							<span class="icon icon_tracks"></span>
 						</span>

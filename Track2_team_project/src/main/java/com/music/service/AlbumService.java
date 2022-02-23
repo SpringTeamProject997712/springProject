@@ -36,10 +36,15 @@ public interface AlbumService {
 	//페이징
 	public PageMaker pagingList(Criteria cri);
 	
+
+	//top15
+	public List<AlbumVO> topAlbums();
+
 	//앨범 세부사항
 	public AlbumVO viewAlbumList(int abno);
 	
 	//앨범 수정
 	public int updateAlbum(AlbumVO avo);
 	
+
 }
