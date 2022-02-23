@@ -343,20 +343,26 @@ $(document).ready(function(){
 //    }
 //});
 
-//액티브
-var pageSubmitFn = function(menu) {
-	if(menu === "menu_main") {
-		location.href="/?pageName=menu_main"
-	}else if(menu === "menu_album") {
-		location.href="/album/album?pageName=menu_album"
-	}else if(menu === "menu_artists"){
-		location.href="/artists/artists?pageName=menu_album"
-	}
-}
-
-$(function(){
-	$(".menu").removeClass("active");
-	var pageName = "<c:out value='${param.pageName}'";
-	$("#".pageName).addClass("active");
-})
+//액티브 (해더 내부에 넣어야 작동함 ㅅㅂ;)
+//var pageSubmitFn = function(menu) {
+//		if(menu === "menu_main") {
+//			$("#activefrm").attr("action", "/");
+//			$("#pageName").val(menu);
+//		}else if(menu === "menu_album") {
+//			$("#activefrm").attr("action", "album/album");
+//			$("#pageName").val(menu);
+//		}else if(menu === "menu_artists"){
+//			$("#activefrm").attr("action", "artists/artists");
+//			$("#pageName").val(menu);
+//		}
+//		$("#activefrm").submit();
+//}
+//
+//$(function(){
+//	$(".menu").removeClass("active");
+////	var pageName = "<c:out value='${param.pageName}'/>";
+//	var pageName = '${param.pageName}';
+//	console.log(pageName);
+//	$("#"+pageName).addClass("active");
+//})
 

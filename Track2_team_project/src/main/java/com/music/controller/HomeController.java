@@ -26,7 +26,6 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model, HttpServletRequest req) {
-		System.out.println("스트림 값 : "+req.getParameter("pageName"));
 		model.addAttribute("music", service.listAlbum());
 		
 		return "index";

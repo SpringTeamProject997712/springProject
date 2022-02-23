@@ -15,8 +15,80 @@
 			<div class="album_feature">
 				<a href="#" class="album_date">5 song | 25:10</a> <a href="#" class="album_date">Released ${view[0].regdate} | Abc Music Company</a>
 			</div>
+			
 			<div class="album_btn">
-				<a href="#" class="ms_btn play_btn"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">Play All</span><span class="pause_all"><img src="/images/svg/pause_all.svg" alt="">Pause</span></a> <a href="#" class="ms_btn"><span class="play_all"><img src="/images/svg/add_q.svg" alt="">Add To Queue</span></a>
+				<a href="#" class="ms_btn play_btn"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">Play All</span>
+				<span class="pause_all"><img src="/images/svg/pause_all.svg" alt="">Pause</span></a>
+				<a href="#" class="ms_btn">
+				<span class="play_all"><img src="/images/svg/add_q.svg" alt="">Add To Queue</span></a>
+				<a href="#" class="ms_btn">
+				<span class="insert_cart_btn"><img src="/images/svg/right_arrow.svg" alt="">Add to Cart</span></a>
+				
+				<form role="form" method="post">
+					<input type="text" name="pbno" id="pbno" value="${pbno.pbno}" />
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+				</form>
+				
+				<script>
+					$(".insert_cart_btn").click(function(){
+						var csrfHeaderName = "${_csrf.headerName}";
+					    var csrfTokenValue = "${_csrf.token}";
+					      $(document).ajaxSend(function(e, xhr, options) {
+					    	  xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+					         });
+						var pbno = 3;
+						var id = "ryu00209@gmail.com";
+						
+				    $.ajax({
+						url : "/album/insertCart",
+						type : "POST",
+						data : {
+							pbno : '3',
+							id : 'ryu00209@gmail.com',
+						},
+						success : function(){
+							alert("담기 성공");
+						},
+						error : function(){
+							alert("실패");
+						}
+					})		
+				    
+				         });
+				</script>
+				
+				<script>
+// 					$(".insert_cart_btn").click(function(){
+// 						var csrfHeaderName = "${_csrf.headerName}";
+// 					    var csrfTokenValue = "${_csrf.token}";
+// 					      $(document).ajaxSend(function(e, xhr, options) {
+// 					    	  xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+// 					         });
+// 						console.log(csrfHeaderName);
+// 						console.log(csrfTokenValue);
+						
+// 						$.ajax({
+// 							url : "/album/insertCart",
+// 							type : "POST",
+// 							data : {
+// 								pbno : '3',
+// 								id : 'ryu00209@gmail.com',
+// 							},
+// 							beforeSend : 
+// 							success : function(){
+// 								alert("담기 성공");
+// 								console.log("pbno출력"+pbno);
+// 								console.log("id출력"+id);
+// 							},
+// 							error : function(){
+// 								alert("실패");
+// 								console.log("pbno출력"+pbno);
+// 								console.log("id출력"+id);
+// 							}
+// 						})		
+// 					})
+				</script>
+				
 			</div>
 		</div>
 		<div class="album_more_optn ms_more_icon">
