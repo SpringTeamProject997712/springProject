@@ -119,8 +119,8 @@ public class AlbumController {
 	@ResponseBody
 	@PostMapping("/insertCart")
 	public void insertCart(CartVO cart, HttpSession session) {
-//		MemberVO member = (MemberVO)session.getAttribute("member");
-//		cart.setId(member.getId());
+		MemberVO member = (MemberVO)session.getAttribute("member");
+		cart.setId(member.getId());
 		System.out.println("아이디 주입 체크"+cart.getId());
 		
 		cservice.insertCart(cart);
