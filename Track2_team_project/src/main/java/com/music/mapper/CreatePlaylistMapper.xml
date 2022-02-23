@@ -56,7 +56,7 @@
 	</select>
 	
 	<insert id="insertBasicPlaylist">
-		<selectKey keyProperty="plbno" order="BEFORE" resultType="int">
+		<selectKey keyProperty="plbno" resultType="int" order="BEFORE">
 			select playlist_m_seq.nextval from dual
 		</selectKey>
 		

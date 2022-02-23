@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.music.mapper.GenresMapper">
+
+	<select id="genresView" resultType="com.music.domain.GenresVO">
+	select a.abno, t.tbno, a.image, a.singer, t.name as tname, t.genre 
+    from album_m a, track_m t 
+    where t.abno = a.abno and genre=#{genre}
+	</select>
+	
+	<select id="genrelist" resultType="com.music.domain.GenresVO">
+		select * from genrelist where genre = #{genre}
+	</select>
+	<select id="listNewly" resultType="com.music.domain.AlbumVO">
+  		select * from newly order by tbno desc
+  	</select>
+</mapper>

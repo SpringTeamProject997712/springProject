@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.music.domain.MemberVO;
 import com.music.domain.Member_authVO;
+import com.music.domain.PlaylistVO;
 import com.music.security.domain.CustomUser;
 import com.music.service.AlbumService;
 import com.music.service.CreatePlaylistService;
@@ -48,7 +49,9 @@ public class MemberController {
 		vo.setPw(inputPw);
 		log.info(vo);
 		int result = service.joinMember(vo);
-		int result2= pservice.insertBasicPlaylist(vo.getId());
+		PlaylistVO pvo = new PlaylistVO();
+		pvo.setId(vo.getId());
+		int result2= pservice.insertBasicPlaylist(pvo);
 		if(result > 0 && result2 > 0 ) {
 			log.info("가입 성공 그리고 베이직 플레이리스트 생성");
 		}else {

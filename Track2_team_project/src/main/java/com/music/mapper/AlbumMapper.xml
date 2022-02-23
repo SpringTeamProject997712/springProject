@@ -26,13 +26,16 @@
 		]]>
 	</select>
 	
-	
-
 	<select id="readAlbum" resultType="com.music.domain.AlbumVO">
 		select * from album_m where abno = #{abno}
 	</select>
   	<select id="readAlbum_single" resultType="com.music.domain.AlbumVO">
-  		select * from album_single where abno= #{abno}
+		<![CDATA[
+		select rownum, pbno, abno, name, singer, detail, price, image, regdate,
+		tbno, tdetail, genre, tname, tprice, songname, songrealname
+		from (SELECT * FROM album_single ORDER BY abno desc
+		) where rownum > 0 and abno = #{abno}
+  		]]>
   	</select>
   	<select id="listNewly" resultType="com.music.domain.AlbumVO">
   		select * from newly order by tbno desc
@@ -51,6 +54,7 @@
 	where l.pbno = a.pbno
 	group by a.pbno, a.name, a.singer,a.image_240
 	order by likes desc
+
   	</select>
   	
   	
@@ -83,6 +87,15 @@
 			abno > 0
 	</select>
 	
+	<select id="topAlbums" resultType="com.music.domain.AlbumVO">
+	
+	<![CDATA[
+	select rownum, tbno, name, singer, image, likes
+	from (select * from toptrack order by likes desc)
+	where rownum < 16
+	 ]]>
+	 </select>
+
 	<update id="updateAlbum">
 		update album_m set 
 		name=#{name}, singer=#{singer}, detail=#{detail}, price=#{price}, image=#{image}, regdate=#{regdate} 

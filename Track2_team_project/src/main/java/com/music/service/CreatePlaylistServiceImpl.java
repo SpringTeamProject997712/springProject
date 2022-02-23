@@ -17,10 +17,12 @@ import com.music.mapper.CreatePlaylistMapper;
 import com.music.mapper.TrackMapper;
 import com.music.security.domain.CustomUser;
 
+import lombok.AllArgsConstructor;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @Service
+@AllArgsConstructor
 @Log4j
 public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 
@@ -82,8 +84,8 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 	}
 	
 	@Override
-	public int insertBasicPlaylist(String id) {
-		int result = mapper.insertBasicPlaylist(id);	
+	public int insertBasicPlaylist(PlaylistVO pvo) {
+		int result = mapper.insertBasicPlaylist(pvo);	
 		return result;
 	}
 	@Override

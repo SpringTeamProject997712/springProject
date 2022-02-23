@@ -27,7 +27,6 @@ $(function(){ // document가 다 로딩된 후 쿠키 있는지 확인해서 아
 });
 
 //뒤로가기, 새로고침, 페이지 이동시 음악 플레이 정보 저장하기
-//==================================================제작중===================================================
 window.onbeforeunload = function (event) { 
 	event.preventDefault();
 	deleteCookie("musicData");
@@ -44,7 +43,7 @@ window.onbeforeunload = function (event) {
 	sessionStorage.setItem("duration",timeEnd);
 	sessionStorage.setItem("currentList",listNow);
 }
-//==================================================제작중===================================================
+
 
 function getCookie(cookieName) { 
 	cookieName = cookieName + '='; 
@@ -131,6 +130,7 @@ function go_upload_album() {
 		upload_album.singer.focus();
 		return false;
 	}
+
 	if(upload_album.detail.value=="") {
 		alert("詳細を入力してください");
 		upload_album.detail.focus();
@@ -144,10 +144,12 @@ function go_upload_album() {
 	if(upload_album.regdate.value=="") {
 		alert("登録日を入力してください");
 		upload_album.regdate.focus();
+		
 		return false;
 	}
  	document.upload_album.submit();
  }
+
 function go_upload_track() {
 	
 	if(upload_track.uploadMusic.value=="") {
@@ -191,6 +193,15 @@ function go_upload_goods() {
 	document.upload_goods.submit();
 	
  }
+function go_reset() {
+	$('form').each(function() {
+
+	      this.reset();
+
+	  });
+}
+
+
 function go_reset() {
 	$('form').each(function() {
 
@@ -352,6 +363,53 @@ $(document).ready(function(){
 	}); 	
 });
 
+$(".remove_single_track_in_playlist").on("click", function(){
+	let this_track = $(this).parent().parent();
+	this_track.slideUp();
+	let tbno = this_track.attr('id').substring(16);
+	let plbno = document.getElementById('this_plbno').value;
+
+	$.ajax({
+		type:"get",
+		data:{tbno:tbno , plbno:plbno},
+		url:"/createPlaylist/deletePlaylistDetailTbno",
+		error:function(xhr,status,err){
+			console.log(xhr.status + xhr.responseText + err);
+		},success:function(data){
+			if(data=="삭제됨"){
+				reload.document;
+			}
+		}
+	});
+})
+
+//앨범 카트 담기
+$(".insert_cart_btn").click(function() {
+	var csrfHeaderName = "${_csrf.headerName}";
+	var csrfTokenValue = "${_csrf.token}";
+	$(document).ajaxSend(function(e, xhr, options) {
+		xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+	});
+	var pbno = $("#pbno").val();
+	var data = {
+		pbno : pbno
+	};
+
+	$.ajax({
+		url : "/album/insertCart",
+		type : "POST",
+		data : data,
+		success : function() {
+			alert("담기 성공");
+		},
+		error : function() {
+			alert("실패");
+			console.log("#" + pbno);
+		}
+	})
+
+});
+
 ////preview image 
 //var imgTarget = $('.preview-image .upload-hidden');
 //
@@ -382,6 +440,7 @@ $(document).ready(function(){
 //    }
 //});
 
+
 //액티브 (해더 내부에 넣어야 작동함 ㅅㅂ;)
 //var pageSubmitFn = function(menu) {
 //		if(menu === "menu_main") {
@@ -404,4 +463,3 @@ $(document).ready(function(){
 //	console.log(pageName);
 //	$("#"+pageName).addClass("active");
 //})
-

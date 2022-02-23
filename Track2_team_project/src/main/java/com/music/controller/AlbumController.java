@@ -50,8 +50,9 @@ public class AlbumController {
 	public void albumView(Model model) {
 		model.addAttribute("list",service.listAlbum());
 		model.addAttribute("likes",service.getCountLikes());
+		model.addAttribute("topalbum",service.topAlbums());
 		model.addAttribute("newly",service.newly());
-		
+
 	}
 	
 	@GetMapping("/album_single")
@@ -73,6 +74,7 @@ public class AlbumController {
 		return json;
 	}
 	
+
 	@PostMapping("/updateAlbum")
 	public String updateAlbum(@RequestParam("uploadImage") MultipartFile uploadImage,HttpServletRequest req,AlbumVO avo) {
 		String uploadFolder = "C:\\upload";
@@ -137,5 +139,6 @@ public class AlbumController {
 		
 		cservice.insertCart(cart);
 	}
+
 	
 }
