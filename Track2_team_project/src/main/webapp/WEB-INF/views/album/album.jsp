@@ -133,7 +133,7 @@
                                             <img src="../images/weekly/song1.jpg" alt="">
                                             <div class="ms_song_overlay">
                                             </div>
-                                            <div class="ms_play_icon">
+                                            <div class="ms_play_icon" id="${top.tbno}">
                                                 <img src="../images/svg/play.svg" alt="">
                                             </div>
                                         </div>
@@ -179,7 +179,7 @@
                                             <img src="../images/weekly/song1.jpg" alt="">
                                             <div class="ms_song_overlay">
                                             </div>
-                                            <div class="ms_play_icon">
+                                            <div class="ms_play_icon" id="${top.tbno}">
                                                 <img src="../images/svg/play.svg" alt="">
                                             </div>
                                         </div>
@@ -224,7 +224,7 @@
                                             <img src="../images/weekly/song1.jpg" alt="">
                                             <div class="ms_song_overlay">
                                             </div>
-                                            <div class="ms_play_icon">
+                                            <div class="ms_play_icon" id="${top.tbno}">
                                                 <img src="../images/svg/play.svg" alt="">
                                             </div>
                                         </div>
