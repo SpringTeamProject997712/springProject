@@ -18,7 +18,10 @@
 				<a href="#" class="album_date">5 song | 25:10</a> <a href="#" class="album_date">Released ${view[0].regdate} | Abc Music Company</a>
 			</div>
 			<div class="album_btn">
-				<a href="javascript:void(0)" class="ms_btn play_btn album_play_button" id="run_abno_${view[0].abno}"><span class=""><img src="/images/svg/play_all.svg" alt="">Play All</span><span class="pause_all"><img src="/images/svg/pause_all.svg" alt="">Pause</span></a> <a href="javascript:void(0)" class="ms_btn album_add_queue" id="run_abno_${view[0].abno}"><span class=""><img src="/images/svg/add_q.svg" alt="">Add To Queue</span></a> <a href="javascript:void(0)" class="ms_btn insert_cart_btn"><span class=""><img src="/images/svg/right_arrow.svg" alt="">Add to Cart</span></a>
+				<a href="javascript:void(0)" class="ms_btn play_btn album_play_button" id="run_abno_${view[0].abno}"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">Play All</span>
+				<span class="pause_all"><img src="/images/svg/pause_all.svg" alt="">Pause</span></a>
+				<a href="javascript:void(0)" class="ms_btn album_add_queue" id="run_abno_${view[0].abno}"> <span class=""><img src="/images/svg/add_q.svg" alt="">Add To Queue</span></a>
+				<a href="javascript:void(0)" class="ms_btn insert_cart_btn"><span class=""><img src="/images/svg/right_arrow.svg" alt="">Add to Cart</span></a>
 			</div>
 		</div>
 		<div class="album_more_optn ms_more_icon">
@@ -474,7 +477,38 @@
 </div>
 </div>
 <form role="form" method="post">
+<<<<<<< HEAD
 	<input type="hidden" name="pbno" id="pbno" value="${pbno.pbno}" /> <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+=======
+	<input type="hidden" name="pbno" id="pbno" value="${pbno.pbno}" />
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+>>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 </form>
+<script>
+$(".insert_cart_btn").click(function() {
+	var csrfHeaderName = "${_csrf.headerName}";
+	var csrfTokenValue = "${_csrf.token}";
+	$(document).ajaxSend(function(e, xhr, options) {
+		xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+	});
+	var pbno = $("#pbno").val();
+	var data = {
+		pbno : pbno
+	};
 
+	$.ajax({
+		url : "/album/insertCart",
+		type : "POST",
+		data : data,
+		success : function() {
+			alert("담기 성공");
+		},
+		error : function() {
+			alert("카드를 담기 위해서는 로그인이 필요합니다.");
+			$("#myModal1").modal();
+		}
+	});
+
+});
+</script>
 <%@include file="../footer.jsp"%>

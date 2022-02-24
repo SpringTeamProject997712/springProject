@@ -82,7 +82,9 @@ public class ProductServiceImpl implements ProductService {
 		}
 		
 		for(int i=0; i<list.size(); i++) {
-			
+			if((int)list.get(i)==1) {
+				result *= 0;
+			}
 		}
 		
 		

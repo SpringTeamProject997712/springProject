@@ -133,12 +133,7 @@ public class AlbumController {
 			myName =user.getUsername();
 			cart.setId(myName);
 		}
-//		
-//		MemberVO member = (MemberVO)session.getAttribute("member");
-//		cart.setId(member.getId());
-//		cart.setId("ryu00209@gmail.com");
-//		System.out.println("아이디 주입 체크"+cart.getId());
-		
+
 		cservice.insertCart(cart);
 	}
 

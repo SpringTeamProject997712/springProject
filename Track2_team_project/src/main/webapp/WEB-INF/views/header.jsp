@@ -189,9 +189,6 @@
                     </div>
                 </div>
                 <div class="ms_top_right">
-                    <div class="ms_top_lang">
-                        <span data-toggle="modal" data-target="#lang_modal">言語 <img src="/images/svg/lang.svg" alt=""></span>
-                    </div>
                     <sec:authorize access="isAnonymous()">
 	                    <div class="ms_top_btn">
 	                        <a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>新規登録</span></a>
