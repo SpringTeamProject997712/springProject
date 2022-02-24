@@ -9,8 +9,26 @@
 		insert into cart_m (cbno, id, pbno) values (#{cbno}, #{id}, #{pbno})
 	</insert>
 	
+
 	<select id="selectCartList" resultType="com.music.domain.CartVO">
 		select * from cart_m where id = #{id}
+	</select>
+
+	<select id="cartList" resultType="com.music.domain.CartVO">
+		select
+		     row_number() over(order by c.cbno desc) as num,
+		     c.cbno, c.id, c.pbno, c.quantity, c.putdate,
+		     a.price, a.name,  a.image, a.abno,
+		     t.name as t_name, t.pbno as tpbno
+		 from cart_m c
+		     inner join product_m p 
+		         on c.pbno = p.pbno 
+		    inner join album_m a
+		        on c.pbno = a.pbno 
+		    inner join track_m t
+		        on a.abno = t.abno
+		where c.id = #{id}
+
 	</select>
 
 </mapper>

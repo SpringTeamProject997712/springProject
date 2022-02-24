@@ -1,6 +1,9 @@
 package com.music.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -13,12 +16,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
+import com.music.domain.CartVO;
 import com.music.domain.MemberVO;
 import com.music.domain.Member_authVO;
 import com.music.domain.PlaylistVO;
 import com.music.security.domain.CustomUser;
 import com.music.service.AlbumService;
+import com.music.service.CartService;
 import com.music.service.CreatePlaylistService;
 import com.music.service.MemberService;
 
@@ -38,6 +42,9 @@ public class MemberController {
 	
 	@Setter(onMethod_ = @Autowired)
 	AlbumService aservice; //서비스 자리
+	
+	@Setter(onMethod_= @Autowired)
+	CartService cservice;
 	
 	@Setter(onMethod_ = @Autowired)
 	private PasswordEncoder pencoder; //패스워드 인코더
@@ -160,8 +167,18 @@ public class MemberController {
 	}
 	
 	@GetMapping("/my_cart")
-	public void viewCart() {
+	public void viewCart(HttpSession session, Model model) {
+		String myName="";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+		}
+		String id = myName;
 		
+		List<CartVO> cartList = cservice.cartList(id);
+		
+		model.addAttribute("cartList", cartList);
 		
 	}
 	

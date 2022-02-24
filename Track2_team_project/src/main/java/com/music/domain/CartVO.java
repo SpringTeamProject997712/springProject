@@ -13,4 +13,11 @@ public class CartVO {
 	private int quantity;
 	private String result;
 	private Date putdate;
+	
+	private int price;
+	private String image;
+	private String name;
+	
+	private int abno;
+	
 }
