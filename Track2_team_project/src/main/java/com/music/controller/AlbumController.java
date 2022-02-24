@@ -147,8 +147,8 @@ public class AlbumController {
 				cservice.insertCart(cart);
 				result="1";
 			}else {
-				result="2";
-				//pbno 중복임
+				result="1"; //2로 해놓으면 이거 될떄마다 중복임이라고 뜸
+				//pbno 중복임 하지만 비밀임
 			}	
 		}
 	return result;

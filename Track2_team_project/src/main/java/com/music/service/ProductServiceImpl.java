@@ -108,13 +108,24 @@ public class ProductServiceImpl implements ProductService {
 		}//카트 안에 pbno 다 구함
 		
 		//비교해보기
-		for(int i=0; i<list.size(); i++) {
-			for(int j=0; j<cartPbnoList.size(); j++) {
-				if(list.get(i) == cartPbnoList.get(j)) {
-					result *=0;
+		
+			for(int i=0; i<list.size(); i++) {
+				for(int j=0; j<cartPbnoList.size(); j++) {
+					if(list.get(i) == cartPbnoList.get(j)) {
+						if(myPvo.getCategory().equals("1")) { //내가 넣으려는게 앨범이라면
+							//카드에 있는 pbno 삭제
+							CartVO cvo = new CartVO();
+							cvo.setId(pvo.getId());
+							cvo.setPbno(cartPbnoList.get(j));
+							cMapper.deleteOneCart(cvo);
+						}else {
+							result *= 0;
+						}
+					}
+						
 				}
 			}
-		}
+		
 		
 		return result;
 	}

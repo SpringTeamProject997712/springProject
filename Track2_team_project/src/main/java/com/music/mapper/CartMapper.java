@@ -11,4 +11,6 @@ public interface CartMapper {
 	public List<CartVO> selectCartList(String id);
 	
 	public List<CartVO> cartList(String id);
+	//id랑 pbno 받아서 삭제
+	public int deleteOneCart(CartVO cvo);
 }
