@@ -64,13 +64,13 @@
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">Classical</a></span>
+                                            <span class="ovrly_text1"><a href="#">Hip Hop</a></span>
 											<span class="ovrly_text2"><a href="/genres/genres_single?genre=2">view song</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">Classical</a></span>
+                                            <span class="ovrly_text1"><a href="#">Hip Hop</a></span>
                                         </div>
                                     </div>
                                 </div>
@@ -84,13 +84,13 @@
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">hip hop</a></span>
+                                            <span class="ovrly_text1"><a href="#">Dancing</a></span>
 											<span class="ovrly_text2"><a href="/genres/genres_single?genre=3">view song</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">hip hop</a></span>
+                                            <span class="ovrly_text1"><a href="#">Dancing</a></span>
                                         </div>
                                     </div>
                                 </div>
@@ -104,13 +104,13 @@
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">dancing</a></span>
+                                            <span class="ovrly_text1"><a href="#">Rock</a></span>
 											<span class="ovrly_text2"><a href="/genres/genres_single?genre=4">view song</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">dancing</a></span>
+                                            <span class="ovrly_text1"><a href="#">Rock</a></span>
                                         </div>
                                     </div>
                                 </div>
@@ -124,13 +124,13 @@
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">EDM</a></span>
+                                            <span class="ovrly_text1"><a href="#">Jazz</a></span>
 											<span class="ovrly_text2"><a href="/genres/genres_single?genre=5">view song</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">EDM</a></span>
+                                            <span class="ovrly_text1"><a href="#">Jazz</a></span>
                                         </div>
                                     </div>
                                 </div>
@@ -146,13 +146,13 @@
                                     <img src="/images/svg/play.svg" alt="">
                                 </div>
                                 <div class="ovrly_text_div">
-                                    <span class="ovrly_text1"><a href="#">rock</a></span>
+                                    <span class="ovrly_text1"><a href="#">Metal</a></span>
 									<span class="ovrly_text2"><a href="/genres/genres_single?genre=6">view song</a></span>
                                 </div>
                             </div>
                             <div class="ms_box_overlay_on">
                                 <div class="ovrly_text_div">
-                                    <span class="ovrly_text1"><a href="#">rock</a></span>
+                                    <span class="ovrly_text1"><a href="#">Metal</a></span>
                                 </div>
                             </div>
                         </div>
@@ -168,7 +168,7 @@
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">Jazz</a></span>
+                                            <span class="ovrly_text1"><a href="#">Pop</a></span>
 											<span class="ovrly_text2"><a href="/genres/genres_single?genre=7">view song</a></span>
                                         </div>
                                     </div>
