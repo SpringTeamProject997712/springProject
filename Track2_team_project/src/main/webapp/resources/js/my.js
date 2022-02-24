@@ -383,32 +383,7 @@ $(".remove_single_track_in_playlist").on("click", function(){
 	});
 })
 
-//앨범 카트 담기
-$(".insert_cart_btn").click(function() {
-	var csrfHeaderName = "${_csrf.headerName}";
-	var csrfTokenValue = "${_csrf.token}";
-	$(document).ajaxSend(function(e, xhr, options) {
-		xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
-	});
-	var pbno = $("#pbno").val();
-	var data = {
-		pbno : pbno
-	};
 
-	$.ajax({
-		url : "/album/insertCart",
-		type : "POST",
-		data : data,
-		success : function() {
-			alert("담기 성공");
-		},
-		error : function() {
-			alert("실패");
-			console.log("#" + pbno);
-		}
-	})
-
-});
 
 ////preview image 
 //var imgTarget = $('.preview-image .upload-hidden');
