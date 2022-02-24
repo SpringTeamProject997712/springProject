@@ -55,7 +55,17 @@ public class UploadController {
 	
 	@GetMapping("/upload")
 	public void productUpload(Model model) {
-		String[] genre = {"장르1","장르2","장르3","장르4"};
+		String[] genre = {
+				"ロマンチック",
+				"ヒップホップ",
+				"ダンシング",
+				"ロック",
+				"ジャズ",
+				"メタル",
+				"ポップ",
+				"インディーズ",
+				"ソウル"	
+		};
 		model.addAttribute("genre", genre);
 		model.addAttribute("pbno", pservice.searchPbno()+1);
 		model.addAttribute("abno",pservice.searchAbno());
