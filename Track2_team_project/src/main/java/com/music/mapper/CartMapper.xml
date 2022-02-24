@@ -30,5 +30,9 @@
 		where c.id = #{id}
 
 	</select>
+	
+	<delete id="deleteOneCart">
+		delete from cart_m where id=#{id} and pbno=#{pbno}
+	</delete>
 
 </mapper>
