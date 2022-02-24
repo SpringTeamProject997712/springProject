@@ -8,6 +8,12 @@
 			select /*+ index_desc(product_m product_m_pk) */ * from product_m where pbno > 0
 		]]>
 	</select>
+	
+	<select id="selectOneProduct" resultType="com.music.domain.ProductVO">
+		<![CDATA[
+			select * from product_m where pbno =#{pbno}
+		]]>
+	</select>
 
   	<select id="searchPbno" resultType="int">
 		<![CDATA[

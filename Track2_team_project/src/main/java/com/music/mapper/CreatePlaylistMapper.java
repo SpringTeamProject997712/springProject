@@ -61,4 +61,7 @@ public interface CreatePlaylistMapper {
 	
 	//플레이리스트 초기화
 	public int clearQue(int plbno);
+	
+	//아이디와 플레이리스트 번호 그리고 이름으로 플레이리스트 이름 수정하기
+	public int modifyPlaylist(PlaylistVO pvo);
 }

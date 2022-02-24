@@ -24,9 +24,11 @@ import com.google.gson.Gson;
 import com.music.domain.AlbumVO;
 import com.music.domain.CartVO;
 import com.music.domain.MemberVO;
+import com.music.domain.ProductVO;
 import com.music.security.domain.CustomUser;
 import com.music.service.AlbumService;
 import com.music.service.CartService;
+import com.music.service.ProductService;
 import com.music.service.ReviewService;
 
 import lombok.Setter;
@@ -46,6 +48,9 @@ public class AlbumController {
 	@Setter(onMethod_= @Autowired)
 	private CartService cservice;
 	
+	@Setter(onMethod_= @Autowired)
+	private ProductService pservice;
+	
 	@GetMapping("/album")
 	public void albumView(Model model) {
 		model.addAttribute("list",service.listAlbum());
@@ -57,11 +62,13 @@ public class AlbumController {
 	
 	@GetMapping("/album_single")
 	public void album_single(Model model, @RequestParam("abno")int abno) {
-		model.addAttribute("pbno", service.readAlbum(abno));
+		AlbumVO avo = service.readAlbum(abno);
+		model.addAttribute("pbno", avo);
 		model.addAttribute("view",service.readAlbum_single(abno));
 		model.addAttribute("newly",service.newly());
-		model.addAttribute("album_comments",rservice.selectReview(service.readAlbum(abno).getPbno()));
+		model.addAttribute("album_comments",rservice.selectReview(avo.getPbno()));
 		model.addAttribute("this_album", service.readAlbum(abno));
+		model.addAttribute("reviewCount",rservice.countReview(avo.getPbno()));
 	}
 	
 	@ResponseBody
@@ -123,16 +130,28 @@ public class AlbumController {
 
 	@ResponseBody
 	@PostMapping("/insertCart")
-	public void insertCart(CartVO cart, HttpSession session) {
+	public String insertCart(CartVO cart, HttpSession session) {
+		String result ="3";
 		String myName="";
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		if(!(auth.getPrincipal().equals("anonymousUser"))) {
 			CustomUser user = (CustomUser)auth.getPrincipal();
 			myName =user.getUsername();
 			cart.setId(myName);
+			
+			ProductVO pvo = new ProductVO();
+			
+			pvo.setId(myName);
+			pvo.setPbno(cart.getPbno());
+			if(pservice.checkPbnoForCart(pvo)==1) {
+				cservice.insertCart(cart);
+				result="1";
+			}else {
+				result="2";
+				//pbno 중복임
+			}	
 		}
-
-		cservice.insertCart(cart);
+	return result;
 	}
 
 	

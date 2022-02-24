@@ -12,7 +12,7 @@
 	</select>
 	
 	<select id="selectPlaylist" resultType="com.music.domain.PlaylistVO">
-		select * from view_playlist where plbno = #{plbno}
+		select * from view_playlist where plbno = #{plbno} order by pdbno
 	</select>
 	
 	<select id="selectOnePlaylist" resultType="com.music.domain.ViewPlaylistDetailVO">
@@ -91,4 +91,7 @@
 		delete from playlist_detail_m where plbno=#{plbno}
 	</delete>
 
+	<update id="modifyPlaylist">
+		update playlist_m set name = #{name} where plbno = #{plbno} and id = #{id}
+	</update>
 </mapper>

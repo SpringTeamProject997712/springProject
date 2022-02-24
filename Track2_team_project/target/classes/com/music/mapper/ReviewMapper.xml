@@ -15,5 +15,9 @@
 		select * from review_m where pbno = #{pbno}
 	
 	</select>
+	
+	<select id="countReview" resultType="int">
+		select count(rbno) from review_m where pbno = #{pbno}
+	</select>
 
 </mapper>
