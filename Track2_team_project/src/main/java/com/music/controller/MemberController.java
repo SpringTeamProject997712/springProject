@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
 import com.music.domain.MemberVO;
 import com.music.domain.Member_authVO;
 import com.music.domain.PlaylistVO;
@@ -167,6 +166,14 @@ public class MemberController {
 	
 	
 	@GetMapping("/favourite")
-	public void favouritesView() {
+	public void favouritesView(Model model) {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String id = "";
+		log.info(auth.getPrincipal());
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			id =user.getUsername();
+		}
+		model.addAttribute("favouritelist",service.favouritesView(id));
 	}
 }

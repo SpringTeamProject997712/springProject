@@ -1,5 +1,8 @@
 package com.music.mapper;
 
+import java.util.List;
+
+import com.music.domain.FavouriteVO;
 import com.music.domain.LikeVO;
 
 public interface FavouriteMapper {
@@ -11,4 +14,6 @@ public interface FavouriteMapper {
 	public int updateNoToYes(LikeVO vo);
 	//처음으로 좋아요를 눌렀을때
 	public int createLike(LikeVO vo);
+	
+
 }

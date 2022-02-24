@@ -8,7 +8,7 @@
                             <span class="veiw_all"><a href="/album/album">view more</a></span>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
                         <div class="ms_genres_box">
                             <img src="/images/genrs/img1.svg" alt="" class="img-fluid" />
                             <div class="ms_main_overlay">
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     
-                            <div class="col-lg-3">
+                            <div class="col-lg-4">
                                 <div class="ms_genres_box">
                                     <img src="/images/genrs/hiphop.svg" alt="" class="img-fluid" />
                                     <div class="ms_main_overlay">
@@ -49,7 +49,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-4">
                                 <div class="ms_genres_box">
                                     <img src="/images/genrs/dancing.svg" alt="" class="img-fluid" />
                                     <div class="ms_main_overlay">
@@ -69,7 +69,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-4">
                                 <div class="ms_genres_box">
                                     <img src="/images/genrs/rock.svg" alt="" class="img-fluid" />
                                     <div class="ms_main_overlay">
@@ -89,7 +89,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-4">
                                 <div class="ms_genres_box">
                                     <img src="/images/genrs/jazz.svg" alt="" class="img-fluid" />
                                     <div class="ms_main_overlay">
@@ -110,7 +110,7 @@
                                 </div>
                             </div>
                    
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
                         <div class="ms_genres_box">
                             <img src="/images/genrs/metal.svg" alt="" class="img-fluid" />
                             <div class="ms_main_overlay">
@@ -131,7 +131,7 @@
                         </div>
                     </div>
                    
-                            <div class="col-lg-3">
+                            <div class="col-lg-4">
                                 <div class="ms_genres_box">
                                     <img src="/images/genrs/pop.svg" alt="" class="img-fluid" />
                                     <div class="ms_main_overlay">
@@ -151,7 +151,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-4">
                                 <div class="ms_genres_box">
                                     <img src="/images/genrs/radio.svg" alt="" class="img-fluid" />
                                     <div class="ms_main_overlay">
@@ -171,7 +171,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-4">
                                 <div class="ms_genres_box">
                                     <img src="/images/genrs/soul.svg" alt="" class="img-fluid" />
                                     <div class="ms_main_overlay">
