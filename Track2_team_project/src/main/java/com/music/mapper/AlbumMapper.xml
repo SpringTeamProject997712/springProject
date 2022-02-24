@@ -102,7 +102,7 @@
 		where abno = #{abno}
 	</update>
 	
-	<select id="selectAlbumWithPbno">
+	<select id="selectAlbumWithPbno" resultType="com.music.domain.AlbumVO">
 		select * from album_m where pbno=#{pbno}
 	</select>
 	

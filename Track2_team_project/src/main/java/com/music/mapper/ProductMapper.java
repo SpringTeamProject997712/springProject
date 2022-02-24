@@ -11,9 +11,10 @@ import com.music.domain.TrackVO;
 public interface ProductMapper {
 
 	//카테고리 보기
-	public ProductVO listProduct(int pbno);
+	public List<ProductVO> listProduct();
 	public int searchPbno();
 	public List<AlbumVO> searchAbno();
+	public ProductVO selectOneProduct(int pbno);
 	
 	//각종 넣기
 	public void insertProduct(ProductVO product);

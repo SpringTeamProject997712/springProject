@@ -500,8 +500,14 @@ $(".insert_cart_btn").click(function() {
 		url : "/album/insertCart",
 		type : "POST",
 		data : data,
-		success : function() {
-			alert("담기 성공");
+		success : function(success_return) {
+			if(success_return=='1'){
+				alert("담기 성공");
+			}else if(success_return=='2'){
+				alert("중복임");
+			}else{
+				alert("로그인이 필요합니다");
+			}
 		},
 		error : function() {
 			alert("카드를 담기 위해서는 로그인이 필요합니다.");

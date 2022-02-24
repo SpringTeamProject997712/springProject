@@ -9,5 +9,8 @@
 		insert into cart_m (cbno, id, pbno) values (#{cbno}, #{id}, #{pbno})
 	</insert>
 	
+	<select id="selectCartList" resultType="com.music.domain.CartVO">
+		select * from cart_m where id = #{id}
+	</select>
 
 </mapper>

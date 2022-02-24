@@ -7,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.music.domain.AlbumVO;
+import com.music.domain.CartVO;
 import com.music.domain.GoodsVO;
 import com.music.domain.ProductVO;
 import com.music.domain.TrackVO;
 import com.music.mapper.AlbumMapper;
+import com.music.mapper.CartMapper;
 import com.music.mapper.ProductMapper;
 
 import lombok.Setter;
@@ -26,9 +28,12 @@ public class ProductServiceImpl implements ProductService {
 	@Setter(onMethod_= @Autowired)
 	private AlbumMapper aMapper;
 	
+	@Setter(onMethod_= @Autowired)
+	private CartMapper cMapper;
+	
 	@Override
-	public ProductVO listProduct(int pbno) {
-		return pMapper.listProduct(pbno);
+	public List<ProductVO> listProduct() {
+		return pMapper.listProduct();
 	}
 	
 	@Override
@@ -64,11 +69,12 @@ public class ProductServiceImpl implements ProductService {
 	public int checkPbnoForCart(ProductVO pvo) {
 		int result = 1;
 		
-		ProductVO myPvo = pMapper.listProduct(pvo.getPbno()); //내가 넣으려는 상품으로 product table 소환
+		ProductVO myPvo = pMapper.selectOneProduct(pvo.getPbno()); //내가 넣으려는 상품으로 product table 소환
 		
 		List<Integer> list = new ArrayList<Integer>();
 		list.add(pvo.getPbno());
 		
+		//넣으려는 pbno구하기
 		if(myPvo.getCategory().equals("1")) { //만약 앨범이라면
 			log.info("이건 앨범입니다");
 			List<AlbumVO> alist = aMapper.readAlbum_single(aMapper.selectAlbumWithPbno(pvo.getPbno()).getAbno());
@@ -79,15 +85,36 @@ public class ProductServiceImpl implements ProductService {
 			
 		}else {
 			log.info("이건 트랙입니다");
-		}
+		} //넣으려는 pbno 다 구함
 		
+		//카트 안에 있는 pbno 구하기
+		List<CartVO> clist = cMapper.selectCartList(pvo.getId());
+		List<Integer> cartPbnoList = new ArrayList<Integer>();
+		for(int i=0; i<clist.size(); i++) {
+			ProductVO myCartPvo = pMapper.selectOneProduct(clist.get(i).getPbno());
+			cartPbnoList.add(myCartPvo.getPbno());
+			
+			if(myCartPvo.getCategory().equals("1")) { //만약 앨범이라면
+				log.info("이건 앨범입니다");
+				List<AlbumVO> alist = aMapper.readAlbum_single(aMapper.selectAlbumWithPbno(myCartPvo.getPbno()).getAbno());
+				
+				for(int j=0; j<alist.size(); j++) {
+					cartPbnoList.add(alist.get(i).getPbno()); //앨범 안에 있는 트랙들의 pbno를 전부 리스트에 담는다.
+				}
+				
+			}else {
+				log.info("이건 트랙입니다");
+			}
+		}//카트 안에 pbno 다 구함
+		
+		//비교해보기
 		for(int i=0; i<list.size(); i++) {
-			if((int)list.get(i)==1) {
-				result *= 0;
+			for(int j=0; j<cartPbnoList.size(); j++) {
+				if(list.get(i) == cartPbnoList.get(j)) {
+					result *=0;
+				}
 			}
 		}
-		
-		
 		
 		return result;
 	}

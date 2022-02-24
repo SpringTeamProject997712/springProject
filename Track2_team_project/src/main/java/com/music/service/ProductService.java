@@ -9,7 +9,7 @@ import com.music.domain.TrackVO;
 
 public interface ProductService {
 
-	public ProductVO listProduct(int pbno);
+	public List<ProductVO> listProduct();
 	
 	//제품 업데이트
 	public int searchPbno();
