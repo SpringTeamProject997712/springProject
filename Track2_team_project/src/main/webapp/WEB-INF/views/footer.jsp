@@ -400,6 +400,7 @@
 
 
 <script type="text/javascript" src="/resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/resources/js/moment.min.js"></script>
 <script type="text/javascript" src="/resources/js/plugins/swiper/js/swiper.min.js"></script>
 <script type="text/javascript" src="/resources/js/plugins/player/jplayer.playlist.min.js"></script>
 <script type="text/javascript" src="/resources/js/plugins/player/jquery.jplayer.min.js"></script>

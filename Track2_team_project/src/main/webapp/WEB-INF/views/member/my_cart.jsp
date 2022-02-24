@@ -36,7 +36,7 @@
 											<tr>
 												<th>
 													<div class="allCheck">
-														<input type="checkbox" name="allCheck" id="allCheck"> <label for="allCheck">모두 선택</label>
+														<input type="checkbox" name="allCheck" id="allCheck"> <label for="allCheck"></label>
 													</div>
 												</th>
 												<th>Product Name</th>
@@ -94,10 +94,10 @@
 									</table>
 								</div>
 								<div class="shopping-cart-footer">
-									<div class="column">
+									<div class="column" >
 										<form class="coupon-form" method="post">
 											<input class="form-control form-control-sm" type="text" placeholder="Coupon code" required="">
-											<button class="btn btn-outline-primary btn-sm" type="submit">Apply Coupon</button>
+											<button class="ms_btn btn-outline-primary" type="submit">Apply</button>
 										</form>
 									</div>
 									<div class="column text-lg">
@@ -106,10 +106,11 @@
 								</div>
 								<div class="shopping-cart-footer">
 									<div class="column">
-										<a class="btn btn-outline-secondary" href="#"><i class="icon-arrow-left"></i>&nbsp;Back to Shopping</a>
+										<a class="ms_btn btn-outline-secondary" href="#"><i class="icon-arrow-left"></i>&nbsp;Back</a>
 									</div>
 									<div class="column">
-										<a class="btn btn-primary" href="#" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart" data-toast-message="is updated successfully!">Update Cart</a><a class="btn btn-success" href="#">Checkout</a>
+										<a class="ms_btn btn-primary" href="#" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart" data-toast-message="is updated successfully!">Update Cart</a>
+										<a class="ms_btn btn-success" href="#">Checkout</a>
 									</div>
 								</div>
 							</div>
