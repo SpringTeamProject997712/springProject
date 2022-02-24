@@ -383,6 +383,8 @@ $(".remove_single_track_in_playlist").on("click", function(){
 	});
 })
 
+
+
 ////preview image 
 //var imgTarget = $('.preview-image .upload-hidden');
 //
