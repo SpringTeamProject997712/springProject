@@ -102,4 +102,8 @@
 		where abno = #{abno}
 	</update>
 	
+	<select id="selectAlbumWithPbno">
+		select * from album_m where pbno=#{pbno}
+	</select>
+	
 </mapper>

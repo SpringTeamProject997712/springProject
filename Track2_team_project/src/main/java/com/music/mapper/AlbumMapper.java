@@ -46,5 +46,7 @@ public interface AlbumMapper {
 
 	//앨범 수정
 	public int updateAlbum(AlbumVO avo);
+	
+	public AlbumVO selectAlbumWithPbno(int pbno);
 
 }

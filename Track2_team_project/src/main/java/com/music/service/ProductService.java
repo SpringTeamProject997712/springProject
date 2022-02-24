@@ -29,4 +29,6 @@ public interface ProductService {
 	//굿즈 업데이트
 	public void insertGoods(GoodsVO goods);
 	
+	//카트 중복체크기능
+	public int checkPbnoForCart(ProductVO pvo);
 }
