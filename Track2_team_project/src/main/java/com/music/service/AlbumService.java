@@ -28,6 +28,9 @@ public interface AlbumService {
 	//트랙 이름으로 앨범-싱글 리스트
 	public List<AlbumVO> searchAlbumWithTrackName(String tname);
 	
+	//앨범 총길이
+	public String calTotalLength(int abno);
+	
 	//어드민
 	
 	//앨범 관리자 리스트

@@ -16,6 +16,8 @@ public interface TrackMapper {
 	//이름을 받아서 이름이 겹치는 트랙 VO를 가져온다
 	public List<TrackVO> searchTrackList(String name);
 	
+	public int countSong(int abno);
+	
 	//관리자
 	
 	//페이징

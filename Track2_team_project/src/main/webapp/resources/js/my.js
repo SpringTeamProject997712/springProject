@@ -463,14 +463,21 @@ function modify_playlist_name(){
 $("#audio").on("canplaythrough", function(e){
     var seconds = e.currentTarget.duration;
     var duration = moment.duration(seconds, "seconds");
+    console.log("secondes:"+seconds);
+    console.log("duration:"+duration);
+    var duration1 = moment.duration(seconds);
+    console.log("duration1:"+duration1);
     
     var time = "";
     var hours = duration.hours();
     if (hours > 0) { time = hours + ":" ; }
+    console.log("hours:"+hours);
+    
     
     time = time + duration.minutes() + ":" + duration.seconds();
+    time_cal = duration%60;
     $("#upload_duration").text(time);
-    $('input[id=upload_duration1]').attr('value',time);
+    $('input[id=upload_duration1]').attr('value',Math.round(seconds));
     
 });
 

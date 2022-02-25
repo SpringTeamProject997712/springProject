@@ -29,6 +29,10 @@ public interface AlbumMapper {
 	//트랙 이름으로 앨범-싱글 리스트 찾기
 	public List<AlbumVO> searchAlbumWithTrackName(String tname);
 	
+	//앨범 총 길이
+	public String calTotalLength(int abno);
+	
+	
 	//관리자
 	
 	//관리자 엘범 리스트

@@ -16,6 +16,8 @@ public interface TrackService {
 	
 	public List<TrackVO> searchTrackList(String name);
 	
+	public int countSong(int abno);
+	
 	//관리자
 	
 	//트랙관리자 리스트

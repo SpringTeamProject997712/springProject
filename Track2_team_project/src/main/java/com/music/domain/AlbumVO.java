@@ -26,6 +26,9 @@ public class AlbumVO {
 	private String songname;
 	private String songrealname;
 	private int rownum;
+	private int duration;
+	private String length;
+	
 // getcountlikes
 	private int likes;
 	

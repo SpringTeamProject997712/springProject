@@ -30,6 +30,7 @@ import com.music.service.AlbumService;
 import com.music.service.CartService;
 import com.music.service.ProductService;
 import com.music.service.ReviewService;
+import com.music.service.TrackService;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -51,6 +52,9 @@ public class AlbumController {
 	@Setter(onMethod_= @Autowired)
 	private ProductService pservice;
 	
+	@Setter(onMethod_= @Autowired)
+	private TrackService tservice;
+	
 	@GetMapping("/album")
 	public void albumView(Model model) {
 		model.addAttribute("list",service.listAlbum());
@@ -69,6 +73,8 @@ public class AlbumController {
 		model.addAttribute("album_comments",rservice.selectReview(avo.getPbno()));
 		model.addAttribute("this_album", service.readAlbum(abno));
 		model.addAttribute("reviewCount",rservice.countReview(avo.getPbno()));
+		model.addAttribute("song", tservice.countSong(abno));
+		model.addAttribute("total", service.calTotalLength(abno));
 	}
 	
 	@ResponseBody
