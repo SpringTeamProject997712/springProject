@@ -15,7 +15,7 @@
 			</a>
 			<p class="singer_name">By - ${view[0].singer}</p>
 			<div class="album_feature">
-				<a href="#" class="album_date">5 song | 25:10</a> <a href="#" class="album_date">Released ${view[0].regdate} | Abc Music Company</a>
+				<a href="#" class="album_date">${song } song | ${total }</a> <a href="#" class="album_date">Released ${view[0].regdate}
 			</div>
 			<div class="album_btn">
 				<a href="javascript:void(0)" class="ms_btn play_btn album_play_button" id="run_abno_${view[0].abno}"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">Play All</span>
@@ -54,7 +54,7 @@
 					<li><a class="play_track_in_album" id="${view.tbno}" href="javascript:void(0)"><span class="play_no">${num}</span><span class="play_hover"></span></a></li>
 					<li><a href="#">${view.tname}</a></li>
 					<li><a href="#">${view.singer}</a></li>
-					<li class="text-center"><a href="#">5:26</a></li>
+					<li class="text-center"><a href="#">${view.length }</a></li>
 					<li class="text-center"><a href="javascript:void(0)" class="fav_box" id="pbno_${view.pbno}"> <span class="ms_icon1 ms_fav_icon"> </span>
 					</a></li>
 					<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
@@ -477,12 +477,8 @@
 </div>
 </div>
 <form role="form" method="post">
-<<<<<<< HEAD
-	<input type="hidden" name="pbno" id="pbno" value="${pbno.pbno}" /> <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-=======
 	<input type="hidden" name="pbno" id="pbno" value="${pbno.pbno}" />
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 </form>
 <script>
 $(".insert_cart_btn").click(function() {

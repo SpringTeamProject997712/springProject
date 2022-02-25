@@ -48,7 +48,7 @@ public class CartController {
 		if(!(auth.getPrincipal().equals("anonymousUser"))) {
 			CustomUser user = (CustomUser)auth.getPrincipal();
 			myName =user.getUsername();
-			service.deleteOneCart(m);
+			service.deleteCart(myName);
 			result="1";
 		}
 		

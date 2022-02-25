@@ -21,6 +21,11 @@
 		select * from track_m where name like '%'||#{name}||'%'
 	</select>
 	
+	<select id="countSong" resultType="int">
+		select count(*) from track_m t 
+		where abno = #{abno} and tbno > 0
+	</select>
+	
 	<!--   	어드민 -->
   	<select id="viewTrackListWithPaging" resultType="com.music.domain.TrackVO">
 		<![CDATA[

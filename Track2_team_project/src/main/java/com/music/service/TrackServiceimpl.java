@@ -74,5 +74,12 @@ public class TrackServiceimpl implements TrackService {
 		return mapper.viewTrackList(tbno);
 	}
 
+	@Override
+	public int countSong(int abno) {
+		return mapper.countSong(abno);
+	}
+
+
+
 
 }

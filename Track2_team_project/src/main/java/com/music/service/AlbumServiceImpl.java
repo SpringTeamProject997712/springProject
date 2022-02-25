@@ -79,4 +79,9 @@ public class AlbumServiceImpl implements AlbumService {
 		return mapper.viewAlbum(abno);
 	}
 
+	@Override
+	public String calTotalLength(int abno) {
+		return mapper.calTotalLength(abno);
+	}
+
 }

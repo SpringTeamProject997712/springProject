@@ -32,8 +32,8 @@
   	<select id="readAlbum_single" resultType="com.music.domain.AlbumVO">
 		<![CDATA[
 		select rownum, pbno, abno, name, singer, detail, price, image, regdate,
-		tbno, tdetail, genre, tname, tprice, songname, songrealname
-		from (SELECT * FROM album_single ORDER BY abno desc
+		tbno, tdetail, genre, tname, tprice, songname, songrealname, duration, length
+		from (SELECT * FROM album_single ORDER BY pbno asc
 		) where rownum > 0 and abno = #{abno}
   		]]>
   	</select>
@@ -55,6 +55,14 @@
 	group by a.pbno, a.name, a.singer,a.image_240, abno
 	order by likes desc
 
+  	</select>
+  	
+  	<select id="calTotalLength" resultType="String">
+  		select 
+        LPAD ((TRUNC (sum(duration) / 60)), 2, '0')
+       || ':'
+       || LPAD ((MOD (sum(duration), 60)), 2, '0')
+        as totallength from track_m t where abno = #{abno}
   	</select>
   	
   	
