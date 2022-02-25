@@ -8,4 +8,5 @@ public interface FavouriteService {
 	public int updateYesToNo(LikeVO vo);
 	public int updateNoToYes(LikeVO vo);
 	public int createLike(LikeVO vo);
+	
 }

@@ -32,4 +32,5 @@ public class FavouriteServiceImpl implements FavouriteService {
 	public int createLike(LikeVO vo) {
 		return mapper.createLike(vo);
 	}
+	
 }

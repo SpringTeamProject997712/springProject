@@ -2,6 +2,7 @@ package com.music.mapper;
 
 import java.util.List;
 
+import com.music.domain.FavouriteVO;
 import com.music.domain.MemberVO;
 import com.music.domain.Member_authVO;
 import com.music.utility.Criteria;
@@ -21,4 +22,5 @@ public interface MemberMapper {
 //	public int nextPage();
 	public int deleteAuth(String id);//권한 전부 삭제
 	public int insertAuth(Member_authVO vo);//권한 하나 추가
+	public List<FavouriteVO> favouritesView(String id);
 }

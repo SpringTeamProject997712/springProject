@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.music.domain.FavouriteVO;
 import com.music.domain.MemberVO;
 import com.music.domain.Member_authVO;
 import com.music.domain.PlaylistVO;
@@ -112,5 +113,9 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int insertAuth(Member_authVO vo) {
 		return mapper.insertAuth(vo);
+	}
+	@Override
+	public List<FavouriteVO> favouritesView(String id) {
+		return mapper.favouritesView(id);
 	}
 }

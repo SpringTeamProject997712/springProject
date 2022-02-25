@@ -20,12 +20,14 @@
 							<li class="text-center">More</li>
 							<li class="text-center">remove</li>
 						</ul>
+						
 						<!--  favourite song start -->
+						<c:forEach var="flist" items="${favouritelist}">
 						<ul>
-							<li><a href="#"><span class="play_no">01</span><span class="play_hover"></span></a></li>
-							<li><a href="#">Bloodlust</a></li>
-							<li><a href="#">Dream Your Moments</a></li>
-							<li class="text-center"><a href="#">$5</a></li>
+							<li><a href="#"><span class="play_no">${flist.rownum}</span><span class="play_hover"></span></a></li>
+							<li><a href="#">${flist.name}</a></li>
+							<li><a href="#">${flist.tname }</a></li>
+							<li class="text-center"><a href="#">${flist.price}</a></li>
 							<li class="text-center"><a href="#">5:26</a></li>
 							<li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
 							<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
@@ -40,7 +42,9 @@
 							<li class="text-center"><a href="#"><span class="ms_close">
 									<img src="/images/svg/close.svg" alt=""></span></a></li>
 						</ul>
+						</c:forEach>
 						<!-- favourite song end -->
+						
 						<ul>
 							<li><a href="#"><span class="play_no">02</span><span class="play_hover"></span></a></li>
 							<li><a href="#">Desired Games</a></li>
