@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!-- main css files links -->
-<%@ include file="../header.jsp" %>
+<%@ include file="../header.jsp"%>
 <!----Upload and Share Wrapper Start---->
 <div class="ms_upload_wrapper marger_top60">
 
@@ -21,24 +20,20 @@
 				<div class="tab-content">
 					<div class="ms_upload_box tab-pane fade show active" id="album">
 						<h2>Upload Album Info</h2>
-						<label for="image">
-								<img src="../images/svg/upload.svg" alt="image">
-						</label>	
+						<label for="image"> <img src="../images/svg/upload.svg" alt="image">
+						</label>
 						<div class="ms_upload_btn">
-							<input class="upload-name" value="please upload image" disabled="disabled">
-								<br><br>
-							<a href="javascript:void(0);" class="ms_btn">
-								<label for="image" className="ms_btn">upload Cover</label>							
-							</a>
-								<input type="file" name="uploadImage" id="image" accept="image/*" class="form-control" style="display: none">
+							<input class="upload-name" value="please upload image" disabled="disabled"> <br>
+							<br> <a href="javascript:void(0);" class="ms_btn"> <label for="image" className="ms_btn">upload Cover</label>
+							</a> <input type="file" name="uploadImage" id="image" accept="image/*" class="form-control" style="display: none">
 						</div>
-	<!-- 						<span> or </span>	 -->
-	<!-- 						<p>Drag And Drop Album Image File</p> -->
-	
+						<!-- 						<span> or </span>	 -->
+						<!-- 						<p>Drag And Drop Album Image File</p> -->
+
 
 
 					</div>
-				
+
 					<div class=" marger_top60">
 						<div class="ms_upload_box">
 							<div class="ms_heading">
@@ -58,18 +53,17 @@
 								<div class="form-group">
 									<label>登録日</label> <input type="date" name="regdate" id="regdate" placeholder="" class="form-control">
 								</div>
-								<div class="form-group" style="width:88%">
-									<label>詳細</label><input type="text" name="detail" placeholder="" class="form-control" style="height:150px;">
+								<div class="form-group" style="width: 88%">
+									<label>詳細</label><input type="text" name="detail" placeholder="" class="form-control" style="height: 150px;">
 								</div>
-								
+
 
 								<input type="hidden" name="pbno" value="${pbno}" class="form-control">
 
 
 								<div class="pro-form-btn text-center marger_top15">
 									<div class="ms_upload_btn">
-										<a href="javascript:void(0);" class="ms_btn" onclick="go_upload_album()">アップロード</a>
-										<a href="javascript:void(0);" class="ms_btn" onclick="go_reset()">リセット</a>
+										<a href="javascript:void(0);" class="ms_btn" onclick="go_upload_album()">アップロード</a> <a href="javascript:void(0);" class="ms_btn" onclick="go_reset()">リセット</a>
 									</div>
 								</div>
 							</div>
@@ -85,19 +79,20 @@
 				<div class="tab-content">
 					<div class="ms_upload_box tab-pane fade show active" id="track">
 						<h2>Upload Track Info</h2>
-						<label for="songname">
-							<img src="../images/svg/upload.svg" alt="songname">
+						<label for="songname"> <img src="../images/svg/upload.svg" alt="songname">
 						</label>
 						<div class="ms_upload_btn">
-							<input class="upload-name" value="please upload track" disabled="disabled">
-							<br><br>
-							<a href="javascript:void(0);" class="ms_btn"> <label for="songname" className="ms_btn">upload files</label>
-							</a>
-							<input type="file" name="uploadMusic" id="songname" accept="audio/*" class="form-control" style="display: none" />
+							<input class="upload-name" value="please upload track" disabled="disabled"> <br>
+							<br> <a href="javascript:void(0);" class="ms_btn"> <label for="songname" className="ms_btn">upload files</label>
+							</a> <input type="file" name="uploadMusic" id="songname" accept="audio/*" class="form-control" style="display: none" />
+						</div>
+						<div>
+							<audio id="audio" style="display:none;"></audio>
+							<input type="hidden" name="duration" id="upload_duration1" value="">
 						</div>
 
 					</div>
-					
+
 					<div class=" marger_top60">
 						<div class="ms_upload_box">
 							<div class="ms_heading">
@@ -127,8 +122,8 @@
 								<div class="form-group">
 									<label>値段</label> <input type="text" name="price" placeholder="" class="form-control">
 								</div>
-								<div class="form-group" style="width:88%">
-									<label>詳細</label><input type="text" name="detail" placeholder="" class="form-control" style="height:150px;">
+								<div class="form-group" style="width: 88%">
+									<label>詳細</label><input type="text" name="detail" placeholder="" class="form-control" style="height: 150px;">
 								</div>
 
 								<input type="hidden" name="pbno" value="${pbno}" class="form-control">
@@ -136,8 +131,7 @@
 
 								<div class="pro-form-btn text-center marger_top15">
 									<div class="ms_upload_btn">
-										<a href="javascript:void(0);" class="ms_btn" onclick="go_upload_track()">アップロード</a>
-										<a href="javascript:void(0);" class="ms_btn" onclick="go_reset()">リセット</a>
+										<a href="javascript:void(0);" class="ms_btn" onclick="go_upload_track()">アップロード</a> <a href="javascript:void(0);" class="ms_btn" onclick="go_reset()">リセット</a>
 									</div>
 								</div>
 							</div>
@@ -146,7 +140,7 @@
 				</div>
 			</form>
 		</div>
-		
+
 		<div class="tab-pane fade" id="goods">
 			<form name="upload_goods" method="post" enctype="multipart/form-data" action="uploadpro_goods">
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
@@ -164,16 +158,15 @@
 								<div class="form-group">
 									<label>値段</label> <input type="text" name="price" placeholder="" class="form-control">
 								</div>
-								<div class="form-group" style="width:88%">
-									<label>詳細</label><input type="text" name="detail" placeholder="" class="form-control" style="height:150px;">
+								<div class="form-group" style="width: 88%">
+									<label>詳細</label><input type="text" name="detail" placeholder="" class="form-control" style="height: 150px;">
 								</div>
 								<input type="hidden" name="pbno" value="${pbno}" class="form-control">
 
 
 								<div class="pro-form-btn text-center marger_top15">
 									<div class="ms_upload_btn">
-										<a href="javascript:void(0);" class="ms_btn" onclick="go_upload_goods()">アップロード</a>
-										<a href="javascript:void(0);" class="ms_btn" onclick="go_reset()">リセット</a>
+										<a href="javascript:void(0);" class="ms_btn" onclick="go_upload_goods()">アップロード</a> <a href="javascript:void(0);" class="ms_btn" onclick="go_reset()">リセット</a>
 									</div>
 								</div>
 							</div>
@@ -188,4 +181,4 @@
 <!----Main div close---->
 </div>
 <!-- main js files links -->
-<%@ include file="../footer.jsp" %>
+<%@ include file="../footer.jsp"%>

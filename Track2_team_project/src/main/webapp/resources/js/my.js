@@ -502,3 +502,31 @@ $(".remove-all-cart").on("click", function(){
 //	console.log(pageName);
 //	$("#"+pageName).addClass("active");
 //})
+
+//외부 API
+$("#audio").on("canplaythrough", function(e){
+    var seconds = e.currentTarget.duration;
+    var duration = moment.duration(seconds, "seconds");
+    
+    var time = "";
+    var hours = duration.hours();
+    if (hours > 0) { time = hours + ":" ; }
+    
+    time = time + duration.minutes() + ":" + duration.seconds();
+    $("#upload_duration").text(time);
+    $('input[id=upload_duration1]').attr('value',time);
+    
+});
+
+$("#songname").change(function(e){
+    var file = e.currentTarget.files[0];
+   
+    $("#filename").text(file.name);
+    $("#filetype").text(file.type);
+    $("#filesize").text(file.size);
+    
+    objectUrl = URL.createObjectURL(file);
+    $("#audio").prop("src", objectUrl);
+});
+
+//API 끝

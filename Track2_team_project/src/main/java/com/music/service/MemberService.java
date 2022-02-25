@@ -2,6 +2,7 @@ package com.music.service;
 
 import java.util.List;
 
+import com.music.domain.FavouriteVO;
 import com.music.domain.MemberVO;
 import com.music.domain.Member_authVO;
 import com.music.domain.PlaylistVO;
@@ -55,4 +56,6 @@ public interface MemberService {
 	
 	//멤버에 권한 넣기
 	public int insertAuth(Member_authVO vo);
+	//좋아요 리스트 보기
+	public List<FavouriteVO> favouritesView(String id);
 }

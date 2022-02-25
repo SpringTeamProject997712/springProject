@@ -47,8 +47,8 @@
   		<selectKey keyProperty="tbno" order="BEFORE" resultType="int">
   			select track_m_seq.nextval from dual
   		</selectKey>
-  		insert into track_m (tbno, abno, name, genre, detail, price, songname, songrealname, pbno) 
-		values (#{tbno},#{abno},#{name},#{genre},#{detail},#{price},#{songname}, #{songrealname}, #{pbno})
+  		insert into track_m (tbno, abno, name, genre, detail, price, songname, songrealname, pbno, duration) 
+		values (#{tbno},#{abno},#{name},#{genre},#{detail},#{price},#{songname}, #{songrealname}, #{pbno}, #{duration})
   	</insert>
 
   	<insert id="insertGoods">

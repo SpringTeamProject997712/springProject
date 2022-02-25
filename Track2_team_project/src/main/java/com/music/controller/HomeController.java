@@ -28,6 +28,8 @@ public class HomeController {
 	public String home(Model model, HttpServletRequest req) {
 		model.addAttribute("music", service.listAlbum());
 		model.addAttribute("newly",service.newly());
+		model.addAttribute("topalbum",service.topAlbums());
+		model.addAttribute("list",service.listAlbum());
 		return "index";
 	}
 }

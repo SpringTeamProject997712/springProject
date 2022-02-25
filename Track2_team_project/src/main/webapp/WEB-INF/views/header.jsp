@@ -27,6 +27,7 @@
     <!-- Favicon Link -->
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
     <script src="/resources/js/jquery.js"></script>
+    <script src="/resources/js/tj.js"></script>
 </head>
 
 <body>

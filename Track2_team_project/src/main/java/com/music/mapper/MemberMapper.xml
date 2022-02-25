@@ -98,6 +98,13 @@
 	<insert id="insertAuth">
 		insert into member_auth_m(id, auth) values(#{id},#{auth})
 	</insert>
+	<select id="favouritesView" resultType="com.music.domain.FavouriteVO">
+	<![CDATA[	
+	select rownum, tbno, tname, name, price, lbno, likes, id, pbno 
+    from (select * from myfavourites order by lbno asc)
+    where rownum > 0 and id=#{id}
+	]]>
+	</select>
 	
 	
 </mapper>
