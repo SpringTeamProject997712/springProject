@@ -204,3 +204,14 @@ cursor: pointer;
 .rename_button{
 	font-size: 16px;
 }
+
+.album_list_wrapper ul li {
+	padding:10px;
+	
+}
+
+.cart-table tr{
+	padding-top: 15px;
+	
+}
+
