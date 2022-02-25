@@ -25,5 +25,8 @@ public class ReviewServiceImpl implements ReviewService {
 	public List<ReviewVO> selectReview(int pbno) {
 		return mapper.selectReview(pbno);
 	}
-
+	@Override
+	public Integer countReview(int pbno) {
+		return mapper.countReview(pbno);
+	}
 }

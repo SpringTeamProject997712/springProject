@@ -12,7 +12,8 @@
                 </div>
                 <input type="hidden" id="this_plbno" value="${this_plbno}">
                 <div class="album_single_text">
-                    <h2>${view[0].name}</h2>
+                    <h2><input type="text" class="playlist-name" id="playlist-name" value="${view[0].name}" ><a href="javascript:void(0)" class="ms_btn rename_button" onclick="modify_playlist_name()"><span class="play_all">Rename</span></a></h2>
+                    
                     <p class="singer_name">By - ${view[0].id}</p>
                     <div class="album_feature">
                         <a href="#" class="album_date">${countTrack} songs | 25:10</a>
@@ -27,9 +28,6 @@
                     <span><img src="/images/svg/more.svg" alt=""></span>
                 </div>
                 <ul class="more_option">
-                    <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                    <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                    <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
                     <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                     <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                 </ul>

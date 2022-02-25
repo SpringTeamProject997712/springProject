@@ -29,7 +29,10 @@ $(function(){ // document가 다 로딩된 후 쿠키 있는지 확인해서 아
 //뒤로가기, 새로고침, 페이지 이동시 음악 플레이 정보 저장하기
 window.onbeforeunload = function (event) { 
 	event.preventDefault();
-	deleteCookie("musicData");
+	
+	sessionStorage.removeItem("currentTime");
+	sessionStorage.removeItem("duration");
+	sessionStorage.removeItem("currentList");
 		
 	let timeNow=$(".jp-current-time").text();
 	let timeEnd=$(".jp-duration").text();
@@ -43,7 +46,6 @@ window.onbeforeunload = function (event) {
 	sessionStorage.setItem("duration",timeEnd);
 	sessionStorage.setItem("currentList",listNow);
 }
-
 
 function getCookie(cookieName) { 
 	cookieName = cookieName + '='; 
@@ -385,6 +387,24 @@ $(".remove_single_track_in_playlist").on("click", function(){
 
 
 
+function modify_playlist_name(){
+	let plbno = document.getElementById('this_plbno').value;
+	let name = document.getElementById('playlist-name').value;
+	
+	$.ajax({
+		type:"get",
+		url:"/createPlaylist/modifyPlaylistName",
+		data:{name:name, plbno:plbno},
+		error:function(xhr,status,err){
+			console.log(xhr.status + xhr.responseText + err);
+		},success:function(data){
+			if(data=='1'){
+				console.log("수정완료")
+			}
+		}
+	});
+}
+
 ////preview image 
 //var imgTarget = $('.preview-image .upload-hidden');
 //
@@ -438,3 +458,31 @@ $(".remove_single_track_in_playlist").on("click", function(){
 //	console.log(pageName);
 //	$("#"+pageName).addClass("active");
 //})
+
+//외부 API
+$("#audio").on("canplaythrough", function(e){
+    var seconds = e.currentTarget.duration;
+    var duration = moment.duration(seconds, "seconds");
+    
+    var time = "";
+    var hours = duration.hours();
+    if (hours > 0) { time = hours + ":" ; }
+    
+    time = time + duration.minutes() + ":" + duration.seconds();
+    $("#upload_duration").text(time);
+    $('input[id=upload_duration1]').attr('value',time);
+    
+});
+
+$("#songname").change(function(e){
+    var file = e.currentTarget.files[0];
+   
+    $("#filename").text(file.name);
+    $("#filetype").text(file.type);
+    $("#filesize").text(file.size);
+    
+    objectUrl = URL.createObjectURL(file);
+    $("#audio").prop("src", objectUrl);
+});
+
+//API 끝

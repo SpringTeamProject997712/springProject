@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 import com.music.domain.PlaylistVO;
-import com.music.domain.TrackVO;
 import com.music.domain.jPlayerVO;
 import com.music.security.domain.CustomUser;
 import com.music.service.CreatePlaylistService;
@@ -153,5 +152,26 @@ public class CreatePlaylistController {
 	 * log.info("===================5개 리스트=========================");
 	 * log.info(plist); return plist; }
 	 */
+	
+	@ResponseBody
+	@GetMapping("/modifyPlaylistName")
+	public String modifyPlaylistName(int plbno, String name) {
+		String myName="";
+		String result="";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			
+			PlaylistVO pvo = new PlaylistVO();
+			pvo.setId(myName);
+			pvo.setPlbno(plbno);
+			pvo.setName(name);
+			service.modifyPlaylist(pvo);
+			result="1";
+		}
+		
+		return result;
+	}
 	
 }

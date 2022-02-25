@@ -15,4 +15,5 @@ public class TrackVO {
 	private String songrealname;
 	private int pbno;
 	private String tname;
+	private String duration;
 }

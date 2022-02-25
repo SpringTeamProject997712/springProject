@@ -1,5 +1,7 @@
 package com.music.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,11 @@ public class CartServiceImpl implements CartService {
 	@Override
 	public void insertCart(CartVO cvo) {
 		cmapper.insertCart(cvo);
+	}
+
+	@Override
+	public List<CartVO> cartList(String id) {
+		return cmapper.cartList(id);
 	}
 
 }

@@ -7,6 +7,8 @@ public class ProductVO {
 
 	private int pbno;
 	private String category;
+	
+	private String id;
 
 //	private String name;
 //	private String kind;
