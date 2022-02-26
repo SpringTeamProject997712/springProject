@@ -301,6 +301,36 @@
 			</div>
 		</div>
 	</div>
+	<div id="myModal2" class="modal  centered-modal" role="dialog">
+		<div class="modal-dialog login_dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<button type="button" class="close" id="my_modal_close_btn" data-dismiss="modal">
+					<i class="fa_icon form_close"></i>
+				</button>
+				<div class="modal-body">
+					<div class="ms_register_img">
+						<img src="/images/register_img.png" alt="" class="img-fluid" />
+					</div>
+					<div class="ms_register_form">
+						<h2>Select Playlist</h2>
+						<form method="post" name="go_to_playlist">
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+							<input type="hidden" name="this_tbno_will_go_to_playlist" value="">
+							<div class="black_some_box" id="the_track_choiced_by_you" style="height: 130px;">
+	            </div>
+							<div class="form-group padding_top_30">
+								<label>My Playlist</label>
+								<select name="select_playlist_selector" id="select_playlist" class="form-control" style="height:50px;">
+								</select>
+							</div>
+							<a href="javascript:go_add_track()" class="ms_btn">Add Track</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!----Language Selection Modal---->

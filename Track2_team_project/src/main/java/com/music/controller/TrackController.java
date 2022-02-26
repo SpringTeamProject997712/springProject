@@ -62,13 +62,7 @@ public class TrackController {
 		if(!(auth.getPrincipal().equals("anonymousUser"))) {
 			CustomUser user = (CustomUser)auth.getPrincipal();
 			myName =user.getUsername();
-			
-			PlaylistVO pvo = new PlaylistVO();
-			pvo.setTbno(tvo.getTbno());
-			pvo.setAbno(tvo.getAbno());
-			pvo.setPlbno(cservice.minPlbno(myName));
-			cservice.insertPlaylistDetail(pvo);
-		}//basic_playlist에 추가
+		}
 		
 		Gson gson = new Gson();
 		String json = gson.toJson(jvo);

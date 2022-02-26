@@ -49,7 +49,7 @@
 					<c:set value="${1}" var="num"/>
 					<c:forEach var="viewOne" items="${view}">
 					<ul class="single_track_tr" id="tbno_for_remove_${viewOne.tbno}">
-						<li><a href="#"><span class="play_no">${num}</span><span class="play_hover"></span></a></li>
+						<li><a class="play_track_in_album" id="${viewOne.tbno}" href="javascript:void(0)"><span class="play_no">${num}</span><span class="play_hover"></span></a></li>
 						<li><a href="#">${viewOne.tname}</a></li>
 						<li><a href="#">${viewOne.singer}</a></li>
 						<li class="text-center"><a href="#">5:26</a></li>
@@ -67,7 +67,6 @@
 					<!-- track list end -->
 					<span class="btn text-center add_playlist_btn"><a href="javascript:void(0)" class="ms_btn musicSearch_on"><span class="play_all">+追加する</span></a></span>
 					
-					<!-- 모달 -->
 					<div id="musicSearchMan" class="myMusicForPlaylist">
             <div class="myMusicForPlaylist-dialog">
                 <!-- Modal content-->
@@ -91,7 +90,7 @@
 	                          </div>
 	                          <a href="javascript:go_searchForPlaylist()" class="ms_btn">search</a>
                        		</form>
-                       		<div class="instantTableMaker" id="instantTable">
+                       		<div class="instantTableMaker black_some_box" id="instantTable">
 	                        </div>
                         </div>
                     </div>

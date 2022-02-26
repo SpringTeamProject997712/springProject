@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 import com.music.domain.PlaylistVO;
+import com.music.domain.TrackVO;
 import com.music.domain.jPlayerVO;
 import com.music.security.domain.CustomUser;
 import com.music.service.CreatePlaylistService;
+import com.music.service.MemberService;
 import com.music.service.TrackService;
 
 import lombok.Setter;
@@ -33,8 +35,27 @@ public class CreatePlaylistController {
 	@Setter(onMethod_ = @Autowired)
 	TrackService tservice;
 	
+	@Setter(onMethod_ = @Autowired)
+	MemberService mservice;
+	
 	@GetMapping("/createPlaylist")
 	public void createPlaylistView() {
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/selectMyPlaylist", produces = "application/text; charset=utf8", method = RequestMethod.GET)
+	public String selectMyPlaylist() {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		List<PlaylistVO> plist = new ArrayList<PlaylistVO>();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			String myName =user.getUsername();
+			plist = mservice.viewMyPlaylistList(myName);
+		}
+		
+		Gson gson = new Gson();
+		String json =gson.toJson(plist);
+		return json;
 	}
 	
 	@ResponseBody
@@ -170,7 +191,50 @@ public class CreatePlaylistController {
 			service.modifyPlaylist(pvo);
 			result="1";
 		}
-		
+		return result;
+	}
+	
+	@ResponseBody
+	@GetMapping("/insertQueue")
+	public String insertPlaylistDetailToBasic(int tbno) {
+		String myName="";
+		String result="";
+		TrackVO tvo = tservice.selectTrack(tbno);
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			
+			PlaylistVO pvo = new PlaylistVO();
+			pvo.setId(myName);
+			pvo.setTbno(tvo.getTbno());
+			pvo.setAbno(tvo.getAbno());
+			pvo.setPlbno(service.minPlbno(myName));
+			service.insertPlaylistDetail(pvo);
+			result="1";
+		}//basic_playlist에 추가
+		return result;
+	}
+	
+	@ResponseBody
+	@GetMapping("/insertPlaylistDetail")
+	public String insertPlaylistDetail(int tbno,int plbno) {
+		String myName="";
+		String result="";
+		TrackVO tvo = tservice.selectTrack(tbno);
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			
+			PlaylistVO pvo = new PlaylistVO();
+			pvo.setId(myName);
+			pvo.setTbno(tbno);
+			pvo.setAbno(tvo.getAbno());
+			pvo.setPlbno(plbno);
+			service.insertPlaylistDetail(pvo);
+			result="1";
+		}//basic_playlist에 추가
 		return result;
 	}
 	

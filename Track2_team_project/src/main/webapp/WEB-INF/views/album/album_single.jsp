@@ -59,8 +59,7 @@
 					</a></li>
 					<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
 						<ul class="more_option">
-							<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-							<li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
+							<li><a href="javascript:void(0)" class="add_queue_one_track"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
 							<li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
 							<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
 							<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
@@ -73,6 +72,7 @@
 	</div>
 
 </div>
+	<button type="button" id="test_button">테스트</button>
         <!---Main Content Start--->
         <div class="ms_content_wrapper ms_album_content">
             <!----Testimonial section Start---->
@@ -502,12 +502,14 @@ $(".insert_cart_btn").click(function() {
 			}else if(success_return=='2'){
 				alert("중복임");
 			}else{
+				$("#myModal1").modal();
 				alert("로그인이 필요합니다");
-				alert("카드를 담기 위해서는 로그인이 필요합니다.");
+				
+				
 			}
 		},
 		error : function() {
-			$("#myModal1").modal();
+			alert("카드를 담기 위해서는 로그인이 필요합니다.");
 		}
 	});
 

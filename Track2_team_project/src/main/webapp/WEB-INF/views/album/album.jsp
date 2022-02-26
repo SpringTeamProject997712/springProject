@@ -28,7 +28,7 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
                                             <li><a href="javascript:void(0)" class="album_add_queue" id="run_abno_${list.abno}"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
+                                            <li><a href="#" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                         </ul>
                                         <div class="ms_play_icon">
@@ -122,42 +122,37 @@
                            
                              <!-- TOP 15 start -->
                              <c:forEach var="top" items="${topalbum}" begin="0" end="4">
-                             
-                            <div class="ms_weekly_box">
+                            	<div class="ms_weekly_box">
                                 <div class="weekly_left">
-                                    <span class="w_top_no">
-										${top.rownum}
-									</span>
-                                    <div class="w_top_song">
-                                        <div class="w_tp_song_img">
-<<<<<<< HEAD
-                                            <img src="/upload/${top.image_50}" alt="">
-=======
-                                            <img src="${pageContext.request.contextPath}/upload/${top.image_50}" alt="">
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
-                                            <div class="ms_song_overlay">
-                                            </div>
-                                            <div class="ms_play_icon" id="${top.tbno}">
-                                                <img src="../images/svg/play.svg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="w_tp_song_name">
-                                            <h3><a href="#">${top.name}</a></h3>
-                                            <p>${top.singer}</p>
-                                        </div>
+                                  <span class="w_top_no">
+																		${top.rownum}
+																	</span>
+                                  <div class="w_top_song">
+                                    <div class="w_tp_song_img">
+                                      <img src="/upload/${top.image_50}" alt="">
+                                      <div class="ms_song_overlay">
+                                      </div>
+                                      <div class="ms_play_icon" id="${top.tbno}">
+                                        <img src="../images/svg/play.svg" alt="">
+                                      </div>
                                     </div>
+                                    <div class="w_tp_song_name">
+                                      <h3><a href="#">${top.name}</a></h3>
+                                      <p>${top.singer}</p>
+                                    </div>
+                                  </div>
                                 </div>
                                 <div class="weekly_right">
-                                    <span class="w_song_time">5:10</span>
-                                    <span class="ms_more_icon" data-other="1">
-										<img src="../images/svg/more.svg" alt="">									
-									</span>
+                                  <span class="w_song_time">5:10</span>
+                                  <span class="ms_more_icon" data-other="1">
+																		<img src="../images/svg/more.svg" alt="">									
+																	</span>
                                 </div>
                                 <ul class="more_option">
                                     <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
                                     <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
                                     <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                    <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
+                                    <li><a href="#" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                     <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                 </ul>
                             </div>
@@ -180,11 +175,7 @@
 									</span>
                                     <div class="w_top_song">
                                         <div class="w_tp_song_img">
-<<<<<<< HEAD
                                             <img src="/upload/${top.image_50}" alt="">
-=======
-                                            <img src="${pageContext.request.contextPath}/upload/${top.image_50}" alt="">
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
                                             <div class="ms_song_overlay">
                                             </div>
                                             <div class="ms_play_icon" id="${top.tbno}">
