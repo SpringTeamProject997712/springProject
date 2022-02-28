@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.music.domain.AlbumVO;
 import com.music.domain.TrackVO;
 import com.music.mapper.AlbumMapper;
+import com.music.mapper.ProductMapper;
 import com.music.utility.Criteria;
 import com.music.utility.PageMaker;
 
@@ -21,6 +22,9 @@ public class AlbumServiceImpl implements AlbumService {
 	@Setter(onMethod_= @Autowired)
 	private AlbumMapper mapper;
 
+	@Setter(onMethod_= @Autowired)
+	private ProductMapper pmapper;
+	
 	@Override
 	public void insertAlbum(AlbumVO album) {
 		mapper.insertAlbum(album);
@@ -82,6 +86,11 @@ public class AlbumServiceImpl implements AlbumService {
 	@Override
 	public String calTotalLength(int abno) {
 		return mapper.calTotalLength(abno);
+	}
+
+	@Override
+	public void deleteAlbum(int pbno) {
+		pmapper.deleteProduct(pbno);
 	}
 
 }

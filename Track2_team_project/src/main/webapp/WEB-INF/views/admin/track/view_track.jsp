@@ -13,7 +13,7 @@
 							</div>
               <div class="example">
                 <div class="tab-content rounded-bottom">
-                	<form name="formTrack" method="post" action="/track/updateTrack" class="row g-3">
+                	<form name="formTrack" method="post" action="/track/updateTrack" class="row g-3" enctype="multipart/form-data">
                 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 									  <div class="col-md-6">
 									    <label class="form-label" for="tbno">트랙 고유번호</label>

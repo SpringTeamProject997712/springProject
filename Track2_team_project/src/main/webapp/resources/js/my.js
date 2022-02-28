@@ -477,7 +477,7 @@ $("#audio").on("canplaythrough", function(e){
     time = time + duration.minutes() + ":" + duration.seconds();
     time_cal = duration%60;
     $("#upload_duration").text(time);
-    $('input[id=upload_duration1]').attr('value',Math.round(seconds));
+    $('input[id=upload_duration1]').attr('value',Math.floor(seconds));
     
 });
 

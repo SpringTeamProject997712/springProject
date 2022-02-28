@@ -129,6 +129,11 @@ public class ProductServiceImpl implements ProductService {
 		
 		return result;
 	}
+
+	@Override
+	public void deleteProduct(int pbno) {
+		pMapper.deleteProduct(pbno);
+	}
 	
 
 }

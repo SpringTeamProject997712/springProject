@@ -503,11 +503,11 @@ $(".insert_cart_btn").click(function() {
 				alert("중복임");
 			}else{
 				alert("로그인이 필요합니다");
+				$("#myModal1").modal();
 			}
 		},
 		error : function() {
-			alert("카드를 담기 위해서는 로그인이 필요합니다.");
-			$("#myModal1").modal();
+			alert("에러");
 		}
 	});
 
