@@ -405,6 +405,50 @@ function modify_playlist_name(){
 	});
 }
 
+$(".slideDown-details").on("click", function(abno){
+	let cbno = $(this).attr('id')
+	$(".cart-details").slideUp(10);
+	$("#cart-details_"+cbno).slideDown();
+})
+$(".cart-details").on("click", function(abno){
+	$(".cart-details").slideUp(10);
+})
+
+$(".remove-from-cart").on("click", function(){
+	let cbno = this.dataset.cbno;
+	$(this).parent().parent().slideUp(20,function(){
+		$.ajax({
+			type:"get",
+			data:{cbno:cbno},
+			url:"/cart/deleteOneCart",
+			success:function(data){
+				if(data=='1'){
+					console.log("삭제완료");
+				}
+			},error:function(xhr,status,err){
+				console.log(xhr.status + xhr.responseText + err);
+			}
+		})
+	});
+})
+
+$(".remove-all-cart").on("click", function(){
+	
+	if(confirm("정말로 삭제하시겠습니까? \n 장바구니가 전부 초기화 됩니다")){
+		$.ajax({
+			type:"get",
+			url:"/cart/deleteCart",
+			success:function(data){
+				if(data=='1'){
+					console.log("삭제완료");
+				}
+			},error:function(xhr,status,err){
+				console.log(xhr.status + xhr.responseText + err);
+			}
+		})
+	}
+})
+
 ////preview image 
 //var imgTarget = $('.preview-image .upload-hidden');
 //

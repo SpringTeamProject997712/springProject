@@ -175,9 +175,10 @@ public class MemberController {
 		}
 		String id = myName;
 		
-		List<CartVO> cartList = cservice.cartList(id);
-		
+		List<CartVO> cartList = cservice.viewCartlist(id);
+		List<CartVO> cartListDetail = cservice.cartList(id);
 		model.addAttribute("cartList", cartList);
+		model.addAttribute("cartListDetail",cartListDetail);
 		
 	}
 	

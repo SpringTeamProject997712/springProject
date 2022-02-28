@@ -27,7 +27,7 @@
 							<div class="container padding-bottom-3x mb-1">
 								<!-- Shopping Cart-->
 								<div class="table-responsive shopping-cart">
-									<table class="table">
+									<table class="table cart-table">
 										<thead>
 											<tr>
 												<th>
@@ -36,18 +36,74 @@
 													</div>
 												</th>
 												<th>Product Name</th>
-												<th class="text-center">Quantity</th>
 												<th class="text-center">Subtotal</th>
 												<th class="text-center">Discount</th>
-												<th class="text-center"><a class="btn btn-sm btn-outline-danger" href="#">Clear Cart</a></th>
+												<th class="text-center"><a class="btn btn-sm btn-outline-danger remove-all-cart" href="javascript:void(0)">Clear Cart</a></th>
 											</tr>
 										</thead>
 										</tbody>
-										<c:forEach var="cartList" items="${cartList }">
+										<c:forEach var="cartList" items="${cartList}">
+											<c:if test="${cartList.category eq '1'}">
+											<tr class="slideDown-details" id="${cartList.cbno}">
+												<td>
+													<div class="checkBox">
+														<input type="checkBox" name="chBox" data-cbno="${cartList.cbno}">
+													</div>
+												</td>
+												<td>
+													<div class="product-item">
+														<a class="product-thumb" href="javascript:void(0)"><img src="${pageContext.request.contextPath}/upload/${cartList.image}" alt="Product"></a>
+														<div class="product-info">
+															<h4 class="product-title">
+																<a href="/album/album_single?abno=${cartList.abno}">${cartList.aname}</a>
+															</h4>
+														</div>
+													</div>
+												</td>
+												<td class="text-center text-lg text-medium">
+													<fmt:setLocale value="ja_jp" />
+													<fmt:formatNumber type="currency" value="${cartList.aprice * cartList.quantity}" currencySymbol="￥" maxFractionDigits="0" />
+												</td>
+												<td class="text-center text-lg text-medium">
+													<fmt:setLocale value="ja_jp" />
+													<fmt:formatNumber type="currency" value="${cartList.aprice}" currencySymbol="￥" maxFractionDigits="0" />
+												</td>
+												<td class="text-center">
+													<a class="remove-from-cart" href="javascript:void(0)" data-toggle="tooltip" title="" data-original-title="Remove item" data-cbno="${cartList.cbno}"><i class="fa fa-trash"></i></a>
+												</td>
+											</tr>
+											<tr class="cart-details" style="display: none" id="cart-details_${cartList.cbno}">
+												<td colspan="5">
+													<ul style="list-style: none;">
+														<li class="album_list_wrapper">
+															<ul class="album_list_name">
+																<li>#</li>
+																<li>Song Title</li>
+																<li class="text-center">Price</li>
+																<li class="text-center">Duration</li>
+															</ul>
+															<c:set value="${1}" var="d_num"/>
+															<c:forEach items="${cartListDetail}" var="cartDetail">
+																<c:if test="${cartList.pbno == cartDetail.pbno}">
+																	<ul>
+																		<li>${d_num}</li>
+																		<li class="text-center">${cartDetail.tname}</li>
+																		<li class="text-center track_name">${cartDetail.tprice}</li>
+																		<li class="text-center">5:26</li>
+																	</ul>
+																	<c:set value="${d_num+1}" var="d_num"/>
+																</c:if>
+															</c:forEach>
+														</li>
+													</ul>
+												</td>
+											</tr>	
+											</c:if>
+											<c:if test="${cartList.category eq '2'}">
 											<tr>
 												<td>
 													<div class="checkBox">
-														<input type="checkBox" name="chBox" data-cbno="${cartList.cbno }">
+														<input type="checkBox" name="chBox" data-cbno="${cartList.cbno}">
 													</div>
 												</td>
 												<td>
@@ -55,34 +111,24 @@
 														<a class="product-thumb" href="/album/album_single?abno=${cartList.abno }"><img src="${pageContext.request.contextPath}/upload/${cartList.image}" alt="Product"></a>
 														<div class="product-info">
 															<h4 class="product-title">
-																<a href="/album/album_single?abno=${cartList.abno }">${cartList.name}</a>
+																<a href="/album/album_single?abno=${cartList.abno}">${cartList.tname}</a>
 															</h4>
 														</div>
 													</div>
 												</td>
-												<td class="text-center">
-													<div class="count-input">
-														<select class="form-control">
-															<option>1</option>
-															<option>2</option>
-															<option>3</option>
-															<option>4</option>
-															<option>5</option>
-														</select>
-													</div>
+												<td class="text-center text-lg text-medium">
+													<fmt:setLocale value="ja_jp" />
+													<fmt:formatNumber type="currency" value="${cartList.tprice * cartList.quantity}" currencySymbol="￥" maxFractionDigits="0" />
 												</td>
 												<td class="text-center text-lg text-medium">
 													<fmt:setLocale value="ja_jp" />
-													<fmt:formatNumber type="currency" value="${cartList.price * cartList.quantity}" currencySymbol="￥" maxFractionDigits="0" />
-												</td>
-												<td class="text-center text-lg text-medium">
-													<fmt:setLocale value="ja_jp" />
-													<fmt:formatNumber type="currency" value="${cartList.price}" currencySymbol="￥" maxFractionDigits="0" />
+													<fmt:formatNumber type="currency" value="${cartList.tprice}" currencySymbol="￥" maxFractionDigits="0" />
 												</td>
 												<td class="text-center">
 													<a class="remove-from-cart" href="javascript:void(0)" data-toggle="tooltip" title="" data-original-title="Remove item" onclick="delete_cart_btn();" data-cbno="${cartList.cbno }"><i class="fa fa-trash"></i></a>
 												</td>
 											</tr>
+											</c:if>
 										</c:forEach>
 
 

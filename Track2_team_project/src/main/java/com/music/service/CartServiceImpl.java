@@ -25,5 +25,17 @@ public class CartServiceImpl implements CartService {
 	public List<CartVO> cartList(String id) {
 		return cmapper.cartList(id);
 	}
+	@Override
+	public List<CartVO> viewCartlist(String id) {
+		return cmapper.viewCartlist(id);
+	}
+	@Override
+	public int deleteOneCart(CartVO cvo) {
+		return cmapper.deleteOneCart(cvo);
+	}
+	@Override
+	public int deleteCart(String id) {
+		return cmapper.deleteCart(id);
+	}
 
 }
