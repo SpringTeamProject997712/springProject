@@ -10,6 +10,7 @@ function go_login() {                            //로그인
 		return false;
 	}else if(idChk){ //체크박스에 체크 되어있으면 아이디 저장 쿠키(7일) 넣기
 		console.log("쿠키 넣기 가동");
+		deleteCookie("Cookie_mail");
 		setCookie("Cookie_mail", document.loginForm.username.value, 7); 
 	}else{ //안돼있으면 아이디 저장 쿠키 삭제하기
 		deleteCookie("Cookie_mail"); 
@@ -432,6 +433,7 @@ $(".remove-from-cart").on("click", function(){
 	});
 })
 
+
 $(".remove-all-cart").on("click", function(){
 	
 	if(confirm("정말로 삭제하시겠습니까? \n 장바구니가 전부 초기화 됩니다")){
@@ -441,6 +443,7 @@ $(".remove-all-cart").on("click", function(){
 			success:function(data){
 				if(data=='1'){
 					console.log("삭제완료");
+					location.reload();
 				}
 			},error:function(xhr,status,err){
 				console.log(xhr.status + xhr.responseText + err);
@@ -478,6 +481,8 @@ $(".remove-all-cart").on("click", function(){
 //        img[0].style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\""+imgSrc+"\")";        
 //    }
 //});
+
+
 
 
 //액티브 (해더 내부에 넣어야 작동함 ㅅㅂ;)

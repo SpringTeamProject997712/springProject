@@ -117,7 +117,7 @@ public class ProductServiceImpl implements ProductService {
 							CartVO cvo = new CartVO();
 							cvo.setId(pvo.getId());
 							cvo.setPbno(cartPbnoList.get(j));
-							cMapper.deleteOneCart(cvo);
+							cMapper.deleteOneCartWithPbno(cvo);
 						}else {
 							result *= 0;
 						}

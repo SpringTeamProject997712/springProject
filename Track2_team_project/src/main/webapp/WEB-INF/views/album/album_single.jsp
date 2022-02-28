@@ -476,43 +476,5 @@
 	<!----Main div close---->
 </div>
 </div>
-<form role="form" method="post">
-	<input type="hidden" name="pbno" id="pbno" value="${pbno.pbno}" />
-	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-</form>
-<script>
-$(".insert_cart_btn").click(function() {
-	var csrfHeaderName = "${_csrf.headerName}";
-	var csrfTokenValue = "${_csrf.token}";
-	$(document).ajaxSend(function(e, xhr, options) {
-		xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
-	});
-	var pbno = $("#pbno").val();
-	var data = {
-		pbno : pbno
-	};
 
-	$.ajax({
-		url : "/album/insertCart",
-		type : "POST",
-		data : data,
-		success : function(success_return) {
-			if(success_return=='1'){
-				alert("담기 성공");
-			}else if(success_return=='2'){
-				alert("중복임");
-			}else{
-				$("#myModal1").modal();
-				alert("로그인이 필요합니다");
-				
-				
-			}
-		},
-		error : function() {
-			alert("카드를 담기 위해서는 로그인이 필요합니다.");
-		}
-	});
-
-});
-</script>
 <%@include file="../footer.jsp"%>
