@@ -83,3 +83,34 @@ $(document).ready(function(){
 	    });
 	}); 
 
+
+
+//파일 삭제문
+
+$(function(){
+	  $("#delete_track").click(function(){
+		confirm("정말로 삭제하겠습니까");
+	    $(this).submit();
+	  });
+	});
+//
+//
+//function delete_track(){
+//	var con = confirm("정말로 삭제하시겠습니까?");
+//	let form = document.deleteForm;
+//	
+//	if(con) {
+//		$(this).action = "/track/deleteTrack";
+//		$(this).submit();
+//	}
+//};
+//
+//function delete_album(){
+//	var con = confirm("정말로 삭제하시겠습니까?");
+//	
+//	if(con) {
+////		document.deleteAlbum.action = "/album/deleteAlbum";
+//		$(this).submit();
+//	}
+//};
+

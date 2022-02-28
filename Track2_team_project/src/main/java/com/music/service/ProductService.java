@@ -31,4 +31,7 @@ public interface ProductService {
 	
 	//카트 중복체크기능
 	public int checkPbnoForCart(ProductVO pvo);
+	
+	//삭제
+	public void deleteProduct(int pbno);
 }

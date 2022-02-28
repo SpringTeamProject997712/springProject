@@ -22,4 +22,7 @@ public interface ProductMapper {
 	public void insertTrack(TrackVO track);
 	public void insertGoods(GoodsVO goods);
 	
+	//삭제
+	public void deleteProduct(int pbno);
+	
 }

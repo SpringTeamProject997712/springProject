@@ -164,7 +164,7 @@ public class UploadController {
 		pservice.insertAlbum(album);
 		album.setPbno(pbno);
         
-		return "redirect:/";
+		return "redirect:/upload/upload";
 	}	
 	
 	@PostMapping("/uploadpro_track")
@@ -216,7 +216,7 @@ public class UploadController {
 		pservice.insertTrack(track);
 		track.setPbno(pbno);
 		
-		return "redirect:/";
+		return "redirect:/upload/upload";
 	}
 	
 	@PostMapping("/uploadpro_goods")

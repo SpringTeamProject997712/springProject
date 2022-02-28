@@ -20,11 +20,7 @@
 						<c:when test="${cartList.size() == 0}">
 							<td>카트 내 정보가 없습니다.</td>
 						</c:when>
-
 						<c:otherwise>
-
-
-
 							<div class="ms_heading">
 								<h1>Account Overview</h1>
 							</div>

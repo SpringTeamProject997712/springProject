@@ -11,6 +11,7 @@ import com.music.domain.TrackVO;
 import com.music.domain.jPlayerVO;
 import com.music.mapper.AlbumMapper;
 import com.music.mapper.CreatePlaylistMapper;
+import com.music.mapper.ProductMapper;
 import com.music.mapper.TrackMapper;
 import com.music.utility.Criteria;
 import com.music.utility.PageMaker;
@@ -29,6 +30,9 @@ public class TrackServiceimpl implements TrackService {
 	private AlbumMapper amapper;
 	@Setter(onMethod_ = @Autowired)
 	private CreatePlaylistMapper cmapper;
+	@Setter(onMethod_= @Autowired)
+	private ProductMapper pmapper;
+	
 	@Override
 	public List<AlbumVO> listNewly() {
 		
@@ -77,6 +81,11 @@ public class TrackServiceimpl implements TrackService {
 	@Override
 	public int countSong(int abno) {
 		return mapper.countSong(abno);
+	}
+
+	@Override
+	public void deleteTrack(int pbno) {
+		pmapper.deleteProduct(pbno);
 	}
 
 

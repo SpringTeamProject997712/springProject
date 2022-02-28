@@ -38,6 +38,7 @@
                       <tbody>
 
 								<c:forEach items="${trackList}" var="tlist">
+								
                         	<tr>
 	                          <td scope="row" ><a class="namelink" href="manage_track?abno=${tlist.tbno}">${tlist.name}</a></td>
 	                          <td><audio controls src="/upload/${tlist.songrealname }"></audio></td>
@@ -54,12 +55,21 @@
 								    <li>
 								      <hr class="dropdown-divider">
 								    </li>
-								    <li><a class="dropdown-item" href="#">Separated link</a></li>
+								    <li>
+								    <form role="form" name="deleteForm" method="post" action="/track/deleteTrack">
+								    	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+										<input type="hidden" name="pbno" value="${tlist.pbno }">
+										<input type="hidden" name="abno" value="${tlist.abno }">
+									    <input type="submit" class="dropdown-item" value="트랙 삭제">	
+									</form>
+								    </li>
 								  </ul>
 								</div>
 	                          </td>
                         	</tr>
+                        	
                         </c:forEach>
+                        </tbody>
                         </c:otherwise>
                         </c:choose>
                        </table>

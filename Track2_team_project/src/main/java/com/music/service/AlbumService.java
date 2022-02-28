@@ -49,5 +49,8 @@ public interface AlbumService {
 	//앨범 수정
 	public int updateAlbum(AlbumVO avo);
 	
+	//앨범 삭제
+	public void deleteAlbum(int pbno);
+	
 
 }

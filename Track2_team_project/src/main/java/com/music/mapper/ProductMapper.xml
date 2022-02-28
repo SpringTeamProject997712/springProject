@@ -59,4 +59,8 @@
 		values (#{gbno},#{abno},#{price},#{amount},#{pbno})
   	</insert>
   	
+  	<delete id="deleteProduct">
+  		delete from product_m where pbno = #{pbno}
+  	</delete>
+  	
 </mapper>
