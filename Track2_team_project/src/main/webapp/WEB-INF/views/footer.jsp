@@ -301,6 +301,36 @@
 			</div>
 		</div>
 	</div>
+	<div id="myModal2" class="modal  centered-modal" role="dialog">
+		<div class="modal-dialog login_dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<button type="button" class="close" id="my_modal_close_btn" data-dismiss="modal">
+					<i class="fa_icon form_close"></i>
+				</button>
+				<div class="modal-body">
+					<div class="ms_register_img">
+						<img src="/images/register_img.png" alt="" class="img-fluid" />
+					</div>
+					<div class="ms_register_form">
+						<h2>Select Playlist</h2>
+						<form method="post" name="go_to_playlist">
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+							<input type="hidden" name="this_tbno_will_go_to_playlist" value="">
+							<div class="black_some_box" id="the_track_choiced_by_you" style="height: 130px;">
+	            </div>
+							<div class="form-group padding_top_30">
+								<label>My Playlist</label>
+								<select name="select_playlist_selector" id="select_playlist" class="form-control" style="height:50px;">
+								</select>
+							</div>
+							<a href="javascript:go_add_track()" class="ms_btn">Add Track</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!----Language Selection Modal---->
@@ -411,6 +441,73 @@
 <script type="text/javascript" src="/resources/js/custom.js"></script>
 <script type="text/javascript" src="/resources/js/music-selector.js"></script>
 <script type="text/javascript" src="/resources/js/my.js"></script>
+<form role="form" method="post">
+	<input type="hidden" name="pbno" id="pbno" value="${pbno.pbno}" />
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+</form>
+<script>
+$(".insert_cart_btn").click(function() {
+	var csrfHeaderName = "${_csrf.headerName}";
+	var csrfTokenValue = "${_csrf.token}";
+	$(document).ajaxSend(function(e, xhr, options) {
+		xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+	});
+	let pbno = $("#pbno").val();
+	let data = {
+		pbno : pbno
+	};
+	$.ajax({
+		url : "/album/insertCart",
+		type : "POST",
+		data : data,
+		success : function(success_return) {
+			if(success_return=='1'){
+				alert("담기 성공");
+			}else if(success_return=='2'){
+				alert("중복임");
+			}else{
+				$("#myModal1").modal();
+				alert("로그인이 필요합니다");s
+			}
+		},
+		error : function(xhr,status,err) {
+			alert("카드를 담기 위해서는 로그인이 필요합니다.");
+			alert(xhr.status + xhr.responseText + err)
+		}
+	});
+});
+
+$(".add_track_to_cart").click(function() {
+	var csrfHeaderName = "${_csrf.headerName}";
+	var csrfTokenValue = "${_csrf.token}";
+	$(document).ajaxSend(function(e, xhr, options) {
+		xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+	});
+	let pbno = $(this).parent().parent().parent().attr('id').substring(16);
+	let data = {
+		pbno : pbno
+	};
+	$.ajax({
+		url : "/album/insertCart",
+		type : "POST",
+		data : data,
+		success : function(success_return) {
+			if(success_return=='1'){
+				alert("담기 성공");
+			}else if(success_return=='2'){
+				alert("중복임");
+			}else{
+				$("#myModal1").modal();
+				alert("로그인이 필요합니다");s
+			}
+		},
+		error : function(xhr,status,err) {
+			alert("카드를 담기 위해서는 로그인이 필요합니다.");
+			alert(xhr.status + xhr.responseText + err)
+		}
+	});
+});
+</script>
 </body>
 
 </html>

@@ -28,7 +28,7 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
                                             <li><a href="javascript:void(0)" class="album_add_queue" id="run_abno_${list.abno}"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
+                                            <li><a href="#" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                         </ul>
                                         <div class="ms_play_icon">
@@ -122,16 +122,14 @@
                            
                              <!-- TOP 15 start -->
                              <c:forEach var="top" items="${topalbum}" begin="0" end="4">
-                             
-                            <div class="ms_weekly_box">
+                            	<div class="ms_weekly_box" id="this_track_pbno_${top.pbno}">
                                 <div class="weekly_left">
                                     <span class="w_top_no">
-										${top.rownum}
-									</span>
+																			${top.rownum }
+																		</span>
                                     <div class="w_top_song">
                                         <div class="w_tp_song_img">
-                                            <img src="/upload/${top.image_50}" alt="">
-
+                                            <img src="${pageContext.request.contextPath}/upload/${top.image_50}" alt="">
 
                                             <div class="ms_song_overlay">
                                             </div>
@@ -148,14 +146,14 @@
                                 <div class="weekly_right">
                                     <span class="w_song_time">${top.length}</span>
                                     <span class="ms_more_icon" data-other="1">
-										<img src="../images/svg/more.svg" alt="">									
-									</span>
+																	<img src="../images/svg/more.svg" alt="">									
+																</span>
                                 </div>
                                 <ul class="more_option">
                                     <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                    <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                    <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                    <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
+                                    <li><a href="javascript:void(0)" class="add_queue_one_track_top"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
+                                    <li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
+                                    <li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                     <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                 </ul>
                             </div>
@@ -171,14 +169,15 @@
                              <!-- TOP 15 start -->
                              <c:forEach var="top" items="${topalbum}" begin="5" end="9">
                              
-                            <div class="ms_weekly_box">
+                            <div class="ms_weekly_box" id="this_track_pbno_${top.pbno}">
                                 <div class="weekly_left">
                                     <span class="w_top_no">
-										${top.rownum }
-									</span>
+																			${top.rownum }
+																		</span>
                                     <div class="w_top_song">
                                         <div class="w_tp_song_img">
                                             <img src="/upload/${top.image_50}" alt="">
+
                                             <div class="ms_song_overlay">
                                             </div>
                                             <div class="ms_play_icon" id="${top.tbno}">
@@ -194,14 +193,14 @@
                                 <div class="weekly_right">
                                     <span class="w_song_time">${top.length}</span>
                                     <span class="ms_more_icon" data-other="1">
-										<img src="../images/svg/more.svg" alt="">									
-									</span>
+																	<img src="../images/svg/more.svg" alt="">									
+																</span>
                                 </div>
                                 <ul class="more_option">
                                     <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                    <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                    <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                    <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
+                                    <li><a href="javascript:void(0)" class="add_queue_one_track_top"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
+                                    <li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
+                                    <li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                     <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                 </ul>
                             </div>
@@ -211,16 +210,16 @@
                             </c:forEach>
                             <!-- TOP 15 end -->
 
-    					  </div>
+    									  </div>
                         <div class="col-lg-4 col-md-12 padding_right40">
                              <!-- TOP 15 start -->
                              <c:forEach var="top" items="${topalbum}" begin="10" end="14">
                              
-                            <div class="ms_weekly_box">
+                            <div class="ms_weekly_box" id="this_track_pbno_${top.pbno}">
                                 <div class="weekly_left">
                                     <span class="w_top_no">
-										${top.rownum }
-									</span>
+																			${top.rownum }
+																		</span>
                                     <div class="w_top_song">
                                         <div class="w_tp_song_img">
                                             <img src="${pageContext.request.contextPath}/upload/${top.image_50}" alt="">
@@ -239,14 +238,14 @@
                                 <div class="weekly_right">
                                     <span class="w_song_time">${top.length}</span>
                                     <span class="ms_more_icon" data-other="1">
-										<img src="../images/svg/more.svg" alt="">									
-									</span>
+																	<img src="../images/svg/more.svg" alt="">									
+																</span>
                                 </div>
                                 <ul class="more_option">
                                     <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                    <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                    <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                    <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
+                                    <li><a href="javascript:void(0)" class="add_queue_one_track_top"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
+                                    <li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
+                                    <li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                     <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                 </ul>
                             </div>
@@ -343,7 +342,7 @@
                                     </div>
                                 </div>
                                 <div class="weekly_right">
-                                    <span class="w_song_time">${newly.duration}</span>
+                                    <span class="w_song_time">${newly.length}</span>
                                 </div>
                             </div>
                         </div>

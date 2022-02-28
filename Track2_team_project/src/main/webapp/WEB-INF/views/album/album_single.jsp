@@ -59,8 +59,7 @@
 					</a></li>
 					<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
 						<ul class="more_option">
-							<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-							<li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
+							<li><a href="javascript:void(0)" class="add_queue_one_track"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
 							<li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
 							<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
 							<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
@@ -151,114 +150,7 @@
                 </div>
                 <div class="ms_album_slider swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="ms_rcnt_box">
-                                <div class="ms_rcnt_box_img">
-                                    <img src="/images/album/album1.jpg" alt="">
-                                    <div class="ms_main_overlay">
-                                        <div class="ms_box_overlay"></div>
-                                        <div class="ms_more_icon">
-                                            <img src="/images/svg/more.svg" alt="">
-                                        </div>
-                                        <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">Bloodlust</a></h3>
-                                    <p>Ava Cornish & Brian Hill</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_rcnt_box">
-                                <div class="ms_rcnt_box_img">
-                                    <img src="/images/album/album2.jpg" alt="">
-                                    <div class="ms_main_overlay">
-                                        <div class="ms_box_overlay"></div>
-                                        <div class="ms_more_icon">
-                                            <img src="/images/svg/more.svg" alt="">
-                                        </div>
-                                        <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">Time flies</a></h3>
-                                    <p>Ava Cornish & Brian Hill</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_rcnt_box">
-                                <div class="ms_rcnt_box_img">
-                                    <img src="/images/album/album3.jpg" alt="">
-                                    <div class="ms_main_overlay">
-                                        <div class="ms_box_overlay"></div>
-                                        <div class="ms_more_icon">
-                                            <img src="/images/svg/more.svg" alt="">
-                                        </div>
-                                        <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">Dark matters</a></h3>
-                                    <p>Ava Cornish & Brian Hill</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_rcnt_box">
-                                <div class="ms_rcnt_box_img">
-                                    <img src="/images/album/album4.jpg" alt="">
-                                    <div class="ms_main_overlay">
-                                        <div class="ms_box_overlay"></div>
-                                        <div class="ms_more_icon">
-                                            <img src="/images/svg/more.svg" alt="">
-                                        </div>
-                                        <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">Eye to eye</a></h3>
-                                    <p>Ava Cornish & Brian Hill</p>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <div class="swiper-slide">
                             <div class="ms_rcnt_box">
                                 <div class="ms_rcnt_box_img">
@@ -460,7 +352,7 @@
 								</div>
 							</div>
 							<div class="weekly_right">
-								<span class="w_song_time">5:10</span>
+								<span class="w_song_time">${newly.length}</span>
 							</div>
 						</div>
 					</div>
@@ -476,41 +368,4 @@
 	<!----Main div close---->
 </div>
 </div>
-<form role="form" method="post">
-	<input type="hidden" name="pbno" id="pbno" value="${pbno.pbno}" />
-	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-</form>
-<script>
-$(".insert_cart_btn").click(function() {
-	var csrfHeaderName = "${_csrf.headerName}";
-	var csrfTokenValue = "${_csrf.token}";
-	$(document).ajaxSend(function(e, xhr, options) {
-		xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
-	});
-	var pbno = $("#pbno").val();
-	var data = {
-		pbno : pbno
-	};
-
-	$.ajax({
-		url : "/album/insertCart",
-		type : "POST",
-		data : data,
-		success : function(success_return) {
-			if(success_return=='1'){
-				alert("담기 성공");
-			}else if(success_return=='2'){
-				alert("중복임");
-			}else{
-				alert("로그인이 필요합니다");
-				alert("카드를 담기 위해서는 로그인이 필요합니다.");
-			}
-		},
-		error : function() {
-			$("#myModal1").modal();
-		}
-	});
-
-});
-</script>
 <%@include file="../footer.jsp"%>

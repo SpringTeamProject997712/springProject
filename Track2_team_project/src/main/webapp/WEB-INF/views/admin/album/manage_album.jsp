@@ -57,20 +57,28 @@
 	                          <td><fmt:formatDate value="${alist.regdate}" pattern="yyyy-MM-dd"/></td>
 	                          <td>
 	                          	<div class="dropdown">
-															  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">보기</button>
-															  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-															    <li><a class="dropdown-item" href="/admin/album/view_album?abno=${alist.abno}">세부정보 조회 /수정</a></li>
-															    <li><a class="dropdown-item" href="#">Another action</a></li>
-															    <li><a class="dropdown-item" href="#">Something else here</a></li>
-															    <li>
-															      <hr class="dropdown-divider">
-															    </li>
-															    <li><a class="dropdown-item" href="#">Separated link</a></li>
-															  </ul>
-															</div>
+								  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">보기</button>
+								  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+								    <li><a class="dropdown-item" href="/admin/album/view_album?abno=${alist.abno}">세부정보 조회 /수정</a></li>
+								    <li><a class="dropdown-item" href="#">Another action</a></li>
+								    <li><a class="dropdown-item" href="#">Something else here</a></li>
+								    <li>
+								      <hr class="dropdown-divider">
+								    </li>
+								    <li>
+ 									<form role="form" name="deleteAlbum" method="post" id="deleteAlbum" action="/album/deleteAlbum">
+								    	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+										<input type="hidden" name="pbno" value="${alist.pbno }">
+										
+									    <input type="submit" class="dropdown-item" value="앨범 삭제">
+									</form>
+									</li>
+								  </ul>
+								</div>
 	                          </td>
                         	</tr>
                         </c:forEach>
+                        </tbody>
                        </table>
                   </div>
                   <nav aria-label="Page navigation example">
@@ -95,5 +103,4 @@
 		<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
 		<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">
 	</form>
-      
 <%@ include file="../admin_footer.jsp" %>

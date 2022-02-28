@@ -114,7 +114,7 @@ ul.pro_dropdown_menu {
     width: 100%;
 }
 
-.instantTableMaker{
+.black_some_box{
 	overflow: auto;
   height: 255px;
   overflow-x: hidden;
@@ -144,6 +144,10 @@ ul.pro_dropdown_menu {
 
 .padding_top_10{
 	padding-top: 10px;
+}
+
+.padding_top_30{
+	padding-top: 30px;
 }
 
 .click_for_playlist{
@@ -214,4 +218,16 @@ cursor: pointer;
 	padding-top: 15px;
 	
 }
+
+.slideDown-details .product-item{
+	cursor:pointer;
+}
+
+.slideDown-details .product-item:hover{
+	background-color: #121627;
+	color:#FFF;
+}
+
+
+
 

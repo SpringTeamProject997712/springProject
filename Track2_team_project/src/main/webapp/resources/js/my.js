@@ -10,6 +10,7 @@ function go_login() {                            //로그인
 		return false;
 	}else if(idChk){ //체크박스에 체크 되어있으면 아이디 저장 쿠키(7일) 넣기
 		console.log("쿠키 넣기 가동");
+		deleteCookie("Cookie_mail");
 		setCookie("Cookie_mail", document.loginForm.username.value, 7); 
 	}else{ //안돼있으면 아이디 저장 쿠키 삭제하기
 		deleteCookie("Cookie_mail"); 
@@ -404,11 +405,18 @@ function modify_playlist_name(){
 		}
 	});
 }
-
-$(".slideDown-details").on("click", function(abno){
-	let cbno = $(this).attr('id')
+let SlideOn = 1;
+$(".slideDown-details").find("div.product-item").on("click", function(abno){
+	let cbno = $(this).parent().parent().attr('id');
+		
 	$(".cart-details").slideUp(10);
-	$("#cart-details_"+cbno).slideDown();
+	if(SlideOn != cbno +'on'){
+		$("#cart-details_"+cbno).slideDown();
+		SlideOn=cbno + 'on';
+	}else{	
+		$("#cart-details_"+cbno).slideUp();
+		SlideOn=1;
+	}
 })
 $(".cart-details").on("click", function(abno){
 	$(".cart-details").slideUp(10);
@@ -432,6 +440,7 @@ $(".remove-from-cart").on("click", function(){
 	});
 })
 
+
 $(".remove-all-cart").on("click", function(){
 	
 	if(confirm("정말로 삭제하시겠습니까? \n 장바구니가 전부 초기화 됩니다")){
@@ -441,6 +450,7 @@ $(".remove-all-cart").on("click", function(){
 			success:function(data){
 				if(data=='1'){
 					console.log("삭제완료");
+					location.reload();
 				}
 			},error:function(xhr,status,err){
 				console.log(xhr.status + xhr.responseText + err);
@@ -478,6 +488,8 @@ $(".remove-all-cart").on("click", function(){
 //        img[0].style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\""+imgSrc+"\")";        
 //    }
 //});
+
+
 
 
 //액티브 (해더 내부에 넣어야 작동함 ㅅㅂ;)
@@ -521,7 +533,7 @@ $("#audio").on("canplaythrough", function(e){
     time = time + duration.minutes() + ":" + duration.seconds();
     time_cal = duration%60;
     $("#upload_duration").text(time);
-    $('input[id=upload_duration1]').attr('value',Math.round(seconds));
+    $('input[id=upload_duration1]').attr('value',Math.floor(seconds));
     
 });
 
@@ -537,3 +549,83 @@ $("#songname").change(function(e){
 });
 
 //API 끝
+
+$(".add_track_to_playlist").on("click",function(z){
+	z.preventDefault();
+	let tbno=$(this).parent().parent().parent().find('div.ms_play_icon').attr('id');
+	let my_playlist ="";
+	
+	$.ajax({
+		type:"get",
+		url:"/createPlaylist/selectMyPlaylist",
+		error:function(xhr,r,err){
+			console.log(xhr.r +"\n 내용 : " +xhr.reponseText+"\n 에러 : " +err);
+		},success:function(data){
+			my_playlist = JSON.parse(data);
+			let htmlForPlus ="";
+			for(var i=0; i<my_playlist.length; i++ ){
+				if(my_playlist[i].name != 'basic_playlist'){
+					htmlForPlus += "<option value='"+my_playlist[i].plbno+"'>"+my_playlist[i].name+"</option>";
+				}
+			}
+			$("#select_playlist").html(htmlForPlus);
+		}
+	});
+	document.go_to_playlist.this_tbno_will_go_to_playlist.value=tbno;
+	$.ajax({
+		type:"get",
+		url:"/track/selectTrackInJplayer",
+		data:{tbno:tbno},
+		async:false,
+		error:function(xhr,r,err){
+			console.log(xhr.r +"\n 내용 : " +xhr.reponseText+"\n 에러 : " +err);
+		},success:function(data){
+			data = JSON.parse(data);
+			let htmlForPlus ="";
+			htmlForPlus += "<div class='ms_weekly_box'><div class='weekly_left'><span class='w_top_no'>";
+			htmlForPlus += "</span><div class='w_top_song'><div class='w_tp_song_img'><img src='/upload/";
+			htmlForPlus += data.image+"' alt=''><div class='ms_song_overlay'></div>";
+            htmlForPlus += "<div class='ms_play_icon' id='"+data.tbno+"'>";
+            htmlForPlus += "<img src='../images/svg/play.svg' alt=''></div></div><div class='w_tp_song_name'>";
+            htmlForPlus += "<h3><a href='#'>"+data.title+"</a></h3>";
+            htmlForPlus += "<p>"+data.artist+"</p></div></div></div><div class='weekly_right'>"
+            htmlForPlus += "<span class='w_song_time'>5:10</span></div></div>"
+            $("#the_track_choiced_by_you").html(htmlForPlus);
+		}
+	});
+	$("#myModal2").modal();
+})
+
+function go_add_track(){
+	let this_form = document.go_to_playlist;
+	
+	$.ajax({
+		type:"get",
+		url:"/createPlaylist/insertPlaylistDetail",
+		data:{plbno:this_form.select_playlist_selector.value, tbno:this_form.this_tbno_will_go_to_playlist.value},
+		error:function(xhr,r,err){
+			console.log(xhr.r +"\n 내용 : " +xhr.reponseText+"\n 에러 : " +err);
+		},success:function(data){
+			if(data=='1'){
+				if(confirm("플레이 리스트로 이동하시겠습니까?")){
+					location.href="/member/my_playlist/one_playlist?plbno="+this_form.select_playlist_selector.value;
+					$("#myModal2").modal('hide');
+				}else{
+					document.getElementById("my_modal_close_btn").click();
+				}
+			}else{
+				alert("실ㅡ패")
+			}
+		}
+	})
+}
+
+$("#allCheck").on("click",function(){
+	let checker = $("#allCheck").is(":checked");
+	
+	if(checker){
+		$("input.chBox").prop("checked",true);
+	}else{
+		$("input.chBox").prop("checked",false);
+	}
+})

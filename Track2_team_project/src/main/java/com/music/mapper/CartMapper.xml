@@ -19,7 +19,11 @@
 		      row_number() over(partition by c.pbno order by c.cbno desc) as num,
              c.pbno, c.cbno, c.id, c.quantity, c.putdate,
 		     a.price as aprice, t.price as tprice, a.name,  a.image, a.abno,
-		     t.name as tname, t.pbno as tpbno
+		     t.name as tname, t.pbno as tpbno, t.duration, 
+		     	(LPAD ((TRUNC (duration / 60)), 2, '0')
+          ||  ':'
+          ||  LPAD ((MOD (duration, 60)), 2, '0')) 
+           as length
 		 from cart_m c
 		     inner join product_m p 
 		         on c.pbno = p.pbno 
@@ -34,6 +38,10 @@
 	<delete id="deleteOneCart">
 		delete from cart_m where id=#{id} and cbno=#{cbno}
 	</delete>
+
+	<delete id="deleteOneCartWithPbno">
+		delete from cart_m where id=#{id} and pbno=#{pbno}
+	</delete>
 	
 	<delete id="deleteCart">
 		delete from cart_m where id=#{id}
@@ -42,10 +50,15 @@
 	<select id="viewCartlist" resultType="com.music.domain.CartVO">
 	select c.cbno, c.id, c.pbno, c.quantity, c.result, c.putdate, 
     a.abno, a.name as aname, a.singer, a.price as aprice, a.image, a.pbno as apbno, a.image_240, a.image_50, t.tbno,
-    t.name as tname, t.price as tprice, t.pbno as tpbno, p.category
+    t.name as tname, t.price as tprice, t.pbno as tpbno, p.category,t.image as timage, t.duration,
+          (LPAD ((TRUNC (duration / 60)), 2, '0')
+          ||  ':'
+          ||  LPAD ((MOD (duration, 60)), 2, '0')) 
+           as length
 	from cart_m c, album_m a, view_track_m t, product_m p 
   where c.pbno = a.pbno(+) 
   and c.pbno = t.pbno(+) 
+ 
   and p.pbno = c.pbno and id=#{id}
 	</select>
 	

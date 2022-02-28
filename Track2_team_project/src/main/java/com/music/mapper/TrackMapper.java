@@ -31,4 +31,7 @@ public interface TrackMapper {
 	//앨범 수정
 	public int updateTrack(TrackVO tvo);
 	
+	//트랙 삭제
+	public void deleteTrack(int pbno);
+	
 }

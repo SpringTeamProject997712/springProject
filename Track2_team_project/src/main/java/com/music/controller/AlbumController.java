@@ -123,6 +123,15 @@ public class AlbumController {
 		return "redirect:/admin/album/view_album?abno="+avo.getAbno();
 	}
 	
+	@PostMapping("/deleteAlbum")
+	public String deleteAlbum(@RequestParam("pbno") int pbno) {
+		
+		service.deleteAlbum(pbno);
+		
+		return "redirect:/admin/album/manage_album";
+	}
+	
+	
 	
 	
 	//구 폴더 생성기
@@ -159,6 +168,8 @@ public class AlbumController {
 		}
 	return result;
 	}
+	
+	
 
 	
 }

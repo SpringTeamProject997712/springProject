@@ -20,11 +20,15 @@ public class CartVO {
 	private int aprice;
 	private int tprice;
 	private String image;
+	private String timage;
 	private String image_50;
 	private String image_240;
 	private String singer;
 	private String aname;
 	private String tname;
+	
+	private int duration;
+	private String length;
 	
 	private int abno;
 	private int tbno;

@@ -84,7 +84,7 @@
 						<div class="ms_upload_btn">
 							<input class="upload-name" value="please upload track" disabled="disabled"> <br>
 							<br> <a href="javascript:void(0);" class="ms_btn"> <label for="songname" className="ms_btn">upload files</label>
-							</a> <input type="file" name="uploadMusic" id="songname" accept="audio/*" class="form-control" style="display: none" />
+							</a> <input type="file" name="uploadMusic" id="songname" accept=".mp3" class="form-control" style="display: none" />
 						</div>
 						<div>
 							<audio id="audio" style="display:none;"></audio>

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.music.domain.AlbumVO;
@@ -95,6 +96,7 @@ public class AdminController {
 	//앨범
 	
 	@GetMapping("/album/manage_album") //상품관리 - 상품 리스트 보기
+//	@RequestMapping(value="album/manage_album", method = {RequestMethod.GET,RequestMethod.POST})
 	public void viewProductList(Model model, Criteria cri) {
 		List<AlbumVO> alist = aService.viewAlbumListWithPaging(cri);
 		model.addAttribute("albumList", alist);
