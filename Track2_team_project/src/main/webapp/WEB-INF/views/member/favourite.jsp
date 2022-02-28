@@ -28,7 +28,7 @@
 							<li><a href="#">${flist.name}</a></li>
 							<li><a href="#">${flist.tname}</a></li>
 							<li class="text-center"><a href="#">${flist.price}</a></li>
-							<li class="text-center"><a href="#">5:26</a></li>
+							<li class="text-center"><a href="#">${flist.length }</a></li>
 							<li class="text-center"><a href="javascript:void(0)" class="fav_box" id="pbno_${flist.pbno}"> <span class="ms_icon1 ms_fav_icon"> </span>
 					</a></li>
 							<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>

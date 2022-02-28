@@ -100,7 +100,7 @@
 	</insert>
 	<select id="favouritesView" resultType="com.music.domain.FavouriteVO">
 	<![CDATA[	
-	select rownum, tbno, tname, name, price, lbno, likes, id, pbno 
+	select rownum, tbno, tname, name, price, lbno, likes, id, pbno ,length
     from (select * from myfavourites order by lbno asc)
     where rownum > 0 and id=#{id}
 	]]>

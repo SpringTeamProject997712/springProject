@@ -130,11 +130,9 @@
 									</span>
                                     <div class="w_top_song">
                                         <div class="w_tp_song_img">
-<<<<<<< HEAD
                                             <img src="/upload/${top.image_50}" alt="">
-=======
-                                            <img src="${pageContext.request.contextPath}/upload/${top.image_50}" alt="">
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
+
+
                                             <div class="ms_song_overlay">
                                             </div>
                                             <div class="ms_play_icon" id="${top.tbno}">
@@ -148,7 +146,7 @@
                                     </div>
                                 </div>
                                 <div class="weekly_right">
-                                    <span class="w_song_time">5:10</span>
+                                    <span class="w_song_time">${top.length}</span>
                                     <span class="ms_more_icon" data-other="1">
 										<img src="../images/svg/more.svg" alt="">									
 									</span>
@@ -180,11 +178,7 @@
 									</span>
                                     <div class="w_top_song">
                                         <div class="w_tp_song_img">
-<<<<<<< HEAD
                                             <img src="/upload/${top.image_50}" alt="">
-=======
-                                            <img src="${pageContext.request.contextPath}/upload/${top.image_50}" alt="">
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
                                             <div class="ms_song_overlay">
                                             </div>
                                             <div class="ms_play_icon" id="${top.tbno}">
@@ -198,7 +192,7 @@
                                     </div>
                                 </div>
                                 <div class="weekly_right">
-                                    <span class="w_song_time">5:10</span>
+                                    <span class="w_song_time">${top.length}</span>
                                     <span class="ms_more_icon" data-other="1">
 										<img src="../images/svg/more.svg" alt="">									
 									</span>
@@ -243,7 +237,7 @@
                                     </div>
                                 </div>
                                 <div class="weekly_right">
-                                    <span class="w_song_time">5:10</span>
+                                    <span class="w_song_time">${top.length}</span>
                                     <span class="ms_more_icon" data-other="1">
 										<img src="../images/svg/more.svg" alt="">									
 									</span>
@@ -349,7 +343,7 @@
                                     </div>
                                 </div>
                                 <div class="weekly_right">
-                                    <span class="w_song_time">5:10</span>
+                                    <span class="w_song_time">${newly.duration}</span>
                                 </div>
                             </div>
                         </div>

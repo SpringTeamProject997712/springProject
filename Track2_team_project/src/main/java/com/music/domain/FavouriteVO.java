@@ -14,4 +14,6 @@ public class FavouriteVO {
 	private int lbno;
 	private String likes;
 	private String id; 
+	private String length;
+	private String duration;
 }

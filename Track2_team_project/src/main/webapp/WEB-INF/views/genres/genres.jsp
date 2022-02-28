@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="ms_genres_box">
-                            <img src="/images/genrs/img1.svg" alt="" class="img-fluid" />
+                            <img src="/images/genrs/romantic.svg" alt="" class="img-fluid" />
                             <div class="ms_main_overlay">
                                 <div class="ms_box_overlay"></div>
                                 <div class="ms_play_icon">

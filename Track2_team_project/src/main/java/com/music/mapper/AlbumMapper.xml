@@ -98,7 +98,7 @@
 	<select id="topAlbums" resultType="com.music.domain.AlbumVO">
 	
 	<![CDATA[
-	select rownum, tbno, name, singer, image_50, likes
+	select rownum, tbno, name, singer, image_50, likes ,duration, length
 	from (select * from toptrack order by likes desc)
 	where rownum < 16
 	 ]]>
