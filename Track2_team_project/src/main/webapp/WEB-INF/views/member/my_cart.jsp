@@ -40,6 +40,7 @@
 													</div>
 												</th>
 												<th>Product Name</th>
+												<th class="text-center">Category</th>
 												<th class="text-center">Subtotal</th>
 												<th class="text-center">Discount</th>
 												<th class="text-center"><a class="btn btn-sm btn-outline-danger remove-all-cart" href="javascript:void(0)">Clear Cart</a></th>
@@ -51,7 +52,7 @@
 											<tr class="slideDown-details" id="${cartList.cbno}">
 												<td>
 													<div class="checkBox">
-														<input type="checkBox" name="chBox" data-cbno="${cartList.cbno}">
+														<input type="checkBox" name="chBox" class="chBox" data-cbno="${cartList.cbno}">
 													</div>
 												</td>
 												<td>
@@ -64,6 +65,7 @@
 														</div>
 													</div>
 												</td>
+												<td class="text-center text-lg text-medium">Album</td>
 												<td class="text-center text-lg text-medium">
 													<fmt:setLocale value="ja_jp" />
 													<fmt:formatNumber type="currency" value="${cartList.aprice * cartList.quantity}" currencySymbol="￥" maxFractionDigits="0" />
@@ -83,6 +85,7 @@
 															<ul class="album_list_name">
 																<li>#</li>
 																<li>Song Title</li>
+																
 																<li class="text-center">Price</li>
 																<li class="text-center">Duration</li>
 															</ul>
@@ -93,7 +96,7 @@
 																		<li>${d_num}</li>
 																		<li class="text-center">${cartDetail.tname}</li>
 																		<li class="text-center track_name">${cartDetail.tprice}</li>
-																		<li class="text-center">5:26</li>
+																		<li class="text-center">${cartDetail.length}</li>
 																	</ul>
 																	<c:set value="${d_num+1}" var="d_num"/>
 																</c:if>
@@ -107,7 +110,7 @@
 											<tr>
 												<td>
 													<div class="checkBox">
-														<input type="checkBox" name="chBox" data-cbno="${cartList.cbno}">
+														<input type="checkBox" name="chBox" class="chBox" data-cbno="${cartList.cbno}">
 													</div>
 												</td>
 												<td>
@@ -120,6 +123,7 @@
 														</div>
 													</div>
 												</td>
+												<td class="text-center text-lg text-medium">Track</td>
 												<td class="text-center text-lg text-medium">
 													<fmt:setLocale value="ja_jp" />
 													<fmt:formatNumber type="currency" value="${cartList.tprice * cartList.quantity}" currencySymbol="￥" maxFractionDigits="0" />

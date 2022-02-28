@@ -219,3 +219,15 @@ cursor: pointer;
 	
 }
 
+.slideDown-details .product-item{
+	cursor:pointer;
+}
+
+.slideDown-details .product-item:hover{
+	background-color: #121627;
+	color:#FFF;
+}
+
+
+
+

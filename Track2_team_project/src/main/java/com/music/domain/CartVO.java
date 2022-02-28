@@ -27,6 +27,9 @@ public class CartVO {
 	private String aname;
 	private String tname;
 	
+	private int duration;
+	private String length;
+	
 	private int abno;
 	private int tbno;
 	

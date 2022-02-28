@@ -405,11 +405,18 @@ function modify_playlist_name(){
 		}
 	});
 }
-
-$(".slideDown-details").on("click", function(abno){
-	let cbno = $(this).attr('id')
+let SlideOn = 1;
+$(".slideDown-details").find("div.product-item").on("click", function(abno){
+	let cbno = $(this).parent().parent().attr('id');
+		
 	$(".cart-details").slideUp(10);
-	$("#cart-details_"+cbno).slideDown();
+	if(SlideOn != cbno +'on'){
+		$("#cart-details_"+cbno).slideDown();
+		SlideOn=cbno + 'on';
+	}else{	
+		$("#cart-details_"+cbno).slideUp();
+		SlideOn=1;
+	}
 })
 $(".cart-details").on("click", function(abno){
 	$(".cart-details").slideUp(10);
@@ -611,5 +618,14 @@ function go_add_track(){
 			}
 		}
 	})
-
 }
+
+$("#allCheck").on("click",function(){
+	let checker = $("#allCheck").is(":checked");
+	
+	if(checker){
+		$("input.chBox").prop("checked",true);
+	}else{
+		$("input.chBox").prop("checked",false);
+	}
+})

@@ -38,7 +38,9 @@
   		]]>
   	</select>
   	<select id="listNewly" resultType="com.music.domain.AlbumVO">
-  		select * from newly order by tbno desc
+  		<![CDATA[
+  		select * from newly where rownum < 15 order by tbno desc
+  		]]>
   	</select>
   	
   	<select id="searchAlbumWithTrackName" resultType="com.music.domain.AlbumVO">
@@ -98,7 +100,7 @@
 	<select id="topAlbums" resultType="com.music.domain.AlbumVO">
 	
 	<![CDATA[
-	select rownum, tbno, name, singer, image_50, likes, pbno 
+	select rownum, tbno, name, singer, image_50, likes, pbno, length
 	from (select * from toptrack order by likes desc)
 	where rownum < 16
 	 ]]>
