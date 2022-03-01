@@ -58,7 +58,7 @@
 								</div>
 
 
-								<input type="hidden" name="pbno" value="${pbno}" class="form-control">
+								<input type="hidden" name="pbno" value="${nextPbno}" class="form-control">
 
 
 								<div class="pro-form-btn text-center marger_top15">
@@ -126,7 +126,7 @@
 									<label>詳細</label><input type="text" name="detail" placeholder="" class="form-control" style="height: 150px;">
 								</div>
 
-								<input type="hidden" name="pbno" value="${pbno}" class="form-control">
+								<input type="hidden" name="pbno" value="${nextPbno}" class="form-control">
 
 
 								<div class="pro-form-btn text-center marger_top15">
@@ -161,7 +161,7 @@
 								<div class="form-group" style="width: 88%">
 									<label>詳細</label><input type="text" name="detail" placeholder="" class="form-control" style="height: 150px;">
 								</div>
-								<input type="hidden" name="pbno" value="${pbno}" class="form-control">
+								<input type="hidden" name="pbno" value="${nextPbno}" class="form-control">
 
 
 								<div class="pro-form-btn text-center marger_top15">

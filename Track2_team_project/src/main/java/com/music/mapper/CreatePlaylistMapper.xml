@@ -11,6 +11,10 @@
 		]]>
 	</select>
 	
+	<select id="selectJustOnePlaylist" resultType="com.music.domain.PlaylistVO">
+		select * from playlist_m where plbno = #{plbno}
+	</select>
+	
 	<select id="selectPlaylist" resultType="com.music.domain.PlaylistVO">
 		select * from view_playlist where plbno = #{plbno} order by pdbno
 	</select>

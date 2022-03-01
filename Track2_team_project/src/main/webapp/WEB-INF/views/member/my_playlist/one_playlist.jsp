@@ -8,13 +8,18 @@
         <div class="ms_album_single_wrapper">
             <div class="album_single_data abno_${view[0].abno}">
                 <div class="album_single_img">
+                	<c:if test="${not empty view[0].image}">
                     <img src="${pageContext.request.contextPath}/upload/${view[0].image}" alt="" class="img-fluid">
+                  </c:if>
+                  <c:if test="${empty view[0].image}">
+                    <img src="/images/user1.jpg" alt="" class="img-fluid">
+                  </c:if>
                 </div>
                 <input type="hidden" id="this_plbno" value="${this_plbno}">
                 <div class="album_single_text">
-                    <h2><input type="text" class="playlist-name" id="playlist-name" value="${view[0].name}" ><a href="javascript:void(0)" class="ms_btn rename_button" onclick="modify_playlist_name()"><span class="play_all">Rename</span></a></h2>
+                    <h2><input type="text" class="playlist-name" id="playlist-name" value="${justPlaylist.name}" ><a href="javascript:void(0)" class="ms_btn rename_button" onclick="modify_playlist_name()"><span class="play_all">Rename</span></a></h2>
                     
-                    <p class="singer_name">By - ${view[0].id}</p>
+                    <p class="singer_name">By - ${justPlaylist.id}</p>
                     <div class="album_feature">
                         <a href="#" class="album_date">${countTrack} songs | 25:10</a>
                         <a href="#" class="album_date"></a>
