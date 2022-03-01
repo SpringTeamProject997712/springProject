@@ -1,5 +1,7 @@
 package com.music.domain;
 
+import java.io.File;
+
 import lombok.Data;
 
 @Data

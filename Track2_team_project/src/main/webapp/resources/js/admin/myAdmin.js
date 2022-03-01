@@ -93,24 +93,32 @@ $(function(){
 	    $(this).submit();
 	  });
 	});
-//
-//
-//function delete_track(){
-//	var con = confirm("정말로 삭제하시겠습니까?");
-//	let form = document.deleteForm;
-//	
-//	if(con) {
-//		$(this).action = "/track/deleteTrack";
-//		$(this).submit();
-//	}
-//};
-//
-//function delete_album(){
-//	var con = confirm("정말로 삭제하시겠습니까?");
-//	
-//	if(con) {
-////		document.deleteAlbum.action = "/album/deleteAlbum";
-//		$(this).submit();
-//	}
-//};
 
+//오디오 수정
+$("#audio").on("canplaythrough", function(e){
+    var seconds = e.currentTarget.duration;
+    var duration = moment.duration(seconds, "seconds");
+    var duration1 = moment.duration(seconds);
+    
+    var time = "";
+    var hours = duration.hours();
+    if (hours > 0) { time = hours + ":" ; }
+    console.log("hours:"+hours);
+    
+    time = time + duration.minutes() + ":" + duration.seconds();
+    time_cal = duration%60;
+    $("#upload_duration").text(time);
+    $('input[id=upload_duration1]').attr('value',Math.floor(seconds));
+    
+});
+
+$("#songname").change(function(e){
+    var file = e.currentTarget.files[0];
+   
+    $("#filename").text(file.name);
+    $("#filetype").text(file.type);
+    $("#filesize").text(file.size);
+    
+    objectUrl = URL.createObjectURL(file);
+    $("#audio").prop("src", objectUrl);
+});

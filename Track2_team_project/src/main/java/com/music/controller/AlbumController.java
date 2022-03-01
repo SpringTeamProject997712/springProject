@@ -89,7 +89,8 @@ public class AlbumController {
 	
 
 	@PostMapping("/updateAlbum")
-	public String updateAlbum(@RequestParam("uploadImage") MultipartFile uploadImage,HttpServletRequest req,AlbumVO avo) {
+	public String updateAlbum(@RequestParam("uploadImage") MultipartFile uploadImage,
+			HttpServletRequest req,AlbumVO avo) {
 		String uploadFolder = "C:\\upload";
 		String uploadImageName = "cover_"+uploadImage.getOriginalFilename();
 		File uploadPath = new File(uploadFolder, getFolder());

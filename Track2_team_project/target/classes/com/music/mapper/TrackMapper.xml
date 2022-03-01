@@ -40,14 +40,14 @@
 	<select id="viewTrackList" resultType="com.music.domain.TrackVO">
 			select * from 
 		( 
-			select /*+ index_desc(track_m track_m_pk) */ rownum rn, tbno, abno, name, genre, detail, price, songname, songrealname, pbno from track_m 
+			select /*+ index_desc(track_m track_m_pk) */ rownum rn, tbno, abno, name, genre, detail, price, songname, songrealname, duration, pbno from track_m 
 			)
 			where tbno = #{tbno}
 	</select>
 	
 	<update id="updateTrack">
 		update track_m set 
-		name=#{name}, genre=#{genre}, detail=#{detail}, price=#{price}, songname=#{songname}, songrealname=#{songrealname} 
+		name=#{name}, genre=#{genre}, detail=#{detail}, price=#{price}, songname=#{songname}, songrealname=#{songrealname}, duration=#{duration}
 		where tbno = #{tbno}
 	</update>
 	

@@ -22,26 +22,26 @@
 						<h2>Upload Album Info</h2>
 						<div class="thumImg">
 							<label for="image">
-								<img src="" alt="image"/>
+								<img src="../images/svg/upload.svg" alt="image"/>
 							</label>
 						</div>
-						<div class="thumImg"><img src=""/></div>
 						<div class="ms_upload_btn">
-							<input class="upload-name" value="please upload image" disabled="disabled"> <br>
-							<br> <a href="javascript:void(0);" class="ms_btn"> <label for="image" className="ms_btn">upload Cover</label>
-							</a> <input type="file" name="uploadImage" id="image" accept="image/*" class="form-control" style="display: none">
+							<input class="upload-name" value="please upload image" disabled="disabled">
+							<br><br>
+							<a href="javascript:void(0);" class="ms_btn"> <label for="image" className="ms_btn">upload Cover</label></a>
+							<input type="file" name="uploadImage" id="image" accept="image/*" class="form-control" style="display: none">
 						</div>
 						<script>
-							$("#image").change(function(){
-								if(this.files && this.files[0]) {
-									var reader = new FileReader;
-									reader.onload = function(data) {
-										$(".thumImg").attr("src", data.target.result).width(240);
-									}
-									reader.readAsDataURL(this.files[0]);
-								}
-							});
-						</script>
+						  $("#image").change(function(){
+						   if(this.files && this.files[0]) {
+						    var reader = new FileReader;
+						    reader.onload = function(data) {
+						     $(".thumImg img").attr("src", data.target.result).width(240);        
+						    }
+						    reader.readAsDataURL(this.files[0]);
+						   }
+						  });
+						 </script>
 
 					</div>
 
