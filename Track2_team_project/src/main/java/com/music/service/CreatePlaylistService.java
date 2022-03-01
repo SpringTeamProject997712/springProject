@@ -17,4 +17,5 @@ public interface CreatePlaylistService {
 	public int deletePdbnoWithIdTbno(PlaylistVO vo);
 	public int clearQue(int plbno);
 	public int modifyPlaylist(PlaylistVO pvo);
+	public PlaylistVO selectJustOnePlaylist(int plbno);
 }

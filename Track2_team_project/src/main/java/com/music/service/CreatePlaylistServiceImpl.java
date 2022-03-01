@@ -40,6 +40,10 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 		return mapper.insertPlaylist(pvo);
 	}
 	@Override
+	public PlaylistVO selectJustOnePlaylist(int plbno) {
+		return mapper.selectJustOnePlaylist(plbno);
+	}
+	@Override
 	public int maxPlbno(String id) {
 		return mapper.maxPlbno(id);
 	}

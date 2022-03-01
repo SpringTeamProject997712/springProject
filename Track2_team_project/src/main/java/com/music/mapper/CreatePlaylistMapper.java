@@ -29,6 +29,9 @@ public interface CreatePlaylistMapper {
 	//id로 플레이리스트와 그 플레이리스트의 트랙 개수들 소환
 	public List<PlaylistVO> readPlaylistsWithId(String id);
 	
+	//plbno로 playlist 기본 찾기
+	public PlaylistVO selectJustOnePlaylist(int plbno);
+	
 	//트랙 개수 소환
 	public Integer countTrack(int plbno);
 	
