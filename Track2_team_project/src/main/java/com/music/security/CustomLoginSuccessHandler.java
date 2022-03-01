@@ -9,7 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.security.core.Authentication;
+import org.springframework.security.web.DefaultRedirectStrategy;
+import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
+import org.springframework.security.web.savedrequest.RequestCache;
+import org.springframework.security.web.savedrequest.SavedRequest;
 
 import lombok.extern.log4j.Log4j;
 
@@ -32,8 +37,18 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
 			response.sendRedirect("/admin/admin");
 			return;
 		}
-		if(roleNames.contains("ROLE_MEMBER")) {
-			response.sendRedirect("/");
+		if(roleNames.contains("ROLE_USER")) {
+
+			RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
+			RequestCache requestCache = new HttpSessionRequestCache();
+			SavedRequest savedRequest = requestCache.getRequest(request, response);
+			if(savedRequest != null) {
+				String targetUrl = savedRequest.getRedirectUrl();
+				redirectStrategy.sendRedirect(request, response, targetUrl);
+			}else {
+				String uri = request.getHeader("Referer");
+				response.sendRedirect(uri);
+			}
 			return;
 		}
 		response.sendRedirect("/");

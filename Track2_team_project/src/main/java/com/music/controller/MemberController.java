@@ -93,9 +93,16 @@ public class MemberController {
 	
 	//멤버수정
 	@PostMapping("/updateMember")
-	public String updateMember(MemberVO mvo) {
+	public String updateMember(MemberVO mvo, int your_home) {
 		service.updateMember(mvo);
-		return "redirect:/admin/member/view_member?id="+mvo.getId();
+		String go_home="";
+		if(your_home==1) {
+			go_home="redirect:/member/inner_profile?id="+mvo.getId();
+		}else if(your_home==0) {
+			go_home="redirect:/admin/member/view_member?id="+mvo.getId();
+		}
+		
+		return go_home;
 	}
 	
 	//권한수정
