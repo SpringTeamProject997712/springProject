@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
+import javax.annotation.Resource;
 import javax.imageio.ImageIO;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,7 @@ import com.music.domain.ProductVO;
 import com.music.domain.TrackVO;
 import com.music.mapper.ProductMapper;
 import com.music.service.ProductService;
+import com.music.utility.UploadFileUtil;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -41,17 +43,6 @@ public class UploadController {
 	
 	@Setter(onMethod_= @Autowired)
 	private ProductMapper pmapper;
-	
-	//구 폴더 생성기
-	private String getFolder() {
-		//폴더 생성(폴더는 현제 날짜별로)
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		Date date = new Date();
-		String str = sdf.format(date);
-		return str.replace("-",  File.separator);
-	}
-	
-	
 	
 	@GetMapping("/upload")
 	public void productUpload(Model model) {
@@ -96,7 +87,7 @@ public class UploadController {
 		
 //		uploadImageName = uuid.toString()+"_"+uploadImageName;
 		
-		File uploadPath = new File(uploadFolder, getFolder());
+		File uploadPath = new File(uploadFolder, UploadFileUtil.getFolder());
 		
 		if(uploadPath.exists() == false) {
 			uploadPath.mkdirs();
@@ -137,7 +128,7 @@ public class UploadController {
         int width_50 = 50; // 리사이즈할 가로 길이
         int height_50 = 50; // 리사이즈할 세로 길이
 		
-        BufferedImage resizedImage_240 = resize(inputStream_240 ,width_240, height_240);
+        BufferedImage resizedImage_240 = UploadFileUtil.resize(inputStream_240 ,width_240, height_240);
         
 //        ImageIO.write(resizedImage_240, "jpg", new File(uploadFolder, uploadImageName+"_240.jpg"));
 
@@ -147,7 +138,7 @@ public class UploadController {
         log.info("imagename::"+uploadImageName);
         log.info("imagename::"+strImageName);
         
-        BufferedImage resizedImage_50 = resize(inputStream_50 ,width_50, height_50);
+        BufferedImage resizedImage_50 = UploadFileUtil.resize(inputStream_50 ,width_50, height_50);
         
         ImageIO.write(resizedImage_50, "png", new File(uploadFolder, strImageName+"_50.png"));
 
@@ -176,7 +167,7 @@ public class UploadController {
 		String uploadFolder = "C:\\upload";
 		
 		String uploadMusicName = uploadMusic.getOriginalFilename();
-		String uploadMusicRealName = "track_"+uploadMusic.getOriginalFilename();
+		String uploadMusicRealName = uploadMusic.getOriginalFilename();
 		
 		//IE
 		uploadMusicName = uploadMusicName.substring(uploadMusicName.lastIndexOf("//")+1);
@@ -185,7 +176,7 @@ public class UploadController {
 //		
 //		uploadMusicName = uuid.toString()+"_"+uploadMusicName;
 		
-		File uploadPath = new File(uploadFolder, getFolder());
+		File uploadPath = new File(uploadFolder, UploadFileUtil.getFolder());
 		log.info("업로드 패스 주소"+uploadPath);
 		
 		if(uploadPath.exists() == false) {
@@ -268,20 +259,6 @@ public class UploadController {
 		return "redirect:/";
 	}
 	
-	/* 리사이즈 실행 메소드 */
-    public static BufferedImage resize(InputStream inputStream, int width, int height) 
-    		throws IOException {
-    	
-        BufferedImage inputImage = ImageIO.read(inputStream);  // 받은 이미지 읽기
 
-        BufferedImage outputImage = new BufferedImage(width, height, inputImage.getType());
-        // 입력받은 리사이즈 길이와 높이 
-
-        Graphics2D graphics2D = outputImage.createGraphics(); 
-        graphics2D.drawImage(inputImage, 0, 0, width, height, null); // 그리기
-        graphics2D.dispose(); // 자원해제
-
-        return outputImage;
-    }
 	
 }
