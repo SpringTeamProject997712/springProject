@@ -629,3 +629,18 @@ $("#allCheck").on("click",function(){
 		$("input.chBox").prop("checked",false);
 	}
 })
+
+function go_id_pw_cheker() {
+	let formm = document.form_checking_id;
+	if(!formm.your_email.value){
+		alert("로그인 해야 이용할 수 있습니다");
+		location.href="/";
+	}else if(!formm.your_pw.value){
+		alert("비밀번호를 입력하십씨오");
+		formm.your_pw.focus();
+	}else{
+		formm.method="post";
+		formm.submit();
+	}
+
+}

@@ -8,12 +8,14 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.music.domain.CartVO;
 import com.music.domain.MemberVO;
@@ -64,6 +66,18 @@ public class MemberController {
 			log.info("실패");
 		}
 		return "redirect:/";
+	}
+	
+	@PostMapping("/id_pw_checker")
+	public String use_id_pw_checker(String your_email,String your_pw) {
+		String result = "redirect:/member/profile?id="+your_email;
+		log.info("너 나한테 불만있어!!!!");
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		if( encoder.matches(your_pw, service.viewMember(your_email).getPw())) {
+			result = "redirect:/member/inner_profile?id="+your_email;
+		}
+		
+		return result;
 	}
 	
 	//이 아이디가 이미 등록된 아이디인가
@@ -139,6 +153,13 @@ public class MemberController {
 	
 	@GetMapping("/profile")
 	public void viewProfile(String id,Model model) {
+		MemberVO mvo = service.viewMember(id);
+		
+		model.addAttribute("memberList",mvo);
+	}
+	
+	@GetMapping("/inner_profile")
+	public void viewRealProfile(String id,Model model) {
 		MemberVO mvo = service.viewMember(id);
 		
 		model.addAttribute("memberList",mvo);
