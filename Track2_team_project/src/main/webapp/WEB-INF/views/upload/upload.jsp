@@ -20,17 +20,28 @@
 				<div class="tab-content">
 					<div class="ms_upload_box tab-pane fade show active" id="album">
 						<h2>Upload Album Info</h2>
-						<label for="image"> <img src="../images/svg/upload.svg" alt="image">
-						</label>
+						<div class="thumImg">
+							<label for="image">
+								<img src="" alt="image"/>
+							</label>
+						</div>
+						<div class="thumImg"><img src=""/></div>
 						<div class="ms_upload_btn">
 							<input class="upload-name" value="please upload image" disabled="disabled"> <br>
 							<br> <a href="javascript:void(0);" class="ms_btn"> <label for="image" className="ms_btn">upload Cover</label>
 							</a> <input type="file" name="uploadImage" id="image" accept="image/*" class="form-control" style="display: none">
 						</div>
-						<!-- 						<span> or </span>	 -->
-						<!-- 						<p>Drag And Drop Album Image File</p> -->
-
-
+						<script>
+							$("#image").change(function(){
+								if(this.files && this.files[0]) {
+									var reader = new FileReader;
+									reader.onload = function(data) {
+										$(".thumImg").attr("src", data.target.result).width(240);
+									}
+									reader.readAsDataURL(this.files[0]);
+								}
+							});
+						</script>
 
 					</div>
 
@@ -58,7 +69,7 @@
 								</div>
 
 
-								<input type="hidden" name="pbno" value="${pbno}" class="form-control">
+								<input type="hidden" name="pbno" value="${nextPbno}" class="form-control">
 
 
 								<div class="pro-form-btn text-center marger_top15">
@@ -126,7 +137,7 @@
 									<label>詳細</label><input type="text" name="detail" placeholder="" class="form-control" style="height: 150px;">
 								</div>
 
-								<input type="hidden" name="pbno" value="${pbno}" class="form-control">
+								<input type="hidden" name="pbno" value="${nextPbno}" class="form-control">
 
 
 								<div class="pro-form-btn text-center marger_top15">
@@ -161,7 +172,7 @@
 								<div class="form-group" style="width: 88%">
 									<label>詳細</label><input type="text" name="detail" placeholder="" class="form-control" style="height: 150px;">
 								</div>
-								<input type="hidden" name="pbno" value="${pbno}" class="form-control">
+								<input type="hidden" name="pbno" value="${nextPbno}" class="form-control">
 
 
 								<div class="pro-form-btn text-center marger_top15">

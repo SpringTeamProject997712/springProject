@@ -121,7 +121,17 @@ public class AdminController {
 	
 	@GetMapping("/track/view_track") //상품관리 - 상품 세부사항 보기
 	public void viewTrackDetail(int tbno, Model model) {
-		String[] genre = {"장르1","장르2","장르3","장르4"};
+		String[] genre = {
+				"ロマンチック",
+				"ヒップホップ",
+				"ダンシング",
+				"ロック",
+				"ジャズ",
+				"メタル",
+				"ポップ",
+				"インディーズ",
+				"ソウル"	
+		};	
 		TrackVO track = tService.viewTrackList(tbno);
 		AlbumVO album = aService.viewAlbumList(track.getAbno());
 		

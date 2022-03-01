@@ -67,7 +67,7 @@ public class UploadController {
 				"ソウル"	
 		};
 		model.addAttribute("genre", genre);
-		model.addAttribute("pbno", pservice.searchPbno()+1);
+		model.addAttribute("nextPbno", pservice.searchPbno()+1);
 		model.addAttribute("abno",pservice.searchAbno());
 	}
 	

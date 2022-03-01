@@ -27,7 +27,8 @@
 									  	<label class="form-label" for="track_genre">장르</label>
 										   <select class="form-control" id="genre" name="genre">
 										<c:forEach items="${genre}" var="genre" varStatus="status">
-											<option value="${status.count}">${genre}</option>
+											<option value="${status.count}" <c:if test="${track.genre eq status.count
+											}">selected</c:if> >${genre}</option>
 										</c:forEach>
 									</select>
 									  </div>
@@ -48,7 +49,7 @@
 											    </a>
 										    </label>
 										    	<input type="file" name="uploadMusic" id="songname" accept="audio/*" class="upload-hidden" style="display: none">
-<%-- 										    	<input type="hidden" name="songname" value="${track.songname}"> --%>
+										    	<input type="text" name="songname" value="${track.songname}">
 										 </div>
 									  </div>
 									  <div class="col-12">
