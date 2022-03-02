@@ -415,7 +415,7 @@
 
                                         <div class="ms_song_overlay">
                                         </div>
-                                        <div class="ms_play_icon" id="${newly.tbno}">
+                                        <div class="ms_play_icon instantly_play_track" id="${newly.tbno}">
                                         
                                             <img src="/images/svg/play.svg" alt="">
                                         

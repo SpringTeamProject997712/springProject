@@ -29,14 +29,15 @@
 	<select id="readAlbum" resultType="com.music.domain.AlbumVO">
 		select * from album_m where abno = #{abno}
 	</select>
-  	<select id="readAlbum_single" resultType="com.music.domain.AlbumVO">
+  <select id="readAlbum_single" resultType="com.music.domain.AlbumVO">
 		<![CDATA[
 		select rownum, pbno, abno, name, singer, detail, price, image, regdate,
-		tbno, tdetail, genre, tname, tprice, songname, songrealname, duration, length
+			tbno, tdetail, genre, tname, tprice, songname, songrealname, duration, length
 		from (SELECT * FROM album_single ORDER BY pbno asc
-		) where rownum > 0 and abno = #{abno}
-  		]]>
-  	</select>
+			) 
+		where rownum > 0 and abno = #{abno}
+  	]]>
+  </select>
   	<select id="listNewly" resultType="com.music.domain.AlbumVO">
   		<![CDATA[
   		select * from newly where rownum < 15 order by tbno desc

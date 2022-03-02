@@ -381,7 +381,7 @@
                                             <img src="${pageContext.request.contextPath}/upload/${top.image_50}" alt="">
                                             <div class="ms_song_overlay">
                                             </div>
-                                            <div class="ms_play_icon" id="${top.tbno}">
+                                            <div class="ms_play_icon instantly_play_track" id="${top.tbno}">
                                                 <img src="../images/svg/play.svg" alt="">
                                             </div>
                                         </div>
@@ -426,7 +426,7 @@
                                             <img src="${pageContext.request.contextPath}/upload/${top.image_50}" alt="">
                                             <div class="ms_song_overlay">
                                             </div>
-                                            <div class="ms_play_icon" id="${top.tbno}">
+                                            <div class="ms_play_icon instantly_play_track" id="${top.tbno}">
                                                 <img src="../images/svg/play.svg" alt="">
                                             </div>
                                         </div>
@@ -485,7 +485,7 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                         </ul>
-                                        <div class="ms_play_icon">
+                                        <div class="ms_play_icon instantly_play_track">
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
                                     </div>
@@ -763,7 +763,7 @@
                             	<img src="/upload/${newly.image_50}" alt="">
                               <div class="ms_song_overlay">
                               </div>
-                              <div class="ms_play_icon" id="${newly.tbno}">
+                              <div class="ms_play_icon instantly_play_track" id="${newly.tbno}">
                                	<img src="/images/svg/play.svg" alt="">
                               </div>
                             </div>

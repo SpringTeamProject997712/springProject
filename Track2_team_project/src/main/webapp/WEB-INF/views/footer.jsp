@@ -519,7 +519,7 @@ $(".add_track_to_cart").click(function() {
 				alert("중복임");
 			}else{
 				$("#myModal1").modal();
-				alert("로그인이 필요합니다");s
+				alert("로그인이 필요합니다");
 			}
 		},
 		error : function(xhr,status,err) {

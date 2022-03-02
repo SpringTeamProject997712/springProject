@@ -338,7 +338,7 @@
 								<div class="w_tp_song_img">
 									<img src="/upload/${newly.image_50}" alt="">
 									<div class="ms_song_overlay"></div>
-									<div class="ms_play_icon" id="${newly.tbno}">
+									<div class="ms_play_icon instantly_play_track" id="${newly.tbno}">
 
 										<img src="/images/svg/play.svg" alt="">
 
