@@ -1110,9 +1110,8 @@
             </div>
             <!----Main div close---->
         </div>
-<<<<<<< HEAD
 <%@ include file="../footer.jsp" %>
-=======
+
         <!----Footer Start---->
         <div class="ms_footer_wrapper">
             <div class="ms_footer_logo">
