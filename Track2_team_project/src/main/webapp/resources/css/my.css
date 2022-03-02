@@ -228,6 +228,15 @@ cursor: pointer;
 	color:#FFF;
 }
 
+.share-modal{
+	 width:400px;
+}
+.share-modal li{
+	list-style:none;
+}
+.share-modal span{ 
+	color:white; 
+}
 
 
 

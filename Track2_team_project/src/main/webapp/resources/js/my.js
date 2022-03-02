@@ -550,6 +550,11 @@ $("#songname").change(function(e){
 
 //API 끝
 
+$(".share_this_page").on("click",  function(){
+	console.log("gg");
+	$("#myModal3").modal();
+})
+
 $(".add_track_to_playlist").on("click",function(z){
 	z.preventDefault();
 	let tbno=$(this).parent().parent().parent().find('div.ms_play_icon').attr('id');
@@ -671,5 +676,24 @@ function go_update(){
 	let form = document.privacyForm;
 	form.action= "/member/updateMember";
 	form.submit();
+}
+
+
+
+function fn_sendFB(sns) {
+    var thisUrl = document.URL;
+    var snsTitle = "Miraculos - listen music";
+    if( sns == 'facebook' ) {
+        var url = "http://www.facebook.com/sharer/sharer.php?href="+encodeURIComponent(thisUrl);
+        window.open(url, "", "width=520, height=286"); //로컬 서버가 아니면 href ===> u 로 바꿔야함
+    }
+    else if( sns == 'twitter' ) {
+        var url = "http://twitter.com/share?url="+encodeURIComponent(thisUrl)+"&text="+encodeURIComponent(snsTitle);
+        window.open(url, "tweetPop", "width=520, height=286,scrollbars=yes");
+    }
+    else if( sns == 'band' ) {
+        var url = "http://www.band.us/plugin/share?body="+encodeURIComponent(snsTitle)+"&route="+encodeURIComponent(thisUrl);
+        window.open(url, "shareBand", "width=500, height=500, resizable=yes");
+	}
 }
 

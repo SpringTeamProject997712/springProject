@@ -331,6 +331,27 @@
 			</div>
 		</div>
 	</div>
+	<div id="myModal3" class="modal centered-modal" role="dialog">
+		<div class="modal-dialog login_dialog" style="max-width: 400px">
+			<!-- Modal content-->
+			<div class="modal-content share-modal">
+				<div class="form-group">
+					<input class="form-control" type="text">
+				</div>
+				<ul class="sns">
+				    <li class="facebook">
+				    <a href="#n" onclick="fn_sendFB('facebook');return false;" class="facebook" target="_self" title="페이스북 새창열림"><span class="skip">페이스북</span></a>
+				    </li>
+				    <li class="twitter">
+				    <a href="#n" onclick="fn_sendFB('twitter');return false;" class="twitter" target="_self" title="트위터 새창열림"><span class="skip">트위터</span></a>
+				    </li>
+				    <li class="band">
+				    <a href="#n" onclick="fn_sendFB('band');return false;" class="band" target="_self" title="네이버밴드 새창열림"><span class="skip">네이버밴드</span></a>
+				    </li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!----Language Selection Modal---->
