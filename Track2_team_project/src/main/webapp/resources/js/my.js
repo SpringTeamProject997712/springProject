@@ -116,6 +116,26 @@ function go_writemusic() {
 	theForm.submit();
 }
 
+function now_login_checker(){
+	let now_login_flag=0;
+	
+	$.ajax({
+    	type:"get",
+    	url:"/member/loginChecker",
+    	async:false,
+    	success:function(data){
+    		console.log("나온 값 : "+data);
+    		if(data != '1'){
+    		now_login_flag=data;
+    		}		
+    	},error:function(xhr,status,error){
+    		console.log("xhr : "+xhr.status+"\n text : "+xhr.responseText+"\n error : "+error);
+    	}
+	});
+	
+	return now_login_flag;
+}
+
 //업로드 스크립트
 function go_upload_album() {
 	if(upload_album.uploadImage.value=="") {

@@ -239,7 +239,12 @@
 		    $(function(){
 		    	$(".menu").removeClass("active");
 		    	var pageName = '<c:out value="${param.pageName}"/>';
-		    	$("#"+pageName).addClass("active");
+		    	if(pageName){
+		    		$("#"+pageName).addClass("active");
+		    	}else{
+		    		$("#menu_main").addClass("active");
+		    	}
+		    	
 		    	
 		    	$(".menu").click(function(){
 		    		var menu = $(this).attr("id");
