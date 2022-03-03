@@ -60,14 +60,35 @@ function go_update_album() {
 	form.submit;
 }
 
+// 공지관련
+
 function go_update_notice(){
 	let form = document.NoticeForm;
 	form.action= "/member/updateNotice";
 	form.submit();
 
-
-
 }
+
+function go_upload_notice() {
+	if(upload_notice.title.value=="") {
+		alert("please input title");
+		upload_notice.uploadImage.focus();
+		return false;
+	}
+	if(upload_notice.content.value=="") {
+		alert("please input content");
+		upload_notice.content.focus();
+		return false;
+	}
+
+	if(upload_notice.price.value=="") {
+		alert("値段を入力してください");
+		upload_album.price.focus();
+		return false;
+	}
+	
+ 	document.upload_notice.submit();
+ }
 
 //파일 수정 관련
 var actionForm = $("#actionForm");

@@ -24,8 +24,12 @@
 									    <label class="form-label" for="member_id">제목</label>
 									    <input class="form-control" name="title" id="notice_title" type="text" value="${notice.title}">
 									  </div>
+									  <div class="col-md-4">
+									  	<label class="form-label" for="category">카테고리</label>
+									  	<input class="form-control" name="header" id="notice_header" type="" value="${notice.header }">
+									  </div>
 									  <div class="col-md-12">
-									  	<label class="form-label" for="zip">내용</label>
+									  	<label class="form-label" for="content">내용</label>
 									  	<div class="input-group">
 									  		<div id="summernote">${notice.content}</div>
 									  	</div>
@@ -39,6 +43,10 @@
 									      <input class="form-check-input" id="gridCheck" type="checkbox">
 									      <label class="form-check-label" for="gridCheck">Check me out</label>
 									    </div> -->
+									  </div>
+									  <div class="col-4">
+									  	<label class="form-label" for="file">첨부파일</label>
+									  	<input class="form-control" name="file" id="notice_file" type="file" value="${notice.filename }">
 									  </div>
 									  <div class="col-12">
 									    <button class="btn btn-primary" type="button" onclick="go_update_notice()">수정하기</button>
