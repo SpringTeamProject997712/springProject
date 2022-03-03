@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.music.mapper.NoticeMapper">
+
+	<sql id="search_box">
+			<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+				<if test="keyword != null">
+					name like '%'||#{keyword}||'%'
+				</if>
+			</trim>
+	</sql>
+
+  	<insert id="insertNotice">
+  		<selectKey keyProperty="wbno" order="BEFORE" resultType="int">
+  			select board_m _seq.nextval from dual
+  		</selectKey>
+  		insert into board_m  (wbno, id, bbno, header, title, content, indate, viewcount, filename) 
+		values (#{wbno},#{id},#{bbno},#{header},#{title},#{content},sysdate,#{viewcount},#{filename})
+  	</insert>
+  	
+  	<select id="listNotice" resultType="com.music.domain.NoticeVO">
+		<![CDATA[
+			select /*+ index_desc(board_m  board_m_pk) */ * from board_m  where wbno > 0
+		]]>
+	</select>
+
+	<select id="readNotice" resultType="com.music.domain.NoticeVO">
+		select * from board_m  where wbno = #{wbno}
+	</select>
+	
+	<!--   	어드민 -->
+  	<select id="viewNotice" resultType="com.music.domain.NoticeVO">
+			select * from 
+		( 
+			select /*+ index_desc(board_m board_m_pk) */ rownum rn, wbno, id, bbno, header, title, content, indate, viewcount, filename from board_m 
+			)
+			where wbno = #{wbno}
+	</select>
+  	<select id="viewNoticeListWithPaging" resultType="com.music.domain.NoticeVO">
+		<![CDATA[
+			select * from 
+		( 
+			select /*+ index_desc(board_m board_m_pk) */ rownum rn, wbno, id, bbno, header, title, content, indate, viewcount, filename from board_m 
+			where 
+		]]>
+		<include refid="search_box"></include>
+		<![CDATA[			
+					rownum <= #{amount} * #{pageNum}  order by indate desc
+				) 
+			where rn > #{amount} * (#{pageNum}-1)
+		]]>
+	</select>
+	
+	<select id="countNotice" resultType="int">
+			select count(*) from board_m a where 
+			<include refid="search_box"></include>
+			wbno > 0
+	</select>
+	
+	<update id="updateNotice">
+		update board_m set 
+		id =#{id}, bbno=#{bbno}, header=#{header}, title=#{title}, content=#{content}, indate=#{indate}, filename=#{filename} 
+		where wbno = #{wbno}
+	</update>
+  	
+</mapper>

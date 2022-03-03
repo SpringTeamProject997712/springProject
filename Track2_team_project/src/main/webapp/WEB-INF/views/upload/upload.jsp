@@ -22,7 +22,7 @@
 						<h2>Upload Album Info</h2>
 						<div class="thumImg">
 							<label for="image">
-								<img src="../images/svg/upload.svg" alt="image"/>
+								<img src="../images/svg/upload.svg" alt="image" />
 							</label>
 						</div>
 						<div class="ms_upload_btn">
@@ -44,6 +44,8 @@
 						 </script>
 
 					</div>
+
+
 
 					<div class=" marger_top60">
 						<div class="ms_upload_box">

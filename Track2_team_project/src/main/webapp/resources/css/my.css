@@ -237,6 +237,9 @@ cursor: pointer;
 .share-modal span{ 
 	color:white; 
 }
+.move_top {
+	scroll-behavior: smooth;
+}
 
 ul.sns > li {
 	padding: 10px;

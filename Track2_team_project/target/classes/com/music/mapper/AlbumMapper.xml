@@ -73,7 +73,7 @@
   	<select id="viewAlbum" resultType="com.music.domain.AlbumVO">
 			select * from 
 		( 
-			select /*+ index_desc(album_m album_m_pk) */ rownum rn, abno, name, singer, detail, price, image, regdate, pbno from album_m 
+			select /*+ index_desc(album_m album_m_pk) */ rownum rn, abno, name, singer, detail, price, image, image_240, image_50, regdate, pbno from album_m 
 			)
 			where abno = #{abno}
 	</select>
@@ -109,7 +109,8 @@
 
 	<update id="updateAlbum">
 		update album_m set 
-		name=#{name}, singer=#{singer}, detail=#{detail}, price=#{price}, image=#{image}, regdate=#{regdate} 
+		name=#{name}, singer=#{singer}, detail=#{detail}, price=#{price}, 
+		image=#{image}, image_240=#{image_240}, image_50=#{image_50}, regdate=#{regdate} 
 		where abno = #{abno}
 	</update>
 	

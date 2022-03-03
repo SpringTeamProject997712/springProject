@@ -13,15 +13,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.music.domain.AlbumVO;
 import com.music.domain.MemberVO;
-import com.music.domain.Member_authVO;
+import com.music.domain.NoticeVO;
 import com.music.domain.TrackVO;
 import com.music.service.AlbumService;
 import com.music.service.MemberService;
+import com.music.service.NoticeService;
 import com.music.service.ProductService;
 import com.music.service.TrackService;
 import com.music.utility.Criteria;
@@ -46,6 +45,8 @@ public class AdminController {
 	@Setter(onMethod_= @Autowired)
 	TrackService tService;
 	
+	@Setter(onMethod_= @Autowired)
+	NoticeService nService;
 	
 	
 	@GetMapping("/admin") //어드민 페이지로 가기 (admin 로그인 첫화면)
@@ -60,7 +61,7 @@ public class AdminController {
 			new SecurityContextLogoutHandler().logout(request, response, auth);
 			log.info("로그아웃 성공");
 		}		
-		return "redirect:/";
+		return "redirect:/?pageName=menu_main";
 	}
 	
 //========================================유저관리 =========================================	
@@ -140,6 +141,29 @@ public class AdminController {
 		model.addAttribute("genre", genre);
 		
 	}
+	
+
+	//=========================================공지관리용========================================
+		
+			
+			@GetMapping("/notice/manage_notice") //공지관리 - 공지 리스트 보기
+			public void viewNoticeList(Model model, Criteria cri) {
+				List<NoticeVO> nlist = nService.viewNoticeListWithPaging(cri);
+				model.addAttribute("noticeList", nlist);
+				model.addAttribute("pageMaker", nService.pagingList(cri));
+			}
+			
+			@GetMapping("/notice/view_notice") //공지관리 - 공지 세부사항 보기
+			public void viewNoticeDetail(Model model, int wbno) {
+				NoticeVO notice = nService.viewNoticeList(wbno);
+				model.addAttribute("notice", notice);
+			}
+			
+			@GetMapping("/notice/notice_write") //공지작성 - 신규공지 작성페이지 이동
+			public void newNoticeWrite() {
+				
+			}
+
 	
 //=====================================템플릿 파악용 컨트롤러====================================
 	@GetMapping("/base/list-group")

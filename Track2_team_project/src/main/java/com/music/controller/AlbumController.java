@@ -1,9 +1,13 @@
 package com.music.controller;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.UUID;
 
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -23,7 +27,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.google.gson.Gson;
 import com.music.domain.AlbumVO;
 import com.music.domain.CartVO;
-import com.music.domain.MemberVO;
 import com.music.domain.ProductVO;
 import com.music.security.domain.CustomUser;
 import com.music.service.AlbumService;
@@ -31,6 +34,7 @@ import com.music.service.CartService;
 import com.music.service.ProductService;
 import com.music.service.ReviewService;
 import com.music.service.TrackService;
+import com.music.utility.UploadFileUtil;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -89,39 +93,79 @@ public class AlbumController {
 	
 
 	@PostMapping("/updateAlbum")
-	public String updateAlbum(@RequestParam("uploadImage") MultipartFile uploadImage,
-			HttpServletRequest req,AlbumVO avo) {
+	public String updateAlbum(AlbumVO album,
+			@RequestParam("uploadImage") MultipartFile uploadImage,
+			Model model,
+			HttpServletRequest req) throws IOException {
+		
 		String uploadFolder = "C:\\upload";
-		String uploadImageName = "cover_"+uploadImage.getOriginalFilename();
-		File uploadPath = new File(uploadFolder, getFolder());
+		File uploadPath = new File(uploadFolder, UploadFileUtil.getFolder());
 		
-		// 새로운 파일이 등록되었는지 확인
-		 if(uploadImage.getOriginalFilename() != null && uploadImage.getOriginalFilename() != "") {
-		  // 기존 파일을 삭제
-		  new File(uploadPath + req.getParameter("image")).delete();
-		  new File(uploadPath + req.getParameter("image_240")).delete();
-		  new File(uploadPath + req.getParameter("image_50")).delete();
-		  
-		  // 새로 첨부한 파일을 등록
+		if(uploadImage.getOriginalFilename() != null && !uploadImage.getOriginalFilename().equals("")) {
+			new File(uploadFolder+"\\"+req.getParameter("image")).delete();
+			new File(uploadFolder+"\\"+req.getParameter("image_240")).delete();
+			new File(uploadFolder+"\\"+req.getParameter("image_50")).delete();
+			log.info("1번:"+uploadFolder+"\\"+req.getParameter("image"));
+			log.info("2번:"+uploadFolder+"\\"+req.getParameter("image_240"));
+			log.info("3번:"+uploadFolder+"\\"+req.getParameter("image_50"));
+			
+			
+			String uploadImageName = uploadImage.getOriginalFilename();
+			
+			//파일에 변수명 주기
+			UUID uuid = UUID.randomUUID();
+			uploadImageName = uuid.toString()+"_"+uploadImageName;
+			
+			if(uploadPath.exists() == false) {
+				uploadPath.mkdirs();
+			}
+			
 			File saveimage = new File(uploadPath, uploadImageName);
+			
+			try {
+				uploadImage.transferTo(saveimage);
+				uploadImageName = (saveimage.toString().substring(10));
+				album.setImage(uploadImageName);
 				
-			String saveImageUrl = uploadImageName.toString();
-//			uploadImage.transferTo(saveimage);
-			uploadImageName = (saveimage.toString().substring(10));
-		  
-		  avo.setImage(uploadImageName);
-		  
-		 } else {  // 새로운 파일이 등록되지 않았다면
-		  // 기존 이미지를 그대로 사용
-		  avo.setImage(req.getParameter("gdsImg"));
-		  avo.setImage_240(req.getParameter("gdsImg"));
-		  avo.setImage_50(req.getParameter("gdsImg"));
-		  
-		 }
-		 
-		service.updateAlbum(avo);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			File saveimage_240 = new File(uploadFolder, uploadImageName);
+			File saveimage_50 = new File(uploadFolder, uploadImageName);
+			
+			InputStream inputStream_240 = new FileInputStream(saveimage_240);
+			InputStream inputStream_50 = new FileInputStream(saveimage_50);
+			
+			String strImageName = uploadImageName.substring(0,uploadImageName.lastIndexOf('.'));
+			
+	        int width_240 = 300; // 리사이즈할 가로 길이
+	        int height_240 = 300; // 리사이즈할 세로 길이
+	        
+	        int width_50 = 50; // 리사이즈할 가로 길이
+	        int height_50 = 50; // 리사이즈할 세로 길이
+			
+	        BufferedImage resizedImage_240 = UploadFileUtil.resize(inputStream_240 ,width_240, height_240);
+
+	        ImageIO.write(resizedImage_240, "png", new File(uploadFolder, strImageName+"_240.png"));
+	        
+	        BufferedImage resizedImage_50 = UploadFileUtil.resize(inputStream_50 ,width_50, height_50);
+	        
+	        ImageIO.write(resizedImage_50, "png", new File(uploadFolder, strImageName+"_50.png"));
+
+			album.setImage_240(strImageName+"_240.png");
+			album.setImage_50(strImageName+"_50.png");
+			
+			
+		}else {
+			album.setImage(req.getParameter("image"));
+			album.setImage_240(req.getParameter("image_240"));
+			album.setImage_50(req.getParameter("image_50"));
+		}
 		
-		return "redirect:/admin/album/view_album?abno="+avo.getAbno();
+		
+		service.updateAlbum(album);
+		
+		return "redirect:/admin/album/view_album?abno="+album.getAbno();
 	}
 	
 	@PostMapping("/deleteAlbum")
@@ -131,18 +175,7 @@ public class AlbumController {
 		
 		return "redirect:/admin/album/manage_album";
 	}
-	
-	
-	
-	
-	//구 폴더 생성기
-	private String getFolder() {
-		//폴더 생성(폴더는 현제 날짜별로)
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		Date date = new Date();
-		String str = sdf.format(date);
-		return str.replace("-",  File.separator);
-	}
+
 
 	@ResponseBody
 	@PostMapping("/insertCart")
