@@ -22,7 +22,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.google.gson.Gson;
 import com.music.domain.AlbumVO;
-import com.music.domain.PlaylistVO;
 import com.music.domain.TrackVO;
 import com.music.domain.jPlayerVO;
 import com.music.security.domain.CustomUser;
@@ -30,6 +29,7 @@ import com.music.service.AlbumService;
 import com.music.service.CreatePlaylistService;
 import com.music.service.ProductService;
 import com.music.service.TrackService;
+import com.music.utility.UploadFileUtil;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -86,23 +86,50 @@ public class TrackController {
 	}
 	
 	@PostMapping("/updateTrack")
-	public String updateTrack(TrackVO tvo, @RequestParam("uploadMusic") MultipartFile uploadMusic, HttpServletRequest req) {
+	public String updateTrack(TrackVO track,
+			@RequestParam("uploadMusic") MultipartFile uploadMusic,
+			Model model, HttpServletRequest req) throws Exception {
+		
 		String uploadFolder = "C:\\upload";
-		String uploadMusicName = uploadMusic.getOriginalFilename();
-		String uploadMusicRealName = "track_"+uploadMusic.getOriginalFilename();
-		File uploadPath = new File(uploadFolder, getFolder());
+		File uploadPath = new File(uploadFolder, UploadFileUtil.getFolder());
 		
-		
-		if(uploadMusic.getOriginalFilename() != null && uploadMusic.getOriginalFilename() != "") {
-			new File(uploadPath + req.getParameter("uploadMusic")).delete();
+		if(uploadMusic.getOriginalFilename() != null && !uploadMusic.getOriginalFilename().equals("")) {
+
+			//기존 파일 삭제
+			new File (uploadFolder+"\\"+req.getParameter("songrealname")).delete();
+			log.info("파일 삭제 경로 찾기:"+uploadFolder+"\\"+req.getParameter("songrealname"));
 			
+			String uploadMusicName = uploadMusic.getOriginalFilename();
+			String uploadMusicRealName = uploadMusic.getOriginalFilename();
+			
+			if(uploadPath.exists() == false) {
+				uploadPath.mkdirs();
+			}
+			
+			File savemusic = new File(uploadPath, uploadMusicName);
+			log.info("셉뮤직 경로"+savemusic);
+			
+			try {
+				uploadMusic.transferTo(savemusic);
+				uploadMusicName = (savemusic.toString().substring(10));
+				track.setSongrealname(uploadMusicName);
+				track.setSongname(uploadMusicRealName);
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+		}else {
+			track.setSongrealname(req.getParameter("songrealname"));
+			track.setSongname(req.getParameter("songname"));
 		}
+			
+		service.updateTrack(track);
 		
-		service.updateTrack(tvo);
-		
-		return "redirect:/admin/track/view_track?tbno="+tvo.getTbno();
+		return "redirect:/admin/track/view_track?tbno="+track.getTbno();
 	}
 	
+	//삭제
 	@PostMapping("/deleteTrack")
 	public String deleteTrack(@RequestParam("pbno") int pbno, @RequestParam("abno") int abno) {
 		
@@ -111,13 +138,5 @@ public class TrackController {
 		return "redirect:/admin/track/manage_track?abno="+abno;
 	}
 	
-	
-	//구 폴더 생성기
-	private String getFolder() {
-		//폴더 생성(폴더는 현제 날짜별로)
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		Date date = new Date();
-		String str = sdf.format(date);
-		return str.replace("-",  File.separator);
-	}
+
 }
