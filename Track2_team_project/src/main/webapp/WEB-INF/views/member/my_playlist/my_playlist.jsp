@@ -18,7 +18,7 @@
                                     <img src="/images/radio/img2.jpg" alt="" class="img-fluid">
                                     <div class="ms_main_overlay">
                                         <div class="ms_box_overlay"></div>
-                                        <div class="ms_play_icon">
+                                        <div class="ms_play_icon playlist_play_button" id="runPlbno_${myList.plbno}">
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
                                     </div>

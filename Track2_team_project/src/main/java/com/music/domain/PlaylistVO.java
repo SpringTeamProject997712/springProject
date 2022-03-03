@@ -14,6 +14,8 @@ public class PlaylistVO {
 	private int pdbno;
 	private int abno;
 	private int tbno;
+	
+	private String image_240;
 
 //제어자
 	

@@ -238,5 +238,12 @@ cursor: pointer;
 	color:white; 
 }
 
+ul.sns > li {
+	padding: 10px;
+	margin-top: 15px;
+}
 
-
+a.btn-copyToClipboard{
+	margin-top: 15px;
+	
+}

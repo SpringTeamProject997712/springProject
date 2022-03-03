@@ -204,16 +204,6 @@ function go_reset() {
 	  });
 }
 
-
-function go_reset() {
-	$('form').each(function() {
-
-	      this.reset();
-
-	  });
-}
-
-
 function findAddr(){ //우편번호 찾기
 	new daum.Postcode({
         oncomplete: function(data) {
@@ -550,10 +540,7 @@ $("#songname").change(function(e){
 
 //API 끝
 
-$(".share_this_page").on("click",  function(){
-	console.log("gg");
-	$("#myModal3").modal();
-})
+
 
 $(".add_track_to_playlist").on("click",function(z){
 	z.preventDefault();
@@ -678,7 +665,20 @@ function go_update(){
 	form.submit();
 }
 
+$(".share_this_page").on("click",  function(){
+	$("#share_this_page").val(document.URL);
+	$("#myModal3").modal();
+});
 
+function copyToClipBoard() {
+
+    var content = document.getElementById('share_this_page');
+    
+    content.select();
+    document.execCommand('copy');
+
+    alert("Copied!");
+}
 
 function fn_sendFB(sns) {
     var thisUrl = document.URL;

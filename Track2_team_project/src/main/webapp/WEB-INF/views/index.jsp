@@ -483,7 +483,7 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
+                                            <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                         </ul>
                                         <div class="ms_play_icon instantly_play_track">
                                             <img src="/images/svg/play.svg" alt="">
@@ -810,10 +810,10 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
+                                            <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                         </ul>
-                                        <div class="ms_play_icon" id="${view.tbno}">
-                                        <a href="/album/album_single?abno=${list.abno}">
+                                        <div class="ms_play_icon album_play_button" id="playAbno_${list.abno}">
+                                        <a href="javascript:void(0)">
                                             <img src="../images/svg/play.svg" alt="">
                                         </a>
                                         </div>
