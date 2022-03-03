@@ -79,15 +79,6 @@
 						</span>
 						</a>
                         </li>
-                        <li><a href="#" class="menu" title="Artists" id="menu_artists">
-						<span class="nav_icon">
-							<span class="icon icon_artists"></span>
-						</span>
-						<span class="nav_text">
-							アーティスト
-						</span>
-						</a>
-                        </li>
                         <li><a href="#" class="menu" title="Genres" id="menu_genres">
 						<span class="nav_icon">
 							<span class="icon icon_genres"></span>
