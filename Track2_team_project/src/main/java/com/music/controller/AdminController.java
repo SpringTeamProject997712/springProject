@@ -61,7 +61,7 @@ public class AdminController {
 			new SecurityContextLogoutHandler().logout(request, response, auth);
 			log.info("로그아웃 성공");
 		}		
-		return "redirect:/";
+		return "redirect:/?pageName=menu_main";
 	}
 	
 //========================================유저관리 =========================================	

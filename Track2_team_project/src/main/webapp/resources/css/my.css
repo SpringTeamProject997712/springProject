@@ -228,6 +228,10 @@ cursor: pointer;
 	color:#FFF;
 }
 
+.move_top {
+	scroll-behavior: smooth;
+}
+
 
 
 

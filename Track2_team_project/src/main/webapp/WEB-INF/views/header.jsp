@@ -108,7 +108,7 @@
                         </li>
                     </ul>
                     <ul class="nav_downloads">
-                        <li><a href="#" class="menu" title="Purchased" id="menu_download">
+                        <li><a href="#" class="menu" title="Purchased" id="menu_purchased">
 						<span class="nav_icon">
 							<span class="icon icon_download"></span>
 						</span>
@@ -147,6 +147,11 @@
 						<span class="icon icon_c_playlist"></span>
 							</span> <span class="nav_text"> リスト作成 </span>
 						</a></li>
+						<li><a href="#" class="menu" title="Notice" id="menu_notice">
+						<span class="nav_icon">
+						<span class="icon icon_fe_playlist"></span>
+							</span> <span class="nav_text"> お知らせ </span>
+						</a></li>
 					</ul>
 				</div>
             </div>
@@ -168,7 +173,7 @@
 											</div>
                     </div>
                     <div class="ms_top_trend">
-                        <span><a href="#"  class="ms_color">今日のおすすめ :</a></span> <span class="top_marquee"><a href="#">Dream your moments, Until I Met You, Gimme Some Courage, Dark Alley (+8 More)</a></span>
+                        <span><a href="/notice/notice?pageName=menu_notice"  class="ms_color">お知らせ :</a></span> <span class="top_marquee"><a href="#">Dream your moments, Until I Met You, Gimme Some Courage, Dark Alley (+8 More)</a></span>
                     </div>
                 </div>
                 <div class="ms_top_right">
@@ -220,6 +225,9 @@
 	    		}else if(menu === "menu_cart"){
 	    			$("#activefrm").attr("action", "/member/my_cart");
 	    			$("#pageName").val(menu);
+	    		}else if(menu === "menu_purchased"){
+	    			$("#activefrm").attr("action", "/downloads/downloads");
+	    			$("#pageName").val(menu);
 	    		}else if(menu === "menu_favourite"){
 	    			$("#activefrm").attr("action", "/member/favourite");
 	    			$("#pageName").val(menu);
@@ -228,6 +236,9 @@
 	    			$("#pageName").val(menu);
 	    		}else if(menu === "menu_addlist"){
 	    			$("#activefrm").attr("action", "/member/my_playlist/my_playlist");
+	    			$("#pageName").val(menu);
+	    		}else if(menu === "menu_notice"){
+	    			$("#activefrm").attr("action", "/notice/notice");
 	    			$("#pageName").val(menu);
 	    			}
 	    		

@@ -6,7 +6,7 @@
 </form>
 <div class="ms_footer_wrapper">
 	<div class="ms_footer_logo">
-		<a href="/"><img src="/images/open_logo.png" alt=""></a>
+		<a href="#" class="move_top"><img src="/images/open_logo.png" alt=""></a>
 	</div>
 	<div class="ms_footer_inner">
 		<div class="row">
