@@ -32,14 +32,14 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                         </ul>
                                         <div class="ms_play_icon">
-                                        <a href="/album/album_single?abno=${list.abno}">
+                                        <a href="/album/album_single?abno=${list.abno}" class="menu" id="menu_album">
                                             <img src="../images/svg/play.svg" alt="">
                                         </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="ms_rcnt_box_text">
-                                    <h3><a href="album_single?abno=${list.abno}">${list.name}</a></h3>
+                                    <h3><a href="album_single?abno=${list.abno}&pageName=menu_album">${list.name} </a></h3>
 
                                     <p>${list.singer}</p>
                                 </div>

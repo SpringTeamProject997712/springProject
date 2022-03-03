@@ -73,9 +73,7 @@ public class UploadController {
 		String uploadFolder = "C:\\upload";
 		log.info("file name : "+uploadImage.getOriginalFilename());
 				
-		String uploadImageName = "cover_"+uploadImage.getOriginalFilename();
-		
-		
+		String uploadImageName = uploadImage.getOriginalFilename();
 		
 		//IE
 		uploadImageName = uploadImageName.substring(uploadImageName.lastIndexOf("//")+1);
@@ -83,9 +81,9 @@ public class UploadController {
 		
 		
 		//파일에 변수명 주기
-//		UUID uuid = UUID.randomUUID();
+		UUID uuid = UUID.randomUUID();
+		uploadImageName = uuid.toString()+"_"+uploadImageName;
 		
-//		uploadImageName = uuid.toString()+"_"+uploadImageName;
 		
 		File uploadPath = new File(uploadFolder, UploadFileUtil.getFolder());
 		
