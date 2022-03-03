@@ -60,6 +60,15 @@ function go_update_album() {
 	form.submit;
 }
 
+function go_update_notice(){
+	let form = document.NoticeForm;
+	form.action= "/member/updateNotice";
+	form.submit();
+
+
+
+}
+
 //파일 수정 관련
 var actionForm = $("#actionForm");
 $(".page-item > a").on("click", function(e) {

@@ -9,6 +9,11 @@
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/unescaped-markup/prism-unescaped-markup.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
+<script src="/resources/js/summernote-lite.min.js"></script>
+<script src="/resources/js/mysummer.js"></script>
+<link rel="stylesheet" href="/resources/css/summernote-lite.min.css">
+
 <script src="/resources/js/admin/myAdmin.js"></script>
+
 </body>
 </html>
