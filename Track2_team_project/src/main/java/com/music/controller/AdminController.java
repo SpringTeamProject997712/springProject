@@ -12,7 +12,10 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartRequest;
 
 import com.music.domain.AlbumVO;
 import com.music.domain.MemberVO;
@@ -162,6 +165,21 @@ public class AdminController {
 			@GetMapping("/notice/notice_write") //공지작성 - 신규공지 작성페이지 이동
 			public void newNoticeWrite() {
 				
+			}
+			
+			@PostMapping("/notice/notice_write")
+			public String insertNotice(NoticeVO notice) {
+				nService.insertNotice(notice);
+						
+				return "/notice/manage_notice";
+			}
+			
+			@PostMapping("/deleteNotice")
+			public String deleteNotice(@RequestParam("wbno") int wbno) {
+				
+				nService.deleteNotice(wbno);
+				
+				return "redirect:/admin/notice/manage_notice";
 			}
 
 	
