@@ -1,6 +1,8 @@
 package com.music.controller;
 
 import java.lang.reflect.Member;
+import java.text.DecimalFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -221,13 +223,42 @@ public class MemberController {
 		
 	}
 	
-	@RequestMapping(value="/my_cart", method = RequestMethod.POST) 
-	public String orderCart(HttpSession session, OrderVO ovo, OrderdetailVO odvo) {
-		MemberVO member = (MemberVO)session.getAttribute("member");
-		String id = member.getId();
+
+	@RequestMapping(value="/go_pay", method = RequestMethod.POST) 
+	public String orderCart(HttpSession session, OrderVO ovo) {
+		String myName="";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			
+			
+			 Calendar cal = Calendar.getInstance();
+			 int year = cal.get(Calendar.YEAR);
+			 String ym = year + new DecimalFormat("00").format(cal.get(Calendar.MONTH) + 1);
+			 String ymd = ym +  new DecimalFormat("00").format(cal.get(Calendar.DATE));
+			 String subNum = "";
+			 
+			 for(int i = 1; i <= 6; i ++) {
+			  subNum += (int)(Math.random() * 10);
+			 }
+			 
+			String orderId = ymd + "_" + subNum;
+			log.info(orderId);
+			
+			OrderdetailVO odvo = new OrderdetailVO();
+			
+			ovo.setOrderid(orderId);
+			ovo.setId(myName);
+			
+			odvo.setOrderid(orderId);
+			cservice.orderInfo(ovo);
+			cservice.orderInfo_detail(odvo);
+			cservice.cartAllDelete(myName);
+		}
 		
-		cservice.orderInfo(ovo);
-		cservice.orderInfo_detail(odvo);
+		
+		
 		
 		return "redirect:/";
 	}

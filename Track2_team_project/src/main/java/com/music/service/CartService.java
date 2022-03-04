@@ -21,4 +21,6 @@ public interface CartService {
 	public void orderInfo(OrderVO ovo);
 	
 	public void orderInfo_detail(OrderdetailVO odvo);
+	
+	public void cartAllDelete(String id);
 }

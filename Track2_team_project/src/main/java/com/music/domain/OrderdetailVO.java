@@ -7,6 +7,7 @@ import lombok.Data;
 public class OrderdetailVO {
 
 	private int odbno;
+	private String orderid;
 	private int pbno;
 	private int price;
 	private int quantity;

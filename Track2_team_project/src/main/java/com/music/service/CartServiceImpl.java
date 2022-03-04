@@ -50,4 +50,9 @@ public class CartServiceImpl implements CartService {
 		cmapper.orderInfo_detail(odvo);
 	}
 
+	@Override
+	public void cartAllDelete(String id) {
+		cmapper.cartAllDelete(id);
+	}
+
 }

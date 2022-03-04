@@ -63,25 +63,22 @@
 	</select>
 	
 	<insert id="orderInfo">
-		<selectKey keyProperty="obno" resultType="int" order="BEFORE">
-			select order_m_seq.nextval from dual
-		</selectKey>
 		insert into order_m ( 
-			obno, id, orderdate, amount 
+			orderid, id, orderdate, amount 
 		) values ( 
-			#{obno}, #{id}, #{orderdate}, #{amount}
+			#{orderid}, #{id}, sysdate, #{amount}
 		)
 	</insert>
 	
 	<insert id="orderInfo_detail">
-		<selectKey keyProperty="odbno" resultType="int" order="BEFORE">
-			select orderdetail_m_seq.nextval from dual
-		</selectKey>
 		insert into orderdetail_m ( 
-			odbno, obno, pbno, price, quantity, result 
-		) select #{odbno}, #{obno}, #{pbno}, #{price}, #{quantity}, #{result} 
+			odbno, orderid, pbno, quantity, result 
+		) select orderdetail_m_seq.nextval, #{orderid}, pbno, quantity, result 
 		from cart_m
 	</insert>
 	
+	<delete id="cartAllDelete">
+		delete cart_m where id = #{id}
+	</delete>
 	
 </mapper>

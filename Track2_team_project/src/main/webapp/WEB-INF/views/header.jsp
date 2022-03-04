@@ -180,19 +180,19 @@
 	                      <a href="/upload/upload?pageName=menu_main" class="ms_btn">upload</a>
 	                      <a href="javascript:;" class="ms_admin_name">Hello ${principal.member.name} 
 	                      	<span class="ms_pro_name">${principal.member.name.substring(0,1)}</span>
-												</a>
-												<ul class="pro_dropdown_menu">
-													<li><a href="/member/profile?id=${principal.username}">Profile</a></li>
-													<li><a href="/member/my_playlist/my_playlist">My Playlist</a></li>
-													<li><a href="manage_acc.html" target="_blank">Pricing Plan</a></li>
-													<li><a href="blog.html" target="_blank">Blog</a></li>
-													<sec:authorize access="hasRole('ROLE_ADMIN')">
-														<li><a href="/admin/admin">GO Admin</a></li>
-													</sec:authorize>
-													<li><a href="">Setting</a></li>
-													<li><a href="/admin/adminLogout">Logout</a></li>
-												</ul>
-                    </div>
+					</a>
+					<ul class="pro_dropdown_menu">
+						<li><a href="/member/profile?id=${principal.username}">Profile</a></li>
+						<li><a href="/member/my_playlist/my_playlist">My Playlist</a></li>
+						<li><a href="manage_acc.html" target="_blank">Pricing Plan</a></li>
+						<li><a href="blog.html" target="_blank">Blog</a></li>
+						<sec:authorize access="hasRole('ROLE_ADMIN')">
+							<li><a href="/admin/admin">GO Admin</a></li>
+						</sec:authorize>
+						<li><a href="">Setting</a></li>
+						<li><a href="/admin/adminLogout">Logout</a></li>
+					</ul>
+                   </div>
                     </sec:authorize>
                 </div>
             </div>

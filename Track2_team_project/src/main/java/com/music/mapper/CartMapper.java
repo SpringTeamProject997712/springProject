@@ -26,4 +26,5 @@ public interface CartMapper {
 	
 	public void orderInfo_detail(OrderdetailVO odvo);
 	
+	public void cartAllDelete(String id);
 }
