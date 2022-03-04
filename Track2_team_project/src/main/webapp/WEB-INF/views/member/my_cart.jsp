@@ -169,7 +169,7 @@
 									<div class="column">
 <!-- 										<a class="ms_btn btn-primary" href="javascript:go_pay()" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart" data-toast-message="is updated successfully!">Update Cart</a> -->
 										<form action="/member/go_pay" method="post">
-										<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+											<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 											<input type="text" name="amount" value="${sum }">
 											<input type="text" name="id" value="${principal.member.name}">
 											<input type="submit">

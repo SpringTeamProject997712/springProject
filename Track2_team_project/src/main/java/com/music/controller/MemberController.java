@@ -252,6 +252,7 @@ public class MemberController {
 			ovo.setId(myName);
 			
 			odvo.setOrderid(orderId);
+			odvo.setUserId(myName);
 			cservice.orderInfo(ovo);
 			cservice.orderInfo_detail(odvo);
 			cservice.cartAllDelete(myName);

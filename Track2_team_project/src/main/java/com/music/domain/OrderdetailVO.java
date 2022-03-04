@@ -13,4 +13,6 @@ public class OrderdetailVO {
 	private int quantity;
 	private String result;
 	
+	private String userId;
+	
 }

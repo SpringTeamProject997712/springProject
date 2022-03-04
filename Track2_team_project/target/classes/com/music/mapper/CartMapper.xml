@@ -74,7 +74,7 @@
 		insert into orderdetail_m ( 
 			odbno, orderid, pbno, quantity, result 
 		) select orderdetail_m_seq.nextval, #{orderid}, pbno, quantity, result 
-		from cart_m
+		from cart_m where id = #{userId}
 	</insert>
 	
 	<delete id="cartAllDelete">
