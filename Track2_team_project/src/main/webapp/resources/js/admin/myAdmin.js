@@ -70,25 +70,66 @@ function go_update_notice(){
 }
 
 function go_upload_notice() {
+	
 	if(upload_notice.title.value=="") {
 		alert("please input title");
 		upload_notice.uploadImage.focus();
 		return false;
 	}
+	
 	if(upload_notice.content.value=="") {
 		alert("please input content");
 		upload_notice.content.focus();
 		return false;
 	}
-
-	if(upload_notice.price.value=="") {
-		alert("値段を入力してください");
-		upload_album.price.focus();
+	
+	if(upload_notice.header.value=="") {
+		alert("please select header");
+		upload_notice.header.focus();
 		return false;
 	}
 	
+
  	document.upload_notice.submit();
  }
+ 
+     	$(function(){
+		$('#summernote').summernote({
+		height: 300,
+		fontNames : [ '맑은고딕', 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', ],
+		fontNamesIgnoreCheck : [ 'Arial' ],
+		focus: true,
+
+		callbacks: {
+		onImageUpload: function(files, editor, welEditable) {
+		            for (var i = files.length - 1; i >= 0; i--) {
+		             sendFile(files[i], this);
+		            }
+		        }
+		}
+
+		});
+
+		})
+
+		function sendFile(file, el) {
+		var form_data = new FormData();
+		       form_data.append('file', file);
+		       $.ajax({
+		         data: form_data,
+		         type: "POST",
+		         url: './notifileImage.do',
+		         cache: false,
+		         contentType: false,
+		         enctype: 'multipart/form-data',
+		         processData: false,
+		         success: function(img_name) {
+		        	 alert(img_name);
+		           $(el).summernote('editor.insertImage', img_name);
+		         }
+		       });
+		    }
+	
 
 //파일 수정 관련
 var actionForm = $("#actionForm");

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.music.domain.CartVO;
+import com.music.domain.OrderVO;
+import com.music.domain.OrderdetailVO;
 import com.music.mapper.CartMapper;
 
 import lombok.Setter;
@@ -36,6 +38,16 @@ public class CartServiceImpl implements CartService {
 	@Override
 	public int deleteCart(String id) {
 		return cmapper.deleteCart(id);
+	}
+
+	@Override
+	public void orderInfo(OrderVO ovo) {
+		cmapper.orderInfo(ovo);
+	}
+
+	@Override
+	public void orderInfo_detail(OrderdetailVO odvo) {
+		cmapper.orderInfo_detail(odvo);
 	}
 
 }

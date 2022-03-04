@@ -12,12 +12,4 @@ public class OrderVO {
 	private Date orderdate;
 	private int amount;
 	
-	//OrderDetail
-	
-	private int odbno;
-	private int pbno;
-	private int price;
-	private int quantity;
-	private String result;
-	
 }

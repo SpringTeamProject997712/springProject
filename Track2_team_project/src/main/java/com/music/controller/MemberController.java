@@ -1,5 +1,6 @@
 package com.music.controller;
 
+import java.lang.reflect.Member;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,11 +16,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.music.domain.CartVO;
 import com.music.domain.MemberVO;
 import com.music.domain.Member_authVO;
+import com.music.domain.OrderVO;
+import com.music.domain.OrderdetailVO;
 import com.music.domain.PlaylistVO;
 import com.music.security.domain.CustomUser;
 import com.music.service.AlbumService;
@@ -216,6 +220,18 @@ public class MemberController {
 		model.addAttribute("cartListDetail",cartListDetail);
 		
 	}
+	
+	@RequestMapping(value="/my_cart", method = RequestMethod.POST) 
+	public String orderCart(HttpSession session, OrderVO ovo, OrderdetailVO odvo) {
+		MemberVO member = (MemberVO)session.getAttribute("member");
+		String id = member.getId();
+		
+		cservice.orderInfo(ovo);
+		cservice.orderInfo_detail(odvo);
+		
+		return "redirect:/";
+	}
+	
 	
 	
 	@GetMapping("/favourite")
