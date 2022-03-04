@@ -10,6 +10,7 @@ public class OrderVO {
 	private int obno;
 	private String id;
 	private Date orderdate;
+	private int amount;
 	
 	//OrderDetail
 	
@@ -18,4 +19,5 @@ public class OrderVO {
 	private int price;
 	private int quantity;
 	private String result;
+	
 }

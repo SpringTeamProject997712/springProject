@@ -43,6 +43,7 @@
 											</tr>
 										</thead>
 										</tbody>
+										<c:set var="sum" value="0"/>
 										<c:forEach var="cartList" items="${cartList}">
 											<c:if test="${cartList.category eq '1'}">
 											<tr class="slideDown-details" id="${cartList.cbno}">
@@ -96,6 +97,7 @@
 																	</ul>
 																	<c:set value="${d_num+1}" var="d_num"/>
 																</c:if>
+																
 															</c:forEach>
 														</li>
 													</ul>
@@ -133,6 +135,12 @@
 												</td>
 											</tr>
 											</c:if>
+										<c:if test="${cartList.category eq '1'}">
+											<c:set var="sum" value="${sum + cartList.aprice}"/>
+										</c:if>
+										<c:if test="${cartList.category eq '2'}">
+											<c:set var="sum" value="${sum + cartList.tprice}"/>
+										</c:if>
 										</c:forEach>
 
 
@@ -146,8 +154,12 @@
 											<button class="ms_btn btn-outline-primary" type="submit">Apply</button>
 										</form>
 									</div>
-									<div class="column text-lg">
-										Subtotal: <span class="text-medium">$289.68</span>
+									
+									<div class="column text-lg" style="color:white;">
+										Subtotal: <span class="text-medium">
+										<fmt:setLocale value="ja_jp" />
+										<fmt:formatNumber type="currency" value="${sum}" currencySymbol="￥" maxFractionDigits="0" />
+										</span>
 									</div>
 								</div>
 								<div class="shopping-cart-footer">
