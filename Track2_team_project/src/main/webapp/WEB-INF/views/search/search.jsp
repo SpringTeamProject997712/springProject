@@ -5,63 +5,100 @@
 
 			<!--- Notice section start --->
 			
-			<div class="noticemain">
+		<div class="noticemain">
+    	<div class="ms_heading">
+      	<h1>Tracks</h1>
+    	</div>
+			<div class="album_inner_list">
+			<c:if test="${not empty trackList}">
+			<div class="album_list_wrapper">
+				<ul class="album_list_name">
+					<li>#</li>
+					<li>Song Title</li>
+					<li>Artist</li>
+					<li class="text-center">Duration</li>
+					<li class="text-center">Add To Favourites</li>
+					<li class="text-center">More</li>
+				</ul>
+
+			<!-- track list start -->
+			
+			<c:set value="${1}" var="num" />
+			<c:forEach var="view" items="${trackList}">
+				<ul>
+					<li><a class="play_track_in_album" id="${view.tbno}" href="javascript:void(0)"><span class="play_no">${num}</span><span class="play_hover"></span></a></li>
+					<li><a href="#">${view.name}</a></li>
+					<li><a href="#">${view.singer}</a></li>
+					<li class="text-center"><a href="#">${view.length }</a></li>
+					<li class="text-center"><a href="javascript:void(0)" class="fav_box" id="pbno_${view.pbno}"> <span class="ms_icon1 ms_fav_icon"> </span>
+					</a></li>
+					<li class="text-center ms_more_icon" id="this_track_pbno_${view.pbno}"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
+						<div class="ms_play_icon" id="${view.tbno}" style="display: none;"></div>
+						<ul class="more_option">
+							<li><a href="javascript:void(0)" class="add_queue_one_track"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
+							<li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
+							<li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
+							<li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
+						</ul>
+					</li>
+				</ul>
+				<c:set value="${num+1}" var="num" />
+			</c:forEach>
+			
+			
+			<!-- track list end -->
+		</div>
+		</c:if>
+		<c:if test="${empty trackList}">
+				<p>검색 가능한 정보가 없습니다</p>
+			</c:if>
+	</div>
+</div>
+	<div class="noticemain">			
+	<div class="ms_fea_album_slider padder_top10 ">
                 <div class="ms_heading">
-                    <h1>공지사항</h1>
-                    <form>
-	                    <div class="ms_top_search" style="float:right;">
-	                        <input type="text" class="form-control" placeholder="공지사항 검색">
-	                        <span class="search_icon">
-								<img src="../images/svg/search.svg" alt="">
-							</span>
-	                	</div>
-                	</form>
+                    <h1>Albums</h1>
                 </div>
-					<div class="album_inner_list">
-						<div class="album_list_wrapper">
-							<ul class="album_list_name ">
-								<li>#</li>
-								<li class="text-center">カテゴリー</li>
-								<li>タイトル</li>
-								<li>名前</li>
-								<li class="text-center">ヒット数</li>
-								<li class="text-center">作成日</li>
-							</ul>
-							
-							<c:forEach var="list" items="${nlist }" >
-								<ul>
-									<li><a href="#"><span>${list.wbno }</span></a></li>
-									<li class="text-center"><a href="#"><span>
-										<c:choose>
-											<c:when test="${list.header eq 1 }">공지</c:when>
-											<c:when test="${list.header eq 2 }">점검</c:when>
-											<c:when test="${list.header eq 3 }">이벤트</c:when>
-											<c:otherwise>기타</c:otherwise>
-										</c:choose>
-									</span></a></li>
-									<li><a href="/notice/notice_single?wbno=${list.wbno}">${list.title }</a></li>
-									<li><a href="#">${list.id }</a></li>
-									<li class="text-center"><a href="#">${list.viewcount }</a></li>
-									<li class="text-center"><a href="#">
-									<fmt:setLocale value="en_US" scope="session"/>
-									<fmt:parseDate var="nodate" value="${list.indate }" pattern="yyyy-MM-dd"/>
-									<fmt:formatDate value="${nodate }" pattern="yyyy-MM-dd"/> </a></li>
-								</ul>
-							</c:forEach>				
-						</div>
-					</div>
-				</div>
-				<div class="pagination_wrapper">
-					<nav class="navigation pagination" role="navigation" aria-label="Posts">
-							<div class="nav-links">
-								<a class="prev page-numbers" href="#"><span><i class="fa fa-long-arrow-left" aria-hidden="true"></i></span></a>
-								<span aria-current="page" class="page-numbers current">1</span>
-								<a class="page-numbers" href="#">2</a>
-								<a class="next page-numbers" href="#"><span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span></a>
-							</div>
-					</nav>
-				</div>
-						<!--- Notice section end --->
+                <c:if test="${not empty albumList}">
+                <div class="ms_album_slider swiper-container">
+                    <div class="swiper-wrapper">
+                    
+                    <!-- featured albums start -->
+                    <c:forEach var="list" items="${albumList}">
+                        <div class="swiper-slide">
+                            <div class="ms_rcnt_box">
+                                <div class="ms_rcnt_box_img">
+                                    <img src="${pageContext.request.contextPath}/upload/${list.image_240}" alt="">
+                                    <div class="ms_main_overlay">
+                                        <div class="ms_box_overlay"></div>
+                                        <div class="ms_play_icon album_play_button" id="playAbno_${list.abno}">
+                                        <a href="javascript:void(0)">
+                                            <img src="../images/svg/play.svg" alt="">
+                                        </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms_rcnt_box_text">
+                                    <h3><a href="album_single?abno=${list.abno}&pageName=menu_album">${list.name} </a></h3>
+
+                                    <p>${list.singer}</p>
+                                </div>
+                            </div>
+                        </div>
+                     </c:forEach>
+                     <!-- featured albums end -->    
+                    </div>
+                </div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next3 slider_nav_next"></div>
+                <div class="swiper-button-prev3 slider_nav_prev"></div>
+                </c:if>
+                <c:if test="${empty albumList}">
+                	<p>검색 가능한 정보가 없습니다</p>
+                </c:if>
+            </div>
+            </div>
+						<!--- Search section end --->
 					</div>
 		
         <!----Footer Start---->

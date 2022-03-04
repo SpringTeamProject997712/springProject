@@ -73,6 +73,11 @@ public class AlbumServiceImpl implements AlbumService {
 	}
 	
 	@Override
+	public List<AlbumVO> selectAlbumWithKeyword(String word){
+		return mapper.selectAlbumWithKeyword(word);
+	}
+	
+	@Override
 	public int updateAlbum(AlbumVO avo) {
 		int result = mapper.updateAlbum(avo);
 		return result;

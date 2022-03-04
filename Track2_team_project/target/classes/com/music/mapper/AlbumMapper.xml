@@ -26,6 +26,12 @@
 		]]>
 	</select>
 	
+	<select id="selectAlbumWithKeyword" resultType="com.music.domain.AlbumVO">
+		<![CDATA[
+			select /*+ index_desc(album_m album_m_pk) */ * from album_m where abno > 0 and name like '%'||#{word}||'%'
+		]]>
+	</select>
+	
 	<select id="readAlbum" resultType="com.music.domain.AlbumVO">
 		select * from album_m where abno = #{abno}
 	</select>

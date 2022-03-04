@@ -39,6 +39,8 @@ public interface AlbumService {
 	//페이징
 	public PageMaker pagingList(Criteria cri);
 	
+	//앨범 검색
+	public List<AlbumVO> selectAlbumWithKeyword(String word);
 
 	//top15
 	public List<AlbumVO> topAlbums();

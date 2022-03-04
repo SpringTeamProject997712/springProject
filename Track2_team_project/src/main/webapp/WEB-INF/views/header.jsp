@@ -154,8 +154,8 @@
             <div class="ms_header">
                 <div class="ms_top_left">
                     <div class="ms_top_search">
-                    	<form>
-	                      <input type="text" id="track_tracker" class="form-control" placeholder="ミュージック検索">
+                    	<form method="get" name="entire_music_search_form" action="/search/search">
+	                      <input type="text" name="search_keyword" id="track_tracker" class="form-control" placeholder="ミュージック検索">
 	                      <span id="entire_music_searcher" class="search_icon">
 													<img src="/images/svg/search.svg" alt="">
 												</span>

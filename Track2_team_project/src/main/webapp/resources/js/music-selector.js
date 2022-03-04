@@ -1,17 +1,13 @@
 
-	let a="";
-	let b="";
-	$("#entire_music_searcher").off().on("click" , "#selectData" , function jumpKing(){
-		a = $(this).children(".bname").text();
-		b = $(this).children(".bnum").text();
-		if(a=="" || b==""){
-			alert("꺼마워용");
+	$("#entire_music_searcher").off().on("click" , function jumpKing(){
+		let my_form = document.entire_music_search_form;
+		if(document.getElementById('track_tracker').value==""){
+			alert("검색창이 비어있음");
+			return;
 		}else{
-			$("#bookname").val(a);
-			$("#book_num").val(b);
+			my_form.submit();
 		}
-		console.log(a);
-		console.log(b);
+				
 	});
 
 	$("#track_tracker").on("input", function() {
