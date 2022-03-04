@@ -1,5 +1,8 @@
 package com.music.controller;
 
+import java.lang.reflect.Member;
+import java.text.DecimalFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,11 +18,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.music.domain.CartVO;
 import com.music.domain.MemberVO;
 import com.music.domain.Member_authVO;
+import com.music.domain.OrderVO;
+import com.music.domain.OrderdetailVO;
 import com.music.domain.PlaylistVO;
 import com.music.security.domain.CustomUser;
 import com.music.service.AlbumService;
@@ -156,6 +162,12 @@ public class MemberController {
 		return msg;
 	}
 	
+	@GetMapping("/downloads")
+	public void downloadPage() {
+		
+		
+	}
+	
 //=============================마이페이지 컨트롤러 ===================================
 	
 	@GetMapping("/profile")
@@ -210,6 +222,47 @@ public class MemberController {
 		model.addAttribute("cartListDetail",cartListDetail);
 		
 	}
+	
+
+	@RequestMapping(value="/go_pay", method = RequestMethod.POST) 
+	public String orderCart(HttpSession session, OrderVO ovo) {
+		String myName="";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			
+			
+			 Calendar cal = Calendar.getInstance();
+			 int year = cal.get(Calendar.YEAR);
+			 String ym = year + new DecimalFormat("00").format(cal.get(Calendar.MONTH) + 1);
+			 String ymd = ym +  new DecimalFormat("00").format(cal.get(Calendar.DATE));
+			 String subNum = "";
+			 
+			 for(int i = 1; i <= 6; i ++) {
+			  subNum += (int)(Math.random() * 10);
+			 }
+			 
+			String orderId = ymd + "_" + subNum;
+			log.info(orderId);
+			
+			OrderdetailVO odvo = new OrderdetailVO();
+			
+			ovo.setOrderid(orderId);
+			ovo.setId(myName);
+			
+			odvo.setOrderid(orderId);
+			cservice.orderInfo(ovo);
+			cservice.orderInfo_detail(odvo);
+			cservice.cartAllDelete(myName);
+		}
+		
+		
+		
+		
+		return "redirect:/";
+	}
+	
 	
 	
 	@GetMapping("/favourite")

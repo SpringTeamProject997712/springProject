@@ -23,7 +23,7 @@ public interface NoticeMapper {
 	
 	//관리자
 	
-	//관리자 엘범 리스트
+	//관리자 공지 리스트
 	public List<NoticeVO> viewNoticeListWithPaging(Criteria cri);
 		
 	//수정 보기
@@ -32,7 +32,10 @@ public interface NoticeMapper {
 	//페이징
 	public int countNotice(Criteria cri);
 		
-	//앨범 수정
+	//공지 수정
 	public int updateNotice(NoticeVO nvo);
+	
+	//공지 삭제
+	public int deleteNotice(int wbno);
 	
 }

@@ -38,13 +38,5 @@ public class NoticeController {
 		
 	}
 	
-	@PostMapping("/notice_uploadpro")
-	public String insertNotice(NoticeVO notice) {
-		service.insertNotice(notice);
-				
-		return "/notice";
-	}
-	
-	
 	
 }

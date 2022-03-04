@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartRequest;
 
 import com.music.domain.NoticeVO;
 import com.music.mapper.NoticeMapper;
 import com.music.utility.Criteria;
 import com.music.utility.PageMaker;
+import com.music.utility.UploadFileUtil;
 
 import lombok.AllArgsConstructor;
 import lombok.Setter;
@@ -16,6 +18,7 @@ import lombok.Setter;
 @Service
 @AllArgsConstructor
 public class NoticeServiceImpl implements NoticeService {
+	
 		
 	@Setter(onMethod_= @Autowired)
 	private NoticeMapper mapper;
@@ -23,6 +26,7 @@ public class NoticeServiceImpl implements NoticeService {
 	@Override
 	public void insertNotice(NoticeVO notice) {
 		mapper.insertNotice(notice);
+		
 	}
 
 	@Override
@@ -62,6 +66,11 @@ public class NoticeServiceImpl implements NoticeService {
 	@Override
 	public NoticeVO viewNoticeList(int wbno) {
 		return mapper.viewNotice(wbno);
+	}
+	
+	@Override
+	public int deleteNotice(int wbno) {
+		return mapper.deleteNotice(wbno);
 	}
 	
 }

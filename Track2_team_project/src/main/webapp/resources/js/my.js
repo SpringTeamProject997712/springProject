@@ -224,6 +224,11 @@ function go_reset() {
 	  });
 }
 
+function go_pay() {
+	document.payForm.action = "/member/go_pay";
+	document.payForm.submit();
+}
+
 function findAddr(){ //우편번호 찾기
 	new daum.Postcode({
         oncomplete: function(data) {

@@ -62,5 +62,23 @@
   and p.pbno = c.pbno and id=#{id}
 	</select>
 	
-
+	<insert id="orderInfo">
+		insert into order_m ( 
+			orderid, id, orderdate, amount 
+		) values ( 
+			#{orderid}, #{id}, sysdate, #{amount}
+		)
+	</insert>
+	
+	<insert id="orderInfo_detail">
+		insert into orderdetail_m ( 
+			odbno, orderid, pbno, quantity, result 
+		) select orderdetail_m_seq.nextval, #{orderid}, pbno, quantity, result 
+		from cart_m
+	</insert>
+	
+	<delete id="cartAllDelete">
+		delete cart_m where id = #{id}
+	</delete>
+	
 </mapper>

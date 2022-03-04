@@ -13,10 +13,10 @@
 
   	<insert id="insertNotice">
   		<selectKey keyProperty="wbno" order="BEFORE" resultType="int">
-  			select board_m _seq.nextval from dual
+  			select board_m_seq.nextval from dual
   		</selectKey>
   		insert into board_m  (wbno, id, bbno, header, title, content, indate, viewcount, filename) 
-		values (#{wbno},#{id},#{bbno},#{header},#{title},#{content},sysdate,#{viewcount},#{filename})
+		values (#{wbno},#{id},#{bbno},#{header},#{title},#{content}, sysdate, 0, #{filename})
   	</insert>
   	
   	<select id="listNotice" resultType="com.music.domain.NoticeVO">
@@ -63,5 +63,9 @@
 		id =#{id}, bbno=#{bbno}, header=#{header}, title=#{title}, content=#{content}, indate=#{indate}, filename=#{filename} 
 		where wbno = #{wbno}
 	</update>
+	
+	<delete id="deleteNotice">
+		delete from board_m where wbno = #{wbno}
+	</delete>
   	
 </mapper>

@@ -3,6 +3,8 @@ package com.music.mapper;
 import java.util.List;
 
 import com.music.domain.CartVO;
+import com.music.domain.OrderVO;
+import com.music.domain.OrderdetailVO;
 
 public interface CartMapper {
 	
@@ -19,4 +21,10 @@ public interface CartMapper {
 	public List<CartVO> viewCartlist(String id);
 	//카트 통으로 삭제
 	public int deleteCart(String id);
+	
+	public void orderInfo(OrderVO ovo);
+	
+	public void orderInfo_detail(OrderdetailVO odvo);
+	
+	public void cartAllDelete(String id);
 }

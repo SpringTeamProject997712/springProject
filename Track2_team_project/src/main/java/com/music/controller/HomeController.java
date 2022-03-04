@@ -19,7 +19,7 @@ import lombok.extern.log4j.Log4j;
 @Controller
 @AllArgsConstructor
 @Log4j
-public class HomeController {
+public class HomeController {	
 	
 	@Setter(onMethod_= @Autowired)
 	private AlbumService service;

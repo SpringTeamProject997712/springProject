@@ -43,6 +43,7 @@
 											</tr>
 										</thead>
 										</tbody>
+										<c:set var="sum" value="0"/>
 										<c:forEach var="cartList" items="${cartList}">
 											<c:if test="${cartList.category eq '1'}">
 											<tr class="slideDown-details" id="${cartList.cbno}">
@@ -96,6 +97,7 @@
 																	</ul>
 																	<c:set value="${d_num+1}" var="d_num"/>
 																</c:if>
+																
 															</c:forEach>
 														</li>
 													</ul>
@@ -133,6 +135,12 @@
 												</td>
 											</tr>
 											</c:if>
+										<c:if test="${cartList.category eq '1'}">
+											<c:set var="sum" value="${sum + cartList.aprice}"/>
+										</c:if>
+										<c:if test="${cartList.category eq '2'}">
+											<c:set var="sum" value="${sum + cartList.tprice}"/>
+										</c:if>
 										</c:forEach>
 
 
@@ -146,8 +154,12 @@
 											<button class="ms_btn btn-outline-primary" type="submit">Apply</button>
 										</form>
 									</div>
-									<div class="column text-lg">
-										Subtotal: <span class="text-medium">$289.68</span>
+									
+									<div class="column text-lg" style="color:white;">
+										Subtotal: <span class="text-medium">
+										<fmt:setLocale value="ja_jp" />
+										<fmt:formatNumber type="currency" value="${sum}" currencySymbol="￥" maxFractionDigits="0" />
+										</span>
 									</div>
 								</div>
 								<div class="shopping-cart-footer">
@@ -155,8 +167,14 @@
 										<a class="ms_btn btn-outline-secondary" href="#"><i class="icon-arrow-left"></i>&nbsp;Back</a>
 									</div>
 									<div class="column">
-										<a class="ms_btn btn-primary" href="#" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart" data-toast-message="is updated successfully!">Update Cart</a>
-										<a class="ms_btn btn-success" href="#">Checkout</a>
+<!-- 										<a class="ms_btn btn-primary" href="javascript:go_pay()" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart" data-toast-message="is updated successfully!">Update Cart</a> -->
+										<form action="/member/go_pay" method="post">
+										<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+											<input type="text" name="amount" value="${sum }">
+											<input type="text" name="id" value="${principal.member.name}">
+											<input type="submit">
+										</form>
+										<a class="ms_btn btn-success" href="javascript:;" data-toggle="modal" data-target="#pay_modal">Checkout</a>
 									</div>
 								</div>
 							</div>
@@ -168,5 +186,6 @@
 	</div>
 </div>
 </div>
+
 
 <%@include file="../footer.jsp"%>
