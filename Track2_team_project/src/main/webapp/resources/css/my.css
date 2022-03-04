@@ -228,10 +228,29 @@ cursor: pointer;
 	color:#FFF;
 }
 
+<<<<<<< HEAD
 html {
+=======
+.share-modal{
+	 width:400px;
+}
+.share-modal li{
+	list-style:none;
+}
+.share-modal span{ 
+	color:white; 
+}
+.move_top {
+>>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 	scroll-behavior: smooth;
 }
 
+ul.sns > li {
+	padding: 10px;
+	margin-top: 15px;
+}
 
-
-
+a.btn-copyToClipboard{
+	margin-top: 15px;
+	
+}

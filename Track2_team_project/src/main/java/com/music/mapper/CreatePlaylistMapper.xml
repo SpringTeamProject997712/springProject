@@ -16,11 +16,11 @@
 	</select>
 	
 	<select id="selectPlaylist" resultType="com.music.domain.PlaylistVO">
-		select * from view_playlist where plbno = #{plbno} order by pdbno
+		select * from view_playlist where plbno = #{plbno} order by pdbno asc
 	</select>
 	
 	<select id="selectOnePlaylist" resultType="com.music.domain.ViewPlaylistDetailVO">
-		select * from view_playlist_detail where plbno = #{plbno}
+		select * from view_playlist_detail where plbno = #{plbno} order by pdbno asc
 	</select>
 	
 	<select id="selectPlaylistwithId" resultType="com.music.domain.PlaylistVO">
@@ -30,7 +30,7 @@
 	<select id="readPlaylistsWithId" resultType="com.music.domain.PlaylistVO">
 		select pl.name as name, pl.id as id, pl.plbno as plbno, count(pd.pdbno) as pdbno  
     from playlist_detail_m pd, playlist_m pl
-    where pl.plbno = pd.plbno(+)
+    where pl.plbno = pd.plbno(+) 
 		group by pl.name, pl.id, pl.plbno
 		having id = #{id}
 	</select>

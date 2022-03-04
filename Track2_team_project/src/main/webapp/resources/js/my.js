@@ -116,6 +116,26 @@ function go_writemusic() {
 	theForm.submit();
 }
 
+function now_login_checker(){
+	let now_login_flag=0;
+	
+	$.ajax({
+    	type:"get",
+    	url:"/member/loginChecker",
+    	async:false,
+    	success:function(data){
+    		console.log("나온 값 : "+data);
+    		if(data != '1'){
+    		now_login_flag=data;
+    		}		
+    	},error:function(xhr,status,error){
+    		console.log("xhr : "+xhr.status+"\n text : "+xhr.responseText+"\n error : "+error);
+    	}
+	});
+	
+	return now_login_flag;
+}
+
 //업로드 스크립트
 function go_upload_album() {
 	if(upload_album.uploadImage.value=="") {
@@ -203,16 +223,6 @@ function go_reset() {
 
 	  });
 }
-
-
-function go_reset() {
-	$('form').each(function() {
-
-	      this.reset();
-
-	  });
-}
-
 
 function findAddr(){ //우편번호 찾기
 	new daum.Postcode({
@@ -521,6 +531,8 @@ $("#songname").change(function(e){
 
 //API 끝
 
+
+
 $(".add_track_to_playlist").on("click",function(z){
 	z.preventDefault();
 	let tbno=$(this).parent().parent().parent().find('div.ms_play_icon').attr('id');
@@ -642,5 +654,37 @@ function go_update(){
 	let form = document.privacyForm;
 	form.action= "/member/updateMember";
 	form.submit();
+}
+
+$(".share_this_page").on("click",  function(){
+	$("#share_this_page").val(document.URL);
+	$("#myModal3").modal();
+});
+
+function copyToClipBoard() {
+
+    var content = document.getElementById('share_this_page');
+    
+    content.select();
+    document.execCommand('copy');
+
+    alert("Copied!");
+}
+
+function fn_sendFB(sns) {
+    var thisUrl = document.URL;
+    var snsTitle = "Miraculos - listen music";
+    if( sns == 'facebook' ) {
+        var url = "http://www.facebook.com/sharer/sharer.php?href="+encodeURIComponent(thisUrl);
+        window.open(url, "", "width=520, height=286"); //로컬 서버가 아니면 href ===> u 로 바꿔야함
+    }
+    else if( sns == 'twitter' ) {
+        var url = "http://twitter.com/share?url="+encodeURIComponent(thisUrl)+"&text="+encodeURIComponent(snsTitle);
+        window.open(url, "tweetPop", "width=520, height=286,scrollbars=yes");
+    }
+    else if( sns == 'band' ) {
+        var url = "http://www.band.us/plugin/share?body="+encodeURIComponent(snsTitle)+"&route="+encodeURIComponent(thisUrl);
+        window.open(url, "shareBand", "width=500, height=500, resizable=yes");
+	}
 }
 

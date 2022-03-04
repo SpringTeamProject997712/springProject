@@ -33,8 +33,7 @@
                     <span><img src="/images/svg/more.svg" alt=""></span>
                 </div>
                 <ul class="more_option">
-                    <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                    <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
+                    <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                 </ul>
             </div>
             <!----Song List---->
@@ -57,7 +56,7 @@
 						<li><a class="play_track_in_album" id="${viewOne.tbno}" href="javascript:void(0)"><span class="play_no">${num}</span><span class="play_hover"></span></a></li>
 						<li><a href="#">${viewOne.tname}</a></li>
 						<li><a href="#">${viewOne.singer}</a></li>
-						<li class="text-center"><a href="#">5:26</a></li>
+						<li class="text-center"><a href="#">${viewOne.length}</a></li>
 						<li class="text-center"><a href="javascript:void(0);" class="fav_box" id="pbno_${viewOne.pbno}"><span class="ms_icon1 ms_fav_icon"></span></a></li>
 						<li class="text-center ms_more_icon"><a href="javascript:void(0)" class="remove_single_track_in_playlist"><img alt="" src="/images/svg/close.svg"></a></li>
 						<c:set value="${num+1}" var="num"/>
@@ -415,7 +414,7 @@
 
                                         <div class="ms_song_overlay">
                                         </div>
-                                        <div class="ms_play_icon" id="${newly.tbno}">
+                                        <div class="ms_play_icon instantly_play_track" id="${newly.tbno}">
                                         
                                             <img src="/images/svg/play.svg" alt="">
                                         

@@ -106,7 +106,7 @@ public class CreatePlaylistController {
 	public String addRandomPlayList(PlaylistVO vo) {
 		
 		List<jPlayerVO> plist = new ArrayList<jPlayerVO>(); //여기에 담아서 리턴함
-		
+		String json ="";
 		//menu 숫자에 따라 처리함
 		//1: track에서 다섯개 뽑아서 반환
 		//2: basic_playlist 반환
@@ -119,10 +119,12 @@ public class CreatePlaylistController {
 			vo.setId(user.getUsername());
 		}
 		
-		plist = service.selectMethod(vo);
+		if(!(auth.getPrincipal().equals("anonymousUser")) || vo.getMenu()==1) {
+			plist = service.selectMethod(vo);
+		}
 		
 		Gson gson = new Gson();
-		String json = gson.toJson(plist);
+		json = gson.toJson(plist);
 		log.info("확ㅡ인 : "+json);
 //		받은 plist를 json형식의 string으로 변환해 ajax로 반환한다.
 		
