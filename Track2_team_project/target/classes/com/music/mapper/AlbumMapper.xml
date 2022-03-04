@@ -70,7 +70,7 @@
   	
 <!--   	어드민 -->
   	<select id="viewAlbum" resultType="com.music.domain.AlbumVO">
-			select * from 
+			select * from 	
 		( 
 			select /*+ index_desc(album_m album_m_pk) */ rownum rn, abno, name, singer, detail, price, image, image_240, image_50, regdate, pbno from album_m 
 			)

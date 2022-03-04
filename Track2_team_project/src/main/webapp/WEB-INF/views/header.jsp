@@ -177,7 +177,7 @@
                     <sec:authorize access="isAuthenticated()">
                     	<sec:authentication property="principal" var="principal"/>
 											<div class="ms_top_btn">
-	                      <a href="/upload/upload" class="ms_btn">upload</a>
+	                      <a href="/upload/upload?pageName=menu_main" class="ms_btn">upload</a>
 	                      <a href="javascript:;" class="ms_admin_name">Hello ${principal.member.name} 
 	                      	<span class="ms_pro_name">${principal.member.name.substring(0,1)}</span>
 												</a>
@@ -217,7 +217,7 @@
 	    			$("#activefrm").attr("action", "/member/my_cart");
 	    			$("#pageName").val(menu);
 	    		}else if(menu === "menu_purchased"){
-	    			$("#activefrm").attr("action", "/downloads/downloads");
+	    			$("#activefrm").attr("action", "/member/downloads");
 	    			$("#pageName").val(menu);
 	    		}else if(menu === "menu_favourite"){
 	    			$("#activefrm").attr("action", "/member/favourite");

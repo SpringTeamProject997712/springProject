@@ -156,6 +156,12 @@ public class MemberController {
 		return msg;
 	}
 	
+	@GetMapping("/downloads")
+	public void downloadPage() {
+		
+		
+	}
+	
 //=============================마이페이지 컨트롤러 ===================================
 	
 	@GetMapping("/profile")

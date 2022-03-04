@@ -228,7 +228,7 @@ cursor: pointer;
 	color:#FFF;
 }
 
-.move_top {
+html {
 	scroll-behavior: smooth;
 }
 

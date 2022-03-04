@@ -2,6 +2,7 @@
 
 <!----Footer Start---->
 <form id="activefrm" method="get" action="">
+<%-- 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"> --%>
 	<input type="hidden" id="pageName" name="pageName">
 </form>
 <div class="ms_footer_wrapper">
