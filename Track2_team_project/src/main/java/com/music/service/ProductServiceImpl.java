@@ -99,7 +99,7 @@ public class ProductServiceImpl implements ProductService {
 				List<AlbumVO> alist = aMapper.readAlbum_single(aMapper.selectAlbumWithPbno(myCartPvo.getPbno()).getAbno());
 				
 				for(int j=0; j<alist.size(); j++) {
-					cartPbnoList.add(alist.get(i).getPbno()); //앨범 안에 있는 트랙들의 pbno를 전부 리스트에 담는다.
+					cartPbnoList.add(alist.get(j).getPbno()); //앨범 안에 있는 트랙들의 pbno를 전부 리스트에 담는다.
 				}
 				
 			}else {

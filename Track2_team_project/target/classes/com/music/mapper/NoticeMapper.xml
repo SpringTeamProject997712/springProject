@@ -13,7 +13,7 @@
 
   	<insert id="insertNotice">
   		<selectKey keyProperty="wbno" order="BEFORE" resultType="int">
-  			select board_m _seq.nextval from dual
+  			select board_m_seq.nextval from dual
   		</selectKey>
   		insert into board_m  (wbno, id, bbno, header, title, content, indate, viewcount, filename) 
 		values (#{wbno},#{id},#{bbno},#{header},#{title},#{content},sysdate,0,#{filename})
