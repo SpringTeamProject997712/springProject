@@ -5,14 +5,27 @@
                 <h1>Edit Profile</h1>
                 <div class="ms_profile_box">
                     <div class="ms_pro_img">
-                        <img src="/images/pro_img.jpg" alt="" class="img-fluid">
-                        <div class="pro_img_overlay">
+                        <img src="/upload/${memberList.image}" id="my_profile_img" alt="" class="img-fluid">
+                        <div class="pro_img_overlay" id="target_img">
                             <i class="fa_icon edit_icon"></i>
                         </div>
                     </div>
                     <div class="ms_pro_form">
-                    	<form name="privacyForm" method="post" class="row g-3" style="padding:30px">
+                    	<form name="privacyForm" method="post" class="row g-3" style="padding:30px" enctype="multipart/form-data">
+                    		<input type="hidden" name="target_url">
 		                		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+		                		<input type="file" accept=".png, .jpg" name="uploadImage" id="this_file" style="display: none;">
+		                		<script>
+												  $("#this_file").change(function(){
+												   if(this.files && this.files[0]) {
+												    var reader = new FileReader;
+												    reader.onload = function(data) {
+												     $("#my_profile_img").attr("src", data.target.result).width(155);        
+												    }
+												    reader.readAsDataURL(this.files[0]);
+												   }
+												  });
+												</script>
 											  <div class="col-md-6 form-group">
 											    <label for="member_id">ID</label>
 											    <input class="form-control" name="id" id="member_id" type="text" value="${memberList.id}" readonly="readonly">
@@ -63,3 +76,10 @@
        </div>
         <!----Footer Start---->
 		<%@ include file="../footer.jsp" %>
+		<script>
+		$('#target_img').click(function (e) {
+		    document.privacyForm.target_url.value = document.getElementById( 'my_profile_img' ).src;
+		    e.preventDefault();
+		    $('#this_file').click();
+		}); 
+		</script>

@@ -58,4 +58,8 @@ public interface MemberService {
 	public int insertAuth(Member_authVO vo);
 	//좋아요 리스트 보기
 	public List<FavouriteVO> favouritesView(String id);
+	//이것저것
+	public ViewPlaylistDetailVO myPlaylistView(int plbno);
+	//플레이리스트 이미지 가져오기
+	public ViewPlaylistDetailVO selectPlaylistImage(int plbno);
 }

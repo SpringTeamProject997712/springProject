@@ -11,6 +11,7 @@
 		<result property="phone" column="phone"/>
 		<result property="email" column="email"/>
 		<result property="zipnum" column="zipnum"/>
+		<result property="image" column="image"/>
 		<result property="address1" column="address1"/>
 		<result property="address2" column="address2"/>
 		<result property="regdate" column="regdate" javaType="java.util.Date"/>
@@ -30,8 +31,8 @@
 	</sql>
 	
 	<insert id="registMember">
-		insert into member_m (id,pw,nickname,name,phone,email,address1,address2, zipnum)
-		values (#{id},#{pw},'임시',#{name},'임시','임시','임시','임시', '임시')
+		insert into member_m (id,pw,nickname,name,phone,email,address1,address2, zipnum,image)
+		values (#{id},#{pw},'임시',#{name},'임시',#{id},'임시','임시', '임시', 'default_user.png')
 	</insert>
 	<insert id="registMemberAuth">
 		insert into member_auth_m (id, auth)
@@ -39,7 +40,7 @@
 	</insert>
 	
 	<select id="viewMember" resultMap="memberTableMap">
-		select m.id as id, pw, name, zipnum, nickname, active, phone, email, address1, address2, regdate, auth 
+		select m.id as id, pw, name, zipnum, nickname, active, phone, image, email, address1, address2, regdate, auth 
 		from member_m m LEFT OUTER JOIN member_auth_m auth
 		ON m.id = auth.id
 		where m.id= #{id}
@@ -79,7 +80,7 @@
 	
 	<update id="updateMember">
 		update member_m set name=#{name}, address1=#{address1}, address2=#{address2}, 
-		zipnum=#{zipnum}, active=#{active}, phone=#{phone} 
+		zipnum=#{zipnum}, active=#{active}, phone=#{phone} , image=#{image}
 		where id=#{id}
 	</update>
 	
