@@ -1,5 +1,8 @@
 package com.music.controller;
 
+import java.lang.reflect.Member;
+import java.text.DecimalFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -8,16 +11,21 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.music.domain.CartVO;
 import com.music.domain.MemberVO;
 import com.music.domain.Member_authVO;
+import com.music.domain.OrderVO;
+import com.music.domain.OrderdetailVO;
 import com.music.domain.PlaylistVO;
 import com.music.security.domain.CustomUser;
 import com.music.service.AlbumService;
@@ -66,6 +74,18 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
+	@PostMapping("/id_pw_checker")
+	public String use_id_pw_checker(String your_email,String your_pw) {
+		String result = "redirect:/member/profile?id="+your_email;
+		log.info("너 나한테 불만있어!!!!");
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		if( encoder.matches(your_pw, service.viewMember(your_email).getPw())) {
+			result = "redirect:/member/inner_profile?id="+your_email;
+		}
+		
+		return result;
+	}
+	
 	//이 아이디가 이미 등록된 아이디인가
 	@ResponseBody
 	@GetMapping(value = "/checkId")
@@ -79,9 +99,16 @@ public class MemberController {
 	
 	//멤버수정
 	@PostMapping("/updateMember")
-	public String updateMember(MemberVO mvo) {
+	public String updateMember(MemberVO mvo, int your_home) {
 		service.updateMember(mvo);
-		return "redirect:/admin/member/view_member?id="+mvo.getId();
+		String go_home="";
+		if(your_home==1) {
+			go_home="redirect:/member/inner_profile?id="+mvo.getId();
+		}else if(your_home==0) {
+			go_home="redirect:/admin/member/view_member?id="+mvo.getId();
+		}
+		
+		return go_home;
 	}
 	
 	//권한수정
@@ -135,10 +162,23 @@ public class MemberController {
 		return msg;
 	}
 	
+	@GetMapping("/downloads")
+	public void downloadPage() {
+		
+		
+	}
+	
 //=============================마이페이지 컨트롤러 ===================================
 	
 	@GetMapping("/profile")
 	public void viewProfile(String id,Model model) {
+		MemberVO mvo = service.viewMember(id);
+		
+		model.addAttribute("memberList",mvo);
+	}
+	
+	@GetMapping("/inner_profile")
+	public void viewRealProfile(String id,Model model) {
 		MemberVO mvo = service.viewMember(id);
 		
 		model.addAttribute("memberList",mvo);
@@ -163,6 +203,7 @@ public class MemberController {
 		model.addAttribute("countTrack", service.countTrack(plbno));
 		model.addAttribute("newly",aservice.newly());
 		model.addAttribute("this_plbno",plbno);
+		model.addAttribute("justPlaylist",pservice.selectJustOnePlaylist(plbno));
 	}
 	
 	@GetMapping("/my_cart")
@@ -181,6 +222,48 @@ public class MemberController {
 		model.addAttribute("cartListDetail",cartListDetail);
 		
 	}
+	
+
+	@RequestMapping(value="/go_pay", method = RequestMethod.POST) 
+	public String orderCart(HttpSession session, OrderVO ovo) {
+		String myName="";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			
+			
+			 Calendar cal = Calendar.getInstance();
+			 int year = cal.get(Calendar.YEAR);
+			 String ym = year + new DecimalFormat("00").format(cal.get(Calendar.MONTH) + 1);
+			 String ymd = ym +  new DecimalFormat("00").format(cal.get(Calendar.DATE));
+			 String subNum = "";
+			 
+			 for(int i = 1; i <= 6; i ++) {
+			  subNum += (int)(Math.random() * 10);
+			 }
+			 
+			String orderId = ymd + "_" + subNum;
+			log.info(orderId);
+			
+			OrderdetailVO odvo = new OrderdetailVO();
+			
+			ovo.setOrderid(orderId);
+			ovo.setId(myName);
+			
+			odvo.setOrderid(orderId);
+			odvo.setUserId(myName);
+			cservice.orderInfo(ovo);
+			cservice.orderInfo_detail(odvo);
+			cservice.cartAllDelete(myName);
+		}
+		
+		
+		
+		
+		return "redirect:/";
+	}
+	
 	
 	
 	@GetMapping("/favourite")

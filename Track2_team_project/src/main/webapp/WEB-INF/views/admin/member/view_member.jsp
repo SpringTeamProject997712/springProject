@@ -57,6 +57,7 @@
 									      <option value="0" selected>활성화</option>
 									      <option value="1">비활성화</option>
 									    </select>
+									    <input name="your_home" type="hidden" value="0">
 									  </div>
 									  <div class="col-12">
 									   <!--  <div class="form-check">

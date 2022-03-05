@@ -2,11 +2,12 @@
 
 <!----Footer Start---->
 <form id="activefrm" method="get" action="">
+<%-- 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"> --%>
 	<input type="hidden" id="pageName" name="pageName">
 </form>
 <div class="ms_footer_wrapper">
 	<div class="ms_footer_logo">
-		<a href="/"><img src="/images/open_logo.png" alt=""></a>
+		<a href="#" class="move_top"><img src="/images/open_logo.png" alt=""></a>
 	</div>
 	<div class="ms_footer_inner">
 		<div class="row">
@@ -301,6 +302,44 @@
 			</div>
 		</div>
 	</div>
+<!-- 	결제 모달 -->
+	<div id="pay_modal" class="modal  centered-modal" role="dialog">
+		<div class="modal-dialog login_dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<button type="button" class="close" data-dismiss="modal">
+					<i class="fa_icon form_close"></i>
+				</button>
+				<div class="modal-body">
+					<div class="ms_register_form">
+						<h2>お買い上げ</h2>
+						<form method="post" name="payForm">
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+							<div class="form-group">
+								<input type="text" name="id" value="" class="form-control">
+								<span class="form_icon"> <i class="fa_icon form-envelope" aria-hidden="true"></i>
+								</span>
+							</div>
+							<div class="form-group">
+								<input type="text" name="amount" placeholder="${sum }" class="form-control">
+								<span class="form_icon"> <i class="fa_icon form-lock" aria-hidden="true"></i>
+								</span>
+							</div>
+							<div class="remember_checkbox">
+								<label>ログイン情報キープ <input type="checkbox" id="saveBtn">
+								<span class="checkmark"></span>
+								</label>
+							</div>
+							<a href="javascript:go_pay()" class="ms_btn">ログイン</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
 	<div id="myModal2" class="modal  centered-modal" role="dialog">
 		<div class="modal-dialog login_dialog">
 			<!-- Modal content-->
@@ -331,46 +370,28 @@
 			</div>
 		</div>
 	</div>
-</div>
-
-<!----Language Selection Modal---->
-<div class="ms_lang_popup">
-	<div id="lang_modal" class="modal  centered-modal" role="dialog">
-		<div class="modal-dialog">
+	<div id="myModal3" class="modal centered-modal" role="dialog">
+		<div class="modal-dialog login_dialog" style="max-width: 400px">
 			<!-- Modal content-->
-			<div class="modal-content">
-				<button type="button" class="close" data-dismiss="modal">
+			<div class="modal-content share-modal">
+				<button type="button" class="close" id="my_modal_close_btn" data-dismiss="modal">
 					<i class="fa_icon form_close"></i>
 				</button>
-				<div class="modal-body">
-					<h1>language selection</h1>
-					<p>Please select the language(s) of the music you listen to.</p>
-					<ul class="lang_list">
-						<li><label class="lang_check_label"> English <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-						<li><label class="lang_check_label"> hindi <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-						<li><label class="lang_check_label"> punjabi <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-						<li><label class="lang_check_label"> French <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-						<li><label class="lang_check_label"> German <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-						<li><label class="lang_check_label"> Spanish <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-						<li><label class="lang_check_label"> Chinese <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-						<li><label class="lang_check_label"> Japanese <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-						<li><label class="lang_check_label"> Arabic <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-						<li><label class="lang_check_label"> Italian <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-					</ul>
-					<div class="ms_lang_btn">
-						<a href="#" class="ms_btn">apply</a>
-					</div>
+				<div class="form-group">
+					<input class="form-control" id="share_this_page" type="text">
+					<a href="javascript:void(0)" class="ms_btn btn-copyToClipboard" onclick="copyToClipBoard()">Copy</a>
 				</div>
+				<ul class="sns">
+				    <li class="facebook">
+				    <a href="#n" onclick="fn_sendFB('facebook');return false;" class="facebook" target="_self" title="페이스북 새창열림"><i class="fa-brands fa-facebook"></i><span class="skip">페이스북</span></a>
+				    </li>
+				    <li class="twitter">
+				    <a href="#n" onclick="fn_sendFB('twitter');return false;" class="twitter" target="_self" title="트위터 새창열림"><i class="fa-brands fa-twitter"></i><span class="skip">트위터</span></a>
+				    </li>
+				    <li class="band">
+				    <a href="#n" onclick="fn_sendFB('band');return false;" class="band" target="_self" title="네이버밴드 새창열림"><i class="fa-solid fa-b"></i><span class="skip">네이버밴드</span></a>
+				    </li>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -498,7 +519,7 @@ $(".add_track_to_cart").click(function() {
 				alert("중복임");
 			}else{
 				$("#myModal1").modal();
-				alert("로그인이 필요합니다");s
+				alert("로그인이 필요합니다");
 			}
 		},
 		error : function(xhr,status,err) {

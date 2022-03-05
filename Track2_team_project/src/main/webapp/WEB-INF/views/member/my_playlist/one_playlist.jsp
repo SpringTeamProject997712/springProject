@@ -8,13 +8,18 @@
         <div class="ms_album_single_wrapper">
             <div class="album_single_data abno_${view[0].abno}">
                 <div class="album_single_img">
+                	<c:if test="${not empty view[0].image}">
                     <img src="${pageContext.request.contextPath}/upload/${view[0].image}" alt="" class="img-fluid">
+                  </c:if>
+                  <c:if test="${empty view[0].image}">
+                    <img src="/images/user1.jpg" alt="" class="img-fluid">
+                  </c:if>
                 </div>
                 <input type="hidden" id="this_plbno" value="${this_plbno}">
                 <div class="album_single_text">
-                    <h2><input type="text" class="playlist-name" id="playlist-name" value="${view[0].name}" ><a href="javascript:void(0)" class="ms_btn rename_button" onclick="modify_playlist_name()"><span class="play_all">Rename</span></a></h2>
+                    <h2><input type="text" class="playlist-name" id="playlist-name" value="${justPlaylist.name}" ><a href="javascript:void(0)" class="ms_btn rename_button" onclick="modify_playlist_name()"><span class="play_all">Rename</span></a></h2>
                     
-                    <p class="singer_name">By - ${view[0].id}</p>
+                    <p class="singer_name">By - ${justPlaylist.id}</p>
                     <div class="album_feature">
                         <a href="#" class="album_date">${countTrack} songs | 25:10</a>
                         <a href="#" class="album_date"></a>
@@ -28,8 +33,7 @@
                     <span><img src="/images/svg/more.svg" alt=""></span>
                 </div>
                 <ul class="more_option">
-                    <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                    <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
+                    <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                 </ul>
             </div>
             <!----Song List---->
@@ -52,7 +56,7 @@
 						<li><a class="play_track_in_album" id="${viewOne.tbno}" href="javascript:void(0)"><span class="play_no">${num}</span><span class="play_hover"></span></a></li>
 						<li><a href="#">${viewOne.tname}</a></li>
 						<li><a href="#">${viewOne.singer}</a></li>
-						<li class="text-center"><a href="#">5:26</a></li>
+						<li class="text-center"><a href="#">${viewOne.length}</a></li>
 						<li class="text-center"><a href="javascript:void(0);" class="fav_box" id="pbno_${viewOne.pbno}"><span class="ms_icon1 ms_fav_icon"></span></a></li>
 						<li class="text-center ms_more_icon"><a href="javascript:void(0)" class="remove_single_track_in_playlist"><img alt="" src="/images/svg/close.svg"></a></li>
 						<c:set value="${num+1}" var="num"/>
@@ -410,7 +414,7 @@
 
                                         <div class="ms_song_overlay">
                                         </div>
-                                        <div class="ms_play_icon" id="${newly.tbno}">
+                                        <div class="ms_play_icon instantly_play_track" id="${newly.tbno}">
                                         
                                             <img src="/images/svg/play.svg" alt="">
                                         

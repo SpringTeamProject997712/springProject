@@ -25,4 +25,6 @@ public class ViewPlaylistDetailVO {
 	private int aprice;
 	private String image;
 	private Date regdate; 
+	private int duration;
+	private String length;
 }

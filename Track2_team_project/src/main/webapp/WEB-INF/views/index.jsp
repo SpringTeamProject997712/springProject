@@ -352,11 +352,10 @@
 																</span>
                                 </div>
                                 <ul class="more_option">
-                                    <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
                                     <li><a href="javascript:void(0)" class="add_queue_one_track_top"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
                                     <li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
                                     <li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                    <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
+                                    <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                 </ul>
                             </div>
 							
@@ -381,7 +380,7 @@
                                             <img src="${pageContext.request.contextPath}/upload/${top.image_50}" alt="">
                                             <div class="ms_song_overlay">
                                             </div>
-                                            <div class="ms_play_icon" id="${top.tbno}">
+                                            <div class="ms_play_icon instantly_play_track" id="${top.tbno}">
                                                 <img src="../images/svg/play.svg" alt="">
                                             </div>
                                         </div>
@@ -399,11 +398,10 @@
 																</span>
                                 </div>
                                 <ul class="more_option">
-                                    <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
                                     <li><a href="javascript:void(0)" class="add_queue_one_track_top"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
                                     <li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
                                     <li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                    <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
+                                    <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                 </ul>
                             </div>
 
@@ -427,7 +425,7 @@
                                             <img src="${pageContext.request.contextPath}/upload/${top.image_50}" alt="">
                                             <div class="ms_song_overlay">
                                             </div>
-                                            <div class="ms_play_icon" id="${top.tbno}">
+                                            <div class="ms_play_icon instantly_play_track" id="${top.tbno}">
                                                 <img src="../images/svg/play.svg" alt="">
                                             </div>
                                         </div>
@@ -444,11 +442,10 @@
 																</span>
                                 </div>
                                 <ul class="more_option">
-                                    <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                    <li><a href="javascript:void(0)" class="add_queue_one_track_top"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                    <li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                    <li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                    <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
+                                  <li><a href="javascript:void(0)" class="add_queue_one_track_top"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
+                                  <li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
+                                  <li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
+                                  <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                 </ul>
                             </div>
 
@@ -484,9 +481,9 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
+                                            <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                         </ul>
-                                        <div class="ms_play_icon">
+                                        <div class="ms_play_icon instantly_play_track">
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
                                     </div>
@@ -764,7 +761,7 @@
                             	<img src="/upload/${newly.image_50}" alt="">
                               <div class="ms_song_overlay">
                               </div>
-                              <div class="ms_play_icon" id="${newly.tbno}">
+                              <div class="ms_play_icon instantly_play_track" id="${newly.tbno}">
                                	<img src="/images/svg/play.svg" alt="">
                               </div>
                             </div>
@@ -804,18 +801,8 @@
                                     <img src="${pageContext.request.contextPath}/upload/${list.image_240}" alt="">
                                     <div class="ms_main_overlay">
                                         <div class="ms_box_overlay"></div>
-                                        <div class="ms_more_icon">
-                                             <img src="../images/svg/more.svg" alt="">
-                                        </div>
-                                        <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
-                                        <div class="ms_play_icon" id="${view.tbno}">
-                                        <a href="/album/album_single?abno=${list.abno}">
+                                        <div class="ms_play_icon album_play_button" id="playAbno_${list.abno}">
+                                        <a href="javascript:void(0)">
                                             <img src="../images/svg/play.svg" alt="">
                                         </a>
                                         </div>

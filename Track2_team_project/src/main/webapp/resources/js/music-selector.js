@@ -1,17 +1,13 @@
 
-	let a="";
-	let b="";
-	$("#entire_music_searcher").off().on("click" , "#selectData" , function jumpKing(){
-		a = $(this).children(".bname").text();
-		b = $(this).children(".bnum").text();
-		if(a=="" || b==""){
-			alert("꺼마워용");
+	$("#entire_music_searcher").off().on("click" , function jumpKing(){
+		let my_form = document.entire_music_search_form;
+		if(document.getElementById('track_tracker').value==""){
+			alert("검색창이 비어있음");
+			return;
 		}else{
-			$("#bookname").val(a);
-			$("#book_num").val(b);
+			my_form.submit();
 		}
-		console.log(a);
-		console.log(b);
+				
 	});
 
 	$("#track_tracker").on("input", function() {
@@ -31,9 +27,9 @@
 	    			printData += "<div class='ms_weekly_box'>";
                     printData += "<div class='weekly_left'>";
                     printData += "<div class='w_top_song'>";
-	    			printData += "<div class='w_tp_song_img'><img src='/images/weekly/song1.jpg' alt='' class='img-fluid'>";
+	    			printData += "<div class='w_tp_song_img'><img src='/upload/"+data[i].image_50+"' alt='' class='img-fluid'>";
 	    			printData += "<div class='ms_song_overlay'></div><div class='ms_play_icon'><img src='/images/svg/play.svg' alt=''></div>";
-	    			printData += "</div><div class='w_tp_song_name'><h3><a href='/album/album_single?abno="+data[i].abno+"'>"+data[i].tname+"</a></h3><p>"+data[i].singer+"</p></div></div></div>";
+	    			printData += "</div><div class='w_tp_song_name'><h3><a href='/album/album_single?abno="+data[i].abno+"&pageName=menu_album'>"+data[i].tname+"</a></h3><p>"+data[i].singer+"</p></div></div></div>";
 	    			printData += "<div class='weekly_right'>";
 					printData += "</div></div><div class='ms_divider'></div>";
 	    			//테이블값 넣기
@@ -70,7 +66,7 @@ $("#musicSearcherForPlaylist").on("input", function(){
 	    		printData += "<div class='ms_weekly_box click_for_playlist'>";
                 printData += "<div class='weekly_left'>";
                 printData += "<div class='w_top_song'>";
-	    		printData += "<div class='w_tp_song_img'><img src='/images/weekly/song1.jpg' alt='' class='img-fluid'>";
+	    		printData += "<div class='w_tp_song_img'><img src='/upload/"+data[i].image_50+"' alt='' class='img-fluid'>";
 	    		printData += "<div class='ms_song_overlay'></div><div class='ms_play_icon' id="+data[i].tbno+"><img src='/images/svg/play.svg' alt=''></div>";
 	    		printData += "</div><div class='w_tp_song_name'><h3><a href='javascript:void(0)' onclick='go_add_playlist_this(this.id)' id='tbno_for_playlist_"+data[i].tbno+"'>"+data[i].tname+"</a></h3><p>"+data[i].singer+"</p></div></div></div>";
 	    		printData += "<div class='weekly_right'>";

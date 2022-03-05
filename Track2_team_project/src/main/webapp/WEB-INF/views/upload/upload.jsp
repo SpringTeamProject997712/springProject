@@ -20,19 +20,32 @@
 				<div class="tab-content">
 					<div class="ms_upload_box tab-pane fade show active" id="album">
 						<h2>Upload Album Info</h2>
-						<label for="image"> <img src="../images/svg/upload.svg" alt="image">
-						</label>
-						<div class="ms_upload_btn">
-							<input class="upload-name" value="please upload image" disabled="disabled"> <br>
-							<br> <a href="javascript:void(0);" class="ms_btn"> <label for="image" className="ms_btn">upload Cover</label>
-							</a> <input type="file" name="uploadImage" id="image" accept="image/*" class="form-control" style="display: none">
+						<div class="thumImg">
+							<label for="image">
+								<img src="../images/svg/upload.svg" alt="image" />
+							</label>
 						</div>
-						<!-- 						<span> or </span>	 -->
-						<!-- 						<p>Drag And Drop Album Image File</p> -->
-
-
+						<div class="ms_upload_btn">
+							<input class="upload-name" value="please upload image" disabled="disabled">
+							<br><br>
+							<a href="javascript:void(0);" class="ms_btn"> <label for="image" className="ms_btn">upload Cover</label></a>
+							<input type="file" name="uploadImage" id="image" accept="image/*" class="form-control" style="display: none">
+						</div>
+						<script>
+						  $("#image").change(function(){
+						   if(this.files && this.files[0]) {
+						    var reader = new FileReader;
+						    reader.onload = function(data) {
+						     $(".thumImg img").attr("src", data.target.result).width(240);        
+						    }
+						    reader.readAsDataURL(this.files[0]);
+						   }
+						  });
+						 </script>
 
 					</div>
+
+
 
 					<div class=" marger_top60">
 						<div class="ms_upload_box">
@@ -40,7 +53,7 @@
 								<h1>アルバム情報</h1>
 							</div>
 							<div class="ms_pro_form">
-								<input type="hidden" value="1" id="category" name="category">
+								<input type="hidden" value="1" name="category">
 								<div class="form-group">
 									<label>アルバム名 *</label> <input type="text" name="name" placeholder="" class="form-control">
 								</div>
@@ -58,7 +71,7 @@
 								</div>
 
 
-								<input type="hidden" name="pbno" value="${pbno}" class="form-control">
+								<input type="hidden" name="pbno" value="${nextPbno}" class="form-control">
 
 
 								<div class="pro-form-btn text-center marger_top15">
@@ -99,7 +112,7 @@
 								<h1>トラック情報</h1>
 							</div>
 							<div class="ms_pro_form">
-								<input type="hidden" value="2" id="category" name="category">
+								<input type="hidden" value="2" name="category">
 								<div class="form-group">
 									<label>トラック名 *</label> <input type="text" name="name" placeholder="" class="form-control">
 								</div>
@@ -126,7 +139,7 @@
 									<label>詳細</label><input type="text" name="detail" placeholder="" class="form-control" style="height: 150px;">
 								</div>
 
-								<input type="hidden" name="pbno" value="${pbno}" class="form-control">
+								<input type="hidden" name="pbno" value="${nextPbno}" class="form-control">
 
 
 								<div class="pro-form-btn text-center marger_top15">
@@ -151,7 +164,7 @@
 								<h1>グッズ情報</h1>
 							</div>
 							<div class="ms_pro_form">
-								<input type="hidden" value="3" id="category" name="category">
+								<input type="hidden" value="3"name="category">
 								<div class="form-group">
 									<label>在庫</label> <input type="text" name="amount" placeholder="" class="form-control">
 								</div>
@@ -161,7 +174,7 @@
 								<div class="form-group" style="width: 88%">
 									<label>詳細</label><input type="text" name="detail" placeholder="" class="form-control" style="height: 150px;">
 								</div>
-								<input type="hidden" name="pbno" value="${pbno}" class="form-control">
+								<input type="hidden" name="pbno" value="${nextPbno}" class="form-control">
 
 
 								<div class="pro-form-btn text-center marger_top15">

@@ -19,7 +19,7 @@ import lombok.extern.log4j.Log4j;
 @Controller
 @AllArgsConstructor
 @Log4j
-public class HomeController {
+public class HomeController {	
 	
 	@Setter(onMethod_= @Autowired)
 	private AlbumService service;
@@ -30,6 +30,11 @@ public class HomeController {
 		model.addAttribute("newly",service.newly());
 		model.addAttribute("topalbum",service.topAlbums());
 		model.addAttribute("list",service.listAlbum());
+		
+		log.info("쿼리값: "+req.getParameter("pageName"));
+		if(req.getParameter("pageName")==null) {
+			model.addAttribute("param", "menu_main");
+		}
 		return "index";
 	}
 }

@@ -32,6 +32,8 @@ public interface AlbumMapper {
 	//앨범 총 길이
 	public String calTotalLength(int abno);
 	
+	//앨범검색
+	public List<AlbumVO> selectAlbumWithKeyword(String word);
 	
 	//관리자
 	

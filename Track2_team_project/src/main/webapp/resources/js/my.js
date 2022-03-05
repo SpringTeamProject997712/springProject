@@ -116,6 +116,26 @@ function go_writemusic() {
 	theForm.submit();
 }
 
+function now_login_checker(){
+	let now_login_flag=0;
+	
+	$.ajax({
+    	type:"get",
+    	url:"/member/loginChecker",
+    	async:false,
+    	success:function(data){
+    		console.log("나온 값 : "+data);
+    		if(data != '1'){
+    		now_login_flag=data;
+    		}		
+    	},error:function(xhr,status,error){
+    		console.log("xhr : "+xhr.status+"\n text : "+xhr.responseText+"\n error : "+error);
+    	}
+	});
+	
+	return now_login_flag;
+}
+
 //업로드 스크립트
 function go_upload_album() {
 	if(upload_album.uploadImage.value=="") {
@@ -204,15 +224,10 @@ function go_reset() {
 	  });
 }
 
-
-function go_reset() {
-	$('form').each(function() {
-
-	      this.reset();
-
-	  });
+function go_pay() {
+	document.payForm.action = "/member/go_pay";
+	document.payForm.submit();
 }
-
 
 function findAddr(){ //우편번호 찾기
 	new daum.Postcode({
@@ -459,35 +474,6 @@ $(".remove-all-cart").on("click", function(){
 	}
 })
 
-////preview image 
-//var imgTarget = $('.preview-image .upload-hidden');
-//
-//imgTarget.on('change', function(){
-//    var parent = $(this).parent();
-//    parent.children('.upload-display').remove();
-//
-//    if(window.FileReader){
-//        //image 파일만
-//        if (!$(this)[0].files[0].type.match(/image\//)) return;
-//        
-//        var reader = new FileReader();
-//        reader.onload = function(e){
-//            var src = e.target.result;
-//            parent.prepend('<div class="upload-display"><div class="upload-thumb-wrap"><img src="'+src+'" class="upload-thumb" style="margin:0px;"></div></div>');
-//        }
-//        reader.readAsDataURL($(this)[0].files[0]);
-//    }
-//
-//    else {
-//        $(this)[0].select();
-//        $(this)[0].blur();
-//        var imgSrc = document.selection.createRange().text;
-//        parent.prepend('<div class="upload-display"><div class="upload-thumb-wrap"><img class="upload-thumb"></div></div>');
-//
-//        var img = $(this).siblings('.upload-display').find('img');
-//        img[0].style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\""+imgSrc+"\")";        
-//    }
-//});
 
 
 
@@ -509,8 +495,8 @@ $(".remove-all-cart").on("click", function(){
 //
 //$(function(){
 //	$(".menu").removeClass("active");
-////	var pageName = "<c:out value='${param.pageName}'/>";
-//	var pageName = '${param.pageName}';
+//	var pageName = "<c:out value='${param.pageName}'/>";
+////	var pageName = '${param.pageName}';
 //	console.log(pageName);
 //	$("#"+pageName).addClass("active");
 //})
@@ -549,6 +535,8 @@ $("#songname").change(function(e){
 });
 
 //API 끝
+
+
 
 $(".add_track_to_playlist").on("click",function(z){
 	z.preventDefault();
@@ -629,3 +617,79 @@ $("#allCheck").on("click",function(){
 		$("input.chBox").prop("checked",false);
 	}
 })
+
+function go_id_pw_cheker() {
+	let formm = document.form_checking_id;
+	if(!formm.your_email.value){
+		alert("로그인 해야 이용할 수 있습니다");
+		location.href="/";
+	}else if(!formm.your_pw.value){
+		alert("비밀번호를 입력하십씨오");
+		formm.your_pw.focus();
+	}else{
+		formm.method="post";
+		formm.submit();
+	}
+}
+
+function findAddr(){ //우편번호 찾기
+	new daum.Postcode({
+        oncomplete: function(data) {
+        	
+        	console.log(data);
+        	
+            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+            // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+            var roadAddr = data.roadAddress; // 도로명 주소 변수
+            var jibunAddr = data.jibunAddress; // 지번 주소 변수
+            // 우편번호와 주소 정보를 해당 필드에 넣는다.
+            document.getElementById('member_post').value = data.zonecode;
+            if(roadAddr !== ''){
+                document.getElementById("member_addr").value = roadAddr;
+            } 
+            else if(jibunAddr !== ''){
+                document.getElementById("member_addr").value = jibunAddr;
+            }
+        }
+    }).open();
+}
+
+function go_update(){
+	let form = document.privacyForm;
+	form.action= "/member/updateMember";
+	form.submit();
+}
+
+$(".share_this_page").on("click",  function(){
+	$("#share_this_page").val(document.URL);
+	$("#myModal3").modal();
+});
+
+function copyToClipBoard() {
+
+    var content = document.getElementById('share_this_page');
+    
+    content.select();
+    document.execCommand('copy');
+
+    alert("Copied!");
+}
+
+function fn_sendFB(sns) {
+    var thisUrl = document.URL;
+    var snsTitle = "Miraculos - listen music";
+    if( sns == 'facebook' ) {
+        var url = "http://www.facebook.com/sharer/sharer.php?href="+encodeURIComponent(thisUrl);
+        window.open(url, "", "width=520, height=286"); //로컬 서버가 아니면 href ===> u 로 바꿔야함
+    }
+    else if( sns == 'twitter' ) {
+        var url = "http://twitter.com/share?url="+encodeURIComponent(thisUrl)+"&text="+encodeURIComponent(snsTitle);
+        window.open(url, "tweetPop", "width=520, height=286,scrollbars=yes");
+    }
+    else if( sns == 'band' ) {
+        var url = "http://www.band.us/plugin/share?body="+encodeURIComponent(snsTitle)+"&route="+encodeURIComponent(thisUrl);
+        window.open(url, "shareBand", "width=500, height=500, resizable=yes");
+	}
+}
+

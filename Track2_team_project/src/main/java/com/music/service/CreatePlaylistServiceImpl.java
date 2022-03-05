@@ -40,6 +40,10 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 		return mapper.insertPlaylist(pvo);
 	}
 	@Override
+	public PlaylistVO selectJustOnePlaylist(int plbno) {
+		return mapper.selectJustOnePlaylist(plbno);
+	}
+	@Override
 	public int maxPlbno(String id) {
 		return mapper.maxPlbno(id);
 	}
@@ -154,11 +158,11 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 		List<AlbumVO> alist = amapper.readAlbum_single(vo.getAbno());
 		for(int i=0; i<alist.size();i++) {
 			trackList.add(tmapper.selectTrack(alist.get(i).getTbno()));
-			PlaylistVO pvo = new PlaylistVO();
-			pvo.setAbno(vo.getAbno());
-			pvo.setTbno(trackList.get(i).getTbno());
-			pvo.setPlbno(minPlbno(vo.getId()));
-			insertPlaylistDetail(pvo);
+//			PlaylistVO pvo = new PlaylistVO();
+//			pvo.setAbno(vo.getAbno());
+//			pvo.setTbno(trackList.get(i).getTbno());
+//			pvo.setPlbno(minPlbno(vo.getId()));
+//			insertPlaylistDetail(pvo);
 		}
 		plist=convertTrackToJPlyer(trackList);
 		return plist;
@@ -170,8 +174,8 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 		List<PlaylistVO> playlist_view = mapper.selectPlaylist(plbno);
 		for(int i=0; i<playlist_view.size(); i++) {
 			trackList.add(tmapper.selectTrack(playlist_view.get(i).getTbno()));
-			playlist_view.get(i).setPlbno(minPlbno(playlist_view.get(i).getId()));
-			insertPlaylistDetail(playlist_view.get(i));
+			//playlist_view.get(i).setPlbno(minPlbno(playlist_view.get(i).getId()));
+			//insertPlaylistDetail(playlist_view.get(i));
 		}
 		plist=convertTrackToJPlyer(trackList);
 		return plist;

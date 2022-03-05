@@ -26,17 +26,24 @@
 		]]>
 	</select>
 	
+	<select id="selectAlbumWithKeyword" resultType="com.music.domain.AlbumVO">
+		<![CDATA[
+			select /*+ index_desc(album_m album_m_pk) */ * from album_m where abno > 0 and name like '%'||#{word}||'%'
+		]]>
+	</select>
+	
 	<select id="readAlbum" resultType="com.music.domain.AlbumVO">
 		select * from album_m where abno = #{abno}
 	</select>
-  	<select id="readAlbum_single" resultType="com.music.domain.AlbumVO">
+  <select id="readAlbum_single" resultType="com.music.domain.AlbumVO">
 		<![CDATA[
 		select rownum, pbno, abno, name, singer, detail, price, image, regdate,
-		tbno, tdetail, genre, tname, tprice, songname, songrealname, duration, length
+			tbno, tdetail, genre, tname, tprice, songname, songrealname, duration, length
 		from (SELECT * FROM album_single ORDER BY pbno asc
-		) where rownum > 0 and abno = #{abno}
-  		]]>
-  	</select>
+			) 
+		where rownum > 0 and abno = #{abno}
+  	]]>
+  </select>
   	<select id="listNewly" resultType="com.music.domain.AlbumVO">
   		<![CDATA[
   		select * from newly where rownum < 15 order by tbno desc
@@ -70,9 +77,9 @@
   	
 <!--   	어드민 -->
   	<select id="viewAlbum" resultType="com.music.domain.AlbumVO">
-			select * from 
+			select * from 	
 		( 
-			select /*+ index_desc(album_m album_m_pk) */ rownum rn, abno, name, singer, detail, price, image, regdate, pbno from album_m 
+			select /*+ index_desc(album_m album_m_pk) */ rownum rn, abno, name, singer, detail, price, image, image_240, image_50, regdate, pbno from album_m 
 			)
 			where abno = #{abno}
 	</select>
@@ -109,7 +116,8 @@
 
 	<update id="updateAlbum">
 		update album_m set 
-		name=#{name}, singer=#{singer}, detail=#{detail}, price=#{price}, image=#{image}, regdate=#{regdate} 
+		name=#{name}, singer=#{singer}, detail=#{detail}, price=#{price}, 
+		image=#{image}, image_240=#{image_240}, image_50=#{image_50}, regdate=#{regdate} 
 		where abno = #{abno}
 	</update>
 	

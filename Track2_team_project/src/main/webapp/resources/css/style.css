@@ -486,6 +486,7 @@ body.loaded .ms_loader {
 	-moz-transition: all 0.3s ease-in-out;
 	display: inline-block;
 }
+
 .ms_nav_wrapper ul li a span.nav_icon {
 	margin-right: 0;
 }
@@ -609,6 +610,7 @@ span.nav_text {
 .ms_nav_wrapper span.nav_icon>.icon.icon_c_playlist {
 	background-position: -360px 2px;
 }
+
 .ms_sidemenu_inner {
 	width: 80px;
 	background-color: #1b2039;

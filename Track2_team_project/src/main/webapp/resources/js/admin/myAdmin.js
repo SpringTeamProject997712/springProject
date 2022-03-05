@@ -60,6 +60,77 @@ function go_update_album() {
 	form.submit;
 }
 
+// 공지관련
+
+function go_update_notice(){
+	let form = document.NoticeForm;
+	form.action= "/member/updateNotice";
+	form.submit();
+
+}
+
+function go_upload_notice() {
+	
+	if(upload_notice.title.value=="") {
+		alert("please input title");
+		upload_notice.uploadImage.focus();
+		return false;
+	}
+	
+	if(upload_notice.content.value=="") {
+		alert("please input content");
+		upload_notice.content.focus();
+		return false;
+	}
+	
+	if(upload_notice.header.value=="") {
+		alert("please select header");
+		upload_notice.header.focus();
+		return false;
+	}
+	
+
+ 	document.upload_notice.submit();
+ }
+ 
+     	$(function(){
+		$('#summernote').summernote({
+		height: 300,
+		fontNames : [ '맑은고딕', 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', ],
+		fontNamesIgnoreCheck : [ 'Arial' ],
+		focus: true,
+
+		callbacks: {
+		onImageUpload: function(files, editor, welEditable) {
+		            for (var i = files.length - 1; i >= 0; i--) {
+		             sendFile(files[i], this);
+		            }
+		        }
+		}
+
+		});
+
+		})
+
+		function sendFile(file, el) {
+		var form_data = new FormData();
+		       form_data.append('file', file);
+		       $.ajax({
+		         data: form_data,
+		         type: "POST",
+		         url: './notifileImage.do',
+		         cache: false,
+		         contentType: false,
+		         enctype: 'multipart/form-data',
+		         processData: false,
+		         success: function(img_name) {
+		        	 alert(img_name);
+		           $(el).summernote('editor.insertImage', img_name);
+		         }
+		       });
+		    }
+	
+
 //파일 수정 관련
 var actionForm = $("#actionForm");
 $(".page-item > a").on("click", function(e) {
@@ -93,24 +164,32 @@ $(function(){
 	    $(this).submit();
 	  });
 	});
-//
-//
-//function delete_track(){
-//	var con = confirm("정말로 삭제하시겠습니까?");
-//	let form = document.deleteForm;
-//	
-//	if(con) {
-//		$(this).action = "/track/deleteTrack";
-//		$(this).submit();
-//	}
-//};
-//
-//function delete_album(){
-//	var con = confirm("정말로 삭제하시겠습니까?");
-//	
-//	if(con) {
-////		document.deleteAlbum.action = "/album/deleteAlbum";
-//		$(this).submit();
-//	}
-//};
 
+//오디오 수정
+$("#audio").on("canplaythrough", function(e){
+    var seconds = e.currentTarget.duration;
+    var duration = moment.duration(seconds, "seconds");
+    var duration1 = moment.duration(seconds);
+    
+    var time = "";
+    var hours = duration.hours();
+    if (hours > 0) { time = hours + ":" ; }
+    console.log("hours:"+hours);
+    
+    time = time + duration.minutes() + ":" + duration.seconds();
+    time_cal = duration%60;
+    $("#upload_duration").text(time);
+    $('input[id=upload_duration1]').attr('value',Math.floor(seconds));
+    
+});
+
+$("#songname").change(function(e){
+    var file = e.currentTarget.files[0];
+   
+    $("#filename").text(file.name);
+    $("#filetype").text(file.type);
+    $("#filesize").text(file.size);
+    
+    objectUrl = URL.createObjectURL(file);
+    $("#audio").prop("src", objectUrl);
+});
