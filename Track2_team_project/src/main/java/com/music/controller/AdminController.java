@@ -171,12 +171,11 @@ public class AdminController {
 			public String insertNotice(NoticeVO notice) {
 				nService.insertNotice(notice);
 						
-				return "redirect:/admin/notice/manage_notice";
+				return "redirect:/notice/manage_notice";
 			}
 			
-			@PostMapping("/deleteNotice")
+			@PostMapping("/notice/deleteNotice")
 			public String deleteNotice(@RequestParam("wbno") int wbno) {
-				
 				nService.deleteNotice(wbno);
 				
 				return "redirect:/admin/notice/manage_notice";

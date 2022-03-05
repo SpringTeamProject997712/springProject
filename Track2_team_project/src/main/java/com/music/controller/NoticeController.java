@@ -36,6 +36,7 @@ public class NoticeController {
 	@GetMapping("/notice_single")
 	public void notice_single(Model model, @RequestParam("wbno")int wbno) {
 		model.addAttribute("view",service.readNotice(wbno));
+		service.viewcountNotice(wbno);
 	}
 	
 	@GetMapping("/notice_upload")

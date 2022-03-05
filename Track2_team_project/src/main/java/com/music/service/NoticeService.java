@@ -41,4 +41,7 @@ public interface NoticeService {
 	
 	//공지 삭제
 	public int deleteNotice(int wbno);
+	
+	//공지 뷰카운트
+	public int viewcountNotice(int wbno);
 }

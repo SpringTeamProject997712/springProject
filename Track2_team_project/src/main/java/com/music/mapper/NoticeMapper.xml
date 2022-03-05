@@ -64,6 +64,10 @@
 		where wbno = #{wbno}
 	</update>
 	
+	<update id="viewcount">
+		update board_m set viewcount = viewcount+1 where wbno = #{wbno}
+	</update>
+	
 	<delete id="deleteNotice">
 		delete from board_m where wbno = #{wbno}
 	</delete>

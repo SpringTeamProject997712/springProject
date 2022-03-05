@@ -20,6 +20,9 @@ public interface NoticeMapper {
 	//키워드로 검색
 	public List<NoticeVO> searchNoticeWithTitle(String title);
 	
+	//뷰카운트
+	public int viewcount(int wbno);
+	
 	
 	//관리자
 	
