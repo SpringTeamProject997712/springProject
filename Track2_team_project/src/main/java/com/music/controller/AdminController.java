@@ -170,8 +170,9 @@ public class AdminController {
 			@PostMapping("/notice/notice_write")
 			public String insertNotice(NoticeVO notice) {
 				nService.insertNotice(notice);
-						
-				return "redirect:/notice/manage_notice";
+				
+				return "redirect:/admin/notice/manage_notice";
+
 			}
 			
 			@PostMapping("/notice/deleteNotice")

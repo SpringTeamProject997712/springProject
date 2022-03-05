@@ -228,6 +228,8 @@ cursor: pointer;
 	color:#FFF;
 }
 
+
+
 .share-modal{
 	 width:400px;
 }
@@ -237,7 +239,7 @@ cursor: pointer;
 .share-modal span{ 
 	color:white; 
 }
-.move_top {
+html {
 	scroll-behavior: smooth;
 }
 
@@ -297,6 +299,39 @@ a.btn-copyToClipboard{
 .noticemain .album_list_wrapper>ul>li:nth-child(6) {
 	width: 9%;
 }
+/* 오더랑 트랙? */
+.noticelist {
+		
+	}
+	
+.noticewrapper > ul > li{
+	text-align: center;
+	
+}
+
+.orderlist_main {
+	margin-top: 60px;
+}
+
+.orderlist_main .album_list_wrapper>ul>li:nth-child(1) {
+	width: 5%;
+}
+
+.orderlist_main .album_list_wrapper>ul>li:nth-child(2) {
+	width: 30%;
+}
+
+.orderlist_main .album_list_wrapper>ul>li:nth-child(3) {
+	width: 35%;
+}
+
+.orderlist_main .album_list_wrapper>ul>li:nth-child(4) {
+	width: 10%;
+}
+.orderlist_main .album_list_wrapper>ul>li:nth-child(5) {
+	width: 15%;
+}
+
 
 /*====Pagination Start====*/
 
@@ -1086,3 +1121,31 @@ h1.comments-title:after, .blog_comments_forms h1:after, .comment-respond h1:afte
     word-break: break-all;   
 }
 
+.black_some_box_mini{
+	overflow: auto;
+	padding: 20px;
+  height: 100px;
+  overflow-x: hidden;
+  background-color: #14182a;
+  margin-top: 15px;
+  border-radius: 20px;
+}
+
+.boong_boong_span {
+	margin :20px; 
+	margin-top: 50px;
+	font-size:20px;
+	padding : 10px;
+	color : white;
+}
+
+.final_totalPrice{
+	float: right;
+	margint-top:20px;
+}
+
+.purchase_buttons img{
+	display: block;
+	margin:30px auto;
+	
+}

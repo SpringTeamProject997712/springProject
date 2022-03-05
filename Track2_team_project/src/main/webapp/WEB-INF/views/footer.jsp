@@ -2,6 +2,7 @@
 
 <!----Footer Start---->
 <form id="activefrm" method="get" action="">
+<%-- 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"> --%>
 	<input type="hidden" id="pageName" name="pageName">
 </form>
 <div class="ms_footer_wrapper">
@@ -301,6 +302,44 @@
 			</div>
 		</div>
 	</div>
+<!-- 	결제 모달 -->
+	<div id="pay_modal" class="modal  centered-modal" role="dialog">
+		<div class="modal-dialog login_dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<button type="button" class="close" data-dismiss="modal">
+					<i class="fa_icon form_close"></i>
+				</button>
+				<div class="modal-body">
+					<div class="ms_register_form">
+						<h2>お買い上げ</h2>
+						<form method="post" name="payForm">
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+							<div class="form-group">
+								<input type="text" name="id" value="" class="form-control">
+								<span class="form_icon"> <i class="fa_icon form-envelope" aria-hidden="true"></i>
+								</span>
+							</div>
+							<div class="form-group">
+								<input type="text" name="amount" placeholder="${sum }" class="form-control">
+								<span class="form_icon"> <i class="fa_icon form-lock" aria-hidden="true"></i>
+								</span>
+							</div>
+							<div class="remember_checkbox">
+								<label>ログイン情報キープ <input type="checkbox" id="saveBtn">
+								<span class="checkmark"></span>
+								</label>
+							</div>
+							<a href="javascript:go_pay()" class="ms_btn">ログイン</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
 	<div id="myModal2" class="modal  centered-modal" role="dialog">
 		<div class="modal-dialog login_dialog">
 			<!-- Modal content-->
@@ -356,46 +395,30 @@
 			</div>
 		</div>
 	</div>
-</div>
-
-<!----Language Selection Modal---->
-<div class="ms_lang_popup">
-	<div id="lang_modal" class="modal  centered-modal" role="dialog">
-		<div class="modal-dialog">
+	
+	<div id="myPurchase" class="modal centered-modal" role="dialog">
+		<div class="modal-dialog login_dialog" style="max-width: 800px; ">
 			<!-- Modal content-->
 			<div class="modal-content">
-				<button type="button" class="close" data-dismiss="modal">
+				<button type="button" class="close" id="my_modal_close_btn" data-dismiss="modal">
 					<i class="fa_icon form_close"></i>
 				</button>
-				<div class="modal-body">
-					<h1>language selection</h1>
-					<p>Please select the language(s) of the music you listen to.</p>
-					<ul class="lang_list">
-						<li><label class="lang_check_label"> English <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-						<li><label class="lang_check_label"> hindi <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-						<li><label class="lang_check_label"> punjabi <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-						<li><label class="lang_check_label"> French <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-						<li><label class="lang_check_label"> German <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-						<li><label class="lang_check_label"> Spanish <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-						<li><label class="lang_check_label"> Chinese <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-						<li><label class="lang_check_label"> Japanese <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-						<li><label class="lang_check_label"> Arabic <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-						<li><label class="lang_check_label"> Italian <input type="checkbox" name="check"> <span class="label-text"></span>
-						</label></li>
-					</ul>
-					<div class="ms_lang_btn">
-						<a href="#" class="ms_btn">apply</a>
-					</div>
+				<p>결제창</p>
+				<div class="cartlistForPurchase black_some_box_mini">
+					
 				</div>
+				<div class="couponForPurchase">
+				</div>
+				<div class="form-group padding_top_30">
+					<label>price</label>
+					<input type="text" class="final_totalPrice form-control" id="final_totalPrice" readonly="readonly" width="40%">
+				</div>
+				<div class="purchase_buttons">
+					<a onclick="go_this_purchase(this.id)" id="html5_inicis"><img alt="카드결제" src="/images/card_rufwp.jpg" width="400px" height="100px"></a>
+					
+					<a onclick="go_this_purchase(this.id)" id="paypal"><img alt="페이팔결제" src="/images/paypal.png" width="400px" height="100px"></a>
+				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -463,6 +486,7 @@
 <script type="text/javascript" src="/resources/js/plugins/player/volume.js"></script>
 <script type="text/javascript" src="/resources/js/plugins/nice_select/jquery.nice-select.min.js"></script>
 <script type="text/javascript" src="/resources/js/plugins/scroll/jquery.mCustomScrollbar.js"></script>
+<script type="text/javascript" src="/resources/js/import.js"></script> 
 <script type="text/javascript" src="/resources/js/custom.js"></script>
 <script type="text/javascript" src="/resources/js/music-selector.js"></script>
 <script type="text/javascript" src="/resources/js/my.js"></script>

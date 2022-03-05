@@ -19,6 +19,7 @@ public class MemberVO {
 	private String address1;
 	private String address2;
 	private Date regdate;
+	private String image;
 	
 	private List<Member_authVO> authList;
 }

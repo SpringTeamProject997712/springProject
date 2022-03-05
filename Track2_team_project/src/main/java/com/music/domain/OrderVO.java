@@ -7,15 +7,11 @@ import lombok.Data;
 @Data
 public class OrderVO {
 
-	private int obno;
+	private int rownum;
+	private String orderid;
 	private String id;
 	private Date orderdate;
+	private int amount;
+	private String name;
 	
-	//OrderDetail
-	
-	private int odbno;
-	private int pbno;
-	private int price;
-	private int quantity;
-	private String result;
 }

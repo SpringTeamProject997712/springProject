@@ -16,7 +16,7 @@
   			select board_m_seq.nextval from dual
   		</selectKey>
   		insert into board_m  (wbno, id, bbno, header, title, content, indate, viewcount, filename) 
-		values (#{wbno},#{id},#{bbno},#{header},#{title},#{content},sysdate,0,#{filename})
+		values (#{wbno},#{id},#{bbno},#{header},#{title},#{content}, sysdate, 0, #{filename})
   	</insert>
   	
   	<select id="listNotice" resultType="com.music.domain.NoticeVO">

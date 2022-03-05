@@ -53,7 +53,7 @@
 								<h1>アルバム情報</h1>
 							</div>
 							<div class="ms_pro_form">
-								<input type="hidden" value="1" id="category" name="category">
+								<input type="hidden" value="1" name="category">
 								<div class="form-group">
 									<label>アルバム名 *</label> <input type="text" name="name" placeholder="" class="form-control">
 								</div>
@@ -112,7 +112,7 @@
 								<h1>トラック情報</h1>
 							</div>
 							<div class="ms_pro_form">
-								<input type="hidden" value="2" id="category" name="category">
+								<input type="hidden" value="2" name="category">
 								<div class="form-group">
 									<label>トラック名 *</label> <input type="text" name="name" placeholder="" class="form-control">
 								</div>
@@ -164,7 +164,7 @@
 								<h1>グッズ情報</h1>
 							</div>
 							<div class="ms_pro_form">
-								<input type="hidden" value="3" id="category" name="category">
+								<input type="hidden" value="3"name="category">
 								<div class="form-group">
 									<label>在庫</label> <input type="text" name="amount" placeholder="" class="form-control">
 								</div>

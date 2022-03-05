@@ -1,9 +1,11 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<% SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 a hh:mm:ss"); %>
 <!DOCTYPE html>
 <html lang="jp">
 <head>
@@ -27,7 +29,7 @@
     <!-- Favicon Link -->
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
     <script src="/resources/js/jquery.js"></script>
-<!--     <script src="/resources/js/jquery2.min.js"></script> -->
+		<script src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js" type="text/javascript"></script>
     <script src="/resources/js/tj.js"></script>
 </head>
 
@@ -154,8 +156,8 @@
             <div class="ms_header">
                 <div class="ms_top_left">
                     <div class="ms_top_search">
-                    	<form>
-	                      <input type="text" id="track_tracker" class="form-control" placeholder="ミュージック検索">
+                    	<form method="get" name="entire_music_search_form" action="/search/search">
+	                      <input type="text" name="search_keyword" id="track_tracker" class="form-control" placeholder="ミュージック検索">
 	                      <span id="entire_music_searcher" class="search_icon">
 													<img src="/images/svg/search.svg" alt="">
 												</span>
@@ -177,22 +179,21 @@
                     <sec:authorize access="isAuthenticated()">
                     	<sec:authentication property="principal" var="principal"/>
 											<div class="ms_top_btn">
-	                      <a href="/upload/upload" class="ms_btn">upload</a>
+	                      <a href="/upload/upload?pageName=menu_main" class="ms_btn">upload</a>
 	                      <a href="javascript:;" class="ms_admin_name">Hello ${principal.member.name} 
 	                      	<span class="ms_pro_name">${principal.member.name.substring(0,1)}</span>
-												</a>
-												<ul class="pro_dropdown_menu">
-													<li><a href="/member/profile?id=${principal.username}">Profile</a></li>
-													<li><a href="/member/my_playlist/my_playlist">My Playlist</a></li>
-													<li><a href="manage_acc.html" target="_blank">Pricing Plan</a></li>
-													<li><a href="blog.html" target="_blank">Blog</a></li>
-													<sec:authorize access="hasRole('ROLE_ADMIN')">
-														<li><a href="/admin/admin">GO Admin</a></li>
-													</sec:authorize>
-													<li><a href="">Setting</a></li>
-													<li><a href="/admin/adminLogout">Logout</a></li>
-												</ul>
-                    </div>
+					</a>
+					<ul class="pro_dropdown_menu">
+						<li><a href="/member/profile?id=${principal.username}">Profile</a></li>
+						<li><a href="/member/my_playlist/my_playlist">My Playlist</a></li>
+						<li><a href="/member/orderlist">Order List</a></li>
+						<sec:authorize access="hasRole('ROLE_ADMIN')">
+							<li><a href="/admin/admin">GO Admin</a></li>
+						</sec:authorize>
+						<li><a href="">Setting</a></li>
+						<li><a href="/admin/adminLogout">Logout</a></li>
+					</ul>
+                   </div>
                     </sec:authorize>
                 </div>
             </div>
@@ -217,7 +218,7 @@
 	    			$("#activefrm").attr("action", "/member/my_cart");
 	    			$("#pageName").val(menu);
 	    		}else if(menu === "menu_purchased"){
-	    			$("#activefrm").attr("action", "/downloads/downloads");
+	    			$("#activefrm").attr("action", "/member/downloads");
 	    			$("#pageName").val(menu);
 	    		}else if(menu === "menu_favourite"){
 	    			$("#activefrm").attr("action", "/member/favourite");

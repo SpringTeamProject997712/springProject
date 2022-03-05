@@ -224,6 +224,11 @@ function go_reset() {
 	  });
 }
 
+function go_pay() {
+	document.payForm.action = "/member/go_pay";
+	document.payForm.submit();
+}
+
 function findAddr(){ //우편번호 찾기
 	new daum.Postcode({
         oncomplete: function(data) {
@@ -669,6 +674,36 @@ function copyToClipBoard() {
     document.execCommand('copy');
 
     alert("Copied!");
+}
+
+function go_purchase() {
+	//구매 칸 
+	$.ajax({
+		type:"get",
+		url:"/cart/select_my_cart_for_purchase",
+		error:function(xhr,status,err){
+			alert(xhr.r +"\n 내용 : " +xhr.reponseText+"\n 에러 : " +err);
+		},success:function(data){
+			data = JSON.parse(data);
+			let your_cart ="<span class='boong_boong_span' id='this_order_name'>";
+			if(data.duration =='1'){
+				your_cart += "앨범 ";
+			}else{
+				your_cart += "트랙 ";
+			}
+			your_cart += data.aname;
+			if(data.pbno!=1){
+				your_cart += "외 "+ (data.pbno-1) +" 개";
+			}
+			your_cart += "</span>";
+			$(".cartlistForPurchase").html(your_cart);
+		}
+	})
+	//쿠폰칸(아직 안만들었음)
+	//
+	$("#final_totalPrice").val(document.purchaseForm.amount.value);
+	
+	$("#myPurchase").modal();
 }
 
 function fn_sendFB(sns) {

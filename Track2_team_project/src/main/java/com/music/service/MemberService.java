@@ -5,6 +5,8 @@ import java.util.List;
 import com.music.domain.FavouriteVO;
 import com.music.domain.MemberVO;
 import com.music.domain.Member_authVO;
+import com.music.domain.OrderListVO;
+import com.music.domain.OrderVO;
 import com.music.domain.PlaylistVO;
 import com.music.domain.ViewPlaylistDetailVO;
 import com.music.utility.Criteria;
@@ -58,4 +60,14 @@ public interface MemberService {
 	public int insertAuth(Member_authVO vo);
 	//좋아요 리스트 보기
 	public List<FavouriteVO> favouritesView(String id);
+	//이것저것
+	public ViewPlaylistDetailVO myPlaylistView(int plbno);
+	//플레이리스트 이미지 가져오기
+	public ViewPlaylistDetailVO selectPlaylistImage(int plbno);
+	
+	//오더 리스트
+	public List<OrderVO> orderList(OrderVO ovo);
+	
+	//오더 상세 리스트
+	public List<OrderListVO> orderDetailList(OrderVO ovo);
 }

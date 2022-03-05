@@ -105,9 +105,6 @@ public class AlbumController {
 			new File(uploadFolder+"\\"+req.getParameter("image")).delete();
 			new File(uploadFolder+"\\"+req.getParameter("image_240")).delete();
 			new File(uploadFolder+"\\"+req.getParameter("image_50")).delete();
-			log.info("1번:"+uploadFolder+"\\"+req.getParameter("image"));
-			log.info("2번:"+uploadFolder+"\\"+req.getParameter("image_240"));
-			log.info("3번:"+uploadFolder+"\\"+req.getParameter("image_50"));
 			
 			
 			String uploadImageName = uploadImage.getOriginalFilename();
