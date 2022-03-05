@@ -22,7 +22,7 @@
 							<li class="text-center">remove</li>
 						</ul>
 						<!--  favourite song start -->
-						<c:forEach var="flist" items="${favouritelist}">
+						<c:forEach var="olist" items="${olist}">
 						<ul class="favouritelist">
 							<li><a href="#"><span class="play_no">${flist.rownum}</span><span class="play_hover"></span></a></li>
 							<li><a href="#">${flist.name}</a></li>

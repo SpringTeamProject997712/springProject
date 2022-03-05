@@ -108,9 +108,9 @@
 	
 	<select id="orderList" resultType="com.music.domain.OrderVO">
 		select 
-			orderid, id, amount, orderdate 
+			rownum, orderid, id, amount, orderdate 
 		from order_m 
-			where id = #{id}
+			where rownnum > 0 and id = #{id}
 	</select>
 	
 	
