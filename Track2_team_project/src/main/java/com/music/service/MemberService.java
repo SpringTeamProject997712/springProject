@@ -66,4 +66,7 @@ public interface MemberService {
 	
 	//오더 상세 리스트
 	public List<OrderListVO> orderDetailList(OrderVO ovo);
+	
+	//다운로드 리스트
+	public List<OrderListVO> orderTrackList(OrderVO ovo);
 }

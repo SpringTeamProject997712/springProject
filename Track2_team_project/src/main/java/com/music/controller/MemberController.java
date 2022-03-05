@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
 import com.music.domain.CartVO;
 import com.music.domain.MemberVO;
 import com.music.domain.Member_authVO;
@@ -164,10 +167,24 @@ public class MemberController {
 	}
 	
 	@GetMapping("/downloads")
-	public void downloadPage() {
-		
+	public void downloadPage(OrderVO ovo, Model model
+			) {
+		String myName = "";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			
+			ovo.setId(myName);
+			List<OrderListVO> orderList = service.orderTrackList(ovo);
+			model.addAttribute("olist", orderList);
+			
+			
+			
+		}
 		
 	}
+	
 	
 //=============================마이페이지 컨트롤러 ===================================
 	
@@ -269,7 +286,6 @@ public class MemberController {
 		if(!(auth.getPrincipal().equals("anonymousUser"))) {
 			CustomUser user = (CustomUser)auth.getPrincipal();
 			myName =user.getUsername();
-			
 			
 			ovo.setId(myName);
 			List<OrderVO> orderList = service.orderList(ovo);

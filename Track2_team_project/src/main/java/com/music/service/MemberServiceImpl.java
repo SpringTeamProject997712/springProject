@@ -130,4 +130,9 @@ public class MemberServiceImpl implements MemberService {
 	public List<OrderListVO> orderDetailList(OrderVO ovo) {
 		return mapper.orderDetailList(ovo);
 	}
+
+	@Override
+	public List<OrderListVO> orderTrackList(OrderVO ovo) {
+		return mapper.orderTrackList(ovo);
+	}
 }
