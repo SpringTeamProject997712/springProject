@@ -395,6 +395,33 @@
 			</div>
 		</div>
 	</div>
+	
+	<div id="myPurchase" class="modal centered-modal" role="dialog">
+		<div class="modal-dialog login_dialog" style="max-width: 800px; ">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<button type="button" class="close" id="my_modal_close_btn" data-dismiss="modal">
+					<i class="fa_icon form_close"></i>
+				</button>
+				<p>결제창</p>
+				<div class="cartlistForPurchase black_some_box_mini">
+					
+				</div>
+				<div class="couponForPurchase">
+				</div>
+				<div class="form-group padding_top_30">
+					<label>price</label>
+					<input type="text" class="final_totalPrice form-control" id="final_totalPrice" readonly="readonly" width="40%">
+				</div>
+				<div class="purchase_buttons">
+					<a onclick="go_this_purchase(this.id)" id="html5_inicis"><img alt="카드결제" src="/images/card_rufwp.jpg" width="400px" height="100px"></a>
+					
+					<a onclick="go_this_purchase(this.id)" id="paypal"><img alt="페이팔결제" src="/images/paypal.png" width="400px" height="100px"></a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
 </div>
 <!----Queue Clear Model ---->
 <div class="ms_clear_modal">
@@ -459,6 +486,7 @@
 <script type="text/javascript" src="/resources/js/plugins/player/volume.js"></script>
 <script type="text/javascript" src="/resources/js/plugins/nice_select/jquery.nice-select.min.js"></script>
 <script type="text/javascript" src="/resources/js/plugins/scroll/jquery.mCustomScrollbar.js"></script>
+<script type="text/javascript" src="/resources/js/import.js"></script> 
 <script type="text/javascript" src="/resources/js/custom.js"></script>
 <script type="text/javascript" src="/resources/js/music-selector.js"></script>
 <script type="text/javascript" src="/resources/js/my.js"></script>

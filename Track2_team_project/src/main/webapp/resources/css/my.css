@@ -1121,3 +1121,31 @@ h1.comments-title:after, .blog_comments_forms h1:after, .comment-respond h1:afte
     word-break: break-all;   
 }
 
+.black_some_box_mini{
+	overflow: auto;
+	padding: 20px;
+  height: 100px;
+  overflow-x: hidden;
+  background-color: #14182a;
+  margin-top: 15px;
+  border-radius: 20px;
+}
+
+.boong_boong_span {
+	margin :20px; 
+	margin-top: 50px;
+	font-size:20px;
+	padding : 10px;
+	color : white;
+}
+
+.final_totalPrice{
+	float: right;
+	margint-top:20px;
+}
+
+.purchase_buttons img{
+	display: block;
+	margin:30px auto;
+	
+}

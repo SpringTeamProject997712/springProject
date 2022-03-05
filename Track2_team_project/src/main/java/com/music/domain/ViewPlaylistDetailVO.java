@@ -16,7 +16,9 @@ public class ViewPlaylistDetailVO {
 	private String tname;
 	private String genre;
 	private String detail;
+	private String image_240;
 	private int price;
+	private int count;
 	private String songname;
 	private String songrealname;
 	private int pbno;

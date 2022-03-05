@@ -168,13 +168,18 @@
 									</div>
 									<div class="column">
 <!-- 										<a class="ms_btn btn-primary" href="javascript:go_pay()" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart" data-toast-message="is updated successfully!">Update Cart</a> -->
-										<form action="/member/go_pay" method="post">
+										<form action="/member/go_pay" method="post" name="purchaseForm">
 											<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-											<input type="text" name="amount" value="${sum }">
-											<input type="text" name="id" value="${principal.member.name}">
-											<input type="submit">
+											<input type="hidden" name="real_id" value="${principal.member.id}">
+											<input type="hidden" name="amount" value="${sum }">
+											<input type="hidden" name="id" value="${principal.member.name}">
+											<input type="hidden" name="zipnum" value="${principal.member.zipnum}">
+											<input type="hidden" name="phone" value="${principal.member.phone}">
+											<input type="hidden" name="address1" value="${principal.member.address1}">
+											<input type="hidden" name="address2" value="${principal.member.address2}">
 										</form>
-										<a class="ms_btn btn-success" href="javascript:;" data-toggle="modal" data-target="#pay_modal">Checkout</a>
+										<a class="ms_btn btn-success" href="javascript:void(0)" onclick="go_purchase()">Purchase</a>
+										<a class="ms_btn btn-success" href="javascript:void(0);" data-toggle="modal" data-target="#pay_modal">Checkout</a>
 									</div>
 								</div>
 							</div>

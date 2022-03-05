@@ -29,7 +29,7 @@
     <!-- Favicon Link -->
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
     <script src="/resources/js/jquery.js"></script>
-<!--     <script src="/resources/js/jquery2.min.js"></script> -->
+		<script src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js" type="text/javascript"></script>
     <script src="/resources/js/tj.js"></script>
 </head>
 

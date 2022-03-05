@@ -80,7 +80,11 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Override
 	public List<PlaylistVO> viewMyPlaylistList(String id) {
-		return cmapper.readPlaylistsWithId(id);
+		List<PlaylistVO> plist = cmapper.readPlaylistsWithId(id);
+		for(int i=0; i<plist.size(); i++) {
+		    plist.get(i).setImage_240(cmapper.selectPlaylistImage(plist.get(i).getPlbno()).getImage_240());
+		}
+		return plist;
 	}
 	
 	@Override
@@ -120,7 +124,14 @@ public class MemberServiceImpl implements MemberService {
 	public List<FavouriteVO> favouritesView(String id) {
 		return mapper.favouritesView(id);
 	}
-
+	@Override
+	public ViewPlaylistDetailVO myPlaylistView(int plbno) {
+		return cmapper.myPlaylistView(plbno);
+	}
+	@Override
+	public ViewPlaylistDetailVO selectPlaylistImage(int plbno) {
+		return cmapper.selectPlaylistImage(plbno);
+	}
 	@Override
 	public List<OrderVO> orderList(OrderVO ovo) {
 		return mapper.orderList(ovo);
