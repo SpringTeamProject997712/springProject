@@ -5,6 +5,7 @@ import java.util.List;
 import com.music.domain.FavouriteVO;
 import com.music.domain.MemberVO;
 import com.music.domain.Member_authVO;
+import com.music.domain.OrderListVO;
 import com.music.domain.OrderVO;
 import com.music.utility.Criteria;
 
@@ -26,4 +27,5 @@ public interface MemberMapper {
 	public List<FavouriteVO> favouritesView(String id);
 	
 	public List<OrderVO> orderList(OrderVO ovo);
+	public List<OrderListVO> orderDetailList(OrderVO ovo);
 }

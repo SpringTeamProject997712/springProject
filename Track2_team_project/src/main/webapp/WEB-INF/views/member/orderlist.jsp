@@ -23,14 +23,14 @@
 						<!--  favourite song start -->
 						<c:forEach var="olist" items="${olist}">
 						<ul class="favouritelist">
-							<li><a>${olist.rownum}</a></li>
-							<li><a href="">${olist.orderid}</a></li>
-							<li><a>${olist.name}</a></li>
-							<li class="text-center"><a href="#">
+							<li><a href="javascript:void(0)">${olist.rownum}</a></li>
+							<li><a href="/member/orderview?n=${olist.orderid}">${olist.orderid}</a></li>
+							<li><a href="javascript:void(0)">${olist.name}</a></li>
+							<li class="text-center"><a href="javascript:void(0)">
 								<fmt:setLocale value="ja_jp"/>
 								<fmt:formatNumber type="currency" value="${olist.amount}" currencySymbol="&yen;" maxFractionDigits="0" />
 							</a></li>
-							<li class="text-center"><a href="#">
+							<li class="text-center"><a href="javascript:void(0)">
 								<fmt:formatDate value="${olist.orderdate }" type="both" pattern="yyyy-MM-dd HH:MM"/></a>
 							</li>
 						</ul>

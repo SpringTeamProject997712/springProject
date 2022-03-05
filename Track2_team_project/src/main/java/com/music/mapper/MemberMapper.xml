@@ -117,6 +117,22 @@
 		]]>
 	</select>
 	
-	
+	<select id="orderDetailList" resultType="com.music.domain.OrderListVO">
+		select 
+    o.orderid, d.odbno, o.id, o.amount, o.orderdate, 
+    p.pbno, p.category, 
+    t.price as tprice, t.name as tname, 
+    a.price as aprice, a.name as aname, a.image_240 as image 
+from order_m o 
+    inner join orderdetail_m d 
+        on o.orderid = d.orderid 
+    inner join product_m p 
+        on p.pbno = d.pbno 
+    left outer join track_m t 
+        on p.pbno = t.pbno 
+    left outer join album_m a 
+        on p.pbno = a.pbno 
+    where o.id = #{id} and o.orderid = #{orderid}
+	</select>
 	
 </mapper>

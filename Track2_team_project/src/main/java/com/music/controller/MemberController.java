@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.music.domain.CartVO;
 import com.music.domain.MemberVO;
 import com.music.domain.Member_authVO;
+import com.music.domain.OrderListVO;
 import com.music.domain.OrderVO;
 import com.music.domain.OrderdetailVO;
 import com.music.domain.PlaylistVO;
@@ -273,6 +274,23 @@ public class MemberController {
 			ovo.setId(myName);
 			List<OrderVO> orderList = service.orderList(ovo);
 			model.addAttribute("olist", orderList);
+		}
+	}
+	
+	@GetMapping("/orderview")
+	public void gerOrderListDetail(Model model, OrderVO ovo,
+			@RequestParam("n") String orderID
+			) {
+		String myName = "";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			
+			ovo.setId(myName);
+			ovo.setOrderid(orderID);
+			List<OrderListVO> orderView = service.orderDetailList(ovo);
+			model.addAttribute("orderView", orderView);
 		}
 		
 	}
