@@ -258,12 +258,25 @@ public class MemberController {
 			cservice.cartAllDelete(myName);
 		}
 		
-		
-		
-		
 		return "redirect:/";
 	}
 	
+	@GetMapping("/orderlist")
+	public void getOrderList(OrderVO ovo, Model model) {
+		String myName = "";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			
+			ovo.setId(myName);
+			
+			List<OrderVO> orderList = service.orderList(ovo);
+			
+			model.addAttribute("olist", orderList);
+		}
+		
+	}
 	
 	
 	@GetMapping("/favourite")

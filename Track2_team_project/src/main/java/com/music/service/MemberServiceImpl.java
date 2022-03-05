@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.music.domain.FavouriteVO;
 import com.music.domain.MemberVO;
 import com.music.domain.Member_authVO;
+import com.music.domain.OrderVO;
 import com.music.domain.PlaylistVO;
 import com.music.domain.ViewPlaylistDetailVO;
 import com.music.mapper.CreatePlaylistMapper;
@@ -117,5 +118,10 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public List<FavouriteVO> favouritesView(String id) {
 		return mapper.favouritesView(id);
+	}
+
+	@Override
+	public List<OrderVO> orderList(OrderVO ovo) {
+		return mapper.orderList(ovo);
 	}
 }

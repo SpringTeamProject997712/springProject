@@ -106,5 +106,13 @@
 	]]>
 	</select>
 	
+	<select id="orderList" resultType="com.music.domain.OrderVO">
+		select 
+			orderid, id, amount, orderdate 
+		from order_m 
+			where id = #{id}
+	</select>
+	
+	
 	
 </mapper>

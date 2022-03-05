@@ -184,7 +184,7 @@
 					<ul class="pro_dropdown_menu">
 						<li><a href="/member/profile?id=${principal.username}">Profile</a></li>
 						<li><a href="/member/my_playlist/my_playlist">My Playlist</a></li>
-						<li><a href="manage_acc.html" target="_blank">Pricing Plan</a></li>
+						<li><a href="/member/orderlist" target="_blank">Order List</a></li>
 						<li><a href="blog.html" target="_blank">Blog</a></li>
 						<sec:authorize access="hasRole('ROLE_ADMIN')">
 							<li><a href="/admin/admin">GO Admin</a></li>
