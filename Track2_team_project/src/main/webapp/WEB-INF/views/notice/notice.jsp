@@ -8,12 +8,14 @@
 			<div class="noticemain">
                 <div class="ms_heading">
                     <h1>공지사항</h1>
-                    <form>
+                    <form name="searchform">
 	                    <div class="ms_top_search" style="float:right;">
-	                        <input type="text" class="form-control" placeholder="공지사항 검색">
-	                        <span class="search_icon">
+	                        <input type="text" class="form-control" name="keyword" placeholder="공지사항 검색" value="${pageMaker.cri.keyword}">
+	                        <span class="search_icon" onclick="go_notice_search()">
 								<img src="../images/svg/search.svg" alt="">
 							</span>
+							<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+							<input type="hidden" name="amount" value="10">
 	                	</div>
                 	</form>
                 </div>
@@ -54,10 +56,11 @@
 				<div class="pagination_wrapper">
 					<nav class="navigation pagination" role="navigation" aria-label="Posts">
 							<div class="nav-links">
-								<a class="prev page-numbers" href="#"><span><i class="fa fa-long-arrow-left" aria-hidden="true"></i></span></a>
-								<span aria-current="page" class="page-numbers current">1</span>
-								<a class="page-numbers" href="#">2</a>
-								<a class="next page-numbers" href="#"><span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span></a>
+								<a class="prev page-numbers ${pageMaker.prev?'':'disabled'}" href="#"><span><i class="fa fa-long-arrow-left" aria-hidden="true"></i></span></a>
+								<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">	
+					    			<span aria-current="page"><a class="page-numbers ${pageMaker.cri.pageNum == num?'active':''}" href="${num }">${num}</a></span>
+					   			 </c:forEach>
+								<a class="next page-numbers ${pageMaker.next?'':'disabled'}" href="#"><span><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span></a>
 							</div>
 					</nav>
 				</div>

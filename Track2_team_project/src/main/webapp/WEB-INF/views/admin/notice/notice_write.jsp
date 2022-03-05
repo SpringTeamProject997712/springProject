@@ -28,7 +28,7 @@
 									  </div>
 									  <div class="col-md-4">
 									  	<label class="form-label" for="category">카테고리</label>
-									  	<select name="header" class="form-control" id="notice_header">
+									  	<select name="header" class="form-control" id="notice_header" >
 										    <option value="">카테고리 선택</option>
 										    <option value="1">공지</option>
 										    <option value="2">점검</option>

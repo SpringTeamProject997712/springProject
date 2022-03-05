@@ -64,9 +64,8 @@ function go_update_album() {
 
 function go_update_notice(){
 	let form = document.NoticeForm;
-	form.action= "/member/updateNotice";
+	form.action= "/notice/updateNotice";
 	form.submit();
-
 }
 
 function go_upload_notice() {
