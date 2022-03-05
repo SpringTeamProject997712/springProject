@@ -20,5 +20,6 @@ public class TopTrackController {
 	@GetMapping("/toptrack")
 	public void topTracksView(Model model) {
 		model.addAttribute("topalbum",service.topAlbums());
+		model.addAttribute("newly",service.newly());
 	}
 }

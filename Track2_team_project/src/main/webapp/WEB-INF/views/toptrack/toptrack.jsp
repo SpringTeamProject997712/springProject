@@ -437,128 +437,47 @@
             <!----New Releases Section Start---->
             <div class="ms_releases_wrapper">
                 <div class="ms_heading">
-                    <h1>Trending Tracks</h1>
+                    <h1>Newly Released Albums</h1>
                     <span class="veiw_all"><a href="#">view more</a></span>
                 </div>
                 <div class="ms_release_slider swiper-container">
                     <div class="ms_divider"></div>
                     <div class="swiper-wrapper">
+                    
+                    <!--  newly release album start -->
+                      <!-- newly start -->
+                       <c:forEach var="newly" items="${newly}">
                         <div class="swiper-slide">
                             <div class="ms_release_box">
                                 <div class="w_top_song">
                                     <span class="slider_dot"></span>
                                     <div class="w_tp_song_img">
-                                        <img src="/images/weekly/song1.jpg" alt="">
+
+                                        <img src="/upload/${newly.image_50}" alt="">
+
                                         <div class="ms_song_overlay">
                                         </div>
-                                        <div class="ms_play_icon">
+                                        <div class="ms_play_icon" id="${newly.tbno}">
+
+                                        
                                             <img src="/images/svg/play.svg" alt="">
+                                        
                                         </div>
                                     </div>
                                     <div class="w_tp_song_name">
-                                        <h3><a href="#">Dark Alley Acoustic</a></h3>
-                                        <p>Ava Cornish</p>
+                                        <h3><a href="/album/album_single?abno=${newly.abno}">${newly.tname}</a></h3>
+                                        <p>${newly.name}</p>
                                     </div>
                                 </div>
                                 <div class="weekly_right">
-                                    <span class="w_song_time">5:10</span>
+                                    <span class="w_song_time">${newly.length}</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="ms_release_box">
-                                <div class="w_top_song">
-                                    <span class="slider_dot"></span>
-                                    <div class="w_tp_song_img">
-                                        <img src="/images/weekly/song2.jpg" alt="">
-                                        <div class="ms_song_overlay">
-                                        </div>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="w_tp_song_name">
-                                        <h3><a href="#">Dark Alley Acoustic</a></h3>
-                                        <p>Ava Cornish</p>
-                                    </div>
-                                </div>
-                                <div class="weekly_right">
-                                    <span class="w_song_time">5:10</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_release_box">
-                                <div class="w_top_song">
-                                    <span class="slider_dot"></span>
-                                    <div class="w_tp_song_img">
-                                        <img src="/images/weekly/song3.jpg" alt="">
-                                        <div class="ms_song_overlay">
-                                        </div>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="w_tp_song_name">
-                                        <h3><a href="#">Dark Alley Acoustic</a></h3>
-                                        <p>Ava Cornish</p>
-                                    </div>
-                                </div>
-                                <div class="weekly_right">
-                                    <span class="w_song_time">5:10</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_release_box">
-                                <div class="w_top_song">
-                                    <span class="slider_dot"></span>
-                                    <div class="w_tp_song_img">
-                                        <img src="/images/weekly/song4.jpg" alt="">
-                                        <div class="ms_song_overlay">
-                                        </div>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="w_tp_song_name">
-                                        <h3><a href="#">Dark Alley Acoustic</a></h3>
-                                        <p>Ava Cornish</p>
-                                    </div>
-                                </div>
-                                <div class="weekly_right">
-                                    <span class="w_song_time">5:10</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_release_box">
-                                <div class="w_top_song">
-                                    <span class="slider_dot"></span>
-                                    <div class="w_tp_song_img">
-                                        <img src="/images/weekly/song5.jpg" alt="">
-                                        <div class="ms_song_overlay">
-                                        </div>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="w_tp_song_name">
-                                        <h3><a href="#">Dark Alley Acoustic</a></h3>
-                                        <p>Ava Cornish</p>
-                                    </div>
-                                </div>
-                                <div class="weekly_right">
-                                    <span class="w_song_time">5:10</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add Arrows -->
-                <div class="swiper-button-next2 slider_nav_next"></div>
-                <div class="swiper-button-prev2 slider_nav_prev"></div>
-            </div>
+                        </c:forEach>
+                        <!-- newly end -->
+						</div>
+                        <!--  newly release album end -->
             <!----Live Radio Section Start---->
             <div class="ms_radio_wrapper padder_top20">
                 <div class="ms_heading">

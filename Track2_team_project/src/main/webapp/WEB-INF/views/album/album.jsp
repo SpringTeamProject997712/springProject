@@ -347,8 +347,6 @@
                             </div>
                         </div>
                         </c:forEach>
-                        <!-- newly end -->
-
                         <!--  newly release album end -->
                     </div>
                 </div>
