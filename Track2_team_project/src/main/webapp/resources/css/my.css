@@ -299,6 +299,39 @@ a.btn-copyToClipboard{
 .noticemain .album_list_wrapper>ul>li:nth-child(6) {
 	width: 9%;
 }
+/* 오더랑 트랙? */
+.noticelist {
+		
+	}
+	
+.noticewrapper > ul > li{
+	text-align: center;
+	
+}
+
+.orderlist_main {
+	margin-top: 60px;
+}
+
+.orderlist_main .album_list_wrapper>ul>li:nth-child(1) {
+	width: 5%;
+}
+
+.orderlist_main .album_list_wrapper>ul>li:nth-child(2) {
+	width: 30%;
+}
+
+.orderlist_main .album_list_wrapper>ul>li:nth-child(3) {
+	width: 35%;
+}
+
+.orderlist_main .album_list_wrapper>ul>li:nth-child(4) {
+	width: 10%;
+}
+.orderlist_main .album_list_wrapper>ul>li:nth-child(5) {
+	width: 15%;
+}
+
 
 /*====Pagination Start====*/
 

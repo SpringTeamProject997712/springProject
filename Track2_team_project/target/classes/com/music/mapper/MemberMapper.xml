@@ -107,10 +107,14 @@
 	</select>
 	
 	<select id="orderList" resultType="com.music.domain.OrderVO">
-		select 
-			rownum, orderid, id, amount, orderdate 
-		from order_m 
-			where rownnum > 0 and id = #{id}
+		<![CDATA[	
+	select 
+		rownum, o.orderid, m.name, o.amount, o.orderdate 
+	from order_m o
+           inner join member_m m
+           on m.id = o.id 
+		where rownum>0 and o.id = #{id} order by o.orderdate desc
+		]]>
 	</select>
 	
 	

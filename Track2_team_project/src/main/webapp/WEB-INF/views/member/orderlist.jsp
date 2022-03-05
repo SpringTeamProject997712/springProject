@@ -3,9 +3,10 @@
         <!---Side Menu Start--->
       	<!----Album Single Section Start---->
         <!---Main Content Start--->
-        <div class="ms_content_wrapper padder_top80">
+        <div class="ms_content_wrapper">
             <!----Free Download Css Start---->
             <div class="ms_free_download ms_purchase_wrapper">
+               <div class="orderlist_main">
                 <div class="ms_heading">
                     <h1>Your orders</h1>
                 </div>
@@ -15,33 +16,23 @@
 							<li>#</li>
 							<li>Order Number</li>
 							<li>Order things</li>
-							<li class="text-center">Buyer</li>
+							<li class="text-center">Amount</li>
 							<li class="text-center">Order Date</li>
-							<li class="text-center">Add To Favourites</li>
-							<li class="text-center">More</li>
-							<li class="text-center">remove</li>
+<!-- 							<li class="text-center">Order Date</li> -->
 						</ul>
 						<!--  favourite song start -->
 						<c:forEach var="olist" items="${olist}">
 						<ul class="favouritelist">
-							<li><a href="#"><span class="play_no">${flist.rownum}</span><span class="play_hover"></span></a></li>
-							<li><a href="#">${flist.name}</a></li>
-							<li><a href="#">${flist.tname}</a></li>
-							<li class="text-center"><a href="#">${flist.price}</a></li>
-							<li class="text-center"><a href="#">${flist.duration}</a></li>
-							<li class="text-center"><a href="javascript:void(0)" class="fav_box" id="pbno_${flist.pbno}"> <span class="ms_icon1 ms_fav_icon"> </span>
-					</a></li>
-							<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
-								<ul class="more_option">
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Download Now</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-									<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-								</ul>
+							<li><a>${olist.rownum}</a></li>
+							<li><a href="">${olist.orderid}</a></li>
+							<li><a>${olist.name}</a></li>
+							<li class="text-center"><a href="#">
+								<fmt:setLocale value="ja_jp"/>
+								<fmt:formatNumber type="currency" value="${olist.amount}" currencySymbol="&yen;" maxFractionDigits="0" />
+							</a></li>
+							<li class="text-center"><a href="#">
+								<fmt:formatDate value="${olist.orderdate }" type="both" pattern="yyyy-MM-dd HH:MM"/></a>
 							</li>
-							<li class="text-center"><a href="#"><span class="ms_close list_remove">
-									<img src="/images/svg/close.svg" alt=""></span></a></li>
 						</ul>
 						</c:forEach>
 						<!-- favourite song end -->
@@ -51,6 +42,7 @@
 						</div>
 					</div>
 				</div>
+            </div>
             </div>
             <!----Live Radio Section Start---->
             <div class="ms_radio_wrapper padder_top30">

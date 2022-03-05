@@ -269,10 +269,9 @@ public class MemberController {
 			CustomUser user = (CustomUser)auth.getPrincipal();
 			myName =user.getUsername();
 			
+			
 			ovo.setId(myName);
-			
 			List<OrderVO> orderList = service.orderList(ovo);
-			
 			model.addAttribute("olist", orderList);
 		}
 		
