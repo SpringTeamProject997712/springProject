@@ -24,6 +24,8 @@ import com.music.domain.AlbumVO;
 import com.music.domain.CouponVO;
 import com.music.domain.MemberVO;
 import com.music.domain.NoticeVO;
+import com.music.domain.OrderListVO;
+import com.music.domain.OrderVO;
 import com.music.domain.TrackVO;
 import com.music.service.AlbumService;
 import com.music.service.MemberService;
@@ -170,6 +172,13 @@ public class AdminController {
 		MemberVO member = mService.viewMember(id);
 		model.addAttribute("member",member);
 		model.addAttribute("roles",roles);
+	}
+	
+	@GetMapping("/order/manage_order")
+	public void viewOrder(Model model, Criteria cri) {
+		List<OrderVO> odlist = mService.viewOrderListWithPaging(cri);
+		model.addAttribute("odlist", odlist);
+		model.addAttribute("pageMaker", mService.pagingOrderList(cri));
 	}
 	
 //=========================================상품관리용========================================

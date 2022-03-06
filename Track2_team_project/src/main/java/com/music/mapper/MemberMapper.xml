@@ -78,6 +78,12 @@
 			(active = '0' or active = '1')
 	</select>
 	
+	<select id="countOrder" resultType="int">
+			select count(*) from order_m m where 
+			<include refid="search_box"></include>
+			rownum > 0
+	</select>
+	
 	<update id="updateMember">
 		update member_m set name=#{name}, address1=#{address1}, address2=#{address2}, 
 		zipnum=#{zipnum}, active=#{active}, phone=#{phone} , image=#{image}
@@ -112,6 +118,11 @@
 	select 
     o.orderid, m.name, o.amount, my.pbno, p.category, o.orderdate, a.name as aname, t.name as tname, count(od.odbno) as count
 	from order_m o
+<<<<<<< HEAD
+           inner join member_m m
+           on m.id = o.id 
+		where rownum > 0 and o.id = #{id} order by o.orderdate desc 
+=======
         inner join member_m m
         on m.id = o.id 
         inner join orderdetail_m od
@@ -129,6 +140,7 @@
         on p.pbno = a.pbno
     where rownum>0 and o.id = #{id}
     group by o.orderid, m.name, o.amount, my.pbno, p.category, o.orderdate, a.name, t.name order by o.orderdate desc
+>>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 		]]>
 	</select>
 	
@@ -193,6 +205,25 @@
             left outer join track_m t 
             on a.abno = t.abno 
 		where o.id = #{id} order by a.abno asc
+	</select>
+	
+	<select id="viewOrderListWithPaging" resultType="com.music.domain.OrderVO">
+		<![CDATA[
+		select *from(
+			select 
+				o.orderid, o.id, o.orderdate, o.amount as total,
+				    m.name, rownum rn
+				from order_m o
+				inner join member_m m
+				on o.id = m.id
+				where
+		]]>
+		<include refid="search_box"></include>
+		<![CDATA[			
+					rownum <= #{amount} * #{pageNum} 	
+				) 
+			where rn > #{amount} * (#{pageNum}-1)
+		]]>
 	</select>
 	
 	<select id="countMemberByRegdate" resultType="com.music.domain.ChartVO">

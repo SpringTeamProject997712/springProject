@@ -95,6 +95,15 @@
           </ul>
         </li>
         
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+            <svg class="nav-icon">
+              <use href="/images/svg/free.svg#cil-puzzle"></use>
+            </svg> 주문</a>
+          <ul class="nav-group-items">
+            <li class="nav-item"><a class="nav-link" href="/admin/order/manage_order"><span class="nav-icon"></span> 주문관리</a></li>
+          </ul>
+        </li>
+        
         <!-- 상품관리 -->
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
