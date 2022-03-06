@@ -1,30 +1,6 @@
 <%@ include file="../header.jsp" %>
 
-        <!---Main Content Start--->
-        <div class="ms_content_wrapper padder_top80">
-            <!---Header--->
-            <div class="ms_header">
-                <div class="ms_top_left">
-                    <div class="ms_top_search">
-                        <input type="text" class="form-control" placeholder="Search Music Here..">
-                        <span class="search_icon">
-							<img src="/images/svg/search.svg" alt="">
-						</span>
-                    </div>
-                    <div class="ms_top_trend">
-                        <span><a href="#"  class="ms_color">Trending Songs :</a></span> <span class="top_marquee"><a href="#">Dream your moments, Until I Met You, Gimme Some Courage, Dark Alley (+8 More)</a></span>
-                    </div>
-                </div>
-                <div class="ms_top_right">
-                    <div class="ms_top_lang">
-                        <span data-toggle="modal" data-target="#lang_modal">languages <img src="/images/svg/lang.svg" alt=""></span>
-                    </div>
-					<div class="ms_top_btn">
-						<a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>register</span></a>
-						<a href="javascript:;" class="ms_btn login_btn" data-toggle="modal" data-target="#myModal1"><span>login</span></a>
-					</div>
-                </div>
-            </div>
+       
             <!---Recently Played Music--->
             <div class="ms_rcnt_slider marger_top60">
                 <div class="ms_heading">
@@ -61,7 +37,7 @@
                                         </div>
                                     </div>
                                     <div class="ms_rcnt_box_text">
-                                        <h3><a href="/album/album_single?${genre.abno}">${genre.tname }</a></h3>
+                                        <h3><a href="/album/album_single?abno=${genre.abno}">${genre.tname }</a></h3>
                                         <p>${genre.singer}</p>
                                     </div>
                                 </div>
@@ -122,6 +98,6 @@
             </div>
            
         </div>
-        </div>
+     
 
        <%@ include file="../footer.jsp" %>

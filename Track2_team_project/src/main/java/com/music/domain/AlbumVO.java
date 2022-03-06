@@ -28,7 +28,7 @@ public class AlbumVO {
 	private int rownum;
 	private int duration;
 	private String length;
-	
+	private int sum;
 // getcountlikes
 	private int likes;
 	

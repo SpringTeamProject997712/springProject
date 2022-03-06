@@ -30,6 +30,7 @@ public class HomeController {
 		model.addAttribute("newly",service.newly());
 		model.addAttribute("topalbum",service.topAlbums());
 		model.addAttribute("list",service.listAlbum());
+		model.addAttribute("bestAlbum", service.selectBestAlbum());
 		
 		log.info("쿼리값: "+req.getParameter("pageName"));
 		if(req.getParameter("pageName")==null) {

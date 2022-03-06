@@ -350,8 +350,8 @@ public class MemberController {
 			ovo.setOrderid(orderID);
 			List<OrderListVO> orderView = service.orderDetailList(ovo);
 			model.addAttribute("orderView", orderView);
+			model.addAttribute("orderdetailView", service.orderdetailTracksInAlbum(ovo));
 		}
-		
 	}
 	
 	

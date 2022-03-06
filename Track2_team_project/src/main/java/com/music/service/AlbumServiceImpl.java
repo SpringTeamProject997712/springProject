@@ -97,5 +97,10 @@ public class AlbumServiceImpl implements AlbumService {
 	public void deleteAlbum(int pbno) {
 		pmapper.deleteProduct(pbno);
 	}
+	@Override
+	public AlbumVO selectBestAlbum() {
+		int abno =pmapper.selectBestAlbumList().get(0).getAbno();
+		return mapper.viewAlbum(abno);
+	}
 
 }

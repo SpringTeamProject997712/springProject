@@ -51,7 +51,7 @@ public class OrderListVO {
 	
 	private int apbno;
 	private int tpbno;
-	
+	private String aimage;
 	private String timage;
 	
 	private String category;
