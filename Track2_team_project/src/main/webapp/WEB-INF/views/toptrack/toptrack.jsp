@@ -23,7 +23,7 @@
                                             <img src="${pageContext.request.contextPath}/upload/${top.image_50}" alt="">
                                             <div class="ms_song_overlay">
                                             </div>
-                                            <div class="ms_play_icon" id="${top.tbno}">
+                                            <div class="ms_play_icon instantly_play_track" id="${top.tbno}">
                                                 <img src="../images/svg/play.svg" alt="">
                                             </div>
                                         </div>

@@ -145,8 +145,13 @@
 	
 	<select id="orderTrackList" resultType="com.music.domain.OrderListVO">
 		select 
+<<<<<<< HEAD
 		   rownum,t.pbno, t.name as tname, a.name as aname, a.singer as singer, t.duration, t.songrealname, t.songname,
 		    a.image_50 as image,
+=======
+		   rownum, t.name as tname, a.name as aname, a.singer as singer, t.duration, t.songrealname, t.songname,
+		    a.image_50 as image, t.tbno, d.pbno,
+>>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 		    (LPAD ((TRUNC (duration / 60)), 2, '0')
 		       ||  ':'
 		       ||  LPAD ((MOD (duration, 60)), 2, '0')) as length
