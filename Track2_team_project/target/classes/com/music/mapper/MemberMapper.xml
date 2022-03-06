@@ -160,16 +160,15 @@
 		where o.id = #{id}
 	</select>
 	
-	<select id="orderAlbumList" resultType="com.music.domain.orderListVO">
-		select
-    o.orderid,
-    a.pbno, a.abno, a.singer, a.name as aname, a.image_50 as image,
-    t.tbno, t.name as tname, t.duration, t.songrealname, t.songname, t.duration,
-    
-                 (LPAD ((TRUNC (duration / 60)), 2, '0')
-		       ||  ':'
-		       ||  LPAD ((MOD (duration, 60)), 2, '0')) as length
-               
+	<select id="orderAlbumList" resultType="com.music.domain.OrderListVO">
+		select 
+	rownum, 
+    o.orderid, 
+    a.pbno, a.abno, a.singer, a.name as aname, a.image_50 as image, 
+    t.tbno, t.name as tname, t.duration, t.songrealname, t.songname, t.duration, 
+                 (LPAD ((TRUNC (duration / 60)), 2, '0') 
+		       ||  ':' 
+		       ||  LPAD ((MOD (duration, 60)), 2, '0')) as length  
 		from order_m o 
 		    inner join orderdetail_m d 
 		    on o.orderid = d.orderid 
@@ -177,9 +176,9 @@
             on d.pbno = p.pbno 
 		    inner join album_m a
 		    on d.pbno = a.pbno 
-            left outer join track_m t
-            on a.abno = t.abno
-		where o.id = #{id}
+            left outer join track_m t 
+            on a.abno = t.abno 
+		where o.id = #{id} 
 	</select>
 	
 </mapper>

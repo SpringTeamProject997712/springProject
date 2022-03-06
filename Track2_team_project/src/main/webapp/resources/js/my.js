@@ -420,6 +420,7 @@ function modify_playlist_name(){
 		}
 	});
 }
+
 let SlideOn = 1;
 $(".slideDown-details").find("div.product-item").on("click", function(abno){
 	let cbno = $(this).parent().parent().attr('id');
@@ -433,6 +434,7 @@ $(".slideDown-details").find("div.product-item").on("click", function(abno){
 		SlideOn=1;
 	}
 })
+
 $(".cart-details").on("click", function(abno){
 	$(".cart-details").slideUp(10);
 })
