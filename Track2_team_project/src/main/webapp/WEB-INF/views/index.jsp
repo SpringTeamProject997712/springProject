@@ -1038,10 +1038,12 @@
 					</div>
 				</div>
 			</div>
-
+		</div>
+		</div>
+		</div>
 
             <!----Main div close---->
-        </div>
+     
 
 <!-- main js files links -->
 <%@ include file="footer.jsp" %>
