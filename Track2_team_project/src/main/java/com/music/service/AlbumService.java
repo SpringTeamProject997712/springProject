@@ -54,5 +54,8 @@ public interface AlbumService {
 	//앨범 삭제
 	public void deleteAlbum(int pbno);
 	
+	//가장 잘팔린 앨범 하나 가져옴
+	public AlbumVO selectBestAlbum();
+	
 
 }

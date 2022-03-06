@@ -1,4 +1,9 @@
 <%@ include file="../header.jsp" %>
+<<<<<<< HEAD
+=======
+
+       
+>>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
             <!---Recently Played Music--->
             <div class="ms_rcnt_slider marger_top60">
                 <div class="ms_heading">
@@ -65,7 +70,7 @@
                                 <div class="w_top_song">
                                     <span class="slider_dot"></span>
                                     <div class="w_tp_song_img">
-                                        <img src="/images/weekly/song1.jpg" alt="">
+                                        <img src="/upload/${newly.image_50}" alt="">
                                         <div class="ms_song_overlay">
                                         </div>
                                         <div class="ms_play_icon">
@@ -80,7 +85,7 @@
                                     </div>
                                 </div>
                                 <div class="weekly_right">
-                                    <span class="w_song_time">5:10</span>
+                                    <span class="w_song_time">${newly.length}</span>
                                 </div>
                             </div>
                         </div>

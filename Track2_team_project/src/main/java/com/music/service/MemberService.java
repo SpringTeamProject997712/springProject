@@ -70,7 +70,12 @@ public interface MemberService {
 	
 	//오더 상세 리스트
 	public List<OrderListVO> orderDetailList(OrderVO ovo);
+<<<<<<< HEAD
 	
 	//다운로드 리스트
 	public List<OrderListVO> orderTrackList(OrderVO ovo);
+=======
+	//오더 상세리스트의 앨범 안 트랙들
+	public List<OrderListVO> orderdetailTracksInAlbum(OrderVO ovo);
+>>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 }
