@@ -178,7 +178,7 @@
 		    on d.pbno = a.pbno 
             left outer join track_m t 
             on a.abno = t.abno 
-		where o.id = #{id} 
+		where o.id = #{id} order by a.abno asc
 	</select>
 	
 </mapper>
