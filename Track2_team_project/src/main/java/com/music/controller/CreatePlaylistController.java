@@ -121,11 +121,14 @@ public class CreatePlaylistController {
 		
 		if(!(auth.getPrincipal().equals("anonymousUser")) || vo.getMenu()==1) {
 			plist = service.selectMethod(vo);
-		}
+		
 		
 		Gson gson = new Gson();
 		json = gson.toJson(plist);
 		log.info("확ㅡ인 : "+json);
+		}else {
+			json= "1";
+		}
 //		받은 plist를 json형식의 string으로 변환해 ajax로 반환한다.
 		
 		return json;
@@ -167,6 +170,23 @@ public class CreatePlaylistController {
 			myName = "삭제됨";
 		}
 		return myName;
+	}
+	
+	@GetMapping("/deletePlaylist")
+	public String deletePlaylistDetail(int plbno) {
+		String myName="";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			PlaylistVO pvo = new PlaylistVO();
+			
+			pvo.setPlbno(plbno);
+			pvo.setName(myName);
+			service.deletePlaylist(pvo);
+			myName = "삭제됨";
+		}
+		return "redirect:/member/my_playlist/my_playlist?pageName=menu_addlist";
 	}
 	
 	/*

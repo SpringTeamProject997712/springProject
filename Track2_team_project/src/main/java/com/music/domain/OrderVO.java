@@ -14,4 +14,8 @@ public class OrderVO {
 	private int amount;
 	private String name;
 	
+	private String aname;
+	private String tname;
+	private String category;
+	private int count;
 }

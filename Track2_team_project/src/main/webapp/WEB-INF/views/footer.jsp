@@ -517,16 +517,20 @@ $(".insert_cart_btn").click(function() {
 		data : data,
 		success : function(success_return) {
 			if(success_return=='1'){
-				alert("담기 성공");
+				if(confirm("カートに移動しますか？")){
+					location.href = "/member/my_cart?pageName=menu_cart"
+				}else{
+					
+				}
 			}else if(success_return=='2'){
 				alert("중복임");
 			}else{
 				$("#myModal1").modal();
-				alert("로그인이 필요합니다");s
+				alert("ログインをしてください");
 			}
 		},
 		error : function(xhr,status,err) {
-			alert("카드를 담기 위해서는 로그인이 필요합니다.");
+			alert("ログインをしてください");
 			alert(xhr.status + xhr.responseText + err)
 		}
 	});
@@ -548,16 +552,20 @@ $(".add_track_to_cart").click(function() {
 		data : data,
 		success : function(success_return) {
 			if(success_return=='1'){
-				alert("담기 성공");
+				if(confirm("カートに移動しますか？")){
+					location.href = "/member/my_cart?pageName=menu_cart"
+				}else{
+					
+				}
 			}else if(success_return=='2'){
 				alert("중복임");
 			}else{
 				$("#myModal1").modal();
-				alert("로그인이 필요합니다");
+				alert("ログインをしてください");
 			}
 		},
 		error : function(xhr,status,err) {
-			alert("카드를 담기 위해서는 로그인이 필요합니다.");
+			alert("ログインをしてください");
 			alert(xhr.status + xhr.responseText + err)
 		}
 	});
