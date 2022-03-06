@@ -736,7 +736,7 @@ function go_purchase() {
 		},success:function(data){
 			data = JSON.parse(data);
 			console.log(data);
-			let your_coupon ="<option id='0' class='1' value=''></option>";
+			let your_coupon ="<option id='0' class='1' value=''>クーポン選択</option>";
 			for(var i=0; i<data.length; i++){
 				your_coupon += "<option id='"+data[i].saleper+"' class='"+data[i].type+"' value='"+data[i].couponnumber+"'>";
 				your_coupon += data[i].couponname;
@@ -754,6 +754,7 @@ function go_purchase() {
 	})
 	//
 	$("#final_totalPrice").val(document.purchaseForm.amount.value);
+	$("#real_final_totalPrice").val(document.purchaseForm.amount.value);
 	
 	$("#myPurchase").modal();
 }
@@ -769,7 +770,7 @@ $("#coupon_selector").on("change", function(){
 		now_money = now_money - (saleper/100);
 	}
 	console.log(now_money);
-	$("#final_totalPrice").val(now_money);
+	$("#real_final_totalPrice").val(now_money);
 })
 
 function fn_sendFB(sns) {

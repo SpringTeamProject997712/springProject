@@ -5,7 +5,7 @@ function got_info(my_pg){
 		pay_method : 'card',
 		merchant_uid : 'merchant_' + new Date().getTime(),
 		name : document.getElementById('this_order_name').innerHTML, //~외 몇개
-		amount : document.getElementById('final_totalPrice').value, //금액
+		amount : document.getElementById('real_final_totalPrice').value, //금액
 		buyer_email : document.purchaseForm.real_id.value, //유저 아이디
 		buyer_name : document.purchaseForm.id.value, //유저네임
 		buyer_tel : document.purchaseForm.phone.value, //유저폰 

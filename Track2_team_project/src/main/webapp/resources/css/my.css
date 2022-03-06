@@ -1138,11 +1138,18 @@ h1.comments-title:after, .blog_comments_forms h1:after, .comment-respond h1:afte
 
 .final_totalPrice{
 	float: right;
-	margint-top:20px;
+	margint-top:12px;
+}
+.real_final_totalPrice{
+	float: right;
+	margint-top:12px;
 }
 
 .purchase_buttons img{
 	display: block;
-	margin:30px auto;
-	
+	margin:15px auto;
+}
+.kkk-modal label {
+	padding-top: 25px;
+	color:#000; 
 }

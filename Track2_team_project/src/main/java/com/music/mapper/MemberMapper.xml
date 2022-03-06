@@ -118,11 +118,6 @@
 	select 
     o.orderid, m.name, o.amount, my.pbno, p.category, o.orderdate, a.name as aname, t.name as tname, count(od.odbno) as count
 	from order_m o
-<<<<<<< HEAD
-           inner join member_m m
-           on m.id = o.id 
-		where rownum > 0 and o.id = #{id} order by o.orderdate desc 
-=======
         inner join member_m m
         on m.id = o.id 
         inner join orderdetail_m od
@@ -140,7 +135,6 @@
         on p.pbno = a.pbno
     where rownum>0 and o.id = #{id}
     group by o.orderid, m.name, o.amount, my.pbno, p.category, o.orderdate, a.name, t.name order by o.orderdate desc
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 		]]>
 	</select>
 	
