@@ -1,10 +1,17 @@
 package com.music.controller;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Member;
 import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.List;
+import java.util.UUID;
 
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -21,9 +28,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+
 import com.music.domain.CartVO;
 import com.music.domain.MemberVO;
 import com.music.domain.Member_authVO;
+import com.music.domain.OrderListVO;
 import com.music.domain.OrderVO;
 import com.music.domain.OrderdetailVO;
 import com.music.domain.PlaylistVO;
@@ -32,6 +42,7 @@ import com.music.service.AlbumService;
 import com.music.service.CartService;
 import com.music.service.CreatePlaylistService;
 import com.music.service.MemberService;
+import com.music.utility.UploadFileUtil;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -99,7 +110,55 @@ public class MemberController {
 	
 	//멤버수정
 	@PostMapping("/updateMember")
-	public String updateMember(MemberVO mvo, int your_home) {
+	public String updateMember(MemberVO mvo, @RequestParam("uploadImage") MultipartFile uploadImage, int your_home
+			,HttpServletRequest req) throws IOException{
+		
+		String uploadFolder = "C:\\upload";
+		File uploadPath = new File(uploadFolder, UploadFileUtil.getFolder());
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		
+		if(uploadImage.getOriginalFilename() != null && !uploadImage.getOriginalFilename().equals("")) {
+			new File(uploadFolder+"\\"+req.getParameter("image")).delete();
+			
+			String uploadImageName = uploadImage.getOriginalFilename();
+			
+			//파일에 변수명 주기
+			UUID uuid = UUID.randomUUID();
+			uploadImageName = uuid.toString()+"_"+uploadImageName;
+			
+			if(uploadPath.exists() == false) {
+				uploadPath.mkdirs();
+			}
+			
+			File saveimage = new File(uploadPath, uploadImageName);
+			
+			try {
+				uploadImage.transferTo(saveimage);
+				uploadImageName = (saveimage.toString().substring(10));
+				mvo.setImage(uploadImageName);
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			File saveimage_155 = new File(uploadFolder, uploadImageName);
+			
+			InputStream inputStream_155 = new FileInputStream(saveimage_155);
+			
+			String strImageName = uploadImageName.substring(0,uploadImageName.lastIndexOf('.'));
+			
+	        int width_155 = 155; // 리사이즈할 가로 길이
+	        int height_155 = 155; // 리사이즈할 세로 길이
+			
+	        BufferedImage resizedImage_155 = UploadFileUtil.resize(inputStream_155 ,width_155, height_155);
+
+	        ImageIO.write(resizedImage_155, "png", new File(uploadFolder, strImageName+"_155.png"));
+	        
+			mvo.setImage(strImageName+"_155.png");
+			
+		}else {
+			mvo.setImage(service.viewMember(mvo.getId()).getImage());
+		}
+		
 		service.updateMember(mvo);
 		String go_home="";
 		if(your_home==1) {
@@ -202,6 +261,7 @@ public class MemberController {
 		model.addAttribute("view",service.viewOnePlaylist(plbno));
 		model.addAttribute("countTrack", service.countTrack(plbno));
 		model.addAttribute("newly",aservice.newly());
+		model.addAttribute("myPlaylist", service.myPlaylistView(plbno));
 		model.addAttribute("this_plbno",plbno);
 		model.addAttribute("justPlaylist",pservice.selectJustOnePlaylist(plbno));
 	}
@@ -258,12 +318,41 @@ public class MemberController {
 			cservice.cartAllDelete(myName);
 		}
 		
-		
-		
-		
 		return "redirect:/";
 	}
 	
+	@GetMapping("/orderlist")
+	public void getOrderList(OrderVO ovo, Model model) {
+		String myName = "";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			
+			
+			ovo.setId(myName);
+			List<OrderVO> orderList = service.orderList(ovo);
+			model.addAttribute("olist", orderList);
+		}
+	}
+	
+	@GetMapping("/orderview")
+	public void gerOrderListDetail(Model model, OrderVO ovo,
+			@RequestParam("n") String orderID
+			) {
+		String myName = "";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			
+			ovo.setId(myName);
+			ovo.setOrderid(orderID);
+			List<OrderListVO> orderView = service.orderDetailList(ovo);
+			model.addAttribute("orderView", orderView);
+		}
+		
+	}
 	
 	
 	@GetMapping("/favourite")

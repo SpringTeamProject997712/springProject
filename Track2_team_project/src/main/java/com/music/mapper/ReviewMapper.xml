@@ -12,7 +12,10 @@
 	</insert>
 
 	<select id="selectReview" resultType="com.music.domain.ReviewVO">
-		select * from review_m where pbno = #{pbno}
+		select r.rbno, r.id as id, r.pbno, m.image as image, r.title as title, r.content as content 	  
+		from review_m r, member_m m
+		where r.id = m.id 
+		and pbno = #{pbno}
 	
 	</select>
 	

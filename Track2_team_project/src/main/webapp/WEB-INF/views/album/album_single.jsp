@@ -87,7 +87,7 @@
                             <div class="ms_test_box">
                                 <div class="ms_test_top">
                                     <div class="ms_test_img">
-                                        <img src="/images/user1.jpg" alt="">
+                                        <img src="/upload/${comments.image}" alt="" width="50px">
                                     </div>
                                     <div class="ms_test_name">
                                         <h3>${comments.id}</h3>

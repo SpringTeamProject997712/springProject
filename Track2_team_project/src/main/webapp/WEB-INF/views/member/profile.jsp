@@ -4,7 +4,7 @@
                 <h1>Edit Profile</h1>
                 <div class="ms_profile_box">
                     <div class="ms_pro_img">
-                        <img src="/images/pro_img.jpg" alt="" class="img-fluid">
+                        <img src="/upload/${memberList.image}" alt="" class="img-fluid">
                         <div class="pro_img_overlay">
                             <i class="fa_icon edit_icon"></i>
                         </div>

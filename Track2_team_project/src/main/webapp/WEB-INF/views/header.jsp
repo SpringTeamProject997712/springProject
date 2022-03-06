@@ -1,9 +1,11 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<% SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 a hh:mm:ss"); %>
 <!DOCTYPE html>
 <html lang="jp">
 <head>
@@ -27,7 +29,7 @@
     <!-- Favicon Link -->
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
     <script src="/resources/js/jquery.js"></script>
-<!--     <script src="/resources/js/jquery2.min.js"></script> -->
+		<script src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js" type="text/javascript"></script>
     <script src="/resources/js/tj.js"></script>
 </head>
 
@@ -184,8 +186,7 @@
 					<ul class="pro_dropdown_menu">
 						<li><a href="/member/profile?id=${principal.username}">Profile</a></li>
 						<li><a href="/member/my_playlist/my_playlist">My Playlist</a></li>
-						<li><a href="manage_acc.html" target="_blank">Pricing Plan</a></li>
-						<li><a href="blog.html" target="_blank">Blog</a></li>
+						<li><a href="/member/orderlist">Order List</a></li>
 						<sec:authorize access="hasRole('ROLE_ADMIN')">
 							<li><a href="/admin/admin">GO Admin</a></li>
 						</sec:authorize>

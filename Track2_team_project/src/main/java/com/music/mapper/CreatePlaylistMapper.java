@@ -67,4 +67,9 @@ public interface CreatePlaylistMapper {
 	
 	//아이디와 플레이리스트 번호 그리고 이름으로 플레이리스트 이름 수정하기
 	public int modifyPlaylist(PlaylistVO pvo);
+	
+	//나나나나
+	public ViewPlaylistDetailVO myPlaylistView(int plbno);
+	//플레이리스트 이미지 가져오기
+	public ViewPlaylistDetailVO selectPlaylistImage(int plbno);
 }
