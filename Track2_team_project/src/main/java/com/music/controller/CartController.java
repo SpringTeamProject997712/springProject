@@ -1,6 +1,7 @@
 package com.music.controller;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 import com.music.domain.CartVO;
+import com.music.domain.CouponVO;
 import com.music.domain.MemberVO;
 import com.music.domain.OrderVO;
 import com.music.domain.OrderdetailVO;
@@ -90,5 +92,21 @@ public class CartController {
 		Gson gson = new Gson(); 
 		String json =gson.toJson(returnCart); //duration ==> 앨범인지 트랙인지, aname ==> 상품명 , pbno ==> 길이
 		return json;		
+	}
+	
+	@GetMapping("/select_my_coupon_for_purchase")
+	@ResponseBody
+	public String select_my_coupon_for_purchase() {
+		String myName="";
+		List<CouponVO> coupons = new ArrayList<CouponVO>();
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			coupons = service.getCoupons(myName);
+		}
+		Gson gson = new Gson(); 
+		String json =gson.toJson(coupons);
+		return json;
 	}
 }

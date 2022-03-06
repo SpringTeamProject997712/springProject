@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.music.domain.CartVO;
+import com.music.domain.CouponVO;
 import com.music.domain.OrderVO;
 import com.music.domain.OrderdetailVO;
 import com.music.mapper.CartMapper;
@@ -54,5 +55,16 @@ public class CartServiceImpl implements CartService {
 	public void cartAllDelete(String id) {
 		cmapper.cartAllDelete(id);
 	}
-
+	@Override
+	public List<CouponVO> getCoupons(String id) {
+		return cmapper.getCoupons(id);
+	}
+	@Override
+	public int searchCouponIsRealWithCouponid(String couponid) {
+		return cmapper.searchCouponIsRealWithCouponid(couponid);
+	}
+	@Override
+	public int setCoupon(CouponVO cvo) {
+		return cmapper.setCoupon(cvo);
+	}
 }

@@ -3,6 +3,7 @@ package com.music.mapper;
 import java.util.List;
 
 import com.music.domain.CartVO;
+import com.music.domain.CouponVO;
 import com.music.domain.OrderVO;
 import com.music.domain.OrderdetailVO;
 
@@ -27,4 +28,10 @@ public interface CartMapper {
 	public void orderInfo_detail(OrderdetailVO odvo);
 	
 	public void cartAllDelete(String id);
+	
+	public List<CouponVO> getCoupons(String id);
+	
+	public Integer searchCouponIsRealWithCouponid(String couponid);
+	
+	public int setCoupon(CouponVO cvo);
 }

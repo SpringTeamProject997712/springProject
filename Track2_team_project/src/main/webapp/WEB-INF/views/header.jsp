@@ -185,6 +185,7 @@
 						<li><a href="/member/profile?id=${principal.username}">Profile</a></li>
 						<li><a href="/member/my_playlist/my_playlist">My Playlist</a></li>
 						<li><a href="/member/orderlist">Order List</a></li>
+						<li><a href="/member/my_coupon">Coupons</a></li>
 						<sec:authorize access="hasRole('ROLE_ADMIN')">
 							<li><a href="/admin/admin">GO Admin</a></li>
 						</sec:authorize>
