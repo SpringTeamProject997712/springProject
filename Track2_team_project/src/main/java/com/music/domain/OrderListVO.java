@@ -56,4 +56,12 @@ public class OrderListVO {
 	
 	private String category;
 	
+	private String pw;
+	private String nickname;
+	private String active;
+	private String phone;
+	private String email;
+	private String zipnum;
+	private String address1;
+	private String address2;
 }

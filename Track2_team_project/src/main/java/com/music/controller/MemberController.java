@@ -378,4 +378,10 @@ public class MemberController {
 		}
 		model.addAttribute("favouritelist",service.favouritesView(id));
 	}
+	
+	@GetMapping("/login")
+	public void loginPage() {
+		
+	}
+	
 }

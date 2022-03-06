@@ -50,6 +50,8 @@ public interface MemberService {
 	
 	//페이징
 	public PageMaker pagingList(Criteria cri);
+	//페이징
+	public PageMaker pagingOrderList(Criteria cri);
 
 	//멤버 삭제
 	public int deleteMember(String id);
@@ -90,5 +92,8 @@ public interface MemberService {
 	public int countAllMember();
 	//총매출
 	public int countAllMoney();
+	
+	//어드민 오더 리스트
+	public List<OrderVO> viewOrderListWithPaging(Criteria cri);
 	
 }

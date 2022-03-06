@@ -76,6 +76,13 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
+	public PageMaker pagingOrderList(Criteria cri) {
+		int amount=mapper.countOrder(cri);
+		PageMaker pageMaker = new PageMaker(cri,amount);
+		return pageMaker;
+	}
+	
+	@Override
 	public List<PlaylistVO> viewMyPlaylist(String id) {
 		return cmapper.selectPlaylistwithId(id);
 	}
@@ -185,5 +192,10 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public List<ChartVO> countMoneyByRegdate() {
 		return mapper.countMoneyByRegdate();
+	}
+
+	@Override
+	public List<OrderVO> viewOrderListWithPaging(Criteria cri) {
+		return mapper.viewOrderListWithPaging(cri);
 	}
 }
