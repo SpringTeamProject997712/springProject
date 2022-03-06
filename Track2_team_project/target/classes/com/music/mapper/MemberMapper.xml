@@ -143,4 +143,21 @@
 	and d.orderid = #{orderid}
 	</select>
 	
+	<select id="orderTrackList" resultType="com.music.domain.OrderListVO">
+		select 
+		   rownum, t.name as tname, a.name as aname, a.singer as singer, t.duration, t.songrealname, t.songname,
+		    a.image_50 as image,
+		    (LPAD ((TRUNC (duration / 60)), 2, '0')
+		       ||  ':'
+		       ||  LPAD ((MOD (duration, 60)), 2, '0')) as length
+		from order_m o 
+		    inner join orderdetail_m d 
+		    on o.orderid = d.orderid 
+		    inner join track_m t
+		    on t.pbno = d.pbno 
+		    inner join album_m a
+		    on t.abno = a.abno 
+		where o.id = #{id}
+	</select>
+	
 </mapper>

@@ -730,4 +730,3 @@ function go_notice_search(){
 
 }
 
-

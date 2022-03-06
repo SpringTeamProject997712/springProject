@@ -140,11 +140,6 @@
 						<span class="icon icon_c_playlist"></span>
 							</span> <span class="nav_text"> リスト作成 </span>
 						</a></li>
-						<li><a href="#" class="menu" title="Notice" id="menu_notice">
-						<span class="nav_icon">
-						<span class="icon icon_fe_playlist"></span>
-							</span> <span class="nav_text"> お知らせ </span>
-						</a></li>
 					</ul>
 				</div>
             </div>
@@ -166,7 +161,8 @@
 											</div>
                     </div>
                     <div class="ms_top_trend">
-                        <span><a href="/notice/notice?pageName=menu_notice"  class="ms_color">お知らせ :</a></span> <span class="top_marquee"><a href="#">Dream your moments, Until I Met You, Gimme Some Courage, Dark Alley (+8 More)</a></span>
+                        <span><a href="/notice/notice?pageName=menu_notice"  class="ms_color">お知らせ :</a>
+                        </span> <span class="top_marquee"><a href="#">Dream your moments, Until I Met You, Gimme Some Courage, Dark Alley (+8 More)</a></span>
                     </div>
                 </div>
                 <div class="ms_top_right">
@@ -178,8 +174,10 @@
                     </sec:authorize>
                     <sec:authorize access="isAuthenticated()">
                     	<sec:authentication property="principal" var="principal"/>
-											<div class="ms_top_btn">
-	                      <a href="/upload/upload?pageName=menu_main" class="ms_btn">upload</a>
+							<div class="ms_top_btn">
+								<sec:authorize access="hasRole('ROLE_UPLOADER')">
+	                   		   <a href="/upload/upload?pageName=menu_main" class="ms_btn">upload</a>
+	                   		  </sec:authorize>
 	                      <a href="javascript:;" class="ms_admin_name">Hello ${principal.member.name} 
 	                      	<span class="ms_pro_name">${principal.member.name.substring(0,1)}</span>
 					</a>
@@ -190,7 +188,6 @@
 						<sec:authorize access="hasRole('ROLE_ADMIN')">
 							<li><a href="/admin/admin">GO Admin</a></li>
 						</sec:authorize>
-						<li><a href="">Setting</a></li>
 						<li><a href="/admin/adminLogout">Logout</a></li>
 					</ul>
                    </div>

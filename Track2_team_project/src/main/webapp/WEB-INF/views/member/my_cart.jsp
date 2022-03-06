@@ -7,10 +7,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2>Manage Account</h2>
-				<div class="ms_heading">
-					<h1>Subscription Plans</h1>
-				</div>
+				<h2>カート</h2>
 			</div>
 		</div>
 		<div class="row">
@@ -18,7 +15,7 @@
 				<div class="ms_acc_overview">
 					<c:choose>
 						<c:when test="${cartList.size() == 0}">
-							<td>카트 내 정보가 없습니다.</td>
+							<td>カート内の情報がないです。</td>
 						</c:when>
 						<c:otherwise>
 							<div class="ms_heading">
@@ -179,6 +176,7 @@
 											<input type="hidden" name="address2" value="${principal.member.address2}">
 										</form>
 										<a class="ms_btn btn-success" href="javascript:void(0)" onclick="go_purchase()">Purchase</a>
+										
 										<a class="ms_btn btn-success" href="javascript:void(0);" data-toggle="modal" data-target="#pay_modal">Checkout</a>
 									</div>
 								</div>

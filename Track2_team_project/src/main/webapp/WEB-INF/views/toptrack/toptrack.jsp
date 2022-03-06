@@ -1,7 +1,4 @@
 <%@ include file="../header.jsp" %>
-
-        <div class="ms_content_wrapper padder_top90">
-        
             <!---Weekly Top 15--->
             <div class="ms_weekly_wrapper">
                 <div class="ms_weekly_inner">

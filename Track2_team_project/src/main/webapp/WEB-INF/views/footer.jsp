@@ -325,11 +325,11 @@
 								<span class="form_icon"> <i class="fa_icon form-lock" aria-hidden="true"></i>
 								</span>
 							</div>
-							<div class="remember_checkbox">
-								<label>ログイン情報キープ <input type="checkbox" id="saveBtn">
-								<span class="checkmark"></span>
-								</label>
-							</div>
+							<div id="smart-button-container">
+						      <div style="text-align: center;">
+						        <div id="paypal-button-container"></div>
+						      </div>
+						    </div>
 							<a href="javascript:go_pay()" class="ms_btn">ログイン</a>
 						</form>
 					</div>
@@ -397,7 +397,7 @@
 	</div>
 	
 	<div id="myPurchase" class="modal centered-modal" role="dialog">
-		<div class="modal-dialog login_dialog" style="max-width: 800px; ">
+		<div class="modal-dialog login_dialog" style="max-width: 400px; ">
 			<!-- Modal content-->
 			<div class="modal-content">
 				<button type="button" class="close" id="my_modal_close_btn" data-dismiss="modal">
@@ -413,8 +413,14 @@
 					<label>price</label>
 					<input type="text" class="final_totalPrice form-control" id="final_totalPrice" readonly="readonly" width="40%">
 				</div>
+				<div id="smart-button-container">
+			      <div style="text-align: center;">
+			        <div id="paypal-button-container"></div>
+			      </div>
+			    </div>
 				<div class="purchase_buttons">
-					<a onclick="go_this_purchase(this.id)" id="html5_inicis"><img alt="카드결제" src="/images/card_rufwp.jpg" width="400px" height="100px"></a>
+					
+					<a onclick="go_this_purchase(this.id)" id="html5_inicis"><img alt="카드결제" src="/images/card_rufwp.jpg" width="250px" height="100px"></a>
 					
 					<a onclick="go_this_purchase(this.id)" id="paypal"><img alt="페이팔결제" src="/images/paypal.png" width="400px" height="100px"></a>
 				</div>
@@ -479,6 +485,7 @@
 
 <script type="text/javascript" src="/resources/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/resources/js/moment.min.js"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
 <script type="text/javascript" src="/resources/js/plugins/swiper/js/swiper.min.js"></script>
 <script type="text/javascript" src="/resources/js/plugins/player/jplayer.playlist.min.js"></script>
 <script type="text/javascript" src="/resources/js/plugins/player/jquery.jplayer.min.js"></script>
@@ -557,6 +564,46 @@ $(".add_track_to_cart").click(function() {
 	});
 });
 </script>
+  <script>
+    function initPayPalButton() {
+      paypal.Buttons({
+        style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'paypal',
+          
+        },
+
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{"amount":{"currency_code":"USD","value":1}}]
+          });
+        },
+
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+            
+            // Full available details
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+            // Show a success message within this page, e.g.
+            const element = document.getElementById('paypal-button-container');
+            element.innerHTML = '';
+            element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+            // Or go to another URL:  actions.redirect('thank_you.html');
+            
+          });
+        },
+
+        onError: function(err) {
+          console.log(err);
+        }
+      }).render('#paypal-button-container');
+    }
+    initPayPalButton();
+  </script>
 </body>
 
 </html>

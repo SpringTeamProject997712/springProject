@@ -1,13 +1,8 @@
 <%@ include file="../header.jsp" %>
 
-        <!---Side Menu Start--->
-      	<!----Album Single Section Start---->
-        <!---Main Content Start--->
-        <div class="ms_content_wrapper padder_top80">
-            <!----Free Download Css Start---->
             <div class="ms_free_download ms_purchase_wrapper">
                 <div class="ms_heading">
-                    <h1>Your orders</h1>
+                    <h1>Your Tracks</h1>
                 </div>
 				<div class="album_inner_list">
 					<div class="album_list_wrapper">
@@ -15,21 +10,21 @@
 							<li>#</li>
 							<li>Song Title</li>
 							<li>Album</li>
-							<li class="text-center">price</li>
+							<li class="text-center">Singer</li>
 							<li class="text-center">Duration</li>
 							<li class="text-center">Add To Favourites</li>
 							<li class="text-center">More</li>
-							<li class="text-center">remove</li>
+							<li class="text-center">Download</li>
 						</ul>
 						<!--  favourite song start -->
-						<c:forEach var="flist" items="${favouritelist}">
+						<c:forEach var="olist" items="${olist}">
 						<ul class="favouritelist">
-							<li><a href="#"><span class="play_no">${flist.rownum}</span><span class="play_hover"></span></a></li>
-							<li><a href="#">${flist.name}</a></li>
-							<li><a href="#">${flist.tname}</a></li>
-							<li class="text-center"><a href="#">${flist.price}</a></li>
-							<li class="text-center"><a href="#">${flist.duration}</a></li>
-							<li class="text-center"><a href="javascript:void(0)" class="fav_box" id="pbno_${flist.pbno}"> <span class="ms_icon1 ms_fav_icon"> </span>
+							<li><a href="#"><span class="play_no">${olist.rownum}</span><span class="play_hover"></span></a></li>
+							<li><a href="#">${olist.tname}</a></li>
+							<li><a href="#">${olist.aname}</a></li>
+							<li class="text-center"><a href="#">${olist.singer}</a></li>
+							<li class="text-center"><a href="#">${olist.length}</a></li>
+							<li class="text-center"><a href="javascript:void(0)" class="fav_box" id="pbno_${olist.pbno}"> <span class="ms_icon1 ms_fav_icon"> </span>
 					</a></li>
 							<li class="text-center ms_more_icon"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
 								<ul class="more_option">
@@ -40,305 +35,33 @@
 									<li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
 								</ul>
 							</li>
-							<li class="text-center"><a href="#"><span class="ms_close list_remove">
-									<img src="/images/svg/close.svg" alt=""></span></a></li>
+							<li class="text-center">
+							<a href="javascript:void(0)" id="${olist.rownum }">
+							<span class="ms_close" style="background-color:transparent;">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+									  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+									</svg>
+							</span>
+							</a>
+							</li>
 						</ul>
+						<script>
+						$("#${olist.rownum}").click(function(){
+						    var filePath = "${olist.songrealname}";
+						    var fileName = "${olist.songname}";
+						    location.href = "/download?filePath="+filePath+"&fileName="+fileName;
+						});
+						</script>
 						</c:forEach>
 						<!-- favourite song end -->
 						
-						<div class="ms_view_more">
-							<a href="#" class="ms_btn">view more</a>
-						</div>
 					</div>
 				</div>
-            </div>
-            <!----Live Radio Section Start---->
-            <div class="ms_radio_wrapper padder_top30">
-                <div class="ms_heading">
-                    <h1>Recently Played</h1>
-                    <span class="veiw_all"><a href="#">view more</a></span>
-                </div>
-                <div class="ms_radio_slider swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="ms_rcnt_box">
-                                <div class="ms_rcnt_box_img">
-                                    <img src="/images/music/r_music1.jpg" alt="">
-                                    <div class="ms_main_overlay">
-                                        <div class="ms_box_overlay"></div>
-                                        <div class="ms_more_icon">
-                                            <img src="/images/svg/more.svg" alt="">
-                                        </div>
-                                        <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">Top Trendings</a></h3>
-                                    <p>Ava Cornish &amp; Brian Hill</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_rcnt_box">
-                                <div class="ms_rcnt_box_img">
-                                    <img src="/images/featured/song4.jpg" alt="">
-                                    <div class="ms_main_overlay">
-                                        <div class="ms_box_overlay"></div>
-                                        <div class="ms_more_icon">
-                                            <img src="/images/svg/more.svg" alt="">
-                                        </div>
-                                        <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">New Romantic Charts</a></h3>
-                                    <p>Ava Cornish &amp; Brian Hill</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_rcnt_box">
-                                <div class="ms_rcnt_box_img">
-                                    <img src="/images/artist/artist2.jpg" alt="">
-                                    <div class="ms_main_overlay">
-                                        <div class="ms_box_overlay"></div>
-                                        <div class="ms_more_icon">
-                                            <img src="/images/svg/more.svg" alt="">
-                                        </div>
-                                        <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">Dance Beats - Hip Hops</a></h3>
-                                    <p>Ava Cornish &amp; Brian Hill</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_rcnt_box">
-                                <div class="ms_rcnt_box_img">
-                                    <img src="/images/music/r_music4.jpg" alt="">
-                                    <div class="ms_main_overlay">
-                                        <div class="ms_box_overlay"></div>
-                                        <div class="ms_more_icon">
-                                            <img src="/images/svg/more.svg" alt="">
-                                        </div>
-                                        <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">Workout Time</a></h3>
-                                    <p>Ava Cornish &amp; Brian Hill</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_rcnt_box">
-                                <div class="ms_rcnt_box_img">
-                                    <img src="/images/music/r_music5.jpg" alt="">
-                                    <div class="ms_main_overlay">
-                                        <div class="ms_box_overlay"></div>
-                                        <div class="ms_more_icon">
-                                            <img src="/images/svg/more.svg" alt="">
-                                        </div>
-                                        <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">Best Classics Of All Time</a></h3>
-                                    <p>Ava Cornish &amp; Brian Hill</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_rcnt_box">
-                                <div class="ms_rcnt_box_img">
-                                    <img src="/images/music/r_music6.jpg" alt="">
-                                    <div class="ms_main_overlay">
-                                        <div class="ms_box_overlay"></div>
-                                        <div class="ms_more_icon">
-                                            <img src="/images/svg/more.svg" alt="">
-                                        </div>
-                                        <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">Heart Broken - Soul Music</a></h3>
-                                    <p>Ava Cornish &amp; Brian Hill</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_rcnt_box">
-                                <div class="ms_rcnt_box_img">
-                                    <img src="/images/radio/img1.jpg" alt="">
-                                    <div class="ms_main_overlay">
-                                        <div class="ms_box_overlay"></div>
-                                        <div class="ms_more_icon">
-                                            <img src="/images/svg/more.svg" alt="">
-                                        </div>
-                                        <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">Dream Your Moments (Duet)</a></h3>
-                                    <p>Ava Cornish &amp; Brian Hill</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_rcnt_box">
-                                <div class="ms_rcnt_box_img">
-                                    <img src="/images/radio/img2.jpg" alt="">
-                                    <div class="ms_main_overlay">
-                                        <div class="ms_box_overlay"></div>
-                                        <div class="ms_more_icon">
-                                            <img src="/images/svg/more.svg" alt="">
-                                        </div>
-                                        <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">Until I Met You</a></h3>
-                                    <p>Ava Cornish &amp; Brian Hill</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_rcnt_box">
-                                <div class="ms_rcnt_box_img">
-                                    <img src="/images/radio/img3.jpg" alt="">
-                                    <div class="ms_main_overlay">
-                                        <div class="ms_box_overlay"></div>
-                                        <div class="ms_more_icon">
-                                            <img src="/images/svg/more.svg" alt="">
-                                        </div>
-                                        <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">Gimme Some Courage</a></h3>
-                                    <p>Ava Cornish &amp; Brian Hill</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="ms_rcnt_box">
-                                <div class="ms_rcnt_box_img">
-                                    <img src="/images/radio/img4.jpg" alt="">
-                                    <div class="ms_main_overlay">
-                                        <div class="ms_box_overlay"></div>
-                                        <div class="ms_more_icon">
-                                            <img src="/images/svg/more.svg" alt="">
-                                        </div>
-                                        <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">Dark Alley Acoustic</a></h3>
-                                    <p>Ava Cornish &amp; Brian Hill</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add Arrows -->
-                <div class="swiper-button-next4 slider_nav_next"></div>
-                <div class="swiper-button-prev4 slider_nav_prev"></div>
             </div>
             <!----Main div close---->
         </div>
       </div>
         <!----Footer Start---->
-        
-        <%@ include file="../footer.jsp" %>
+
+
+<%@ include file="../footer.jsp" %>

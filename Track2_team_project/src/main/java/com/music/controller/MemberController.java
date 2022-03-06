@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Member;
 import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.List;
@@ -222,10 +221,24 @@ public class MemberController {
 	}
 	
 	@GetMapping("/downloads")
-	public void downloadPage() {
-		
+	public void downloadPage(OrderVO ovo, Model model
+			) {
+		String myName = "";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			
+			ovo.setId(myName);
+			List<OrderListVO> orderList = service.orderTrackList(ovo);
+			model.addAttribute("olist", orderList);
+			
+			
+			
+		}
 		
 	}
+	
 	
 //=============================마이페이지 컨트롤러 ===================================
 	
@@ -328,7 +341,6 @@ public class MemberController {
 		if(!(auth.getPrincipal().equals("anonymousUser"))) {
 			CustomUser user = (CustomUser)auth.getPrincipal();
 			myName =user.getUsername();
-			
 			
 			ovo.setId(myName);
 			List<OrderVO> orderList = service.orderList(ovo);
