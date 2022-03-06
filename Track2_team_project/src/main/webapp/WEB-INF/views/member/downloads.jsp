@@ -15,7 +15,7 @@
 							<li class="text-center">Singer</li>
 							<li class="text-center">Duration</li>
 							<li class="text-center">Add To Favourites</li>
-							<li class="text-center">More</li>
+							<li class="text-center">Cover</li>
 							<li class="text-center">Download</li>
 						</ul>
 						<!--  favourite song start -->
@@ -28,15 +28,7 @@
 							<li class="text-center"><a href="#">${olist.length}</a></li>
 							<li class="text-center"><a href="javascript:void(0)" class="fav_box" id="pbno_${olist.pbno}"> <span class="ms_icon1 ms_fav_icon"> </span>
 					</a></li>
-							<li class="text-center ms_more_icon" id="this_track_pbno_${olist.pbno}"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
-								<div class="ms_play_icon" id="${olist.tbno}" style="display: none;"></div>
-								<ul class="more_option">
-									<li><a href="javascript:void(0)" class="add_queue_one_track"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-									<li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-									<li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-									<li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-								</ul>
-							</li>
+							<li class="text-center"><a href="#"><img src="/upload/${olist.image}"></a></li>
 							<li class="text-center">
 							<a href="javascript:void(0)" id="rownum_${olist.songrealname}" class="target-databox" data-songname="${olist.songname}">
 							<span class="ms_close" style="background-color:transparent;">
@@ -63,33 +55,25 @@
 					<div class="album_list_wrapper">
 						<ul class="album_list_name">
 							<li>#</li>
-							<li>Album Title</li>
-							<li>Cover</li>
+							<li>Song Title</li>
+							<li>Album</li>
 							<li class="text-center">Singer</li>
-							<li class="text-center">Total Duration</li>
+							<li class="text-center">Duration</li>
 							<li class="text-center">Add To Favourites</li>
-							<li class="text-center">More</li>
+							<li class="text-center">Cover</li>
 							<li class="text-center">Download</li>
 						</ul>
 						<!--  favourite song start -->
 						<c:forEach var="alist" items="${alist}">
 						<ul class="favouritelist">
 							<li><a class="play_track_in_album" id="${alist.abno}" href="javascript:void(0)"><span class="play_no">${alist.rownum}</span><span class="play_hover"></span></a></li>
+							<li><a href="#">${alist.tname}</a></li>
 							<li><a href="#">${alist.aname}</a></li>
-							<li><a href="#"><img src="/upload/${alist.image}"></a></li>
 							<li class="text-center"><a href="#">${alist.singer}</a></li>
 							<li class="text-center"><a href="#">${alist.length}</a></li>
 							<li class="text-center"><a href="javascript:void(0)" class="fav_box" id="pbno_${alist.pbno}"> <span class="ms_icon1 ms_fav_icon"> </span>
 					</a></li>
-							<li class="text-center ms_more_icon" id="this_track_pbno_${alist.pbno}"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
-								<div class="ms_play_icon" id="${alist.tbno}" style="display: none;"></div>
-								<ul class="more_option">
-									<li><a href="javascript:void(0)" class="add_queue_one_track"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-									<li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-									<li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-									<li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-								</ul>
-							</li>
+							<li class="text-center"><a href="#"><img src="/upload/${alist.image}"></a></li>
 							<li class="text-center">
 							<a href="javascript:void(0)" id="rownum_${alist.songrealname}" class="target-databox" data-songname="${alist.songname}">
 							<span class="ms_close" style="background-color:transparent;">
