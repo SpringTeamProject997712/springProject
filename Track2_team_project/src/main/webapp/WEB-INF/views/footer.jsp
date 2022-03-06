@@ -189,23 +189,6 @@
 								</div>
 							</div>
 						</div>
-						<div class="jp-toggles flex-item">
-							<button class="jp-shuffle" tabindex="0" title="Shuffle">
-								<i class="ms_play_control"></i>
-							</button>
-							<button class="jp-repeat" tabindex="0" title="Repeat">
-								<i class="ms_play_control"></i>
-							</button>
-						</div>
-						<div class="jp_quality_optn custom_select">
-							<select>
-								<option>quality</option>
-								<option value="1">HD</option>
-								<option value="2">高音質</option>
-								<option value="3">中音質</option>
-								<option value="4">低音質</option>
-							</select>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -403,26 +386,24 @@
 				<button type="button" class="close" id="my_modal_close_btn" data-dismiss="modal">
 					<i class="fa_icon form_close"></i>
 				</button>
-				<p>결제창</p>
+				<p>お買い上げ</p>
 				<div class="cartlistForPurchase black_some_box_mini">
 					
 				</div>
 				<div class="couponForPurchase">
 				</div>
 				<div class="form-group padding_top_30">
-					<label>price</label>
-					<input type="text" class="final_totalPrice form-control" id="final_totalPrice" readonly="readonly" width="40%">
+					<label>総額</label>
+					<input type="text" class="final_totalPrice form-control" id="final_totalPrice" width="40%">
 				</div>
-				<div id="smart-button-container">
-			      <div style="text-align: center;">
-			        <div id="paypal-button-container"></div>
-			      </div>
-			    </div>
 				<div class="purchase_buttons">
+					<a onclick="go_this_purchase(this.id)" href="javascript:void(0)" id="html5_inicis">
+						<img alt="카드결제" src="/images/card_rufwp.jpg" width="250px" height="100px">
+					</a>
 					
-					<a onclick="go_this_purchase(this.id)" id="html5_inicis"><img alt="카드결제" src="/images/card_rufwp.jpg" width="250px" height="100px"></a>
-					
-					<a onclick="go_this_purchase(this.id)" id="paypal"><img alt="페이팔결제" src="/images/paypal.png" width="400px" height="100px"></a>
+					<a onclick="go_this_purchase(this.id)" href="javascript:void(0)" id="paypal">
+						<img alt="페이팔결제" src="/images/paypal.png" width="250px" height="100px">
+					</a>
 				</div>
 				
 			</div>
@@ -571,6 +552,7 @@ $(".add_track_to_cart").click(function() {
 	});
 });
 </script>
+
 </body>
 
 </html>

@@ -31,12 +31,11 @@ public interface MemberMapper {
 	public List<OrderListVO> orderDetailList(OrderVO ovo);
 	public List<OrderListVO> orderTrackList(OrderVO ovo);
 	public List<OrderListVO> orderdetailTracksInAlbum(OrderVO ovo);
-	
+	public List<OrderListVO> orderAlbumList(OrderVO ovo);
 	public List<ChartVO> countMemberByRegdate();
 	public List<ChartVO> countMoneyByRegdate();
 	public List<ChartVO> ratioOrderByGenre();
 	public List<ChartVO> ratioOrder();
 	public Integer countAllMember();
 	public Integer countAllMoney();
-	
 }

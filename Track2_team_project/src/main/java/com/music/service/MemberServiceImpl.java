@@ -27,6 +27,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Setter(onMethod_ = @Autowired)
 	MemberMapper mapper; 
+	
 	@Setter(onMethod_ = @Autowired)
 	CreatePlaylistMapper cmapper; 
 	
@@ -155,6 +156,11 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public List<OrderListVO> orderdetailTracksInAlbum(OrderVO ovo) {
 		return mapper.orderdetailTracksInAlbum(ovo);
+	}
+
+	@Override
+	public List<OrderListVO> orderAlbumList(OrderVO ovo) {
+		return mapper.orderAlbumList(ovo);
 	}
 	@Override
 	public List<ChartVO> countMemberByRegdate() {

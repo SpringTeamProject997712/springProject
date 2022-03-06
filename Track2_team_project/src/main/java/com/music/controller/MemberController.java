@@ -221,8 +221,7 @@ public class MemberController {
 	}
 	
 	@GetMapping("/downloads")
-	public void downloadPage(OrderVO ovo, Model model
-			) {
+	public void downloadPage(OrderVO ovo, Model model) {
 		String myName = "";
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		if(!(auth.getPrincipal().equals("anonymousUser"))) {
@@ -231,7 +230,9 @@ public class MemberController {
 			
 			ovo.setId(myName);
 			List<OrderListVO> orderList = service.orderTrackList(ovo);
+			List<OrderListVO> albumList = service.orderAlbumList(ovo);
 			model.addAttribute("olist", orderList);
+			model.addAttribute("alist", albumList);
 			
 			
 			
@@ -264,7 +265,6 @@ public class MemberController {
 		if(!(auth.getPrincipal().equals("anonymousUser"))) {
 			CustomUser user = (CustomUser)auth.getPrincipal();
 			String id =user.getUsername();
-			log.info(service.viewMyPlaylistList(id));
 			model.addAttribute("myPlaylist",service.viewMyPlaylistList(id));
 		}
 	}
