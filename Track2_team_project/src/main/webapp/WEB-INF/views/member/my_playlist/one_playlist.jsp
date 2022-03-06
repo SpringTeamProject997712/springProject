@@ -17,7 +17,9 @@
                 </div>
                 <input type="hidden" id="this_plbno" value="${this_plbno}">
                 <div class="album_single_text">
-                    <h2><input type="text" class="playlist-name" id="playlist-name" value="${justPlaylist.name}" ><a href="javascript:void(0)" class="ms_btn rename_button" onclick="modify_playlist_name()"><span class="play_all">Rename</span></a></h2>
+                    <h2><input type="text" class="playlist-name" id="playlist-name" value="${justPlaylist.name}" >
+                    	<a href="javascript:void(0)" class="ms_btn rename_button" onclick="modify_playlist_name()"><span class="play_all">Rename</span></a>
+                    	<a href="javascript:void(0)" class="ms_btn rename_button" onclick="delete_playlist()"><span class="play_all">Delete</span></a></h2>
                     
                     <p class="singer_name">By - ${justPlaylist.id}</p>
                     <div class="album_feature">
@@ -25,7 +27,7 @@
                         <a href="#" class="album_date"></a>
                     </div>
                     <div class="album_btn">
-                        <a href="javascript:void(0)" class="ms_btn play_btn playlist_play_button" id="go_plbno_${this_plbno}"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">Play All</span><span class="pause_all"><img src="/images/svg/pause_all.svg" alt="">Pause</span></a>
+                        <a href="javascript:void(0)" class="ms_btn play_btn playlist_play_button" id="go_plbno_${this_plbno}"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">Play All</span></a>
                         <a href="#" class="ms_btn playlist_add_queue" id="addPlbno_${this_plbno}"><span class="play_all"><img src="/images/svg/add_q.svg" alt="">Add To Queue</span></a>
                     </div>
                 </div>

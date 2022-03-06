@@ -181,4 +181,43 @@
 		where o.id = #{id} order by a.abno asc
 	</select>
 	
+	<select id="countMemberByRegdate" resultType="com.music.domain.ChartVO">
+		<![CDATA[	
+		select * from 
+		(select to_char(regdate,'yyyy-MM-dd') as x_value, count(*) as count from member_m
+		group by to_char(regdate,'yyyy-MM-dd')
+		order by x_value desc)
+		where rownum < 6 order by x_value
+		]]>
+	</select>
+	<select id="countMoneyByRegdate" resultType="com.music.domain.ChartVO">
+		<![CDATA[	
+		select * from
+		(select to_char(orderdate,'yyyy-MM-dd') as x_value ,sum(amount) as count from order_m
+		group by to_char(orderdate,'yyyy-MM-dd') order by x_value desc)
+		where rownum < 6 order by x_value
+		]]>
+	</select>
+	<select id="ratioOrder" resultType="com.music.domain.ChartVO">
+		select category as x_value, ROund(RATIO_TO_REPORT(count) over(),3) * 1000 as count from (
+    select p.category, count(*) as count from orderdetail_m od, product_m p
+    where p.pbno = od.pbno
+    group by p.category
+		) order by category
+	</select>
+	<select id="ratioOrderByGenre" resultType="com.music.domain.ChartVO">
+		select x_value, ROund(RATIO_TO_REPORT(count) over(),3) * 1000 as count from (
+	    select g.genrenames as x_value ,count(*) as count from orderdetail_m od, product_m p, track_m t, genrelist g
+	    where od.pbno = p.pbno
+	    and p.pbno = t.pbno
+	    and t.genre = g.genre
+	    group by g.genrenames
+		) order by x_value
+	</select>
+	<select id="countAllMember" resultType="int">
+		select count(*) as count from member_m
+	</select>
+	<select id="countAllMoney" resultType="int">
+		select sum(amount) as sum from order_m
+	</select>
 </mapper>

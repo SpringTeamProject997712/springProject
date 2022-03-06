@@ -15,7 +15,14 @@
                         <div class="col-lg-2 col-md-6">
                             <div class="ms_rcnt_box marger_bottom25">
                                 <div class="ms_rcnt_box_img">
+                                	<c:choose>
+                                	<c:when test="${myList.image_240 eq '/images/album/album1.jpg'}">
+                                    <img src="${myList.image_240}" alt="" class="img-fluid">
+                                   </c:when>
+                                   <c:otherwise>
                                     <img src="/upload/${myList.image_240}" alt="" class="img-fluid">
+                                   </c:otherwise>
+                                  </c:choose>
                                     <div class="ms_main_overlay">
                                         <div class="ms_box_overlay"></div>
                                         <div class="ms_play_icon playlist_play_button" id="runPlbno_${myList.plbno}">
