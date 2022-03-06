@@ -77,16 +77,7 @@
         <li class="nav-item"><a class="nav-link" href="/admin/admin">
             <svg class="nav-icon">
               <use href="/images/svg/free.svg#cil-speedometer"></use>
-            </svg> ADMIN Home<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
-        <li class="nav-title">Theme</li>
-        <li class="nav-item"><a class="nav-link" href="colors.html">
-            <svg class="nav-icon">
-              <use href="/images/svg/free.svg#cil-drop"></use>
-            </svg> Colors</a></li>
-        <li class="nav-item"><a class="nav-link" href="typography.html">
-            <svg class="nav-icon">
-              <use href="/images/svg/free.svg#cil-pencil"></use>
-            </svg> Typography</a></li>
+            </svg> ADMIN Home</a></li>
         <li class="nav-item"><a class="nav-link" href="/">
             <svg class="nav-icon">
               <use href="/images/svg/free.svg#cil-pencil"></use>
