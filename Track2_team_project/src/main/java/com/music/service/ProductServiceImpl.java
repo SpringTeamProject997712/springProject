@@ -8,12 +8,15 @@ import org.springframework.stereotype.Service;
 
 import com.music.domain.AlbumVO;
 import com.music.domain.CartVO;
+import com.music.domain.CouponVO;
 import com.music.domain.GoodsVO;
 import com.music.domain.ProductVO;
 import com.music.domain.TrackVO;
 import com.music.mapper.AlbumMapper;
 import com.music.mapper.CartMapper;
 import com.music.mapper.ProductMapper;
+import com.music.utility.Criteria;
+import com.music.utility.PageMaker;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -135,5 +138,31 @@ public class ProductServiceImpl implements ProductService {
 		pMapper.deleteProduct(pbno);
 	}
 	
+	@Override
+	public List<CouponVO> selectCouponWithPage(Criteria cri) {
+		return pMapper.selectCouponWithPage(cri);
+	}
+	@Override
+	public CouponVO selectOneCoupon(int couponnumber) {
+		return pMapper.selectOneCoupon(couponnumber);
+	}
+	@Override
+	public int insertCoupon(CouponVO cvo) {
+		return pMapper.insertCoupon(cvo);
+	}
+	@Override
+	public int deleteOneCoupon(int couponnumber) {
+		return pMapper.deleteOneCoupon(couponnumber);
+	}
+	@Override
+	public PageMaker pagingCoupon(Criteria cri) {
+		int amount = pMapper.countCoupon(cri);
+		PageMaker pageMaker = new PageMaker(cri, amount);
+		return pageMaker;
+	}
+	@Override
+	public int updateOneCoupon(CouponVO cvo) {
+		return pMapper.updateOneCoupon(cvo);
+	}
 
 }
