@@ -1042,6 +1042,7 @@
 
             <!----Main div close---->
         </div>
-
+	</div>
+</div>
 <!-- main js files links -->
 <%@ include file="footer.jsp" %>
