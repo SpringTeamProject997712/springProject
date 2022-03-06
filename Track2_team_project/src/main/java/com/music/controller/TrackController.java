@@ -61,17 +61,18 @@ public class TrackController {
 	public String selectTrackInJPlayer(int tbno) {
 		TrackVO tvo = service.selectTrack(tbno);
 		jPlayerVO jvo = service.convertTrackToJPlayer(tvo);
-		
+		String json = "1";
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String myName = "";
 		log.info(auth.getPrincipal());
 		if(!(auth.getPrincipal().equals("anonymousUser"))) {
 			CustomUser user = (CustomUser)auth.getPrincipal();
 			myName =user.getUsername();
-		}
+		
 		
 		Gson gson = new Gson();
-		String json = gson.toJson(jvo);
+		json = gson.toJson(jvo);
+		}
 		return json;
 	}
 	

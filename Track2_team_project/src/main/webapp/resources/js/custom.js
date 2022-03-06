@@ -350,9 +350,7 @@ Assigned to: Theme Forest
                 $("ul.more_option.open_option").removeClass("open_option");
             })
             // On Button Click
-            $(".ms_btn.play_btn").on('click', function() {
-                $('.ms_btn.play_btn').toggleClass('btn_pause');
-            });
+           
             $(document).on('click', '#playlist-wrap ul li .action .que_more', function(e) {
 				e.preventDefault();
                 e.stopImmediatePropagation();

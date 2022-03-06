@@ -16,6 +16,7 @@ public class OrderVO {
 	private int amount;
 	private String name;
 	
+<<<<<<< HEAD
 	private String pw;
 	private String nickname;
 	private String active;
@@ -29,4 +30,10 @@ public class OrderVO {
 	private int total;
 	
 	private List<Member_authVO> authList;
+=======
+	private String aname;
+	private String tname;
+	private String category;
+	private int count;
+>>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 }

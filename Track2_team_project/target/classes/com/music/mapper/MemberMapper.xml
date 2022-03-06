@@ -116,11 +116,31 @@
 	<select id="orderList" resultType="com.music.domain.OrderVO">
 		<![CDATA[	
 	select 
-		rownum, o.orderid, m.name, o.amount, o.orderdate 
+    o.orderid, m.name, o.amount, my.pbno, p.category, o.orderdate, a.name as aname, t.name as tname, count(od.odbno) as count
 	from order_m o
+<<<<<<< HEAD
            inner join member_m m
            on m.id = o.id 
 		where rownum > 0 and o.id = #{id} order by o.orderdate desc 
+=======
+        inner join member_m m
+        on m.id = o.id 
+        inner join orderdetail_m od
+        on o.orderid = od.orderid
+        inner join (select o.orderid, min(od.pbno) AS pbno 
+                        from order_m o, orderdetail_m od
+                        where o.orderid = od.orderid
+                        group by od.orderid) my
+        on o.orderid = my.orderid
+        inner join product_m p
+        on p.pbno = my.pbno
+        left outer join track_m t
+        on p.pbno = t.pbno
+        left outer join album_m a
+        on p.pbno = a.pbno
+    where rownum>0 and o.id = #{id}
+    group by o.orderid, m.name, o.amount, my.pbno, p.category, o.orderdate, a.name, t.name order by o.orderdate desc
+>>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 		]]>
 	</select>
 	

@@ -109,6 +109,10 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 	public int deletePdbnoWithIdTbno(PlaylistVO vo) {
 		return mapper.deletePlaylistDetail(mapper.selectMaxPdbno(vo));
 	}
+	@Override
+	public int deletePlaylist(PlaylistVO pvo) {
+		return mapper.deletePlaylist(pvo);
+	}
 
 //======================================= private =======================================	
 	

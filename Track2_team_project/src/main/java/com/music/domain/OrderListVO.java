@@ -45,7 +45,7 @@ public class OrderListVO {
 	
 // getcountlikes
 	private int likes;
-	
+	private int count;
 	private int cbno;
 	private Date putdate;
 	
