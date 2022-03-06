@@ -14,9 +14,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartRequest;
 
+import com.google.gson.Gson;
 import com.music.domain.AlbumVO;
 import com.music.domain.MemberVO;
 import com.music.domain.NoticeVO;
@@ -53,7 +56,45 @@ public class AdminController {
 	
 	
 	@GetMapping("/admin") //어드민 페이지로 가기 (admin 로그인 첫화면)
-	public void adminIndex() {
+	public void adminIndex(Model model) {
+		model.addAttribute("countUser", mService.countAllMember());
+		model.addAttribute("countMoney", mService.countAllMoney());
+	}
+	
+	@ResponseBody
+	@GetMapping("/user_chart")
+	public String userChart(){
+		Gson gson = new Gson();
+		String json = gson.toJson(mService.countMemberByRegdate());
+		log.info(json);
+		return json;
+	}
+	
+	@ResponseBody
+	@GetMapping("/money_chart")
+	public String moneyChart(){
+		Gson gson = new Gson();
+		String json = gson.toJson(mService.countMoneyByRegdate());
+		log.info(json);
+		return json;
+	}
+	
+	@ResponseBody
+	@GetMapping("/ratio_order_chart")
+	public String retioOrderChart(){
+		Gson gson = new Gson();
+		String json = gson.toJson(mService.ratioOrder());
+		log.info(json);
+		return json;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/ratio_genre_chart", produces = "application/text; charset=utf8", method = RequestMethod.GET)
+	public String retioGenreChart(){
+		Gson gson = new Gson();
+		String json = gson.toJson(mService.ratioOrderByGenre());
+		log.info(json);
+		return json;
 	}
 	
 	@GetMapping("/adminLogout")// 로그아웃

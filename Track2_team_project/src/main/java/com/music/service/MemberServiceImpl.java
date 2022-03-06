@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.music.domain.ChartVO;
 import com.music.domain.FavouriteVO;
 import com.music.domain.MemberVO;
 import com.music.domain.Member_authVO;
@@ -82,7 +83,12 @@ public class MemberServiceImpl implements MemberService {
 	public List<PlaylistVO> viewMyPlaylistList(String id) {
 		List<PlaylistVO> plist = cmapper.readPlaylistsWithId(id);
 		for(int i=0; i<plist.size(); i++) {
-		    plist.get(i).setImage_240(cmapper.selectPlaylistImage(plist.get(i).getPlbno()).getImage_240());
+			ViewPlaylistDetailVO cvo = cmapper.selectPlaylistImage(plist.get(i).getPlbno());
+			if(cvo!=null) {
+				plist.get(i).setImage_240(cvo.getImage_240());
+			}else {
+				plist.get(i).setImage_240("/images/album/album1.jpg");
+			}
 		}
 		return plist;
 	}
@@ -149,5 +155,29 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public List<OrderListVO> orderdetailTracksInAlbum(OrderVO ovo) {
 		return mapper.orderdetailTracksInAlbum(ovo);
+	}
+	@Override
+	public List<ChartVO> countMemberByRegdate() {
+		return mapper.countMemberByRegdate();
+	}
+	@Override
+	public int countAllMember() {
+		return mapper.countAllMember();
+	}
+	@Override
+	public int countAllMoney() {
+		return mapper.countAllMoney();
+	}
+	@Override
+	public List<ChartVO> ratioOrder() {
+		return mapper.ratioOrder();
+	}
+	@Override
+	public List<ChartVO> ratioOrderByGenre() {
+		return mapper.ratioOrderByGenre();
+	}
+	@Override
+	public List<ChartVO> countMoneyByRegdate() {
+		return mapper.countMoneyByRegdate();
 	}
 }

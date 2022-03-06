@@ -2,6 +2,7 @@ package com.music.service;
 
 import java.util.List;
 
+import com.music.domain.ChartVO;
 import com.music.domain.FavouriteVO;
 import com.music.domain.MemberVO;
 import com.music.domain.Member_authVO;
@@ -75,4 +76,17 @@ public interface MemberService {
 	public List<OrderListVO> orderTrackList(OrderVO ovo);
 	//오더 상세리스트의 앨범 안 트랙들
 	public List<OrderListVO> orderdetailTracksInAlbum(OrderVO ovo);
+	//일별로 가입자 수 가져오기
+	public List<ChartVO> countMemberByRegdate();
+	//일별로 매출액 가져오기
+	public List<ChartVO> countMoneyByRegdate();
+	//판매 앨범 비율
+	public List<ChartVO> ratioOrder();
+	//장르별 판매비율
+	public List<ChartVO> ratioOrderByGenre();
+	//모든 가입자 수
+	public int countAllMember();
+	//총매출
+	public int countAllMoney();
+	
 }
