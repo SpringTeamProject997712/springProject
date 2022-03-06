@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
 
             <div class="ms_free_download ms_purchase_wrapper">
@@ -47,8 +49,10 @@
 						</ul>
 						<script>
 						$("#${olist.rownum}").click(function(){
+							
 						    var filePath = "${olist.songrealname}";
 						    var fileName = "${olist.songname}";
+						    
 						    location.href = "/download?filePath="+filePath+"&fileName="+fileName;
 						});
 						</script>
