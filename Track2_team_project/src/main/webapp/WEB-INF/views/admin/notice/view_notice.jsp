@@ -19,6 +19,8 @@
                 </ul> -->
                 <div class="tab-content rounded-bottom">
                 	<form name="NoticeForm" method="post" class="row g-3">
+                		<input type="hidden" name="id" value="admin">
+                		<input type="hidden" name="bbno" value="1">
                 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 									  <div class="col-md-8">
 									    <label class="form-label" for="member_id">제목</label>
@@ -26,12 +28,31 @@
 									  </div>
 									  <div class="col-md-4">
 									  	<label class="form-label" for="category">카테고리</label>
-									  	<input class="form-control" name="header" id="notice_header" type="" value="${notice.header }">
+									  	<select name="header" class="form-control" id="notice_header" >
+									  		<option value="">카테고리 선택</option>
+										    <c:choose>
+										    	<c:when test="${notice.bbno==1 }">
+											    	<option value="1" selected>공지</option>
+											    	<option value="2">점검</option>
+											    	<option value="3">이벤트</option>
+										    	</c:when>
+										    	<c:when test="${notice.bbno==2 }">
+											    	<option value="1" >공지</option>
+											    	<option value="2" selected>점검</option>
+											    	<option value="3" >이벤트</option>
+										    	</c:when>
+										    	<c:when test="${notice.bbno==3 }">
+											    	<option value="1" >공지</option>
+											    	<option value="2" >점검</option>
+											    	<option value="3" selected>이벤트</option>
+										    	</c:when>
+										    </c:choose>
+										</select>
 									  </div>
 									  <div class="col-md-12">
 									  	<label class="form-label" for="content">내용</label>
 									  	<div class="input-group">
-									  		<div id="summernote">${notice.content}</div>
+									  		<textarea id="summernote" name="content" class="summernote">${notice.content}</textarea>
 									  	</div>
 									  </div>
 									  <div class="col-8">

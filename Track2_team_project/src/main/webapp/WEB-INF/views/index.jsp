@@ -391,6 +391,7 @@
                                     </div>
                                 </div>
                                 <div class="weekly_right">
+
                                     <span class="w_song_time">${top.length}</span>
                                     <span class="ms_more_icon" data-other="1">
 																	<img src="../images/svg/more.svg" alt="">									
@@ -771,6 +772,7 @@
                           </div>
                           <div class="weekly_right">
                             <span class="w_song_time">${newly.length}</span>
+
                           </div>
                         </div>
                       </div>
@@ -829,131 +831,203 @@
                     <div class="col-lg-12">
                         <div class="ms_heading">
                             <h1>Top Genres</h1>
-                            <span class="veiw_all"><a href="#">view more</a></span>
+                            <span class="veiw_all"><a href="/genres/genres">view more</a></span>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="ms_genres_box">
-                            <img src="/images/genrs/img1.jpg" alt="" class="img-fluid" />
-                            <div class="ms_main_overlay">
-                                <div class="ms_box_overlay"></div>
-                                <div class="ms_play_icon">
-                                    <img src="/images/svg/play.svg" alt="">
-                                </div>
-                                <div class="ovrly_text_div">
-                                    <span class="ovrly_text1"><a href="#">romantic</a></span>
-                                    <span class="ovrly_text2"><a href="#">view song</a></span>
-                                </div>
-                            </div>
-                            <div class="ms_box_overlay_on">
-                                <div class="ovrly_text_div">
-                                    <span class="ovrly_text1"><a href="#">romantic</a></span>
-                                    <span class="ovrly_text2"><a href="#">view song</a></span>
-                                </div>
-                            </div>
+                    	<div class="row">
+                    		<div class="col-lg-6">
+	                        <div class="ms_genres_box">
+	                            <img src="/images/genrs/romantic.svg" alt="" class="img-fluid" />
+	                            <div class="ms_main_overlay">
+	                                <div class="ms_box_overlay"></div>
+	                                <div class="ms_play_icon">
+	                                    <img src="/images/svg/play.svg" alt="">
+	                                </div>
+	                                <div class="ovrly_text_div">
+	                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=1">romantic</a></span>
+	                                    <span class="ovrly_text2"><a href="/genres/genres_single?genre=1">view song</a></span>
+	                                </div>
+	                            </div>
+	                            <div class="ms_box_overlay_on">
+	                                <div class="ovrly_text_div">
+	                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=1">romantic</a></span>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        </div>
+	                        <div class="col-lg-6">
+	                        <div class="ms_genres_box">
+	                            <img src="/images/genrs/hiphop.svg" alt="" class="img-fluid" />
+	                            <div class="ms_main_overlay">
+	                                <div class="ms_box_overlay"></div>
+	                                <div class="ms_play_icon">
+	                                    <img src="/images/svg/play.svg" alt="">
+	                                </div>
+	                                <div class="ovrly_text_div">
+	                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=2">Hiphop</a></span>
+	                                    <span class="ovrly_text2"><a href="/genres/genres_single?genre=2">view song</a></span>
+	                                </div>
+	                            </div>
+	                            <div class="ms_box_overlay_on">
+	                                <div class="ovrly_text_div">
+	                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=2">Hiphop</a></span>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        </div>
+	                        <div class="col-lg-12" style="height:255px">
+	                        <div class="ms_genres_box">
+	                            <img src="/images/genrs/dancing.svg" alt="" class="img-fluid" />
+	                            <div class="ms_main_overlay">
+	                                <div class="ms_box_overlay"></div>
+	                                <div class="ms_play_icon">
+	                                    <img src="/images/svg/play.svg" alt="">
+	                                </div>
+	                                <div class="ovrly_text_div">
+	                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=3">Dancing</a></span>
+	                                	<span class="ovrly_text2"><a href="/genres/genres_single?genre=3">view song</a></span>
+	                                </div>
+	                            </div>
+	                            <div class="ms_box_overlay_on">
+	                                <div class="ovrly_text_div">
+	                                    <span class="ovrly_text1"><a href="#">Dancing</a></span>
+	                                    
+	                                </div>
+	                            </div>
+	                        </div>
+	                        </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-4">
                         <div class="row">
-                            <div class="col-lg-4">
+                            <div class="col-lg-12">
                                 <div class="ms_genres_box">
-                                    <img src="/images/genrs/img2.jpg" alt="" class="img-fluid" />
+                                    <img src="/images/genrs/rock.svg" alt="" class="img-fluid" />
                                     <div class="ms_main_overlay">
                                         <div class="ms_box_overlay"></div>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">Classical</a></span>
+                                            <span class="ovrly_text1"><a href="/genres/genres_single?genre=4">Rock</a></span>
+                                            <span class="ovrly_text2"><a href="/genres/genres_single?genre=4">view song</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">Classical</a></span>
+                                            <span class="ovrly_text1"><a href="#">Rock</a></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-8">
+                            <div class="col-lg-6">
                                 <div class="ms_genres_box">
-                                    <img src="/images/genrs/img3.jpg" alt="" class="img-fluid" />
+                                    <img src="/images/genrs/jazz.svg" alt="" class="img-fluid" />
                                     <div class="ms_main_overlay">
                                         <div class="ms_box_overlay"></div>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">hip hop</a></span>
+                                            <span class="ovrly_text1"><a href="/genres/genres_single?genre=5">Jazz</a></span>
+                                            <span class="ovrly_text2"><a href="/genres/genres_single?genre=5">view song</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">hip hop</a></span>
+                                            <span class="ovrly_text1"><a href="#">Jazz</a></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-8">
+                            <div class="col-lg-6">
                                 <div class="ms_genres_box">
-                                    <img src="/images/genrs/img5.jpg" alt="" class="img-fluid" />
+                                    <img src="/images/genrs/metal.svg" alt="" class="img-fluid" />
                                     <div class="ms_main_overlay">
                                         <div class="ms_box_overlay"></div>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">dancing</a></span>
+                                            <span class="ovrly_text1"><a href="/genres/genres_single?genre=6">Metal</a></span>
+                                            <span class="ovrly_text2"><a href="/genres/genres_single?genre=6">view song</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">dancing</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="ms_genres_box">
-                                    <img src="/images/genrs/img6.jpg" alt="" class="img-fluid" />
-                                    <div class="ms_main_overlay">
-                                        <div class="ms_box_overlay"></div>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
-                                        <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">EDM</a></span>
-                                        </div>
-                                    </div>
-                                    <div class="ms_box_overlay_on">
-                                        <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">EDM</a></span>
+                                            <span class="ovrly_text1"><a href="#">Metal</a></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="ms_genres_box">
+                                    <img src="/images/genrs/pop.svg" alt="" class="img-fluid" />
+                                    <div class="ms_main_overlay">
+                                        <div class="ms_box_overlay"></div>
+                                        <div class="ms_play_icon">
+                                            <img src="/images/svg/play.svg" alt="">
+                                        </div>
+                                        <div class="ovrly_text_div">
+                                            <span class="ovrly_text1"><a href="/genres/genres_single?genre=7">Pop</a></span>
+                                            <span class="ovrly_text2"><a href="/genres/genres_single?genre=7">view song</a></span>
+                                        </div>
+                                    </div>
+                                    <div class="ms_box_overlay_on">
+                                        <div class="ovrly_text_div">
+                                            <span class="ovrly_text1"><a href="#">Pop</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="ms_genres_box">
+                                    <img src="/images/genrs/radio.svg" alt="" class="img-fluid" />
+                                    <div class="ms_main_overlay">
+                                        <div class="ms_box_overlay"></div>
+                                        <div class="ms_play_icon">
+                                            <img src="/images/svg/play.svg" alt="">
+                                        </div>
+                                        <div class="ovrly_text_div">
+                                            <span class="ovrly_text1"><a href="/genres/genres_single?genre=8">Indie</a></span>
+                                            <span class="ovrly_text2"><a href="/genres/genres_single?genre=8">view song</a></span>
+                                        </div>
+                                    </div>
+                                    <div class="ms_box_overlay_on">
+                                        <div class="ovrly_text_div">
+                                            <span class="ovrly_text1"><a href="#">Indie</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <div class="col-lg-12">
                         <div class="ms_genres_box">
-                            <img src="/images/genrs/img4.jpg" alt="" class="img-fluid" />
+                            <img src="/images/genrs/soul.svg" alt="" class="img-fluid" />
                             <div class="ms_main_overlay">
                                 <div class="ms_box_overlay"></div>
                                 <div class="ms_play_icon">
                                     <img src="/images/svg/play.svg" alt="">
                                 </div>
                                 <div class="ovrly_text_div">
-                                    <span class="ovrly_text1"><a href="#">rock</a></span>
+                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=9">Soul</a></span>
+                                    <span class="ovrly_text2"><a href="/genres/genres_single?genre=9">view song</a></span>
                                 </div>
                             </div>
                             <div class="ms_box_overlay_on">
                                 <div class="ovrly_text_div">
-                                    <span class="ovrly_text1"><a href="#">rock</a></span>
+                                    <span class="ovrly_text1"><a href="#">Soul</a></span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+                  
 			<!----Add Section Start---->
 			<div class="ms_advr_wrapper ms_advr2">
 				<div class="container">
@@ -965,10 +1039,9 @@
 				</div>
 			</div>
 
+
             <!----Main div close---->
         </div>
-        
-      	
 
 <!-- main js files links -->
 <%@ include file="footer.jsp" %>

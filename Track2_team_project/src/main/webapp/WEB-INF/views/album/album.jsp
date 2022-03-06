@@ -107,6 +107,7 @@
                                     <div class="w_top_song">
                                         <div class="w_tp_song_img">
                                             <img src="${pageContext.request.contextPath}/upload/${top.image_50}" alt="">
+
                                             <div class="ms_song_overlay">
                                             </div>
                                             <div class="ms_play_icon instantly_play_track" id="${top.tbno}">
@@ -150,7 +151,8 @@
 																		</span>
                                     <div class="w_top_song">
                                         <div class="w_tp_song_img">
-                                            <img src="${pageContext.request.contextPath}/upload/${top.image_50}" alt="">
+                                            <img src="/upload/${top.image_50}" alt="">
+
                                             <div class="ms_song_overlay">
                                             </div>
                                             <div class="ms_play_icon instantly_play_track" id="${top.tbno}">
@@ -304,8 +306,6 @@
                             </div>
                         </div>
                         </c:forEach>
-                        <!-- newly end -->
-
                         <!--  newly release album end -->
                     </div>
                 </div>

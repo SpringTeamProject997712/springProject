@@ -73,4 +73,11 @@ public class NoticeServiceImpl implements NoticeService {
 		return mapper.deleteNotice(wbno);
 	}
 	
+	@Override
+	public int viewcountNotice(int wbno) {
+		int result = mapper.viewcount(wbno);
+		
+		return result;
+	}
+	
 }
