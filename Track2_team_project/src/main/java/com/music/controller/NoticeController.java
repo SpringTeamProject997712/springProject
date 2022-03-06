@@ -1,5 +1,7 @@
 package com.music.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.music.domain.NoticeVO;
 import com.music.service.NoticeService;
+import com.music.utility.Criteria;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -23,14 +26,17 @@ public class NoticeController {
 	private NoticeService service;
 	
 	@GetMapping("/notice")
-	public void listNotice(Model model) {
-		model.addAttribute("nlist",service.listNotice());
+	public void listNotice(Model model,Criteria cri) {
+		List<NoticeVO> nlist = service.viewNoticeListWithPaging(cri);
+		model.addAttribute("nlist", nlist);
+		model.addAttribute("pageMaker", service.pagingList(cri));
 	}
 
 	
 	@GetMapping("/notice_single")
 	public void notice_single(Model model, @RequestParam("wbno")int wbno) {
 		model.addAttribute("view",service.readNotice(wbno));
+		service.viewcountNotice(wbno);
 	}
 	
 	@GetMapping("/notice_upload")

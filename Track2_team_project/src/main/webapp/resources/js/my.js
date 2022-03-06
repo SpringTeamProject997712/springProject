@@ -723,3 +723,11 @@ function fn_sendFB(sns) {
 	}
 }
 
+function go_notice_search(){
+	let form = document.searchform;
+	form.action = "/notice/notice";
+	form.submit();
+
+}
+
+
