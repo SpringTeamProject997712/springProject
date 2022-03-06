@@ -1,10 +1,4 @@
 <%@ include file="../header.jsp" %>
-<<<<<<< HEAD
-=======
-
-        <div class="ms_content_wrapper padder_top90">
-        
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
             <!---Weekly Top 15--->
             <div class="ms_weekly_wrapper">
                 <div class="ms_weekly_inner">

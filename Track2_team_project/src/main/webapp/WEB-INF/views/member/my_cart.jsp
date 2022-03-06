@@ -176,6 +176,7 @@
 											<input type="hidden" name="address2" value="${principal.member.address2}">
 										</form>
 										<a class="ms_btn btn-success" href="javascript:void(0)" onclick="go_purchase()">Purchase</a>
+										
 										<a class="ms_btn btn-success" href="javascript:void(0);" data-toggle="modal" data-target="#pay_modal">Checkout</a>
 									</div>
 								</div>

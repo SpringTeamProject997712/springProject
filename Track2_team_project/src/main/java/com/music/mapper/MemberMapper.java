@@ -28,9 +28,6 @@ public interface MemberMapper {
 	
 	public List<OrderVO> orderList(OrderVO ovo);
 	public List<OrderListVO> orderDetailList(OrderVO ovo);
-<<<<<<< HEAD
 	public List<OrderListVO> orderTrackList(OrderVO ovo);
-=======
 	public List<OrderListVO> orderdetailTracksInAlbum(OrderVO ovo);
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 }

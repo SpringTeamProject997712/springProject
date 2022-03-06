@@ -141,15 +141,13 @@ public class MemberServiceImpl implements MemberService {
 	public List<OrderListVO> orderDetailList(OrderVO ovo) {
 		return mapper.orderDetailList(ovo);
 	}
-<<<<<<< HEAD
 
 	@Override
 	public List<OrderListVO> orderTrackList(OrderVO ovo) {
 		return mapper.orderTrackList(ovo);
-=======
+	}
 	@Override
 	public List<OrderListVO> orderdetailTracksInAlbum(OrderVO ovo) {
 		return mapper.orderdetailTracksInAlbum(ovo);
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 	}
 }

@@ -1,9 +1,4 @@
 <%@ include file="../header.jsp" %>
-<<<<<<< HEAD
-=======
-
-       
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
             <!---Recently Played Music--->
             <div class="ms_rcnt_slider marger_top60">
                 <div class="ms_heading">

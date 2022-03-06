@@ -1,13 +1,8 @@
 <%@ include file="../header.jsp" %>
 
-        <!---Side Menu Start--->
-      	<!----Album Single Section Start---->
-        <!---Main Content Start--->
-        <div class="ms_content_wrapper">
-            <!----Free Download Css Start---->
             <div class="ms_free_download ms_purchase_wrapper">
                 <div class="ms_heading">
-                    <h1>Your orders</h1>
+                    <h1>Your Tracks</h1>
                 </div>
 				<div class="album_inner_list">
 					<div class="album_list_wrapper">
@@ -60,9 +55,6 @@
 						</c:forEach>
 						<!-- favourite song end -->
 						
-						<div class="ms_view_more">
-							<a href="#" class="ms_btn">view more</a>
-						</div>
 					</div>
 				</div>
             </div>

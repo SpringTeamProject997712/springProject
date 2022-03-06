@@ -838,7 +838,7 @@
                     	<div class="row">
                     		<div class="col-lg-6">
 	                        <div class="ms_genres_box">
-	                            <img src="/images/genres/romantic.svg" alt="" class="img-fluid" />
+	                            <img src="/images/genrs/romantic.svg" alt="" class="img-fluid"/>
 	                            <div class="ms_main_overlay">
 	                                <div class="ms_box_overlay"></div>
 	                                <div class="ms_play_icon">
