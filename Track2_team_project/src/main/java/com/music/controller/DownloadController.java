@@ -14,13 +14,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.extern.log4j.Log4j;
+
 @RestController
+@Log4j
 public class DownloadController {
 	
 	@RequestMapping("/download")
 	public void fileDownload( HttpServletResponse response, HttpServletRequest request, @RequestParam Map<String, String> paramMap
 			) {
-		 
 	    String path = paramMap.get("filePath"); //full경로
 	    String fileName = paramMap.get("fileName"); //파일명
 	 
