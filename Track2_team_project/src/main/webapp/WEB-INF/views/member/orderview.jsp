@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2>Order Detail :</h2>
+				<h2>Order Detail : <c:out value="${overView.orderid	 }"/></h2>
 			</div>
 		</div>
 		<div class="row">
@@ -22,11 +22,6 @@
 							<table class="table cart-table">
 								<thead>
 									<tr>
-										<th>
-											<div class="allCheck">
-												<input type="checkbox" name="allCheck" id="allCheck"> <label for="allCheck"></label>
-											</div>
-										</th>
 										<th>Product Name</th>
 										<th class="text-center">Category</th>
 										<th class="text-center">Subtotal</th>
@@ -39,11 +34,6 @@
 								<c:forEach var="orderView" items="${orderView}">
 									<c:if test="${orderView.category eq '1'}">
 										<tr class="slideDown-details" id="${orderView.odbno}">
-											<td>
-												<div class="checkBox">
-													<input type="checkBox" name="chBox" class="chBox" data-odbno="${orderView.odbno}">
-												</div>
-											</td>
 											<td>
 												<div class="product-item">
 													<a class="product-thumb" href="javascript:void(0)"><img src="${pageContext.request.contextPath}/upload/${orderView.aimage}" alt="Product"></a>
@@ -97,11 +87,6 @@
 									</c:if>
 									<c:if test="${orderView.category eq '2'}">
 										<tr>
-											<td>
-												<div class="checkBox">
-													<input type="checkBox" name="chBox" class="chBox" data-cbno="${orderView.cbno}">
-												</div>
-											</td>
 											<td>
 												<div class="product-item">
 													<a class="product-thumb" href="/album/album_single?abno=${orderView.abno }"><img src="${pageContext.request.contextPath}/upload/${orderView.timage}" alt="Product"></a>

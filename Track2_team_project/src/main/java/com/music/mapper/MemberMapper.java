@@ -30,4 +30,5 @@ public interface MemberMapper {
 	public List<OrderListVO> orderDetailList(OrderVO ovo);
 	public List<OrderListVO> orderTrackList(OrderVO ovo);
 	public List<OrderListVO> orderdetailTracksInAlbum(OrderVO ovo);
+	public List<OrderListVO> orderAlbumList(OrderVO ovo);
 }

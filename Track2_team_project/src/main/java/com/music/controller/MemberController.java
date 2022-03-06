@@ -231,7 +231,9 @@ public class MemberController {
 			
 			ovo.setId(myName);
 			List<OrderListVO> orderList = service.orderTrackList(ovo);
+			List<OrderListVO> albumList = service.orderAlbumList(ovo);
 			model.addAttribute("olist", orderList);
+			model.addAttribute("alist", albumList);
 			
 			
 			
