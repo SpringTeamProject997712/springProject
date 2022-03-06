@@ -24,7 +24,7 @@
 						<!--  favourite song start -->
 						<c:forEach var="flist" items="${favouritelist}">
 						<ul class="favouritelist">
-							<li><a href="#"><span class="play_no">${flist.rownum}</span><span class="play_hover"></span></a></li>
+							<li><a class="play_track_in_album" id="${flist.tbno}" href="javascript:void(0)"><span class="play_no">${flist.rownum}</span><span class="play_hover"></span></a></li>
 							<li><a href="#">${flist.name}</a></li>
 							<li><a href="#">${flist.tname}</a></li>
 							<li class="text-center"><a href="#">${flist.price}</a></li>
