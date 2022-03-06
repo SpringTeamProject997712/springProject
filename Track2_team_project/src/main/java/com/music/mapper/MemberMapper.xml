@@ -119,21 +119,28 @@
 	</select>
 	
 	<select id="orderDetailList" resultType="com.music.domain.OrderListVO">
-		select 
+	select 
     o.orderid, d.odbno, o.id, o.amount, o.orderdate, 
     p.pbno, p.category, 
     t.price as tprice, t.name as tname, 
-    a.price as aprice, a.name as aname, a.image_240 as image 
-from order_m o 
-    inner join orderdetail_m d 
-        on o.orderid = d.orderid 
-    inner join product_m p 
-        on p.pbno = d.pbno 
-    left outer join track_m t 
-        on p.pbno = t.pbno 
-    left outer join album_m a 
-        on p.pbno = a.pbno 
-    where o.id = #{id} and o.orderid = #{orderid}
+    a.price as aprice, a.name as aname, a.image_240 as aimage,
+    t.image as timage
+	from order_m o, orderdetail_m d, product_m p, view_track_m t, album_m a
+	where o.orderid = d.orderid
+		and p.pbno = d.pbno
+		and p.pbno = t.pbno(+)
+		and p.pbno = a.pbno(+)
+		and o.id = #{id} and o.orderid = #{orderid}
+	</select>
+	
+	<select id="orderdetailTracksInAlbum" resultType="com.music.domain.OrderListVO">
+	select d.odbno, d.orderid, d.pbno, t.tbno, a.abno, a.image, 
+    t.singer, t.duration, t.length, t.name,t.price 
+	from orderdetail_m d, product_m p, view_track_m t, album_m a
+	where d.pbno = p.pbno
+	and p.pbno = a.pbno
+	and a.abno = t.abno
+	and d.orderid = #{orderid}
 	</select>
 	
 </mapper>

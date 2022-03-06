@@ -12,15 +12,15 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
                             <div class="ms_banner_img">
-                                <img src="/images/banner.png" alt="" class="img-fluid">
+                                <img src="/upload/${bestAlbum.image}" alt="" class="img-fluid" width="511px" height="539px">
                             </div>
                             <div class="ms_banner_text">
                                 <h1>This Monthâs</h1>
-                                <h1 class="ms_color">Record Breaking Albums !</h1>
+                                <h1 class="ms_color"><a href="/album/album_single?abno=${bestAlbum.abno}&pageName=menu_album">Record Breaking Albums ! <br>${bestAlbum.name}</a></h1>
                                 <p>Dream your moments, Until I Met You, Gimme Some Courage, Dark Alley, One More Of A Stranger, Endless<br> Things, The Heartbeat Stops, Walking Promises, Desired Games and many more...</p>
                                 <div class="ms_banner_btn">
-                                    <a href="#" class="ms_btn">Listen Now</a>
-                                    <a href="#" class="ms_btn">Add To Queue</a>
+                                    <a href="/album/album_single?abno=${bestAlbum.abno}&pageName=menu_album" class="ms_btn">Go Now</a>
+                                    <a href="javascript:void(0)" class="ms_btn album_add_queue" id="run_abno_${bestAlbum.abno}">Add To Queue</a>
                                 </div>
                             </div>
                         </div>

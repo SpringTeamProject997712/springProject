@@ -24,5 +24,6 @@ public interface ProductMapper {
 	
 	//삭제
 	public void deleteProduct(int pbno);
+	public List<AlbumVO> selectBestAlbumList();
 	
 }

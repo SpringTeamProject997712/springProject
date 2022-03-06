@@ -220,4 +220,7 @@ public class AdminController {
 	@GetMapping("/buttons/buttons")
 	public void viewButtons() {
 	}
+	@GetMapping("/chart/chart")
+	public void viewCharts() {
+	}
 }

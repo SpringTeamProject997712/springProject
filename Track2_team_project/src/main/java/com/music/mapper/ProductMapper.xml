@@ -63,4 +63,31 @@
   		delete from product_m where pbno = #{pbno}
   	</delete>
   	
+  	<select id="selectBestAlbumList" resultType="com.music.domain.AlbumVO">
+  select abno, name, singer, image_240, sum
+	from (select  a.abno, a.name, a.singer, a.image_240, sum(a.count + b.count) as sum
+        from (select a.abno, a.name, a.singer,a.image_240, count(od.odbno) as count
+            from orderdetail_m od, album_m a, track_m t
+            where a.abno = t.abno(+)
+            and t.pbno = od.pbno(+)
+            group by a.abno, a.name, a.singer, a.image_240) a,
+            (select a.abno, a.name, a.singer,a.image_240, count(od.odbno) as count
+            from orderdetail_m od, album_m a
+            where a.pbno = od.pbno(+)
+            group by a.abno, a.name, a.singer, a.image_240) b
+        where a.abno = b.abno 
+        group by a.abno, a.name, a.singer, a.image_240)
+	where sum = (select max(sum) from (select  a.abno, a.name, a.singer, a.image_240, sum(a.count + b.count) as sum
+        from (select a.abno, a.name, a.singer,a.image_240, count(od.odbno) as count
+            from orderdetail_m od, album_m a, track_m t
+            where a.abno = t.abno(+)
+            and t.pbno = od.pbno(+)
+            group by a.abno, a.name, a.singer, a.image_240) a,
+            (select a.abno, a.name, a.singer,a.image_240, count(od.odbno) as count
+            from orderdetail_m od, album_m a
+            where a.pbno = od.pbno(+)
+            group by a.abno, a.name, a.singer, a.image_240) b
+        where a.abno = b.abno 
+        group by a.abno, a.name, a.singer, a.image_240))
+  	</select>
 </mapper>

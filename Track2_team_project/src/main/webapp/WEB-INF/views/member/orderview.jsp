@@ -46,7 +46,7 @@
 											</td>
 											<td>
 												<div class="product-item">
-													<a class="product-thumb" href="javascript:void(0)"><img src="${pageContext.request.contextPath}/upload/${orderView.image}" alt="Product"></a>
+													<a class="product-thumb" href="javascript:void(0)"><img src="${pageContext.request.contextPath}/upload/${orderView.aimage}" alt="Product"></a>
 													<div class="product-info">
 														<h4 class="product-title">
 															<a href="/album/album_single?abno=${orderView.abno}">${orderView.aname}</a>
@@ -78,13 +78,13 @@
 															<li class="text-center">Price</li>
 															<li class="text-center">Duration</li>
 														</ul> <c:set value="${1}" var="d_num" />
-														<c:forEach items="${cartListDetail}" var="cartDetail">
-															<c:if test="${cartList.pbno == cartDetail.pbno}">
+														<c:forEach items="${orderdetailView}" var="orderDetail">
+															<c:if test="${orderView.pbno == orderDetail.pbno}">
 																<ul>
 																	<li>${d_num}</li>
-																	<li class="text-center">${cartDetail.tname}</li>
-																	<li class="text-center track_name">${cartDetail.tprice}</li>
-																	<li class="text-center">${cartDetail.length}</li>
+																	<li class="text-center">${orderDetail.name}</li>
+																	<li class="text-center track_name">${orderDetail.price}</li>
+																	<li class="text-center">${orderDetail.length}</li>
 																</ul>
 																<c:set value="${d_num+1}" var="d_num" />
 															</c:if>
@@ -95,19 +95,19 @@
 											</td>
 										</tr>
 									</c:if>
-									<c:if test="${cartList.category eq '2'}">
+									<c:if test="${orderView.category eq '2'}">
 										<tr>
 											<td>
 												<div class="checkBox">
-													<input type="checkBox" name="chBox" class="chBox" data-cbno="${cartList.cbno}">
+													<input type="checkBox" name="chBox" class="chBox" data-cbno="${orderView.cbno}">
 												</div>
 											</td>
 											<td>
 												<div class="product-item">
-													<a class="product-thumb" href="/album/album_single?abno=${cartList.abno }"><img src="${pageContext.request.contextPath}/upload/${cartList.timage}" alt="Product"></a>
+													<a class="product-thumb" href="/album/album_single?abno=${orderView.abno }"><img src="${pageContext.request.contextPath}/upload/${orderView.timage}" alt="Product"></a>
 													<div class="product-info">
 														<h4 class="product-title">
-															<a href="/album/album_single?abno=${cartList.abno}">${cartList.tname}</a>
+															<a href="/album/album_single?abno=${orderView.abno}">${orderView.tname}</a>
 														</h4>
 													</div>
 												</div>
@@ -115,22 +115,22 @@
 											<td class="text-center text-lg text-medium">Track</td>
 											<td class="text-center text-lg text-medium">
 												<fmt:setLocale value="ja_jp" />
-												<fmt:formatNumber type="currency" value="${cartList.tprice * cartList.quantity}" currencySymbol="￥" maxFractionDigits="0" />
+												<fmt:formatNumber type="currency" value="${orderView.tprice}" currencySymbol="￥" maxFractionDigits="0" />
 											</td>
 											<td class="text-center text-lg text-medium">
 												<fmt:setLocale value="ja_jp" />
-												<fmt:formatNumber type="currency" value="${cartList.tprice}" currencySymbol="￥" maxFractionDigits="0" />
+												<fmt:formatNumber type="currency" value="${orderView.tprice}" currencySymbol="￥" maxFractionDigits="0" />
 											</td>
 											<td class="text-center">
-												<a class="remove-from-cart" href="javascript:void(0)" data-toggle="tooltip" title="" data-original-title="Remove item" onclick="delete_cart_btn();" data-cbno="${cartList.cbno }"><i class="fa fa-trash"></i></a>
+												<a class="remove-from-cart" href="javascript:void(0)" data-toggle="tooltip" title="" data-original-title="Remove item" onclick="delete_cart_btn();" data-cbno="${orderView.cbno }"><i class="fa fa-trash"></i></a>
 											</td>
 										</tr>
 									</c:if>
-									<c:if test="${cartList.category eq '1'}">
-										<c:set var="sum" value="${sum + cartList.aprice}" />
+									<c:if test="${orderView.category eq '1'}">
+										<c:set var="sum" value="${sum + orderView.aprice}" />
 									</c:if>
-									<c:if test="${cartList.category eq '2'}">
-										<c:set var="sum" value="${sum + cartList.tprice}" />
+									<c:if test="${orderView.category eq '2'}">
+										<c:set var="sum" value="${sum + orderView.tprice}" />
 									</c:if>
 								</c:forEach>
 
@@ -140,15 +140,9 @@
 						</div>
 						<div class="shopping-cart-footer">
 							<div class="column">
-								<form class="coupon-form" method="post">
-									<input class="form-control form-control-sm" type="text" placeholder="Coupon code" required="">
-									<button class="ms_btn btn-outline-primary" type="submit">Apply</button>
-								</form>
-							</div>
+								</div>
 
 							<div class="column text-lg" style="color: white;">
-								Subtotal: <span class="text-medium"> <fmt:setLocale value="ja_jp" /> <fmt:formatNumber type="currency" value="${sum}" currencySymbol="￥" maxFractionDigits="0" />
-								</span>
 							</div>
 						</div>
 						<div class="shopping-cart-footer">
@@ -156,11 +150,6 @@
 								<a class="ms_btn btn-outline-secondary" href="#"><i class="icon-arrow-left"></i>&nbsp;Back</a>
 							</div>
 							<div class="column">
-								<!-- 										<a class="ms_btn btn-primary" href="javascript:go_pay()" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart" data-toast-message="is updated successfully!">Update Cart</a> -->
-								<form action="/member/go_pay" method="post">
-									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"> <input type="text" name="amount" value="${sum }"> <input type="text" name="id" value="${principal.member.name}"> <input type="submit">
-								</form>
-								<a class="ms_btn btn-success" href="javascript:;" data-toggle="modal" data-target="#pay_modal">Checkout</a>
 							</div>
 						</div>
 					</div>

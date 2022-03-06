@@ -141,4 +141,8 @@ public class MemberServiceImpl implements MemberService {
 	public List<OrderListVO> orderDetailList(OrderVO ovo) {
 		return mapper.orderDetailList(ovo);
 	}
+	@Override
+	public List<OrderListVO> orderdetailTracksInAlbum(OrderVO ovo) {
+		return mapper.orderdetailTracksInAlbum(ovo);
+	}
 }

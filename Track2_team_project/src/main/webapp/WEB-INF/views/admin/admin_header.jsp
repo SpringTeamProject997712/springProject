@@ -160,7 +160,7 @@
             <li class="nav-item"><a class="nav-link" href="/admin/buttons/dropdowns"><span class="nav-icon"></span> Dropdowns</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a class="nav-link" href="charts.html">
+        <li class="nav-item"><a class="nav-link" href="/admin/chart/chart">
             <svg class="nav-icon">
               <use href="/images/svg/free.svg#cil-chart-pie"></use>
             </svg> Charts</a></li>
