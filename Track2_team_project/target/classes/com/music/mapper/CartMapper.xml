@@ -95,4 +95,8 @@
 		delete cart_m where id = #{id}
 	</delete>
 	
+	<delete id="deleteUsedCoupon">
+		delete getcoupon_m where id= #{id} and couponnumber = #{couponnumber}
+	</delete>
+	
 </mapper>

@@ -67,4 +67,8 @@ public class CartServiceImpl implements CartService {
 	public int setCoupon(CouponVO cvo) {
 		return cmapper.setCoupon(cvo);
 	}
+	@Override
+	public int deleteUsedCoupon(CouponVO cvo) {
+		return cmapper.deleteUsedCoupon(cvo);
+	}
 }

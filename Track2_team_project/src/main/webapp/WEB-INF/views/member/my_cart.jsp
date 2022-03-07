@@ -153,7 +153,7 @@
 										<form action="/member/go_pay" method="post" name="purchaseForm">
 											<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 											<input type="hidden" name="real_id" value="${principal.member.id}">
-											<input type="hidden" name="amount" value="${sum }">
+											<input type="hidden" name="amount" id="my_order_amount" value="${sum}">
 											<input type="hidden" name="id" value="${principal.member.name}">
 											<input type="hidden" name="zipnum" value="${principal.member.zipnum}">
 											<input type="hidden" name="phone" value="${principal.member.phone}">

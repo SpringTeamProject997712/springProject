@@ -30,4 +30,6 @@ public interface CartService {
 	public int searchCouponIsRealWithCouponid(String couponid);
 	
 	public int setCoupon(CouponVO cvo);
+	
+	public int deleteUsedCoupon(CouponVO cvo);
 }

@@ -1,11 +1,8 @@
 package com.music.controller;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -13,15 +10,11 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 import com.music.domain.CartVO;
 import com.music.domain.CouponVO;
-import com.music.domain.MemberVO;
-import com.music.domain.OrderVO;
-import com.music.domain.OrderdetailVO;
 import com.music.security.domain.CustomUser;
 import com.music.service.CartService;
 
@@ -109,4 +102,22 @@ public class CartController {
 		String json =gson.toJson(coupons);
 		return json;
 	}
+	
+	@GetMapping("/used_coupon_delete")
+	@ResponseBody
+	public String used_coupon_delete(int couponnumber) {
+		String result="1";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			String myName =user.getUsername();
+			CouponVO cvo = new CouponVO();
+			cvo.setId(myName);
+			cvo.setCouponnumber(couponnumber);
+			service.deleteUsedCoupon(cvo);
+			result="2";
+		}
+		return result;
+	}
+	
 }

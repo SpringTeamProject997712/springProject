@@ -473,7 +473,7 @@
                     </div>
                 </div>
             </div>
-                  
+          </div>        
 			<!----Add Section Start---->
 			<div class="ms_advr_wrapper ms_advr2">
 				<div class="container">
@@ -489,6 +489,5 @@
             <!----Main div close---->
         </div>
 	</div>
-</div>
 <!-- main js files links -->
 <%@ include file="footer.jsp" %>

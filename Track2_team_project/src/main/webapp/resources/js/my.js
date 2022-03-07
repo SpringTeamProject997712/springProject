@@ -571,6 +571,13 @@ $(".add_track_to_playlist").on("click",function(z){
 	let tbno=$(this).parent().parent().parent().find('div.ms_play_icon').attr('id');
 	let my_playlist ="";
 	
+	var aaaa = now_login_checker();
+	console.log(aaaa);
+	if(!aaaa){
+	$("#myModal1").modal();
+	alert("ログインをしてください");
+	return false;
+	}
 	$.ajax({
 		type:"get",
 		url:"/createPlaylist/selectMyPlaylist",
@@ -727,7 +734,7 @@ function go_purchase() {
 			$(".cartlistForPurchase").html(your_cart);
 		}
 	})
-	//쿠폰칸(아직 안만들었음)
+	//쿠폰칸
 	$.ajax({
 		type:"get",
 		url:"/cart/select_my_coupon_for_purchase",
@@ -771,6 +778,7 @@ $("#coupon_selector").on("change", function(){
 	}
 	console.log(now_money);
 	$("#real_final_totalPrice").val(now_money);
+	$("#my_order_amount").val(now_money);
 })
 
 function fn_sendFB(sns) {

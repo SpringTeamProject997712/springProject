@@ -34,4 +34,6 @@ public interface CartMapper {
 	public Integer searchCouponIsRealWithCouponid(String couponid);
 	
 	public int setCoupon(CouponVO cvo);
+	
+	public int deleteUsedCoupon(CouponVO cvo);
 }
