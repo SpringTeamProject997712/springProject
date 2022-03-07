@@ -19,8 +19,8 @@
                 <div class="album_single_text">
                     <h2><input type="text" class="playlist-name" id="playlist-name" value="${justPlaylist.name}" >
                     	<c:if test="${justPlaylist.name != 'basic_playlist'}" >
-                    		<a href="javascript:void(0)" class="ms_btn rename_button" onclick="modify_playlist_name()"><span class="play_all">Rename</span></a>
-                    		<a href="javascript:void(0)" class="ms_btn rename_button" onclick="delete_playlist()"><span class="play_all">Delete</span></a>
+                    		<a href="javascript:void(0)" class="ms_btn rename_button" onclick="modify_playlist_name()"><span class="play_all">名付け</span></a>
+                    		<a href="javascript:void(0)" class="ms_btn rename_button" onclick="delete_playlist()"><span class="play_all">削除</span></a>
                     	</c:if>
                     	</h2>
                     <p class="singer_name">By - ${justPlaylist.id}</p>
@@ -29,15 +29,15 @@
                         <a href="#" class="album_date"></a>
                     </div>
                     <div class="album_btn">
-                        <a href="javascript:void(0)" class="ms_btn play_btn playlist_play_button" id="go_plbno_${this_plbno}"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">Play All</span></a>
-                        <a href="#" class="ms_btn playlist_add_queue" id="addPlbno_${this_plbno}"><span class="play_all"><img src="/images/svg/add_q.svg" alt="">Add To Queue</span></a>
+                        <a href="javascript:void(0)" class="ms_btn play_btn playlist_play_button" id="go_plbno_${this_plbno}"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">すべてを再生</span></a>
+                        <a href="#" class="ms_btn playlist_add_queue" id="addPlbno_${this_plbno}"><span class="play_all"><img src="/images/svg/add_q.svg" alt="">再生列に追加</span></a>
                     </div>
                 </div>
                 <div class="album_more_optn ms_more_icon">
                     <span><img src="/images/svg/more.svg" alt=""></span>
                 </div>
                 <ul class="more_option">
-                    <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
+                    <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
                 </ul>
             </div>
             <!----Song List---->
@@ -45,11 +45,11 @@
 				<div class="album_list_wrapper">
 					<ul class="album_list_name">
 						<li>#</li>
-						<li>Song Title</li>
-						<li>Artist</li>
-						<li class="text-center">Duration</li>
-						<li class="text-center">Add To Favourites</li>
-						<li class="text-center">More</li>
+						<li>タイトル</li>
+						<li>アーティスト</li>
+						<li class="text-center">時間</li>
+						<li class="text-center">いいね</li>
+						<li class="text-center">その他</li>
 					</ul>
 					
 					<!-- track list start -->
@@ -96,7 +96,7 @@
 																<i class="fa_icon form-user" aria-hidden="true"></i>
 															</span>
 	                          </div>
-	                          <a href="javascript:go_searchForPlaylist()" class="ms_btn">search</a>
+	                          <a href="javascript:go_searchForPlaylist()" class="ms_btn">検索</a>
                        		</form>
                        		<div class="instantTableMaker black_some_box" id="instantTable">
 	                        </div>
@@ -117,8 +117,8 @@
             <!----New Releases Section Start---->
             <div class="ms_releases_wrapper">
                 <div class="ms_heading">
-                    <h1>Newly Released Albums</h1>
-                    <span class="veiw_all"><a href="#">view more</a></span>
+                    <h1>新しいアルバム</h1>
+                    <span class="veiw_all"><a href="#">もっと見る</a></span>
                 </div>
                 <div class="ms_release_slider swiper-container">
                     <div class="ms_divider"></div>

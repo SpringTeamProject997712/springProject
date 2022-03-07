@@ -50,6 +50,33 @@
   		insert into track_m (tbno, abno, name, genre, detail, price, songname, songrealname, pbno, duration) 
 		values (#{tbno},#{abno},#{name},#{genre},#{detail},#{price},#{songname}, #{songrealname}, #{pbno}, #{duration})
   	</insert>
+  	
+  	<select id="selectCouponWithPage" resultType="com.music.domain.CouponVO">
+  		<![CDATA[
+  		select * from (
+  			select couponnumber, couponname, couponid, saleper, type, rownum as rn 
+  			from coupon_m 
+  			where rownum <= #{amount} * #{pageNum}  
+  		)
+  		where rn > #{amount} * (#{pageNum}-1)
+  		]]>
+  	</select>
+  	
+  	<select id="countCoupon" resultType="int">
+  		select count(*) from coupon_m
+  	</select>
+  	
+  	<select id="selectOneCoupon" resultType="com.music.domain.CouponVO">
+  		select * from coupon_m where couponnumber =#{couponnumber}
+  	</select>
+  	
+  	<delete id="deleteOneCoupon">
+  		delete from coupon_m where couponnumber =#{couponnumber}
+  	</delete>
+  	
+  	<insert id="insertCoupon">
+  		insert into coupon_m values (coupon_m_seq.nextval, #{couponname}, #{couponid}, #{saleper}, #{type})
+  	</insert>
 
   	<insert id="insertGoods">
   		<selectKey keyProperty="gbno" order="BEFORE" resultType="int">
@@ -58,6 +85,12 @@
   		insert into goods_m(gbno, abno, price, amount,pbno) 
 		values (#{gbno},#{abno},#{price},#{amount},#{pbno})
   	</insert>
+  	
+  	<update id="updateOneCoupon">
+  		update coupon_m set couponid = #{couponid}, couponname = #{couponname}, 
+  				saleper = #{saleper}, type=#{type}
+  		where couponnumber = #{couponnumber}
+  	</update>
   	
   	<delete id="deleteProduct">
   		delete from product_m where pbno = #{pbno}

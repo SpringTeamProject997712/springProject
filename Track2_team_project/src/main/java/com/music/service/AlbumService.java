@@ -3,7 +3,6 @@ package com.music.service;
 import java.util.List;
 
 import com.music.domain.AlbumVO;
-import com.music.domain.TrackVO;
 import com.music.utility.Criteria;
 import com.music.utility.PageMaker;
 
@@ -44,7 +43,8 @@ public interface AlbumService {
 
 	//top15
 	public List<AlbumVO> topAlbums();
-
+	//모든 트랙 랭킹
+	public List<AlbumVO> allranking();
 	//앨범 세부사항
 	public AlbumVO viewAlbumList(int abno);
 	

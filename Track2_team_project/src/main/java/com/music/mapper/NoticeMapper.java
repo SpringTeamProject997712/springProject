@@ -2,7 +2,6 @@ package com.music.mapper;
 
 import java.util.List;
 
-import com.music.domain.AlbumVO;
 import com.music.domain.NoticeVO;
 import com.music.utility.Criteria;
 

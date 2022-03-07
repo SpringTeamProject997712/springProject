@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="ms_heading">
-                                <h1>Your Playlists</h1>
+                                <h1>マイプレイリスト</h1>
                             </div>
                         </div>
                         <c:forEach items="${myPlaylist}" var="myList">
@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="/member/my_playlist/one_playlist?plbno=${myList.plbno}">${myList.name}</a></h3>
-                                    <p>${myList.pdbno} songs</p>
+                                    <p>${myList.pdbno} 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                                     <i class="ms_icon icon_playlist"></i>
                                 </div>
                                 <div class="ms_rcnt_box_text">
-                                    <h3><a href="javascript:void(0)">Create New Playlist</a></h3>
+                                    <h3><a href="javascript:void(0)">新しいプレイリストを作成</a></h3>
                                 </div>
                             </div>
                         </div>
@@ -53,8 +53,8 @@
             <!----Featured Playlist Section Start---->
             <div class="ms_radio_wrapper">
                 <div class="ms_heading">
-                    <h1>Featured Playlist</h1>
-                    <span class="veiw_all"><a href="#">view more</a></span>
+                    <h1>おススメするプレイリスト</h1>
+                    <span class="veiw_all"><a href="#">もっと見る</a></span>
                 </div>
                 <div class="ms_radio_slider swiper-container swiper-container-horizontal">
                     <div class="swiper-wrapper" style="transform: translate3d(-1881.83px, 0px, 0px); transition-duration: 0ms;">
@@ -68,11 +68,11 @@
                                             <img src="/images/svg/more.svg" alt="">
                                         </div>
                                         <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>お気に入りに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
                                         </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">

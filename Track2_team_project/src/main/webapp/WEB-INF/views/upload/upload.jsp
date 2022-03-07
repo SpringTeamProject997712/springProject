@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <!-- main css files links -->
 <%@ include file="../header.jsp"%>
 <!----Upload and Share Wrapper Start---->
@@ -19,16 +18,16 @@
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 				<div class="tab-content">
 					<div class="ms_upload_box tab-pane fade show active" id="album">
-						<h2>Upload Album Info</h2>
+						<h2>アルバム情報入力</h2>
 						<div class="thumImg">
 							<label for="image">
 								<img src="../images/svg/upload.svg" alt="image" />
 							</label>
 						</div>
 						<div class="ms_upload_btn">
-							<input class="upload-name" value="please upload image" disabled="disabled">
+							<input class="upload-name" value="イメージを入れてください" disabled="disabled">
 							<br><br>
-							<a href="javascript:void(0);" class="ms_btn"> <label for="image" className="ms_btn">upload Cover</label></a>
+							<a href="javascript:void(0);" class="ms_btn"> <label for="image" className="ms_btn">アップロード</label></a>
 							<input type="file" name="uploadImage" id="image" accept="image/*" class="form-control" style="display: none">
 						</div>
 						<script>
@@ -91,12 +90,12 @@
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 				<div class="tab-content">
 					<div class="ms_upload_box tab-pane fade show active" id="track">
-						<h2>Upload Track Info</h2>
+						<h2>トラック情報入力</h2>
 						<label for="songname"> <img src="../images/svg/upload.svg" alt="songname">
 						</label>
 						<div class="ms_upload_btn">
-							<input class="upload-name" value="please upload track" disabled="disabled"> <br>
-							<br> <a href="javascript:void(0);" class="ms_btn"> <label for="songname" className="ms_btn">upload files</label>
+							<input class="upload-name" value="トラックを入力してください" disabled="disabled"> <br>
+							<br> <a href="javascript:void(0);" class="ms_btn"> <label for="songname" className="ms_btn">アップロード</label>
 							</a> <input type="file" name="uploadMusic" id="songname" accept=".mp3" class="form-control" style="display: none" />
 						</div>
 						<div>
@@ -192,6 +191,6 @@
 </div>
 </div>
 <!----Main div close---->
-</div>
+
 <!-- main js files links -->
 <%@ include file="../footer.jsp"%>

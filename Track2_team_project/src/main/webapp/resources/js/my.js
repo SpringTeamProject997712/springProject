@@ -586,6 +586,13 @@ $(".add_track_to_playlist").on("click",function(z){
 	let tbno=$(this).parent().parent().parent().find('div.ms_play_icon').attr('id');
 	let my_playlist ="";
 	
+	var aaaa = now_login_checker();
+	console.log(aaaa);
+	if(!aaaa){
+	$("#myModal1").modal();
+	alert("ログインをしてください");
+	return false;
+	}
 	$.ajax({
 		type:"get",
 		url:"/createPlaylist/selectMyPlaylist",
@@ -620,7 +627,7 @@ $(".add_track_to_playlist").on("click",function(z){
             htmlForPlus += "<img src='../images/svg/play.svg' alt=''></div></div><div class='w_tp_song_name'>";
             htmlForPlus += "<h3><a href='#'>"+data.title+"</a></h3>";
             htmlForPlus += "<p>"+data.artist+"</p></div></div></div><div class='weekly_right'>"
-            htmlForPlus += "<span class='w_song_time'>5:10</span></div></div>"
+            htmlForPlus += "<span class='w_song_time'>"+data.length+"</span></div></div>"
             $("#the_track_choiced_by_you").html(htmlForPlus);
 		}
 	});
@@ -742,12 +749,52 @@ function go_purchase() {
 			$(".cartlistForPurchase").html(your_cart);
 		}
 	})
-	//쿠폰칸(아직 안만들었음)
+	//쿠폰칸
+	$.ajax({
+		type:"get",
+		url:"/cart/select_my_coupon_for_purchase",
+		error:function(xhr,status,err){
+			alert(xhr.r +"\n 내용 : " +xhr.reponseText+"\n 에러 : " +err);
+		},success:function(data){
+			data = JSON.parse(data);
+			console.log(data);
+			let your_coupon ="<option id='0' class='1' value=''>クーポン選択</option>";
+			for(var i=0; i<data.length; i++){
+				your_coupon += "<option id='"+data[i].saleper+"' class='"+data[i].type+"' value='"+data[i].couponnumber+"'>";
+				your_coupon += data[i].couponname;
+				your_coupon += "-"+data[i].saleper;
+				if(data[i].type=='1'){
+					your_coupon +="¥";
+				}else{
+					your_coupon +="%";
+				}
+				your_coupon += "</option>";	
+			}
+			
+			$("#coupon_selector").html(your_coupon);
+		}
+	})
 	//
 	$("#final_totalPrice").val(document.purchaseForm.amount.value);
+	$("#real_final_totalPrice").val(document.purchaseForm.amount.value);
 	
 	$("#myPurchase").modal();
 }
+
+$("#coupon_selector").on("change", function(){
+	let saleper = $("#coupon_selector option:selected").attr('id');
+	let type = $("#coupon_selector option:selected").attr('class');
+	let now_money = $("#final_totalPrice").val();
+
+	if(type=='1'){
+		now_money = now_money - saleper;
+	}else{
+		now_money = now_money - (saleper/100);
+	}
+	console.log(now_money);
+	$("#real_final_totalPrice").val(now_money);
+	$("#my_order_amount").val(now_money);
+})
 
 function fn_sendFB(sns) {
     var thisUrl = document.URL;

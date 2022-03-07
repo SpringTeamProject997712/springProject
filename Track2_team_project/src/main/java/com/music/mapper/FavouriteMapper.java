@@ -1,8 +1,6 @@
 package com.music.mapper;
 
-import java.util.List;
 
-import com.music.domain.FavouriteVO;
 import com.music.domain.LikeVO;
 
 public interface FavouriteMapper {

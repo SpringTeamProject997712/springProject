@@ -49,7 +49,8 @@ public interface AlbumMapper {
 
 	//top15
 	public List<AlbumVO> topAlbums();
-
+	//모든 트랙 랭킹
+	public List<AlbumVO> allranking();
 	//앨범 수정
 	public int updateAlbum(AlbumVO avo);
 	
