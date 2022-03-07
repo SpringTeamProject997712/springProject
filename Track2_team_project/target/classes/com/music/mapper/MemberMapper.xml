@@ -32,7 +32,7 @@
 	
 	<insert id="registMember">
 		insert into member_m (id,pw,nickname,name,phone,email,address1,address2, zipnum,image)
-		values (#{id},#{pw},'임시',#{name},'임시',#{id},'임시','임시', '임시', 'default_user.png')
+		values (#{id},#{pw},'仮',#{name},'仮',#{id},'仮','仮', '仮', 'default_user.png')
 	</insert>
 	<insert id="registMemberAuth">
 		insert into member_auth_m (id, auth)
