@@ -42,7 +42,7 @@ public class OrderListVO {
 	private String songrealname;
 	private int duration;
 	private String length;
-	
+	private String timage_50;
 // getcountlikes
 	private int likes;
 	private int count;

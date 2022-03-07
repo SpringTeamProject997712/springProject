@@ -253,4 +253,18 @@ $("#songname").change(function(e){
     
     objectUrl = URL.createObjectURL(file);
     $("#audio").prop("src", objectUrl);
+});
+
+let SlideOn = 1;
+$(".slideDown-details").find("div.product-item").on("click", function(abno){
+	let cbno = $(this).parent().parent().attr('id');
+		
+	$(".cart-details").slideUp(10);
+	if(SlideOn != cbno +'on'){
+		$("#cart-details_"+cbno).slideDown();
+		SlideOn=cbno + 'on';
+	}else{	
+		$("#cart-details_"+cbno).slideUp();
+		SlideOn=1;
+	}
 })

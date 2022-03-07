@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
                             <div class="ms_banner_img">
-                                <img src="/upload/${bestAlbum.image}" alt="" class="img-fluid" width="511px" height="539px">
+                                <img src="/upload/${bestAlbum.image}" alt="" class="img-fluid" style="width:511px; height:539px;">
                             </div>
                             <div class="ms_banner_text">
                                 <h1>
@@ -290,9 +290,6 @@
 	                            <img src="/images/genrs/romantic.svg" alt="" class="img-fluid"/>
 	                            <div class="ms_main_overlay">
 	                                <div class="ms_box_overlay"></div>
-	                                <div class="ms_play_icon">
-	                                    <img src="/images/svg/play.svg" alt="">
-	                                </div>
 	                                <div class="ovrly_text_div">
 	                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=1">ロマンチック</a></span>
 	                                    <span class="ovrly_text2"><a href="/genres/genres_single?genre=1">リストへ</a></span>
@@ -310,9 +307,6 @@
 	                            <img src="/images/genrs/hiphop.svg" alt="" class="img-fluid" />
 	                            <div class="ms_main_overlay">
 	                                <div class="ms_box_overlay"></div>
-	                                <div class="ms_play_icon">
-	                                    <img src="/images/svg/play.svg" alt="">
-	                                </div>
 	                                <div class="ovrly_text_div">
 	                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=2">ヒップホップ</a></span>
 	                                    <span class="ovrly_text2"><a href="/genres/genres_single?genre=2">リストへ</a></span>
@@ -330,9 +324,6 @@
 	                            <img src="/images/genrs/dancing.svg" alt="" class="img-fluid" />
 	                            <div class="ms_main_overlay">
 	                                <div class="ms_box_overlay"></div>
-	                                <div class="ms_play_icon">
-	                                    <img src="/images/svg/play.svg" alt="">
-	                                </div>
 	                                <div class="ovrly_text_div">
 	                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=3">ダンシング</a></span>
 	                                	<span class="ovrly_text2"><a href="/genres/genres_single?genre=3">リストへ</a></span>
@@ -355,9 +346,6 @@
                                     <img src="/images/genrs/rock.svg" alt="" class="img-fluid" />
                                     <div class="ms_main_overlay">
                                         <div class="ms_box_overlay"></div>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="/genres/genres_single?genre=4">ロック</a></span>
                                             <span class="ovrly_text2"><a href="/genres/genres_single?genre=4">リストへ</a></span>
@@ -375,9 +363,6 @@
                                     <img src="/images/genrs/jazz.svg" alt="" class="img-fluid" />
                                     <div class="ms_main_overlay">
                                         <div class="ms_box_overlay"></div>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="/genres/genres_single?genre=5">ジャズ</a></span>
                                             <span class="ovrly_text2"><a href="/genres/genres_single?genre=5">リストへ</a></span>
@@ -395,9 +380,6 @@
                                     <img src="/images/genrs/metal.svg" alt="" class="img-fluid" />
                                     <div class="ms_main_overlay">
                                         <div class="ms_box_overlay"></div>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="/genres/genres_single?genre=6">メタル</a></span>
                                             <span class="ovrly_text2"><a href="/genres/genres_single?genre=6">リストへ</a></span>
@@ -419,9 +401,6 @@
                                     <img src="/images/genrs/pop.svg" alt="" class="img-fluid" />
                                     <div class="ms_main_overlay">
                                         <div class="ms_box_overlay"></div>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="/genres/genres_single?genre=7">ポップ</a></span>
                                             <span class="ovrly_text2"><a href="/genres/genres_single?genre=7">リストへ</a></span>
@@ -439,9 +418,6 @@
                                     <img src="/images/genrs/radio.svg" alt="" class="img-fluid" />
                                     <div class="ms_main_overlay">
                                         <div class="ms_box_overlay"></div>
-                                        <div class="ms_play_icon">
-                                            <img src="/images/svg/play.svg" alt="">
-                                        </div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="/genres/genres_single?genre=8">インディーズ</a></span>
                                             <span class="ovrly_text2"><a href="/genres/genres_single?genre=8">リストへ</a></span>
@@ -459,9 +435,6 @@
                             <img src="/images/genrs/soul.svg" alt="" class="img-fluid" />
                             <div class="ms_main_overlay">
                                 <div class="ms_box_overlay"></div>
-                                <div class="ms_play_icon">
-                                    <img src="/images/svg/play.svg" alt="">
-                                </div>
                                 <div class="ovrly_text_div">
                                     <span class="ovrly_text1"><a href="/genres/genres_single?genre=9">ソウル</a></span>
                                     <span class="ovrly_text2"><a href="/genres/genres_single?genre=9">リストへ</a></span>

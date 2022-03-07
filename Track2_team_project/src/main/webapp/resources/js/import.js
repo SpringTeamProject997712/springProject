@@ -10,7 +10,7 @@ function got_info(my_pg){
 		buyer_name : document.purchaseForm.id.value, //유저네임
 		buyer_tel : document.purchaseForm.phone.value, //유저폰 
 		buyer_addr : document.purchaseForm.address1.value+" "+document.purchaseForm.address2.value, //유저
-		buyer_postcode : document.purchaseForm.zipnum.value //임시
+		buyer_postcode : document.purchaseForm.zipnum.value //仮
 	}
 	
 	return my_purchase_info;
@@ -43,6 +43,7 @@ function go_this_purchase(my_pg){
 	    alert(msg);
 	    if(this__result ==1){
 	    	let couponnumber = $("#coupon_selector option:selected").val();
+	    	if(couponnumber) {
 	    	$.ajax({
 	    		type:"get",
 	    		data:{couponnumber:couponnumber},
@@ -58,9 +59,10 @@ function go_this_purchase(my_pg){
 	    			console.log("햣하,삭제한 쿠폰은 소각이다");
 	    		}
 	    	})
-	    	document.purchaseForm.submit();
 	    	
-	    }
+	    	}//if
+	    }//this if
+	    document.purchaseForm.submit();
 	});	
 }
 

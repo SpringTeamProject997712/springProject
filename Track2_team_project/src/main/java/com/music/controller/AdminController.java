@@ -36,8 +36,10 @@ import com.music.domain.MemberVO;
 import com.music.domain.NoticeVO;
 import com.music.domain.OrderListVO;
 import com.music.domain.OrderVO;
+import com.music.domain.OrderdetailVO;
 import com.music.domain.TrackVO;
 import com.music.service.AlbumService;
+import com.music.service.CartService;
 import com.music.service.MemberService;
 import com.music.service.NoticeService;
 import com.music.service.ProductService;
@@ -63,6 +65,9 @@ public class AdminController {
 	
 	@Setter(onMethod_= @Autowired)
 	TrackService tService;
+	
+	@Setter(onMethod_= @Autowired)
+	CartService cService;
 	
 	@Setter(onMethod_= @Autowired)
 	NoticeService nService;
@@ -190,6 +195,15 @@ public class AdminController {
 		model.addAttribute("odlist", odlist);
 		model.addAttribute("pageMaker", mService.pagingOrderList(cri));
 	}
+	
+	@GetMapping("/order/manage_orderdetail")
+	public void viewOrderdetail(Model model, OrderVO ovo) {
+		
+		List<OrderListVO> orderView = mService.orderDetailList(ovo);
+		model.addAttribute("orderView", orderView);
+		model.addAttribute("orderdetailView", mService.orderdetailTracksInAlbum(ovo));
+	}
+	
 	
 //=========================================상품관리용========================================
 	
