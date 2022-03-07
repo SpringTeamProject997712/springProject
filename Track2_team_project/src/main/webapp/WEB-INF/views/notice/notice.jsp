@@ -7,10 +7,10 @@
 			
 			<div class="noticemain">
                 <div class="ms_heading">
-                    <h1>공지사항</h1>
+                    <h1>お知らせ</h1>
                     <form name="searchform">
 	                    <div class="ms_top_search" style="float:right;">
-	                        <input type="text" class="form-control" name="keyword" placeholder="공지사항 검색" value="${pageMaker.cri.keyword}">
+	                        <input type="text" class="form-control" name="keyword" placeholder="お知らせ検索" value="${pageMaker.cri.keyword}">
 	                        <span class="search_icon" onclick="go_notice_search()">
 								<img src="../images/svg/search.svg" alt="">
 							</span>
@@ -36,10 +36,10 @@
 									<li><a href="#"><span>${list.wbno }</span></a></li>
 									<li class="text-center"><a href="#"><span>
 										<c:choose>
-											<c:when test="${list.header eq 1 }">공지</c:when>
-											<c:when test="${list.header eq 2 }">점검</c:when>
-											<c:when test="${list.header eq 3 }">이벤트</c:when>
-											<c:otherwise>기타</c:otherwise>
+											<c:when test="${list.header eq 1 }">お知らせ</c:when>
+											<c:when test="${list.header eq 2 }">メンテナンス</c:when>
+											<c:when test="${list.header eq 3 }">イベント</c:when>
+											<c:otherwise>その他</c:otherwise>
 										</c:choose>
 									</span></a></li>
 									<li><a href="/notice/notice_single?wbno=${list.wbno}">${list.title }</a></li>

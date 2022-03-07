@@ -6,7 +6,7 @@
         <div class="container-lg">
           <div class="car"></div>
           <div class="card mb-4">
-            <div class="card-header"><strong>공지 관리</strong><span class="small ms-1">/ 공지 확인 / 수정</span></div>
+            <div class="card-header"><strong>공지 관리</strong><span class="small ms-1">/　お知らせ確認 / 書き込み</span></div>
             <div class="card-body">
               
               <div class="example">
@@ -23,34 +23,34 @@
                 		<input type="hidden" name="bbno" value="1">
                 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 									  <div class="col-md-8">
-									    <label class="form-label" for="member_id">제목</label>
+									    <label class="form-label" for="member_id">タイトル</label>
 									    <input class="form-control" name="title" id="notice_title" type="text" value="${notice.title}">
 									  </div>
 									  <div class="col-md-4">
-									  	<label class="form-label" for="category">카테고리</label>
+									  	<label class="form-label" for="category">カテゴリー</label>
 									  	<select name="header" class="form-control" id="notice_header" >
-									  		<option value="">카테고리 선택</option>
+									  		<option value="">カテゴリー選択</option>
 										    <c:choose>
 										    	<c:when test="${notice.bbno==1 }">
-											    	<option value="1" selected>공지</option>
-											    	<option value="2">점검</option>
-											    	<option value="3">이벤트</option>
+											    	<option value="1" selected>お知らせ</option>
+											    	<option value="2">メンテナンス</option>
+											    	<option value="3">イベント</option>
 										    	</c:when>
 										    	<c:when test="${notice.bbno==2 }">
-											    	<option value="1" >공지</option>
-											    	<option value="2" selected>점검</option>
-											    	<option value="3" >이벤트</option>
+											    	<option value="1" >お知らせ</option>
+											    	<option value="2" selected>メンテナンス</option>
+											    	<option value="3" >イベント</option>
 										    	</c:when>
 										    	<c:when test="${notice.bbno==3 }">
-											    	<option value="1" >공지</option>
-											    	<option value="2" >점검</option>
-											    	<option value="3" selected>이벤트</option>
+											    	<option value="1" >お知らせ</option>
+											    	<option value="2" >メンテナンス</option>
+											    	<option value="3" selected>イベント</option>
 										    	</c:when>
 										    </c:choose>
 										</select>
 									  </div>
 									  <div class="col-md-12">
-									  	<label class="form-label" for="content">내용</label>
+									  	<label class="form-label" for="content">内容</label>
 									  	<div class="input-group">
 									  		<textarea id="summernote" name="content" class="summernote">${notice.content}</textarea>
 									  	</div>
@@ -66,12 +66,12 @@
 									    </div> -->
 									  </div>
 									  <div class="col-4">
-									  	<label class="form-label" for="file">첨부파일</label>
+									  	<label class="form-label" for="file">添付ファイル</label>
 									  	<input class="form-control" name="file" id="notice_file" type="file" value="${notice.filename }">
 									  </div>
 									  <div class="col-12">
-									    <button class="btn btn-primary" type="button" onclick="go_update_notice()">수정하기</button>
-									    <button class="btn btn-primary" type="button" onclick="location.href='/admin/notice/manage_notice'">목록보기</button>
+									    <button class="btn btn-primary" type="button" onclick="go_update_notice()">修正する</button>
+									    <button class="btn btn-primary" type="button" onclick="location.href='/admin/notice/manage_notice'">戻る</button>
 									  </div>
 									</form>
                 </div>

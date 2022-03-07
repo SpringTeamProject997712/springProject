@@ -307,6 +307,21 @@ $().ready(function(){
 			});
 		}
 	}
+	
+	$.ajax({
+		      type:"get",
+		      url:"/notice/recentnotice",
+		      error:function(xhr,status,err){
+		         alert(xhr.status + xhr.responseText + err);
+		      },success:function(data){
+		         data = JSON.parse(data);
+		         let newest_notice = "";
+		         newest_notice +="<span><a href='/notice/notice?pageName=menu_notice'"; 
+		         newest_notice +=" class='ms_color'>お知らせ :</a></span> <span class='top_marquee'>";
+		         newest_notice +="<a href='/notice/notice_single?wbno="+data.wbno+"'>"+data.title+"</a></span>";
+		         $(".ms_top_trend").html(newest_notice);
+		      }
+		   })
 })
 
 $(".fav_box").on("click", function(){
