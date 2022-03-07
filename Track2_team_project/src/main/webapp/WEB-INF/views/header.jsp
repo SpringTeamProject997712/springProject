@@ -190,16 +190,10 @@
 	                      	<span class="ms_pro_name">${principal.member.name.substring(0,1)}</span>
 					</a>
 					<ul class="pro_dropdown_menu">
-<<<<<<< HEAD
 						<li><a href="/member/profile?id=${principal.username}">プロファイル</a></li>
 						<li><a href="/member/my_playlist/my_playlist">マイリスト</a></li>
 						<li><a href="/member/orderlist">注文履歴</a></li>
-=======
-						<li><a href="/member/profile?id=${principal.username}">Profile</a></li>
-						<li><a href="/member/my_playlist/my_playlist">My Playlist</a></li>
-						<li><a href="/member/orderlist">Order List</a></li>
-						<li><a href="/member/my_coupon">Coupons</a></li>
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
+						<li><a href="/member/my_coupon">クーポン</a></li>
 						<sec:authorize access="hasRole('ROLE_ADMIN')">
 							<li><a href="/admin/admin">管理者ページ</a></li>
 						</sec:authorize>

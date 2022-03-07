@@ -66,41 +66,37 @@
   <body>
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
       <div class="sidebar-brand d-none d-md-flex">
-        <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-          <use href="/images/svg/coreui.svg#full"></use>
-        </svg>
-        <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
-          <use href="/images/svg/coreui.svg#signet"></use>
-        </svg>
+        <img src="/images/logo/motus_logo_side.svg" class="sidebar-brand-full" style="height:46px" alt="CoreUI Logo">
+        <img src="/images/logo/motus_logo_only.svg" class="sidebar-brand-narrow" style="height:46px" alt="CoreUI Logo">
       </div>
       <ul class="sidebar-nav" data-coreui="navigation" data-simplebar>
         <li class="nav-item"><a class="nav-link" href="/admin/admin">
             <svg class="nav-icon">
               <use href="/images/svg/free.svg#cil-speedometer"></use>
-            </svg> ADMIN Home</a></li>
+            </svg> 管理者ホームへ</a></li>
         <li class="nav-item"><a class="nav-link" href="/">
             <svg class="nav-icon">
               <use href="/images/svg/free.svg#cil-pencil"></use>
-            </svg> GO Index</a></li>
+            </svg> メインページへ</a></li>
         <!-- 어드민 만들기 좌측 메뉴 -->
-        <li class="nav-title">내가 만드는 페이지</li>
+        <li class="nav-title">管理ページ</li>
         
         <!-- 멤버관리 -->
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
               <use href="/images/svg/free.svg#cil-puzzle"></use>
-            </svg> 유저</a>
+            </svg> ユザー</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="/admin/member/manage_member"><span class="nav-icon"></span> 유저관리</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/member/manage_member"><span class="nav-icon"></span> ユザー管理</a></li>
           </ul>
         </li>
         
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
               <use href="/images/svg/free.svg#cil-puzzle"></use>
-            </svg> 주문</a>
+            </svg> 注文</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="/admin/order/manage_order"><span class="nav-icon"></span> 주문관리</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/order/manage_order"><span class="nav-icon"></span>注文管理</a></li>
           </ul>
         </li>
         
@@ -108,9 +104,9 @@
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
               <use href="/images/svg/free.svg#cil-puzzle"></use>
-            </svg>앨범</a>
+            </svg>アルバム</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="/admin/album/manage_album"><span class="nav-icon"></span>앨범 관리</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/album/manage_album"><span class="nav-icon"></span>アルバム管理</a></li>
           </ul>
         </li>
         
@@ -118,9 +114,9 @@
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
               <use href="/images/svg/free.svg#cil-puzzle"></use>
-            </svg>공지사항</a>
+            </svg>お知らせ</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="/admin/notice/manage_notice"><span class="nav-icon"></span>공지 관리</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/notice/manage_notice"><span class="nav-icon"></span>お知らせ管理</a></li>
           </ul>
         </li>
         
@@ -128,9 +124,9 @@
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
               <use href="/images/svg/free.svg#cil-puzzle"></use>
-            </svg>쿠폰</a>
+            </svg>クーポン</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="/admin/coupon/manage_coupon"><span class="nav-icon"></span>쿠폰 관리</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/coupon/manage_coupon"><span class="nav-icon"></span>クーポン管理</a></li>
           </ul>
         </li>
       </ul>
@@ -148,80 +144,23 @@
             <svg width="118" height="46" alt="CoreUI Logo">
               <use href="/images/svg/coreui.svg#full"></use>
             </svg></a>
-          <ul class="header-nav d-none d-md-flex">
-            <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
-          </ul>
-          <ul class="header-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#">
-                <svg class="icon icon-lg">
-                  <use href="/images/svg/free.svg#cil-bell"></use>
-                </svg></a></li>
-            <li class="nav-item"><a class="nav-link" href="#">
-                <svg class="icon icon-lg">
-                  <use href="/images/svg/free.svg#cil-list-rich"></use>
-                </svg></a></li>
-            <li class="nav-item"><a class="nav-link" href="#">
-                <svg class="icon icon-lg">
-                  <use href="/images/svg/free.svg#cil-envelope-open"></use>
-                </svg></a></li>
-          </ul>
           <ul class="header-nav ms-3">
             <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-md"><img class="avatar-img" src="/images/admin/8.jpg" alt="user@email.com"></div></a>
               <div class="dropdown-menu dropdown-menu-end pt-0">
                 <div class="dropdown-header bg-light py-2">
-                  <div class="fw-semibold">Account</div>
+                  <div class="fw-semibold">アクセス管理</div>
                 </div><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
-                    <use href="/images/svg/free.svg#cil-bell"></use>
-                  </svg> Updates<span class="badge badge-sm bg-info ms-2">42</span></a><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
-                    <use href="/images/svg/free.svg#cil-envelope-open"></use>
-                  </svg> Messages<span class="badge badge-sm bg-success ms-2">42</span></a><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
-                    <use href="/images/svg/free.svg#cil-task"></use>
-                  </svg> Tasks<span class="badge badge-sm bg-danger ms-2">42</span></a><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
-                    <use href="/images/svg/free.svg#cil-comment-square"></use>
-                  </svg> Comments<span class="badge badge-sm bg-warning ms-2">42</span></a>
-                <div class="dropdown-header bg-light py-2">
-                  <div class="fw-semibold">Settings</div>
-                </div><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
-                    <use href="/images/svg/free.svg#cil-user"></use>
-                  </svg> Profile</a><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
-                    <use href="/images/svg/free.svg#cil-settings"></use>
-                  </svg> Settings</a><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
-                    <use href="/images/svg/free.svg#cil-credit-card"></use>
-                  </svg> Payments<span class="badge badge-sm bg-secondary ms-2">42</span></a><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
-                    <use href="/images/svg/free.svg#cil-file"></use>
-                  </svg> Projects<span class="badge badge-sm bg-primary ms-2">42</span></a>
-                <div class="dropdown-divider"></div><a class="dropdown-item" href="#">
                   <svg class="icon me-2">
                     <use href="/images/svg/free.svg#cil-lock-locked"></use>
-                  </svg> Lock Account</a><a class="dropdown-item" href="#">
+                  </svg> 設定</a><a class="dropdown-item" href="#">
                   <svg class="icon me-2">
                     <use href="/images/svg/free.svg#cil-account-logout"></use>
-                  </svg> Logout</a>
+                  </svg> ログアウト</a>
               </div>
             </li>
           </ul>
         </div>
-        <div class="header-divider"></div>
-        <div class="container-fluid">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb my-0 ms-2">
-              <li class="breadcrumb-item">
-                <!-- if breadcrumb is single--><span><a href="/admin/admin" style="color : black;text-decoration: none;">Home</a></span>
-              </li>
-              <li class="breadcrumb-item active"><span>Dashboard</span></li>
-            </ol>
-          </nav>
-        </div>
+     
       </header>
       
