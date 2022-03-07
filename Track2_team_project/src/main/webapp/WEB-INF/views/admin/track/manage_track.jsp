@@ -60,7 +60,7 @@
 								    	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 										<input type="hidden" name="pbno" value="${tlist.pbno }">
 										<input type="hidden" name="abno" value="${tlist.abno }">
-									    <input type="submit" class="dropdown-item" value="트랙 삭제">	
+									    <input type="submit" class="dropdown-item" value="トラック削除">	
 									</form>
 								    </li>
 								  </ul>

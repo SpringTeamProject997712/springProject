@@ -61,10 +61,6 @@
 														<li><a class="dropdown-item" href="/admin/member/view_member?id=${mlist.id}">詳細情報照会 / 修正</a></li>
 														<li><a class="dropdown-item" id="${mlist.id}" onclick="go_member_delete(this.id)" href="javascript:void(0)">ID無効化</a></li>
 														<li><a class="dropdown-item" href="/admin/member/role_update?id=${mlist.id}">権限追加 / 削除</a></li>
-														<li>
-															<hr class="dropdown-divider">
-														</li>
-														<li><a class="dropdown-item" href="#">Separated link</a></li>
 													</ul>
 												</div>
 											</td>
