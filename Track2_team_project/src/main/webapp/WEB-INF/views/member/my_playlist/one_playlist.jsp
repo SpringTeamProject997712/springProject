@@ -19,8 +19,8 @@
                 <div class="album_single_text">
                     <h2><input type="text" class="playlist-name" id="playlist-name" value="${justPlaylist.name}" >
                     	<c:if test="${justPlaylist.name != 'basic_playlist'}" >
-                    		<a href="javascript:void(0)" class="ms_btn rename_button" onclick="modify_playlist_name()"><span class="play_all">Rename</span></a>
-                    		<a href="javascript:void(0)" class="ms_btn rename_button" onclick="delete_playlist()"><span class="play_all">Delete</span></a>
+                    		<a href="javascript:void(0)" class="ms_btn rename_button" onclick="modify_playlist_name()"><span class="play_all">名付け</span></a>
+                    		<a href="javascript:void(0)" class="ms_btn rename_button" onclick="delete_playlist()"><span class="play_all">削除</span></a>
                     	</c:if>
                     	</h2>
                     <p class="singer_name">By - ${justPlaylist.id}</p>
@@ -45,11 +45,11 @@
 				<div class="album_list_wrapper">
 					<ul class="album_list_name">
 						<li>#</li>
-						<li>Song Title</li>
-						<li>Artist</li>
-						<li class="text-center">Duration</li>
-						<li class="text-center">Add To Favourites</li>
-						<li class="text-center">More</li>
+						<li>タイトル</li>
+						<li>アーティスト</li>
+						<li class="text-center">時間</li>
+						<li class="text-center">いいね</li>
+						<li class="text-center">その他</li>
 					</ul>
 					
 					<!-- track list start -->
