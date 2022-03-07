@@ -6,7 +6,7 @@
         <div class="container-lg">
           <div class="car"></div>
           <div class="card mb-4">
-            <div class="card-header"><strong>공지 관리</strong><span class="small ms-1">/ 공지 확인 / 수정</span></div>
+            <div class="card-header"><strong>お知らせ管理</strong><span class="small ms-1">お知らせ確認 / 修正</span></div>
             <div class="card-body">
               
               <div class="example">
@@ -55,8 +55,8 @@
 									  
 									  </div>
 									  <div class="col-12">
-									    <button class="btn btn-primary" type="button" onclick="go_update_coupon()">전송</button>
-									    <button class="btn btn-primary" type="button" onclick="location.href='/admin/coupon/manage_coupon'">목록보기</button>
+									    <button class="btn btn-primary" type="button" onclick="go_update_coupon()">転送</button>
+									    <button class="btn btn-primary" type="button" onclick="location.href='/admin/coupon/manage_coupon'">一覧を見る</button>
 									  </div>
 									</form>
                 </div>

@@ -5,14 +5,14 @@
         <div class="container-lg">
           <div class="car"></div>
           <div class="card mb-4">
-            <div class="card-header"><strong>공지 관리</strong><span class="small ms-1">공지 목록</span></div>
+            <div class="card-header"><strong>お知らせ管理</strong><span class="small ms-1">お知らせ目録</span></div>
             <div class="card-body">
               <div class="text-medium-emphasis small">
               	<!-- 검색 창 -->
               	<form id="pagingForm" action="/admin/notice/manage_notice" method="get">
 	              <div class="input-group" style="width:200px;">
 								 		<input class="form-control" name="keyword" type="text" placeholder="search notice" value="${pageMaker.cri.keyword}" aria-label="공지 검색">
-								  	<button class="btn btn-outline-secondary" type="submit" style="color:white; background:grey">검색</button>
+								  	<button class="btn btn-outline-secondary" type="submit" style="color:white; background:grey">検索</button>
 										<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 										<input type="hidden" name="amount" value="10">
 										<input type="hidden" name="type" value="${pageMaker.cri.type}">
@@ -39,11 +39,11 @@
 					</colgroup>
                       <thead>
                         <tr>
-                          <th scope="col">카테고리</th>
-                          <th scope="col">제목</th>
-                          <th scope="col">조회수</th>
-                          <th scope="col">등록일</th>
-                          <th scope="col">수정/삭제</th>
+                          <th scope="col">カテゴリ</th>
+                          <th scope="col">題目</th>
+                          <th scope="col">照会数</th>
+                          <th scope="col">登録日</th>
+                          <th scope="col">修正削除</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -51,10 +51,10 @@
                         	<tr>
 	                          <td scope="row" ><a class="namelink" href="/admin/notice/manage_notice?wbno=${list.wbno}">
 	                          		<c:choose>
-										<c:when test="${list.header eq 1 }">공지</c:when>
-										<c:when test="${list.header eq 2 }">점검</c:when>
-										<c:when test="${list.header eq 3 }">이벤트</c:when>
-										<c:otherwise>기타</c:otherwise>
+										<c:when test="${list.header eq 1 }">お知らせ</c:when>
+										<c:when test="${list.header eq 2 }">点検</c:when>
+										<c:when test="${list.header eq 3 }">イベント</c:when>
+										<c:otherwise>その他</c:otherwise>
 									</c:choose></a></td>
 	                          <td>${list.title}</td>
 	                          <td>
@@ -65,10 +65,10 @@
 									<fmt:formatDate value="${nodate }" pattern="yyyy-MM-dd"/></td>
 	                          <td>
 	                          	<div class="dropdown">
-									  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">보기</button>
+									  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">確認</button>
 									  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-									    <li><a class="dropdown-item" href="/admin/notice/view_notice?wbno=${list.wbno}">수정</a></li>
-									    <li><a class="dropdown-item" href="/admin/notice/deletenotice?wbno=${list.wbno }">삭제</a></li>
+									    <li><a class="dropdown-item" href="/admin/notice/view_notice?wbno=${list.wbno}">修正</a></li>
+									    <li><a class="dropdown-item" href="/admin/notice/deletenotice?wbno=${list.wbno }">削除</a></li>
 									  </ul>
 								</div>
 	                          </td>
@@ -85,7 +85,7 @@
 					    <li class="page-item ${pageMaker.next?'':'disabled'}"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
 					  </ul>					  
 					</nav>
-					<a class="btn" href="/admin/notice/notice_write" role="button" style="float:right;border:1px solid #000;">글쓰기</a>
+					<a class="btn" href="/admin/notice/notice_write" role="button" style="float:right;border:1px solid #000;">書き物</a>
                 </div>
               </div>
             </div>

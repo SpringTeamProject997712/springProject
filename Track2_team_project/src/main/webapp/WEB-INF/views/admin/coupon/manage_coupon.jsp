@@ -5,7 +5,7 @@
         <div class="container-lg">
           <div class="car"></div>
           <div class="card mb-4">
-            <div class="card-header"><strong>쿠폰 관리</strong><span class="small ms-1">쿠폰 목록</span></div>
+            <div class="card-header"><strong>クーポン管理</strong><span class="small ms-1">クーポン目録</span></div>
             <div class="card-body">
               <div class="text-medium-emphasis small">
               	<!-- 검색 창 -->
@@ -32,11 +32,11 @@
 					</colgroup>
                       <thead>
                         <tr>
-                          <th scope="col">카테고리</th>
-                          <th scope="col">이름</th>
-                          <th scope="col">쿠폰ID</th>
-                          <th scope="col">할인액/할인율</th>
-                          <th scope="col">수정/삭제</th>
+                          <th scope="col">カテゴリ</th>
+                          <th scope="col">名前</th>
+                          <th scope="col">クーポンID</th>
+                          <th scope="col">割引額 / 割引率</th>
+                          <th scope="col">修正 / 削除</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -46,7 +46,7 @@
 	                          		<c:choose>
 																	<c:when test="${list.type eq 1 }">定価</c:when>
 																	<c:when test="${list.type eq 2 }">割合</c:when>
-																	<c:otherwise>기타</c:otherwise>
+																	<c:otherwise>その他</c:otherwise>
 																</c:choose></td>
 	                          <td>${list.couponname}</td>
 	                          <td>
@@ -56,10 +56,10 @@
 	                          	${list.saleper}
 	                          <td>
 	                          	<div class="dropdown">
-									  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">보기</button>
+									  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">確認</button>
 									  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-									    <li><a class="dropdown-item" href="/admin/coupon/view_coupon?couponnumber=${list.couponnumber}">수정</a></li>
-									    <li><a class="dropdown-item" href="/admin/coupon/deletecoupon?couponnumber=${list.couponnumber}">삭제</a></li>
+									    <li><a class="dropdown-item" href="/admin/coupon/view_coupon?couponnumber=${list.couponnumber}">修正</a></li>
+									    <li><a class="dropdown-item" href="/admin/coupon/deletecoupon?couponnumber=${list.couponnumber}">削除</a></li>
 									  </ul>
 								</div>
 	                          </td>
@@ -76,7 +76,7 @@
 					    <li class="page-item ${pageMaker.next?'':'disabled'}"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
 					  </ul>					  
 					</nav>
-					<a class="btn" href="/admin/coupon/make_coupon" role="button" style="float:right;border:1px solid #000;">글쓰기</a>
+					<a class="btn" href="/admin/coupon/make_coupon" role="button" style="float:right;border:1px solid #000;">書き物</a>
                 </div>
               </div>
             </div>
