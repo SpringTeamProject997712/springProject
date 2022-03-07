@@ -68,10 +68,10 @@
 														<li class="album_list_wrapper">
 															<ul class="album_list_name">
 																<li>#</li>
-																<li>Song Title</li>
+																<li>タイトル</li>
 																
-																<li class="text-center">Price</li>
-																<li class="text-center">Duration</li>
+																<li class="text-center">価格</li>
+																<li class="text-center">曲の長さ</li>
 															</ul>
 															<c:set value="${1}" var="d_num"/>
 															<c:forEach items="${cartListDetail}" var="cartDetail">
@@ -158,7 +158,7 @@
 											<input type="hidden" name="address1" value="${principal.member.address1}">
 											<input type="hidden" name="address2" value="${principal.member.address2}">
 										</form>
-										<a class="ms_btn btn-success" href="javascript:void(0)" onclick="go_purchase()">Purchase</a>
+										<a class="ms_btn btn-success" href="javascript:void(0)" onclick="go_purchase()">レジに進む</a>
 										
 									</div>
 								</div>

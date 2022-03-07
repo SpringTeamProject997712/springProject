@@ -94,7 +94,7 @@
 													</div>
 												</div>
 											</td>
-											<td class="text-center text-lg text-medium">Track</td>
+											<td class="text-center text-lg text-medium">トラック</td>
 											<td class="text-center text-lg text-medium">
 												<fmt:setLocale value="ja_jp" />
 												<fmt:formatNumber type="currency" value="${orderView.tprice}" currencySymbol="￥" maxFractionDigits="0" />

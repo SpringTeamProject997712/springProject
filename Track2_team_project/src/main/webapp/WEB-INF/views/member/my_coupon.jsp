@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-lg-12"  style="margin-bottom:40px; margin-top:30px;">
                             <div class="ms_heading">
-                                <h1>My Coupons</h1>
+                                <h1>お客様のクーポン券</h1>
                             </div>
                             <div>
                             	<form action="/member/get_mycoupon" method="get">

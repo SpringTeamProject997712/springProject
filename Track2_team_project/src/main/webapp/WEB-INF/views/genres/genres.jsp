@@ -6,8 +6,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="ms_heading">
-                            <h1>Top Genres</h1>
-                            <span class="veiw_all"><a href="/album/album">view more</a></span>
+                            <h1>トップ　ジャンル</h1>
+                            <span class="veiw_all"><a href="/album/album">もっと見る</a></span>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -19,7 +19,7 @@
                                 <div class="ms_box_overlay"></div>
                                 <div class="ovrly_text_div">
                                     <span class="ovrly_text1">ロマンチック</span>
-                                    <span class="ovrly_text2"><a href="/genres/genres_single?genre=1&pageName=menu_genres">view song</a></span>
+                                    <span class="ovrly_text2"><a href="/genres/genres_single?genre=1&pageName=menu_genres">曲を見る</a></span>
                                 </div>
                             </div>
                             </a>
@@ -39,7 +39,7 @@
                                         <div class="ms_box_overlay"></div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="#">ヒップホップ</a></span>
-																		<span class="ovrly_text2"><a href="/genres/genres_single?genre=2&pageName=menu_genres">view song</a></span>
+																		<span class="ovrly_text2"><a href="/genres/genres_single?genre=2&pageName=menu_genres">曲を見る</a></span>
                                         </div>
                                     </div>
                                     </a>
@@ -58,7 +58,7 @@
                                         <div class="ms_box_overlay"></div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1">ダンシング</span>
-											<span class="ovrly_text2"><a href="/genres/genres_single?genre=3&pageName=menu_genres">view song</a></span>
+											<span class="ovrly_text2"><a href="/genres/genres_single?genre=3&pageName=menu_genres">曲を見る</a></span>
                                         </div>
                                     </div>
                                     </a>
@@ -77,7 +77,7 @@
                                         <div class="ms_box_overlay"></div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="#">ロック</a></span>
-											<span class="ovrly_text2"><a href="/genres/genres_single?genre=4&pageName=menu_genres">view song</a></span>
+											<span class="ovrly_text2"><a href="/genres/genres_single?genre=4&pageName=menu_genres">曲を見る</a></span>
                                         </div>
                                     </div>
                                  		</a>
@@ -96,7 +96,7 @@
                                         <div class="ms_box_overlay"></div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="#">ジャズ</a></span>
-											<span class="ovrly_text2"><a href="/genres/genres_single?genre=5&pageName=menu_genres">view song</a></span>
+											<span class="ovrly_text2"><a href="/genres/genres_single?genre=5&pageName=menu_genres">曲を見る</a></span>
                                         </div>
                                     </div>
                                     </a>
@@ -116,7 +116,7 @@
                                 <div class="ms_box_overlay"></div>
                                 <div class="ovrly_text_div">
                                     <span class="ovrly_text1"><a href="#">メタル</a></span>
-									<span class="ovrly_text2"><a href="/genres/genres_single?genre=6&pageName=menu_genres">view song</a></span>
+									<span class="ovrly_text2"><a href="/genres/genres_single?genre=6&pageName=menu_genres">曲を見る</a></span>
                                 </div>
                             </div>
                             </a>
@@ -136,7 +136,7 @@
                                         <div class="ms_box_overlay"></div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="#">ポップ</a></span>
-											<span class="ovrly_text2"><a href="/genres/genres_single?genre=7&pageName=menu_genres">view song</a></span>
+											<span class="ovrly_text2"><a href="/genres/genres_single?genre=7&pageName=menu_genres">曲を見る</a></span>
                                         </div>
                                     </div>
                                     </a>
@@ -155,7 +155,7 @@
                                         <div class="ms_box_overlay"></div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="#">インディーズ</a></span>
-											<span class="ovrly_text2"><a href="/genres/genres_single?genre=8&pageName=menu_genres">view song</a></span>
+											<span class="ovrly_text2"><a href="/genres/genres_single?genre=8&pageName=menu_genres">曲を見る</a></span>
                                         </div>
                                     </div>
                                     </a>
@@ -174,7 +174,7 @@
                                         <div class="ms_box_overlay"></div>
                                         <div class="ovrly_text_div">
                                             <span class="ovrly_text1"><a href="#">ソウル</a></span>
-											<span class="ovrly_text2"><a href="/genres/genres_single?genre=9&pageName=menu_genres">view song</a></span>
+											<span class="ovrly_text2"><a href="/genres/genres_single?genre=9&pageName=menu_genres">曲を見る</a></span>
                                         </div>
                                     </div>
                                     </a>
