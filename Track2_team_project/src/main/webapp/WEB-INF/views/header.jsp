@@ -203,7 +203,7 @@
                     </sec:authorize>
                 </div>
             </div>
-<script>
+	<script>
         var pageSubmitFn = function(menu) {
 	    		if(menu === "menu_main") {
 	    			$("#activefrm").attr("action", "/");
