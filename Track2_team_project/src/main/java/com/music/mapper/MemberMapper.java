@@ -23,6 +23,7 @@ public interface MemberMapper {
 	public int countMember(Criteria cri);
 	public int countOrder(Criteria cri);
 	public int deleteMember(String id);
+	public int update_pw(MemberVO mvo); //아디+비번으로 아디의 비번을 수정
 	public int updateMemberActive(String id);
 //	public int nextPage();
 	public int deleteAuth(String id);//권한 전부 삭제

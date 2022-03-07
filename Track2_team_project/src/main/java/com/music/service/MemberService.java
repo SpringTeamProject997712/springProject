@@ -67,7 +67,8 @@ public interface MemberService {
 	public ViewPlaylistDetailVO myPlaylistView(int plbno);
 	//플레이리스트 이미지 가져오기
 	public ViewPlaylistDetailVO selectPlaylistImage(int plbno);
-	
+	//비번수정
+	public int update_pw(MemberVO mvo);
 	//오더 리스트
 	public List<OrderVO> orderList(OrderVO ovo);
 	
@@ -95,5 +96,7 @@ public interface MemberService {
 	
 	//어드민 오더 리스트
 	public List<OrderVO> viewOrderListWithPaging(Criteria cri);
+	//비번 초기화 메일보내기
+	public void send_mail(MemberVO member);
 	
 }
