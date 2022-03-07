@@ -15,9 +15,11 @@
                                 <img src="/upload/${bestAlbum.image}" alt="" class="img-fluid" width="511px" height="539px">
                             </div>
                             <div class="ms_banner_text">
-                                <h1>This Monthâs</h1>
-                                <h1 class="ms_color"><a href="/album/album_single?abno=${bestAlbum.abno}&pageName=menu_album">Record Breaking Albums ! <br>${bestAlbum.name}</a></h1>
-                                <p>Dream your moments, Until I Met You, Gimme Some Courage, Dark Alley, One More Of A Stranger, Endless<br> Things, The Heartbeat Stops, Walking Promises, Desired Games and many more...</p>
+                                <h1>
+                                	３月２週目
+                                <br>今のベストアルバムは？</h1>
+                                <h1 class="ms_color"><a href="/album/album_single?abno=${bestAlbum.abno}&pageName=menu_album">${bestAlbum.name}</a></h1>
+                                <p>${bestAlbum.detail }</p>
                                 <div class="ms_banner_btn">
                                     <a href="/album/album_single?abno=${bestAlbum.abno}&pageName=menu_album" class="ms_btn">Go Now</a>
                                     <a href="javascript:void(0)" class="ms_btn album_add_queue" id="run_abno_${bestAlbum.abno}">Add To Queue</a>
@@ -291,13 +293,13 @@
 	                                    <img src="/images/svg/play.svg" alt="">
 	                                </div>
 	                                <div class="ovrly_text_div">
-	                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=1">romantic</a></span>
-	                                    <span class="ovrly_text2"><a href="/genres/genres_single?genre=1">view song</a></span>
+	                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=1">ロマンチック</a></span>
+	                                    <span class="ovrly_text2"><a href="/genres/genres_single?genre=1">リストへ</a></span>
 	                                </div>
 	                            </div>
 	                            <div class="ms_box_overlay_on">
 	                                <div class="ovrly_text_div">
-	                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=1">romantic</a></span>
+	                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=1">ロマンチック</a></span>
 	                                </div>
 	                            </div>
 	                        </div>
@@ -311,13 +313,13 @@
 	                                    <img src="/images/svg/play.svg" alt="">
 	                                </div>
 	                                <div class="ovrly_text_div">
-	                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=2">Hiphop</a></span>
-	                                    <span class="ovrly_text2"><a href="/genres/genres_single?genre=2">view song</a></span>
+	                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=2">ヒップホップ</a></span>
+	                                    <span class="ovrly_text2"><a href="/genres/genres_single?genre=2">リストへ</a></span>
 	                                </div>
 	                            </div>
 	                            <div class="ms_box_overlay_on">
 	                                <div class="ovrly_text_div">
-	                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=2">Hiphop</a></span>
+	                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=2">ヒップホップ</a></span>
 	                                </div>
 	                            </div>
 	                        </div>
@@ -331,13 +333,13 @@
 	                                    <img src="/images/svg/play.svg" alt="">
 	                                </div>
 	                                <div class="ovrly_text_div">
-	                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=3">Dancing</a></span>
-	                                	<span class="ovrly_text2"><a href="/genres/genres_single?genre=3">view song</a></span>
+	                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=3">ダンシング</a></span>
+	                                	<span class="ovrly_text2"><a href="/genres/genres_single?genre=3">リストへ</a></span>
 	                                </div>
 	                            </div>
 	                            <div class="ms_box_overlay_on">
 	                                <div class="ovrly_text_div">
-	                                    <span class="ovrly_text1"><a href="#">Dancing</a></span>
+	                                    <span class="ovrly_text1"><a href="#">ダンシング</a></span>
 	                                    
 	                                </div>
 	                            </div>
@@ -356,13 +358,13 @@
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="/genres/genres_single?genre=4">Rock</a></span>
-                                            <span class="ovrly_text2"><a href="/genres/genres_single?genre=4">view song</a></span>
+                                            <span class="ovrly_text1"><a href="/genres/genres_single?genre=4">ロック</a></span>
+                                            <span class="ovrly_text2"><a href="/genres/genres_single?genre=4">リストへ</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">Rock</a></span>
+                                            <span class="ovrly_text1"><a href="#">ロック</a></span>
                                         </div>
                                     </div>
                                 </div>
@@ -376,13 +378,13 @@
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="/genres/genres_single?genre=5">Jazz</a></span>
-                                            <span class="ovrly_text2"><a href="/genres/genres_single?genre=5">view song</a></span>
+                                            <span class="ovrly_text1"><a href="/genres/genres_single?genre=5">ジャズ</a></span>
+                                            <span class="ovrly_text2"><a href="/genres/genres_single?genre=5">リストへ</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">Jazz</a></span>
+                                            <span class="ovrly_text1"><a href="#">ジャズ</a></span>
                                         </div>
                                     </div>
                                 </div>
@@ -396,13 +398,13 @@
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="/genres/genres_single?genre=6">Metal</a></span>
-                                            <span class="ovrly_text2"><a href="/genres/genres_single?genre=6">view song</a></span>
+                                            <span class="ovrly_text1"><a href="/genres/genres_single?genre=6">メタル</a></span>
+                                            <span class="ovrly_text2"><a href="/genres/genres_single?genre=6">リストへ</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">Metal</a></span>
+                                            <span class="ovrly_text1"><a href="#">メタル</a></span>
                                         </div>
                                     </div>
                                 </div>
@@ -420,13 +422,13 @@
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="/genres/genres_single?genre=7">Pop</a></span>
-                                            <span class="ovrly_text2"><a href="/genres/genres_single?genre=7">view song</a></span>
+                                            <span class="ovrly_text1"><a href="/genres/genres_single?genre=7">ポップ</a></span>
+                                            <span class="ovrly_text2"><a href="/genres/genres_single?genre=7">リストへ</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">Pop</a></span>
+                                            <span class="ovrly_text1"><a href="#">ポップ</a></span>
                                         </div>
                                     </div>
                                 </div>
@@ -440,13 +442,13 @@
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="/genres/genres_single?genre=8">Indie</a></span>
-                                            <span class="ovrly_text2"><a href="/genres/genres_single?genre=8">view song</a></span>
+                                            <span class="ovrly_text1"><a href="/genres/genres_single?genre=8">インディーズ</a></span>
+                                            <span class="ovrly_text2"><a href="/genres/genres_single?genre=8">リストへ</a></span>
                                         </div>
                                     </div>
                                     <div class="ms_box_overlay_on">
                                         <div class="ovrly_text_div">
-                                            <span class="ovrly_text1"><a href="#">Indie</a></span>
+                                            <span class="ovrly_text1"><a href="#">インディーズ</a></span>
                                         </div>
                                     </div>
                                 </div>
@@ -460,13 +462,13 @@
                                     <img src="/images/svg/play.svg" alt="">
                                 </div>
                                 <div class="ovrly_text_div">
-                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=9">Soul</a></span>
-                                    <span class="ovrly_text2"><a href="/genres/genres_single?genre=9">view song</a></span>
+                                    <span class="ovrly_text1"><a href="/genres/genres_single?genre=9">ソウル</a></span>
+                                    <span class="ovrly_text2"><a href="/genres/genres_single?genre=9">リストへ</a></span>
                                 </div>
                             </div>
                             <div class="ms_box_overlay_on">
                                 <div class="ovrly_text_div">
-                                    <span class="ovrly_text1"><a href="#">Soul</a></span>
+                                    <span class="ovrly_text1"><a href="#">ソウル</a></span>
                                 </div>
                             </div>
                         </div>

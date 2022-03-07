@@ -7,40 +7,26 @@
 </form>
 <div class="ms_footer_wrapper">
 	<div class="ms_footer_logo">
-		<a href="#" class="move_top"><img src="/images/open_logo.png" alt=""></a>
+		<a href="#" class="move_top"><img src="/images/logo/motus_logo_slogan.svg" style="height:150px;" alt=""></a>
 	</div>
 	<div class="ms_footer_inner">
 		<div class="row">
-			<div class="col-lg-3 col-md-6">
+			<div class="col-lg-6 col-md-6">
 				<div class="footer_box">
-					<h1 class="footer_title">miraculous music station</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6">
-				<div class="footer_box footer_app">
-					<h1 class="footer_title">Download our App</h1>
-					<p>
-						Go Mobile with our app.<br> Listen to your favourite songs at just one click. Download Now !
-					</p>
-					<a href="#" class="foo_app_btn"><img src="/images/google_play.jpg" alt="" class="img-fluid"></a> <a href="#" class="foo_app_btn"><img src="/images/app_store.jpg" alt="" class="img-fluid"></a> <a href="#" class="foo_app_btn"><img src="/images/windows.jpg" alt="" class="img-fluid"></a>
+					<h1 class="footer_title">The MOTUS Tonal Station</h1>
+					<p>サイトMOTUSは誰もが音楽をアップロードでき、誰もが気軽く音楽を聴けるように支援するサイトです。制作者が自分だけの音楽を上げて、それを聞いたお客が気に入ったら支援とファイルを手短に支援し上げます。サイトはたっだ1％だけの手数料を受け、それ以外は全部制作者側に送られます。ぜひ、このサイトを踏み台にして皆様の制作活動を応援します。</p>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6">
 				<div class="footer_box footer_subscribe">
-					<h1 class="footer_title">subscribe</h1>
-					<p>Subscribe to our newsletter and get latest updates and offers.</p>
-					<form>
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Enter Your Name">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Enter Your Email">
-						</div>
-						<div class="form-group">
-							<a href="#" class="ms_btn">sign me up</a>
-						</div>
-					</form>
+					<h1 class="footer_title">リンク先</h1>
+					<ul class="list-unstyled text-muted">
+                        <li><a href="/notice/notice">お知らせ</a></li>
+                        <li><a href="/member/profile?id=${principal.username}">プロファイル</a></li>
+                        <li><a href="/album/album?pageName=menu_album">注文履歴</a></li>
+                        <li><a href="/member/my_cart?pageName=menu_cart">カート</a></li>
+                        <li><a href="/member/downloads?pageName=menu_purchased">ダウンロード</a></li>
+                    </ul>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6">
@@ -52,7 +38,7 @@
 								<img src="/images/svg/phone.svg" alt="">
 							</div>
 							<div class="foo_con_data">
-								<span class="con-title">連絡先 :</span> <span>(+1) 202-555-0176, (+1) 2025-5501</span>
+								<span class="con-title">連絡先 :</span> <span>(+81) 202-555-0176</span>
 							</div>
 						</li>
 						<li>
@@ -60,7 +46,7 @@
 								<img src="/images/svg/message.svg" alt="">
 							</div>
 							<div class="foo_con_data">
-								<span class="con-title">メール :</span> <span><a href="#">demo@mail.com </a>, <a href="#">dummy@mail.com</a></span>
+								<span class="con-title">メール :</span> <span><a href="#">ryu00209@gmail.com </a></span>
 							</div>
 						</li>
 						<li>
@@ -72,15 +58,6 @@
 							</div>
 						</li>
 					</ul>
-					<div class="foo_sharing">
-						<div class="share_title">フォロー :</div>
-						<ul>
-							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -90,7 +67,7 @@
 		<div class="ms_copyright">
 			<div class="footer_border"></div>
 			<p>
-				Copyright &copy; 2018 <a href="#">The Miraculous Music Template</a>. All Rights Reserved.
+				Copyright &copy; 2022 <a href="#">The MOTUS Tonal Station</a>. All Rights Reserved.
 			</p>
 		</div>
 	</div>

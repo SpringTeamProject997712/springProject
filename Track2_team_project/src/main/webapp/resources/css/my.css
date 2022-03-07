@@ -1146,3 +1146,7 @@ h1.comments-title:after, .blog_comments_forms h1:after, .comment-respond h1:afte
 	margin:30px auto;
 	
 }
+
+.text-muted > li > a {
+	color:white;
+}
