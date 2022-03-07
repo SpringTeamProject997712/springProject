@@ -143,7 +143,7 @@
     o.orderid, d.odbno, o.id, o.amount, o.orderdate, 
     p.pbno, p.category, 
     t.price as tprice, t.name as tname, 
-    a.price as aprice, a.name as aname, a.image_240 as aimage,
+    a.price as aprice, a.name as aname, a.image_240 as aimage, a.abno, 
     t.image as timage
 	from order_m o, orderdetail_m d, product_m p, view_track_m t, album_m a
 	where o.orderid = d.orderid

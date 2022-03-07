@@ -92,6 +92,29 @@ function go_upload_notice() {
  	document.upload_notice.submit();
  }
  
+function go_upload_coupon(){
+	var formm = document.upload_coupon;
+	if(!formm.couponname.value){
+		alert("dd");
+		return false;
+	}else if(!formm.type.value){
+		alert("ta");
+		return false;
+	}
+	formm.submit();
+}
+
+function go_update_coupon(){
+	var forrm = document.update_coupon;
+	if(!forrm.type.value){
+		alert("type is null");
+		return false;
+	}else{
+		
+	}
+	forrm.submit();
+}
+ 
 $(function(){
 $('#summernote').summernote({
 height: 300,

@@ -5,7 +5,7 @@ function got_info(my_pg){
 		pay_method : 'card',
 		merchant_uid : 'merchant_' + new Date().getTime(),
 		name : document.getElementById('this_order_name').innerHTML, //~외 몇개
-		amount : document.getElementById('final_totalPrice').value, //금액
+		amount : document.getElementById('real_final_totalPrice').value, //금액
 		buyer_email : document.purchaseForm.real_id.value, //유저 아이디
 		buyer_name : document.purchaseForm.id.value, //유저네임
 		buyer_tel : document.purchaseForm.phone.value, //유저폰 
@@ -22,6 +22,7 @@ function go_this_purchase(my_pg){
 	IMP.init('imp50825691');
 	
 	let this_info = got_info(my_pg);
+	console.log("결제수단")
 	console.log(this_info);
 	
 	IMP.request_pay(
@@ -41,7 +42,24 @@ function go_this_purchase(my_pg){
 	    }
 	    alert(msg);
 	    if(this__result ==1){
+	    	let couponnumber = $("#coupon_selector option:selected").val();
+	    	$.ajax({
+	    		type:"get",
+	    		data:{couponnumber:couponnumber},
+	    		url:"/cart/used_coupon_delete",
+	    		error:function(xhr,status,err){
+	    			alert(xhr.status + xhr.responseText + err);
+	    		},success:function(data){
+	    			if(data=='1'){
+		    			$("#myModal1").modal();
+						alert("ログインをしてください");
+		    			return false;
+		    		}
+	    			console.log("햣하,삭제한 쿠폰은 소각이다");
+	    		}
+	    	})
 	    	document.purchaseForm.submit();
+	    	
 	    }
 	});	
 }

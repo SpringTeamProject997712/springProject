@@ -124,123 +124,19 @@
           </ul>
         </li>
         
-        
-        <!-- 이 템플릿에서 여기 어떤 컴포넌트가 있는지 설명하려고 만든 페이지 -->
-        <li class="nav-title">다른 사람이 만들어놓은 페이지</li>
+        <!-- 쿠폰관리 -->
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
               <use href="/images/svg/free.svg#cil-puzzle"></use>
-            </svg> Base</a>
+            </svg>쿠폰</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="base/accordion.html"><span class="nav-icon"></span> Accordion</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/breadcrumb.html"><span class="nav-icon"></span> Breadcrumb</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/base/cards"><span class="nav-icon"></span> Card모음</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/base/carousel"><span class="nav-icon"></span> 캐러셀 모음</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/collapse.html"><span class="nav-icon"></span> Collapse</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/base/list-group"><span class="nav-icon"></span> List모음</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/base/navs"><span class="nav-icon"></span> Navs</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/base/pagination"><span class="nav-icon"></span> 페이징</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/placeholders.html"><span class="nav-icon"></span> Placeholders</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/popovers.html"><span class="nav-icon"></span> Popovers</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/progress.html"><span class="nav-icon"></span> Progress</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/scrollspy.html"><span class="nav-icon"></span> Scrollspy</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/base/spinners"><span class="nav-icon"></span> Spinner모음</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/base/tables"><span class="nav-icon"></span> Table모음</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/base/tabs"><span class="nav-icon"></span> 탭 모음</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/tooltips.html"><span class="nav-icon"></span> Tooltips</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/coupon/manage_coupon"><span class="nav-icon"></span>쿠폰 관리</a></li>
           </ul>
         </li>
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-            <svg class="nav-icon">
-              <use href="/images/svg/free.svg#cil-cursor"></use>
-            </svg> Buttons</a>
-          <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="/admin/buttons/buttons"><span class="nav-icon"></span> Buttons</a></li>
-            <li class="nav-item"><a class="nav-link" href="buttons/button-group.html"><span class="nav-icon"></span> Buttons Group</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/buttons/dropdowns"><span class="nav-icon"></span> Dropdowns</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="/admin/chart/chart">
-            <svg class="nav-icon">
-              <use href="/images/svg/free.svg#cil-chart-pie"></use>
-            </svg> Charts</a></li>
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-            <svg class="nav-icon">
-              <use href="/images/svg/free.svg#cil-notes"></use>
-            </svg> Forms</a>
-          <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="forms/form-control.html"> Form Control</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/forms/select"> Select</a></li>
-            <li class="nav-item"><a class="nav-link" href="forms/checks-radios.html"> Checks and radios</a></li>
-            <li class="nav-item"><a class="nav-link" href="forms/range.html"> Range</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/forms/input-group"> Input group</a></li>
-            <li class="nav-item"><a class="nav-link" href="forms/floating-labels.html"> Floating labels</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin/forms/layout"> Layout</a></li>
-            <li class="nav-item"><a class="nav-link" href="forms/validation.html"> Validation</a></li>
-          </ul>
-        </li>
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-            <svg class="nav-icon">
-              <use href="/images/svg/free.svg#cil-star"></use>
-            </svg> Icons</a>
-          <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="icons/coreui-icons-free.html"> CoreUI Icons<span class="badge badge-sm bg-success ms-auto">Free</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="icons/coreui-icons-brand.html"> CoreUI Icons - Brand</a></li>
-            <li class="nav-item"><a class="nav-link" href="icons/coreui-icons-flag.html"> CoreUI Icons - Flag</a></li>
-          </ul>
-        </li>
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-            <svg class="nav-icon">
-              <use href="/images/svg/free.svg#cil-bell"></use>
-            </svg> Notifications</a>
-          <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="notifications/alerts.html"><span class="nav-icon"></span> Alerts</a></li>
-            <li class="nav-item"><a class="nav-link" href="notifications/badge.html"><span class="nav-icon"></span> Badge</a></li>
-            <li class="nav-item"><a class="nav-link" href="notifications/modals.html"><span class="nav-icon"></span> Modals</a></li>
-            <li class="nav-item"><a class="nav-link" href="notifications/toasts.html"><span class="nav-icon"></span> Toasts</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="widgets.html">
-            <svg class="nav-icon">
-              <use href="/images/svg/free.svg#cil-calculator"></use>
-            </svg> Widgets<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
-        <li class="nav-divider"></li>
-        <li class="nav-title">Extras</li>
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-            <svg class="nav-icon">
-              <use href="/images/svg/free.svg#cil-star"></use>
-            </svg> Pages</a>
-          <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="login.html" target="_top">
-                <svg class="nav-icon">
-                  <use href="/images/svg/free.svg#cil-account-logout"></use>
-                </svg> Login</a></li>
-            <li class="nav-item"><a class="nav-link" href="register.html" target="_top">
-                <svg class="nav-icon">
-                  <use href="/images/svg/free.svg#cil-account-logout"></use>
-                </svg> Register</a></li>
-            <li class="nav-item"><a class="nav-link" href="404.html" target="_top">
-                <svg class="nav-icon">
-                  <use href="/images/svg/free.svg#cil-bug"></use>
-                </svg> Error 404</a></li>
-            <li class="nav-item"><a class="nav-link" href="500.html" target="_top">
-                <svg class="nav-icon">
-                  <use href="/images/svg/free.svg#cil-bug"></use>
-                </svg> Error 500</a></li>
-          </ul>
-        </li>
-        <li class="nav-item mt-auto"><a class="nav-link" href="docs.html">
-            <svg class="nav-icon">
-              <use href="/images/svg/free.svg#cil-description"></use>
-            </svg> Docs</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-danger" href="https://coreui.io/pro/" target="_top">
-            <svg class="nav-icon">
-              <use href="/images/svg/free.svg#cil-layers"></use>
-            </svg> Try CoreUI
-            <div class="fw-semibold">PRO</div></a></li>
       </ul>
       <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
     </div>
+    <!-- 여기부터 상단 바임 -->
     <div class="wrapper d-flex flex-column min-vh-100 bg-light">
       <header class="header header-sticky mb-4">
         <div class="container-fluid">

@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="jp">
 <head>
-    <title>Miraculous - Online Music Store Html Template</title>
+    <title>MOTUS - 音楽制作者の踏み台サイト</title>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta name="description" content="Music">
@@ -27,7 +27,15 @@
     <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/my.css">
     <!-- Favicon Link -->
-    <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="/images/favicon/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/images/favicon/site.webmanifest">
+	<link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+    
     <script src="/resources/js/jquery.js"></script>
 		<script src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js" type="text/javascript"></script>
     <script src="/resources/js/tj.js"></script>
@@ -52,10 +60,10 @@
             <div class="ms_sidemenu_inner">
                 <div class="ms_logo_inner">
                     <div class="ms_logo">
-                        <a href="/?pageName=menu_main"><img src="/images/logo.png" alt="" class="img-fluid" /></a>
+                        <a href="/?pageName=menu_main"><img src="/images/logo/motus_logo_only.svg" style="" alt="" class="img-fluid" /></a>
                     </div>
                     <div class="ms_logo_open">
-                        <a href="/?pageName=menu_main"><img src="/images/open_logo.png" alt="" class="img-fluid"/></a>
+                        <a href="/?pageName=menu_main"><img src="/images/logo/motus_logo_name.svg" style="width:110px; height:100%; padding-top:10px;" alt="" class="img-fluid"/></a>
                     </div>
                 </div>
                 <div class="ms_nav_wrapper">
@@ -176,19 +184,26 @@
                     	<sec:authentication property="principal" var="principal"/>
 							<div class="ms_top_btn">
 								<sec:authorize access="hasRole('ROLE_UPLOADER')">
-	                   		   <a href="/upload/upload?pageName=menu_main" class="ms_btn">upload</a>
+	                   		   <a href="/upload/upload?pageName=menu_main" class="ms_btn">アップロード</a>
 	                   		  </sec:authorize>
-	                      <a href="javascript:;" class="ms_admin_name">Hello ${principal.member.name} 
+	                      <a href="javascript:;" class="ms_admin_name">ユザー： ${principal.member.name} 
 	                      	<span class="ms_pro_name">${principal.member.name.substring(0,1)}</span>
 					</a>
 					<ul class="pro_dropdown_menu">
+<<<<<<< HEAD
+						<li><a href="/member/profile?id=${principal.username}">プロファイル</a></li>
+						<li><a href="/member/my_playlist/my_playlist">マイリスト</a></li>
+						<li><a href="/member/orderlist">注文履歴</a></li>
+=======
 						<li><a href="/member/profile?id=${principal.username}">Profile</a></li>
 						<li><a href="/member/my_playlist/my_playlist">My Playlist</a></li>
 						<li><a href="/member/orderlist">Order List</a></li>
+						<li><a href="/member/my_coupon">Coupons</a></li>
+>>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 						<sec:authorize access="hasRole('ROLE_ADMIN')">
-							<li><a href="/admin/admin">GO Admin</a></li>
+							<li><a href="/admin/admin">管理者ページ</a></li>
 						</sec:authorize>
-						<li><a href="/admin/adminLogout">Logout</a></li>
+						<li><a href="/admin/adminLogout">ログアウト</a></li>
 					</ul>
                    </div>
                     </sec:authorize>

@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <!-- main css files links -->
 <%@ include file="../header.jsp"%>
 <!----Upload and Share Wrapper Start---->
@@ -192,6 +191,6 @@
 </div>
 </div>
 <!----Main div close---->
-</div>
+
 <!-- main js files links -->
 <%@ include file="../footer.jsp"%>

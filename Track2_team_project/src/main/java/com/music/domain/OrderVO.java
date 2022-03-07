@@ -15,7 +15,7 @@ public class OrderVO {
 	private Date orderdate;
 	private int amount;
 	private String name;
-	
+
 	private String pw;
 	private String nickname;
 	private String active;
