@@ -20,7 +20,7 @@
 				<div class="ms_acc_overview">
 						<img src="/images/login_fail.png" style="max-width:300px;">
 						<div class="ms_top_btn">
-	                    </div>
+	        </div>
 				</div>
 			</div>
 		</div>

@@ -144,6 +144,7 @@
 								</div>
 								<div class="shopping-cart-footer">
 									<div class="column">
+									<div class="column" style="text-align: left;">
 									</div>
 									<div class="column">
 <!-- 										<a class="ms_btn btn-primary" href="javascript:go_pay()" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart" data-toast-message="is updated successfully!">Update Cart</a> -->
