@@ -22,4 +22,5 @@ public class TopTrackController {
 		model.addAttribute("topalbum",service.topAlbums());
 		model.addAttribute("newly",service.newly());
 	}
+
 }

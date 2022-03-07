@@ -8,7 +8,6 @@
             <div class="ms_fea_album_slider padder_top10 ">
                 <div class="ms_heading">
                     <h1>Featured Albums</h1>
-                    <span class="veiw_all"><a href="#">view more</a></span>
                 </div>
                 <div class="ms_album_slider swiper-container">
                     <div class="swiper-wrapper">
@@ -49,7 +48,6 @@
             <div class="ms_rcnt_slider padder_top50">
                 <div class="ms_heading">
                     <h1>Trending Albums</h1>
-                    <span class="veiw_all"><a href="#">view more</a></span>
                 </div>
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
@@ -233,7 +231,6 @@
             <div class="ms_featured_slider">
                 <div class="ms_heading">
                     <h1>Albums By Artists</h1>
-                    <span class="veiw_all"><a href="#">view more</a></span>
                 </div>
                 <div class="ms_feature_slider swiper-container">
                     <div class="swiper-wrapper">
@@ -269,7 +266,6 @@
             <div class="ms_releases_wrapper">
                 <div class="ms_heading">
                     <h1>Newly Released Albums</h1>
-                    <span class="veiw_all"><a href="#">view more</a></span>
                 </div>
                 <div class="ms_release_slider swiper-container">
                     <div class="ms_divider"></div>

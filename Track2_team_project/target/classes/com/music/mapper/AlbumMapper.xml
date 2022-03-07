@@ -108,7 +108,7 @@
 	
 	<![CDATA[
 
-	select rownum, tbno, name, singer, image_50, likes, pbno, length
+	select rownum, tbno, name, singer, image_50, image_240, likes, pbno, abno, length
 	from (select * from toptrack order by likes desc)
 	where rownum < 16
 	 ]]>
