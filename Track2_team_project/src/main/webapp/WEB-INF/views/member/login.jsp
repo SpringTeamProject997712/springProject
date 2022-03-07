@@ -7,7 +7,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2>ログイン失敗</h2>
+				<c:if test="${not empty error}">
+					<h2>ログイン失敗</h2>
+				</c:if>
+				<c:if test="${empty error}">
+					<h2>ログインが必要なページです</h2>
+				</c:if>
 			</div>
 		</div>
 		<div class="row">
