@@ -10,7 +10,7 @@ function got_info(my_pg){
 		buyer_name : document.purchaseForm.id.value, //유저네임
 		buyer_tel : document.purchaseForm.phone.value, //유저폰 
 		buyer_addr : document.purchaseForm.address1.value+" "+document.purchaseForm.address2.value, //유저
-		buyer_postcode : document.purchaseForm.zipnum.value //임시
+		buyer_postcode : document.purchaseForm.zipnum.value //仮
 	}
 	
 	return my_purchase_info;

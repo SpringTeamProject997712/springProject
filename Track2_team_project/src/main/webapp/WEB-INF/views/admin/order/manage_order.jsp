@@ -52,8 +52,8 @@
                       	<c:forEach items="${odlist}" var="odlist">
                         	<tr>
 	                          <td scope="row" >${odlist.rn}</td>
-	                          <td scope="row" >${odlist.orderid }</td>
-	                          <td>${odlist.name }</td>
+	                          <td scope="row" ><a class="dropdown-item" href="/admin/order/manage_orderdetail?orderid=${odlist.orderid}&id=${odlist.id}">${odlist.orderid}</a></td>
+	                          <td>${odlist.name}</td>
 	                          <td>
 	                        	  <fmt:setLocale value="ja_jp"/><fmt:formatNumber type="currency" value="${odlist.total}" currencySymbol="￥" maxFractionDigits="0" />
 	                          </td>
@@ -62,7 +62,7 @@
 	                          	<div class="dropdown">
 								  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">確認</button>
 								  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-								    <li><a class="dropdown-item" href="#">Another action</a></li>
+								    <li><a class="dropdown-item" href="/admin/order/manage_orderdetail?orderid=${odlist.orderid}&id=${odlist.id}">오더 디테일 보기</a></li>
 								    <li><a class="dropdown-item" href="#">Something else here</a></li>
 								    <li>
 								      <hr class="dropdown-divider">
@@ -70,7 +70,7 @@
 								    <li>
  									<form role="form" name="deleteAlbum" method="post" id="deleteAlbum" action="/album/deleteAlbum">
 								    	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-										<input type="hidden" name="orderid" value="${odlist.orderid }">
+										<input type="hidden" name="orderid" value="${odlist.orderid}">
 										
 									    <input type="submit" class="dropdown-item" value="주문 삭제">
 									</form>

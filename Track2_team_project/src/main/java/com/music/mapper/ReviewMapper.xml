@@ -8,7 +8,7 @@
 		</selectKey>
 		
 		insert into review_m(rbno, pbno, id, title,  image, content, stargage) 
-		values (#{rbno}, #{pbno} , #{id}, #{title}, '임시', #{content}, #{stargage})
+		values (#{rbno}, #{pbno} , #{id}, #{title}, '仮', #{content}, #{stargage})
 	</insert>
 
 	<select id="selectReview" resultType="com.music.domain.ReviewVO">
