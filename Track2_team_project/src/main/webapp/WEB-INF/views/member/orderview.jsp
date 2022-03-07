@@ -7,26 +7,23 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2>Order Detail : <c:out value="${overView.orderid	 }"/></h2>
+				<h2>注文詳細</h2>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="ms_acc_overview">
-					<div class="ms_heading">
-						<h1>Account Overview</h1>
-					</div>
 					<div class="container padding-bottom-3x mb-1">
 						<!-- Shopping Cart-->
 						<div class="table-responsive shopping-cart">
 							<table class="table cart-table">
 								<thead>
 									<tr>
-										<th>Product Name</th>
-										<th class="text-center">Category</th>
-										<th class="text-center">Subtotal</th>
-										<th class="text-center">Discount</th>
-										<th class="text-center"><a class="btn btn-sm btn-outline-danger remove-all-cart" href="javascript:void(0)">Clear Cart</a></th>
+										<th>商品名</th>
+										<th class="text-center">カテゴリ</th>
+										<th class="text-center">値段</th>
+										<th class="text-center">ディスカウント</th>
+									
 									</tr>
 								</thead>
 								</tbody>
@@ -53,9 +50,6 @@
 												<fmt:setLocale value="ja_jp" />
 												<fmt:formatNumber type="currency" value="${orderView.aprice}" currencySymbol="￥" maxFractionDigits="0" />
 											</td>
-											<td class="text-center">
-												<a class="remove-from-cart" href="javascript:void(0)" data-toggle="tooltip" title="" data-original-title="Remove item" data-cbno="${orderView.odbno}"><i class="fa fa-trash"></i></a>
-											</td>
 										</tr>
 										<tr class="cart-details" style="display: none" id="cart-details_${orderView.odbno}">
 											<td colspan="5">
@@ -63,17 +57,20 @@
 													<li class="album_list_wrapper">
 														<ul class="album_list_name">
 															<li>#</li>
-															<li>Song Title</li>
+															<li>タイトル</li>
 
-															<li class="text-center">Price</li>
-															<li class="text-center">Duration</li>
+															<li class="text-center">値段</li>
+															<li class="text-center">時間</li>
 														</ul> <c:set value="${1}" var="d_num" />
 														<c:forEach items="${orderdetailView}" var="orderDetail">
 															<c:if test="${orderView.pbno == orderDetail.pbno}">
 																<ul>
 																	<li>${d_num}</li>
 																	<li class="text-center">${orderDetail.name}</li>
-																	<li class="text-center track_name">${orderDetail.price}</li>
+																	<li class="text-center track_name">
+																	<fmt:setLocale value="ja_jp" />
+																	<fmt:formatNumber type="currency" value="${orderDetail.price}" currencySymbol="￥" maxFractionDigits="0" />
+																	</li>
 																	<li class="text-center">${orderDetail.length}</li>
 																</ul>
 																<c:set value="${d_num+1}" var="d_num" />

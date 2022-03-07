@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="ms_heading">
-                                <h1>Your Playlists</h1>
+                                <h1>マイプレイリスト</h1>
                             </div>
                         </div>
                         <c:forEach items="${myPlaylist}" var="myList">
@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="/member/my_playlist/one_playlist?plbno=${myList.plbno}">${myList.name}</a></h3>
-                                    <p>${myList.pdbno} songs</p>
+                                    <p>${myList.pdbno} 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                                     <i class="ms_icon icon_playlist"></i>
                                 </div>
                                 <div class="ms_rcnt_box_text">
-                                    <h3><a href="javascript:void(0)">Create New Playlist</a></h3>
+                                    <h3><a href="javascript:void(0)">新しいプレイリスト作成</a></h3>
                                 </div>
                             </div>
                         </div>
