@@ -307,6 +307,7 @@ $().ready(function(){
 			});
 		}
 	}
+	
 })
 
 $(".fav_box").on("click", function(){
