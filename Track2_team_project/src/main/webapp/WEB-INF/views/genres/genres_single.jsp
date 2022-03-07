@@ -5,7 +5,7 @@
                     <h1>
 			 		 ${genrelist.genrenames}
 					</h1>
-                    <span class="veiw_all"><a href="#">view more</a></span>
+                    <span class="veiw_all"><a href="/album/album">view more</a></span>
                 </div>
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
@@ -53,7 +53,7 @@
              <div class="ms_releases_wrapper">
                 <div class="ms_heading">
                     <h1>Newly Released Albums</h1>
-                    <span class="veiw_all"><a href="#">view more</a></span>
+                    <span class="veiw_all"><a href="/album/album">view more</a></span>
                 </div>
                 <div class="ms_release_slider swiper-container">
                     <div class="ms_divider"></div>
@@ -94,7 +94,7 @@
                 <div class="swiper-button-next2 slider_nav_next"></div>
                 <div class="swiper-button-prev2 slider_nav_prev"></div>
             </div>
-           
         </div>
-</div>
+     
+
        <%@ include file="../footer.jsp" %>

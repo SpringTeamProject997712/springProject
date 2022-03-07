@@ -343,13 +343,16 @@
 				</div>
 				<ul class="sns">
 				    <li class="facebook">
-				    <a href="#n" onclick="fn_sendFB('facebook');return false;" class="facebook" target="_self" title="페이스북 새창열림"><i class="fa-brands fa-facebook"></i><span class="skip">페이스북</span></a>
+				    <a href="#n" onclick="fn_sendFB('facebook');return false;" class="facebook" target="_self" title="페이스북 새창열림">
+				    <img src="/images/svg/facebook.svg" style="margin-right: 10px"><span class="skip"> フェイスブック</span></a>
 				    </li>
 				    <li class="twitter">
-				    <a href="#n" onclick="fn_sendFB('twitter');return false;" class="twitter" target="_self" title="트위터 새창열림"><i class="fa-brands fa-twitter"></i><span class="skip">트위터</span></a>
+				    <a href="#n" onclick="fn_sendFB('twitter');return false;" class="twitter" target="_self" title="트위터 새창열림">
+				    <img src="/images/svg/twitter.svg" style="margin-right: 10px"><span class="skip"> ツイッター</span></a>
 				    </li>
 				    <li class="band">
-				    <a href="#n" onclick="fn_sendFB('band');return false;" class="band" target="_self" title="네이버밴드 새창열림"><i class="fa-solid fa-b"></i><span class="skip">네이버밴드</span></a>
+				    <a href="#n" onclick="fn_sendFB('band');return false;" class="band" target="_self" title="네이버밴드 새창열림">
+				    <img src="/images/svg/bootstrap-fill.svg" style="margin-right: 10px"><span class="skip"> ネイバーバンド</span></a>
 				    </li>
 				</ul>
 			</div>
