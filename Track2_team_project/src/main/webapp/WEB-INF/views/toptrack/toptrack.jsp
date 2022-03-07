@@ -6,6 +6,7 @@
                         <div class="col-lg-12">
                             <div class="ms_heading">
                                 <h1>Top 15 Tracks</h1>
+                                <span class="veiw_all"><a href="/toptrack/ranking?pageName=menu_top_track">view more</a></span>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-12">
@@ -152,7 +153,6 @@
             <div class="ms_featured_slider">
                 <div class="ms_heading">
                     <h1>Top Tracks Of All Time</h1>
-                    <span class="veiw_all"><a href="/toptrack/ranking">view more</a></span>
                 </div>
                 <div class="ms_feature_slider swiper-container">
                     <div class="swiper-wrapper">
@@ -198,7 +198,7 @@
             <div class="ms_releases_wrapper">
                 <div class="ms_heading">
                     <h1>Newly Released Albums</h1>
-                    <span class="veiw_all"><a href="/album/album&pageName=menu_album">view more</a></span>
+                    <span class="veiw_all"><a href="/album/album?pageName=menu_album">view more</a></span>
                 </div>
                 <div class="ms_release_slider swiper-container">
                     <div class="ms_divider"></div>

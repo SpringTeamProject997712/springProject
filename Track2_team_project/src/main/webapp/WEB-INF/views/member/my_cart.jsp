@@ -143,12 +143,8 @@
 									</div>
 								</div>
 								<div class="shopping-cart-footer">
-<<<<<<< HEAD
 									<div class="column" style="text-align: left;">
 										<a class="ms_btn btn-outline-secondary" href="#"><i class="icon-arrow-left"></i>&nbsp;Back</a>
-=======
-									<div class="column">
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 									</div>
 									<div class="column">
 <!-- 										<a class="ms_btn btn-primary" href="javascript:go_pay()" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart" data-toast-message="is updated successfully!">Update Cart</a> -->
