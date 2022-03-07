@@ -40,4 +40,7 @@ public interface NoticeMapper {
 	//공지 삭제
 	public int deleteNotice(int wbno);
 	
+	//최신 공지
+	public NoticeVO recentlyNotice();
+	
 }

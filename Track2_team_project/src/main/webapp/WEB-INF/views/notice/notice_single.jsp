@@ -12,19 +12,18 @@
 					<div class="ms_breadcrumb">
 						<div class="breadcrumbs">
 							<span class="first-item"> <a
-								href="https://kamleshyadav.com/wp/miraculous/darkversion/">Homepage</a></span>
+								href="../">Homepage</a></span>
 							<span class="separator">&gt;</span> <span class="0-item">
 								<a
-								href="https://kamleshyadav.com/wp/miraculous/darkversion/category/melody-music/">Notice
+								href="./notice">Notice
 							</a>
 							</span> <span class="separator">&gt;</span> <span class="1-item">
-								<a
-								href="https://kamleshyadav.com/wp/miraculous/darkversion/category/melody-music/rock/"><c:choose>
+								<c:choose>
 										<c:when test="${list.header eq 1 }">공지</c:when>
 										<c:when test="${list.header eq 2 }">점검</c:when>
 										<c:when test="${list.header eq 3 }">이벤트</c:when>
 										<c:otherwise>기타</c:otherwise>
-									</c:choose></a>
+								</c:choose>
 							</span> <span class="separator">&gt;</span> <span class="last-item">${view.title }</span>
 						</div>
 					</div>

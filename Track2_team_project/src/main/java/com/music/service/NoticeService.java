@@ -44,4 +44,6 @@ public interface NoticeService {
 	
 	//공지 뷰카운트
 	public int viewcountNotice(int wbno);
+	
+	public NoticeVO recentlynotice();
 }

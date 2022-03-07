@@ -22,62 +22,64 @@
                 		<input type="hidden" name="id" value="admin">
                 		<input type="hidden" name="bbno" value="1">
                 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-						  <div class="col-md-8">
-						    <label class="form-label" for="member_id">題目</label>
-						    <input class="form-control" name="title" id="notice_title" type="text" value="${notice.title}">
-						  </div>
-						  <div class="col-md-4">
-						  	<label class="form-label" for="category">カテゴリ</label>
-						  	<select name="header" class="form-control" id="notice_header" >
-						  		<option value="">カテゴリー選択</option>
-							    <c:choose>
-							    	<c:when test="${notice.bbno==1 }">
-								    	<option value="1" selected>お知らせ</option>
-								    	<option value="2">点検</option>
-								    	<option value="3">イベント</option>
-							    	</c:when>
-							    	<c:when test="${notice.bbno==2 }">
-								    	<option value="1" >お知らせ</option>
-								    	<option value="2" selected>点検</option>
-								    	<option value="3" >イベント</option>
-							    	</c:when>
-							    	<c:when test="${notice.bbno==3 }">
-								    	<option value="1" >お知らせ</option>
-								    	<option value="2" >点検</option>
-								    	<option value="3" selected>イベント</option>
-							    	</c:when>
-							    </c:choose>
-							</select>
-						  </div>
-						  <div class="col-md-12">
-						  	<label class="form-label" for="content">内容</label>
-						  	<div class="input-group">
-						  		<textarea id="summernote" name="content" class="summernote">${notice.content}</textarea>
-						  	</div>
-						  </div>
-						  <div class="col-8">
-							</div>
-						  
-						  
-						  <div class="col-12">
-						   <!--  <div class="form-check">
-						      <input class="form-check-input" id="gridCheck" type="checkbox">
-						      <label class="form-check-label" for="gridCheck">Check me out</label>
-						    </div> -->
-						  </div>
-						  <div class="col-4">
-						  	<label class="form-label" for="file">添付ファイル</label>
-						  	<input class="form-control" name="file" id="notice_file" type="file" value="${notice.filename }">
-						  </div>
-						  <div class="col-12">
-						    <button class="btn btn-primary" type="button" onclick="go_update_notice()">修正する</button>
-						    <button class="btn btn-primary" type="button" onclick="location.href='/admin/notice/manage_notice'">一覧を見る</button>
-						  </div>
-						</form>
+									  <div class="col-md-8">
+									    <label class="form-label" for="member_id">タイトル</label>
+									    <input class="form-control" name="title" id="notice_title" type="text" value="${notice.title}">
+									  </div>
+									  <div class="col-md-4">
+									  	<label class="form-label" for="category">カテゴリー</label>
+									  	<select name="header" class="form-control" id="notice_header" >
+									  		<option value="">カテゴリー選択</option>
+										    <c:choose>
+										    	<c:when test="${notice.bbno==1 }">
+											    	<option value="1" selected>お知らせ</option>
+											    	<option value="2">メンテナンス</option>
+											    	<option value="3">イベント</option>
+										    	</c:when>
+										    	<c:when test="${notice.bbno==2 }">
+											    	<option value="1" >お知らせ</option>
+											    	<option value="2" selected>メンテナンス</option>
+											    	<option value="3" >イベント</option>
+										    	</c:when>
+										    	<c:when test="${notice.bbno==3 }">
+											    	<option value="1" >お知らせ</option>
+											    	<option value="2" >メンテナンス</option>
+											    	<option value="3" selected>イベント</option>
+										    	</c:when>
+										    </c:choose>
+										</select>
+									  </div>
+									  <div class="col-md-12">
+									  	<label class="form-label" for="content">内容</label>
+									  	<div class="input-group">
+									  		<textarea id="summernote" name="content" class="summernote">${notice.content}</textarea>
+									  	</div>
+									  </div>
+									  <div class="col-8">
+										</div>
+									  
+									  
+									  <div class="col-12">
+									   <!--  <div class="form-check">
+									      <input class="form-check-input" id="gridCheck" type="checkbox">
+									      <label class="form-check-label" for="gridCheck">Check me out</label>
+									    </div> -->
+									  </div>
+									  <div class="col-4">
+									  	<label class="form-label" for="file">添付ファイル</label>
+									  	<input class="form-control" name="file" id="notice_file" type="file" value="${notice.filename }">
+									  </div>
+									  <div class="col-12">
+									    <button class="btn btn-primary" type="button" onclick="go_update_notice()">修正する</button>
+									    <button class="btn btn-primary" type="button" onclick="location.href='/admin/notice/manage_notice'">戻る</button>
+									  </div>
+									</form>
+
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      
 <%@ include file="../admin_footer.jsp" %>

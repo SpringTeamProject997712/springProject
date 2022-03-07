@@ -80,4 +80,8 @@ public class NoticeServiceImpl implements NoticeService {
 		return result;
 	}
 	
+	public NoticeVO recentlynotice() {
+		return mapper.recentlyNotice();
+	};
+	
 }

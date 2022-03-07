@@ -6,7 +6,7 @@
         <div class="container-lg">
           <div class="car"></div>
           <div class="card mb-4">
-            <div class="card-header"><strong>お知らせ管理</strong><span class="small ms-1">お知らせ確認 / 修正</span></div>
+            <div class="card-header"><strong>お知らせ管理</strong><span class="small ms-1">/お知らせ確認 / 書き込み</span></div>
             <div class="card-body">
               
               <div class="example">
@@ -23,22 +23,22 @@
                 		<input type="hidden" name="bbno" value="1">
                 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 									  <div class="col-md-8">
-									    <label class="form-label" for="notice_title">題目</label>
-									    <input class="form-control" name="title" id="notice_title" type="text">
+									    <label class="form-label" for="notice_title">タイトル</label>
+							     	    <input class="form-control" name="title" id="notice_title" type="text">
 									  </div>
 									  <div class="col-md-4">
-									  	<label class="form-label" for="category">カテゴリ</label>
+									  	<label class="form-label" for="category">カテゴリー</label>
 									  	<select name="header" class="form-control" id="notice_header" >
 										    <option value="">カテゴリー選択</option>
 										    <option value="1">お知らせ</option>
-										    <option value="2">点検</option>
+										    <option value="2">メンテナンス</option>
 										    <option value="3">イベント</option>
 										</select>
 									  </div>
 									  <div class="col-md-12">
 									  	<label class="form-label" for="content">内容</label>
 									  	<div class="input-group">
-									  		<textarea id="summernote" name="content" class="summernote">${notice.content}</textarea>
+									  		<textarea id="summernote" name="content" class="summernote"></textarea>
 									  	</div>
 									  </div>
 									  <div class="col-8">
@@ -56,8 +56,8 @@
 									  	<input class="form-control" name="filename" id="notice_file" type="file" value="">
 									  </div>
 									  <div class="col-12">
-									    <button class="btn btn-primary" type="button" onclick="go_upload_notice()">転送</button>
-									    <button class="btn btn-primary" type="button" onclick="location.href='/admin/notice/manage_notice'">一覧を見る</button>
+									    <button class="btn btn-primary" type="button" onclick="go_upload_notice()">書き込む</button>
+									    <button class="btn btn-primary" type="button" onclick="location.href='/admin/notice/manage_notice'">戻る</button>
 									  </div>
 									</form>
                 </div>

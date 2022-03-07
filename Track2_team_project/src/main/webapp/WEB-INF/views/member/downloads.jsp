@@ -59,9 +59,9 @@
 							<li>アルバム</li>
 							<li class="text-center">アーティスト</li>
 							<li class="text-center">時間</li>
-							<li class="text-center">Add To Favourites</li>
-							<li class="text-center">Cover</li>
-							<li class="text-center">Download</li>
+							<li class="text-center">いいね</li>
+							<li class="text-center">アルバムカバー</li>
+							<li class="text-center">ダウンロード</li>
 						</ul>
 						<!--  favourite song start -->
 						<c:set value="${1}" var="num"/>

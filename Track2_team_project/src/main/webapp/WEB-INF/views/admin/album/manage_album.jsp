@@ -60,17 +60,13 @@
 								  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">確認</button>
 								  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
 								    <li><a class="dropdown-item" href="/admin/album/view_album?abno=${alist.abno}">詳細情報照会 / 修正</a></li>
-								    <li><a class="dropdown-item" href="#">Another action</a></li>
-								    <li><a class="dropdown-item" href="#">Something else here</a></li>
-								    <li>
-								      <hr class="dropdown-divider">
-								    </li>
+								    
 								    <li>
  									<form role="form" name="deleteAlbum" method="post" id="deleteAlbum" action="/album/deleteAlbum">
 								    	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 										<input type="hidden" name="pbno" value="${alist.pbno }">
 										
-									    <input type="submit" class="dropdown-item" value="앨범 삭제">
+									    <input type="submit" class="dropdown-item" value="アルバム削除">
 									</form>
 									</li>
 								  </ul>
