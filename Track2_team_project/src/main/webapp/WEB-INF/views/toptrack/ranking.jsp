@@ -30,7 +30,7 @@
                                     <li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
                                     <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
                                         </ul>
-                                        <div class="ms_play_icon">
+                                        <div class="ms_play_icon instantly_play_track" id="${top.tbno}">
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
                                     </div>
