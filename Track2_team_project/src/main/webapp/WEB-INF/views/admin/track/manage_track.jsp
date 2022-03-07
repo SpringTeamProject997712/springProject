@@ -5,7 +5,7 @@
         <div class="container-lg">
           <div class="car"></div>
           <div class="card mb-4">
-            <div class="card-header"><strong>트랙 관리</strong><span class="small ms-1">트랙 목록</span></div>
+            <div class="card-header"><strong>トラック管理</strong><span class="small ms-1">トラック目録</span></div>
             <div class="card-body">
               <div class="example">
                 <div class="tab-content rounded-bottom">
@@ -21,18 +21,18 @@
 					</colgroup>
 							<c:choose>
 								<c:when test="${trackList.size() == 0}">
-									<td>앨범 내 정보가 없습니다.</td>
+									<td>アルバム内の情報がありません。</td>
 								</c:when>
 							
 							<c:otherwise>
                       <thead>
                         <tr>
-                          <th scope="col">타이틀</th>
-                          <th scope="col">미리듣기</th>
-                          <th scope="col">장르</th>
-                          <th scope="col">가격</th>
-                          <th scope="col">파일명</th>
-                          <th scope="col">기능</th>
+                          <th scope="col">タイトル</th>
+                          <th scope="col">前もって聞く</th>
+                          <th scope="col">ジャンル</th>
+                          <th scope="col">値段</th>
+                          <th scope="col">ファイル名</th>
+                          <th scope="col">機能</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -47,9 +47,9 @@
 	                          <td>${tlist.songname}</td>
 	                          <td>
 	                          	<div class="dropdown">
-								  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">보기</button>
+								  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">確認</button>
 								  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-								    <li><a class="dropdown-item" href="/admin/track/view_track?tbno=${tlist.tbno}">세부정보 조회 /수정</a></li>
+								    <li><a class="dropdown-item" href="/admin/track/view_track?tbno=${tlist.tbno}">詳細情報照会 / 修正</a></li>
 								    <li><a class="dropdown-item" href="#">Another action</a></li>
 								    <li><a class="dropdown-item" href="#">Something else here</a></li>
 								    <li>

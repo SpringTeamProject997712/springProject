@@ -5,14 +5,14 @@
         <div class="container-lg">
           <div class="car"></div>
           <div class="card mb-4">
-            <div class="card-header"><strong>앨범 관리</strong><span class="small ms-1">앨범 목록</span></div>
+            <div class="card-header"><strong>アルバム管理</strong><span class="small ms-1">アルバム目録</span></div>
             <div class="card-body">
               <div class="text-medium-emphasis small">
               	<!-- 검색 창 -->
               	<form id="pagingForm" action="/admin/album/manage_album" method="get">
 	              <div class="input-group" style="width:200px;">
 								 		<input class="form-control" name="keyword" type="text" placeholder="search Album" value="${pageMaker.cri.keyword}" aria-label="앨범 검색">
-								  	<button class="btn btn-outline-secondary" type="submit" style="color:white; background:grey">검색</button>
+								  	<button class="btn btn-outline-secondary" type="submit" style="color:white; background:grey">検索</button>
 										<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 										<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
 										<input type="hidden" name="type" value="${pageMaker.cri.type}">
@@ -39,11 +39,11 @@
 					</colgroup>
                       <thead>
                         <tr>
-                          <th scope="col">타이틀</th>
-                          <th scope="col">가수</th>
-                          <th scope="col">가격</th>
-                          <th scope="col">등록일</th>
-                          <th scope="col">기능</th>
+                          <th scope="col">タイトル</th>
+                          <th scope="col">歌手</th>
+                          <th scope="col">値段</th>
+                          <th scope="col">登録日</th>
+                          <th scope="col">機能</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -57,9 +57,9 @@
 	                          <td><fmt:formatDate value="${alist.regdate}" pattern="yyyy-MM-dd"/></td>
 	                          <td>
 	                          	<div class="dropdown">
-								  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">보기</button>
+								  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">確認</button>
 								  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-								    <li><a class="dropdown-item" href="/admin/album/view_album?abno=${alist.abno}">세부정보 조회 /수정</a></li>
+								    <li><a class="dropdown-item" href="/admin/album/view_album?abno=${alist.abno}">詳細情報照会 / 修正</a></li>
 								    <li><a class="dropdown-item" href="#">Another action</a></li>
 								    <li><a class="dropdown-item" href="#">Something else here</a></li>
 								    <li>

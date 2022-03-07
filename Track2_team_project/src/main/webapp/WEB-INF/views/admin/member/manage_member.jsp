@@ -5,14 +5,14 @@
         <div class="container-lg">
           <div class="car"></div>
           <div class="card mb-4">
-            <div class="card-header"><strong>유저 관리</strong><span class="small ms-1">유저 목록</span></div>
+            <div class="card-header"><strong>ユーザー管理</strong><span class="small ms-1">ユーザーリスト</span></div>
             <div class="card-body">
               <div class="text-medium-emphasis small">
               	<!-- 검색 창 -->
               	<form id="pagingForm" action="/admin/member/manage_member" method="get">
 	              <div class="input-group" style="width:200px;">
 					 		<input class="form-control" name="keyword" type="text" placeholder="search ID" value="${pageMaker.cri.keyword}" aria-label="아이디 검색">
-					  	<button class="btn btn-outline-secondary" type="submit" style="color:white; background:grey">검색</button>
+					  	<button class="btn btn-outline-secondary" type="submit" style="color:white; background:grey">検索</button>
 							<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 							<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
 							<input type="hidden" name="type" value="${pageMaker.cri.type}">
@@ -32,13 +32,13 @@
                     <table class="table dropdown">
                       <thead>
                         <tr>
-                          <th scope="col">아이디(이메일)</th>
-                          <th scope="col">이름</th>
-                          <th scope="col">주소</th>
-                          <th scope="col">권한</th>
-                          <th scope="col">가입일</th>
-                          <th scope="col">상태</th>
-                          <th scope="col">기능</th>
+                          <th scope="col">ID(メール)</th>
+                          <th scope="col">名前</th>
+                          <th scope="col">住所</th>
+                          <th scope="col">権限</th>
+                          <th scope="col">加入日</th>
+                          <th scope="col">状態</th>
+                          <th scope="col">機能</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -58,9 +58,9 @@
 												<div class="dropdown">
 													<button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">보기</button>
 													<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-														<li><a class="dropdown-item" href="/admin/member/view_member?id=${mlist.id}">세부정보 조회 /수정</a></li>
-														<li><a class="dropdown-item" id="${mlist.id}" onclick="go_member_delete(this.id)" href="javascript:void(0)">아이디 비활성화</a></li>
-														<li><a class="dropdown-item" href="/admin/member/role_update?id=${mlist.id}">권한 추가/제거</a></li>
+														<li><a class="dropdown-item" href="/admin/member/view_member?id=${mlist.id}">詳細情報照会 / 修正</a></li>
+														<li><a class="dropdown-item" id="${mlist.id}" onclick="go_member_delete(this.id)" href="javascript:void(0)">ID無効化</a></li>
+														<li><a class="dropdown-item" href="/admin/member/role_update?id=${mlist.id}">権限追加 / 削除</a></li>
 														<li>
 															<hr class="dropdown-divider">
 														</li>
