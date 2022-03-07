@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartRequest;
 
 import com.google.gson.Gson;
 import com.music.domain.AlbumVO;
+import com.music.domain.CouponVO;
 import com.music.domain.MemberVO;
 import com.music.domain.NoticeVO;
 import com.music.domain.OrderListVO;
@@ -110,6 +111,41 @@ public class AdminController {
 		return "redirect:/?pageName=menu_main";
 	}
 	
+//=========================================쿠폰용========================================	
+	
+	@GetMapping("/coupon/make_coupon")
+	public void couponMaker() {
+	}
+	@PostMapping("/coupon/upload_coupon")
+	public String insert_coupon(CouponVO cvo) {
+		log.info(cvo);
+		pService.insertCoupon(cvo);
+		return "redirect:/admin/coupon/manage_coupon";
+	}
+	
+	@GetMapping("/coupon/deletecoupon")
+	public String delete_coupon(int couponnumber) {
+		pService.deleteOneCoupon(couponnumber);
+		return "redirect:/admin/coupon/manage_coupon";
+	}
+	@GetMapping("/coupon/view_coupon")
+	public void view_coupon(int couponnumber,Model model) {
+		model.addAttribute("view", pService.selectOneCoupon(couponnumber));
+	}
+	@PostMapping("/coupon/update_coupon")
+	public String update_coupon(CouponVO cvo) {
+		pService.updateOneCoupon(cvo);
+		return "redirect:/admin/coupon/manage_coupon";
+	}
+	
+	@GetMapping("/coupon/manage_coupon")
+	public void view_coupon_list(Model model, Criteria cri) {
+		log.info(cri);
+		List<CouponVO> clist = pService.selectCouponWithPage(cri);
+		log.info(clist);
+		model.addAttribute("couponList", clist);
+		model.addAttribute("pageMaker", pService.pagingCoupon(cri));
+	}
 //========================================유저관리 =========================================	
 	
 	@GetMapping("/member/manage_member")//유저관리 - 유저 리스트 보기

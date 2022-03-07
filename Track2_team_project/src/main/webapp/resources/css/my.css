@@ -1121,7 +1121,7 @@ h1.comments-title:after, .blog_comments_forms h1:after, .comment-respond h1:afte
 .black_some_box_mini{
 	overflow: auto;
 	padding: 20px;
-  height: 100px;
+  height: 70px;
   overflow-x: hidden;
   background-color: #14182a;
   margin-top: 15px;
@@ -1138,15 +1138,25 @@ h1.comments-title:after, .blog_comments_forms h1:after, .comment-respond h1:afte
 
 .final_totalPrice{
 	float: right;
-	margint-top:20px;
+	margint-top:12px;
+}
+.real_final_totalPrice{
+	float: right;
+	margint-top:12px;
 }
 
 .purchase_buttons img{
 	display: block;
-	margin:30px auto;
-	
+	margin:15px auto;
 }
+<<<<<<< HEAD
 
 .text-muted > li > a {
 	color:white;
 }
+=======
+.kkk-modal label {
+	padding-top: 25px;
+	color:#000; 
+}
+>>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git

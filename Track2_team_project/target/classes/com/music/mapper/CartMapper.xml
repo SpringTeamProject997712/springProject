@@ -62,6 +62,20 @@
   and p.pbno = c.pbno and id=#{id}
 	</select>
 	
+	<select id="getCoupons" resultType="com.music.domain.CouponVO">
+		select * from getcoupon_m m, coupon_m c 
+		where m.couponnumber= c.couponnumber
+		and id = #{id}
+	</select>
+	
+	<insert id="setCoupon">
+		insert into getcoupon_m(couponnumber,id) values (#{couponnumber},#{id})
+	</insert>
+
+	<select id="searchCouponIsRealWithCouponid" resultType="int">
+		select couponnumber from coupon_m where couponid = #{couponid}
+	</select>
+	
 	<insert id="orderInfo">
 		insert into order_m ( 
 			orderid, id, orderdate, amount 
@@ -79,6 +93,10 @@
 	
 	<delete id="cartAllDelete">
 		delete cart_m where id = #{id}
+	</delete>
+	
+	<delete id="deleteUsedCoupon">
+		delete getcoupon_m where id= #{id} and couponnumber = #{couponnumber}
 	</delete>
 	
 </mapper>

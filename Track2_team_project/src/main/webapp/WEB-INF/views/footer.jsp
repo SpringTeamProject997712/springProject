@@ -359,19 +359,25 @@
 	<div id="myPurchase" class="modal centered-modal" role="dialog">
 		<div class="modal-dialog login_dialog" style="max-width: 400px; ">
 			<!-- Modal content-->
-			<div class="modal-content">
+			<div class="modal-content kkk-modal">
 				<button type="button" class="close" id="my_modal_close_btn" data-dismiss="modal">
 					<i class="fa_icon form_close"></i>
 				</button>
 				<p>お買い上げ</p>
 				<div class="cartlistForPurchase black_some_box_mini">
-					
 				</div>
-				<div class="couponForPurchase">
+				<div class="couponForPurchase form-group">
+					<label>クーポン</label>
+					<select name="coupon_selector" class="form-control" id="coupon_selector" style="width:70%; display: inline-block; margin-top: 10px; float:right;">
+					</select>
 				</div>
-				<div class="form-group padding_top_30">
+				<div class="form-group padding_top_10">
 					<label>総額</label>
-					<input type="text" class="final_totalPrice form-control" id="final_totalPrice" width="40%">
+					<input type="text" class="final_totalPrice form-control" id="final_totalPrice" style="width:40%" readonly="readonly">
+				</div>
+				<div class="form-group padding_top_10">
+					<label>割引になる総額</label>
+					<input type="text" class="real_final_totalPrice form-control" id="real_final_totalPrice" style="width:40%;" readonly="readonly">
 				</div>
 				<div class="purchase_buttons">
 					<a onclick="go_this_purchase(this.id)" href="javascript:void(0)" id="html5_inicis">

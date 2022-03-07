@@ -25,9 +25,10 @@ $(function() {
     	type:"get",
     	url:"/member/loginChecker",
     	async:false,
-    	success:function(data){
-    		if(data != '1'){
-    		login_flag=data;
+    	success:function(ldata){
+    		if(ldata != '1'){
+    		login_flag=ldata;
+    		console.log("로그인 플래그" + ldata)
     		}		
     	},error:function(xhr,status,error){
     		console.log("xhr : "+xhr.status+"\n text : "+xhr.responseText+"\n error : "+error);

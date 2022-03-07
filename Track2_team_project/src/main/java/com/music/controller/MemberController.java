@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.UUID;
@@ -29,7 +30,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.google.gson.Gson;
 import com.music.domain.CartVO;
+import com.music.domain.CouponVO;
 import com.music.domain.MemberVO;
 import com.music.domain.Member_authVO;
 import com.music.domain.OrderListVO;
@@ -191,7 +194,7 @@ public class MemberController {
 	public String loginChecker() {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		/* User user = (User)auth.getPrincipal(); */
-		String myName = "";
+		String myName = "1";
 		log.info(auth.getPrincipal());
 		if(!(auth.getPrincipal().equals("anonymousUser"))) {
 			CustomUser user = (CustomUser)auth.getPrincipal();
@@ -377,6 +380,37 @@ public class MemberController {
 			id =user.getUsername();
 		}
 		model.addAttribute("favouritelist",service.favouritesView(id));
+	}
+	@GetMapping("/my_coupon")
+	public void select_my_coupon_for_purchase(Model model) {
+		String myName="";
+		List<CouponVO> coupons = new ArrayList<CouponVO>();
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			myName =user.getUsername();
+			coupons = cservice.getCoupons(myName);
+		}
+		model.addAttribute("coupons",coupons);
+	}
+	
+	@GetMapping("/get_mycoupon")
+	public String get_couponWithCouponid(String couponid) {
+		int couponnumber = cservice.searchCouponIsRealWithCouponid(couponid);
+		if(couponnumber!=0) {
+			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			if(!(auth.getPrincipal().equals("anonymousUser"))) {
+				CustomUser user = (CustomUser)auth.getPrincipal();
+				String myName =user.getUsername();
+				CouponVO cvo = new CouponVO();
+				cvo.setCouponnumber(couponnumber);
+				cvo.setId(myName);
+				cservice.setCoupon(cvo);
+			}
+		}else {
+			log.info("여기서 null나옴");
+		}
+		return "redirect:/member/my_coupon";
 	}
 	
 	@GetMapping("/login")

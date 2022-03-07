@@ -3,9 +3,12 @@ package com.music.service;
 import java.util.List;
 
 import com.music.domain.AlbumVO;
+import com.music.domain.CouponVO;
 import com.music.domain.GoodsVO;
 import com.music.domain.ProductVO;
 import com.music.domain.TrackVO;
+import com.music.utility.Criteria;
+import com.music.utility.PageMaker;
 
 public interface ProductService {
 
@@ -34,4 +37,13 @@ public interface ProductService {
 	
 	//삭제
 	public void deleteProduct(int pbno);
+	public int deleteOneCoupon(int couponnumber);
+	
+	
+	public List<CouponVO> selectCouponWithPage(Criteria cri);
+	public CouponVO selectOneCoupon(int couponnumber);
+	public int insertCoupon(CouponVO cvo);
+	public int updateOneCoupon(CouponVO cvo);
+	
+	public PageMaker pagingCoupon(Criteria cri);
 }

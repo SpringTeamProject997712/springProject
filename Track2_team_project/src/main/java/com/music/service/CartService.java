@@ -3,6 +3,7 @@ package com.music.service;
 import java.util.List;
 
 import com.music.domain.CartVO;
+import com.music.domain.CouponVO;
 import com.music.domain.OrderVO;
 import com.music.domain.OrderdetailVO;
 
@@ -23,4 +24,12 @@ public interface CartService {
 	public void orderInfo_detail(OrderdetailVO odvo);
 	
 	public void cartAllDelete(String id);
+	
+	public List<CouponVO> getCoupons(String id);
+	
+	public int searchCouponIsRealWithCouponid(String couponid);
+	
+	public int setCoupon(CouponVO cvo);
+	
+	public int deleteUsedCoupon(CouponVO cvo);
 }
