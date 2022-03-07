@@ -125,7 +125,7 @@
         inner join (select o.orderid, min(od.pbno) AS pbno 
                         from order_m o, orderdetail_m od
                         where o.orderid = od.orderid
-                        group by od.orderid) my
+                        group by o.orderid) my
         on o.orderid = my.orderid
         inner join product_m p
         on p.pbno = my.pbno

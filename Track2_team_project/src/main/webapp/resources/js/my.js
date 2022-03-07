@@ -477,6 +477,7 @@ $(".remove-from-cart").on("click", function(){
 				if(data=='1'){
 					console.log("삭제완료");
 				}
+				location.reload();
 			},error:function(xhr,status,err){
 				console.log(xhr.status + xhr.responseText + err);
 			}
@@ -721,11 +722,12 @@ function go_purchase() {
 			alert(xhr.r +"\n 내용 : " +xhr.reponseText+"\n 에러 : " +err);
 		},success:function(data){
 			data = JSON.parse(data);
+			console.log(data);
 			let your_cart ="<span class='boong_boong_span' id='this_order_name'>";
 			if(data.duration =='1'){
-				your_cart += "앨범 ";
+				your_cart += "アルバム ";
 			}else{
-				your_cart += "트랙 ";
+				your_cart += "トラック ";
 			}
 			your_cart += data.aname;
 			if(data.pbno!=1){
@@ -775,7 +777,7 @@ $("#coupon_selector").on("change", function(){
 	if(type=='1'){
 		now_money = now_money - saleper;
 	}else{
-		now_money = now_money - (saleper/100);
+		now_money = now_money - ((saleper/100)*now_money);
 	}
 	console.log(now_money);
 	$("#real_final_totalPrice").val(now_money);

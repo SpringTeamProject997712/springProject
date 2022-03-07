@@ -10,6 +10,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
@@ -61,7 +62,7 @@ public class CartController {
 		return result;
 	}
 	
-	@GetMapping("/select_my_cart_for_purchase")
+	@RequestMapping(value="/select_my_cart_for_purchase", method = RequestMethod.GET, produces = "application/text; charset=utf8")
 	@ResponseBody
 	public String SelectAllCart() {
 		String myName="";
@@ -87,7 +88,7 @@ public class CartController {
 		return json;		
 	}
 	
-	@GetMapping("/select_my_coupon_for_purchase")
+	@RequestMapping(value="/select_my_coupon_for_purchase", method = RequestMethod.GET, produces = "application/text; charset=utf8")
 	@ResponseBody
 	public String select_my_coupon_for_purchase() {
 		String myName="";
