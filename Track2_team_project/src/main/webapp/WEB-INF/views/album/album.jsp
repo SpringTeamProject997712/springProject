@@ -7,7 +7,7 @@
             <!----Featured Albumn Section Start---->
             <div class="ms_fea_album_slider padder_top10 ">
                 <div class="ms_heading">
-                    <h1>Featured Albums</h1>
+                    <h1>おすすめのアルバム</h1>
                 </div>
                 <div class="ms_album_slider swiper-container">
                     <div class="swiper-wrapper">
@@ -47,7 +47,7 @@
             <!---Recently Played Music--->
             <div class="ms_rcnt_slider padder_top50">
                 <div class="ms_heading">
-                    <h1>Trending Albums</h1>
+                    <h1>今流行りのアルバム</h1>
                 </div>
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
@@ -90,8 +90,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="ms_heading">
-                                <h1>Top 15 Tracks</h1>
-                                <span class="veiw_all"><a href="/toptrack/ranking?pageName=menu_top_track">view more</a></span>
+                                <h1>トップの１５曲</h1>
+                                <span class="veiw_all"><a href="/toptrack/ranking?pageName=menu_top_track">もっと見る</a></span>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-12 padding_right40">
@@ -215,10 +215,10 @@
 																</span>
                                 </div>
                                 <ul class="more_option">
-                                    <li><a href="javascript:void(0)" class="add_queue_one_track_top"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                    <li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                    <li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                    <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
+                                    <li><a href="javascript:void(0)" class="add_queue_one_track_top"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
+                                    <li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに入れる</a></li>
+                                    <li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
+                                    <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
                                 </ul>
                             </div>
                             <div class="ms_divider"></div>
@@ -231,7 +231,7 @@
             <!---Featured Artists Music--->
             <div class="ms_featured_slider">
                 <div class="ms_heading">
-                    <h1>Albums By Artists</h1>
+                    <h1>アーティスト別のアルバム</h1>
                 </div>
                 <div class="ms_feature_slider swiper-container">
                     <div class="swiper-wrapper">
@@ -266,7 +266,7 @@
             <!----New Releases Section Start---->
             <div class="ms_releases_wrapper">
                 <div class="ms_heading">
-                    <h1>Newly Released Albums</h1>
+                    <h1>新しいアルバム</h1>
                 </div>
                 <div class="ms_release_slider swiper-container">
                     <div class="ms_divider"></div>

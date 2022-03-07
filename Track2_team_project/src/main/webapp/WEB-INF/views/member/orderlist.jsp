@@ -10,16 +10,16 @@
             <div class="ms_free_download ms_purchase_wrapper">
                <div class="orderlist_main">
                 <div class="ms_heading">
-                    <h1>Your orders</h1>
+                    <h1>お客様のご注文</h1>
                 </div>
 				<div class="album_inner_list">
 					<div class="album_list_wrapper">
 						<ul class="album_list_name">
 							<li>#</li>
-							<li>Order Number</li>
-							<li>Order things</li>
-							<li class="text-center">Amount</li>
-							<li class="text-center">Order Date</li>
+							<li>オーダーナンバー</li>
+							<li>品物</li>
+							<li class="text-center">量</li>
+							<li class="text-center">注文日</li>
 <!-- 							<li class="text-center">Order Date</li> -->
 						</ul>
 						<!--  favourite song start -->
@@ -52,7 +52,7 @@
 						<!-- favourite song end -->
 						
 						<div class="ms_view_more">
-							<a href="#" class="ms_btn">view more</a>
+							<a href="#" class="ms_btn">もっと見る</a>
 						</div>
 					</div>
 				</div>
@@ -61,8 +61,8 @@
             <!----Live Radio Section Start---->
             <div class="ms_radio_wrapper padder_top30">
                 <div class="ms_heading">
-                    <h1>Recently Played</h1>
-                    <span class="veiw_all"><a href="#">view more</a></span>
+                    <h1>最近聞いた曲</h1>
+                    <span class="veiw_all"><a href="#">もっと見る</a></span>
                 </div>
                 <div class="ms_radio_slider swiper-container">
                     <div class="swiper-wrapper">
@@ -76,11 +76,11 @@
                                             <img src="/images/svg/more.svg" alt="">
                                         </div>
                                         <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
+                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>お気に入りに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
                                         </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
@@ -88,7 +88,7 @@
                                     </div>
                                 </div>
                                 <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">Top Trendings</a></h3>
+                                    <h3><a href="#">みんなが今聞いている曲</a></h3>
                                     <p>Ava Cornish &amp; Brian Hill</p>
                                 </div>
                             </div>
@@ -103,11 +103,11 @@
                                             <img src="/images/svg/more.svg" alt="">
                                         </div>
                                         <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
+                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>お気に入りに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
                                         </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
@@ -130,12 +130,12 @@
                                             <img src="/images/svg/more.svg" alt="">
                                         </div>
                                         <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>お気に入りに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                         </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
@@ -157,12 +157,12 @@
                                             <img src="/images/svg/more.svg" alt="">
                                         </div>
                                         <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
+                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>お気に入りに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                         </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
@@ -184,12 +184,12 @@
                                             <img src="/images/svg/more.svg" alt="">
                                         </div>
                                         <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
+                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>お気に入りに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                         </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
@@ -211,12 +211,12 @@
                                             <img src="/images/svg/more.svg" alt="">
                                         </div>
                                         <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>お気に入りに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                          </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
@@ -238,12 +238,12 @@
                                             <img src="/images/svg/more.svg" alt="">
                                         </div>
                                         <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>お気に入りに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                         </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
@@ -265,12 +265,12 @@
                                             <img src="/images/svg/more.svg" alt="">
                                         </div>
                                         <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>お気に入りに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                         </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>
@@ -292,11 +292,11 @@
                                             <img src="/images/svg/more.svg" alt="">
                                         </div>
                                         <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
+                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>お気に入りに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
                                         </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
@@ -319,12 +319,12 @@
                                             <img src="/images/svg/more.svg" alt="">
                                         </div>
                                         <ul class="more_option">
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                        </ul>
+                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>お気に入りに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                         </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
                                         </div>

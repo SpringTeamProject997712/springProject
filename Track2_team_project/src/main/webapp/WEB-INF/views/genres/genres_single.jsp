@@ -5,7 +5,7 @@
                     <h1>
 			 		 ${genrelist.genrenames}
 					</h1>
-                    <span class="veiw_all"><a href="/album/album">view more</a></span>
+                    <span class="veiw_all"><a href="/album/album">もっと見る</a></span>
                 </div>
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
@@ -22,13 +22,13 @@
                                             <div class="ms_more_icon">
                                                 <img src="/images/svg/more.svg" alt="">
                                             </div>
-                                            <ul class="more_option">
-                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>Add To Favourites</a></li>
-                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                                <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                            </ul>
+                                           <ul class="more_option">
+	                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>お気に入りに追加</a></li>
+	                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
+	                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
+	                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
+	                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+	                                        </ul>
                                             <div class="ms_play_icon">
                                                 <img src="/images/svg/play.svg" alt="">
                                             </div>
@@ -52,8 +52,8 @@
             
              <div class="ms_releases_wrapper">
                 <div class="ms_heading">
-                    <h1>Newly Released Albums</h1>
-                    <span class="veiw_all"><a href="/album/album">view more</a></span>
+                    <h1>新しいアルバム</h1>
+                    <span class="veiw_all"><a href="/album/album">もっと見る</a></span>
                 </div>
                 <div class="ms_release_slider swiper-container">
                     <div class="ms_divider"></div>

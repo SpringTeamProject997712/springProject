@@ -38,7 +38,7 @@
 											  	<label for="zip">Zip</label>
 											  	<div class="input-group">
 												    <input class="form-control" name="zipnum" id="member_post" type="text" value="${memberList.zipnum}" readonly="readonly">
-												    <button class="btn ms_btn" type="button" onclick="findAddr()">find zip</button> 
+												    <button class="btn ms_btn" type="button" onclick="findAddr()">zipを探す</button> 
 											  	</div>
 											  </div>
 											  <div class="col-8 form-group">
@@ -64,8 +64,8 @@
 											    <input name="your_home" type="hidden" value="1">
 											  </div>
 											  <div class="col-12 marger_top15">
-											    <button class="btn btn-primary ms_btn" type="button" onclick="go_update()">Modify</button>
-											    <button class="btn btn-primary ms_btn" type="reset">reset</button>
+											    <button class="btn btn-primary ms_btn" type="button" onclick="go_update()">修正</button>
+											    <button class="btn btn-primary ms_btn" type="reset">リセット</button>
 											  </div>
 											</form>
                     </div>

@@ -426,22 +426,22 @@
 					<i class="fa_icon form_close"></i>
 				</button>
 				<div class="modal-body">
-					<h1>Log in to start sharing your music!</h1>
+					<h1>ログインして素敵なプレイリストを公有してみませんか？</h1>
 					<div class="save_modal_btn">
-						<a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i> continue with google </a> <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i> continue with facebook</a>
+						<a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i> グーグルアカウントでログイン</a> <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i> フェイスブックIDでログイン</a>
 					</div>
 					<div class="ms_save_email">
-						<h3>or use your email</h3>
+						<h3>Eメールでログイン</h3>
 						<div class="save_input_group">
 							<input type="text" placeholder="Enter Your Name" class="form-control">
 						</div>
 						<div class="save_input_group">
 							<input type="password" placeholder="Enter Password" class="form-control">
 						</div>
-						<button class="save_btn">Log in</button>
+						<button class="save_btn">ログイン</button>
 					</div>
 					<div class="ms_dnt_have">
-						<span>Dont't have an account ?</span> <a href="javascript:;" class="hideCurrentModel" data-toggle="modal" data-target="#myModal">Register Now</a>
+						<span>まだ会員ではないですか?</span> <a href="javascript:;" class="hideCurrentModel" data-toggle="modal" data-target="#myModal">会員登録</a>
 					</div>
 				</div>
 			</div>
