@@ -163,6 +163,7 @@
 									</div>
 								</div>
 							</div>
+							</div>
 						</c:otherwise>
 					</c:choose>
 				</div>
@@ -172,6 +173,5 @@
 </div>
 </div>
 </div>
-
 
 <%@include file="../footer.jsp"%>

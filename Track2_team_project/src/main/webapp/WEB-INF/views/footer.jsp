@@ -490,7 +490,7 @@ $(".insert_cart_btn").click(function() {
 					
 				}
 			}else if(success_return=='2'){
-				alert("중복임");
+				alert("すでに存在します");
 			}else{
 				$("#myModal1").modal();
 				alert("ログインをしてください");
@@ -525,7 +525,7 @@ $(".add_track_to_cart").click(function() {
 					
 				}
 			}else if(success_return=='2'){
-				alert("중복임");
+				alert("すでに存在します");
 			}else{
 				$("#myModal1").modal();
 				alert("ログインをしてください");

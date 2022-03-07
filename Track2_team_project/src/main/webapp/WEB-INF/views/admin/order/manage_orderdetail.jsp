@@ -33,19 +33,19 @@
                     <colgroup>
 						<col width="5%">
 						<col width="25%">
-						<col width="30%">
-						<col width="20%">
-						<col width="20%">
+						<col width="25%">
+						<col width="10%">
+						<col width="15%">
 						<col width="20%">
 					</colgroup>
                       <thead>
                         <tr>                        
                           <th scope="col">#</th>
                           <th scope="col">注文番号</th>
-                          <th scope="col">상품명</th>
-                          <th scope="col">가격</th>
-                          <th scope="col">앨범커버</th>
-                          <th scope="col">카테고리</th>
+                          <th scope="col">商品名</th>
+                          <th scope="col">価格</th>
+                          <th scope="col">アルバムカバー</th>
+                          <th scope="col">カテゴリー</th>
                         </tr>
                       </thead>
                       <tbody>

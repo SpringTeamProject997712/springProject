@@ -72,4 +72,9 @@
 		delete from board_m where wbno = #{wbno}
 	</delete>
   	
+  	<select id="recentlyNotice" resultType="com.music.domain.NoticeVO">
+  		SELECT * 
+		FROM board_m 
+		WHERE indate = (SELECT max(indate) FROM board_m)
+  	</select>
 </mapper>
