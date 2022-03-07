@@ -37,7 +37,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="ms_heading">
-                                <h1>Top 15 Tracks</h1>
+                                <h1>トップの１５曲</h1>
                                 <span class="veiw_all"><a href="/toptrack/ranking?pageName=menu_top_track">view more</a></span>
                             </div>
                         </div>
@@ -195,7 +195,7 @@
             <!----New Releases Section Start---->
             <div class="ms_releases_wrapper">
                 <div class="ms_heading">
-                    <h1>New Releases</h1>
+                    <h1>新しいアルバム</h1>
                     <span class="veiw_all"><a href="/album/album">view more</a></span>
                 </div>
                 <div class="ms_release_slider swiper-container">
@@ -236,7 +236,7 @@
         
             <div class="ms_fea_album_slider padder_top10 ">
                 <div class="ms_heading">
-                    <h1>Featured Albums</h1>
+                    <h1>おすすめのアルバム</h1>
                     <span class="veiw_all"><a href="#">view more</a></span>
                 </div>
                 <div class="ms_album_slider swiper-container">
@@ -279,7 +279,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="ms_heading">
-                            <h1>Top Genres</h1>
+                            <h1>トップ　ジャンル</h1>
                             <span class="veiw_all"><a href="/genres/genres">view more</a></span>
                         </div>
                     </div>
