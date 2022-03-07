@@ -27,7 +27,15 @@
     <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/my.css">
     <!-- Favicon Link -->
-    <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="/images/favicon/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/images/favicon/site.webmanifest">
+	<link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+    
     <script src="/resources/js/jquery.js"></script>
 		<script src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js" type="text/javascript"></script>
     <script src="/resources/js/tj.js"></script>
@@ -52,10 +60,10 @@
             <div class="ms_sidemenu_inner">
                 <div class="ms_logo_inner">
                     <div class="ms_logo">
-                        <a href="/?pageName=menu_main"><img src="/images/logo.png" alt="" class="img-fluid" /></a>
+                        <a href="/?pageName=menu_main"><img src="/images/logo/motus_logo_only.svg" style="" alt="" class="img-fluid" /></a>
                     </div>
                     <div class="ms_logo_open">
-                        <a href="/?pageName=menu_main"><img src="/images/open_logo.png" alt="" class="img-fluid"/></a>
+                        <a href="/?pageName=menu_main"><img src="/images/logo/motus_logo_name.svg" style="width:110px; height:100%; padding-top:10px;" alt="" class="img-fluid"/></a>
                     </div>
                 </div>
                 <div class="ms_nav_wrapper">

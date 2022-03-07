@@ -130,7 +130,7 @@
 									</table>
 								</div>
 								<div class="shopping-cart-footer">
-									<div class="column" >
+									<div class="column" style="text-align: left;">
 										<form class="coupon-form" method="post">
 											<input class="form-control form-control-sm" type="text" placeholder="Coupon code" required="">
 											<button class="ms_btn btn-outline-primary" type="submit">Apply</button>
@@ -145,7 +145,7 @@
 									</div>
 								</div>
 								<div class="shopping-cart-footer">
-									<div class="column">
+									<div class="column" style="text-align: left;">
 										<a class="ms_btn btn-outline-secondary" href="#"><i class="icon-arrow-left"></i>&nbsp;Back</a>
 									</div>
 									<div class="column">
