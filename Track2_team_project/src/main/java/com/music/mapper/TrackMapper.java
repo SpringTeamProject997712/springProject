@@ -33,5 +33,7 @@ public interface TrackMapper {
 	
 	//트랙 삭제
 	public void deleteTrack(int pbno);
+	//tbno로 길이 불러오기
+	public String selectLength(int tbno);
 	
 }

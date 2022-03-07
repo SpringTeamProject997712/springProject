@@ -60,7 +60,10 @@ public class TrackController {
 	@RequestMapping(value="/selectTrackInJplayer", produces = "application/text; charset=utf8", method = RequestMethod.GET)
 	public String selectTrackInJPlayer(int tbno) {
 		TrackVO tvo = service.selectTrack(tbno);
+		String jPlayer_length = service.selectLength(tbno);
 		jPlayerVO jvo = service.convertTrackToJPlayer(tvo);
+		jvo.setLength(jPlayer_length);
+		
 		String json = "1";
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String myName = "";

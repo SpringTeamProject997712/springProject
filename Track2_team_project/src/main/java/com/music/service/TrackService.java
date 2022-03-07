@@ -32,4 +32,6 @@ public interface TrackService {
 	//트랙 삭제
 	public void deleteTrack(int pbno);
 	
+	public String selectLength(int tbno);
+	
 }
