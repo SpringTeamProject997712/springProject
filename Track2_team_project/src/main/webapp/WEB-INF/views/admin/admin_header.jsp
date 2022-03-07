@@ -85,9 +85,9 @@
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
               <use href="/images/svg/free.svg#cil-puzzle"></use>
-            </svg> ユザー</a>
+            </svg> ユーザー</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="/admin/member/manage_member"><span class="nav-icon"></span> ユザー管理</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/member/manage_member"><span class="nav-icon"></span> ユーザー管理</a></li>
           </ul>
         </li>
         
