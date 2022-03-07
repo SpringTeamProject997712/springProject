@@ -6,10 +6,10 @@
         <div class="container-lg">
           <div class="car"></div>
           <div class="card mb-4">
-            <div class="card-header"><strong>유저 관리</strong><span class="small ms-1">권한 추가/삭제</span></div>
+            <div class="card-header"><strong>ユーザー管理</strong><span class="small ms-1">権限追加 / 削除</span></div>
             <div class="card-body">
               <div class="text-medium-emphasis small">
-	            	<h3>${member.id} : ${member.name}의 권한</h3> 
+	            	<h3>${member.id} : ${member.name}の権限</h3> 
 							</div>
               <div class="example">
                <!--  <ul class="nav nav-tabs" role="tablist">
@@ -26,8 +26,8 @@
                 		<table class="table auth-table">
                 			<thead>
 	                			<tr>
-	                				<th scope="col">권한명</th>
-	                				<th scope="col">상태</th>
+	                				<th scope="col">権限名</th>
+	                				<th scope="col">状態</th>
 	                			</tr>
                 			</thead>
                 			<tbody>
@@ -40,8 +40,8 @@
 											</tbody>
 									  </table>
 									  <div class="col-12">
-									  	<button class="btn btn-primary" type="submit">수정하기</button>
-									  	<button class="btn btn-primary" type="button" onclick="location.href='/admin/member/manage_member'">목록보기</button>
+									  	<button class="btn btn-primary" type="submit">修正する</button>
+									  	<button class="btn btn-primary" type="button" onclick="location.href='/admin/member/manage_member'">一覧を見る</button>
 									  </div>
 									</form>
                 </div>
