@@ -1,6 +1,4 @@
 <%@ include file="../header.jsp" %>
-
-       
             <!---Recently Played Music--->
             <div class="ms_rcnt_slider marger_top60">
                 <div class="ms_heading">

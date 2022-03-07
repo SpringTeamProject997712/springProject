@@ -1,3 +1,5 @@
+let join_id_token = false;
+
 function go_login() {                            //로그인
 	var idChk = $("#saveBtn").is(":checked");
 	if(document.loginForm.username.value == "") {
@@ -16,6 +18,13 @@ function go_login() {                            //로그인
 		deleteCookie("Cookie_mail"); 
 	}
 	document.loginForm.submit();
+}
+
+function delete_playlist(){
+	let this_plbno = $("#this_plbno").val();
+	if(confirm("정말로 삭제하시겠습니까?")){
+		location.href = "/createPlaylist/deletePlaylist?plbno="+this_plbno;
+	}
 }
 
 $(function(){ // document가 다 로딩된 후 쿠키 있는지 확인해서 아이디 넣기
@@ -87,9 +96,11 @@ $("#joinForm_id").on("blur",function(){ //아이디 입력창에서 blur할때�
 			if(data == 1){
 				$("#msg_checked_id").text("중복 아이디입니다");
 				document.getElementById('msg_checked_id').style.color = "red";
+				join_id_token = false;
 			}else{
 				$("#msg_checked_id").text("사용 가능한 아이디입니다");
 				document.getElementById('msg_checked_id').style.color = "blue";
+				join_id_token = true;
 			}
 		},error:function(xhr, status, error){
 			alert("코드 : " + xhr.status + "\n메세지 : " + xhr.responseText + "\n에러 : " + error)
@@ -98,15 +109,30 @@ $("#joinForm_id").on("blur",function(){ //아이디 입력창에서 blur할때�
 })
 
 function go_join() {                                  //회원가입
+	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+	var my_email = document.getElementById('joinForm_id').value;
+	if (my_email == '' || !re.test(my_email)) {
+		alert("無効なメールアドレスです")
+		return false;
+	}
+
 	if(document.joinForm.id.value == "") {
-		alert("아이디를 입력하세요");
+		alert("IDを入力してください");
 		document.joinForm.id.focus();
-	}else if(document.joinForm.pw.value == "") {
-		alert("비밀번호 입력");
+		return false;
+	}else if(document.joinForm.pw.value == "" || document.joinForm.pw2.value == "") {
+		alert("パスワードを入力してください");
 		document.joinForm.pw.focus();
+		return false;
 	}else if(document.joinForm.pw.value != document.joinForm.pw2.value) {
-		alert("비밀번호가 서로 일치하지 않습니다");
+		alert("パスワードが互いに一致しません");
 		document.joinForm.pw2.focus();
+		return false;
+	}else if(!join_id_token){
+		alert("重複IDは使用できません");
+		document.joinForm.id.focus();
+		return false;
 	}else{
 		document.joinForm.submit();
 	}
@@ -420,6 +446,7 @@ function modify_playlist_name(){
 		}
 	});
 }
+
 let SlideOn = 1;
 $(".slideDown-details").find("div.product-item").on("click", function(abno){
 	let cbno = $(this).parent().parent().attr('id');
@@ -433,6 +460,7 @@ $(".slideDown-details").find("div.product-item").on("click", function(abno){
 		SlideOn=1;
 	}
 })
+
 $(".cart-details").on("click", function(abno){
 	$(".cart-details").slideUp(10);
 })
@@ -729,5 +757,4 @@ function go_notice_search(){
 	form.submit();
 
 }
-
 

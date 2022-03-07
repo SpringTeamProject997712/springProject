@@ -1,7 +1,4 @@
 <%@ include file="../header.jsp" %>
-
-        <div class="ms_content_wrapper padder_top90">
-        
             <!---Weekly Top 15--->
             <div class="ms_weekly_wrapper">
                 <div class="ms_weekly_inner">
@@ -26,7 +23,7 @@
                                             <img src="${pageContext.request.contextPath}/upload/${top.image_50}" alt="">
                                             <div class="ms_song_overlay">
                                             </div>
-                                            <div class="ms_play_icon" id="${top.tbno}">
+                                            <div class="ms_play_icon instantly_play_track" id="${top.tbno}">
                                                 <img src="../images/svg/play.svg" alt="">
                                             </div>
                                         </div>

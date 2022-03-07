@@ -7,10 +7,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2>Manage Account</h2>
-				<div class="ms_heading">
-					<h1>Subscription Plans</h1>
-				</div>
+				<h2>カート</h2>
 			</div>
 		</div>
 		<div class="row">
@@ -18,7 +15,7 @@
 				<div class="ms_acc_overview">
 					<c:choose>
 						<c:when test="${cartList.size() == 0}">
-							<td>카트 내 정보가 없습니다.</td>
+							<td>カート内の情報がないです。</td>
 						</c:when>
 						<c:otherwise>
 							<div class="ms_heading">
@@ -30,16 +27,11 @@
 									<table class="table cart-table">
 										<thead>
 											<tr>
-												<th>
-													<div class="allCheck">
-														<input type="checkbox" name="allCheck" id="allCheck"> <label for="allCheck"></label>
-													</div>
-												</th>
-												<th>Product Name</th>
-												<th class="text-center">Category</th>
-												<th class="text-center">Subtotal</th>
-												<th class="text-center">Discount</th>
-												<th class="text-center"><a class="btn btn-sm btn-outline-danger remove-all-cart" href="javascript:void(0)">Clear Cart</a></th>
+												<th>商品</th>
+												<th class="text-center">カテゴリ</th>
+												<th class="text-center">総額</th>
+												<th class="text-center">ディスカウント</th>
+												<th class="text-center"><a class="btn btn-sm btn-outline-danger remove-all-cart" href="javascript:void(0)">クリア</a></th>
 											</tr>
 										</thead>
 										</tbody>
@@ -47,11 +39,6 @@
 										<c:forEach var="cartList" items="${cartList}">
 											<c:if test="${cartList.category eq '1'}">
 											<tr class="slideDown-details" id="${cartList.cbno}">
-												<td>
-													<div class="checkBox">
-														<input type="checkBox" name="chBox" class="chBox" data-cbno="${cartList.cbno}">
-													</div>
-												</td>
 												<td>
 													<div class="product-item">
 														<a class="product-thumb" href="javascript:void(0)"><img src="${pageContext.request.contextPath}/upload/${cartList.image}" alt="Product"></a>
@@ -62,7 +49,7 @@
 														</div>
 													</div>
 												</td>
-												<td class="text-center text-lg text-medium">Album</td>
+												<td class="text-center text-lg text-medium">アルバム</td>
 												<td class="text-center text-lg text-medium">
 													<fmt:setLocale value="ja_jp" />
 													<fmt:formatNumber type="currency" value="${cartList.aprice * cartList.quantity}" currencySymbol="￥" maxFractionDigits="0" />
@@ -107,11 +94,6 @@
 											<c:if test="${cartList.category eq '2'}">
 											<tr>
 												<td>
-													<div class="checkBox">
-														<input type="checkBox" name="chBox" class="chBox" data-cbno="${cartList.cbno}">
-													</div>
-												</td>
-												<td>
 													<div class="product-item">
 														<a class="product-thumb" href="/album/album_single?abno=${cartList.abno }"><img src="${pageContext.request.contextPath}/upload/${cartList.timage}" alt="Product"></a>
 														<div class="product-info">
@@ -121,7 +103,7 @@
 														</div>
 													</div>
 												</td>
-												<td class="text-center text-lg text-medium">Track</td>
+												<td class="text-center text-lg text-medium">トラック</td>
 												<td class="text-center text-lg text-medium">
 													<fmt:setLocale value="ja_jp" />
 													<fmt:formatNumber type="currency" value="${cartList.tprice * cartList.quantity}" currencySymbol="￥" maxFractionDigits="0" />
@@ -179,6 +161,7 @@
 											<input type="hidden" name="address2" value="${principal.member.address2}">
 										</form>
 										<a class="ms_btn btn-success" href="javascript:void(0)" onclick="go_purchase()">Purchase</a>
+										
 										<a class="ms_btn btn-success" href="javascript:void(0);" data-toggle="modal" data-target="#pay_modal">Checkout</a>
 									</div>
 								</div>

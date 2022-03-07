@@ -189,23 +189,6 @@
 								</div>
 							</div>
 						</div>
-						<div class="jp-toggles flex-item">
-							<button class="jp-shuffle" tabindex="0" title="Shuffle">
-								<i class="ms_play_control"></i>
-							</button>
-							<button class="jp-repeat" tabindex="0" title="Repeat">
-								<i class="ms_play_control"></i>
-							</button>
-						</div>
-						<div class="jp_quality_optn custom_select">
-							<select>
-								<option>quality</option>
-								<option value="1">HD</option>
-								<option value="2">高音質</option>
-								<option value="3">中音質</option>
-								<option value="4">低音質</option>
-							</select>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -325,11 +308,11 @@
 								<span class="form_icon"> <i class="fa_icon form-lock" aria-hidden="true"></i>
 								</span>
 							</div>
-							<div class="remember_checkbox">
-								<label>ログイン情報キープ <input type="checkbox" id="saveBtn">
-								<span class="checkmark"></span>
-								</label>
-							</div>
+							<div id="smart-button-container">
+						      <div style="text-align: center;">
+						        <div id="paypal-button-container"></div>
+						      </div>
+						    </div>
 							<a href="javascript:go_pay()" class="ms_btn">ログイン</a>
 						</form>
 					</div>
@@ -397,26 +380,30 @@
 	</div>
 	
 	<div id="myPurchase" class="modal centered-modal" role="dialog">
-		<div class="modal-dialog login_dialog" style="max-width: 800px; ">
+		<div class="modal-dialog login_dialog" style="max-width: 400px; ">
 			<!-- Modal content-->
 			<div class="modal-content">
 				<button type="button" class="close" id="my_modal_close_btn" data-dismiss="modal">
 					<i class="fa_icon form_close"></i>
 				</button>
-				<p>결제창</p>
+				<p>お買い上げ</p>
 				<div class="cartlistForPurchase black_some_box_mini">
 					
 				</div>
 				<div class="couponForPurchase">
 				</div>
 				<div class="form-group padding_top_30">
-					<label>price</label>
-					<input type="text" class="final_totalPrice form-control" id="final_totalPrice" readonly="readonly" width="40%">
+					<label>総額</label>
+					<input type="text" class="final_totalPrice form-control" id="final_totalPrice" width="40%">
 				</div>
 				<div class="purchase_buttons">
-					<a onclick="go_this_purchase(this.id)" id="html5_inicis"><img alt="카드결제" src="/images/card_rufwp.jpg" width="400px" height="100px"></a>
+					<a onclick="go_this_purchase(this.id)" href="javascript:void(0)" id="html5_inicis">
+						<img alt="카드결제" src="/images/card_rufwp.jpg" width="250px" height="100px">
+					</a>
 					
-					<a onclick="go_this_purchase(this.id)" id="paypal"><img alt="페이팔결제" src="/images/paypal.png" width="400px" height="100px"></a>
+					<a onclick="go_this_purchase(this.id)" href="javascript:void(0)" id="paypal">
+						<img alt="페이팔결제" src="/images/paypal.png" width="250px" height="100px">
+					</a>
 				</div>
 				
 			</div>
@@ -511,16 +498,20 @@ $(".insert_cart_btn").click(function() {
 		data : data,
 		success : function(success_return) {
 			if(success_return=='1'){
-				alert("담기 성공");
+				if(confirm("カートに移動しますか？")){
+					location.href = "/member/my_cart?pageName=menu_cart"
+				}else{
+					
+				}
 			}else if(success_return=='2'){
 				alert("중복임");
 			}else{
 				$("#myModal1").modal();
-				alert("로그인이 필요합니다");s
+				alert("ログインをしてください");
 			}
 		},
 		error : function(xhr,status,err) {
-			alert("카드를 담기 위해서는 로그인이 필요합니다.");
+			alert("ログインをしてください");
 			alert(xhr.status + xhr.responseText + err)
 		}
 	});
@@ -542,21 +533,26 @@ $(".add_track_to_cart").click(function() {
 		data : data,
 		success : function(success_return) {
 			if(success_return=='1'){
-				alert("담기 성공");
+				if(confirm("カートに移動しますか？")){
+					location.href = "/member/my_cart?pageName=menu_cart"
+				}else{
+					
+				}
 			}else if(success_return=='2'){
 				alert("중복임");
 			}else{
 				$("#myModal1").modal();
-				alert("로그인이 필요합니다");
+				alert("ログインをしてください");
 			}
 		},
 		error : function(xhr,status,err) {
-			alert("카드를 담기 위해서는 로그인이 필요합니다.");
+			alert("ログインをしてください");
 			alert(xhr.status + xhr.responseText + err)
 		}
 	});
 });
 </script>
+
 </body>
 
 </html>

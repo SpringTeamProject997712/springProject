@@ -18,19 +18,55 @@ Chart.defaults.defaultFontColor = '#646470'
 const random = (min, max) =>
   // eslint-disable-next-line no-mixed-operators
   Math.floor(Math.random() * (max - min + 1) + min)
+  
+function get_userChart(){
+	let user = "";
+	$.ajax({
+		type:"get",
+		url:"/admin/user_chart",
+		async:false,
+		success:function(data){
+			user = JSON.parse(data);
+		},error: function(x,y,err){
+			alert(x.y + x.responseText + err) 
+		}
+	})
+	return user;
+}
+
+let my_user_data = get_userChart();
+console.log(my_user_data);
+
+function convert_x(my_json){
+	let x_arrs = [];
+	for(var i=0; i<my_json.length; i++){
+		x_arrs.push(my_json[i].x_value);
+	}
+	console.log(x_arrs);
+	return x_arrs;
+}
+
+function convert_y(my_json){
+	let y_arrs = [];
+	for(var i=0; i<my_json.length; i++){
+		y_arrs.push(my_json[i].count);
+	}
+	console.log(y_arrs);
+	return y_arrs;
+}
 
 // eslint-disable-next-line no-unused-vars
 const cardChart1 = new Chart(document.getElementById('card-chart1'), {
   type: 'line',
   data: {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    labels: convert_x(my_user_data),
     datasets: [
       {
-        label: 'My First dataset',
+        label: 'join user number',
         backgroundColor: 'transparent',
         borderColor: 'rgba(255,255,255,.55)',
-        pointBackgroundColor: coreui.Utils.getStyle('--cui-primary'),
-        data: [65, 59, 84, 84, 51, 55, 40],
+        pointBackgroundColor: coreui.Utils.getStyle('--cui-info'),
+        data: convert_y(my_user_data),
       },
     ],
   },
@@ -52,8 +88,8 @@ const cardChart1 = new Chart(document.getElementById('card-chart1'), {
         },
       },
       y: {
-        min: 30,
-        max: 89,
+        min: -2,
+        max: 5,
         display: false,
         grid: {
           display: false,
@@ -66,7 +102,6 @@ const cardChart1 = new Chart(document.getElementById('card-chart1'), {
     elements: {
       line: {
         borderWidth: 1,
-        tension: 0.4,
       },
       point: {
         radius: 4,
@@ -76,19 +111,36 @@ const cardChart1 = new Chart(document.getElementById('card-chart1'), {
     },
   },
 })
+
+function get_moneyChart(){
+	let user = "";
+	$.ajax({
+		type:"get",
+		url:"/admin/money_chart",
+		async:false,
+		success:function(data){
+			user = JSON.parse(data);
+		},error: function(x,y,err){
+			alert(x.y + x.responseText + err) 
+		}
+	})
+	return user;
+}
+
+let money_data = get_moneyChart();
 
 // eslint-disable-next-line no-unused-vars
 const cardChart2 = new Chart(document.getElementById('card-chart2'), {
   type: 'line',
   data: {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    labels: convert_x(money_data),
     datasets: [
       {
-        label: 'My First dataset',
+        label: '日商',
         backgroundColor: 'transparent',
         borderColor: 'rgba(255,255,255,.55)',
         pointBackgroundColor: coreui.Utils.getStyle('--cui-info'),
-        data: [1, 18, 9, 17, 34, 22, 11],
+        data: convert_y(money_data),
       },
     ],
   },
@@ -110,8 +162,8 @@ const cardChart2 = new Chart(document.getElementById('card-chart2'), {
         },
       },
       y: {
-        min: -9,
-        max: 39,
+        min: 0,
+        max: 300000,
         display: false,
         grid: {
           display: false,
@@ -134,177 +186,102 @@ const cardChart2 = new Chart(document.getElementById('card-chart2'), {
   },
 })
 
-// eslint-disable-next-line no-unused-vars
-const cardChart3 = new Chart(document.getElementById('card-chart3'), {
-  type: 'line',
-  data: {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [
-      {
-        label: 'My First dataset',
-        backgroundColor: 'rgba(255,255,255,.2)',
-        borderColor: 'rgba(255,255,255,.55)',
-        data: [78, 81, 80, 45, 34, 12, 40],
-        fill: true,
-      },
-    ],
-  },
-  options: {
-    plugins: {
-      legend: {
-        display: false,
-      },
-    },
-    maintainAspectRatio: false,
-    scales: {
-      x: {
-        display: false,
-      },
-      y: {
-        display: false,
-      },
-    },
-    elements: {
-      line: {
-        borderWidth: 2,
-        tension: 0.4,
-      },
-      point: {
-        radius: 0,
-        hitRadius: 10,
-        hoverRadius: 4,
-      },
-    },
-  },
-})
+function get_ratio_orderChart(){
+	let user = "";
+	$.ajax({
+		type:"get",
+		url:"/admin/ratio_order_chart",
+		async:false,
+		success:function(data){
+			user = JSON.parse(data);
+		},error: function(x,y,err){
+			alert(x.y + x.responseText + err) 
+		}
+	})
+	return user;
+}
 
-// eslint-disable-next-line no-unused-vars
-const cardChart4 = new Chart(document.getElementById('card-chart4'), {
-  type: 'bar',
-  data: {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January', 'February', 'March', 'April'],
-    datasets: [
-      {
-        label: 'My First dataset',
-        backgroundColor: 'rgba(255,255,255,.2)',
-        borderColor: 'rgba(255,255,255,.55)',
-        data: [78, 81, 80, 45, 34, 12, 40, 85, 65, 23, 12, 98, 34, 84, 67, 82],
-        barPercentage: 0.6,
-      },
-    ],
-  },
-  options: {
-    maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        display: false,
-      },
-    },
-    scales: {
-      x: {
-        grid: {
-          display: false,
-          drawTicks: false,
-
-        },
-        ticks: {
-          display: false,
-        },
-      },
-      y: {
-        grid: {
-          display: false,
-          drawBorder: false,
-          drawTicks: false,
-        },
-        ticks: {
-          display: false,
-        },
-      },
-    },
-  },
-})
+let f_ratio_data = get_ratio_orderChart();
 
 // eslint-disable-next-line no-unused-vars
 const mainChart = new Chart(document.getElementById('main-chart'), {
-  type: 'line',
+  type: 'doughnut',
   data: {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    labels: ['Albums','Tracks'],
     datasets: [
       {
-        label: 'My First dataset',
-        backgroundColor: coreui.Utils.hexToRgba(coreui.Utils.getStyle('--cui-info'), 10),
+        label: '購買比率',
+        backgroundColor: ['rgba(255, 99, 132, 0.2)',
+					'rgba(54, 162, 235, 0.2)'],
         borderColor: coreui.Utils.getStyle('--cui-info'),
-        pointHoverBackgroundColor: '#fff',
-        borderWidth: 2,
-        data: [
-          random(50, 200),
-          random(50, 200),
-          random(50, 200),
-          random(50, 200),
-          random(50, 200),
-          random(50, 200),
-          random(50, 200),
-        ],
-        fill: true,
-      },
-      {
-        label: 'My Second dataset',
-        borderColor: coreui.Utils.getStyle('--cui-success'),
-        pointHoverBackgroundColor: '#fff',
-        borderWidth: 2,
-        data: [
-          random(50, 200),
-          random(50, 200),
-          random(50, 200),
-          random(50, 200),
-          random(50, 200),
-          random(50, 200),
-          random(50, 200),
-        ],
-      },
-      {
-        label: 'My Third dataset',
-        borderColor: coreui.Utils.getStyle('--cui-danger'),
-        pointHoverBackgroundColor: '#fff',
-        borderWidth: 1,
-        borderDash: [8, 5],
-        data: [65, 65, 65, 65, 65, 65, 65],
-      },
+        pointHoverBackgroundColor: '#0040FF',
+        data: convert_y(f_ratio_data),
+      }
     ],
   },
   options: {
-    maintainAspectRatio: false,
+    responsive: false,
     plugins: {
       legend: {
+        position: 'top',
+      },
+      title: {
         display: false,
+        text: 'ㄴㄴ'
+      }
+    }//plugins
+  },
+})
+
+function get_ratio_genreChart(){
+	let user = "";
+	$.ajax({
+		type:"get",
+		url:"/admin/ratio_genre_chart",
+		async:false,
+		success:function(data){
+			user = JSON.parse(data);
+		},error: function(x,y,err){
+			alert(x.y + x.responseText + err) 
+		}
+	})
+	return user;
+}
+
+let s_ratio_data = get_ratio_genreChart();
+
+const subsubChart = new Chart(document.getElementById('subsub-chart'), {
+  type: 'doughnut',
+  data: {
+    labels: convert_x(s_ratio_data),
+    datasets: [
+      {
+        label: '購買比率',
+        backgroundColor: ['rgba(255, 99, 132, 0.2)',
+					'rgba(54, 162, 235, 0.2)',
+					'rgba(255, 206, 86, 0.2)',
+					'rgba(75, 192, 192, 0.2)',
+					'rgba(153, 102, 255, 0.2)',
+					'rgba(255, 159, 64, 0.2)',//6
+					'rgba(123, 45, 64, 0.2)',
+					'rgba(17, 62, 7, 0.2)',
+					'rgba(160, 159, 120, 0.2)'],
+        borderColor: coreui.Utils.getStyle('--cui-info'),
+        pointHoverBackgroundColor: '#0040FF',
+        data: convert_y(s_ratio_data),
+      }
+    ],
+  },
+  options: {
+    responsive: false,
+    plugins: {
+      legend: {
+        position: 'top',
       },
-    },
-    scales: {
-      x: {
-        grid: {
-          drawOnChartArea: false,
-        },
-      },
-      y: {
-        ticks: {
-          beginAtZero: true,
-          maxTicksLimit: 5,
-          stepSize: Math.ceil(250 / 5),
-          max: 250,
-        },
-      },
-    },
-    elements: {
-      line: {
-        tension: 0.4,
-      },
-      point: {
-        radius: 0,
-        hitRadius: 10,
-        hoverRadius: 4,
-        hoverBorderWidth: 3,
-      },
-    },
+      title: {
+        display: false,
+        text: 'ㄴㄴ'
+      }
+    }//plugins
   },
 })

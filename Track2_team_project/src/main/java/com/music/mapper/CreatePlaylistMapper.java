@@ -72,4 +72,5 @@ public interface CreatePlaylistMapper {
 	public ViewPlaylistDetailVO myPlaylistView(int plbno);
 	//플레이리스트 이미지 가져오기
 	public ViewPlaylistDetailVO selectPlaylistImage(int plbno);
+	public int deletePlaylist(PlaylistVO pvo);
 }

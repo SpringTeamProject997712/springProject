@@ -5,19 +5,19 @@
         <div class="container-lg">
           <div class="car"></div>
           <div class="card mb-4">
-            <div class="card-header"><strong>앨범 관리</strong><span class="small ms-1">앨범 목록</span></div>
+            <div class="card-header"><strong>주문 관리</strong><span class="small ms-1">주문 목록</span></div>
             <div class="card-body">
               <div class="text-medium-emphasis small">
               	<!-- 검색 창 -->
-              	<form id="pagingForm" action="/admin/album/manage_album" method="get">
+              	<form id="pagingForm" action="/admin/order/manage_order" method="get">
 	              <div class="input-group" style="width:200px;">
-								 		<input class="form-control" name="keyword" type="text" placeholder="search Album" value="${pageMaker.cri.keyword}" aria-label="앨범 검색">
-								  	<button class="btn btn-outline-secondary" type="submit" style="color:white; background:grey">검색</button>
-										<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
-										<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
-										<input type="hidden" name="type" value="${pageMaker.cri.type}">
-								</div>
-								</form>
+				 		<input class="form-control" name="keyword" type="text" placeholder="search Album" value="${pageMaker.cri.keyword}" aria-label="주문자 검색">
+				  	<button class="btn btn-outline-secondary" type="submit" style="color:white; background:grey">검색</button>
+						<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+						<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
+						<input type="hidden" name="type" value="${pageMaker.cri.type}">
+				</div>
+				</form>
 							</div>
               <div class="example">
                <!--  <ul class="nav nav-tabs" role="tablist">
@@ -31,35 +31,37 @@
                   <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-687">
                     <table class="table dropdown">
                     <colgroup>
-						<col width="50%">
+						<col width="5%">
+						<col width="45%">
 						<col width="20%">
 						<col width="10%">
 						<col width="10%">
 						<col width="10%">
 					</colgroup>
                       <thead>
-                        <tr>
-                          <th scope="col">타이틀</th>
-                          <th scope="col">가수</th>
-                          <th scope="col">가격</th>
+                        <tr>                        
+                          <th scope="col">#</th>
+                          <th scope="col">주문번호</th>
+                          <th scope="col">주문자</th>
+                          <th scope="col">총매출</th>
                           <th scope="col">등록일</th>
                           <th scope="col">기능</th>
                         </tr>
                       </thead>
                       <tbody>
-                      	<c:forEach items="${albumList}" var="alist">
+                      	<c:forEach items="${odlist}" var="odlist">
                         	<tr>
-	                          <td scope="row" ><a class="namelink" href="/admin/track/manage_track?abno=${alist.abno}">${alist.name}</a></td>
-	                          <td>${alist.singer}</td>
+	                          <td scope="row" >${odlist.rn}</td>
+	                          <td scope="row" >${odlist.orderid }</td>
+	                          <td>${odlist.name }</td>
 	                          <td>
-	                        	  <fmt:setLocale value="ja_jp"/><fmt:formatNumber type="currency" value="${alist.price}" currencySymbol="￥" maxFractionDigits="0" />
+	                        	  <fmt:setLocale value="ja_jp"/><fmt:formatNumber type="currency" value="${odlist.total}" currencySymbol="￥" maxFractionDigits="0" />
 	                          </td>
-	                          <td><fmt:formatDate value="${alist.regdate}" pattern="yyyy-MM-dd"/></td>
+	                          <td><fmt:formatDate value="${odlist.orderdate}" pattern="yyyy-MM-dd"/></td>
 	                          <td>
 	                          	<div class="dropdown">
 								  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">보기</button>
 								  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-								    <li><a class="dropdown-item" href="/admin/album/view_album?abno=${alist.abno}">세부정보 조회 /수정</a></li>
 								    <li><a class="dropdown-item" href="#">Another action</a></li>
 								    <li><a class="dropdown-item" href="#">Something else here</a></li>
 								    <li>
@@ -68,9 +70,9 @@
 								    <li>
  									<form role="form" name="deleteAlbum" method="post" id="deleteAlbum" action="/album/deleteAlbum">
 								    	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-										<input type="hidden" name="pbno" value="${alist.pbno }">
+										<input type="hidden" name="orderid" value="${odlist.orderid }">
 										
-									    <input type="submit" class="dropdown-item" value="앨범 삭제">
+									    <input type="submit" class="dropdown-item" value="주문 삭제">
 									</form>
 									</li>
 								  </ul>
@@ -98,9 +100,10 @@
         </div>
       </div>
       
-    <form id="actionForm" action="manage_album" method="get">
+    <form id="actionForm" action="manage_order" method="get">
 		<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
 		<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
 		<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">
 	</form>
+	
 <%@ include file="../admin_footer.jsp" %>

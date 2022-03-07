@@ -45,7 +45,7 @@ public class OrderListVO {
 	
 // getcountlikes
 	private int likes;
-	
+	private int count;
 	private int cbno;
 	private Date putdate;
 	
@@ -56,4 +56,12 @@ public class OrderListVO {
 	
 	private String category;
 	
+	private String pw;
+	private String nickname;
+	private String active;
+	private String phone;
+	private String email;
+	private String zipnum;
+	private String address1;
+	private String address2;
 }

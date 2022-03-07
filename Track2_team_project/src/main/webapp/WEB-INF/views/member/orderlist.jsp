@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
 
         <!---Side Menu Start--->
@@ -21,11 +23,22 @@
 <!-- 							<li class="text-center">Order Date</li> -->
 						</ul>
 						<!--  favourite song start -->
+						<c:set value="${1}" var="rownum" />
 						<c:forEach var="olist" items="${olist}">
 						<ul class="favouritelist">
-							<li><a href="javascript:void(0)">${olist.rownum}</a></li>
+							<li><a href="javascript:void(0)">${rownum}</a></li>
 							<li><a href="/member/orderview?n=${olist.orderid}">${olist.orderid}</a></li>
-							<li><a href="javascript:void(0)">${olist.name}</a></li>
+							<li><a href="javascript:void(0)">
+								<c:if test="${olist.category == '1'}">
+									${olist.aname}
+								</c:if>
+								<c:if test="${olist.category == '2'}">
+									${olist.tname}
+								</c:if>
+								<c:if test="${olist.count > 1}">
+								 他 ${olist.count-1}
+								 </c:if>
+							</a></li>
 							<li class="text-center"><a href="javascript:void(0)">
 								<fmt:setLocale value="ja_jp"/>
 								<fmt:formatNumber type="currency" value="${olist.amount}" currencySymbol="&yen;" maxFractionDigits="0" />
@@ -34,6 +47,7 @@
 								<fmt:formatDate value="${olist.orderdate }" type="both" pattern="yyyy-MM-dd HH:MM"/></a>
 							</li>
 						</ul>
+						<c:set value="${rownum +1}" var="rownum"/>
 						</c:forEach>
 						<!-- favourite song end -->
 						

@@ -2111,7 +2111,7 @@ i.ms_icon.icon_share {
 	flex-grow: 2;
 	-ms-flex-negative: 2;
 	flex-shrink: 2;
-	max-width: 630px;
+	max-width: 700px;
 	width: 100%;
 	margin-top: 3px;
 }
@@ -4442,7 +4442,7 @@ h2.widget-title:after {
 		margin-left: 25px;
 	}
 	.jp-progress-container.flex-item {
-		max-width: 600px;
+		max-width: 700px;
 	}
 	body {
 		font-size: 15px;
@@ -4499,7 +4499,7 @@ h2.widget-title:after {
 		padding-left: 35px;
 	}
 	.jp-progress-container.flex-item {
-		max-width: 50%;
+		max-width: 60%;
 	}
 	.jp-type-playlist {
 		padding-right: 80px;
@@ -4547,7 +4547,7 @@ h2.widget-title:after {
 		width: 80%;
 	}
 	.jp-progress-container.flex-item {
-		max-width: 45%;
+		max-width: 65%;
 	}
 	.ms_play_song {
 		width: 310px;
@@ -4699,7 +4699,7 @@ h2.widget-title:after {
 		margin-top: 22px;
 	}
 	.jp-progress-container.flex-item {
-		max-width: 31%;
+		max-width: 41%;
 	}
 	.ms_free_download.ms_purchase_wrapper .album_list_wrapper>ul>li {
 		font-size: 14px;
@@ -4807,7 +4807,7 @@ h2.widget-title:after {
 		width: 50px;
 	}
 	.jp-progress-container.flex-item {
-		max-width: 20%;
+		max-width: 30%;
 	}
 	.knob-container .knob-wrapper-outer .knob-wrapper .round {
 		top: 13rem;
@@ -5527,7 +5527,7 @@ h2.widget-title:after {
 		max-width: 94%;
 	}
 	.jp-progress-container.flex-item {
-		max-width: 27%;
+		max-width: 37%;
 	}
 	.ms_main_wrapper.ms_profile .ms_top_search {
 		position: relative;
@@ -5536,7 +5536,7 @@ h2.widget-title:after {
 }
 @media(max-width:900px) {
 	.jp-progress-container.flex-item {
-		max-width: 21%;
+		max-width: 31%;
 	}
 	.jp_queue_wrapper {
 		padding-right: 10px;
@@ -5581,7 +5581,7 @@ h2.widget-title:after {
 		margin-right: 15px;
 	}
 	.jp-progress-container.flex-item {
-		max-width: 20%;
+		max-width: 30%;
 	}
 }
 @media(max-width:767px) {
@@ -6228,7 +6228,7 @@ h2.widget-title:after {
 		width: 35px;
 	}
 	.jp-progress-container.flex-item {
-		max-width: 30%;
+		max-width: 40%;
 	}
 }
 @media(max-width:414px) {
