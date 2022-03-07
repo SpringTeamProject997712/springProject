@@ -38,7 +38,7 @@
 								<img src="/images/svg/phone.svg" alt="">
 							</div>
 							<div class="foo_con_data">
-								<span class="con-title">連絡先 :</span> <span>(+81) 202-555-0176</span>
+								<span class="con-title">連絡先 :</span> <span>(+81) 03-3527-9888‬</span>
 							</div>
 						</li>
 						<li>
@@ -54,7 +54,7 @@
 								<img src="/images/svg/add.svg" alt="">
 							</div>
 							<div class="foo_con_data">
-								<span class="con-title">住所 :</span> <span>598 Old House Drive, London</span>
+								<span class="con-title">住所 :</span> <span>124-0025 東京都, 葛飾区西新小岩３－４４－７ 鶴岡ビル１Ｆ</span>
 							</div>
 						</li>
 					</ul>
