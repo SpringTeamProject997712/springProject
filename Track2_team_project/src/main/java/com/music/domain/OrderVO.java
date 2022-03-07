@@ -15,11 +15,6 @@ public class OrderVO {
 	private Date orderdate;
 	private int amount;
 	private String name;
-<<<<<<< HEAD
-
-=======
-	
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 	private String pw;
 	private String nickname;
 	private String active;
