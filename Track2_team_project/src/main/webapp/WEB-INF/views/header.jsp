@@ -184,9 +184,9 @@
                     	<sec:authentication property="principal" var="principal"/>
 							<div class="ms_top_btn">
 								<sec:authorize access="hasRole('ROLE_UPLOADER')">
-	                   		   <a href="/upload/upload?pageName=menu_main" class="ms_btn">アップロード</a>
+	                   		   <a href="/upload/upload?pageName=menu_main" class="ms_btn" style="width: 120px;position: relative;margin-right: 30px;top:5px;">アップロード</a>
 	                   		  </sec:authorize>
-	                      <a href="javascript:;" class="ms_admin_name">ユザー： ${principal.member.name} 
+	                      <a href="javascript:;" class="ms_admin_name">ユーザー： ${principal.member.name} 
 	                      	<span class="ms_pro_name">${principal.member.name.substring(0,1)}</span>
 					</a>
 					<ul class="pro_dropdown_menu">
