@@ -88,10 +88,11 @@
                         </div>
                         <div class="musicSearch_form ms_register_form">
                           <h2>ミュージック検索"</h2>
-                          <form action="/member/join" method="post" name="joinForm">
+                          <form>
                           	<input id="csrfToken" type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 	                          <div class="form-group">
 	                            <input type="text" name="musicName" id="musicSearcherForPlaylist" placeholder="" class="form-control">
+	                            <input type="text" style="display: none;"/>
 	                            <span class="form_icon">
 																<i class="fa_icon form-user" aria-hidden="true"></i>
 															</span>
