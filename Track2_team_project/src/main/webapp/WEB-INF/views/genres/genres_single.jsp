@@ -94,7 +94,6 @@
                 <div class="swiper-button-next2 slider_nav_next"></div>
                 <div class="swiper-button-prev2 slider_nav_prev"></div>
             </div>
-           
         </div>
      
 
