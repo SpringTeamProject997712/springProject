@@ -113,7 +113,12 @@
 	where rownum < 16
 	 ]]>
 	 </select>
-
+	<select id="allranking" resultType="com.music.domain.AlbumVO">
+	select rownum, tbno, name, singer, image_50, image_240, likes, pbno, abno, length
+	from (select * from toptrack order by likes desc)
+	
+	</select>
+	
 	<update id="updateAlbum">
 		update album_m set 
 		name=#{name}, singer=#{singer}, detail=#{detail}, price=#{price}, 

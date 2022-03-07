@@ -22,5 +22,8 @@ public class TopTrackController {
 		model.addAttribute("topalbum",service.topAlbums());
 		model.addAttribute("newly",service.newly());
 	}
-
+	@GetMapping("/ranking")
+	public void rankingView(Model model) {
+		model.addAttribute("allrank",service.allranking());
+	}
 }

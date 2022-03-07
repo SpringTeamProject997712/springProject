@@ -70,7 +70,10 @@ public class AlbumServiceImpl implements AlbumService {
 	public List<AlbumVO> topAlbums() {
 		return mapper.topAlbums();
 	}
-	
+	@Override
+	public List<AlbumVO> allranking() {
+		return mapper.allranking();
+	}
 	@Override
 	public List<AlbumVO> selectAlbumWithKeyword(String word){
 		return mapper.selectAlbumWithKeyword(word);

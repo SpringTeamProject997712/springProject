@@ -90,7 +90,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="ms_heading">
-                                <h1>Top 15 Albums</h1>
+                                <h1>Top 15 Tracks</h1>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-12 padding_right40">
