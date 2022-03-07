@@ -11,7 +11,8 @@
               	<!-- 검색 창 -->
               	<form id="pagingForm" action="/admin/notice/manage_notice" method="get">
 	              <div class="input-group" style="width:200px;">
-								 		<input class="form-control" name="keyword" type="text" placeholder="search notice" value="${pageMaker.cri.keyword}" aria-label="お知らせ検索">
+						 		<input class="form-control" name="keyword" type="text" placeholder="search notice" value="${pageMaker.cri.keyword}" aria-label="お知らせ検索">
+
 								  	<button class="btn btn-outline-secondary" type="submit" style="color:white; background:grey">検索</button>
 										<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 										<input type="hidden" name="amount" value="10">
@@ -42,8 +43,9 @@
                           <th scope="col">カテゴリー</th>
                           <th scope="col">タイトル</th>
                           <th scope="col">ヒット数</th>
-                          <th scope="col">日付</th>
+                          <th scope="col">登録日</th>
                           <th scope="col">修正/削除</th>
+
                         </tr>
                       </thead>
                       <tbody>
@@ -65,6 +67,7 @@
 									<fmt:formatDate value="${nodate }" pattern="yyyy-MM-dd"/></td>
 	                          <td>
 	                          	<div class="dropdown">
+
 									  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">メニュー</button>
 									  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
 									    <li><a class="dropdown-item" href="/admin/notice/view_notice?wbno=${list.wbno}">修正</a></li>
@@ -84,8 +87,8 @@
 					    </c:forEach>
 					    <li class="page-item ${pageMaker.next?'':'disabled'}"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
 					  </ul>					  
-					</nav>
-					<a class="btn" href="/admin/notice/notice_write" role="button" style="float:right;border:1px solid #000;">書き込み</a>
+					</nav><a class="btn" href="/admin/notice/notice_write" role="button" style="float:right;border:1px solid #000;">書き込み</a>
+
                 </div>
               </div>
             </div>

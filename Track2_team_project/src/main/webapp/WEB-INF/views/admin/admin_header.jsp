@@ -85,9 +85,9 @@
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
               <use href="/images/svg/free.svg#cil-puzzle"></use>
-            </svg> ユザー</a>
+            </svg> ユーザー</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="/admin/member/manage_member"><span class="nav-icon"></span> ユザー管理</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/member/manage_member"><span class="nav-icon"></span> ユーザー管理</a></li>
           </ul>
         </li>
         
@@ -146,7 +146,7 @@
             </svg></a>
           <ul class="header-nav ms-3">
             <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <div class="avatar avatar-md"><img class="avatar-img" src="/images/admin/8.jpg" alt="user@email.com"></div></a>
+                <div class="avatar avatar-md"><img src="/images/logo/motus_logo_only.svg" class="sidebar-brand-narrow" style="height:46px" alt="CoreUI Logo"></div></a>
               <div class="dropdown-menu dropdown-menu-end pt-0">
                 <div class="dropdown-header bg-light py-2">
                   <div class="fw-semibold">アクセス管理</div>

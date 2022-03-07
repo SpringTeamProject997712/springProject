@@ -12,7 +12,7 @@
                     <img src="${pageContext.request.contextPath}/upload/${view[0].image}" alt="" class="img-fluid">
                   </c:if>
                   <c:if test="${empty view[0].image}">
-                    <img src="/images/user1.jpg" alt="" class="img-fluid">
+                    <img src="/images/album/album1.jpg" alt="" class="img-fluid">
                   </c:if>
                 </div>
                 <input type="hidden" id="this_plbno" value="${this_plbno}">

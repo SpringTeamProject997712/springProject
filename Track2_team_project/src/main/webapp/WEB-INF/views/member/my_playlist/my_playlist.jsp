@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Best Classics Of All Time</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Heart Broken - Soul Music</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Dream Your Moments (Duet)</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -162,7 +162,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Until I Met You</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -189,7 +189,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Gimme Some Courage</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -216,7 +216,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Dark Alley Acoustic</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -243,7 +243,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Top Trendings</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -270,7 +270,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">New Romantic Charts</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -297,7 +297,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Dance Beats - Hip Hops</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -324,7 +324,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Workout Time</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -351,7 +351,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Best Classics Of All Time</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -378,7 +378,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Heart Broken - Soul Music</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -405,7 +405,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Dream Your Moments (Duet)</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -432,7 +432,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Until I Met You</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -459,7 +459,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Gimme Some Courage</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -486,7 +486,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Dark Alley Acoustic</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -513,7 +513,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Top Trendings</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -540,7 +540,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">New Romantic Charts</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -567,7 +567,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Dance Beats - Hip Hops</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -594,7 +594,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Workout Time</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -621,7 +621,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Best Classics Of All Time</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20 曲</p>
                                 </div>
                             </div>
                         </div>
@@ -648,7 +648,7 @@
                                 </div>
                                 <div class="ms_rcnt_box_text">
                                     <h3><a href="#">Heart Broken - Soul Music</a></h3>
-                                    <p>20 songs</p>
+                                    <p>20曲</p>
                                 </div>
                             </div>
                         </div>

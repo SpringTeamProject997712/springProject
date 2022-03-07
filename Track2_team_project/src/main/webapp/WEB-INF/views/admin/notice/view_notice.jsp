@@ -6,7 +6,7 @@
         <div class="container-lg">
           <div class="car"></div>
           <div class="card mb-4">
-            <div class="card-header"><strong>공지 관리</strong><span class="small ms-1">/　お知らせ確認 / 書き込み</span></div>
+            <div class="card-header"><strong>お知らせ管理</strong><span class="small ms-1">お知らせ確認 / 修正</span></div>
             <div class="card-body">
               
               <div class="example">
@@ -74,6 +74,7 @@
 									    <button class="btn btn-primary" type="button" onclick="location.href='/admin/notice/manage_notice'">戻る</button>
 									  </div>
 									</form>
+
                 </div>
               </div>
             </div>

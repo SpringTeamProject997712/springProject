@@ -308,6 +308,7 @@ $().ready(function(){
 		}
 	}
 	
+
 	$.ajax({
 		      type:"get",
 		      url:"/notice/recentnotice",
@@ -322,6 +323,7 @@ $().ready(function(){
 		         $(".ms_top_trend").html(newest_notice);
 		      }
 		   })
+
 })
 
 $(".fav_box").on("click", function(){

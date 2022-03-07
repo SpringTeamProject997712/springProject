@@ -7,16 +7,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-<<<<<<< HEAD
-				<h2>アクセス失敗</h2>
-=======
 				<c:if test="${not empty error}">
 					<h2>ログイン失敗</h2>
 				</c:if>
 				<c:if test="${empty error}">
 					<h2>ログインが必要なページです</h2>
 				</c:if>
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
 			</div>
 		</div>
 		<div class="row">

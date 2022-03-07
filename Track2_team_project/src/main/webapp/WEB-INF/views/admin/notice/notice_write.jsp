@@ -24,7 +24,7 @@
                 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 									  <div class="col-md-8">
 									    <label class="form-label" for="notice_title">タイトル</label>
-									    <input class="form-control" name="title" id="notice_title" type="text">
+							     	    <input class="form-control" name="title" id="notice_title" type="text">
 									  </div>
 									  <div class="col-md-4">
 									  	<label class="form-label" for="category">カテゴリー</label>

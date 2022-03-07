@@ -5,14 +5,14 @@
         <div class="container-lg">
           <div class="car"></div>
           <div class="card mb-4">
-            <div class="card-header"><strong>주문 관리</strong><span class="small ms-1">주문 목록</span></div>
+            <div class="card-header"><strong>注文管理</strong><span class="small ms-1">注文目録</span></div>
             <div class="card-body">
               <div class="text-medium-emphasis small">
               	<!-- 검색 창 -->
               	<form id="pagingForm" action="/admin/order/manage_order" method="get">
 	              <div class="input-group" style="width:200px;">
 				 		<input class="form-control" name="keyword" type="text" placeholder="search Album" value="${pageMaker.cri.keyword}" aria-label="주문자 검색">
-				  	<button class="btn btn-outline-secondary" type="submit" style="color:white; background:grey">검색</button>
+				  	<button class="btn btn-outline-secondary" type="submit" style="color:white; background:grey">検索</button>
 						<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 						<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
 						<input type="hidden" name="type" value="${pageMaker.cri.type}">
@@ -41,11 +41,11 @@
                       <thead>
                         <tr>                        
                           <th scope="col">#</th>
-                          <th scope="col">주문번호</th>
-                          <th scope="col">주문자</th>
-                          <th scope="col">총매출</th>
-                          <th scope="col">등록일</th>
-                          <th scope="col">기능</th>
+                          <th scope="col">注文番号</th>
+                          <th scope="col">注文者</th>
+                          <th scope="col">総売り上げ</th>
+                          <th scope="col">登録日</th>
+                          <th scope="col">機能</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -60,7 +60,7 @@
 	                          <td><fmt:formatDate value="${odlist.orderdate}" pattern="yyyy-MM-dd"/></td>
 	                          <td>
 	                          	<div class="dropdown">
-								  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">보기</button>
+								  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">確認</button>
 								  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
 								    <li><a class="dropdown-item" href="#">Another action</a></li>
 								    <li><a class="dropdown-item" href="#">Something else here</a></li>
