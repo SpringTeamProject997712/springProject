@@ -17,6 +17,10 @@
 		select * from track_m where tbno = #{tbno}
 	</select>
 	
+	<select id="selectLength" resultType="String">
+		select length from view_track_m where tbno = #{tbno}
+	</select>
+	
 	<select id="searchTrackList" resultType="com.music.domain.TrackVO">
 		select * from view_track_m where name like '%'||#{name}||'%'
 	</select>

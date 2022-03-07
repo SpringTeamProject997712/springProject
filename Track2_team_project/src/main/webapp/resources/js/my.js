@@ -612,7 +612,7 @@ $(".add_track_to_playlist").on("click",function(z){
             htmlForPlus += "<img src='../images/svg/play.svg' alt=''></div></div><div class='w_tp_song_name'>";
             htmlForPlus += "<h3><a href='#'>"+data.title+"</a></h3>";
             htmlForPlus += "<p>"+data.artist+"</p></div></div></div><div class='weekly_right'>"
-            htmlForPlus += "<span class='w_song_time'>5:10</span></div></div>"
+            htmlForPlus += "<span class='w_song_time'>"+data.length+"</span></div></div>"
             $("#the_track_choiced_by_you").html(htmlForPlus);
 		}
 	});

@@ -87,7 +87,10 @@ public class TrackServiceimpl implements TrackService {
 	public void deleteTrack(int pbno) {
 		pmapper.deleteProduct(pbno);
 	}
-
+	@Override
+	public String selectLength(int tbno) {
+		return mapper.selectLength(tbno);
+	}
 
 
 

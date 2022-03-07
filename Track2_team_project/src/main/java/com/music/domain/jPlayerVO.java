@@ -12,5 +12,7 @@ public class jPlayerVO { //jplayer 음악 재생 리스트
 	private String option;
 	private String image;
 	
+	private String length;
+	
 }
 
