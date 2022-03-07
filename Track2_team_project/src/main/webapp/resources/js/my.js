@@ -3,15 +3,15 @@ let join_id_token = false;
 function go_login() {                            //로그인
 	var idChk = $("#saveBtn").is(":checked");
 	if(document.loginForm.username.value == "") {
-		alert("아이디를 입력하세요");
+		alert("IDを入力してください");
 		document.loginForm.username.focus();
 		return false;
 	}else if(document.loginForm.password.value == "") {
-		alert("비밀번호 입력");
+		alert("パスワードを入力してください");
 		document.loginForm.password.focus();
 		return false;
 	}else if(idChk){ //체크박스에 체크 되어있으면 아이디 저장 쿠키(7일) 넣기
-		console.log("쿠키 넣기 가동");
+		console.log("クッキー入力可動");
 		deleteCookie("Cookie_mail");
 		setCookie("Cookie_mail", document.loginForm.username.value, 7); 
 	}else{ //안돼있으면 아이디 저장 쿠키 삭제하기
@@ -22,7 +22,7 @@ function go_login() {                            //로그인
 
 function delete_playlist(){
 	let this_plbno = $("#this_plbno").val();
-	if(confirm("정말로 삭제하시겠습니까?")){
+	if(confirm("本当に削除しますか?")){
 		location.href = "/createPlaylist/deletePlaylist?plbno="+this_plbno;
 	}
 }
@@ -94,16 +94,16 @@ $("#joinForm_id").on("blur",function(){ //아이디 입력창에서 blur할때�
 			console.log(data);
 			console.log(typeof data);
 			if(data == 1){
-				$("#msg_checked_id").text("중복 아이디입니다");
+				$("#msg_checked_id").text("すでに存在するIDです。");
 				document.getElementById('msg_checked_id').style.color = "red";
 				join_id_token = false;
 			}else{
-				$("#msg_checked_id").text("사용 가능한 아이디입니다");
+				$("#msg_checked_id").text("使用可能なIDです");
 				document.getElementById('msg_checked_id').style.color = "blue";
 				join_id_token = true;
 			}
 		},error:function(xhr, status, error){
-			alert("코드 : " + xhr.status + "\n메세지 : " + xhr.responseText + "\n에러 : " + error)
+			alert("CODE : " + xhr.status + "\nメッセージ : " + xhr.responseText + "\nエラー : " + error)
 		}
 	});
 })
@@ -374,7 +374,7 @@ $(".fav_box").on("click", function(){
 			}
 	})
 	}else{
-		alert("좋아요를 표시하기 위해 로그인이 필요합니다.");
+		alert("いいね！を表示するためにはログインが必要です。");
 	}
 })
 
@@ -503,7 +503,7 @@ $(".remove-from-cart").on("click", function(){
 
 $(".remove-all-cart").on("click", function(){
 	
-	if(confirm("정말로 삭제하시겠습니까? \n 장바구니가 전부 초기화 됩니다")){
+	if(confirm("本当に削除しますか? \n カートのリストがすべて消えます")){
 		$.ajax({
 			type:"get",
 			url:"/cart/deleteCart",
@@ -647,7 +647,7 @@ function go_add_track(){
 			console.log(xhr.r +"\n 내용 : " +xhr.reponseText+"\n 에러 : " +err);
 		},success:function(data){
 			if(data=='1'){
-				if(confirm("플레이 리스트로 이동하시겠습니까?")){
+				if(confirm("プレイリストに移動しますか?")){
 					location.href="/member/my_playlist/one_playlist?plbno="+this_form.select_playlist_selector.value;
 					$("#myModal2").modal('hide');
 				}else{
@@ -673,10 +673,10 @@ $("#allCheck").on("click",function(){
 function go_id_pw_cheker() {
 	let formm = document.form_checking_id;
 	if(!formm.your_email.value){
-		alert("로그인 해야 이용할 수 있습니다");
+		alert("ログインが必要です");
 		location.href="/";
 	}else if(!formm.your_pw.value){
-		alert("비밀번호를 입력하십씨오");
+		alert("パスワードを入力してください");
 		formm.your_pw.focus();
 	}else{
 		formm.method="post";

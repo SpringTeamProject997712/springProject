@@ -26,20 +26,20 @@ function findAddr(){ //우편번호 찾기
 function go_member_delete(clicked_ID){
 	
 	console.log(clicked_ID);
-	if(confirm("회원 "+clicked_ID+" : 정말로 비활설화 하시겠습니까?")){
+	if(confirm("会員 "+clicked_ID+" : 本当に非活動化にしますか?")){
 		$.ajax({
 			type:"get",
 			data:{id:clicked_ID},
 			url:"/convertMemberActive",
 			success:function(data){
 				if(data=='1'){
-					alert('비활성화되었습니다');
+					alert('非活動化しました');
 					document.location.reload();
 				}else(
-					alert("실패")
+					alert("失敗しました")
 				)
 			},error:function(xhr, status, error){
-				alert("코드 : " + xhr.status + "\n메세지 : " + xhr.responseText + "\n에러 : " + error)
+				alert("コード : " + xhr.status + "\nメッセージ : " + xhr.responseText + "\nエラー : " + error)
 			}
 		})
 	}
@@ -221,7 +221,7 @@ $(document).ready(function(){
 
 $(function(){
 	  $("#delete_track").click(function(){
-		confirm("정말로 삭제하겠습니까");
+		confirm("本当に削除しますか？");
 	    $(this).submit();
 	  });
 	});

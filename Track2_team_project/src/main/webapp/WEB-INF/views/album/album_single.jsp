@@ -36,11 +36,11 @@
 		<div class="album_list_wrapper">
 			<ul class="album_list_name">
 				<li>#</li>
-				<li>Song Title</li>
-				<li>Artist</li>
-				<li class="text-center">Duration</li>
-				<li class="text-center">Add To Favourites</li>
-				<li class="text-center">More</li>
+				<li>歌のタイトル</li>
+				<li>歌手</li>
+				<li class="text-center">時間</li>
+				<li class="text-center">いいね</li>
+				<li class="text-center">その他</li>
 			</ul>
 
 			<!-- track list start -->
@@ -124,12 +124,12 @@
                     </div>
                     <div class="ms_input_group1">
                       <div class="ms_input marger_top20">
-                        <textarea name="content" class="form-control" placeholder="Enter Your Comment Here.."></textarea>
+                        <textarea name="content" class="form-control" placeholder="ここにコメントを入力"></textarea>
                       </div>
                     </div>
                     <div class="ms_input_group2">
                       <div class="ms_input">
-                        <button type="submit" class="ms_btn">post your comment</button>
+                        <button type="submit" class="ms_btn">コメントを投稿</button>
                       </div>
                     </div>
                   </form>
@@ -139,8 +139,8 @@
 	<!----New Releases Section Start---->
 	<div class="ms_releases_wrapper">
 		<div class="ms_heading">
-			<h1>Newly Released Albums</h1>
-			<span class="veiw_all"><a href="/album/album">view more</a></span>
+			<h1>新しいアルバム</h1>
+			<span class="veiw_all"><a href="/album/album">もっと見る</a></span>
 		</div>
 		<div class="ms_release_slider swiper-container">
 			<div class="ms_divider"></div>

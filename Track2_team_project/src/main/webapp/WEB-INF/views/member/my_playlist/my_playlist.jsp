@@ -269,7 +269,7 @@
                                     </div>
                                 </div>
                                 <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">New Romantic Charts</a></h3>
+                                    <h3><a href="#">新しいロマンティックアルバム</a></h3>
                                     <p>20 曲</p>
                                 </div>
                             </div>
