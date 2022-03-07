@@ -71,11 +71,11 @@ public class TrackController {
 		if(!(auth.getPrincipal().equals("anonymousUser"))) {
 			CustomUser user = (CustomUser)auth.getPrincipal();
 			myName =user.getUsername();
-		
+		}
 		
 		Gson gson = new Gson();
 		json = gson.toJson(jvo);
-		}
+		
 		return json;
 	}
 	
