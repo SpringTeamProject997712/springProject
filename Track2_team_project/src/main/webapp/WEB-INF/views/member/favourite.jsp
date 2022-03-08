@@ -37,8 +37,8 @@
 							<li class="text-center"><a href="#">${flist.length }</a></li>
 							<li class="text-center"><a href="javascript:void(0)" class="fav_box" id="pbno_${flist.pbno}"> <span class="ms_icon1 ms_fav_icon"> </span>
 					</a></li>
-							<li class="text-center ms_more_icon" id="this_track_pbno_${view.pbno}"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
-								<div class="ms_play_icon" id="${view.tbno}" style="display: none;"></div>
+							<li class="text-center ms_more_icon" id="this_track_pbno_${flist.pbno}"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
+								<div class="ms_play_icon" id="${flist.tbno}" style="display: none;"></div>
 								<ul class="more_option">
 									<li><a href="javascript:void(0)" class="add_queue_one_track"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生リストに追加</a></li>
 									<li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
@@ -53,7 +53,6 @@
 						<!-- favourite song end -->
 						
 						<div class="ms_view_more">
-							<a href="#" class="ms_btn">ãã£ã¨è¦ã</a>
 						</div>
 					</div>
 				</div>
