@@ -18,8 +18,8 @@
 				<a href="#" class="album_date">${song } song | ${total }</a> <a href="#" class="album_date">Released ${view[0].regdate}
 			</div>
 			<div class="album_btn">
-				<a href="javascript:void(0)" class="ms_btn play_btn album_play_button" id="run_abno_${view[0].abno}"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">すべてを再生</span></a>
-				<a href="javascript:void(0)" class="ms_btn album_add_queue" id="run_abno_${view[0].abno}"> <span class=""><img src="/images/svg/add_q.svg" alt="">再生列に追加</span></a>
+				<a href="javascript:void(0)" class="ms_btn play_btn album_play_button" id="run_abno_${view[0].abno}"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">再生</span></a>
+				<a href="javascript:void(0)" class="ms_btn album_add_queue" id="run_abno_${view[0].abno}"> <span class=""><img src="/images/svg/add_q.svg" alt="">再生リストに追加</span></a>
 				<a href="javascript:void(0)" class="ms_btn insert_cart_btn"><span class=""><img src="/images/svg/right_arrow.svg" alt="">カートに追加</span></a>
 			</div>
 		</div>
@@ -27,8 +27,8 @@
 			<span><img src="/images/svg/more.svg" alt=""></span>
 		</div>
 		<ul class="more_option">
-			<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
-			<li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+			<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリスト追加</a></li>
+			<li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
 		</ul>
 	</div>
 	<!----Song List---->
@@ -40,7 +40,7 @@
 				<li>歌手</li>
 				<li class="text-center">時間</li>
 				<li class="text-center">いいね</li>
-				<li class="text-center">その他</li>
+				<li class="text-center">その他</li>	
 			</ul>
 
 			<!-- track list start -->
@@ -56,10 +56,10 @@
 					<li class="text-center ms_more_icon" id="this_track_pbno_${view.pbno}"><a href="javascript:;"><span class="ms_icon1 ms_active_icon"></span></a>
 						<div class="ms_play_icon" id="${view.tbno}" style="display: none;"></div>
 						<ul class="more_option">
-							<li><a href="javascript:void(0)" class="add_queue_one_track"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
+							<li><a href="javascript:void(0)" class="add_queue_one_track"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生リストに追加</a></li>
 							<li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
-							<li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
-							<li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+							<li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリスト追加</a></li>
+							<li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -139,7 +139,7 @@
 	<!----New Releases Section Start---->
 	<div class="ms_releases_wrapper">
 		<div class="ms_heading">
-			<h1>新しいアルバム</h1>
+			<h1>新しいアルバムのトラック</h1>
 			<span class="veiw_all"><a href="/album/album">もっと見る</a></span>
 		</div>
 		<div class="ms_release_slider swiper-container">

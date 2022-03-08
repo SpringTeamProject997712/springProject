@@ -113,6 +113,14 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 	public int deletePlaylist(PlaylistVO pvo) {
 		return mapper.deletePlaylist(pvo);
 	}
+	@Override
+	public int copyQueue(PlaylistVO pvo) {
+		int plbno = mapper.maxPlbno(pvo.getId());
+		int min_plbno = mapper.minPlbno(pvo.getId());
+		pvo.setMin_plbno(min_plbno);
+		pvo.setPlbno(plbno);
+		return mapper.copyQueue(pvo);
+	}
 
 //======================================= private =======================================	
 	
@@ -205,4 +213,6 @@ public class CreatePlaylistServiceImpl implements CreatePlaylistService {
 		log.info(jlist);
 		return jlist;
 	}
+	
+	
 }

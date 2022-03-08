@@ -4,11 +4,8 @@
             <div class="ms_profile_wrapper">
                 <h1>プロファイル設定</h1>
                 <div class="ms_profile_box">
-                    <div class="ms_pro_img">
-                        <img src="/upload/${memberList.image}" alt="" class="img-fluid">
-                        <div class="pro_img_overlay">
-                            <i class="fa_icon edit_icon"></i>
-                        </div>
+                    <div class="ms_pro_img" style="cursor: default;">
+                        <img src="/upload/${memberList.image}" alt="" class="img-fluid" >
                     </div>
                     <form action="/member/id_pw_checker" name="form_checking_id" method="post">
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">

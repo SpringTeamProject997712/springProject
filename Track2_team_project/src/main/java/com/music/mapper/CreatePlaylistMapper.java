@@ -73,4 +73,7 @@ public interface CreatePlaylistMapper {
 	//플레이리스트 이미지 가져오기
 	public ViewPlaylistDetailVO selectPlaylistImage(int plbno);
 	public int deletePlaylist(PlaylistVO pvo);
+	
+	//플레이리스트에 큐 복사해 넣기
+	public int copyQueue(PlaylistVO pvo);
 }

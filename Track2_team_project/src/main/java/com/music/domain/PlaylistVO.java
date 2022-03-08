@@ -12,6 +12,7 @@ public class PlaylistVO {
 //===============Detail====================
 	
 	private int pdbno;
+	private int min_plbno;
 	private int abno;
 	private int tbno;
 	

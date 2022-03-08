@@ -25,7 +25,7 @@
 								<input class="form-control" name="name" id="album_name" type="text" value="${album.name}">
 							</div>
 							<div class="col-md-4">
-								<label class="form-label" for="album_singer">歌手</label>
+								<label class="form-label" for="album_singer">アーティスト</label>
 								<input class="form-control" name="singer" id="album_singer" type="text" value="${album.singer}">
 							</div>
 							<div class="col-md-4">
