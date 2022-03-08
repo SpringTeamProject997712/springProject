@@ -800,7 +800,7 @@ function go_purchase() {
 			}
 			your_cart += data.aname;
 			if(data.pbno!=1){
-				your_cart += "외 "+ (data.pbno-1) +" 개";
+				your_cart += " 他 "+ (data.pbno-1) +" 個";
 			}
 			your_cart += "</span>";
 			$(".cartlistForPurchase").html(your_cart);

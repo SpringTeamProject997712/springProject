@@ -95,7 +95,7 @@
 											<tr>
 												<td>
 													<div class="product-item">
-														<a class="product-thumb" href="/album/album_single?abno=${cartList.abno }"><img src="${pageContext.request.contextPath}/upload/${cartList.timage}" alt="Product"></a>
+														<a class="product-thumb" href="javascript:void(0)"><img src="${pageContext.request.contextPath}/upload/${cartList.timage}" alt="Product"></a>
 														<div class="product-info">
 															<h4 class="product-title">
 																<a href="/album/album_single?abno=${cartList.abno}">${cartList.tname}</a>
