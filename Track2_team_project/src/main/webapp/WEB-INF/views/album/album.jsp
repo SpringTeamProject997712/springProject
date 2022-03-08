@@ -293,9 +293,26 @@
                                         </div>
                                     </div>
                                     <div class="w_tp_song_name">
-                                        <h3><a href="/album/album_single?abno=${newly.abno}">${newly.tname}</a></h3>
-                                        <p>${newly.name}</p>
-                                    </div>
+									<h3>
+									<c:choose>
+										<c:when test="${f:length(newly.tname)>9 }">
+											<a href="/album/album_single?abno=${newly.abno}"><c:out value="${f:substring(newly.tname,0,8)}"/>…</a>
+										</c:when>
+										<c:otherwise>
+											<a href="/album/album_single?abno=${newly.abno}">${newly.tname}</a>
+										</c:otherwise>
+									</c:choose>
+									</h3>
+									<c:choose>
+										<c:when test="${f:length(newly.name)>13 }">
+											<p><c:out value="${f:substring(newly.name,0,12)}"/>…</p>
+										</c:when>
+										<c:otherwise>
+											<p>${newly.name}</p>
+										</c:otherwise>
+									</c:choose>
+									
+								</div>
                                 </div>
                                 <div class="weekly_right">
                                     <span class="w_song_time">${newly.length}</span>

@@ -109,7 +109,7 @@
             <!----Comment Form section Start---->
             <div class="ms_cmnt_wrapper">
                 <div class="ms_heading">
-                    <h1>コメントを投稿</h1>
+                    <h1>コメント投稿</h1>
                 </div>
                 <div class="ms_cmnt_form">
                   <form name="album_comment_form" method="post" action="/review/writeReview">
@@ -129,7 +129,7 @@
                     </div>
                     <div class="ms_input_group2">
                       <div class="ms_input">
-                        <button type="submit" class="ms_btn">コメントを投稿</button>
+                        <button type="submit" class="ms_btn">コメント投稿</button>
                       </div>
                     </div>
                   </form>
@@ -147,7 +147,7 @@
 			<div class="swiper-wrapper">
 
 				<!-- newly start -->
-				<c:forEach var="newly" items="${newly}">
+				<c:forEach var="newly" items="${newly}">	
 					<div class="swiper-slide">
 						<div class="ms_release_box">
 							<div class="w_top_song">
@@ -163,9 +163,24 @@
 								</div>
 								<div class="w_tp_song_name">
 									<h3>
-										<a href="/album/album_single?abno=${newly.abno}">${newly.tname}</a>
+									<c:choose>
+										<c:when test="${f:length(newly.tname)>9 }">
+											<a href="/album/album_single?abno=${newly.abno}"><c:out value="${f:substring(newly.tname,0,8)}"/>…</a>
+										</c:when>
+										<c:otherwise>
+											<a href="/album/album_single?abno=${newly.abno}">${newly.tname}</a>
+										</c:otherwise>
+									</c:choose>
 									</h3>
-									<p>${newly.name}</p>
+									<c:choose>
+										<c:when test="${f:length(newly.name)>13 }">
+											<p><c:out value="${f:substring(newly.name,0,12)}"/>…</p>
+										</c:when>
+										<c:otherwise>
+											<p>${newly.name}</p>
+										</c:otherwise>
+									</c:choose>
+									
 								</div>
 							</div>
 							<div class="weekly_right">
@@ -175,7 +190,7 @@
 					</div>
 				</c:forEach>
 				<!-- newly end -->
-
+				
 			</div>
 		</div>
 		<!-- Add Arrows -->
