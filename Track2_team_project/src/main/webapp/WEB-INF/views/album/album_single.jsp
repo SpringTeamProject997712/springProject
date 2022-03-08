@@ -35,8 +35,8 @@
 	<div class="album_inner_list">
 		<div class="album_list_wrapper">
 			<ul class="album_list_name">
-				<li>#</li>
-				<li>歌のタイトル</li>
+				<li style="width:4%">#</li>
+				<li style="width:28%">歌のタイトル</li>
 				<li>歌手</li>
 				<li class="text-center">時間</li>
 				<li class="text-center">いいね</li>
@@ -47,8 +47,8 @@
 			<c:set value="${1}" var="num" />
 			<c:forEach var="view" items="${view}">
 				<ul>
-					<li><a class="play_track_in_album" id="${view.tbno}" href="javascript:void(0)"><span class="play_no">${num}</span><span class="play_hover"></span></a></li>
-					<li><a href="#">${view.tname}</a></li>
+					<li style="width:4%"><a class="play_track_in_album" id="${view.tbno}" href="javascript:void(0)"><span class="play_no">${num}</span><span class="play_hover"></span></a></li>
+					<li style="width:28%"><a href="#">${view.tname}</a></li>
 					<li><a href="#">${view.singer}</a></li>
 					<li class="text-center"><a href="#">${view.length }</a></li>
 					<li class="text-center"><a href="javascript:void(0)" class="fav_box" id="pbno_${view.pbno}"> <span class="ms_icon1 ms_fav_icon"> </span>

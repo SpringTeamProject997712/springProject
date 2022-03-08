@@ -61,7 +61,7 @@
                                             </div>
                                         </div>
                                         <div class="w_tp_song_name">
-                                            <h3><a href="#">${top.name}</a></h3>
+                                            <h3><a href="/album/album_single?abno=${top.abno}">${top.name}</a></h3>
                                             <p>${top.singer}</p>
                                         </div>
                                     </div>
@@ -106,7 +106,7 @@
                                             </div>
                                         </div>
                                         <div class="w_tp_song_name">
-                                            <h3><a href="#">${top.name}</a></h3>
+                                            <h3><a href="/album/album_single?abno=${top.abno}">${top.name}</a></h3>
                                             <p>${top.singer}</p>
                                         </div>
                                     </div>
@@ -151,7 +151,7 @@
                                             </div>
                                         </div>
                                         <div class="w_tp_song_name">
-                                            <h3><a href="#">${top.name}</a></h3>
+                                            <h3><a href="/album/album_single?abno=${top.abno}">${top.name}</a></h3>
                                             <p>${top.singer}</p>
                                         </div>
                                     </div>
