@@ -12,4 +12,5 @@ public class ReplyVO {
 	private String id;
 	private String content;
 	private Date rdate;
+	private String image;
 }
