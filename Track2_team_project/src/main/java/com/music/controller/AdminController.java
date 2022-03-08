@@ -229,8 +229,20 @@ public class AdminController {
 	
 	@GetMapping("/track/manage_track") //상품관리 - 상품 리스트 보기
 	public void viewTrackList(int abno, Model model) {
+		String[] genre = {
+				"ロマンチック",
+				"ヒップホップ",
+				"ダンシング",
+				"ロック",
+				"ジャズ",
+				"メタル",
+				"ポップ",
+				"インディーズ",
+				"ソウル"	
+		};	
 		List<TrackVO> tlist = tService.viewTrackListWithPaging(abno);
 		model.addAttribute("trackList", tlist);
+		model.addAttribute("genre", genre);
 	}
 	
 	@GetMapping("/track/view_track") //상품관리 - 상품 세부사항 보기

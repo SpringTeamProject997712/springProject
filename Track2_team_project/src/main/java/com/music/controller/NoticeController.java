@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.google.gson.Gson;
 import com.music.domain.NoticeVO;
 import com.music.service.NoticeService;
+import com.music.service.ReplyService;
 import com.music.utility.Criteria;
 
 import lombok.Setter;
@@ -32,6 +33,9 @@ public class NoticeController {
 	@Setter(onMethod_= @Autowired)
 	private NoticeService service;
 	
+	@Setter(onMethod_= @Autowired)
+	private ReplyService rservice;
+	
 	@GetMapping("/notice")
 	public void listNotice(Model model,Criteria cri) {
 		List<NoticeVO> nlist = service.viewNoticeListWithPaging(cri);
@@ -43,6 +47,7 @@ public class NoticeController {
 	@GetMapping("/notice_single")
 	public void notice_single(Model model, @RequestParam("wbno")int wbno) {
 		model.addAttribute("view",service.readNotice(wbno));
+		model.addAttribute("reply", rservice.selectReply(wbno));
 		service.viewcountNotice(wbno);
 	}
 	

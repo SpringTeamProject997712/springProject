@@ -11,7 +11,7 @@
               	<!-- 검색 창 -->
               	<form id="pagingForm" action="/admin/order/manage_order" method="get">
 	              <div class="input-group" style="width:200px;">
-				 		<input class="form-control" name="keyword" type="text" placeholder="search Album" value="${pageMaker.cri.keyword}" aria-label="주문자 검색">
+				 		<input class="form-control" name="keyword" type="text" placeholder="search Album" value="${pageMaker.cri.keyword}" aria-label="注文者検索">
 				  	<button class="btn btn-outline-secondary" type="submit" style="color:white; background:grey">検索</button>
 						<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 						<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
@@ -62,7 +62,7 @@
 	                          	<div class="dropdown">
 								  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">確認</button>
 								  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-								    <li><a class="dropdown-item" href="/admin/order/manage_orderdetail?orderid=${odlist.orderid}&id=${odlist.id}">오더 디테일 보기</a></li>
+								    <li><a class="dropdown-item" href="/admin/order/manage_orderdetail?orderid=${odlist.orderid}&id=${odlist.id}">注文詳細</a></li>
 								    <li><a class="dropdown-item" href="#">Something else here</a></li>
 								    <li>
 								      <hr class="dropdown-divider">
@@ -72,7 +72,7 @@
 								    	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 										<input type="hidden" name="orderid" value="${odlist.orderid}">
 										
-									    <input type="submit" class="dropdown-item" value="주문 삭제">
+									    <input type="submit" class="dropdown-item" value="注文削除">
 									</form>
 									</li>
 								  </ul>

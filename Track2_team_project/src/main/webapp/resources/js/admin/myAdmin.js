@@ -30,7 +30,7 @@ function go_member_delete(clicked_ID){
 		$.ajax({
 			type:"get",
 			data:{id:clicked_ID},
-			url:"/convertMemberActive",
+			url:"/member/convertMemberActive",
 			success:function(data){
 				if(data=='1'){
 					alert('非活動化しました');

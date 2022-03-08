@@ -55,7 +55,7 @@
 	                          <td><fmt:formatDate value="${mlist.regdate}" pattern="yyyy-MM-dd"/></td>
 	                          <td>
 												<div class="dropdown">
-													<button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">보기</button>
+													<button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">確認</button>
 													<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
 														<li><a class="dropdown-item" href="/admin/member/view_member?id=${mlist.id}">詳細情報照会 / 修正</a></li>
 														<li><a class="dropdown-item" id="${mlist.id}" onclick="go_member_delete(this.id)" href="javascript:void(0)">ID無効化</a></li>

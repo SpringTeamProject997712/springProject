@@ -36,8 +36,8 @@
 		<div class="album_list_wrapper">
 			<ul class="album_list_name">
 				<li style="width:4%">#</li>
-				<li style="width:28%">歌のタイトル</li>
-				<li>歌手</li>
+				<li style="width:28%">タイトル</li>
+				<li>アーティスト</li>
 				<li class="text-center">時間</li>
 				<li class="text-center">いいね</li>
 				<li class="text-center">その他</li>	

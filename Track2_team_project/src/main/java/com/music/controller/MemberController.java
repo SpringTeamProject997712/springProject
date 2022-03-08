@@ -208,7 +208,7 @@ public class MemberController {
 		}
 		return myName;
 	}
-	
+	@ResponseBody
 	@GetMapping("/convertMemberActive")
 	public String convertMemberActive(String id) {
 		int result = service.updateMemberActive(id);
