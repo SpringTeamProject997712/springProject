@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
             <!---Weekly Top 15--->
             <div class="ms_weekly_wrapper">
@@ -6,7 +8,7 @@
                     	<div class="col-lg-1"></div>
                         <div class="col-lg-11">
                             <div class="ms_heading">
-                                <h1>ALL RANKING</h1>
+                                <h1>全体ランキング</h1>
                             </div>
                         </div>
                         <div class="col-lg-12">
