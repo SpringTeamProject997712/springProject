@@ -51,12 +51,7 @@
 						</ul>
 						</c:forEach>
 						<!-- favourite song end -->
-						
-						<div class="ms_view_more">
-<<<<<<< HEAD
-							<a href="#" class="ms_btn">もっと見る</a>
-=======
->>>>>>> branch 'master' of https://github.com/SpringTeamProject997712/springProject.git
+
 						</div>
 					</div>
 				</div>

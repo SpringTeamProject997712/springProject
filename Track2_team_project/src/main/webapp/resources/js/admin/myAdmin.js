@@ -71,19 +71,19 @@ function go_update_notice(){
 function go_upload_notice() {
 	
 	if(upload_notice.title.value=="") {
-		alert("please input title");
+		alert("タイトルを入力してください");
 		upload_notice.uploadImage.focus();
 		return false;
 	}
 	
 	if(upload_notice.content.value=="") {
-		alert("please input content");
+		alert("本文を入力してください");
 		upload_notice.content.focus();
 		return false;
 	}
 	
 	if(upload_notice.header.value=="") {
-		alert("please select header");
+		alert("カテゴリーを選択してください");
 		upload_notice.header.focus();
 		return false;
 	}
