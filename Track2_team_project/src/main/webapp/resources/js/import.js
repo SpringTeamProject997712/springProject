@@ -61,8 +61,9 @@ function go_this_purchase(my_pg){
 	    	})
 	    	
 	    	}//if
+	    	document.purchaseForm.submit();
 	    }//this if
-	    document.purchaseForm.submit();
+	    
 	});	
 }
 

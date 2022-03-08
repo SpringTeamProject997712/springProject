@@ -19,7 +19,7 @@
 						</c:when>
 						<c:otherwise>
 							<div class="ms_heading">
-								<h1>Account Overview</h1>
+								<h1>カートリスト</h1>
 							</div>
 							<div class="container padding-bottom-3x mb-1">
 								<!-- Shopping Cart-->
@@ -141,7 +141,7 @@
 									</div>
 									
 									<div class="column text-lg" style="color:white;">
-										Subtotal: <span class="text-medium">
+										総額 <span class="text-medium">
 										<fmt:setLocale value="ja_jp" />
 										<fmt:formatNumber type="currency" value="${sum}" currencySymbol="￥" maxFractionDigits="0" />
 										</span>

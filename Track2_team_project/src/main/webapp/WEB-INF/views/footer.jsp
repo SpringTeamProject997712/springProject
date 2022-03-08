@@ -371,30 +371,38 @@
 				<button type="button" class="close" id="my_modal_close_btn" data-dismiss="modal">
 					<i class="fa_icon form_close"></i>
 				</button>
-				<p>お買い上げ</p>
+				<p style="font-size: 30px; font-weight: bolder;color: white;">お買い上げ</p>
 				<div class="cartlistForPurchase black_some_box_mini">
 				</div>
 				<div class="couponForPurchase form-group">
-					<label>クーポン</label>
+					<label style="font-size: 20px; font-weight: bolder;color: white;">クーポン</label>
 					<select name="coupon_selector" class="form-control" id="coupon_selector" style="width:70%; display: inline-block; margin-top: 10px; float:right;">
 					</select>
 				</div>
 				<div class="form-group padding_top_10">
-					<label>総額</label>
-					<input type="text" class="final_totalPrice form-control" id="final_totalPrice" style="width:40%" readonly="readonly">
+					<label style="font-size: 20px; font-weight: bolder;color: white;">値段</label>
+					<input type="text" class="final_totalPrice form-control" id="final_totalPrice" style="width:40%;font-size: 20px;" readonly="readonly">
 				</div>
 				<div class="form-group padding_top_10">
-					<label>割引になる総額</label>
-					<input type="text" class="real_final_totalPrice form-control" id="real_final_totalPrice" style="width:40%;" readonly="readonly">
+					<label style="font-size: 20px; font-weight: bolder;color: white;padding-top:10px;">割引総額</label>
+					<input type="text" class="real_final_totalPrice form-control" id="real_final_totalPrice" style="width:40%;font-size: 20px;font-weight: bolder;" readonly="readonly">
 				</div>
-				<div class="purchase_buttons">
-					<a onclick="go_this_purchase(this.id)" href="javascript:void(0)" id="html5_inicis">
-						<img alt="카드결제" src="/images/card_rufwp.jpg" width="250px" height="100px">
+				<div class="purchase_buttons" style="text-align:center;padding-top:30px;">
+<!-- 					<a onclick="go_this_purchase(this.id)" href="javascript:void(0)" id="html5_inicis"> -->
+<!-- 						<img alt="카드결제" src="/images/card_rufwp.jpg" width="250px" height="100px"> -->
+<!-- 					</a> -->
+					<a onclick="go_this_purchase(this.id)" href="javascript:void(0)" id="html5_inicis" class="animoBubble5"style="width:140px;">
+						決済へ
 					</a>
+					<a onclick="go_this_purchase(this.id)" href="javascript:void(0)" id="paypal" class="animoBubble5"style="width:140px;">
+					<span class="paypal-logo">
+				    <i>Pay</i><i>Pal</i>
+				  </span>
+					</a>	
 					
-					<a onclick="go_this_purchase(this.id)" href="javascript:void(0)" id="paypal">
-						<img alt="페이팔결제" src="/images/paypal.png" width="250px" height="100px">
-					</a>
+<!-- 					<a onclick="go_this_purchase(this.id)" href="javascript:void(0)" id="paypal"> -->
+<!-- 						<img alt="페이팔결제" src="/images/paypal.png" width="250px" height="100px"> -->
+<!-- 					</a> -->
 				</div>
 				
 			</div>

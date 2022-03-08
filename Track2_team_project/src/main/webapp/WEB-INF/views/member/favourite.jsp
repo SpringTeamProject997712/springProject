@@ -51,7 +51,6 @@
 						</ul>
 						</c:forEach>
 						<!-- favourite song end -->
-			
 						<div class="ms_view_more">
 						</div>
 					</div>

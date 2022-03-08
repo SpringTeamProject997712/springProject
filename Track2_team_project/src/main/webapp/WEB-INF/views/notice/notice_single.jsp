@@ -76,7 +76,7 @@
 								<div class="blog_comments_forms" style="padding-top: 0px;">
 								<c:forEach items="${reply}" var="comments">
 									<div id="div-comment-114" class="comment-body ms_comment_section">
-										<div class="comment-author vcard comment_img"><img src="../images/author.png" class="avatar avatar-80 photo" height="80" width="80" loading="lazy">
+										<div class="comment-author vcard comment_img"><img src="/upload/${comments.image }" class="avatar avatar-80 photo" height="80" width="80" >
 										</div>
 										<div class="comment-meta commentmetadata comment_info">
 						
