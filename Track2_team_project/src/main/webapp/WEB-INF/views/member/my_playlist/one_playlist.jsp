@@ -37,7 +37,7 @@
                     <span><img src="/images/svg/more.svg" alt=""></span>
                 </div>
                 <ul class="more_option">
-                    <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                    <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
                 </ul>
             </div>
             <!----Song List---->
@@ -118,7 +118,7 @@
             <!----New Releases Section Start---->
             <div class="ms_releases_wrapper">
                 <div class="ms_heading">
-                    <h1>新しいアルバム</h1>
+                    <h1>新しいアルバムのトラック</h1>
                     <span class="veiw_all"><a href="#">もっと見る</a></span>
                 </div>
                 <div class="ms_release_slider swiper-container">
