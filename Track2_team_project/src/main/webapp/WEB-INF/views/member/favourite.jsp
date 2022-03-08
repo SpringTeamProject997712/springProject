@@ -53,7 +53,7 @@
 						<!-- favourite song end -->
 						
 						<div class="ms_view_more">
-							<a href="#" class="ms_btn">ãã£ã¨è¦ã</a>
+							<a href="#" class="ms_btn">もっと見る</a>
 						</div>
 					</div>
 				</div>
