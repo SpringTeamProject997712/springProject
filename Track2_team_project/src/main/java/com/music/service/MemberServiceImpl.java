@@ -2,7 +2,14 @@ package com.music.service;
 
 import java.util.List;
 
+import javax.mail.internet.MimeMessage;
+
+import org.omg.CORBA.CTX_RESTRICT_SCOPE;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.music.domain.ChartVO;
@@ -30,6 +37,9 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Setter(onMethod_ = @Autowired)
 	CreatePlaylistMapper cmapper; 
+	
+	@Setter(onMethod_ = @Autowired)
+	private JavaMailSender mailSender;
 	
 	//회원가입
 	@Override
@@ -155,7 +165,10 @@ public class MemberServiceImpl implements MemberService {
 	public List<OrderListVO> orderDetailList(OrderVO ovo) {
 		return mapper.orderDetailList(ovo);
 	}
-
+	@Override
+	public int update_pw(MemberVO mvo) {
+		return mapper.update_pw(mvo);
+	}
 	@Override
 	public List<OrderListVO> orderTrackList(OrderVO ovo) {
 		return mapper.orderTrackList(ovo);
@@ -198,4 +211,52 @@ public class MemberServiceImpl implements MemberService {
 	public List<OrderVO> viewOrderListWithPaging(Criteria cri) {
 		return mapper.viewOrderListWithPaging(cri);
 	}
+	
+	// 이메일 발송
+		@Override
+		public void send_mail(MemberVO member){
+			
+			// 임시 비밀번호 소환
+			String pw = "";
+			for (int i = 0; i < 12; i++) {
+				pw += (char) ((Math.random() * 26) + 97);
+			}
+			member.setPw(pw);
+			log.info(member);
+			
+			// 보내는 사람 EMail, 제목, 내용
+			String setFrom = "motus@jsltrack6.com";
+			String title = "";
+			String msg = "";
+			
+			title = "MOTUS 臨時パスワードです";
+			msg += member.getId() + "の臨時パスワードです。パスワードを修正してお使いください。";
+			msg += "臨時パスワード :  ";
+			msg += member.getPw();
+			
+			// 받는 사람 E-Mail 주소
+			String mail = member.getId();
+			
+			try {
+	            
+	            MimeMessage message = mailSender.createMimeMessage();
+	            MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
+	            helper.setFrom(setFrom);
+	            helper.setTo(mail);
+	            helper.setSubject(title);
+	            helper.setText(msg);
+	            mailSender.send(message);
+	            
+	            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+				member.setPw(encoder.encode(member.getPw()));
+				mapper.update_pw(member);
+	            
+	        }catch(Exception e) {
+	            e.printStackTrace();
+	        }
+				
+				
+			
+			
+		}
 }

@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
             <!----Edit Profile Wrapper Start---->
@@ -33,6 +34,10 @@
 											  <div class="col-md-6 form-group">
 											    <label for="member_name">Name</label>
 											    <input class="form-control" name="name" id="member_name" type="text" value="${memberList.name}">
+											  </div>
+											  <div class="col-md-9 form-group">
+											    <label for="member_name">Password</label>
+											    <input class="form-control" name="pw" id="member_password" type="password" value="" placeholder="修正したい場合はパスワードを入力してください">
 											  </div>
 											  <div class="col-md-4 form-group">
 											  	<label for="zip">Zip</label>

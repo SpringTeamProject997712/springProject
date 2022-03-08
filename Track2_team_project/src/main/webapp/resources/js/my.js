@@ -821,6 +821,32 @@ function go_notice_search(){
 	let form = document.searchform;
 	form.action = "/notice/notice";
 	form.submit();
-
 }
+
+function open_pw(){$('#reset_password').slideDown();}
+
+function go_reset_pw(){
+	let id = $("#how_your_id").val();
+	$.ajax({
+		type:"get",
+		url:"member/checkId?id="+id,
+		success:function(data){
+			console.log(data);
+			console.log(typeof data);
+			if(data == 1){
+				let instant_msg = "パスワードが初期化され、新しいパスワードが「"+id+"」で送信されます。 続行しますか？"
+				if(confirm(instant_msg)){
+					location.href="/search/send_email?id="+id;
+				}else{
+					return false;
+				}
+			}else{
+				alert("すでに存在しないIDです");
+			}
+		},error:function(xhr, status, error){
+			alert("CODE : " + xhr.status + "\nメッセージ : " + xhr.responseText + "\nエラー : " + error)
+		}
+	});
+}
+
 

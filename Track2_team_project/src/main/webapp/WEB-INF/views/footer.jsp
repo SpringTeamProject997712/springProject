@@ -251,7 +251,14 @@
 							</div>
 							<a href="javascript:go_login()" class="ms_btn">ログイン</a>
 							<div class="popup_forgot">
-								<a href="#">パスワードを忘れましたか？</a>
+								<a href="javascript:open_pw()">パスワードを忘れましたか？</a>
+								<div class="black_some_box" id="reset_password" style="height:120px; display: none;">
+									<div class="form-group" style="margin-top:20px;">
+										<label style="color:white;">IDを入力してください</label>
+										<input id="how_your_id" name="find_id" type="text">
+										<a class="ms_btn" style="cursor: pointer;" href="javascript:go_reset_pw()">入力</a>
+									</div>
+								</div>
 							</div>
 						</form>
 						<p>
