@@ -3,18 +3,20 @@
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="/resources/css/mycart.css" rel="stylesheet">
+
 <div class="ms_account_wrapper" style="padding-left: 0">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<c:if test="${not empty error}">
+				<c:if test="${not empty param.error}">
 					<h2>ログイン失敗</h2>
 				</c:if>
-				<c:if test="${empty error}">
+				<c:if test="${empty param.error}">
 					<h2>ログインが必要なページです</h2>
 				</c:if>
 			</div>
 		</div>
+		<div><p>${param.error}</p></div>
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="ms_acc_overview">
