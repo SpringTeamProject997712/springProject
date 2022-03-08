@@ -260,4 +260,22 @@ public class CreatePlaylistController {
 		return result;
 	}
 	
+	@ResponseBody
+	@GetMapping("/copyQueue")
+	public String copyQueue() {
+		PlaylistVO pvo = new PlaylistVO();
+		String result = "";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!(auth.getPrincipal().equals("anonymousUser"))) {
+			CustomUser user = (CustomUser)auth.getPrincipal();
+			String myName =user.getUsername();
+			pvo.setId(myName);
+			pvo.setName("CopyQueue"+(service.countPlaylist(myName)+1));
+			service.insertPlaylist(pvo);
+			if(service.copyQueue(pvo)>0) {
+				result = ""+service.maxPlbno(myName);
+			}
+		}
+		return result;
+	}
 }

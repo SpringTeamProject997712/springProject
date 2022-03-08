@@ -97,10 +97,8 @@
 					</div>
 					<div class="play_song_options">
 						<ul>
-							<li><a href="#"><span class="song_optn_icon"><i class="ms_icon icon_download"></i></span>ダウンロード</a></li>
-							<li><a href="#"><span class="song_optn_icon"><i class="ms_icon icon_fav"></i></span>お気に入りに追加</a></li>
-							<li><a href="#"><span class="song_optn_icon"><i class="ms_icon icon_playlist"></i></span>リストに追加</a></li>
-							<li><a href="#"><span class="song_optn_icon"><i class="ms_icon icon_share"></i></span>共有</a></li>
+							<li><a href="javascript:void(0)" class="add_now_track_to_playlist"><span class="song_optn_icon"><i class="ms_icon icon_playlist"></i></span>リストに追加</a></li>
+							<li><a href="javascript:void(0)" class="share_this_page"><span class="song_optn_icon"><i class="ms_icon icon_share"></i></span>共有</a></li>
 						</ul>
 					</div>
 					<span class="play-left-arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
@@ -119,7 +117,7 @@
 							</ul>
 						</div>
 						<div class="jp_queue_btn">
-							<a href="javascript:;" class="ms_clear" data-toggle="modal" data-target="#clear_modal">クリア</a> <a href="clear_modal" class="ms_save" data-toggle="modal" data-target="#save_modal">セーブ</a>
+							<a href="javascript:;" class="ms_clear" data-toggle="modal" data-target="#clear_modal">クリア</a> <a href="javascript:void(0)" class="ms_save">セーブ</a>
 						</div>
 					</div>
 				</div>
@@ -251,7 +249,14 @@
 							</div>
 							<a href="javascript:go_login()" class="ms_btn">ログイン</a>
 							<div class="popup_forgot">
-								<a href="#">パスワードを忘れましたか？</a>
+								<a href="javascript:open_pw()">パスワードを忘れましたか？</a>
+								<div class="black_some_box" id="reset_password" style="height:120px; display: none;">
+									<div class="form-group" style="margin-top:20px;">
+										<label style="color:white;">IDを入力してください</label>
+										<input id="how_your_id" name="find_id" type="text">
+										<a class="ms_btn" style="cursor: pointer;" href="javascript:go_reset_pw()">入力</a>
+									</div>
+								</div>
 							</div>
 						</form>
 						<p>
@@ -426,7 +431,7 @@
 					<i class="fa_icon form_close"></i>
 				</button>
 				<div class="modal-body">
-					<h1>ログインして素敵なプレイリストを公有してみませんか？</h1>
+					<h1>ログインして素敵なプレイリストをシェアしてみませんか？</h1>
 					<div class="save_modal_btn">
 						<a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i> グーグルアカウントでログイン</a> <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i> フェイスブックIDでログイン</a>
 					</div>

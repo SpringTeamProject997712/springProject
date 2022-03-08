@@ -71,7 +71,7 @@
 									  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">メニュー</button>
 									  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
 									    <li><a class="dropdown-item" href="/admin/notice/view_notice?wbno=${list.wbno}">修正</a></li>
-									    <li><a class="dropdown-item" href="/admin/notice/deletenotice?wbno=${list.wbno }">削除</a></li>
+									    <li><a class="dropdown-item" href="/admin/notice/deleteNotice?wbno=${list.wbno }">削除</a></li>
 									  </ul>
 								</div>
 	                          </td>

@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
             <!---Recently Played Music--->
             <div class="ms_rcnt_slider marger_top60">
@@ -23,12 +25,9 @@
                                                 <img src="/images/svg/more.svg" alt="">
                                             </div>
                                            <ul class="more_option">
-	                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>お気に入りに追加</a></li>
-	                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
-	                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
-	                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
-	                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
-	                                        </ul>
+												<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリスト追加</a></li>
+												<li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
+											</ul>
                                             <div class="ms_play_icon">
                                                 <img src="/images/svg/play.svg" alt="">
                                             </div>
@@ -52,7 +51,7 @@
             
              <div class="ms_releases_wrapper">
                 <div class="ms_heading">
-                    <h1>新しいアルバム</h1>
+                    <h1>新しいアルバムのトラック</h1>
                     <span class="veiw_all"><a href="/album/album">もっと見る</a></span>
                 </div>
                 <div class="ms_release_slider swiper-container">
@@ -75,9 +74,26 @@
                                         </div>
                                     </div>
                                     <div class="w_tp_song_name">
-                                        <h3><a href="/album/album_single?abno=${newly.abno}">${newly.tname}</a></h3>
-                                        <p>${newly.name}</p>
-                                    </div>
+									<h3>
+									<c:choose>
+										<c:when test="${f:length(newly.tname)>9 }">
+											<a href="/album/album_single?abno=${newly.abno}"><c:out value="${f:substring(newly.tname,0,8)}"/>…</a>
+										</c:when>
+										<c:otherwise>
+											<a href="/album/album_single?abno=${newly.abno}">${newly.tname}</a>
+										</c:otherwise>
+									</c:choose>
+									</h3>
+									<c:choose>
+										<c:when test="${f:length(newly.name)>13 }">
+											<p><c:out value="${f:substring(newly.name,0,12)}"/>…</p>
+										</c:when>
+										<c:otherwise>
+											<p>${newly.name}</p>
+										</c:otherwise>
+									</c:choose>
+									
+								</div>
                                 </div>
                                 <div class="weekly_right">
                                     <span class="w_song_time">${newly.length}</span>

@@ -30,14 +30,14 @@
                     </div>
                     <div class="album_btn">
                         <a href="javascript:void(0)" class="ms_btn play_btn playlist_play_button" id="go_plbno_${this_plbno}"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">すべてを再生</span></a>
-                        <a href="#" class="ms_btn playlist_add_queue" id="addPlbno_${this_plbno}"><span class="play_all"><img src="/images/svg/add_q.svg" alt="">再生列に追加</span></a>
+                        <a href="#" class="ms_btn playlist_add_queue" id="addPlbno_${this_plbno}"><span class="play_all"><img src="/images/svg/add_q.svg" alt="">再生リストに追加</span></a>
                     </div>
                 </div>
                 <div class="album_more_optn ms_more_icon">
                     <span><img src="/images/svg/more.svg" alt=""></span>
                 </div>
                 <ul class="more_option">
-                    <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                    <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
                 </ul>
             </div>
             <!----Song List---->
@@ -118,7 +118,7 @@
             <!----New Releases Section Start---->
             <div class="ms_releases_wrapper">
                 <div class="ms_heading">
-                    <h1>新しいアルバム</h1>
+                    <h1>新しいアルバムのトラック</h1>
                     <span class="veiw_all"><a href="#">もっと見る</a></span>
                 </div>
                 <div class="ms_release_slider swiper-container">

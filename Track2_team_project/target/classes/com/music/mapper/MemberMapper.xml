@@ -109,7 +109,7 @@
 	<![CDATA[	
 	select rownum, tbno, tname, name, price, lbno, likes, id, pbno ,length
     from (select * from myfavourites order by lbno asc)
-    where rownum > 0 and id=#{id}
+    where rownum > 0 and likes='1' and id=#{id}
 	]]>
 	</select>
 	
@@ -259,4 +259,7 @@
 	<select id="countAllMoney" resultType="int">
 		select sum(amount) as sum from order_m
 	</select>
+	<update id="update_pw" parameterType="com.music.domain.MemberVO">
+		update member_m set pw = #{pw} where id = #{id}
+	</update>
 </mapper>

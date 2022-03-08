@@ -40,7 +40,7 @@
                       <thead>
                         <tr>
                           <th scope="col">タイトル</th>
-                          <th scope="col">歌手</th>
+                          <th scope="col">アーティスト</th>
                           <th scope="col">値段</th>
                           <th scope="col">登録日</th>
                           <th scope="col">機能</th>

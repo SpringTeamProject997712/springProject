@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
             <!---Weekly Top 15--->
             <div class="ms_weekly_wrapper">
@@ -5,8 +7,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="ms_heading">
-                                <h1>Top 15 Tracks</h1>
-                                <span class="veiw_all"><a href="/toptrack/ranking?pageName=menu_top_track">view more</a></span>
+                                <h1>ベスト１５曲</h1>
+                                <span class="veiw_all"><a href="/toptrack/ranking?pageName=menu_top_track">もっと見る</a></span>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-12">
@@ -152,7 +154,7 @@
             <!---Featured Artists Music--->
             <div class="ms_featured_slider">
                 <div class="ms_heading">
-                    <h1>Top Tracks Of All Time</h1>
+                    <h1>名誉のランキング</h1>
                 </div>
                 <div class="ms_feature_slider swiper-container">
                     <div class="swiper-wrapper">
@@ -197,8 +199,8 @@
             <!----New Releases Section Start---->
             <div class="ms_releases_wrapper">
                 <div class="ms_heading">
-                    <h1>Newly Released Albums</h1>
-                    <span class="veiw_all"><a href="/album/album?pageName=menu_album">view more</a></span>
+                    <h1>新しいアルバムのトラック</h1>
+                    <span class="veiw_all"><a href="/album/album?pageName=menu_album">もっと見る</a></span>
                 </div>
                 <div class="ms_release_slider swiper-container">
                     <div class="ms_divider"></div>

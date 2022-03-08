@@ -32,7 +32,7 @@
     from playlist_detail_m pd, playlist_m pl
     where pl.plbno = pd.plbno(+) 
 		group by pl.name, pl.id, pl.plbno
-		having id = #{id}
+		having id = #{id} order by plbno asc
 	</select>
 	
 	<select id="selectBasicPlaylistPrimaryKey" resultType="int">
@@ -109,6 +109,13 @@
 	<update id="modifyPlaylist">
 		update playlist_m set name = #{name} where plbno = #{plbno} and id = #{id}
 	</update>
+	
+	<insert id="copyQueue">
+		insert into playlist_detail_m(pdbno, abno, tbno, plbno)
+    select PLAYLIST_DETAIL_M_SEQ.nextval, abno, tbno, #{plbno}
+    from playlist_detail_m 
+    where plbno = #{min_plbno}
+	</insert>
 	
 	<select id="myPlaylistView" resultType="com.music.domain.ViewPlaylistDetailVO">
 		select pl.plbno, count(pd.pdbno) as count, sum(pd.duration) as duration, (LPAD ((TRUNC ( sum(pd.duration) / 60)), 2, '0')

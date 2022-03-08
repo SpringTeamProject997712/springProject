@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
             <!----Edit Profile Wrapper Start---->
@@ -31,28 +32,32 @@
 											    <input class="form-control" name="id" id="member_id" type="text" value="${memberList.id}" readonly="readonly">
 											  </div>
 											  <div class="col-md-6 form-group">
-											    <label for="member_name">Name</label>
+											    <label for="member_name">名前</label>
 											    <input class="form-control" name="name" id="member_name" type="text" value="${memberList.name}">
 											  </div>
+											  <div class="col-md-9 form-group">
+											    <label for="member_name">パスワード</label>
+											    <input class="form-control" name="pw" id="member_password" type="password" value="" placeholder="修正したい場合はパスワードを入力してください">
+											  </div>
 											  <div class="col-md-4 form-group">
-											  	<label for="zip">Zip</label>
+											  	<label for="zip">郵便番号</label>
 											  	<div class="input-group">
 												    <input class="form-control" name="zipnum" id="member_post" type="text" value="${memberList.zipnum}" readonly="readonly">
-												    <button class="btn ms_btn" type="button" onclick="findAddr()">zipを探す</button> 
+												    <button class="btn ms_btn" type="button" onclick="findAddr()" style="font-size:15px;">zip検索</button> 
 											  	</div>
 											  </div>
 											  <div class="col-8 form-group">
 												</div>
 											  <div class="col-7 form-group">
-											    <label for="member_address1">Address</label>
+											    <label for="member_address1">住所 - 1</label>
 											    <input class="form-control" name="address1" id="member_addr" type="text" value="${memberList.address1}" readonly="readonly">
 											  </div>
 											  <div class="col-9 form-group">
-											    <label for="inputAddress2">Address 2</label>
+											    <label for="inputAddress2">住所 - 2</label>
 											    <input class="form-control" name="address2" id="inputAddress2" type="text" value="${memberList.address2}">
 											  </div>
 											  <div class="col-7 form-group">
-											    <label for="inputPhone">Phone</label>
+											    <label for="inputPhone">電話番号</label>
 											    <input class="form-control " name="phone" id="inputPhone" type="text" value="${memberList.phone}">
 											  </div>
 											  <div class="col-12 form-group">
@@ -64,8 +69,8 @@
 											    <input name="your_home" type="hidden" value="1">
 											  </div>
 											  <div class="col-12 marger_top15">
-											    <button class="btn btn-primary ms_btn" type="button" onclick="go_update()">修正</button>
-											    <button class="btn btn-primary ms_btn" type="reset">リセット</button>
+											    <button class="btn btn-primary ms_btn" type="button" onclick="go_update()" style="font-size: 20px;">修正</button>
+											    <button class="btn btn-primary ms_btn" type="reset" style="font-size: 20px;">リセット</button>
 											  </div>
 											</form>
                     </div>

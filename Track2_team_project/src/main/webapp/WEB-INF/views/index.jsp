@@ -21,8 +21,8 @@
                                 <h1 class="ms_color"><a href="/album/album_single?abno=${bestAlbum.abno}&pageName=menu_album">${bestAlbum.name}</a></h1>
                                 <p>${bestAlbum.detail }</p>
                                 <div class="ms_banner_btn">
-                                    <a href="/album/album_single?abno=${bestAlbum.abno}&pageName=menu_album" class="ms_btn">Go Now</a>
-                                    <a href="javascript:void(0)" class="ms_btn album_add_queue" id="run_abno_${bestAlbum.abno}">Add To Queue</a>
+                                    <a href="/album/album_single?abno=${bestAlbum.abno}&pageName=menu_album" class="ms_btn">アルバムへ</a>
+                                    <a href="javascript:void(0)" class="ms_btn album_add_queue" id="run_abno_${bestAlbum.abno}">再生リストに追加</a>
                                 </div>
                             </div>
                         </div>
@@ -37,8 +37,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="ms_heading">
-                                <h1>Top 15 Tracks</h1>
-                                <span class="veiw_all"><a href="/toptrack/ranking?pageName=menu_top_track">view more</a></span>
+                                <h1>ベスト１５</h1>
+                                <span class="veiw_all"><a href="/toptrack/ranking?pageName=menu_top_track">もっと見る</a></span>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-12 padding_right40">
@@ -61,7 +61,7 @@
                                             </div>
                                         </div>
                                         <div class="w_tp_song_name">
-                                            <h3><a href="#">${top.name}</a></h3>
+                                            <h3><a href="/album/album_single?abno=${top.abno}">${top.name}</a></h3>
                                             <p>${top.singer}</p>
                                         </div>
                                     </div>
@@ -73,11 +73,10 @@
 																</span>
                                 </div>
                                 <ul class="more_option">
-                                    <li><a href="javascript:void(0)" class="add_queue_one_track_top"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                    <li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                    <li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                    <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
-                                </ul>
+                                  <li><a href="javascript:void(0)" class="add_queue_one_track_top"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生リストに追加</a></li>
+								<li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
+								<li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリスト追加</a></li>
+								<li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
                             </div>
 							
                             <div class="ms_divider"></div>
@@ -106,7 +105,7 @@
                                             </div>
                                         </div>
                                         <div class="w_tp_song_name">
-                                            <h3><a href="#">${top.name}</a></h3>
+                                            <h3><a href="/album/album_single?abno=${top.abno}">${top.name}</a></h3>
                                             <p>${top.singer}</p>
                                         </div>
                                     </div>
@@ -119,10 +118,10 @@
 																</span>
                                 </div>
                                 <ul class="more_option">
-                                    <li><a href="javascript:void(0)" class="add_queue_one_track_top"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                    <li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                    <li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                    <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
+                                   <li><a href="javascript:void(0)" class="add_queue_one_track_top"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生リストに追加</a></li>
+							<li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
+							<li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリスト追加</a></li>
+							<li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
                                 </ul>
                             </div>
 
@@ -151,7 +150,7 @@
                                             </div>
                                         </div>
                                         <div class="w_tp_song_name">
-                                            <h3><a href="#">${top.name}</a></h3>
+                                            <h3><a href="/album/album_single?abno=${top.abno}">${top.name}</a></h3>
                                             <p>${top.singer}</p>
                                         </div>
                                     </div>
@@ -163,10 +162,10 @@
 																</span>
                                 </div>
                                 <ul class="more_option">
-                                  <li><a href="javascript:void(0)" class="add_queue_one_track_top"><span class="opt_icon"><span class="icon icon_queue"></span></span>Add To Queue</a></li>
-                                  <li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>Add Cart</a></li>
-                                  <li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>Add To Playlist</a></li>
-                                  <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>Share</a></li>
+                                  <li><a href="javascript:void(0)" class="add_queue_one_track_top"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生リストに追加</a></li>
+																	<li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
+																	<li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリスト追加</a></li>
+																	<li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>	
                                 </ul>
                             </div>
 
@@ -195,8 +194,8 @@
             <!----New Releases Section Start---->
             <div class="ms_releases_wrapper">
                 <div class="ms_heading">
-                    <h1>New Releases</h1>
-                    <span class="veiw_all"><a href="/album/album">view more</a></span>
+                    <h1>新しいアルバムのトラック</h1>
+                    <span class="veiw_all"><a href="/album/album">もっと見る</a></span>
                 </div>
                 <div class="ms_release_slider swiper-container">
                     <div class="ms_divider"></div>
@@ -236,8 +235,8 @@
         
             <div class="ms_fea_album_slider padder_top10 ">
                 <div class="ms_heading">
-                    <h1>Featured Albums</h1>
-                    <span class="veiw_all"><a href="#">view more</a></span>
+                    <h1>おすすめのアルバム</h1>
+                    <span class="veiw_all"><a href="/album/album">もっと見る</a></span>
                 </div>
                 <div class="ms_album_slider swiper-container">
                     <div class="swiper-wrapper">
@@ -279,8 +278,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="ms_heading">
-                            <h1>Top Genres</h1>
-                            <span class="veiw_all"><a href="/genres/genres">view more</a></span>
+                            <h1>トップ　ジャンル</h1>
+                            <span class="veiw_all"><a href="/genres/genres">もっと見る</a></span>
                         </div>
                     </div>
                     <div class="col-lg-4">

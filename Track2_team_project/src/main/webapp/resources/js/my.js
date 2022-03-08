@@ -636,6 +636,59 @@ $(".add_track_to_playlist").on("click",function(z){
 	});
 	$("#myModal2").modal();
 })
+//밑에 있는 바에서 플레이리스트 추가하기
+$(".add_now_track_to_playlist").on("click",function(z){
+	z.preventDefault();
+	let tbno=$(this).parent().parent().parent().parent().find('span.que_img').attr('id').substring(12);
+	let my_playlist ="";
+	
+	var aaaa = now_login_checker();
+	console.log(aaaa);
+	if(!aaaa){
+	$("#myModal1").modal();
+	alert("ログインをしてください");
+	return false;
+	}
+	$.ajax({
+		type:"get",
+		url:"/createPlaylist/selectMyPlaylist",
+		error:function(xhr,r,err){
+			console.log(xhr.r +"\n 내용 : " +xhr.reponseText+"\n 에러 : " +err);
+		},success:function(data){
+			my_playlist = JSON.parse(data);
+			let htmlForPlus ="";
+			for(var i=0; i<my_playlist.length; i++ ){
+				if(my_playlist[i].name != 'basic_playlist'){
+					htmlForPlus += "<option value='"+my_playlist[i].plbno+"'>"+my_playlist[i].name+"</option>";
+				}
+			}
+			$("#select_playlist").html(htmlForPlus);
+		}
+	});
+	document.go_to_playlist.this_tbno_will_go_to_playlist.value=tbno;
+	$.ajax({
+		type:"get",
+		url:"/track/selectTrackInJplayer",
+		data:{tbno:tbno},
+		async:false,
+		error:function(xhr,r,err){
+			console.log(xhr.r +"\n 내용 : " +xhr.reponseText+"\n 에러 : " +err);
+		},success:function(data){
+			data = JSON.parse(data);
+			let htmlForPlus ="";
+			htmlForPlus += "<div class='ms_weekly_box'><div class='weekly_left'><span class='w_top_no'>";
+			htmlForPlus += "</span><div class='w_top_song'><div class='w_tp_song_img'><img src='/upload/";
+			htmlForPlus += data.image+"' alt=''><div class='ms_song_overlay'></div>";
+            htmlForPlus += "<div class='ms_play_icon' id='"+data.tbno+"'>";
+            htmlForPlus += "<img src='../images/svg/play.svg' alt=''></div></div><div class='w_tp_song_name'>";
+            htmlForPlus += "<h3><a href='#'>"+data.title+"</a></h3>";
+            htmlForPlus += "<p>"+data.artist+"</p></div></div></div><div class='weekly_right'>"
+            htmlForPlus += "<span class='w_song_time'>"+data.length+"</span></div></div>"
+            $("#the_track_choiced_by_you").html(htmlForPlus);
+		}
+	});
+	$("#myModal2").modal();
+})
 
 function go_add_track(){
 	let this_form = document.go_to_playlist;
@@ -747,7 +800,7 @@ function go_purchase() {
 			}
 			your_cart += data.aname;
 			if(data.pbno!=1){
-				your_cart += "외 "+ (data.pbno-1) +" 개";
+				your_cart += " 他 "+ (data.pbno-1) +" 個";
 			}
 			your_cart += "</span>";
 			$(".cartlistForPurchase").html(your_cart);
@@ -802,7 +855,7 @@ $("#coupon_selector").on("change", function(){
 
 function fn_sendFB(sns) {
     var thisUrl = document.URL;
-    var snsTitle = "Miraculos - listen music";
+    var snsTitle = "MOTUS - GROOVE GAIN";
     if( sns == 'facebook' ) {
         var url = "http://www.facebook.com/sharer/sharer.php?href="+encodeURIComponent(thisUrl);
         window.open(url, "", "width=520, height=286"); //로컬 서버가 아니면 href ===> u 로 바꿔야함
@@ -821,6 +874,54 @@ function go_notice_search(){
 	let form = document.searchform;
 	form.action = "/notice/notice";
 	form.submit();
-
 }
+
+function open_pw(){$('#reset_password').slideDown();}
+
+function go_reset_pw(){
+	let id = $("#how_your_id").val();
+	$.ajax({
+		type:"get",
+		url:"member/checkId?id="+id,
+		success:function(data){
+			console.log(data);
+			console.log(typeof data);
+			if(data == 1){
+				let instant_msg = "パスワードが初期化され、新しいパスワードが「"+id+"」で送信されます。 続行しますか？"
+				if(confirm(instant_msg)){
+					location.href="/search/send_email?id="+id;
+				}else{
+					return false;
+				}
+			}else{
+				alert("すでに存在しないIDです");
+			}
+		},error:function(xhr, status, error){
+			alert("CODE : " + xhr.status + "\nメッセージ : " + xhr.responseText + "\nエラー : " + error)
+		}
+	});
+}
+
+$(".ms_save").on("click",function(){
+	let login_pass = now_login_checker();
+	if(login_pass){
+		if(confirm("現在キューを利用してプレイリストを作成しますか")){
+			$.ajax({
+				type:"get",
+				url:"/createPlaylist/copyQueue",
+				error:function(xhr,sts,err){
+					alert(xhr.sts + xhr.responseText + err);
+				},success:function(data){
+					console.log(data);
+					if(confirm("新しいプレイリストに移動しますか。")){
+						location.href="/member/my_playlist/one_playlist?plbno="+data;
+					}
+				}
+			})
+		}
+	}else{
+		alert("ログインしてください。");
+		("#modal1").modal();
+	}
+})
 

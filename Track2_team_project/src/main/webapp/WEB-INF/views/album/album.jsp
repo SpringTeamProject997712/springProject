@@ -90,7 +90,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="ms_heading">
-                                <h1>トップの１５曲</h1>
+                                <h1>ベスト１５曲</h1>
                                 <span class="veiw_all"><a href="/toptrack/ranking?pageName=menu_top_track">もっと見る</a></span>
                             </div>
                         </div>
@@ -215,10 +215,10 @@
 																</span>
                                 </div>
                                 <ul class="more_option">
-                                    <li><a href="javascript:void(0)" class="add_queue_one_track_top"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
+                                    <li><a href="javascript:void(0)" class="add_queue_one_track_top"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生リストに追加</a></li>
                                     <li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに入れる</a></li>
                                     <li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
-                                    <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                    <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
                                 </ul>
                             </div>
                             <div class="ms_divider"></div>
@@ -250,7 +250,7 @@
                                     </div>
                                 </div>
                                 <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">${list.singer}</a></h3>
+                                    <h3><a href="/album/album_single?abno=${list.abno}">${list.singer}</a></h3>
                                 </div>
                             </div>
                         </div>
@@ -266,7 +266,7 @@
             <!----New Releases Section Start---->
             <div class="ms_releases_wrapper">
                 <div class="ms_heading">
-                    <h1>新しいアルバム</h1>
+                    <h1>新しいアルバムのトラック</h1>
                 </div>
                 <div class="ms_release_slider swiper-container">
                     <div class="ms_divider"></div>
@@ -293,9 +293,26 @@
                                         </div>
                                     </div>
                                     <div class="w_tp_song_name">
-                                        <h3><a href="/album/album_single?abno=${newly.abno}">${newly.tname}</a></h3>
-                                        <p>${newly.name}</p>
-                                    </div>
+									<h3>
+									<c:choose>
+										<c:when test="${f:length(newly.tname)>9 }">
+											<a href="/album/album_single?abno=${newly.abno}"><c:out value="${f:substring(newly.tname,0,8)}"/>…</a>
+										</c:when>
+										<c:otherwise>
+											<a href="/album/album_single?abno=${newly.abno}">${newly.tname}</a>
+										</c:otherwise>
+									</c:choose>
+									</h3>
+									<c:choose>
+										<c:when test="${f:length(newly.name)>13 }">
+											<p><c:out value="${f:substring(newly.name,0,12)}"/>…</p>
+										</c:when>
+										<c:otherwise>
+											<p>${newly.name}</p>
+										</c:otherwise>
+									</c:choose>
+									
+								</div>
                                 </div>
                                 <div class="weekly_right">
                                     <span class="w_song_time">${newly.length}</span>

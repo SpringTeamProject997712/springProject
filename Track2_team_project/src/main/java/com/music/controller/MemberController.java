@@ -162,6 +162,13 @@ public class MemberController {
 		}
 		
 		service.updateMember(mvo);
+		log.info("이게 지금의 비밀번호 입니다 : "+mvo.getPw());
+		if(!(mvo.getPw().equals(""))) {
+			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+			mvo.setPw(encoder.encode(mvo.getPw()));
+			service.update_pw(mvo);
+		}
+		
 		String go_home="";
 		if(your_home==1) {
 			go_home="redirect:/member/inner_profile?id="+mvo.getId();
