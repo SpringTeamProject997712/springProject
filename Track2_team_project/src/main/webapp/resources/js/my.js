@@ -802,7 +802,7 @@ $("#coupon_selector").on("change", function(){
 
 function fn_sendFB(sns) {
     var thisUrl = document.URL;
-    var snsTitle = "Miraculos - listen music";
+    var snsTitle = "MOTUS - GROOVE GAIN";
     if( sns == 'facebook' ) {
         var url = "http://www.facebook.com/sharer/sharer.php?href="+encodeURIComponent(thisUrl);
         window.open(url, "", "width=520, height=286"); //로컬 서버가 아니면 href ===> u 로 바꿔야함
@@ -849,4 +849,26 @@ function go_reset_pw(){
 	});
 }
 
+$(".ms_save").on("click",function(){
+	let login_pass = now_login_checker();
+	if(login_pass){
+		if(confirm("現在キューを利用してプレイリストを作成しますか")){
+			$.ajax({
+				type:"get",
+				url:"/createPlaylist/copyQueue",
+				error:function(xhr,sts,err){
+					alert(xhr.sts + xhr.responseText + err);
+				},success:function(data){
+					console.log(data);
+					if(confirm("新しいプレイリストに移動しますか。")){
+						location.href="/member/my_playlist/one_playlist?plbno="+data;
+					}
+				}
+			})
+		}
+	}else{
+		alert("ログインしてください。");
+		("#modal1").modal();
+	}
+})
 
