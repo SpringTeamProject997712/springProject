@@ -28,7 +28,7 @@
                     printData += "<div class='weekly_left'>";
                     printData += "<div class='w_top_song'>";
 	    			printData += "<div class='w_tp_song_img'><img src='/upload/"+data[i].image_50+"' alt='' class='img-fluid'>";
-	    			printData += "<div class='ms_song_overlay'></div><div class='ms_play_icon'><img src='/images/svg/play.svg' alt=''></div>";
+	    			printData += "<div class='ms_song_overlay'></div><div class='ms_play_icon instantly_play_track' id='"+data[i].tbno+"'><img src='/images/svg/play.svg' alt=''></div>";
 	    			printData += "</div><div class='w_tp_song_name'><h3><a href='/album/album_single?abno="+data[i].abno+"&pageName=menu_album'>"+data[i].tname+"</a></h3><p>"+data[i].singer+"</p></div></div></div>";
 	    			printData += "<div class='weekly_right'>";
 					printData += "</div></div><div class='ms_divider'></div>";

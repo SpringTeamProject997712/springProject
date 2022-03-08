@@ -19,4 +19,5 @@ public interface CreatePlaylistService {
 	public int modifyPlaylist(PlaylistVO pvo);
 	public PlaylistVO selectJustOnePlaylist(int plbno);
 	public int deletePlaylist(PlaylistVO pvo);
+	public int copyQueue(PlaylistVO pvo);
 }

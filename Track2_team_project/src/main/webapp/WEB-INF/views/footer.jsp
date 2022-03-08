@@ -119,7 +119,7 @@
 							</ul>
 						</div>
 						<div class="jp_queue_btn">
-							<a href="javascript:;" class="ms_clear" data-toggle="modal" data-target="#clear_modal">クリア</a> <a href="clear_modal" class="ms_save" data-toggle="modal" data-target="#save_modal">セーブ</a>
+							<a href="javascript:;" class="ms_clear" data-toggle="modal" data-target="#clear_modal">クリア</a> <a href="javascript:void(0)" class="ms_save">セーブ</a>
 						</div>
 					</div>
 				</div>
