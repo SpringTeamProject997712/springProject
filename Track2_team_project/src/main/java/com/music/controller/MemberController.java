@@ -162,8 +162,7 @@ public class MemberController {
 		}
 		
 		service.updateMember(mvo);
-		log.info("이게 지금의 비밀번호 입니다 : "+mvo.getPw());
-		if(!(mvo.getPw().equals(""))) {
+		if(!(mvo.getPw().equals(""))||!(mvo.getPw()==null)) {
 			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 			mvo.setPw(encoder.encode(mvo.getPw()));
 			service.update_pw(mvo);

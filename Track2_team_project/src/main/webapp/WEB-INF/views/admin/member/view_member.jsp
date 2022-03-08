@@ -12,16 +12,32 @@
 	            	<h3>${member.id} : ${member.name}の情報</h3> 
 							</div>
               <div class="example">
-               <!--  <ul class="nav nav-tabs" role="tablist">
-                  <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#preview-687" role="tab">
-                    <svg class="icon me-2">
-                      <use href="/images/svg/free.svg#cil-media-play"></use>
-                    </svg>Preview</a>
-                  </li>
-                </ul> -->
+               <div class="ms_pro_img">
+               	
                 <div class="tab-content rounded-bottom">
-                	<form name="privacyForm" method="post" class="row g-3">
+                	<form name="privacyForm" method="post" class="row g-3" enctype="multipart/form-data">
                 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+                		<input type="hidden" name="target_url">
+		                		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+		                		<input type="file" accept=".png, .jpg" name="uploadImage" id="this_file" style="display: none;">
+		                		<script>
+												  $("#this_file").change(function(){
+												   if(this.files && this.files[0]) {
+												    var reader = new FileReader;
+												    reader.onload = function(data) {
+												     $("#my_profile_img").attr("src", data.target.result).width(155);        
+												    }
+												    reader.readAsDataURL(this.files[0]);
+												   }
+												  });
+												</script>
+										<div class="col-md-10">
+											<label class="form-label" style="width:100%;">プロフィール</label>
+			                <img src="/upload/${member.image}" id="my_profile_img" alt="" class="img-fluid target_img" style="cursor: pointer;">
+			                  <div class="pro_img_overlay" id="target_img">
+			                    <i class="fa_icon edit_icon"></i>
+			                  </div>
+			              </div>
 									  <div class="col-md-6">
 									    <label class="form-label" for="member_id">ID</label>
 									    <input class="form-control" name="id" id="member_id" type="text" value="${member.id}" readonly="readonly">
@@ -52,12 +68,10 @@
 									    <input class="form-control" name="phone" id="inputPhone" type="text" value="${member.phone}">
 									  </div>
 									  <div class="col-md-2">
-									    <label class="form-label" for="inputState">アカウント有効化</label>
-									    <select class="form-select" name="active" id="inputState">
-									      <option value="0" selected>有効化</option>
-									      <option value="1">無効化</option>
-									    </select>
+									    <!-- <label class="form-label" for="inputState">アカウント有効化</label> -->
+									    <input type="hidden" value="1" name="active" id="inputState">
 									    <input name="your_home" type="hidden" value="0">
+									    <input name="pw" type="hidden" value="">
 									  </div>
 									  <div class="col-12">
 									   <!--  <div class="form-check">
@@ -77,3 +91,10 @@
         </div>
       </div>
 <%@ include file="../admin_footer.jsp" %>
+<script>
+		$('.target_img').click(function (e) {
+		    document.privacyForm.target_url.value = document.getElementById( 'my_profile_img' ).src;
+		    e.preventDefault();
+		    $('#this_file').click();
+		}); 
+		</script>
