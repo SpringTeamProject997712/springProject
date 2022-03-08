@@ -42,19 +42,27 @@
                         	<tr>
 	                          <td scope="row" ><a class="namelink" href="manage_track?abno=${tlist.tbno}">${tlist.name}</a></td>
 	                          <td><audio controls src="/upload/${tlist.songrealname }"></audio></td>
-	                          <td>${tlist.genre}</td>
-	                          <td>${tlist.price}</td>
+	                          <td>
+									<c:if test="${tlist.genre eq 1}">ロマンチック</c:if>	
+									<c:if test="${tlist.genre eq 2}">ヒップホップ</c:if>	
+									<c:if test="${tlist.genre eq 3}">ダンシング</c:if>	
+									<c:if test="${tlist.genre eq 4}">ロック</c:if>	
+									<c:if test="${tlist.genre eq 5}">ジャズ</c:if>	
+									<c:if test="${tlist.genre eq 6}">メタル</c:if>	
+									<c:if test="${tlist.genre eq 7}">ポップ</c:if>	
+									<c:if test="${tlist.genre eq 8}">インディーズ</c:if>	
+									<c:if test="${tlist.genre eq 9}">ソウル</c:if>	
+								
+	                          </td>
+	                          <td>
+	                          <fmt:setLocale value="ja_jp"/><fmt:formatNumber type="currency" value="${tlist.price}" currencySymbol="￥" maxFractionDigits="0" />
+	                          </td>
 	                          <td>${tlist.songname}</td>
 	                          <td>
 	                          	<div class="dropdown">
 								  <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">確認</button>
 								  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
 								    <li><a class="dropdown-item" href="/admin/track/view_track?tbno=${tlist.tbno}">詳細情報照会 / 修正</a></li>
-								    <li><a class="dropdown-item" href="#">Another action</a></li>
-								    <li><a class="dropdown-item" href="#">Something else here</a></li>
-								    <li>
-								      <hr class="dropdown-divider">
-								    </li>
 								    <li>
 								    <form role="form" name="deleteForm" method="post" action="/track/deleteTrack">
 								    	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
