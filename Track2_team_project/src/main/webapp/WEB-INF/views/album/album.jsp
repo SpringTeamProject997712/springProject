@@ -90,7 +90,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="ms_heading">
-                                <h1>トップの１５曲</h1>
+                                <h1>ベスト１５曲</h1>
                                 <span class="veiw_all"><a href="/toptrack/ranking?pageName=menu_top_track">もっと見る</a></span>
                             </div>
                         </div>
@@ -218,7 +218,7 @@
                                     <li><a href="javascript:void(0)" class="add_queue_one_track_top"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
                                     <li><a href="javascript:void(0)" class="add_track_to_cart"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに入れる</a></li>
                                     <li><a href="javascript:void(0)" class="add_track_to_playlist"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
-                                    <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                    <li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
                                 </ul>
                             </div>
                             <div class="ms_divider"></div>
@@ -266,7 +266,7 @@
             <!----New Releases Section Start---->
             <div class="ms_releases_wrapper">
                 <div class="ms_heading">
-                    <h1>新しいアルバム</h1>
+                    <h1>新しいアルバムのトラック</h1>
                 </div>
                 <div class="ms_release_slider swiper-container">
                     <div class="ms_divider"></div>

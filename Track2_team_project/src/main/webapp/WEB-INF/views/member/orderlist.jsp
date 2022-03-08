@@ -80,7 +80,7 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
                                         </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
@@ -107,7 +107,7 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
                                         </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
@@ -134,7 +134,7 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
                                          </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
@@ -161,7 +161,7 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
                                          </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
@@ -188,7 +188,7 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
                                          </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
@@ -215,7 +215,7 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
                                           </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
@@ -242,7 +242,7 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
                                          </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
@@ -269,7 +269,7 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
                                          </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
@@ -296,7 +296,7 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
                                         </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">
@@ -323,7 +323,7 @@
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
                                             <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
-                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
+                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
                                          </ul>
                                         <div class="ms_play_icon">
                                             <img src="/images/svg/play.svg" alt="">

@@ -433,7 +433,7 @@
 					<i class="fa_icon form_close"></i>
 				</button>
 				<div class="modal-body">
-					<h1>ログインして素敵なプレイリストを公有してみませんか？</h1>
+					<h1>ログインして素敵なプレイリストをシェアしてみませんか？</h1>
 					<div class="save_modal_btn">
 						<a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i> グーグルアカウントでログイン</a> <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i> フェイスブックIDでログイン</a>
 					</div>

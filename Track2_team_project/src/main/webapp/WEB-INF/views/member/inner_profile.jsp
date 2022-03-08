@@ -43,7 +43,7 @@
 											  	<label for="zip">郵便番号</label>
 											  	<div class="input-group">
 												    <input class="form-control" name="zipnum" id="member_post" type="text" value="${memberList.zipnum}" readonly="readonly">
-												    <button class="btn ms_btn" type="button" onclick="findAddr()" style="font-size:20px;">zip検索</button> 
+												    <button class="btn ms_btn" type="button" onclick="findAddr()" style="font-size:15px;">zip検索</button> 
 											  	</div>
 											  </div>
 											  <div class="col-8 form-group">

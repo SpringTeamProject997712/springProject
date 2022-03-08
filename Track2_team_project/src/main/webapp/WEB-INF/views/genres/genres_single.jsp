@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
             <!---Recently Played Music--->
             <div class="ms_rcnt_slider marger_top60">
@@ -23,12 +25,9 @@
                                                 <img src="/images/svg/more.svg" alt="">
                                             </div>
                                            <ul class="more_option">
-	                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_fav"></span></span>お気に入りに追加</a></li>
-	                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_queue"></span></span>再生列に追加</a></li>
-	                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_dwn"></span></span>カートに追加</a></li>
-	                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリストに追加</a></li>
-	                                            <li><a href="#"><span class="opt_icon"><span class="icon icon_share"></span></span>公有</a></li>
-	                                        </ul>
+												<li><a href="#"><span class="opt_icon"><span class="icon icon_playlst"></span></span>プレイリスト追加</a></li>
+												<li><a href="javascript:void(0)" class="share_this_page"><span class="opt_icon"><span class="icon icon_share"></span></span>シェア</a></li>
+											</ul>
                                             <div class="ms_play_icon">
                                                 <img src="/images/svg/play.svg" alt="">
                                             </div>
@@ -52,7 +51,7 @@
             
              <div class="ms_releases_wrapper">
                 <div class="ms_heading">
-                    <h1>新しいアルバム</h1>
+                    <h1>新しいアルバムのトラック</h1>
                     <span class="veiw_all"><a href="/album/album">もっと見る</a></span>
                 </div>
                 <div class="ms_release_slider swiper-container">
