@@ -250,7 +250,7 @@
                                     </div>
                                 </div>
                                 <div class="ms_rcnt_box_text">
-                                    <h3><a href="#">${list.singer}</a></h3>
+                                    <h3><a href="/album/album_single?abno=${list.abno}">${list.singer}</a></h3>
                                 </div>
                             </div>
                         </div>
