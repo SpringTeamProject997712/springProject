@@ -73,20 +73,22 @@
 							<!-- #post-2244 -->
 							<div id="comments" class="comments-area">
 								<!----Blog Comment Form---->
-								<div class="blog_comments_forms">
-								<div id="div-comment-114" class="comment-body ms_comment_section">
-									<div class="comment-author vcard comment_img"><img src="../notice/" class="avatar avatar-80 photo" height="80" width="80" loading="lazy">
-									</div>
-									<div class="comment-meta commentmetadata comment_info">
-					
-										<div class="comment_head">
-											<h3><cite class="fn">${reply.id}</cite> <span class="says">様のコメント</span></h3>
-					
-											<p><a href="">${reply.rdate }　</a></p>
+								<div class="blog_comments_forms" style="padding-top: 0px;">
+								<c:forEach items="${reply}" var="comments">
+									<div id="div-comment-114" class="comment-body ms_comment_section">
+										<div class="comment-author vcard comment_img"><img src="../images/author.png" class="avatar avatar-80 photo" height="80" width="80" loading="lazy">
 										</div>
-										<p>${reply.content }</p>
+										<div class="comment-meta commentmetadata comment_info">
+						
+											<div class="comment_head">
+												<h3><cite class="fn">${comments.id}</cite> <span class="says">様のコメント</span></h3>
+						
+												<p><a href="">${comments.rdate }　</a></p>
+											</div>
+											<p>${comments.content }</p>
+										</div>
 									</div>
-								</div>
+								</c:forEach>
 									<div id="respond" class="comment-respond">
 										<h3 id="reply-title" class="comment-reply-title">
 											コメントを残してください <small><a rel="nofollow"

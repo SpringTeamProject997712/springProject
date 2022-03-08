@@ -12,11 +12,7 @@
 	</insert>
 
 	<select id="selectReply" resultType="com.music.domain.ReplyVO">
-		select r.rbno, r.id as id, r.wbno, r.content as content, r.rdate as date 	  
-		from reply_m r, member_m m
-		where r.id = m.id 
-		and rbno = #{rbno}
-	
+		select r.rbno as rbno, m.name as id , r.wbno as wbno, r.content as content, r.rdate as rdate from reply_m r, member_m m where r.id = m.id and wbno = #{wbno}
 	</select>
 	
 	<select id="countReply" resultType="int">
