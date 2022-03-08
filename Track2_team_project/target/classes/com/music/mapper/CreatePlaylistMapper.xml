@@ -32,7 +32,7 @@
     from playlist_detail_m pd, playlist_m pl
     where pl.plbno = pd.plbno(+) 
 		group by pl.name, pl.id, pl.plbno
-		having id = #{id}
+		having id = #{id} order by plbno asc
 	</select>
 	
 	<select id="selectBasicPlaylistPrimaryKey" resultType="int">

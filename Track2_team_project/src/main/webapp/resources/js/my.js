@@ -636,6 +636,59 @@ $(".add_track_to_playlist").on("click",function(z){
 	});
 	$("#myModal2").modal();
 })
+//밑에 있는 바에서 플레이리스트 추가하기
+$(".add_now_track_to_playlist").on("click",function(z){
+	z.preventDefault();
+	let tbno=$(this).parent().parent().parent().parent().find('span.que_img').attr('id').substring(12);
+	let my_playlist ="";
+	
+	var aaaa = now_login_checker();
+	console.log(aaaa);
+	if(!aaaa){
+	$("#myModal1").modal();
+	alert("ログインをしてください");
+	return false;
+	}
+	$.ajax({
+		type:"get",
+		url:"/createPlaylist/selectMyPlaylist",
+		error:function(xhr,r,err){
+			console.log(xhr.r +"\n 내용 : " +xhr.reponseText+"\n 에러 : " +err);
+		},success:function(data){
+			my_playlist = JSON.parse(data);
+			let htmlForPlus ="";
+			for(var i=0; i<my_playlist.length; i++ ){
+				if(my_playlist[i].name != 'basic_playlist'){
+					htmlForPlus += "<option value='"+my_playlist[i].plbno+"'>"+my_playlist[i].name+"</option>";
+				}
+			}
+			$("#select_playlist").html(htmlForPlus);
+		}
+	});
+	document.go_to_playlist.this_tbno_will_go_to_playlist.value=tbno;
+	$.ajax({
+		type:"get",
+		url:"/track/selectTrackInJplayer",
+		data:{tbno:tbno},
+		async:false,
+		error:function(xhr,r,err){
+			console.log(xhr.r +"\n 내용 : " +xhr.reponseText+"\n 에러 : " +err);
+		},success:function(data){
+			data = JSON.parse(data);
+			let htmlForPlus ="";
+			htmlForPlus += "<div class='ms_weekly_box'><div class='weekly_left'><span class='w_top_no'>";
+			htmlForPlus += "</span><div class='w_top_song'><div class='w_tp_song_img'><img src='/upload/";
+			htmlForPlus += data.image+"' alt=''><div class='ms_song_overlay'></div>";
+            htmlForPlus += "<div class='ms_play_icon' id='"+data.tbno+"'>";
+            htmlForPlus += "<img src='../images/svg/play.svg' alt=''></div></div><div class='w_tp_song_name'>";
+            htmlForPlus += "<h3><a href='#'>"+data.title+"</a></h3>";
+            htmlForPlus += "<p>"+data.artist+"</p></div></div></div><div class='weekly_right'>"
+            htmlForPlus += "<span class='w_song_time'>"+data.length+"</span></div></div>"
+            $("#the_track_choiced_by_you").html(htmlForPlus);
+		}
+	});
+	$("#myModal2").modal();
+})
 
 function go_add_track(){
 	let this_form = document.go_to_playlist;
@@ -747,7 +800,7 @@ function go_purchase() {
 			}
 			your_cart += data.aname;
 			if(data.pbno!=1){
-				your_cart += "외 "+ (data.pbno-1) +" 개";
+				your_cart += " 他 "+ (data.pbno-1) +" 個";
 			}
 			your_cart += "</span>";
 			$(".cartlistForPurchase").html(your_cart);

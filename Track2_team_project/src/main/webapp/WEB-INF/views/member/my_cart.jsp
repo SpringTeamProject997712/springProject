@@ -79,7 +79,12 @@
 																	<ul>
 																		<li>${d_num}</li>
 																		<li class="text-center">${cartDetail.tname}</li>
-																		<li class="text-center track_name">${cartDetail.tprice}</li>
+																		<li class="text-center track_name">
+																		
+																		
+																		<fmt:setLocale value="ja_jp" />
+																		<fmt:formatNumber type="currency" value="${cartDetail.tprice}" currencySymbol="￥" maxFractionDigits="0" />
+																		</li>
 																		<li class="text-center">${cartDetail.length}</li>
 																	</ul>
 																	<c:set value="${d_num+1}" var="d_num"/>
@@ -95,7 +100,7 @@
 											<tr>
 												<td>
 													<div class="product-item">
-														<a class="product-thumb" href="/album/album_single?abno=${cartList.abno }"><img src="${pageContext.request.contextPath}/upload/${cartList.timage}" alt="Product"></a>
+														<a class="product-thumb" href="javascript:void(0)"><img src="${pageContext.request.contextPath}/upload/${cartList.timage}" alt="Product"></a>
 														<div class="product-info">
 															<h4 class="product-title">
 																<a href="/album/album_single?abno=${cartList.abno}">${cartList.tname}</a>
