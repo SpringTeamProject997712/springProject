@@ -60,7 +60,7 @@
 	
 	<update id="updateNotice">
 		update board_m set 
-		id =#{id}, bbno=#{bbno}, header=#{header}, title=#{title}, content=#{content}, indate=#{indate}, filename=#{filename} 
+		bbno=#{bbno}, header=#{header}, title=#{title}, content=#{content}, filename=#{filename} 
 		where wbno = #{wbno}
 	</update>
 	
