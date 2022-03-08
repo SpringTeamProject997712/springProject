@@ -109,7 +109,7 @@
 	<![CDATA[	
 	select rownum, tbno, tname, name, price, lbno, likes, id, pbno ,length
     from (select * from myfavourites order by lbno asc)
-    where rownum > 0 and id=#{id}
+    where rownum > 0 and likes='1' and id=#{id}
 	]]>
 	</select>
 	
