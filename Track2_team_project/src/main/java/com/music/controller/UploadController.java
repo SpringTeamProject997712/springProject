@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-import javax.annotation.Resource;
+import javax.annotation.*;
 import javax.imageio.ImageIO;
 
 import org.springframework.beans.factory.annotation.Autowired;

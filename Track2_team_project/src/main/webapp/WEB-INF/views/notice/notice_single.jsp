@@ -12,17 +12,17 @@
 					<div class="ms_breadcrumb">
 						<div class="breadcrumbs">
 							<span class="first-item"> <a
-								href="../">Homepage</a></span>
+								href="../">メインページ</a></span>
 							<span class="separator">&gt;</span> <span class="0-item">
 								<a
-								href="./notice">Notice
+								href="./notice">お知らせ
 							</a>
 							</span> <span class="separator">&gt;</span> <span class="1-item">
 								<c:choose>
-										<c:when test="${list.header eq 1 }">공지</c:when>
-										<c:when test="${list.header eq 2 }">점검</c:when>
-										<c:when test="${list.header eq 3 }">이벤트</c:when>
-										<c:otherwise>기타</c:otherwise>
+										<c:when test="${view.header eq 1 }">お知らせ</c:when>
+										<c:when test="${view.header eq 2 }">メンテナンス</c:when>
+										<c:when test="${view.header eq 3 }">イベント</c:when>
+										<c:otherwise>その他</c:otherwise>
 								</c:choose>
 							</span> <span class="separator">&gt;</span> <span class="last-item">${view.title }</span>
 						</div>
@@ -74,47 +74,50 @@
 							<div id="comments" class="comments-area">
 								<!----Blog Comment Form---->
 								<div class="blog_comments_forms">
+								<div id="div-comment-114" class="comment-body ms_comment_section">
+									<div class="comment-author vcard comment_img"><img src="../notice/" class="avatar avatar-80 photo" height="80" width="80" loading="lazy">
+									</div>
+									<div class="comment-meta commentmetadata comment_info">
+					
+										<div class="comment_head">
+											<h3><cite class="fn">${reply.id}</cite> <span class="says">様のコメント</span></h3>
+					
+											<p><a href="">${reply.rdate }　</a></p>
+										</div>
+										<p>${reply.content }</p>
+									</div>
+								</div>
 									<div id="respond" class="comment-respond">
 										<h3 id="reply-title" class="comment-reply-title">
-											Leave a Reply <small><a rel="nofollow"
+											コメントを残してください <small><a rel="nofollow"
 												id="cancel-comment-reply-link"
 												href="/wp/miraculous/darkversion/the-standard-chunk-of-lorem-ipsum/#respond"
 												style="display: none;">Cancel reply</a></small>
 										</h3>
 										<form
-											action="https://kamleshyadav.com/wp/miraculous/darkversion/wp-comments-post.php"
+											action="/reply/writereply"
 											method="post" id="commentform" class="comment-form"
-											novalidate="">
+											>
+											<input id="csrfToken" type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 											<p class="comment-notes">
-												<span id="email-notes">Your email address will not be
-													published.</span> Required fields are marked <span
-													class="required">*</span>
 											</p>
-											<div class="col-lg-6 col-md-6">
+											<div class="col-lg-3 col-md-3">
 												<div class="comment_input_wrapper">
-													<input id="author" name="author" type="text" value=""
-														size="30" placeholder="Your Name" class="cmnt_field">
-												</div>
-											</div>
-											<div class="col-lg-6 col-md-6">
-												<div class="comment_input_wrapper">
-													<input id="email" name="email" type="text" value=""
-														size="30" placeholder="Your Email" class="cmnt_field">
+													<input id="id" name="id" type="text" value="${principal.member.name} "
+														size="30" placeholder="ID" class="cmnt_field" readonly>
 												</div>
 											</div>
 											<div class="col-lg-12 col-md-12">
 												<div class="comment_input_wrapper">
-													<textarea id="comment" name="comment" class="cmnt_field"
-														placeholder="Your Comment" cols="45" rows="8"
+													<textarea id="comment" name="content" class="cmnt_field"
+														placeholder="コメント" cols="45" rows="8"
 														aria-required="true"></textarea>
 												</div>
 											</div>
 											<p class="form-submit">
-												<input name="submit" type="submit" id="comment-submit"
-													class="submit ms_btn" value="Post Comment"> <input
-													type="hidden" name="comment_post_ID" value="2244"
-													id="comment_post_ID"> <input type="hidden"
-													name="comment_parent" id="comment_parent" value="0">
+												<input name="submit" type="submit" " id="comment-submit"
+													class="submit ms_btn" value="転送"> <input type="hidden"
+													name="wbno" id="wbno" value="${view.wbno }">
 											</p>
 										</form>
 									</div>
@@ -129,7 +132,6 @@
 		</div>
 	</main>
 </div>
-
 
 <!--main div-->
 </div>
