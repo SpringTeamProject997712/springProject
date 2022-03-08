@@ -97,10 +97,8 @@
 					</div>
 					<div class="play_song_options">
 						<ul>
-							<li><a href="#"><span class="song_optn_icon"><i class="ms_icon icon_download"></i></span>ダウンロード</a></li>
-							<li><a href="#"><span class="song_optn_icon"><i class="ms_icon icon_fav"></i></span>お気に入りに追加</a></li>
-							<li><a href="#"><span class="song_optn_icon"><i class="ms_icon icon_playlist"></i></span>リストに追加</a></li>
-							<li><a href="#"><span class="song_optn_icon"><i class="ms_icon icon_share"></i></span>共有</a></li>
+							<li><a href="javascript:void(0)" class="add_now_track_to_playlist"><span class="song_optn_icon"><i class="ms_icon icon_playlist"></i></span>リストに追加</a></li>
+							<li><a href="javascript:void(0)" class="share_this_page"><span class="song_optn_icon"><i class="ms_icon icon_share"></i></span>共有</a></li>
 						</ul>
 					</div>
 					<span class="play-left-arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
