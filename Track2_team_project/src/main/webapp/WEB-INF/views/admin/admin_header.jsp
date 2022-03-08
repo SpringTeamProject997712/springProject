@@ -153,7 +153,8 @@
                 </div><a class="dropdown-item" href="#">
                   <svg class="icon me-2">
                     <use href="/images/svg/free.svg#cil-lock-locked"></use>
-                  </svg> 設定</a><a class="dropdown-item" href="#">
+                  </svg> 設定</a>
+                  <a class="dropdown-item" href="/admin/adminLogout">
                   <svg class="icon me-2">
                     <use href="/images/svg/free.svg#cil-account-logout"></use>
                   </svg> ログアウト</a>

@@ -64,7 +64,7 @@
 		<![CDATA[			
 					rownum <= #{amount} * #{pageNum}  order by regdate desc
 				) 
-			where rn > #{amount} * (#{pageNum}-1)
+			where rn > #{amount} * (#{pageNum}-1) order by regdate desc
 		]]>
 	</select>
 	
