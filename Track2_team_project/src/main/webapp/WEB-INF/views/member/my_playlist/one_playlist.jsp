@@ -30,7 +30,7 @@
                     </div>
                     <div class="album_btn">
                         <a href="javascript:void(0)" class="ms_btn play_btn playlist_play_button" id="go_plbno_${this_plbno}"><span class="play_all"><img src="/images/svg/play_all.svg" alt="">すべてを再生</span></a>
-                        <a href="#" class="ms_btn playlist_add_queue" id="addPlbno_${this_plbno}"><span class="play_all"><img src="/images/svg/add_q.svg" alt="">再生列に追加</span></a>
+                        <a href="#" class="ms_btn playlist_add_queue" id="addPlbno_${this_plbno}"><span class="play_all"><img src="/images/svg/add_q.svg" alt="">再生リストに追加</span></a>
                     </div>
                 </div>
                 <div class="album_more_optn ms_more_icon">
