@@ -27,6 +27,7 @@
                     </svg>Preview</a>
                   </li>
                 </ul> -->
+                
                 <div class="tab-content rounded-bottom">
                   <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-687">
                     <table class="table dropdown">
@@ -37,7 +38,6 @@
                           <th scope="col">住所</th>
                           <th scope="col">権限</th>
                           <th scope="col">加入日</th>
-                          <th scope="col">状態</th>
                           <th scope="col">機能</th>
                         </tr>
                       </thead>
@@ -53,7 +53,6 @@
 	                          </c:forEach>
 	                          </td>
 	                          <td><fmt:formatDate value="${mlist.regdate}" pattern="yyyy-MM-dd"/></td>
-	                          <td>${mlist.active}</td>
 	                          <td>
 												<div class="dropdown">
 													<button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton2" type="button" data-coreui-toggle="dropdown" aria-expanded="false">보기</button>

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.music.domain.ReplyVO;
 import com.music.domain.ReviewVO;
 import com.music.security.domain.CustomUser;
 import com.music.service.AlbumService;
@@ -39,4 +40,6 @@ public class ReviewController {
 		}
 		return "redirect:/album/album_single?abno="+abno;
 	}
+	
+	
 }
