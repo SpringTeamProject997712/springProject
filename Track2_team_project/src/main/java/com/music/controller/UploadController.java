@@ -170,9 +170,9 @@ public class UploadController {
 		//IE
 		uploadMusicName = uploadMusicName.substring(uploadMusicName.lastIndexOf("//")+1);
 		
-//		UUID uuid = UUID.randomUUID();
-//		
-//		uploadMusicName = uuid.toString()+"_"+uploadMusicName;
+		UUID uuid = UUID.randomUUID();
+		
+		uploadMusicName = uuid.toString()+"_"+uploadMusicName;
 		
 		File uploadPath = new File(uploadFolder, UploadFileUtil.getFolder());
 		log.info("업로드 패스 주소"+uploadPath);

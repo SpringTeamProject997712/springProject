@@ -36,7 +36,7 @@
 													<a class="product-thumb" href="javascript:void(0)"><img src="${pageContext.request.contextPath}/upload/${orderView.aimage}" alt="Product"></a>
 													<div class="product-info">
 														<h4 class="product-title">
-															<a href="/album/album_single?abno=${orderView.abno}">${orderView.aname}</a>
+															${orderView.aname}
 														</h4>
 													</div>
 												</div>
@@ -86,10 +86,10 @@
 										<tr>
 											<td>
 												<div class="product-item">
-													<a class="product-thumb" href="/album/album_single?abno=${orderView.abno }"><img src="${pageContext.request.contextPath}/upload/${orderView.timage}" alt="Product"></a>
+													<img class="product-thumb"  src="${pageContext.request.contextPath}/upload/${orderView.timage}" alt="Product" style="margin-right: -80px;">
 													<div class="product-info">
 														<h4 class="product-title">
-															<a href="/album/album_single?abno=${orderView.abno}">${orderView.tname}</a>
+															${orderView.tname}
 														</h4>
 													</div>
 												</div>
@@ -103,10 +103,6 @@
 												<fmt:setLocale value="ja_jp" />
 												<fmt:formatNumber type="currency" value="${orderView.tprice}" currencySymbol="￥" maxFractionDigits="0" />
 											</td>
-											<td class="text-center">
-												<a class="remove-from-cart" href="javascript:void(0)" data-toggle="tooltip" title="" data-original-title="Remove item" onclick="delete_cart_btn();" data-cbno="${orderView.cbno }"><i class="fa fa-trash"></i></a>
-											</td>
-										</tr>
 									</c:if>
 									<c:if test="${orderView.category eq '1'}">
 										<c:set var="sum" value="${sum + orderView.aprice}" />
@@ -120,20 +116,7 @@
 								</tbody>
 							</table>
 						</div>
-						<div class="shopping-cart-footer">
-							<div class="column">
-								</div>
-
-							<div class="column text-lg" style="color: white;">
-							</div>
-						</div>
-						<div class="shopping-cart-footer">
-							<div class="column">
-								<a class="ms_btn btn-outline-secondary" href="#"><i class="icon-arrow-left"></i>&nbsp;Back</a>
-							</div>
-							<div class="column">
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>

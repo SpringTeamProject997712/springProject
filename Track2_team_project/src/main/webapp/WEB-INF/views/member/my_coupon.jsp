@@ -15,7 +15,7 @@
                             	<form action="/member/get_mycoupon" method="get">
                             		<div class="form-group">
                             			<input class="form-control" type="text" name="couponid" placeholder="クーポンの登録はこちら" style="width:30%; display:inline-block;">
-                            			<input class="form-control" type="submit" style="display:inline-block;" >
+                            			<input class="form-control" type="submit" style="display:inline-block;" value="登録" >
                             		</div>
                             	</form>
                             </div>
